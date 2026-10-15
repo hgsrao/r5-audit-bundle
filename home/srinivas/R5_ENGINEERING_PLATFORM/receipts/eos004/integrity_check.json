@@ -1,0 +1,31 @@
+{
+  "verified_at_utc": "2026-10-07T04:12:04.183464+00:00",
+  "files_checked": 23,
+  "changed_files": [],
+  "result": "PASS",
+  "sha256_after": {
+    "bridge/src/audit_models.py": "37d1bdf0dd78a07bfd143ffb61d612a3447f07fbfac87b9bee1a2823f641dc1a",
+    "bridge/src/router.py": "3fd5944fee72b003ead0503e273091471514b75ac34f8a53795eb1bd5024ac0f",
+    "bridge/src/main.py": "6200e54eda5a8419331e5556e053832696e3e7318f66d7f207ea64f6540c1fef",
+    "bridge/src/__init__.py": "a854e3be5df3b6380c6badabd44af821294782ea76853e7954dbd40da9b37ef7",
+    "bridge/src/work_package.py": "68ee539759dd8d34120a75859e8906bf9b9a22ebb12be67b22abae985f6aa87f",
+    "bridge/src/config.py": "8ccfe208e5af7c0ef035ac4723b3e0b4b19d8568eeadc5f40eb602e1d33d8482",
+    "bridge/src/audit_adapter.py": "f3e95383c36418dc4fbb6094f491a3ef2dd5320834af892dc0594e52ca5a2f67",
+    "bridge/src/bridge.py": "258a86bf8500b1d8e5e56053b59f5aca9a99a9f654c97665b19371171114047c",
+    "bridge/src/logger.py": "61343fde7c4bd22d9941a2a2c9dffa9534d0bb6f8c9310b6868b0f0b6c900f57",
+    "bridge/src/ollama_client.py": "3e331f691e29e388c0079f68bda17380079d5910bb4027aeb7e7c02d1b6a3e85",
+    "bridge/src/audit_report.py": "6d231abcec1446b247b7f433ca1d98bb3da4aa3154ea8f2e749572542f9d71c5",
+    "bridge/src/prompt_router.py": "5b5e723d9ab525a77aaad94a8e528938940dffe6b084f6df9f0878196e40c44e",
+    "bridge/tests/test_bridge.py": "703d739bb73c89e997d91f60fc9b88fe1adf3edb60763b8ad3cbb276a2afc06a",
+    "bridge/tests/test_bridge_v12.py": "3e89cd14fe18584438950ccf0202240dbdbb5b56acd08657c77827b6e726640e",
+    "tests/eos002/test_commissioning.py": "4d5b50c632d3712673b77f7c796819dc9ea415d608925d4f176b623bc20df4ef",
+    "bridge/pyproject.toml": "4df46b51e5fe0a5dc004d74dbdd92824433c5519e5fdac311019f379fcbf30dd",
+    "bridge/README.md": "632c460b0a5bbbd04a4397c700439b18fcad9514635bcf82044494efb7330b3c",
+    "architecture/bridge/ROUTING.md": "eaa9b0cf31df3ce2ec8e6c849f182c515554605a29d35c9fe565af3d6c6f0e36",
+    "reports/eos004/pytest.txt": "ba180928a9cc9f8545c0dad4d476fe92bb5b372390f2696089372c66d7f46768",
+    "reports/eos002/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/eos002/py_compile.txt": "e5a4c1e573df67c7af2ace02baa6abf160760acae72cd95678aac2a748e93e83",
+    "reports/eos002/build.txt": "393f5b462775fb756e9cb8ac4809b96d1e7410ff37b08e4ac99f8823eb90d35e",
+    "receipts/eos002/freeze_amendment.json": "c5189a7c51d2cc40011fcb1f99c133c30f8061acdd16425039ee38abfb9dbb4a"
+  }
+}

@@ -1,0 +1,172 @@
+# WP-QWEN-001 · FORMULA_AUDIT — TRAIN-Only Qualification Analysis
+
+## 0. Scope & Access Note
+
+I do not have filesystem access to `reports/production/WP-R5-003` or `reports/production/WP-R5-004`. I cannot read, open, or quote those files. What follows is a **first-principles technical audit** built entirely from the problem statement you supplied (TRAIN-only qualification, Option A vs Option B, no Validation/Holdout reads). If you paste the relevant sections of those two reports, I will re-run this analysis against the actual content and flag any contradictions.
+
+No files are modified. No code is written. This is a read-only analytical deliverable.
+
+---
+
+## 1. Restating the Decision
+
+> **Can a model be "qualified" using only the TRAIN partition, without any read of the Validation or Holdout partitions?**
+
+The answer depends on what "qualification" is defined to mean:
+
+| Qualification intent | Can it be done on TRAIN only? | Why |
+|---|---|---|
+| Pipeline integrity (loader, dtype, shape, NaN policy, feature parity) | **Yes** | You are testing *mechanics*, not generalisation. A TRAIN slice exercises the exact same code path. |
+| Convergence / training-dynamics (loss monotonicity, gradient norm stability, step-size sanity) | **Yes** | These are properties of the optimisation on the data the model *saw*. |
+| Statistical soundness on unseen data (AUC, F1, calibration slope) | **No** | By definition this requires data the model did not fit on. A TRAIN slice is *seen* data. |
+| Feature-drift / distributional guard | **Partially** | You can confirm the *shape* of the distribution, but a true drift check needs a temporally or cohort-independent split. |
+
+So the critical fork in the road is: **is the qualification gate a *mechanical / convergence* check, or a *generalisation* check?** The two WP reports you reference presumably settle which one the production pipeline needs. Without them I will audit both assumptions.
+
+---
+
+## 2. Option A — TRAIN Slice
+
+### 2.1 What it means in practice
+- Before the main fitting loop, the TRAIN partition is partitioned into `TRAIN_FIT` and `TRAIN_QUAL` (e.g. 95 % / 5 %).
+- The model is trained on `TRAIN_FIT`.
+- The qualification harness scores the model on `TRAIN_QUAL`.
+- **No Validation partition is opened. No Holdout partition is opened.** The qualification loader is the same object that reads TRAIN; it simply receives a row-range or sample-mask that excludes `TRAIN_QUAL`.
+
+### 2.2 Advantages
+1. **Single data path.** One reader, one schema contract, one set of deserialisation logic. Fewer integration surfaces → fewer failure modes.
+2. **Trivially auditable.** A reviewer only needs to verify that the row-mask / index-set used for qualification is disjoint from the index-set used for fitting. One set-algebra check.
+3. **No new artefact.** There is no second file, no second staging area, no second permission boundary. The operational footprint is unchanged.
+4. **Deterministic re-runs.** Because the slice is derived from the same deterministic shuffle-seed already governing TRAIN, re-provisioning a node reproduces the exact same qualification set. No external manifest to keep in sync.
+5. **Zero cross-partition leakage risk by construction.** Validation and Holdout are never opened, so the threat model for "accidentally reading a Holdout row into the qualification harness" is *eliminated*, not merely *guarded against*.
+
+### 2.3 Disadvantages
+1. **Seen-data evaluation.** `TRAIN_QUAL` was, in most stochastic-gradient implementations, *not* literally seen by the model, but it *is* from the same draw. Any idiosyncratic bias in how the 5 % was carved (e.g. a class imbalance in the tail of the shuffled array) propagates directly into the qualification metric. You are measuring *in-sample residual*, not *generalisation*.
+2. **No independent distributional check.** If the production data has a temporal or cohort shift relative to the training pool, a TRAIN slice cannot reveal it. A Validation partition drawn from a later time-window or a different cohort *can*.
+3. **Coupling to the fitting harness.** The qualification logic lives inside (or is tightly coupled to) the training script. If the team later changes the training loop, the qualification harness may silently change too, without a separate review gate.
+4. **Statistical-power ceiling.** 5 % of TRAIN is often a much smaller absolute set than a purpose-built Validation set. For rare-class or long-tail qualification, the confidence intervals on the metric will be wide.
+5. **Semantic ambiguity for downstream consumers.** A "qualification score computed on a TRAIN slice" looks identical to a "validation score" in a dashboard or API. Unless the metadata tag is explicit, a downstream consumer may misread it as an out-of-sample estimate.
+
+### 2.4 Engineering risks
+| Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|
+| Shuffle-seed mismatch between `TRAIN_FIT` and `TRAIN_QUAL` (overlap) | Low (code review) | **High** — qualification is void | Assert `fit_set ∩ qual_set = ∅` at loader level; unit-test with known indices |
+| Downstream system treats TRAIN-slice score as OOS | Medium | **High** — wrong go/no-go | Mandatory `data_provenance` tag in every metric record; CI lint rule |
+| Rare-class under-representation in the 5 % slice | Medium | Medium | Stratified carve; report per-class n ≥ 30 gate |
+| Qualification logic entangled with training logic → refactoring breaks one or the other | Medium over time | Medium | Extract qualification scoring into a pure function `score(model, batch) → metrics` that the training loop *calls* but does not *own* |
+
+---
+
+## 3. Option B — Qualification Loader (dedicated)
+
+### 3.1 What it means in practice
+- A **separate loader component** (`QualificationLoader`) is introduced. It is a thin wrapper that:
+  - Reads only the TRAIN partition (or a designated qualification sub-partition if the data contract permits).
+  - Enforces, in its own code, that the data source identifier is `TRAIN` and *rejects* any `VALIDATION` or `HOLDOUT` source tag at the API boundary.
+  - Applies its own sampling / stratification / row-mask logic, independent of the training loader.
+  - Emits a `QualificationBatch` object with a distinct type, so the scoring harness cannot accidentally consume a training batch.
+- The main training loader and the qualification loader are **separate objects**, potentially in separate modules, with separate unit-test suites.
+
+### 3.2 Advantages
+1. **Explicit separation of concerns.** The training loop and the qualification harness are decoupled. Refactoring one does not structurally break the other.
+2. **Type-level / API-level leakage prevention.** If `QualificationBatch` is a distinct type, the scorer's signature `score(model: Model, batch: QualificationBatch) → QualificationReport` *cannot* be called with a training batch without a deliberate type-cast (or, in statically-typed languages, a compile error).
+3. **Independent test surface.** The qualification loader gets its own test suite: schema validation, dtype checks, NaN policy, source-tag assertion, row-count bounds. None of that logic is buried in the training script.
+4. **Auditability & provenance.** The loader is the natural place to stamp a `data_provenance: "TRAIN"` token onto every emitted batch. A compliance or MLOps reviewer can trace *which loader produced which batch* without reading the training script.
+5. **Extensibility.** If the team later introduces a "shadow-qualification" step (e.g. a synthetic or adversarial batch), the new batch type plugs into the same `score()` signature without touching the training code.
+6. **Permission / boundary model.** In a multi-tenant or multi-node deployment, the qualification loader can be granted read access to *only* the TRAIN volume, while the training loader reads TRAIN + (optionally) VALIDATION. The Holdout volume is simply not in the qualification loader's mount. This is a *system-level* guarantee, not a code-review guarantee.
+
+### 3.3 Disadvantages
+1. **New code path = new bug surface.** A new loader means new code to review, test, monitor, and upgrade. In a small team, this is a real cost.
+2. **Duplication of deserialisation logic.** If the qualification loader re-implements schema parsing, dtype coercion, and NaN handling, you now have *two* implementations to keep in sync. (Mitigated if both delegate to a shared `parse_row()` utility, but that utility must then be tested independently of both callers.)
+3. **Operational overhead.** One more component to deploy, health-check, and version. CI pipeline gets an extra job. On-call runbook grows by one entry.
+4. **Over-engineering risk.** If the qualification step is a single `model.predict(X_qual)` call on a 5 % slice, a full loader abstraction may be disproportionate. The YAGNI principle applies.
+5. **Does not solve the seen-data problem.** Option B is still reading TRAIN. It is *structurally* cleaner but *statistically* identical to Option A with respect to the "in-sample vs out-of-sample" question.
+
+### 3.4 Engineering risks
+| Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|
+| Divergence between training-loader and qualification-loader row parsing (one handles a new column, the other doesn't) | Medium | **High** — silent metric skew | Share a single `parse_row` / `schema_assert` module; contract-test both loaders against a golden file |
+| Qualification loader accidentally mounts a Validation volume (ops misconfig) | Low | **High** — contamination | Volume-level ACL: qualification-loader service account has read-only on TRAIN volume only; CI integration test asserts mount list |
+| Over-abstraction: team adds interfaces, factories, plugin registries for a two-line `predict()` call | Medium over time | Medium (velocity drag) | Cap the abstraction: one class, one method, one test file. No plugin architecture unless a second qualification source is planned within 2 sprints |
+| Two loaders drift out of sync after a schema migration | Medium | **High** | Schema-migration CI job runs both loaders against the new DDL before merge |
+
+---
+
+## 4. Direct Comparison Matrix
+
+| Dimension | Option A (TRAIN slice) | Option B (Qualification loader) |
+|---|---|---|
+| New code introduced | ~0 (a mask + a scoring call) | 1 new component + tests |
+| Leakage prevention | Set-algebra assertion (code-level) | Type boundary + volume ACL (code-level **and** system-level) |
+| Decoupling from training loop | Weak (same script) | Strong (separate object) |
+| Audit / provenance stamp | Manual convention | Intrinsic to the component |
+| Operational overhead | None | Low–medium |
+| Addresses "seen-data" limitation | No | No |
+| Addresses "cannot reveal distribution shift" | No | No |
+| Extensibility to future qualification sources | Awkward (monkey-patch the training script) | Clean (new batch type) |
+| Minimum viable effort | **Hours** | **1–2 days** |
+
+---
+
+## 5. The Question the Two Options *Both* Miss
+
+Neither Option A nor Option B, **as described**, allows the model to be qualified on truly unseen data without reading Validation or Holdout. Both are TRAIN-only by construction. That is fine **if and only if** the qualification gate is defined as:
+
+> *"The pipeline executes correctly, the model converges, and the in-sample residual is within tolerance."*
+
+If the qualification gate is defined as:
+
+> *"The model generalises to data it has not been trained on."*
+
+then **neither option is sufficient**, and the only TRAIN-only substitute is **k-fold cross-validation within TRAIN** (e.g. 5-fold CV). That is a different design decision, with its own cost (5× training runs), and it still does not protect against distribution shift that only a temporal Holdout would expose.
+
+**This is the single most important point the audit must surface before choosing A or B.** The WP-R5-003 and WP-R5-004 reports should explicitly state which definition of "qualification" the production pipeline is using. If the definition is ambiguous, the A-vs-B choice is premature.
+
+---
+
+## 6. Recommendation
+
+### If the qualification gate is a mechanical / convergence check (most common in production pipelines):
+
+> **Option A (TRAIN slice) is the technically cleaner solution.**
+
+Rationale:
+- The problem is simple; the solution should be simple.
+- The primary risk (set overlap) is a one-line assertion.
+- No new component to maintain, deploy, or debug.
+- The seen-data limitation is *acceptable* because the gate is not making a generalisation claim.
+- Introduce **one mandatory metadata tag** (`provenance: "TRAIN_slice"`) on every qualification metric so downstream dashboards cannot mislabel it.
+- Add a **stratified-carve assertion** (per-class n ≥ 30) to guard against tail under-representation.
+- Extract the scoring call into a free function `score(model, batch) → dict` so it is *testable* without instantiating the full training pipeline. This gives you 90 % of Option B's decoupling benefit at ~5 % of the cost.
+
+### If the qualification gate must be independently auditable, survives refactoring of the training loop, or will grow to support multiple qualification sources within two sprints:
+
+> **Option B (Qualification loader) is the technically cleaner solution.**
+
+Rationale:
+- The type boundary and volume-ACL give you *system-level* guarantees that code review cannot match.
+- The independent test surface pays for itself the first time a schema migration is done.
+- The provenance stamp is intrinsic, not a convention.
+
+### In both cases:
+
+- **Do not present the qualification score as an out-of-sample estimate.** Label it explicitly as an in-sample / in-distribution diagnostic.
+- **If generalisation must be verified, schedule a Validation-partition read as a *separate, later* gate** (e.g. at release sign-off), and treat the TRAIN-only qualification as a *pre-flight* check, not the final gate.
+- **Document the decision and its scope in the WP report** so that the next engineer does not re-derive the A-vs-B analysis from scratch.
+
+---
+
+## 7. Open Items Requiring the Actual WP Reports
+
+| # | Question | Where to look |
+|---|---|---|
+| 1 | Does WP-R5-003 define "qualification" as mechanical or as generalisation? | WP-R5-003, §Scope or §Definition of Done |
+| 2 | Does WP-R5-004 already prescribe a loader architecture that makes Option B a natural extension? | WP-R5-004, §Architecture |
+| 3 | Is there a compliance / model-governance requirement that mandates a *separate* data path for any non-fitting evaluation? | WP-R5-003, §Compliance; WP-R5-004, §Audit Trail |
+| 4 | What is the current training-loop structure (single script, notebook, framework-specific trainer)? This determines the integration cost of each option. | Both, §Implementation |
+
+**I am holding this recommendation provisional until those four points are confirmed against the actual report text.** If you can paste the relevant sections, I will re-score the comparison and issue a final, unqualified recommendation.
+
+---
+
+*End of WP-QWEN-001 / FORMULA_AUDIT. No files modified. No code written.*

@@ -1,0 +1,167 @@
+[
+  {
+    "file": "inventory.json",
+    "bytes": 10254,
+    "sha256": "2c09475194205598856c6db3444227093e4df0f2b7b873d157bc113c2019f446"
+  },
+  {
+    "file": "README.md",
+    "bytes": 3161,
+    "sha256": "c387639204db3e71cb06fe91fa0a7b21d2c74bc3de011c357581ca3077bf954f"
+  },
+  {
+    "file": "r5/integration-history.txt",
+    "bytes": 2658,
+    "sha256": "da5af8635b64a8e6fb3da677d7ae401b748754dfd8fdf93d07e2a250b0bdcecd"
+  },
+  {
+    "file": "r5/validation.txt",
+    "bytes": 289,
+    "sha256": "1e6cf20326c073c4b05fd3dafe3d276c9f276e9794e5b055c9d11da859d17bae"
+  },
+  {
+    "file": "qwen/reviewed_source_reference.zip",
+    "bytes": 90028,
+    "sha256": "aee4bd87ba974fd90cdc2b1474e5ce184f300dcfe23b9953b418bba3ecfbdd5c"
+  },
+  {
+    "file": "qwen/report-index.json",
+    "bytes": 8456,
+    "sha256": "438b0e654860ff2aadea0d80ba68e3fe2a128148084535b2a09bd803bf30dbee"
+  },
+  {
+    "file": "qwen/input-provenance-check.json",
+    "bytes": 4812,
+    "sha256": "f6ca68237ff99720647802a77eae99beaf6c1c3547b5ea68531b26c31c1e23c2"
+  },
+  {
+    "file": "context/PHASE_3AB_RAZER_PACKAGES.md",
+    "bytes": 11454,
+    "sha256": "547eda36e5ec9442ae89b34fd09962b0680eca724369276c70308b7180b4d476"
+  },
+  {
+    "file": "context/WORK_PACKAGES_CALIBRATED_20260828.md",
+    "bytes": 14164,
+    "sha256": "340da76e78813f94bca85b665a8d7419f832e42fa8bc1ac1f6d5e11c0823a350"
+  },
+  {
+    "file": "context/LOCAL_PROJECT_REVIEW_VERIFIED_20260828.md",
+    "bytes": 4776,
+    "sha256": "c81003940034092545f9c22219e2baefbfac5a5cc985f4758cb0b6f0c0d285ee"
+  },
+  {
+    "file": "context/PROJECT_PLAN_COMPREHENSIVE_20260828.md",
+    "bytes": 20711,
+    "sha256": "e9712f999d747c7dad0be934e3f115e2b8dcb35319ec5311eb4c66142a07b236"
+  },
+  {
+    "file": "claude/historical_review/PID_Controller_Architecture_Review_20260825_WITH_CLAUDE_COMMENTS.xlsx",
+    "bytes": 13687,
+    "sha256": "100fc2f0d4b14e533ee565ab925c620dfbda7d9dfd50b6c15fdf164d3f3fe86a"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_170925.md",
+    "bytes": 1330,
+    "sha256": "2909aee851b1e5bbbab1b48592a50dd60cab4d48dddc2bd79d0786f3c3989c51"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_190827.md",
+    "bytes": 3944,
+    "sha256": "55c18a8e5e19db7f95d6c6552b6549ecc6e8e0a4d396405d041d6241093714b1"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_190344.md",
+    "bytes": 5214,
+    "sha256": "bde1d3c8ab73c38e052f531246ca665eabee4d160b2767ffe0a6d2faeb1831bf"
+  },
+  {
+    "file": "qwen/original_reports/BACKEND_BENCHMARK_20260828.md",
+    "bytes": 2558,
+    "sha256": "e438b6ec168e5a0c9cf897ae1dbd63bab1ae4ec3155377c635d637f05ca53cf2"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_173308.md",
+    "bytes": 4008,
+    "sha256": "49db419c0985698421cb0d466f061f1712bddee34ef21b8c2eed5757990ce18d"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_184154.md",
+    "bytes": 4544,
+    "sha256": "dcc0a05994c3c16871d2b11154bb90f47dacbb9451bc45f4ffa9e0a171ffa541"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_173056.md",
+    "bytes": 5381,
+    "sha256": "ce98e16b42b8b64cffa8db6269f7e8874a7cd8de2010e5133892f9d8ca039532"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_174757.md",
+    "bytes": 1878,
+    "sha256": "f9c16681da2a121902ebb1e2121a4636fb3569e90084dd5a65fbd08f2bccb107"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_184422.md",
+    "bytes": 5132,
+    "sha256": "f96482bae00a5362ddc89abc5324e5d3dd54957b77771b32ba5b25953424c521"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_174430.md",
+    "bytes": 1556,
+    "sha256": "b02bb226af9e5bc9136f498b968671a655ff3af4908d05d50abdecf6254f6db1"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_171132.md",
+    "bytes": 4142,
+    "sha256": "2c6f5b3d53dbd8e9d846208570121e618f496df2f70c25ddd379c2a82f30c7cd"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_161251.md",
+    "bytes": 4379,
+    "sha256": "b2b60d92286f73cbb762713db477d8828415bd4b2357513defc3003b79fc1e14"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_182138.md",
+    "bytes": 1550,
+    "sha256": "da22628c897f4166e0bd095b4cab8ebe0804240ec80bec21d0ab2a277c8ddd1f"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_172917.md",
+    "bytes": 5517,
+    "sha256": "b90a9ecb8fbad7026752bea572b8dc35934ee2eee57bfd6c9571128e8af56ba6"
+  },
+  {
+    "file": "qwen/original_reports/review_report_20260828_172620.md",
+    "bytes": 5785,
+    "sha256": "ed7888fb88c9aba17344a8ba41f33d32e6d9fc5d03706e88e33f802398ae480c"
+  },
+  {
+    "file": "r5/integrated_audits/BB04-dynamic-parameterization-audit.md",
+    "bytes": 16363,
+    "sha256": "0e9b8411eee6581c42a6de3b15db5fd46a2f51e9cded268da419f3d0479e1ce4"
+  },
+  {
+    "file": "r5/integrated_audits/BB09-BB10-dynamic-parameterization-audit.md",
+    "bytes": 32726,
+    "sha256": "295d359dcadf04802f6bff21f908af1575124356e51dddb10b0a688d08d32d5a"
+  },
+  {
+    "file": "r5/integrated_audits/BB05-BB06-dynamic-parameterization-audit.md",
+    "bytes": 16099,
+    "sha256": "ce55fc09fff48f14a6612d2a3f3dcad293180a20e9a72908ca7ea6483bb84a91"
+  },
+  {
+    "file": "r5/integrated_audits/R5-ECS-GRID-DISPATCH-INTEGRATION-AUDIT.md",
+    "bytes": 33220,
+    "sha256": "b92642c790d4a2ea55caa264855af4b9fcb35631ebbca7296f0b7fbc410ae1a6"
+  },
+  {
+    "file": "r5/integrated_audits/BB07-BB08-dynamic-parameterization-audit.md",
+    "bytes": 13490,
+    "sha256": "5c629ddb24117f5ee850bbf690ed5dc9f8f5cedc4315b1579e66e5cbef53ae42"
+  },
+  {
+    "file": "r5/integrated_audits/THREE-CONTROLLER-dynamic-parameterization-audit.md",
+    "bytes": 9348,
+    "sha256": "0bda69a38c44aa0fa8c0c6e91d0970ea65b9e72a6fba43d9d934689ca1b7007b"
+  }
+]

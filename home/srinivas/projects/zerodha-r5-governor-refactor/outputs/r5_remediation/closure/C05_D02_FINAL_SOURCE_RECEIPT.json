@@ -1,0 +1,36 @@
+{
+  "qualification": "FINAL_D02_OFFLINE_BLOCK1_PARITY",
+  "status": "COMPLETED",
+  "source_sha": "d70ae9ab4b7f34cb45170dc12ce33dfe7b4bbd25989b9d92aec1432f94ee703c",
+  "source_after_sha": "d70ae9ab4b7f34cb45170dc12ce33dfe7b4bbd25989b9d92aec1432f94ee703c",
+  "source_unchanged": true,
+  "executed_symbols": 48,
+  "ledger_sha": "311b3a145ab017739b492328389b6f79fd9aaa4ebf1eca751f12c9a644e5b08d",
+  "accepted_baseline_byte_identical": true,
+  "summary": {
+    "block_fingerprint": "9ae2f2a9ad809d3c0dfa314c22bc67301f37ea5ac6209a62b5097c9095a2ab13",
+    "completed_trades": 52,
+    "fees_and_friction_total": 2933.0978871418,
+    "fills_total": 52,
+    "governor_mode": "full",
+    "gross_pnl": -4110.439399999963,
+    "gross_r_expectation": -0.23798049120802073,
+    "gross_r_samples": 52,
+    "gross_r_source": "engine gross pnl / (abs(fill entry - planned initial stop) * filled quantity)",
+    "holding_duration_source": "engine bars_held and exit_timestamp minus entry_timestamp",
+    "mtm_max_drawdown_fraction": 0.007043537287141662,
+    "mtm_max_drawdown_percent": 0.7043537287141662,
+    "native_entry_fills": 52,
+    "net_pnl": -7043.537287141787,
+    "paper_journal_statistics": null,
+    "profit_factor": 0.06113420157170885,
+    "safety_violations": 0,
+    "total_costs": 2933.0978871418,
+    "total_costs_source": "sum of engine completed-trade 'costs'"
+  },
+  "trades_by_side": {
+    "BUY": 2,
+    "SELL": 50
+  },
+  "scope_limit": "Pre-C04-hydration, frozen Trial000, paper-only, no strategy changes."
+}

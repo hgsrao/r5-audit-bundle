@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/test_shape_errors0/extra_field/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a01e8c256c38daaa86034eb3f7b2af4c81bdafaf8f29a8764bb1453c440ec5b6",
+      "size_bytes": 18372,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "b1f27588d80e19b0cd0edf7faf11dd8f20daa9a698e1b544094d976ea4c02130",
+      "size_bytes": 18629,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "1778504eeb11110ca558e91865ecff43d3f6263ad615a96d95b68829d80b646d",
+  "symbol_count": 2
+}

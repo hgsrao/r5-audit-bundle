@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/final_reg/test_missing_sentinel0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "58c248d7a60a3c987d55c427a4e363c474e77064fe30fd091966b3f3dac5140e",
+      "size_bytes": 11565,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "37b83f550b4c8b17face5c91873af5845f9139c98eea57b4fe54a930b2a50bca",
+      "size_bytes": 11666,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "2813abfcdecb2f2108808a3f5846636ef830305596b450884805a974b0047226",
+  "symbol_count": 2
+}

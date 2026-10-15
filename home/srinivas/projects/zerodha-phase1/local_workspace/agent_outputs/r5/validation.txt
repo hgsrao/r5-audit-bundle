@@ -1,0 +1,4 @@
+
+## Fresh R5 validation
+
+2026-09-24: BB05–BB06, BB07–BB08, BB09–BB10, and three-controller parameterization test files: **118 passed**, 24 timedelta deprecation warnings, in 145.60 seconds. This validates the selected integrated R5 suites, not every historical agent recommendation.

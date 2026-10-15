@@ -1,0 +1,97 @@
+[
+  {
+    "file": "run_stress.py",
+    "bytes": 11507,
+    "sha256": "af1d7f93006c9be815e0e18eef2573a9bd51b86b1ff8aad3c09d077d0cb89027"
+  },
+  {
+    "file": "write_results.py",
+    "bytes": 9207,
+    "sha256": "f349849c2c190408d575b4f01ccb3e5fa467bbc2e229f701834a79b977c90c00"
+  },
+  {
+    "file": "pilot_harness_snapshot.py",
+    "bytes": 10668,
+    "sha256": "067a8fe613430e050b2840ec60b831b6b1a2e30b2d80a16e4f0b3cd1ee98bc4a"
+  },
+  {
+    "file": "RESULTS.md",
+    "bytes": 5376,
+    "sha256": "682cbbe00f7c141604895417a12074cb4206dab694e77e68fb618f947a7544a9"
+  },
+  {
+    "file": "storm.log",
+    "bytes": 4154,
+    "sha256": "7ab16549747644e4bbd5f8eb92e24741fe7ace6db715bcf6c98123ea5f877cf0"
+  },
+  {
+    "file": "lockout-checks.json",
+    "bytes": 387,
+    "sha256": "47228bd8910418aaab00c7859bca767255ea5236078c55ba13eabdf1e57f5330"
+  },
+  {
+    "file": "combined-summary.json",
+    "bytes": 9048,
+    "sha256": "12629fe9da4536c1630c66959d76d54c9db166dda471774123f548e514239c72"
+  },
+  {
+    "file": "lockout-trade-proof.json",
+    "bytes": 256,
+    "sha256": "d43f8c8da00924035ce918ddeae31836e95ed91bd61fcd8d42ab55da4acff7d3"
+  },
+  {
+    "file": "run-provenance.json",
+    "bytes": 504,
+    "sha256": "cd8f0bb5c239a6a78419b17f04511907bce38a0207c124fe49ce84ca00a78fdf"
+  },
+  {
+    "file": "pilot.log",
+    "bytes": 3154,
+    "sha256": "f1e2daa84373ec5d589a7216d47e5ae33e0106d21e17405d301cf705aadb0fef"
+  },
+  {
+    "file": "natural.log",
+    "bytes": 4123,
+    "sha256": "e99b1ffeb8463e7b5767d695db95db96e5631636d27bfba877d3c3dd5a7f008b"
+  },
+  {
+    "file": "natural/summary.json",
+    "bytes": 3751,
+    "sha256": "9014cfbe07074edff10420fa576821e120ade13cb88182e31a2273cdc60dc04c"
+  },
+  {
+    "file": "natural/report.json",
+    "bytes": 6760945,
+    "sha256": "6f10f86c1d18660e331a3088892498544a6be6aaccf35a007aab710319c6dbc6"
+  },
+  {
+    "file": "natural/audit.json",
+    "bytes": 1479,
+    "sha256": "3711ce2a24c21f966017daf2f9c42109a92ca7076b1f67abfb253d9d98ce0a23"
+  },
+  {
+    "file": "storm/summary.json",
+    "bytes": 4100,
+    "sha256": "9a9602485d93c7aa17e82f54171106b514dcb987889d021d806ffb3bc03c206c"
+  },
+  {
+    "file": "storm/report.json",
+    "bytes": 6053871,
+    "sha256": "6261a2042077d4146038c73ccb1e1ce8833f3833ac0482802336799829b9ee90"
+  },
+  {
+    "file": "storm/audit.json",
+    "bytes": 1829,
+    "sha256": "3e3a484caf4ce999e2fa25e91a875fda1319baa474f9b0435b6ec5293dd35775"
+  },
+  {
+    "file": "pilot/summary.json",
+    "bytes": 3153,
+    "sha256": "131b41d66aa71679dca61d628426dd2a192c63ff832f3e049cfcbf8b4149590c"
+  },
+  {
+    "file": "pilot/report.json",
+    "bytes": 540007,
+    "sha256": "ececddef3864d2c0450689b837184e8528b4141dcf550889f77319090f268a1d"
+  }
+]

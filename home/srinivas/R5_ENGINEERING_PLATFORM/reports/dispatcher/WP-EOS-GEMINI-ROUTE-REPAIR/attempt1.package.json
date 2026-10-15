@@ -1,0 +1,31 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-08T10:44:43.732014+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-GEMINI-ROUTE-REPAIR.receipt.json",
+    "started_at": "2026-10-08T10:42:04.625455+00:00",
+    "state": "REVIEW",
+    "transition": {
+      "at": "2026-10-08T10:44:43.764189+00:00",
+      "to": "REVIEW"
+    },
+    "worker": "claude"
+  },
+  "files": [],
+  "id": "WP-EOS-GEMINI-ROUTE-REPAIR",
+  "metadata": {
+    "authorization": "Latest human explicit Gemini-route repair request"
+  },
+  "objective": "Repair Gemini audit transport, diagnostics and verification access",
+  "priority": 0,
+  "prompt": "Implement WP-EOS-GEMINI-ROUTE-REPAIR. You are Claude IMPLEMENTATION ONLY. User specifically authorizes fixing automated Gemini route and adequate audit access. Root /home/srinivas/R5_ENGINEERING_PLATFORM. Read existing gemini_worker.py, auditor_worker.py, claude_worker.py, base.py, test_workers.py, test_auditor.py and DIRECTOR_TRANSPORT_FINDINGS.json. Gemini actually read code/logs with no denials but stopped progressing; subprocess.run timeout discards partial diagnostic output. Existing --approval-mode plan may cause unnecessary planning workflow; do NOT claim proven cause. Installed Gemini CLI --help supports --approval-mode default/auto_edit/yolo/plan, --allowed-tools, --output-format stream-json/json. Inspect installed CLI source/help if needed; no web lookup required, install/restart nothing.\nRepair Gemini adapter only plus relevant tests and minimum shared WorkerError diagnostic handling if necessary:\n- Keep independent AUDIT role, source/production read-only filesystem mounts. Full relevant workspace code/reports/tests access; give a dedicated writable audit scratch directory (under platform work/gemini_audit_scratch) plus private /tmp for test copies/artifacts; CLI auth/session state remains writable. Do not expose production writes. Root sources already readable; no blanket security disable. Allow read/glob/search/list and required shell verification tools in headless mode instead of plan-only workflow; use CLI default + explicit --allowed-tools read_file/list_directory/glob/grep_search/search_file_content/run_shell_command as supported by actual CLI. Network/worker dispatch, live/data access forbidden by audit prompt. No financial data dirs added unnecessarily. Do not turn Gemini into implementation worker.\n- Capture structured streaming output, result/error/status/model metadata; require final successful result, not partial assistant message as accepted audit. Preserve transport partial stdout/stderr/error/progress metadata on timeout and nonzero exit in WorkerResult.raw so receipt can identify stage/access errors. Filter internal thought fields, auth/secrets and limit diagnostic tails; never claim partial verdict is PASS. Preserve API injectable subprocess runner used by tests; avoid changes to other worker behavior.\n- Real process timeout must terminate the request process group/children, not leave orphan model calls. No service restarts. Use bounded timeouts already configured; do not fix by merely raising timeout or model fallback.\n- Add meaningful tests: structured final success/error, malformed/incomplete stream/empty output/nonzero failure, TimeoutExpired partial diagnostics retention, exact allowed tools/ro-root+writable-scratch argv, child cleanup with a LOCAL fake subprocess only (no actual Gemini invocation), base error raw propagation if touched. Preserve transport forensic evidence. Existing tests run in current venv; install nothing. No model/Dispatcher invocation by implementation worker; Director verifies a real Gemini audit next.\n- Preserve before copies, write IMPLEMENTATION_RECEIPT.md + actual test log and SHA manifest in reports/dispatcher/WP-EOS-GEMINI-ROUTE-REPAIR. No trading repo/harness/snapshot/market data/strategy/calibration/parameter/Bridge modifications; no commit/push; do not change other worker settings. If CLI flags unsupported, report evidence and use supported equivalent rather than guess. Keep LIVE_TRADING_ENABLED=False. Do not write campaign state. Finish and stop.",
+  "requires_review": true,
+  "rules": [
+    "Gemini adapter and relevant transport tests only",
+    "No models/actual dispatch/market data during implementation",
+    "Source remains read-only to auditor; scratch writable"
+  ],
+  "submitted_at": "2026-10-08T10:42:04.584272+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

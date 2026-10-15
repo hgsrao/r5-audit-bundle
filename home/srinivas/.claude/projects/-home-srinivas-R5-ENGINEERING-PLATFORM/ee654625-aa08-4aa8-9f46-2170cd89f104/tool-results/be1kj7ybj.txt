@@ -1,0 +1,727 @@
+"""File-backed work-package queue: READY -> RUNNING -> DONE / FAILED / REVIEW.
+
+Each package is one JSON file moved between state directories with an atomic ``os.replace`` (claim = move READY -> RUNNING), so
+two dispatchers cannot run the same package.  Selection is highest ``priority`` first, then oldest submission, then id; a package
+whose ``depends_on`` ids are not all DONE is not selectable.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import socket
+import tempfile
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from .config import QUEUE_STATES
+
+REQUIRED_FIELDS = ("id", "type", "objective", "prompt")
+OPTIONAL_FIELDS = {"rules": list, "files": list, "metadata": dict, "priority": int, "worker": str,
+                   "requires_review": bool, "depends_on": list, "submitted_at": str, "dispatch": dict}
+ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
+
+
+class QueueError(RuntimeError):
+    """The queue refused an operation."""
+
+
+class PackageError(ValueError):
+    """A work package is malformed."""
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def validate_package(package: Any) -> dict[str, Any]:
+    """Return a normalized copy or raise PackageError.  Unknown fields are rejected."""
+    if not isinstance(package, dict):
+        raise PackageError("a work package must be a JSON object")
+    unknown = set(package) - set(REQUIRED_FIELDS) - set(OPTIONAL_FIELDS)
+    if unknown:
+        raise PackageError(f"unknown fields: {sorted(unknown)}")
+    for name in REQUIRED_FIELDS:
+        value = package.get(name)
+        if not isinstance(value, str) or not value.strip():
+            raise PackageError(f"{name} is required and must be non-empty text")
+    if not ID_PATTERN.match(package["id"]):
+        raise PackageError("id may contain only letters, digits, '.', '_' and '-' (max 128, no leading punctuation)")
+    normalized = dict(package)
+    for name, kind in OPTIONAL_FIELDS.items():
+        if name in normalized and (not isinstance(normalized[name], kind) or (kind is int and isinstance(normalized[name], bool))):
+            raise PackageError(f"{name} must be of type {kind.__name__}")
+    for name in ("rules", "files", "depends_on"):
+        if any(not isinstance(item, str) or not item for item in normalized.get(name, [])):
+            raise PackageError(f"{name} must be a list of non-empty strings")
+    normalized.setdefault("rules", [])
+    normalized.setdefault("files", [])
+    normalized.setdefault("metadata", {})
+    normalized.setdefault("priority", 0)
+    normalized.setdefault("requires_review", False)
+    normalized.setdefault("depends_on", [])
+    return normalized
+
+
+def _atomic_write(path: Path, payload: dict[str, Any]) -> None:
+    descriptor, temporary = tempfile.mkstemp(dir=str(path.parent), prefix=".tmp-", suffix=".json")
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            json.dump(payload, handle, indent=2, sort_keys=True)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    except BaseException:
+        try:
+            os.unlink(temporary)
+        except FileNotFoundError:
+            pass
+        raise
+
+
+HEARTBEAT_TIMEOUT = 300.0          # seconds without a heartbeat after which a RUNNING package may be reclaimed (WP-R5-004)
+
+
+def _process_start_ticks(pid: int) -> str | None:
+    """Kernel start time of a process (Linux /proc): distinguishes the owner from a later process that reuses its pid."""
+    try:
+        return Path(f"/proc/{pid}/stat").read_text().rsplit(")", 1)[1].split()[19]
+    except (OSError, IndexError):
+        return None
+
+
+def current_owner() -> dict[str, Any]:
+    return {"pid": os.getpid(), "start_ticks": _process_start_ticks(os.getpid()), "host": socket.gethostname()}
+
+
+def owner_is_alive(owner: dict[str, Any]) -> bool:
+    """True while the owning process still exists on this host (a different host can only be judged by its heartbeat)."""
+    if owner.get("host") != socket.gethostname():
+        return True
+    start = _process_start_ticks(int(owner.get("pid", -1)))
+    return start is not None and start == owner.get("start_ticks")
+
+
+class QueueManager:
+    def __init__(self, root: Path | str, heartbeat_timeout: float = HEARTBEAT_TIMEOUT,
+                 clock=time.time, is_alive=owner_is_alive) -> None:
+        self.root = Path(root)
+        for state in QUEUE_STATES:
+            (self.root / state).mkdir(parents=True, exist_ok=True)
+        self.owners = self.root / ".owners"
+        self.owners.mkdir(exist_ok=True)
+        self.heartbeat_timeout, self._clock, self._is_alive = heartbeat_timeout, clock, is_alive
+
+    # ------------------------------------------------------------------ ownership (one live owner per RUNNING package)
+    def _owner_path(self, package_id: str) -> Path:
+        return self.owners / f"{package_id}.owner.json"
+
+    def _write_owner(self, package_id: str) -> None:
+        _atomic_write(self._owner_path(package_id), {**current_owner(), "package": package_id, "heartbeat": self._clock()})
+
+    def heartbeat(self, package_id: str) -> bool:
+        """Refresh the heartbeat; refuses (False) when this process no longer owns the package."""
+        owner = self.owner_of(package_id)
+        if owner is None or (owner.get("pid"), owner.get("start_ticks")) != (os.getpid(), current_owner()["start_ticks"]):
+            return False
+        self._write_owner(package_id)
+        return True
+
+    def owner_of(self, package_id: str) -> dict[str, Any] | None:
+        try:
+            return json.loads(self._owner_path(package_id).read_text())
+        except (OSError, json.JSONDecodeError):
+            return None
+
+    def _release(self, package_id: str) -> None:
+        try:
+            self._owner_path(package_id).unlink()
+        except FileNotFoundError:
+            pass
+
+    def is_reclaimable(self, package_id: str) -> bool:
+        """A RUNNING package may be reclaimed ONLY when its owner process no longer exists OR its heartbeat has expired."""
+        owner = self.owner_of(package_id)
+        if owner is None:                                       # no owner record: judge by the age of the RUNNING file itself
+            try:
+                return self._clock() - self._path("RUNNING", package_id).stat().st_mtime > self.heartbeat_timeout
+            except FileNotFoundError:
+                return False
+        if not self._is_alive(owner):
+            return True
+        return self._clock() - float(owner.get("heartbeat", 0)) > self.heartbeat_timeout
+
+    def reclaim_stale(self, note: str = "") -> list[str]:
+        """Requeue only the RUNNING packages that are reclaimable; a live, heart-beating owner keeps its package."""
+        return [package_id for package_id in self.ids("RUNNING")
+                if self.is_reclaimable(package_id) and self.requeue_running(package_id, note=note)]
+
+    def _path(self, state: str, package_id: str) -> Path:
+        if state not in QUEUE_STATES:
+            raise QueueError(f"unknown queue state {state!r}")
+        return self.root / state / f"{package_id}.json"
+
+    def _read(self, path: Path) -> dict[str, Any]:
+        try:
+            return validate_package(json.loads(path.read_text()))
+        except (OSError, json.JSONDecodeError, PackageError) as exc:
+            raise QueueError(f"unreadable package {path.name}: {exc}") from exc
+
+    # ------------------------------------------------------------------ inspection
+    def state_of(self, package_id: str) -> str | None:
+        for state in QUEUE_STATES:
+            if self._path(state, package_id).exists():
+                return state
+        return None
+
+    def ids(self, state: str) -> list[str]:
+        self._path(state, "x")                                  # validates the state name
+        return sorted(p.stem for p in (self.root / state).glob("*.json"))
+
+    def counts(self) -> dict[str, int]:
+        return {state: len(self.ids(state)) for state in QUEUE_STATES}
+
+    def get(self, package_id: str) -> tuple[str, dict[str, Any]]:
+        state = self.state_of(package_id)
+        if state is None:
+            raise QueueError(f"no such package {package_id!r}")
+        return state, self._read(self._path(state, package_id))
+
+    # ------------------------------------------------------------------ mutation
+    def submit(self, package: dict[str, Any]) -> dict[str, Any]:
+        normalized = validate_package(package)
+        if self.state_of(normalized["id"]) is not None:
+            raise QueueError(f"package {normalized['id']!r} already exists in the queue")
+        normalized.setdefault("submitted_at", utc_now())
+        _atomic_write(self._path("READY", normalized["id"]), normalized)
+        return normalized
+
+    def _selectable(self, package: dict[str, Any], done: set[str]) -> bool:
+        return all(dep in done for dep in package["depends_on"])
+
+    def peek_order(self) -> list[str]:
+        """READY ids in dispatch order (ignores dependencies)."""
+        entries = []
+        for package_id in self.ids("READY"):
+            try:
+                package = self._read(self._path("READY", package_id))
+            except QueueError:
+                continue
+            entries.append((-package["priority"], package.get("submitted_at", ""), package_id))
+        return [item[2] for item in sorted(entries)]
+
+    def claim_next(self) -> dict[str, Any] | None:
+        """Atomically move the best selectable READY package to RUNNING and return it (None when nothing is selectable)."""
+        done = set(self.ids("DONE"))
+        candidates = []
+        for package_id in self.ids("READY"):
+            try:
+                package = self._read(self._path("READY", package_id))
+            except QueueError:
+                self._quarantine(package_id)
+                continue
+            if self._selectable(package, done):
+                candidates.append(((-package["priority"], package.get("submitted_at", ""), package_id), package))
+        for _, package in sorted(candidates, key=lambda item: item[0]):
+            source, target = self._path("READY", package["id"]), self._path("RUNNING", package["id"])
+            try:
+                os.replace(source, target)                      # atomic claim; losing a race raises FileNotFoundError
+            except FileNotFoundError:
+                continue
+            self._write_owner(package["id"])
+            return package
+        return None
+
+    def _quarantine(self, package_id: str) -> None:
+        """A malformed READY file can never be dispatched: move it to FAILED so it cannot block the queue."""
+        source = self._path("READY", package_id)
+        try:
+            os.replace(source, self._path("FAILED", package_id))
+        except FileNotFoundError:
+            pass
+
+    def complete(self, package_id: str, state: str, dispatch_info: dict[str, Any]) -> dict[str, Any]:
+        """RUNNING -> DONE / FAILED / REVIEW, recording the dispatch information inside the package file."""
+        if state not in ("DONE", "FAILED", "REVIEW"):
+            raise QueueError("a package can only complete into DONE, FAILED or REVIEW")
+        source = self._path("RUNNING", package_id)
+        if not source.exists():
+            raise QueueError(f"package {package_id!r} is not RUNNING")
+        package = self._read(source)
+        package["dispatch"] = dispatch_info
+        target = self._path(state, package_id)
+        _atomic_write(target, package)
+        os.unlink(source)
+        self._release(package_id)
+        return package
+
+    def requeue_running(self, package_id: str | None = None, note: str = "") -> list[str]:
+        """Return RUNNING packages (all, or one) to READY: used after an unexpected dispatcher exit."""
+        moved = []
+        for current in ([package_id] if package_id else self.ids("RUNNING")):
+            source = self._path("RUNNING", current)
+            if not source.exists():
+                continue
+            package = self._read(source)
+            attempts = int(package.get("dispatch", {}).get("requeues", 0)) + 1
+            package["dispatch"] = {"requeues": attempts, "last_requeue_at": utc_now(), "note": note}
+            _atomic_write(self._path("READY", current), package)
+            os.unlink(source)
+            self._release(current)
+            moved.append(current)
+        return moved
+"""Engineering Dispatcher V1: queue -> select -> route -> worker -> receipt -> state -> log -> next package."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import signal
+import sys
+import threading
+import time
+import traceback
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Callable, Mapping
+
+from .config import ConfigError, DispatcherConfig, load_config
+from .queue_manager import PackageError, QueueError, QueueManager, utc_now
+from .receipt_writer import ReceiptWriter
+from .state_manager import StateManager
+from .worker_router import RoutingError, WorkerRouter, build_workers
+from .workers.base import Worker, WorkerResult
+
+
+@dataclass(frozen=True)
+class DispatchOutcome:
+    package_id: str
+    worker: str | None
+    state: str
+    receipt_json: str
+    receipt_markdown: str
+
+
+class Dispatcher:
+    def __init__(self, config: DispatcherConfig, workers: Mapping[str, Worker] | None = None,
+                 queue: QueueManager | None = None, receipts: ReceiptWriter | None = None,
+                 state: StateManager | None = None, sleep: Callable[[float], None] = time.sleep) -> None:
+        self.config = config
+        self.queue = queue or QueueManager(config.queue_dir)
+        self.receipts = receipts or ReceiptWriter(config.receipts_dir, config.logs_dir)
+        self.state = state or StateManager(config.current_state_path, config.handover_path,
+                                           config.receipts_dir / "handover_archive")
+        self.router = WorkerRouter(config, workers if workers is not None else build_workers(config))
+        self._sleep = sleep
+        self._current: str | None = None
+
+    # ------------------------------------------------------------------ state
+    def snapshot(self) -> dict[str, Any]:
+        return {"queue": self.queue.counts(), "running": self.queue.ids("RUNNING"), "recent": self.receipts.recent(),
+                "updated_at": utc_now()}
+
+    def recover(self) -> list[str]:
+        """Return to READY only RUNNING packages whose owner process is gone or whose heartbeat expired (never a live owner's)."""
+        moved = self.queue.reclaim_stale(note="recovered at dispatcher start: owner gone or heartbeat expired")
+        if moved:
+            self.receipts.log("RECOVERED", packages=moved)
+        return moved
+
+    # ------------------------------------------------------------------ one package
+    def run_once(self) -> DispatchOutcome | None:
+        package = self.queue.claim_next()
+        if package is None:
+            return None
+        self._current = package["id"]
+        stop_beat = self._start_heartbeat(package["id"])
+        started = utc_now()
+        self.receipts.log("START", package=package["id"], type=package["type"])
+        self.state.update_current_state(self.snapshot())              # RUNNING must be visible while the package runs
+        worker_name: str | None = None
+        audit = (self.config.auditor.context() if self.router.is_audit(package) and self.config.auditor is not None else None)
+        try:
+            worker = self.router.select(package)
+            worker_name = worker.name
+            self.receipts.log("DISPATCH", package=package["id"], worker=worker_name,
+                              **({} if audit is None else {"audit_root": audit["audit_root"], "access": audit["access"]}))
+            result = worker.execute(package if audit is None else {**package, "_audit": audit})
+        except RoutingError as exc:
+            result = WorkerResult(worker="none", ok=False, error=str(exc))
+        stop_beat.set()
+        final = ("REVIEW" if result.needs_review else "DONE") if result.ok else "FAILED"
+        finished = utc_now()
+        written = self.receipts.write(package, worker_name, final, result, started, finished, audit)
+        self.queue.complete(package["id"], final, {"worker": worker_name, "state": final, "started_at": started,
+                                                   "finished_at": finished, "receipt": written["json"],
+                                                   **({} if audit is None else {"audit_root": audit["audit_root"]})})
+        self._current = None
+        self.state.update_current_state(self.snapshot())
+        self.receipts.log("END", package=package["id"], worker=worker_name, state=final, error=result.error)
+        return DispatchOutcome(package["id"], worker_name, final, written["json"], written["markdown"])
+
+    def _start_heartbeat(self, package_id: str) -> threading.Event:
+        """Refresh the ownership heartbeat while the worker runs, so a live dispatcher is never mistaken for a dead one."""
+        stop = threading.Event()
+        interval = max(self.queue.heartbeat_timeout / 5.0, 0.01)
+
+        def beat() -> None:
+            while not stop.wait(interval):
+                self.queue.heartbeat(package_id)
+
+        threading.Thread(target=beat, name=f"heartbeat-{package_id}", daemon=True).start()
+        return stop
+
+    # ------------------------------------------------------------------ loop
+    def run(self, *, max_packages: int | None = None, stop_when_empty: bool = True) -> list[DispatchOutcome]:
+        outcomes: list[DispatchOutcome] = []
+        try:
+            self.recover()
+            while max_packages is None or len(outcomes) < max_packages:
+                outcome = self.run_once()
+                if outcome is None:
+                    if stop_when_empty:
+                        break
+                    self._sleep(self.config.poll_seconds)
+                    continue
+                outcomes.append(outcome)
+        except BaseException as exc:
+            self._unexpected_exit(exc)
+            raise
+        return outcomes
+
+    def _unexpected_exit(self, exc: BaseException) -> None:
+        """Requeue interrupted work and write R5_HANDOVER.md.  Bookkeeping failures never mask the original exception."""
+        requeued: list[str] = []
+        try:
+            if self._current is not None:                                  # only what THIS dispatcher owns, never another's package
+                requeued = self.queue.requeue_running(self._current, note=f"dispatcher exited unexpectedly: {type(exc).__name__}")
+        except Exception:                                                  # noqa: BLE001 - best effort, original exception wins
+            pass
+        self._current = None
+        try:
+            self.receipts.log("UNEXPECTED_EXIT", error=f"{type(exc).__name__}: {exc}", requeued=requeued)
+            snapshot = self.snapshot()
+            self.state.update_current_state(snapshot)
+            self.state.write_handover(f"The dispatcher exited unexpectedly ({type(exc).__name__}: {exc}).", snapshot, requeued,
+                                      "".join(traceback.format_exception(type(exc), exc, exc.__traceback__)))
+        except Exception:                                                  # noqa: BLE001
+            pass
+
+
+def _terminate(signum, frame):
+    raise SystemExit(128 + signum)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(prog="engineering_dispatcher.dispatcher", description="R5 Engineering Dispatcher V1")
+    parser.add_argument("--config", help="JSON configuration file")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--once", action="store_true", help="dispatch at most one package")
+    mode.add_argument("--drain", action="store_true", help="dispatch until the queue is empty (default)")
+    mode.add_argument("--watch", action="store_true", help="keep polling the queue until interrupted")
+    mode.add_argument("--status", action="store_true", help="print queue counts and exit")
+    mode.add_argument("--submit", metavar="FILE", help="validate FILE and add it to READY, then exit")
+    return parser
+
+
+def main(argv: list[str] | None = None, workers: Mapping[str, Worker] | None = None, install_signals: bool = False) -> int:
+    args = build_parser().parse_args(argv)
+    try:
+        config = load_config(args.config)
+        dispatcher = Dispatcher(config, workers=workers)
+    except (ConfigError, ValueError) as exc:
+        print(f"configuration error: {exc}", file=sys.stderr)
+        return 2
+    if args.status:
+        print(json.dumps(dispatcher.snapshot(), indent=2, sort_keys=True))
+        return 0
+    if args.submit:
+        try:
+            package = dispatcher.queue.submit(json.loads(Path(args.submit).read_text()))
+        except (OSError, json.JSONDecodeError, PackageError, QueueError) as exc:
+            print(f"submit refused: {exc}", file=sys.stderr)
+            return 2
+        print(f"submitted {package['id']}")
+        return 0
+    if install_signals:
+        signal.signal(signal.SIGTERM, _terminate)
+    outcomes = dispatcher.run(max_packages=1 if args.once else None, stop_when_empty=not args.watch)
+    for outcome in outcomes:
+        print(f"{outcome.package_id}\t{outcome.state}\t{outcome.worker}")
+    return 1 if any(o.state == "FAILED" for o in outcomes) else 0
+
+
+if __name__ == "__main__":                                                  # pragma: no cover
+    raise SystemExit(main(install_signals=True))
+"""Receipts (JSON + Markdown + raw response) and the append-only JSON-lines dispatcher log."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+from typing import Any
+
+from .queue_manager import _atomic_write, utc_now
+from .workers.base import WorkerResult
+
+RECEIPT_SCHEMA = "r5.dispatcher.receipt/1"
+RECENT_LIMIT = 20
+
+
+def sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def package_digest(package: dict[str, Any]) -> str:
+    return sha256_text(json.dumps(package, sort_keys=True, separators=(",", ":")))
+
+
+class ReceiptWriter:
+    def __init__(self, receipts_dir: Path | str, logs_dir: Path | str) -> None:
+        self.receipts_dir = Path(receipts_dir)
+        self.logs_dir = Path(logs_dir)
+        self.receipts_dir.mkdir(parents=True, exist_ok=True)
+        self.logs_dir.mkdir(parents=True, exist_ok=True)
+        self.log_path = self.logs_dir / "dispatcher.log"
+        self.recent_path = self.receipts_dir / "recent.json"
+
+    def _stem(self, package_id: str) -> str:
+        """A re-dispatched package (after a requeue) never overwrites an earlier receipt."""
+        stem, attempt = package_id, 1
+        while (self.receipts_dir / f"{stem}.receipt.json").exists():
+            attempt += 1
+            stem = f"{package_id}.attempt{attempt}"
+        return stem
+
+    def write(self, package: dict[str, Any], worker: str | None, state: str, result: WorkerResult,
+              started_at: str, finished_at: str, audit: dict[str, Any] | None = None) -> dict[str, Any]:
+        stem = self._stem(package["id"])
+        response_file = None
+        if result.output:
+            response_file = f"{stem}.response.txt"
+            (self.receipts_dir / response_file).write_text(result.output, encoding="utf-8")
+        receipt = {
+            "schema": RECEIPT_SCHEMA, "package_id": package["id"], "type": package["type"], "objective": package["objective"],
+            "worker": worker, "state": state, "ok": result.ok, "error": result.error, "needs_review": result.needs_review,
+            "started_at": started_at, "finished_at": finished_at, "elapsed_seconds": result.elapsed_seconds,
+            "package_sha256": package_digest({k: v for k, v in package.items() if k != "dispatch"}),
+            "output_sha256": sha256_text(result.output) if result.output else None, "response_file": response_file,
+        }
+        if audit is not None:
+            receipt["audit_root"] = audit["audit_root"]
+            receipt["audit"] = audit
+        json_path, md_path = self.receipts_dir / f"{stem}.receipt.json", self.receipts_dir / f"{stem}.receipt.md"
+        _atomic_write(json_path, receipt)
+        md_path.write_text(self._markdown(receipt, result), encoding="utf-8")
+        self._remember(receipt)
+        return {"receipt": receipt, "json": str(json_path), "markdown": str(md_path),
+                "response": None if response_file is None else str(self.receipts_dir / response_file)}
+
+    @staticmethod
+    def _markdown(receipt: dict[str, Any], result: WorkerResult) -> str:
+        lines = [f"# Receipt {receipt['package_id']}", "",
+                 "| Field | Value |", "|---|---|"]
+        for key in ("type", "worker", "state", "ok", "needs_review", "started_at", "finished_at", "elapsed_seconds",
+                    "package_sha256", "output_sha256", "response_file"):
+            lines.append(f"| {key} | {receipt[key]} |")
+        if "audit" in receipt:
+            audit = receipt["audit"]
+            lines += [f"| audit_root | {audit['audit_root']} |", f"| audit_access | {audit['access']} |",
+                      f"| audit_profile | {audit['profile']} (sandbox: {audit['sandbox']}) |",
+                      f"| audit_granted_paths | {', '.join(audit['granted_paths'])} |"]
+        lines += ["", "## Objective", receipt["objective"], ""]
+        if receipt["error"]:
+            lines += ["## Error", receipt["error"], ""]
+        if result.output:
+            preview = result.output if len(result.output) <= 2000 else result.output[:2000] + "\n... (truncated; see the response file)"
+            lines += ["## Response", "```text", preview, "```", ""]
+        return "\n".join(lines)
+
+    # ------------------------------------------------------------------ recent history
+    def _remember(self, receipt: dict[str, Any]) -> None:
+        entries = self.recent()
+        entries.append({k: receipt[k] for k in ("package_id", "state", "worker", "finished_at")})
+        _atomic_write(self.recent_path, {"recent": entries[-RECENT_LIMIT:]})
+
+    def recent(self) -> list[dict[str, Any]]:
+        try:
+            data = json.loads(self.recent_path.read_text())
+            return list(data["recent"])
+        except (OSError, json.JSONDecodeError, KeyError, TypeError):
+            return []
+
+    # ------------------------------------------------------------------ log
+    def log(self, event: str, **fields: Any) -> dict[str, Any]:
+        record = {"ts": utc_now(), "event": event, **fields}
+        with open(self.log_path, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, sort_keys=True) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        return record
+"""Worker contract and the deterministic prompt formatter shared by every adapter."""
+
+from __future__ import annotations
+
+import time
+from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+from typing import Any
+
+from ..config import WorkerSettings
+
+REVIEW_MARKER = "STATUS: REVIEW"
+
+
+class WorkerError(RuntimeError):
+    """A worker could not complete the request (transport failure, non-zero exit, empty or error response)."""
+
+
+@dataclass(frozen=True)
+class WorkerResult:
+    worker: str
+    ok: bool
+    output: str = ""
+    error: str | None = None
+    elapsed_seconds: float = 0.0
+    needs_review: bool = False
+    raw: dict[str, Any] = field(default_factory=dict)
+
+
+def format_prompt(package: dict[str, Any]) -> str:
+    """Format the supplied fields only; nothing is inferred and no file is opened."""
+    lines = [f"WORK PACKAGE {package['id']} ({package['type']})", "", "OBJECTIVE", package["objective"], ""]
+    audit = package.get("_audit")
+    if audit:
+        lines += ["AUDIT CONTEXT (set by the dispatcher)",
+                  f"- Audit root: {audit['audit_root']} (also your working directory)",
+                  f"- Access: {audit['access']}. You cannot and must not modify anything; discover and read evidence anywhere under the audit root.",
+                  f"- Named evidence locations: {', '.join(audit['granted_paths'])}",
+                  "- No audit bundle is prepared for you: find the evidence yourself and cite exact paths.", ""]
+    if package.get("rules"):
+        lines += ["RULES", *[f"- {rule}" for rule in package["rules"]], ""]
+    if package.get("files"):
+        lines += ["FILES (references only)", *[f"- {name}" for name in package["files"]], ""]
+    lines += ["PROMPT", package["prompt"]]
+    return "\n".join(lines)
+
+
+class Worker(ABC):
+    """Subclasses implement ``_send`` (one request) and return the response text plus the raw transport payload."""
+
+    kind = ""
+
+    def __init__(self, settings: WorkerSettings, clock=time.monotonic) -> None:
+        if settings.kind != self.kind:
+            raise ValueError(f"{type(self).__name__} requires a {self.kind!r} worker setting, got {settings.kind!r}")
+        self.settings = settings
+        self._clock = clock
+
+    @property
+    def name(self) -> str:
+        return self.settings.name
+
+    @abstractmethod
+    def _send(self, prompt: str) -> tuple[str, dict[str, Any]]:
+        """Perform exactly one request; raise WorkerError on any failure."""
+
+    def execute(self, package: dict[str, Any]) -> WorkerResult:
+        started = self._clock()
+        try:
+            output, raw = self._send(format_prompt(package))
+            if not isinstance(output, str) or not output.strip():
+                raise WorkerError("empty response")
+        except WorkerError as exc:
+            return WorkerResult(self.name, False, error=str(exc), elapsed_seconds=self._clock() - started)
+        except Exception as exc:                                    # an adapter bug or transport exception is a worker failure
+            return WorkerResult(self.name, False, error=f"{type(exc).__name__}: {exc}", elapsed_seconds=self._clock() - started)
+        review = bool(package.get("requires_review")) or output.lstrip().startswith(REVIEW_MARKER)
+        return WorkerResult(self.name, True, output=output, elapsed_seconds=self._clock() - started, needs_review=review, raw=raw)
+config
+engineering_dispatcher
+tests
+# WP-R5-004 — DISPATCHER_RACE_REVIEW (independent review, report-only, 2026-10-08)
+
+> **Codex acceptance review — 2026-10-08.** This is static report completion only: **PASS WITH FINDINGS**. Execution remains **NOT QUALIFIED**, production **NOT READY**, ACTIVE_H=11, ACTIVE_I=19, ACTIVE_J=4. No replay, tests, calibration, production edits or Dispatcher changes were performed in this resumption. Claude's original response is preserved in `evidence/resume_2026-10-08/claude_stdout.json`.
+>
+> Codex independently performed read-only git identity and code/document hashing. The original checkout is HEAD `59371ff06d17b49d917a81aed294c2e254c97574`, with 8 modified tracked files and 239 untracked files. The runner SHA is freshly verified in the evidence receipts; the historical 957-file drift count is not freshly verified. Worker statements that hashing/git were not run describe Claude's restricted session, not Codex's verification.
+>
+> Protected indicator identity remains `a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2` (HEAD blob and campaign copy). The original checkout's dirty file is `5ba126430609de2fae08a98bed7d178c2377704c3b5b4c816d45c343439bc618`; it is not ratified or restored here. There is no need to choose an invented replacement SHA.
+>
+> Chronological TRAIN slicing does **not inherently require reading Validation/Holdout bytes**. Whole-file seal recomputation does. A bounded extractor must prove ordering, sentinel and physical read boundaries; hashing the extracted slice does not by itself prove its membership in a previously sealed whole file. File size and historical whole-file hashes alone do not prove the current prefix unchanged. Option B remains an unapproved proposal, not an accepted design; its superiority cannot be inferred from an unavoidable holdout read for Option A.
+>
+> The latest instruction prohibits a new package. No WP-R5-005 package was persisted, queued or dispatched. References below to preparing it are worker proposals only. Entry-point, loader/identity qualification and Dispatcher ownership remain unresolved. Existing queue DONE is not engineering acceptance. No architecture or replay authorization is inferred from report completion.
+
+
+Scope: review of the operator-side `DISPATCHER_RACE_REPORT.md` against the code in `/home/srinivas/R5_ENGINEERING_PLATFORM/engineering_dispatcher/{queue_manager,dispatcher}.py`, `tests/{test_queue,test_dispatcher}.py`, the backup `work/engineering_dispatcher.before_WP-R5-004/`, `logs/dispatcher.log` and `receipts/dispatcher/`. Read-only. I did **not** run the dispatcher, the tests or the harness. The 157-test and 97.8%-coverage claims, and the harness outputs (`START events: 2` and `1`), are **UNVERIFIED by me**. The harness script `evidence/race_harness/run.sh` exists, but its outputs were not stored.
+
+## 1. Do the report's claims match the code?
+
+| Claim (report §) | Check | Result |
+|---|---|---|
+| §2.1 old `recover()` requeued every RUNNING package | backup `dispatcher.py:52`: `requeue_running(note=...)` with no id | MATCH |
+| §2.2 old `_unexpected_exit` requeued all RUNNING | backup `dispatcher.py:109`, same | MATCH |
+| §2.3 atomic `os.replace` claim was not the defect | `queue_manager.py:232` | MATCH |
+| §3 owner record has pid, kernel start-ticks, host, heartbeat | `queue_manager.py:97-98`, `:124` | MATCH |
+| §3 `heartbeat()` is owner-only | `:126-132` | MATCH |
+| §3 foreign host is judged by heartbeat only | `:103-104`, `:156` | MATCH |
+| §3 missing owner record is judged by RUNNING file age | `:149-152` | MATCH, but see H3 |
+| §3 owner released on `complete()` and `requeue_running()` | `:259`, `:274` | MATCH |
+| §3 `recover()` → `reclaim_stale()` | `dispatcher.py:53` | MATCH |
+| §3 daemon heartbeat every timeout/5 while a worker runs | `dispatcher.py:90-100`; the stop event is set only on the normal path (`:78`) | MATCH, minor leak on exceptions (H7) |
+| §3 `_unexpected_exit` requeues only `self._current` | `dispatcher.py:124-125` | MATCH, but no ownership check (H1) |
+| §5 "a deposed run fails at `complete()` (QueueError) rather than corrupting state" | `complete()` only checks that the RUNNING file exists (`:251-253`) | **PARTLY FALSE**: true only if nobody re-claimed the package (H1) |
+| §1 incident timeline | `logs/dispatcher.log` lines 24-35: A START 07:22:09; RECOVERED 07:22:15; B fails with `claude` not found; C START 07:22:28; END DONE 07:26:05; UNEXPECTED_EXIT 07:27:47 (`QueueError ... is not RUNNING`, `requeued: []`) | MATCH. The log has no pid, so the A/B/C attribution is inferred, not proved. |
+| §1 three receipts | `receipts/dispatcher/` holds `WP-R5-003.receipt`, `.attempt2`, `.attempt3` | MATCH |
+| Post-fix live observation | Log lines 38-43: a dispatcher for WP-EOS-009A started at 07:35:55, 17 s into WP-R5-004, with no RECOVERED event. This is consistent with the fix. It does not prove the fix was in place then. | CONSISTENT, not proof |
+| Live owner file | `queue/.owners/*` returned no match from Glob today. That directory is hidden, so absence is **UNKNOWN**. | UNKNOWN |
+
+## 2. The rule "reclaim only if owner process gone OR heartbeat expired" — path by path
+
+| Path | Does the rule hold? | Evidence |
+|---|---|---|
+| `recover()` → `reclaim_stale()` → `is_reclaimable()` | Holds at check time. **Not atomic with the move** (H2). | `queue_manager.py:158-161`, `:146-156` |
+| `_unexpected_exit` | **Does not apply the rule.** It requeues `self._current` without checking ownership (H1). | `dispatcher.py:124-125` |
+| `requeue_running(package_id)` | The method itself has no guard. It is safe only because its callers choose the id. With no argument it requeues **all** RUNNING packages (H6). | `queue_manager.py:262-276` |
+| `complete()` | **Does not check ownership.** Any dispatcher whose `run_once` holds that package id can finish it, and `_release` then deletes the real owner's record (H1). | `:247-260` |
+| `claim_next()` | Atomic claim holds. The owner record is written after the rename (H3). | `:230-236` |
+| `heartbeat()` | Refuses a non-owner (returns False), but the caller ignores the result (H1b). | `queue_manager.py:126-132`, `dispatcher.py:95-97` |
+
+**Verdict: the rule does NOT hold in every code path.** It holds in the start-up path (`recover`), apart from the check-then-act gap. It is not enforced in `_unexpected_exit` or `complete`.
+
+Test evidence for H1: `test_unexpected_exit_requeues_only_the_package_this_dispatcher_owns` sets `second._current = "A"` for a package that `first` owns, and then asserts it IS requeued (`test_dispatcher.py:185-195`). The test encodes the hole as expected behaviour. The tests do not cover a deposed dispatcher that finishes a re-claimed package.
+
+## 3. Findings
+
+| ID | Severity | Finding | Evidence |
+|---|---|---|---|
+| H1 | MEDIUM | A deposed dispatcher A (heartbeat expired, package reclaimed and re-claimed by B) can call `complete()` and move B's RUNNING package to DONE/FAILED with A's result, then `_release` deletes B's owner record. B keeps working, and B's own `complete()` later raises. `_unexpected_exit` can likewise requeue B's live package. This is the very incident class the fix targets, remaining for the heartbeat-expired case. | `queue_manager.py:247-260`; `dispatcher.py:82`, `:124-125` |
+| H1b | MEDIUM | `heartbeat()` returns False when this process is deposed, but the heartbeat thread ignores it. The deposed worker keeps running and no abort is signalled. | `dispatcher.py:95-97` |
+| H2 | LOW-MED | `is_reclaimable` and `requeue_running` are separate steps. Two starting dispatchers can both judge the same package stale. The second then moves it again, possibly after the first has re-claimed it. | `queue_manager.py:160-161` |
+| H3 | LOW | `claim_next` writes the owner record after the rename. `os.replace` preserves mtime, so for a package submitted over 300 s ago the no-owner age check can judge a fresh claim stale during that window. | `:232-235`, `:149-152` |
+| H4 | LOW (pre-existing) | `requeue_running` writes READY before unlinking RUNNING, so a crash between the two leaves duplicates. `complete()` does the same with its target. | `:272-273`, `:257-258` |
+| H5 | CONDITIONAL | If `/proc` is unreadable or the PID namespace differs, `owner_is_alive` returns False and the owner counts as dead. Reclaim then fails open. This matters for a nested dispatcher inside a sandbox, which is how the WP-R5-003 incident happened. | `:89-106` |
+| H6 | LOW | `requeue_running()` with no argument still requeues every RUNNING package, bypassing the rule. No current caller uses it that way, but it is public. | `:262-265` |
+| H7 | LOW | The heartbeat uses wall-clock `time.time` (clock jumps can expire or extend ownership). The stop event is not set on the exception path. A hung worker never loses its package because the heartbeat is thread-based. A malformed owner file (non-integer pid) raises inside `is_reclaimable`. | `queue_manager.py:111`, `:105`; `dispatcher.py:78-100` |
+
+The report's own limitations (frozen-process >300 s, foreign host, nested worker invoking the dispatcher) are accurate. The nested-worker limitation is the practical route to H5 and is **not applied** (a config change outside the package).
+
+## 4. Remaining holes and suggested closure (not applied; the dispatcher is out of scope)
+
+1. `complete()` and `_unexpected_exit` should verify `owner_of(id)` matches `current_owner()` and refuse otherwise. When `heartbeat()` returns False, the dispatcher should set a deposed flag and abort its worker.
+2. Make reclaim atomic: for example, move the RUNNING file to a per-claimant temp name before deciding, or hold a lock on the owner record.
+3. Write the owner record before the rename (or use a "claiming" record).
+4. Treat an unreadable `/proc` as "unknown", and judge by heartbeat only.
+5. Remove the default-all behaviour of `requeue_running`.
+6. Add tests for the deposed-dispatcher cases, and revise the test at `test_dispatcher.py:185-195`.
+
+## 5. Verdict
+
+**Report-to-code match: substantially accurate, with one materially wrong sentence (§5 on `complete()`).** The fix does close the observed incident (a live owner is not reclaimed at start-up), but this is **supported only by the code and unit tests I read, and by log consistency. The harness result and the 157-pass claim are unverified by me.** The rule "reclaim only if owner gone or heartbeat expired" is **not** enforced in `complete()` or `_unexpected_exit`, so ownership holes remain (H1, H1b, H2). The race review is therefore **not clean**.
+
+Nothing was edited, run or submitted.

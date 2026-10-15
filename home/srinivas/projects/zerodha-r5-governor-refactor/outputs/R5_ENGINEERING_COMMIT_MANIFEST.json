@@ -1,0 +1,33 @@
+{
+  "manifest_version": "1.0",
+  "target_scope": "R5-D02.2 Verified Engineering Exit Finalization Commit",
+  "accepted_engineering_files": [
+    "revision2_external/paper_execution.py",
+    "revision5/combined_cycle_store.py",
+    "runtime/operating_mode.py"
+  ],
+  "accepted_engineering_tests": [
+    "tests/test_r5_d02_exit_atomicity_repro.py",
+    "tests/test_revision5_engine_applicability.py",
+    "tests/test_r5_d02_engine_b_recovery.py",
+    "tests/test_r5_d02_exit_finalization.py",
+    "tests/test_r5_d02_journal_nested_transaction.py"
+  ],
+  "mixed_files_requiring_hunk_selection": {
+    "revision2_external/orchestrator.py": {
+      "accepted_hunks": "D02 deterministic exit intent, broker fill fact, two durability barriers, idempotent finalizer",
+      "deferred_hunks": "Account-level state restoration, cursor re-entry, general controller hydration",
+      "safe_hunk_separation": "YES (D02 exit finalization hooks and recovery state transitions are structurally decoupled from general account/cursor hydration)"
+    },
+    "revision5/combined_cycle_runtime.py": {
+      "accepted_hunks": "D02 deterministic exit intent, broker fill fact, two durability barriers, idempotent finalizer",
+      "deferred_hunks": "Account-level state restoration, cursor re-entry, general controller hydration",
+      "safe_hunk_separation": "YES (D02 exit finalization hooks and recovery state transitions are structurally decoupled from general account/cursor hydration)"
+    },
+    "revision5/state_recovery.py": {
+      "accepted_hunks": "D02 deterministic exit intent, broker fill fact, two durability barriers, idempotent finalizer",
+      "deferred_hunks": "Account-level state restoration, cursor re-entry, general controller hydration",
+      "safe_hunk_separation": "YES (D02 exit finalization hooks and recovery state transitions are structurally decoupled from general account/cursor hydration)"
+    }
+  }
+}

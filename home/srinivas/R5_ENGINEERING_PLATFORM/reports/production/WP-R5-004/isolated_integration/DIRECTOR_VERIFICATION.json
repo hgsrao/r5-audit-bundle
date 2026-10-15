@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-08T13:45:31.545623+00:00",
+  "package": "WP-R5-004-ISOLATED-INTEGRATION",
+  "reviewer": "Codex",
+  "status": "DIRECTOR VERIFICATION PASSED; GEMINI AUDIT PENDING",
+  "tests": {
+    "command": "python -I -m pytest harness_tests/test_isolated_integration.py -q -W ignore -p no:cacheprovider",
+    "passed": 141,
+    "elapsed_seconds": 25.15
+  },
+  "source_hashes_checked": 8,
+  "mismatches": [],
+  "worker_regression_claim": "181 passed",
+  "worker_mutation_claim": "26/26 killed",
+  "scope": "Synthetic integration only; real release closed",
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY"
+}

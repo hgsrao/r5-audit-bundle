@@ -1,0 +1,8 @@
+no_chronology_check KILLED | 1 failed, 17 passed in 2.65s
+no_consumed_hash KILLED | 1 failed, 9 passed in 1.84s
+no_train_end_guard KILLED | 1 failed, 20 passed in 2.74s
+no_size_check KILLED | 1 failed, 24 passed in 3.28s
+no_strict_prefix KILLED | 1 failed, 11 passed in 2.10s
+no_manifest_recompute KILLED | 1 failed, 24 passed in 3.23s
+tripwire_noop KILLED | 1 failed, 28 passed in 3.53s
+no_first_ts_check KILLED | 1 failed, 24 passed in 3.20s

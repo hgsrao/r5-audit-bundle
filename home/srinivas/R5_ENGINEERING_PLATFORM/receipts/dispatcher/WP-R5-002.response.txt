@@ -1,0 +1,39 @@
+**Decision: PASS WITH FINDINGS.** The replay was not run, and WP-R5-003 was not created.
+
+It is not a plain PASS. The matrix holds 7 NOT_QUALIFIED and 4 UNKNOWN inputs. The no-CNC/GTT result also holds only for the stated replay configuration (C1–C5 in the report).
+
+**Inputs (73 rows)**
+- QUALIFIED: 59.
+- QUALIFIED_WITH_ASSUMPTION: 3 (Baseline-001, NSE master, 001C index).
+- NOT_QUALIFIED: 7 — candidate params, MIS cost schedule, CNC cost schedule, slippage, regime/HMM floors, session calendar, TRAIN-segment loader.
+- UNKNOWN: 4 — A-META-001 wording, registry frozen identity, code pin versus the dirty working tree, Python environment.
+
+**Integrity**
+- Baseline-001 hash chain re-verified by recomputing sha256: 10/10 OK. I re-counted 48/48 symbols and the tick split from the raw file; it matches 001C.
+- All 48 frozen 1-minute files match both `acquisition_manifest.json` and the repo `DATASET_MANIFEST_48SYMBOL_1MIN.json`, by hash and size. I recomputed `manifest_hash` (f724074c…) and it matches. The grid feeds match the protocol seals, and `trial_000.json` matches the receipt. There were no mismatches.
+- I hashed the files only and read no rows. Each file spans 2023-07-03 to 2026-08-24, so TRAIN, validation and holdout share it. The replay must restrict to TRAIN.
+
+**CNC/GTT**
+- The tick-consuming logic (`protection_tick_size`, `ensure_cnc_gtt`, `gtt_sell_limit`, `_check_active_gtts`) is reachable only through `morning_recovery.prepare`. No replay entry point calls it, and the replay default `instrument_metadata=None` makes any tick lookup fail closed.
+- CNC conversion and `COST_SCHEDULE_UNQUALIFIED` legs are reachable only if the combined-cycle runtime is enabled. Those legs are flagged NOT_QUALIFIED and are not tick-consuming.
+- The GTT hard block applies to the `live` environment only. The paper simulation policy is accepted and its authority is NOT_QUALIFIED.
+- I found no runtime tripwire. The result rests on static caller tracing.
+
+**Main findings (F-01 to F-12 in the report)**
+- **Dirty working tree:** `git status`, `diff` and `show` needed approval and were not run. I analysed the working-tree files, pinned by sha256. Whether they equal HEAD 59371ff is unverified.
+- **Grid manifest:** `grid-manifest-local.json` is absent from the R5 checkout and exists only under `zerodha-phase1`. The replay root needs to be designated.
+- **`scripts/run_r5_paper_replay.py`:** it loads whole files and the latest rows, so it is not TRAIN-safe and must not be used for the TRAIN replay.
+- **Whole-file hashing:** the sealed worker hashes whole files, and no segment-restricted loader is established.
+- **WP01 receipt discrepancy:** it says the replay "requires a certified instrument snapshot". Static reading finds no consumer for the metadata on the replay path. I could not reconcile the two.
+- **Other gaps:** no pinned session calendar. A-META-001 wording is not on file; I marked it "as recorded by WP-R5-001C; operator to confirm wording".
+
+**Counts and statuses unchanged:** H/I/J stays 11/19/4, and EXEC-05 stays NOT_QUALIFIED. Production is NOT READY.
+
+**Files written**
+- In `reports/production/WP-R5-002/`: `INPUT_QUALIFICATION_REPORT.md`, `INPUT_INTEGRITY_REPORT.md`, `REPLAY_INPUT_MATRIX.csv`, `SHA256SUMS.txt` (verified OK).
+- `receipts/checkpoints/CHECKPOINT_005.md`.
+- Dated sections appended to `CURRENT_STATE.md` and `R5_PRODUCTION_BACKLOG.md`.
+- `R5_CURRENT_WORK_PACKAGE.md` updated with its history kept.
+- Before-copies `work/*.before_WP-R5-002.md`.
+
+**Nothing forbidden was touched.** I did not modify the bridge, dispatcher, the 001C baseline, the queue and package files, or anything in the R5 repo. I ran no replay, backtest, Block-1, holdout, test or regression and used no network. I did not execute Python; the figures come from `sha256sum`, `stat`, `jq`, `awk`, grep and file reads. The DISPATCHER_STATE block is intact.

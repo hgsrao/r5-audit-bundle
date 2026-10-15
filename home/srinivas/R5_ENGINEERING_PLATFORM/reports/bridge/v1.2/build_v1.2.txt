@@ -1,0 +1,126 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing r5_engineering_bridge.egg-info/PKG-INFO
+writing dependency_links to r5_engineering_bridge.egg-info/dependency_links.txt
+writing entry points to r5_engineering_bridge.egg-info/entry_points.txt
+writing requirements to r5_engineering_bridge.egg-info/requires.txt
+writing top-level names to r5_engineering_bridge.egg-info/top_level.txt
+reading manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+writing manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing r5_engineering_bridge.egg-info/PKG-INFO
+writing dependency_links to r5_engineering_bridge.egg-info/dependency_links.txt
+writing entry points to r5_engineering_bridge.egg-info/entry_points.txt
+writing requirements to r5_engineering_bridge.egg-info/requires.txt
+writing top-level names to r5_engineering_bridge.egg-info/top_level.txt
+reading manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+writing manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+running check
+creating r5_engineering_bridge-1.2.0
+creating r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+creating r5_engineering_bridge-1.2.0/src
+creating r5_engineering_bridge-1.2.0/tests
+copying files to r5_engineering_bridge-1.2.0...
+copying README.md -> r5_engineering_bridge-1.2.0
+copying pyproject.toml -> r5_engineering_bridge-1.2.0
+copying r5_engineering_bridge.egg-info/PKG-INFO -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying r5_engineering_bridge.egg-info/SOURCES.txt -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying r5_engineering_bridge.egg-info/dependency_links.txt -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying r5_engineering_bridge.egg-info/entry_points.txt -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying r5_engineering_bridge.egg-info/requires.txt -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying r5_engineering_bridge.egg-info/top_level.txt -> r5_engineering_bridge-1.2.0/r5_engineering_bridge.egg-info
+copying src/__init__.py -> r5_engineering_bridge-1.2.0/src
+copying src/audit_adapter.py -> r5_engineering_bridge-1.2.0/src
+copying src/audit_models.py -> r5_engineering_bridge-1.2.0/src
+copying src/audit_report.py -> r5_engineering_bridge-1.2.0/src
+copying src/bridge.py -> r5_engineering_bridge-1.2.0/src
+copying src/config.py -> r5_engineering_bridge-1.2.0/src
+copying src/logger.py -> r5_engineering_bridge-1.2.0/src
+copying src/main.py -> r5_engineering_bridge-1.2.0/src
+copying src/ollama_client.py -> r5_engineering_bridge-1.2.0/src
+copying src/prompt_router.py -> r5_engineering_bridge-1.2.0/src
+copying src/router.py -> r5_engineering_bridge-1.2.0/src
+copying src/work_package.py -> r5_engineering_bridge-1.2.0/src
+copying tests/test_bridge.py -> r5_engineering_bridge-1.2.0/tests
+copying tests/test_bridge_v12.py -> r5_engineering_bridge-1.2.0/tests
+Writing r5_engineering_bridge-1.2.0/setup.cfg
+Creating tar archive
+removing 'r5_engineering_bridge-1.2.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing r5_engineering_bridge.egg-info/PKG-INFO
+writing dependency_links to r5_engineering_bridge.egg-info/dependency_links.txt
+writing entry points to r5_engineering_bridge.egg-info/entry_points.txt
+writing requirements to r5_engineering_bridge.egg-info/requires.txt
+writing top-level names to r5_engineering_bridge.egg-info/top_level.txt
+reading manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+writing manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/src
+copying src/work_package.py -> build/lib/src
+copying src/router.py -> build/lib/src
+copying src/prompt_router.py -> build/lib/src
+copying src/ollama_client.py -> build/lib/src
+copying src/main.py -> build/lib/src
+copying src/logger.py -> build/lib/src
+copying src/config.py -> build/lib/src
+copying src/bridge.py -> build/lib/src
+copying src/audit_report.py -> build/lib/src
+copying src/audit_models.py -> build/lib/src
+copying src/audit_adapter.py -> build/lib/src
+copying src/__init__.py -> build/lib/src
+running egg_info
+writing r5_engineering_bridge.egg-info/PKG-INFO
+writing dependency_links to r5_engineering_bridge.egg-info/dependency_links.txt
+writing entry points to r5_engineering_bridge.egg-info/entry_points.txt
+writing requirements to r5_engineering_bridge.egg-info/requires.txt
+writing top-level names to r5_engineering_bridge.egg-info/top_level.txt
+reading manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+writing manifest file 'r5_engineering_bridge.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/src
+copying build/lib/src/__init__.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/audit_adapter.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/audit_models.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/audit_report.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/bridge.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/config.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/logger.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/main.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/ollama_client.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/prompt_router.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/router.py -> build/bdist.linux-x86_64/wheel/./src
+copying build/lib/src/work_package.py -> build/bdist.linux-x86_64/wheel/./src
+running install_egg_info
+Copying r5_engineering_bridge.egg-info to build/bdist.linux-x86_64/wheel/./r5_engineering_bridge-1.2.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/r5_engineering_bridge-1.2.0.dist-info/WHEEL
+creating '/home/srinivas/R5_ENGINEERING_PLATFORM/bridge/dist/.tmp-r_dk0m17/r5_engineering_bridge-1.2.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'src/__init__.py'
+adding 'src/audit_adapter.py'
+adding 'src/audit_models.py'
+adding 'src/audit_report.py'
+adding 'src/bridge.py'
+adding 'src/config.py'
+adding 'src/logger.py'
+adding 'src/main.py'
+adding 'src/ollama_client.py'
+adding 'src/prompt_router.py'
+adding 'src/router.py'
+adding 'src/work_package.py'
+adding 'r5_engineering_bridge-1.2.0.dist-info/METADATA'
+adding 'r5_engineering_bridge-1.2.0.dist-info/WHEEL'
+adding 'r5_engineering_bridge-1.2.0.dist-info/entry_points.txt'
+adding 'r5_engineering_bridge-1.2.0.dist-info/top_level.txt'
+adding 'r5_engineering_bridge-1.2.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built r5_engineering_bridge-1.2.0.tar.gz and r5_engineering_bridge-1.2.0-py3-none-any.whl

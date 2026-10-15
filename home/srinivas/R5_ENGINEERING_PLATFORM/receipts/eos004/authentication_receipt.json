@@ -1,0 +1,13 @@
+{
+  "authenticated_account_display": "SHRINIVAS RAO",
+  "google_ai_plan": "Google AI Pro Offered through Jio",
+  "plan_verified_on": "Google One membership Current status",
+  "gemini_mode": "3.1 Pro (UI picker); selected Pro during request",
+  "browser_profile": "Codex in-app browser; user completed interactive sign-in",
+  "installed_desktop_application": "Chrome Gemini app, Chrome Default profile SHRINIVAS",
+  "laptop_application": "gemini-desktop snap 0.6.0-1-g69bbec4ce7",
+  "provider_transport": "Caller-operated authenticated browser; existing AuditAdapter contract-only interface",
+  "verified_at_utc": "2026-10-07T04:05:27.041000+00:00",
+  "previous_unsigned_audits_superseded_for_authentication_only": true,
+  "subscriptions_or_billing_changed": false
+}

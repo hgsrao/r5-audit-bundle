@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "telemetrySalt": "5ce4d7f3-e418-451f-b2a1-d0148ea59a74",
+  "identities": {
+    "0bfcd37e-13bd-48b7-b3c6-81a5015d4504:b8a4db77-bc5f-4716-ba92-ca91a3db1778": {
+      "serve": "on",
+      "folders": {
+        "/home/srinivas/projects/zerodha-engine-c": {
+          "environmentId": "env_01Vc8Xk7yMBG8MR7QMRGNALx",
+          "keys": [
+            "/home/srinivas/projects/zerodha-engine-c"
+          ]
+        }
+      },
+      "pendingDelete": [],
+      "pendingUnarchive": []
+    }
+  }
+}

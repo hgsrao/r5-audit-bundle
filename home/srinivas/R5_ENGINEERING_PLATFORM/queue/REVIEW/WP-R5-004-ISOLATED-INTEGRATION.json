@@ -1,0 +1,32 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-08T14:00:55.864822+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-R5-004-ISOLATED-INTEGRATION.attempt2.receipt.json",
+    "started_at": "2026-10-08T13:58:49.741796+00:00",
+    "state": "REVIEW",
+    "transition": {
+      "at": "2026-10-08T14:00:55.897246+00:00",
+      "to": "REVIEW"
+    },
+    "worker": "claude"
+  },
+  "files": [],
+  "id": "WP-R5-004-ISOLATED-INTEGRATION",
+  "metadata": {
+    "authorization": "Human autonomous campaign completion; Director curated EOF decision",
+    "parent_package": "WP-R5-004"
+  },
+  "objective": "Integrate curated-artifact authorization and actual synthetic engine execution inside OS isolation",
+  "priority": 10,
+  "prompt": "Scoped TEST-ONLY amendment D-01 to SAME WP-R5-004-ISOLATED-INTEGRATION. Gemini browser audit completed PASS WITH FINDINGS, its two suggested code changes are rejected/documented using existing guards (see gemini_browser_audit/DIRECTOR_RECONCILIATION.json). NO production/harness/bootstrap code changes. Director independently141tests passed. Fix only test_isolated_integration.py725 vacuous `assert all(... or True ...)`. Assert every recorded sys.path entry is under exact witness-derived expected code + runtime roots; assert reported allowed_roots equals expected scope, not just superset. Add ONE negative control using the actual synthetic receipt with an injected unapproved sys.path path, proving verification rejects it (old vacuous assertion would pass). Use a small test-only helper if needed. Preserve before copy already in assertion_amendment/. Run this affected e2e test and negative control only with exact venv Python -I; do NOT rerun full141/181 or mutation suites or regenerate existing engine evidence. Record actual targeted result and source hashes in assertion_amendment/RECEIPT.md. Do not change implementation/strategy/calibration/snapshot/original or touch real data. Finish and stop.",
+  "requires_review": true,
+  "rules": [
+    "Synthetic data only; no market data acquisition or real replay",
+    "Protected snapshot/original/production preserved",
+    "No strategy/calibration/numerical policy edits"
+  ],
+  "submitted_at": "2026-10-08T12:54:53.036175+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

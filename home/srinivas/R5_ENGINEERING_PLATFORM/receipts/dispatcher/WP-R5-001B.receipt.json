@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 308.68132282199986,
+  "error": null,
+  "finished_at": "2026-10-07T05:37:06.476107+00:00",
+  "needs_review": false,
+  "objective": "Authoritative Instrument Metadata Acquisition: qualify the acquired Kite instruments(NSE) dump and NSE CM security master for the 48-symbol universe and the TRAIN period; decide QUALIFIED / NOT_QUALIFIED for WP-R5-002.",
+  "ok": true,
+  "output_sha256": "8d2e95c3481dbe1b493e412d5996afbe204142b5dea92b011debcf0b40654623",
+  "package_id": "WP-R5-001B",
+  "package_sha256": "8e49beb124280f960eee6d2927e11aea7eeb0f5c246cd41ee04b20959317abf8",
+  "response_file": "WP-R5-001B.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T05:31:57.793234+00:00",
+  "state": "DONE",
+  "type": "PARAMETER_AUDIT",
+  "worker": "claude"
+}

@@ -1,0 +1,10 @@
+{
+  "reviewer": "Codex",
+  "external_reviewer": "qwen3.8:27b",
+  "external_verdict": "PASS_WITH_FINDINGS",
+  "review_scope": "Diagnostic causality only; no production parameter authority certification",
+  "source_verified_delta": 2.4646951146678475e-14,
+  "external_review_correction": "Qwen quoted approximately 4.6e-14 for the gate gap; the actual source-derived difference is 2.4646951146678475e-14. Preserve the raw response, do not treat its arithmetic or generalisation statements as measured qualification.",
+  "acceptance": "WP01 full qualified acceptance remains BLOCKED",
+  "no_parameters_modified": true
+}

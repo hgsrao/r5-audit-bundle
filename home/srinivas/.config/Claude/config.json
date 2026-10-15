@@ -1,0 +1,252 @@
+{
+	"updaterLastSeenVersion": "2.37337.1",
+	"first_launch_at": 1790161496737,
+	"version_first_launch": {
+		"version": "2.37337.1",
+		"at": 1791972675758
+	},
+	"locale": "en-US",
+	"windowSizeWasSignedIn": true,
+	"dxt:allowlistEnabled:0bfcd37e-13bd-48b7-b3c6-81a5015d4504": false,
+	"dxt:allowlistLastUpdated:0bfcd37e-13bd-48b7-b3c6-81a5015d4504": "2026-10-15T16:11:36.411Z",
+	"dxt:allowlistCache:0bfcd37e-13bd-48b7-b3c6-81a5015d4504": "djEx3eXREGB4aDr6xlchXhpe5DVxdd0VX8rEomjRLQbgRk+sIFrsu37CL7ATUSeMyOxRMuQ8H3wb8vN3ziPo9fXXSg==",
+	"bootFrameLayout": {
+		"sidebarWidth": 288,
+		"collapsed": false,
+		"narrowViewportMaxWidth": 700
+	},
+	"lastKnownAccountUuid": "b8a4db77-bc5f-4716-ba92-ca91a3db1778",
+	"lastSeenRequireCoworkFullVmSandbox": null,
+	"oauth:tokenCache": "djExJ0lwCR048sq/HXRU+jNvTjVg0KI7ioomhI0NQdog3uE1FfrKm+IFoOnJZuMsJQmpcxkF92fJJ5vGJRgfZ04ouaJ+1TticrdIizhuaLJjqE1AZlHdfMxeWu0CiECho7sNuAS6X7z+p+si2+Qa1p0Q2ahJUgUNKQBBu4dkhBQMSonrmjhDuyRJ3JRzKdh8+OZbwyKqFXCchbZJWcu3aZkeaATv2b6//rxmyhnQCdQvZaNpXe1aSNtSbezDJkYSFpo9gG7cLL1f1AaNJ7O4tOMQ07tE47Mfv02QvZLakrtNfSCAE2tN4NS4V9xcTuPCN75E0qi6AJwfppvjEMheCJYD/5xFaXOSz8gIlsGtqmk/N8htWf+0Dao81WUV+uiKdc9GI2D4bv8fzEHowY9ydilRHffXRPODvUcp4oLXj6rxfZrlpVuI/AVCTmi76bQC73XIlG9pODL2OvAXESli3ehsrgwWumQnKo9l7y32K1kgWEJ1dha8HnZHtxycSaqH0J1UPj7BSSyF6XddDfS1Uq3yA6VluWxmm3Ie4EK4GcYAeCQZuQ20bwF6aVkgDVixolf8LhrsIZROhYOHX6FDFNKAyk3yvEQLjMbA87qLST6Kt6eL9FCNetZsHEh5k9fAt/pwjw61KAxvTrdJNz+EvCfsDKPARREW1o9ynelG1KNN0swRx26cu6A7VCEX9y5P5DQdwW4MFuxOZBl3/8ZsmXfP+9bGeQVI24AIw2D0R1Y85nAtc8/mBapfUvK0tErwKqzXGLFFuCRmBOTNzLK/6fG/yGp6ALS13h39JaY16ccJNMh7ljaNCXIGyC5XZ0J/ZYsaxdlJ3WTLxr3v7kixMNXTve4g6+CseDZiVNZdMmnh9Ngpx4UPVvksHxYNnKl344F4TFdbkMHuu97MRpR0DI2Acw2bue7awvmhv8qgfwq8NV/KTS4YOlqlddSuAGsNXfqZE1b76U+85OnFvHpYocW+zHlB2QLV1bINRR27e26axKnhcKsxz6V1poIPbEB72E0jJY333EqAM27+zkQJnOdchw+Q4RDranV1Ccuoz9dgXBJYGcQQEPg6sKKh4eIHsp9lvti/+nriIO9T6C8z7klsaUboJD3RGYN4sW8a4Nvya/KSToBNuLDB5B8JBHGtJ4jvszL1XEykkA7MOlxYRK2NAA==",
+	"oauth:tokenCacheV2": "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",
+	"hasTrackedInitialActivation": true,
+	"bootSidebarPlaceholder": [
+		{
+			"top": 48,
+			"left": 13,
+			"width": 18,
+			"height": 18,
+			"radius": 9
+		},
+		{
+			"top": 50.5,
+			"left": 38,
+			"width": 28,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 75.5,
+			"left": 14,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 75.5,
+			"left": 96.5,
+			"width": 30,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 77,
+			"left": 38,
+			"width": 50.5,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 102,
+			"left": 14,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 103.5,
+			"left": 38,
+			"width": 54,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 128.5,
+			"left": 14,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 130,
+			"left": 38,
+			"width": 65,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 155,
+			"left": 14,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 156.5,
+			"left": 38,
+			"width": 32.5,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 201.5,
+			"left": 208,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 201.5,
+			"left": 232,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 201.5,
+			"left": 256,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 203.5,
+			"left": 14,
+			"width": 123.5,
+			"height": 12,
+			"radius": 4
+		},
+		{
+			"top": 228.5,
+			"left": 14,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 230,
+			"left": 38,
+			"width": 193.5,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 263,
+			"left": 256,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 265,
+			"left": 14,
+			"width": 88,
+			"height": 12,
+			"radius": 4
+		},
+		{
+			"top": 265,
+			"left": 106,
+			"width": 12,
+			"height": 12,
+			"radius": 4
+		},
+		{
+			"top": 297,
+			"left": 256,
+			"width": 16,
+			"height": 16,
+			"radius": 4
+		},
+		{
+			"top": 299,
+			"left": 14,
+			"width": 52.5,
+			"height": 12,
+			"radius": 4
+		},
+		{
+			"top": 325,
+			"left": 15,
+			"width": 14,
+			"height": 14,
+			"radius": 4
+		},
+		{
+			"top": 325.5,
+			"left": 38,
+			"width": 148,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 370.5,
+			"left": 14,
+			"width": 33.5,
+			"height": 12,
+			"radius": 4
+		},
+		{
+			"top": 396.5,
+			"left": 15,
+			"width": 14,
+			"height": 14,
+			"radius": 4
+		},
+		{
+			"top": 397,
+			"left": 38,
+			"width": 237,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 424,
+			"left": 15,
+			"width": 14,
+			"height": 14,
+			"radius": 4
+		},
+		{
+			"top": 424.5,
+			"left": 38,
+			"width": 237,
+			"height": 13,
+			"radius": 4
+		},
+		{
+			"top": 451.5,
+			"left": 15,
+			"width": 14,
+			"height": 14,
+			"radius": 4
+		},
+		{
+			"top": 452,
+			"left": 38,
+			"width": 140,
+			"height": 13,
+			"radius": 4
+		}
+	],
+	"remote_uploads_migration_done_v1_31e5617c75e7": true,
+	"remote_marketplace_migration_done_v1": true,
+	"hostGitConfinedInstall": {
+		"foldersReadAt": "2026-10-08T06:40:13.095Z",
+		"reasons": [
+			"remote_folder"
+		],
+		"lastOffReadAt": "2026-10-14T10:11:16.634Z",
+		"confinedSince": "2026-10-15T15:53:23.979Z"
+	}
+}

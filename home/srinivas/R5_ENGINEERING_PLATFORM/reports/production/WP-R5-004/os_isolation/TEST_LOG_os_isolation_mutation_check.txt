@@ -1,0 +1,11 @@
+net_namespace_shared: KILLED  ['ERROR ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_launch_ok_and_interpreter_is_the_permitted_venv', '1 passed, 1 error in 0.96s']
+auditor_ignores_net_flag: KILLED  ['ERROR ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_launch_ok_and_interpreter_is_the_permitted_venv', '1 passed, 1 error in 0.95s']
+broad_mount_check_disabled: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/]', '1 failed, 12 passed in 2.07s']
+bootstrap_skips_live_verification: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_forged_witness_rejected_by_bootstrap_and_target_never_runs', '1 failed, 27 passed in 2.27s']
+bootstrap_skips_code_pin: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_wrong_pins_caught_inside_the_sandbox_when_host_precheck_is_bypassed', '1 failed, 26 passed in 2.25s']
+bootstrap_skips_input_pin: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_wrong_pins_caught_inside_the_sandbox_when_host_precheck_is_bypassed', '1 failed, 26 passed in 2.32s']
+witness_without_launch_accepted: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_harness_gate_sees_live_boundary_but_real_release_stays_closed', '1 failed, 36 passed in 10.69s']
+release_gate_opened: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_harness_gate_sees_live_boundary_but_real_release_stays_closed', '1 failed, 36 passed in 10.68s']
+output_bind_writable_elsewhere: KILLED  ['FAILED ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_unshared_net_missing_flags_and_writable_binds', '1 failed, 22 passed in 2.16s']
+code_mounted_writable: KILLED  ['ERROR ../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_launch_ok_and_interpreter_is_the_permitted_venv', '1 passed, 1 error in 0.95s']
+SURVIVORS: none

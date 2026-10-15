@@ -1,0 +1,20 @@
+{
+  "access_token_stored": false,
+  "acquired_by": "operator-completed official Kite Connect OAuth login",
+  "api_key_fingerprint_sha256_12": "e38652d47345",
+  "api_secret_stored": false,
+  "auth_flow": "login URL -> request_token -> generate_session -> GET /instruments/NSE",
+  "download_finished_utc": "2026-10-07T06:31:56.758356+00:00",
+  "download_started_utc": "2026-10-07T06:31:56.410856+00:00",
+  "endpoint": "https://api.kite.trade/instruments/NSE",
+  "http_status": 200,
+  "instrument_rows": 10324,
+  "invalidate_error": null,
+  "kiteconnect_library": "5.2.1",
+  "python": "3.12.14",
+  "raw_file": "kite_connect_instruments_NSE.csv",
+  "response_content_type": "text/csv",
+  "session_invalidated": true,
+  "sha256": "536809820e9d0114d9ef42c2756bb2e44044474471007887a841e36b3696401f",
+  "size_bytes": 686374
+}

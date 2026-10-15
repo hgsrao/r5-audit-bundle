@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+    "/home/srinivas/projects/zerodha-phase1/scripts/run_r5_step5_candidate.py",
+    "--root",
+    "/home/srinivas/projects/zerodha-phase1",
+    "--protocol",
+    "/home/srinivas/projects/zerodha-phase1/revision5/step5_sealed_calibration_protocol.json",
+    "--expected-protocol-sha",
+    "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+    "--stage",
+    "B",
+    "--params",
+    "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-b-20260925/params/trial_003.json",
+    "--output",
+    "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-b-20260925/results/trial_003.json"
+  ],
+  "pid": 904009,
+  "result_path": "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-b-20260925/results/trial_003.json",
+  "status": "RUNNING"
+}

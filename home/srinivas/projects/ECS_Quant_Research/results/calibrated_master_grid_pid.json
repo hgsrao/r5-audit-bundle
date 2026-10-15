@@ -1,0 +1,10 @@
+{
+  "MASTER_GRID_DCS_PID": {
+    "Kp_grid": 1.3,
+    "Ki_grid": 0.0,
+    "Kd_grid": 1.5,
+    "windup_limit": 1.0,
+    "supervisory_mode": "COORDINATED_CCPP_ACTIVE",
+    "fleet_objective_score": 1.1958
+  }
+}

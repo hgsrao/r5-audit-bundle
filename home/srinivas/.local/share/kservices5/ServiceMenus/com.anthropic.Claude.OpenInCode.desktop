@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+TryExec=/usr/lib/claude-desktop/claude-desktop
+MimeType=inode/directory;
+X-KDE-Protocols=file
+Actions=openInClaudeCode
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+X-Claude-Generated=true
+
+[Desktop Action openInClaudeCode]
+Name=Open in Claude Code
+Icon=claude-desktop
+Exec="/usr/lib/claude-desktop/claude-desktop" --os-entry=folder_verb %f

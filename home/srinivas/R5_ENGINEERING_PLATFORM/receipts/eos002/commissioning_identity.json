@@ -1,0 +1,17 @@
+{
+  "bridge_version": "1.2.0",
+  "platform_version": "EOS normalized platform; no independent semantic version declared",
+  "repository_git_commit": null,
+  "repository_identity": "SHA256 of normalization receipt and source amendment",
+  "normalization_receipt_sha256": "b90052d2ada687d1e3bee2000efbd15a28490e505316d90c7f90eaafd3a9f8d8",
+  "source_amendment_sha256": "c5189a7c51d2cc40011fcb1f99c133c30f8061acdd16425039ee38abfb9dbb4a",
+  "commissioning_transport_profile": {
+    "OLLAMA_URL": "http://localhost:11434",
+    "OLLAMA_MODEL": "qwen3.8:27b",
+    "BRIDGE_REQUEST_TIMEOUT": 300
+  },
+  "default_profile_pass": false,
+  "scope": "Communication acceptance only; no trading qualification",
+  "result": "COMMISSIONED",
+  "recorded_at_utc": "2026-10-07T03:38:04.616785+00:00"
+}

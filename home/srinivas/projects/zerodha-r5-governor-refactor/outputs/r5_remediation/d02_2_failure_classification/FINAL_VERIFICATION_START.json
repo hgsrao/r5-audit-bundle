@@ -1,0 +1,30 @@
+{
+  "head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "branch": "feature/engine-ab-handoff-lifecycle",
+  "files": {
+    "revision2_external/orchestrator.py": "58b86cb6e637b65161273b4ad7b0b80e960ecef80a32e30855df5e50dd4cdbea",
+    "revision2_external/paper_execution.py": "8d4e8feab59903907e99e115b0bd7f43e991c9f11e8460b9331f19298fdcec85",
+    "revision5/combined_cycle_runtime.py": "695ea6654e277a89c4c210d30150715bde21c17469d7264d25f68c47cb8e6a8d",
+    "revision5/combined_cycle_store.py": "9ab9a0da140e7b473cf6e9db84517e79c38b7b1ab3b07a11e4bc827412b9fd5c",
+    "runtime/operating_mode.py": "0d48723498688ee749cbaa7e47e20e0a8b85a5441b35351580a3a77a15bc1099",
+    "tests/test_r5_d02_exit_finalization.py": "285224593ca67befb617427faff0c84f06beb586d5f03dae4fe1d6c51d894905",
+    "tests/test_r5_d02_exit_atomicity_repro.py": "8c76f625cecf148efbc08473e5fcf742968faac52b81eea7e1389014d4949a07",
+    "tests/test_revision5_engine_applicability.py": "d35289fbe189ffbd2db9f52781e70809d76cd960582a8d0d3de7db5c0cac9129",
+    "revision5/state_recovery.py": "9c2ef4e00163d68cb6f83541c875159d505bf84d7a9eae1511498fdd461f6bc0",
+    "tests/test_r5_d02_engine_b_recovery.py": "7813f2f83aa98653eb80b8caa2f8bca49f3b0dc6d5702c2849be68923897972e",
+    "tests/test_r5_d02_journal_nested_transaction.py": "4388175c4912bc1d9c819982b5d0d00434cabb2c651adc1d783a6e7df1e4db40"
+  },
+  "protected_inputs": {
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/revision5/step5_sealed_calibration_protocol_v2.json": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+    "/home/srinivas/projects/zerodha-phase1/outputs/r5_step5_stage_a_v2_state/params/trial_000.json": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/outputs/r5_remediation/closure/c05/baseline/ledger.csv": "311b3a145ab017739b492328389b6f79fd9aaa4ebf1eca751f12c9a644e5b08d"
+  },
+  "commands": {
+    "broad": "python -m pytest tests tests_external revision4/tests test_gates_framework.py -q -rs -p no:cacheprovider",
+    "focused": "python -m pytest tests/test_r5_d02_journal_nested_transaction.py tests/test_r5_d02_engine_b_recovery.py tests/test_r5_d02_exit_finalization.py tests/test_r5_d02_exit_atomicity_repro.py tests/test_r5_morning_startup.py::test_opt_in_tick_checkpoints_use_the_actual_replay -q -p no:cacheprovider"
+  },
+  "live_api_calls": false,
+  "commit_push": false,
+  "phase": "Final integrated source after atomic checkpoint and recovery reconciliation repairs",
+  "focused_result": "63 passed, 204 warnings in 32.71s"
+}

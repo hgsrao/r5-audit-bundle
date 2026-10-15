@@ -1,0 +1,14 @@
+{
+  "id": "EOS002-CLAUDE",
+  "type": "CODE_IMPLEMENTATION",
+  "model": null,
+  "objective": "Generate a trivial utility module for isolated commissioning.",
+  "rules": [
+    "No R5 changes."
+  ],
+  "files": [],
+  "prompt": "Create only utility.py with a typed documented echo_text(value: str) -> str function returning the supplied string unchanged. No other files, no dependencies, no commands, no trading logic.",
+  "metadata": {
+    "work_package": "WP-EOS-002"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 557.6695594409998,
+  "error": null,
+  "finished_at": "2026-10-08T14:26:29.775673+00:00",
+  "needs_review": true,
+  "objective": "Remove circular release pin while preventing caller-issued real authority",
+  "ok": true,
+  "output_sha256": "a32d6cc11caeb879d1a5172c3c9324363c61ff9dd5e0b3810351b9fc4cfe3b86",
+  "package_id": "WP-R5-004-RELEASE-AUTHORITY",
+  "package_sha256": "68c0f01684695d34d2605b589b10c85d4fd8f9245688c6fe705056a726f43c83",
+  "response_file": "WP-R5-004-RELEASE-AUTHORITY.attempt2.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T14:17:12.103582+00:00",
+  "state": "REVIEW",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

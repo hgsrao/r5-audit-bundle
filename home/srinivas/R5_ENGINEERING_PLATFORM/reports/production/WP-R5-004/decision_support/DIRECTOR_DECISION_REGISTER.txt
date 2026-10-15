@@ -1,0 +1,49 @@
+urrent engineering state
+WP-R5-004 static reports: PASS WITH FINDINGS. Replay: NOT QUALIFIED. Production: NOT READY. H=11, I=19, J=4.
+Gemini’s WP-EOS-011-AUDIT predates CHECKPOINT_007. Qwen’s WP-QWEN-001 explicitly lacked report access. Neither establishes authority for implementation.
+2. Decision Register
+Evidence abbreviations: G = WP-EOS-011-AUDIT response; Q = WP-QWEN-001 response; R4 = completed WP-R5-004 reports; C7 = CHECKPOINT_007 and acceptance receipt.
+Finding	Evidence and source	Decision	Reason	Engineering impact / package action
+Engine drift blocks sealed worker CLI	R4 REPLAY_ENTRYPOINT; G	ACCEPT, scoped	The sealed CLI rejects engine-parent drift. This does not establish that every diagnostic route requires reverting the engine.	Amend WP-R5-004 to distinguish sealed and diagnostic execution.
+Exact 957-file drift count	R4 acceptance correction	NEEDS VERIFICATION	Historical count was not freshly verified.	No separate package; verify only if needed for the approved execution contract.
+Reset engine or update protected SHA	G recommendation; R4 GIT_IDENTITY_REPORT	REJECT	These are different identity decisions. Blanket reset risks discarding completed work; changing protection cannot legitimize drift automatically.	No reset or protection change.
+Protected indicator identity	R4 GIT_IDENTITY_REPORT; C7	ACCEPT	Protected SHA is a011b295…; dirty 5ba12643… is unratified.	Preserve protection and both copies; amend execution identity requirements.
+TRAIN isolation failure	WP-R5-003 Gate 0(a); R4 TRAIN_SCOPE_REPORT	ACCEPT	Default preparation hashes whole files containing Validation/Holdout bytes.	Require demonstrated physical read boundaries before replay.
+TRAIN slicing necessarily reads holdout	R4 acceptance correction	REJECT	Bounded chronological extraction need not read holdout. Whole-file seal recomputation does.	Correct the design premise within WP-R5-004.
+Historical hashes and file sizes prove current prefix integrity	R4 acceptance correction	REJECT	They do not prove current prefix contents unchanged.	Amend TRAIN integrity acceptance criteria; no seal bypass by implication.
+Replay entry point lacks authority	R4 REPLAY_ENTRYPOINT; G	ACCEPT	Historical use is precedent, not ratification.	Director must approve one execution contract under WP-R5-004.
+Grid manifest requirement	R4 REPLAY_ENTRYPOINT; WP-R5-002 F-04	ACCEPT, scoped	The sealed CLI’s root topology requires the missing manifest. Other proposed routes use separate data roots.	Record topology requirements in the selected contract.
+Install grid manifest in R5 checkout universally	G recommendation	REJECT	Provisioning depends on the selected route; copying a manifest alone proves neither identity nor integrity.	No provisioning package yet.
+Dispatcher ownership verification	R4 DISPATCHER_RACE_REVIEW	ACCEPT	Completion, unexpected exit and reclaim contain ownership gaps.	Require ownership enforcement before unattended dispatch; separate implementation scope after approval.
+Replay risk governor	WP-R5-003 SAFETY_GATE_REPORT; R4 blocker matrix	ACCEPT factual finding	Weekly/2%-daily governors are inactive under the default development profile.	Contract must explicitly select required safety behavior. Do not silently mandate trial or waive controls.
+Option B is already justified	R4 TRAIN_SCOPE_REPORT and acceptance correction	NEEDS VERIFICATION	TEST-ONLY substitution changes certification behavior and does not prove sealed-prefix membership.	Resolve within WP-R5-004; no loader implementation yet.
+Qwen’s Option A preference	Q scope disclaimer and option definitions	REJECT as campaign policy	Its fit/qualification split differs from this campaign’s frozen-file extraction problem; it had no report access.	Retain as provisional reasoning; no sampling, cross-validation or calibration package.
+Lifecycle runner reaches CNC economics	R4 REPLAY_ENTRYPOINT; WP-R5-002 C2	ACCEPT	Combined-cycle runtime is always enabled in the proposed runner.	Contract must exclude/segregate those economics or select another route.
+Unqualified parameters may support diagnostics	WP-R5-002; R4 blocker matrix	ACCEPT, conditional	Diagnostic execution does not confer parameter authority. Operator acceptance and explicit limits remain necessary.	Amend scope disclosures; no parameter closure.
+WP-R5-004 remains incomplete	G versus C7	REJECT as current status	Static deliverables were subsequently completed. Execution qualification remains incomplete.	Supersede stale status only; do not regenerate reports.
+Replay is not execution-qualified	G, C7, R4 acceptance	ACCEPT	Entry-point authority, integrity and identity gates remain unresolved.	Keep replay blocked. Dispatcher DONE is not acceptance.
+
+
+Package disposition:
+Existing packages	Recommended disposition
+WP-R5-001, 001B, 001C, 002A, 002	Preserve completed evidence; no redispatch. 001C supersedes 001B only for its stated diagnostic scope, not historical TRAIN validity.
+WP01-METADATA-QUALIFICATION	Amend remaining scope to unresolved historical validity and ledger qualification; remove duplicate completed discovery work.
+WP-R5-003	Preserve failed qualification. Amend prerequisites only after the replay contract is approved.
+WP-R5-004	Keep static reports closed; amend with decision-only contract resolution. Historical prepared versions are superseded definitions, not additional executable packages.
+Proposed WP-R5-005	Not persisted or authorized; absorb decision prerequisites into WP-R5-004. Do not advance numbering.
+WP01–WP12, including isolated WP03/WP10 candidates	Retain distinct acceptance objectives and dependencies. No evidence supports merging or retirement.
+Completed EOS audits and smoke packages	Retain receipts; no repeat audit or smoke dispatch.
+Failed WP-EOS-011 and engineering/work-package smokes	Hold. Failure receipts do not establish implementation completion or reliable worker execution.
+
+
+3. Recommended next work package
+Amend existing WP-R5-004: Diagnostic Replay Contract Decision Support. Resolve one proposed contract covering execution route, protected identity, TRAIN integrity proof, risk profile and CNC boundaries. Use existing evidence; no regenerated audit, implementation or replay.
+4. Recommended worker
+Qwen — engineering reasoning only, with relevant evidence supplied directly. Its availability remains unverified following later failed smoke receipts.
+5. Why this is now the highest priority
+The blocker is engineering policy and authorization. Implementation lacks an approved execution target and integrity standard. Choosing a loader or resetting the environment first risks unnecessary work.
+6. Whether operator approval is required
+Yes. Operator approval is required for the amendment and eventual contract ratification. No package was created, modified or dispatched.
+
+
+12:36 PM

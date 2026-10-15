@@ -1,0 +1,16 @@
+{
+  "lastUpdated": 1792085497092,
+  "plugins": [
+    {
+      "id": "plugin_015wwUhJaofucUsDVmdLtjHe",
+      "name": "b61f4be4-9226-4848-9ef1-828c1492d47e",
+      "updatedAt": "2026-10-01T19:51:23.793520Z",
+      "updatedAtVerified": true,
+      "displayName": "claude-memory",
+      "marketplaceId": "marketplace_01VNB7JgJyYTuJiDfXSABKm3",
+      "marketplaceName": "anthropic-plugin-directory",
+      "installedBy": "user",
+      "installationPreference": "available"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Aggregate C01–C06 integration supervisor receipt
+
+Source assembled in isolated `zerodha-codex-recovery-retention`, with primary held unchanged through preliminary C01 run. Production modules, CLI/factory and existing-test modifications are in `AGGREGATE_IMPLEMENTATION.patch`; package additions and exact file hashes are listed in `AGGREGATE_FILE_MANIFEST.json`.
+
+Integrated: C01 experimental CLI with explicit C05/fleet/compaction flags, preserved protocol/source guards; C02 optional untuned fleet capacity PID and source-bound reconstruction state; C03 unchanged production lifecycle qualification fixture; C04 epoch-local durable dedup/terminal eviction; C05 independent native funnel reconciliation; C06 failclosed mock-tested execution port; F-SIG-011 sustained-positive saturation telemetry; F-ROOT-007 excluded-sentinel terminal/admission repair.
+
+Reviewer fixes: offline fleet restore is explicitly diagnostic and refuses broker hydration; unsampled/wrong-next-clock restoration blocked; real elapsed dt telemetry exposed without retuning. Final forward row cannot receive an unmanaged entry. Terminal CLOSE uses per-symbol last processed observation, rejects exit-before-entry and leaves PERSIST unchanged. Opt-in lifecycle eviction requires CLOSED+durable consumption+checkpoint and no active-book conflict. Live port cursor/account proof is refreshed after intent; expired proof records NOT_SUBMITTED rather than ambiguous submission.
+
+Validation: 81 focused CLI/factory/sentinel/compaction/telemetry tests passed (114.19 seconds) before final D1/D2/D6 merge; 110 final-review-fix controller/CLI/factory/boundary/compaction tests passed (59.36 seconds) on frozen final source. The one preceding SOURCE_CHANGED_MIDRUN test failure correctly detected the requested fleet header edit; final rerun passed with no source mutations. Comparable explicit repository suite runs separately read-only.
+
+No trading parameter/frozen protocol/sealed V3/holdout/reference file was modified. No broker requests or commits/pushes were made by this supervisor. Direct live/CNC orchestration remains blocked. Durable audit/ledger storage is retained; no universal memory-bounded/crash-proof/live readiness claim.

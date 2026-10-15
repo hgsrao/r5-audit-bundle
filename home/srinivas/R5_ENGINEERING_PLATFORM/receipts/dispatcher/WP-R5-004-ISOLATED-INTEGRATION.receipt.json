@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 552.696805339,
+  "error": null,
+  "finished_at": "2026-10-08T13:43:49.778766+00:00",
+  "needs_review": true,
+  "objective": "Integrate curated-artifact authorization and actual synthetic engine execution inside OS isolation",
+  "ok": true,
+  "output_sha256": "4a613c507a4d37dca737058a816ba5b561dbe87854bc3c05e1166f029225d215",
+  "package_id": "WP-R5-004-ISOLATED-INTEGRATION",
+  "package_sha256": "ad6912c803d3533e80301468efa1fdee1005a4f709f51b03b3a3474935ddb84e",
+  "response_file": "WP-R5-004-ISOLATED-INTEGRATION.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T13:34:37.079125+00:00",
+  "state": "REVIEW",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

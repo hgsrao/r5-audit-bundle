@@ -1,0 +1,182 @@
+[
+  {
+    "report": "review_report_20260828_170925.md",
+    "input": "start_entry_gate_dry_run.ps1",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_170925.md",
+    "input": "entry_gate_dry_run.py#L1-L240",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_170925.md",
+    "input": "entry_gate_dry_run.py#L528-L795",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190827.md",
+    "input": "p1_p2_state_decomposition.py#L1-L151",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190827.md",
+    "input": "daily_multi_timescale_fusion_panel.py#L1-L320",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190827.md",
+    "input": "model_admission_gate_v1.py#L1-L220",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190344.md",
+    "input": "daily_multi_timescale_fusion_panel.py#L1-L320",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190344.md",
+    "input": "p1_p2_state_decomposition.py#L1-L151",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_190344.md",
+    "input": "risk_filter_test.py#L1-L220",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173308.md",
+    "input": "test_v34_p03bd_runner_entry_authorization.py#L1-L185",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173308.md",
+    "input": "test_v34_p03bf_percentage_risk_controls.py#L1-L213",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173308.md",
+    "input": "test_v34_entry_gate_dry_run.py#L1-L220",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184154.md",
+    "input": "STUDY_LAYER_V2_RESEARCH_ROADMAP_20260825.md#L1-L42",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184154.md",
+    "input": "daily_multi_timescale_fusion_panel.py#L1-L260",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184154.md",
+    "input": "STEP5B_MODEL_ADMISSION_GATE_V1_FREEZE_20260825.md",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173056.md",
+    "input": "run_production_p01d_candidate.py#L300-L420",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173056.md",
+    "input": "run_production_p01d_candidate.py#L700-L808",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_173056.md",
+    "input": "run_production_p01d_candidate.py#L1657-L1765",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_174757.md",
+    "input": "DIR_SPEC.md#L1-L25",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184422.md",
+    "input": "model_admission_gate_v1.py#L1-L220",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184422.md",
+    "input": "model_admission_gate_v1.py#L240-L430",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_184422.md",
+    "input": "STEP5B_MODEL_ADMISSION_GATE_V1_FREEZE_20260825.md",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_174430.md",
+    "input": "DIR_SPEC.md#L1-L25",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_171132.md",
+    "input": "start_entry_gate_dry_run.ps1",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_171132.md",
+    "input": "entry_gate_dry_run.py#L1-L240",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_171132.md",
+    "input": "entry_gate_dry_run.py#L528-L795",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_161251.md",
+    "input": "DIR_SPEC.md",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_161251.md",
+    "input": "entry_points_manifest.json",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_161251.md",
+    "input": "ENGINE_STARTUP_RUNBOOK.md",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_182138.md",
+    "input": "DIR_SPEC.md#L1-L25",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172917.md",
+    "input": "entry_gate_dry_run.py#L529-L657",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172917.md",
+    "input": "read_only_shadow_collector.py#L1-L240",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172917.md",
+    "input": "orb_shadow_collector.py#L1-L158",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172620.md",
+    "input": "run_production_p01d_candidate.py#L300-L520",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172620.md",
+    "input": "run_production_p01d_candidate.py#L809-L1032",
+    "status": "match"
+  },
+  {
+    "report": "review_report_20260828_172620.md",
+    "input": "institutional_engine_v34_p01d_candidate.py#L210-L390",
+    "status": "match"
+  }
+]

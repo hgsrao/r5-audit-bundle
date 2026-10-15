@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_content_commitment_check/test_unexpected_missing_first_0/missing_session/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "2da632b1b51876abb8c38504590fce7a6647c8e33b069b312512ce271a8cfc2d",
+      "size_bytes": 15315,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "ae3c2b24820749393713e5918f96080b888bbcc199580e1e2b48d67b170536c8",
+      "size_bytes": 16301,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "815ebe13952cd50c001a755e19bc6dd2ce2fad2ac464b3b49dc1a329861b0a7b",
+  "symbol_count": 2
+}

@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/smoke/raw/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a52e39b41533815ea04aae7b8eec7a740d0ce3bcbd8e4159e13e62a8cde640f2",
+      "size_bytes": 17707,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "b13fd4be391a9b666fe7bb7cc4ea1ffdc5d03123483e22dbeeed877b73bbcad1",
+      "size_bytes": 18618,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "917cb3af5e6e8bc0bd02ae5fbbef4cd53502447092e4fa903e47cfdc77c166ae",
+  "symbol_count": 2
+}

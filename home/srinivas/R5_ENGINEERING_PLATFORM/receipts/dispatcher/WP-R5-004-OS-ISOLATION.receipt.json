@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 2084.885827225,
+  "error": null,
+  "finished_at": "2026-10-08T12:39:41.998649+00:00",
+  "needs_review": true,
+  "objective": "Implement and verify OS isolation with synthetic fixtures; preserve fail-closed real-data release",
+  "ok": true,
+  "output_sha256": "ac2d0b329385b36e49e03ef6c57713c998853e669d09c3fa4a325975afe41dbc",
+  "package_id": "WP-R5-004-OS-ISOLATION",
+  "package_sha256": "bd745f33d63378230376297bae418e274da79fc3fecea62d062489e73230d887",
+  "response_file": "WP-R5-004-OS-ISOLATION.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T12:04:57.110795+00:00",
+  "state": "REVIEW",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

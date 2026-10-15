@@ -1,0 +1,14 @@
+{
+  "lastUpdated": 1791349731809,
+  "plugins": [
+    {
+      "pluginId": "plugin_015wwUhJaofucUsDVmdLtjHe",
+      "name": "b61f4be4-9226-4848-9ef1-828c1492d47e",
+      "description": "Structured memory system for Claude Code — categorized memories with recall/remember patterns, startup injection, and file templates",
+      "version": "0003",
+      "updatedAt": "2026-10-01T19:51:23.793520Z",
+      "marketplaceName": "anthropic-plugin-directory",
+      "installationPreference": "available"
+    }
+  ]
+}

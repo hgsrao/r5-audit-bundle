@@ -1,0 +1,100 @@
+[
+  {
+    "file": "review_report_20260828_161251.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "Report the confirmed production entry point, documented startup sequence, directly started components, required safety checks, contradictions among the three files, and exactly three recommended Package 2 files. Maximum 700 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_170925.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "Trace Engine 5 P01D Entry Gate Dry Run from the PowerShell launcher through Python main and run_once. Identify configuration, imported authorization/risk dependencies, candidate ingestion, broker access, outputs, and every confirmed barrier preventing live order placement. Do not infer behavior from omitted code. List unresolved questions and recommend exactly three bounded Package 3 file selections. Maximum 900 words.",
+    "status": "invalid repeated output; diagnostic only"
+  },
+  {
+    "file": "review_report_20260828_171132.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "Trace Engine 5 P01D Entry Gate Dry Run from the PowerShell launcher through Python main and run_once. Identify configuration, imported authorization/risk dependencies, candidate ingestion, broker access, outputs, and every confirmed barrier preventing live order placement. Do not infer behavior from omitted code. List unresolved questions and recommend exactly three bounded Package 3 file selections. Maximum 900 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_172620.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "Analyze only the supplied code slices. Trace the entry authorization decision from broker risk snapshot through P03RiskController and RunnerEntryAuthorizer. Enumerate every confirmed allow/deny condition, persistent state mutation, live-trading gate, and broker-order boundary. Identify private-method coupling used by the dry-run. Do not infer omitted implementations. List contradictions or risks and recommend exactly three bounded Package 4 selections using file:start-end syntax. Maximum 1000 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_172917.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "PACKAGE 4 - Candidate provenance and decision logic. Using only these selections, identify how momentum and ORB candidates are produced, what data they contain, how entry_gate_dry_run selects or rejects them, freshness/error handling, and whether any selected code can place orders. Clearly separate confirmed facts from assumptions. Report contradictions or missing evidence. Maximum 900 words. Do not recommend repeating these same slices.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_173056.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "PACKAGE 5 - Physical broker boundary and production wiring. Using only these selections, trace a BUY request to the final broker SDK call; identify every precondition and fail-closed branch, distinguish BUY from SELL/emergency behavior, explain how live_trading and the authorizer are wired, and assess state persistence/atomicity only where evidenced. Flag any bypass path or missing evidence. Maximum 900 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_173308.md",
+    "model": "qwen3-coder:30b",
+    "backend": null,
+    "task": "PACKAGE 6 - Test evidence review. Using only these test selections, map which production safety claims are directly proven by tests, which are only partially tested, and which remain unproven. Pay special attention to live-disabled behavior, snapshot freshness/identity, restart persistence, authorizer bypass prevention, risk thresholds, isolated dry-run state, and absence of physical dispatch. Do not infer beyond assertions. Maximum 900 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_174430.md",
+    "model": "qwen3-coder:30b",
+    "backend": "desktop",
+    "task": "STANDARD BENCHMARK: Using only this file slice, produce exactly five numbered findings about directory purpose, constraints, or entry points. Each finding must be one concise sentence. Do not include an introduction or conclusion.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_174757.md",
+    "model": "codellama:13b-instruct",
+    "backend": "razer",
+    "task": "STANDARD BENCHMARK: Using only this file slice, produce exactly five numbered findings about directory purpose, constraints, or entry points. Each finding must be one concise sentence. Do not include an introduction or conclusion.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_182138.md",
+    "model": "qwen3-coder:30b",
+    "backend": "razer",
+    "task": "STANDARD BENCHMARK: Using only this file slice, produce exactly five numbered findings about directory purpose, constraints, or entry points. Each finding must be one concise sentence. Do not include an introduction or conclusion.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_184154.md",
+    "model": "qwen3-coder:30b",
+    "backend": "desktop",
+    "task": "PACKAGE 7 - Item 3b preregistration orientation. Read only. Determine: (1) the exact completed input panel contract and leakage safeguards evidenced here; (2) every decision that must be frozen before Model 0/1 runs, including split dates, targets/horizons, A/B/C/D feature sets, preprocessing, hyperparameters, metrics, economic-cost treatment, stability tests, multiple-testing treatment, selection rule, and abort conditions; (3) which of those decisions are already fixed versus still missing; and (4) exactly three source files to inspect next. Do not fit a model, read validation/holdout outcomes, run code, or propose changing frozen artifacts. Maximum 900 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_184422.md",
+    "model": "qwen3-coder:30b",
+    "backend": "desktop",
+    "task": "PACKAGE 8A - Item 3b governance lane. Read only. Extract the exact admission record fields, validation/provenance requirements, rejection conditions, authority restrictions, and what a new Model 0/1 preregistration must define before fitting. Separate reusable generic admission rules from decisions still specific to Item 3b. Do not run code or inspect other files. Maximum 800 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_190344.md",
+    "model": "qwen3-coder:30b",
+    "backend": "razer",
+    "task": "PACKAGE 8B - Item 3b provenance lane. Read only. Produce a precise inventory of feature families, targets/horizons, timestamps and causality protections, data exclusions, sample/universe boundaries, ORB/Map status constraints, and any leakage or reproducibility risks that the Model 0/1 preregistration must bind. Do not fit models, read output results, or run code. Maximum 900 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  },
+  {
+    "file": "review_report_20260828_190827.md",
+    "model": "qwen3-coder:30b",
+    "backend": "desktop",
+    "task": "PACKAGE 9 - Item 3b preregistration Part 1 (decision freeze lane). Read only. Determine: (1) optimal chronological train/validation/holdout split dates given 3 years of data (Aug 2023\u2013Aug 2026); (2) preprocessing pipeline requirements (missing value handling, scaling, feature normalization); (3) Model 0 hyperparameter constraints (regularization type and strength); (4) evaluation gate: what must Model 0/1 prove to pass Item 3b? Define pass/fail thresholds for Rank IC, economic return, and stability. (5) preregistration contracts that must be signed before any model run. Do not fit models or inspect results. Maximum 1000 words.",
+    "status": "advisory historical output; not freshly source-validated"
+  }
+]

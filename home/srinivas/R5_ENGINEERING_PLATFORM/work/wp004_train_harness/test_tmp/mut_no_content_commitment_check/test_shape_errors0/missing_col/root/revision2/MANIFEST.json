@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_content_commitment_check/test_shape_errors0/missing_col/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "99a2a48a0c1e2fa076a4724643558901df8ae635946035499306bb4154f93a86",
+      "size_bytes": 17488,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a13c0494f1aed80d6ce7dfc007195dd665ee1cd7c2bbd3cc881f05536e400c55",
+      "size_bytes": 18613,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "7502da13b4b7d69c045c024af0a3ff5375a18fcf5ed3c110dfcb4751860935ee",
+  "symbol_count": 2
+}

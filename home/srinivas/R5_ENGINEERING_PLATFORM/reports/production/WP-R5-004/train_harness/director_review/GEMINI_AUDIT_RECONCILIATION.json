@@ -1,0 +1,22 @@
+{
+  "received_at_utc": "2026-10-08T10:22:14.561479+00:00",
+  "source": "Operator-supplied Gemini response; model/version and automated transport not independently verified",
+  "source_sha256": "781b22d98c5de8ab6052daf7e4a2ee28421c7ad84ebec3d0ba5374af35ac49af",
+  "verdict": "FAIL",
+  "accepted": [
+    "hard-cap overshoot",
+    "sentinel chunk overread",
+    "pre-TRAIN prefix needs explicit scope",
+    "Python spies not OS isolation",
+    "current content hash not historical sealed proof",
+    "synthetic tests not execution qualification"
+  ],
+  "qualified": [
+    "Byte read transfer into user space is relevant; disk sector/cache reads are not themselves evidence of process access",
+    "Target Block1 is Dec2023; TRAIN begins September2023, not interchangeable",
+    "Ratify non-sealed diagnostic receipt, do not invent sealed execution authority"
+  ],
+  "active_implementation": "WP-R5-004-TRAIN-HARNESS targeted fix already running; no parallel worker",
+  "execution": "NOT QUALIFIED",
+  "production": "NOT READY"
+}

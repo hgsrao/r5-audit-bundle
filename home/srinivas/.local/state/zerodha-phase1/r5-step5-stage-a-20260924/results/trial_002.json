@@ -1,0 +1,143 @@
+{
+  "aggregate": {
+    "completed_trades": 189,
+    "fills": 189,
+    "gross_pnl": -15010.191400000063,
+    "mtm_max_drawdown_fraction": 0.008424717879897726,
+    "net_pnl": -23708.080653621957,
+    "profit_factor": 0.14790281492767604,
+    "rankable": true,
+    "safety_violations": 0,
+    "score": -32132.798533519683,
+    "status": "RANKABLE"
+  },
+  "blocks": [
+    {
+      "block": 1,
+      "block_fingerprint": "80effa6210c2164cbefeec660628a4e28f51d404977b7106be5b2d19fac6fb15",
+      "metrics": {
+        "completed_trades": 49,
+        "fills": 49,
+        "gross_pnl": -5840.237299999984,
+        "mtm_max_drawdown_fraction": 0.008235036359153687,
+        "net_pnl": -8235.036359153604,
+        "profit_factor": 0.1128200427497372,
+        "safety_violations": 0
+      },
+      "plant_control": {
+        "applied": true,
+        "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+        "evaluations": 1875,
+        "grid_state_counts": {
+          "ISLANDED_SAFE": 80,
+          "SYNCHRONIZED": 1795
+        },
+        "mode": "PAPER_APPLY",
+        "observer_failures": 0,
+        "paper_admission_caps": 447,
+        "paper_admission_evaluations": 2811,
+        "paper_admission_rejections": 1543,
+        "plant_protection_connected": true,
+        "transitions": 315
+      },
+      "sessions": [
+        "2024-02-13",
+        "2024-02-14",
+        "2024-02-15",
+        "2024-02-16",
+        "2024-02-19"
+      ],
+      "slice_sha256": "c63f4f79a4f60b8a48a63bc00a303f6e9c6f99987ade08b3d6ce93403736bf50"
+    },
+    {
+      "block": 2,
+      "block_fingerprint": "ef4a29b103bb493a345b356b3518615b368d49d3513205efc673767c7dd6d043",
+      "metrics": {
+        "completed_trades": 65,
+        "fills": 65,
+        "gross_pnl": -4048.2270000000553,
+        "mtm_max_drawdown_fraction": 0.007114604179411428,
+        "net_pnl": -7114.604179411429,
+        "profit_factor": 0.16638379532179579,
+        "safety_violations": 0
+      },
+      "plant_control": {
+        "applied": true,
+        "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+        "evaluations": 1875,
+        "grid_state_counts": {
+          "DERATED": 150,
+          "ISLANDED_SAFE": 80,
+          "SYNCHRONIZED": 1645
+        },
+        "mode": "PAPER_APPLY",
+        "observer_failures": 0,
+        "paper_admission_caps": 396,
+        "paper_admission_evaluations": 7293,
+        "paper_admission_rejections": 6317,
+        "plant_protection_connected": true,
+        "transitions": 375
+      },
+      "sessions": [
+        "2024-07-30",
+        "2024-07-31",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-05"
+      ],
+      "slice_sha256": "c025792c0a087c64bf5a5e2da1142d6e3a12c542683557dbaa088d4b87b8a324"
+    },
+    {
+      "block": 3,
+      "block_fingerprint": "53a1da14a2cd24ec7068fc40ad2592dd64f4e0dcd7d1b0e000ded91aee187a7b",
+      "metrics": {
+        "completed_trades": 75,
+        "fills": 75,
+        "gross_pnl": -5121.727100000024,
+        "mtm_max_drawdown_fraction": 0.008424717879897726,
+        "net_pnl": -8358.440115056923,
+        "profit_factor": 0.16468412216087747,
+        "safety_violations": 0
+      },
+      "plant_control": {
+        "applied": true,
+        "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+        "evaluations": 1875,
+        "grid_state_counts": {
+          "ISLANDED_SAFE": 80,
+          "SYNCHRONIZED": 1795
+        },
+        "mode": "PAPER_APPLY",
+        "observer_failures": 0,
+        "paper_admission_caps": 222,
+        "paper_admission_evaluations": 8460,
+        "paper_admission_rejections": 7713,
+        "plant_protection_connected": true,
+        "transitions": 398
+      },
+      "sessions": [
+        "2025-01-10",
+        "2025-01-13",
+        "2025-01-14",
+        "2025-01-15",
+        "2025-01-16"
+      ],
+      "slice_sha256": "b72f0067eb5599d5066fe7b8794acd48eb50d381ce7f98cd47897089a30afd85"
+    }
+  ],
+  "candidate_sha256": "fad525d6ef930307a4d59c160d70531dd3924976eed39eb53b643c528b4ba1fe",
+  "engine_parent_commit": "3e5e4f6",
+  "git_head": "ece56008b24468acdad981232151993a7c0b4dd2",
+  "host": "srinivas-B760M-AORUS-ELITE-AX",
+  "mode": "CANDIDATE_EVALUATION",
+  "params": {
+    "entry_confidence_threshold": 0.10088328068438612,
+    "max_hold_bars": 51,
+    "minimum_profit_margin_over_cost": 0.7084694827762447,
+    "profit_target_atr_mult": 1.0098385407915265,
+    "stop_loss_atr_mult": 0.7953138716418611
+  },
+  "protocol_sha256": "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+  "stage": "A",
+  "worker_sha256": "70fc0839784f44551067211151c598f3710dc1a6a339272ec41e1a0a66da1f4c"
+}

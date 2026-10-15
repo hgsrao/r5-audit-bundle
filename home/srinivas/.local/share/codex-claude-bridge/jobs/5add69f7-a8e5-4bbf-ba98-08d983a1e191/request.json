@@ -1,0 +1,5 @@
+{
+  "prompt": "Continue ONLY regression test correction in tests/test_r5_d02_exit_finalization.py. Supervisor ran both cases: both reach all convergence preconditions then fail assert successful confirms == [TRADE_ID] with observed [None], from unrelated cleanup. Inspect real cleanup path and test spies. Filter assertions/spy counts to actual TRADE_ID; preserve visibility of no-ID cleanup separately if useful. MTM recovery may also include unrelated calls, so verify exact real path before pinning. No production changes. Make test fail for actual missed trade-specific cleanup, not incidental None. Provide exact diff explanation. Execution NOT RUN; root runs. Do not widen scope.",
+  "work_dir": "/home/srinivas/projects/zerodha-d02-scan-classification",
+  "mode": "edit"
+}

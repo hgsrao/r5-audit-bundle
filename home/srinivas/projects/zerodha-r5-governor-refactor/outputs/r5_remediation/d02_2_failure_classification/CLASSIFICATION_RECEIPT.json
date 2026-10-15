@@ -1,0 +1,21 @@
+{
+  "classification": "PRE_EXISTING_AT_START_HEAD",
+  "cause": "START_HEAD_TRACKING_SURFACE_CHANGE: git-tracked archived outputs test scanned as production",
+  "start_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "current_before_fix": "current_target.log",
+  "start_counterfactual": "start_head_target.log",
+  "counterfactual_receipt": "start_head_counterfactual_receipt.json",
+  "after_fix_module": "scanner_module_after_fix.log",
+  "after_fix_result": "26 passed",
+  "repair_file": "tests/test_revision5_engine_applicability.py",
+  "repair_scope": "outputs/ source-scan exclusion only; PID assertion unchanged",
+  "production_sha256_at_audit_start": {
+    "revision2_external/orchestrator.py": "193aa17307f6d7333d98a0f1d39e15f353b053a792d67e7bfd2ba8b67efc8ead",
+    "revision2_external/paper_execution.py": "8d4e8feab59903907e99e115b0bd7f43e991c9f11e8460b9331f19298fdcec85",
+    "revision5/combined_cycle_runtime.py": "ce0985dacdb209afc3a8a137881dc6bb51d2ae6d0f9ea72e7b34301987e9c0e5",
+    "revision5/combined_cycle_store.py": "9ab9a0da140e7b473cf6e9db84517e79c38b7b1ab3b07a11e4bc827412b9fd5c",
+    "runtime/operating_mode.py": "0d48723498688ee749cbaa7e47e20e0a8b85a5441b35351580a3a77a15bc1099"
+  },
+  "commit_push_performed": false,
+  "live_calls_performed": false
+}

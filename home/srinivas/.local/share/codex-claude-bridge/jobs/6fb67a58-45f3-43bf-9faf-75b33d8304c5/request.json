@@ -1,0 +1,5 @@
+{
+  "prompt": "Continue authorized R5 project closure after verified D02.2. Read current actual files, docs/r5_remediation_project activity register and outputs/r5_remediation/closure reports; prioritize current recovery blocker NOTE-03/F-N03/C04. Read revision5/morning_recovery.py, paper_state_journal.py,state_recovery.py, revision2_external/orchestrator.py and instantiated controller/runtime classes. D02 acceptance outputs/R5_D02_2_EXIT_FINALIZATION_ACCEPTANCE.md has current boundaries. Identify exact remaining controller/cursor hydration gaps and propose smallest next bounded production implementation plus meaningful restart fixture. Do not repeat fixed D02 issues or infer old reports current. Return exact fields/classes/locations, why incomplete blocks admissions, dependencies and safe narrow opt-in design. No edits, no parameter/data changes, no live calls. You cannot execute commands; root tests. Also give concise evidence-based project remaining-work ordering; no claim of live readiness.",
+  "work_dir": "/home/srinivas/projects/zerodha-r5-governor-refactor",
+  "mode": "review"
+}

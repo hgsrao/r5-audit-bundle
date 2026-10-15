@@ -1,0 +1,67 @@
+{
+  "batch_order_invariance_checks": 119,
+  "fault_events": [
+    {
+      "tick": 10,
+      "timestamp": "2026-08-13 10:24:00+05:30",
+      "action": "ANSI86_TRIP",
+      "bay": "GTG1_HEAVY_INDUSTRY",
+      "held_symbols": [
+        "POWERGRID",
+        "TATASTEEL"
+      ]
+    },
+    {
+      "tick": 70,
+      "timestamp": "2026-08-13 11:24:00+05:30",
+      "action": "EXPLICIT_TEST_OPERATOR_RESET",
+      "bay": "GTG1_HEAVY_INDUSTRY"
+    }
+  ],
+  "entry_fills_by_bay": {
+    "GTG1_HEAVY_INDUSTRY": 7,
+    "CSTG1_BFSI": 14,
+    "GTG2_TECH_TELECOM": 11,
+    "CSTG2_CONSUMER_AUTO": 17,
+    "BPSTG_HEALTHCARE": 9
+  },
+  "locked_exit_fills": 2,
+  "lockout_entry_violations": 0,
+  "cap_violations": 0,
+  "peak_open_positions": 5,
+  "peak_gross_fraction": 0.2802997749454148,
+  "max_symbols_per_batch": 48,
+  "illegal_reclose_rejections": 3,
+  "post_reset_entry_fills": 5,
+  "positive_cap_by_bay": {
+    "GTG1_HEAVY_INDUSTRY": 14,
+    "CSTG1_BFSI": 29,
+    "GTG2_TECH_TELECOM": 22,
+    "CSTG2_CONSUMER_AUTO": 39,
+    "BPSTG_HEALTHCARE": 18
+  },
+  "locked_cap_rejections": 119,
+  "unaffected_bay_positive_caps": 64,
+  "max_batch": 48,
+  "batches_with_2plus": 119,
+  "total_batch_candidates": 4110,
+  "timestamp_batches": 119,
+  "candidate_dispositions": {
+    "FILLED": 58,
+    "REJECTED": 5124
+  },
+  "candidate_reasons": {
+    "plant_control_paper_cap": 361,
+    "max_concurrent_positions": 3685,
+    "bay_cooldown_active": 465,
+    "paper_fill": 58,
+    "bay_ansi_flameout_tripped": 607,
+    "entry_decision_quantity_zero": 6
+  },
+  "queue_semantics": "timestamp-local batch; no persistent backlog or automatic retry",
+  "pending_after_run": 0,
+  "unclassified_after_run": 0,
+  "timestamp_processing_p95_seconds": 0.4447481320003135,
+  "timestamp_processing_max_seconds": 0.4495298189995083,
+  "peak_process_rss_mib": 294.14453125
+}

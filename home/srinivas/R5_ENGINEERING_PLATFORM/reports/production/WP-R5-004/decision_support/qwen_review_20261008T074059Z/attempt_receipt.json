@@ -1,0 +1,27 @@
+{
+  "package": "WP-R5-004",
+  "worker": "qwen",
+  "model": "qwen3.8:27b",
+  "argv": [
+    "ollama",
+    "run",
+    "qwen3.8:27b",
+    "--hidethinking",
+    "--nowordwrap"
+  ],
+  "scope": "evidence-supplied engineering reasoning",
+  "amendment_approved": true,
+  "contract_ratified": false,
+  "dispatcher_used": false,
+  "started_at_utc": "2026-10-08T07:40:59.694203+00:00",
+  "request_sha256": "0cc4ac59b03ffe35e25374006ad7ac997de6a4f2d93f7b83bd97b706fcd6ced7",
+  "evidence_manifest_sha256": "6d7cb1b334d4a98e75cd5a0e4036d718be94fab1af226faf9ab2e2bb17b2cb91",
+  "binary_resolved": "/usr/local/bin/ollama",
+  "timeout_seconds": 1800,
+  "returncode": 0,
+  "worker_success": true,
+  "response_sha256": "036549b7ce5cbb37db785647f881a2ac1287f1738a5facb221b040cb631988b2",
+  "error": null,
+  "elapsed_seconds": 534.3440075109993,
+  "finished_at_utc": "2026-10-08T07:49:54.038609+00:00"
+}

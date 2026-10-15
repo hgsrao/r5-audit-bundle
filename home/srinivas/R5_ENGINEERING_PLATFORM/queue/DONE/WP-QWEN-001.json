@@ -1,0 +1,21 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:21:37.733588+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-QWEN-001.receipt.json",
+    "started_at": "2026-10-07T08:13:21.667038+00:00",
+    "state": "DONE",
+    "worker": "qwen"
+  },
+  "files": [],
+  "id": "WP-QWEN-001",
+  "metadata": {},
+  "objective": "TRAIN Loader Analysis",
+  "priority": 0,
+  "prompt": "Review reports/production/WP-R5-003 and reports/production/WP-R5-004. Analyse whether TRAIN-only qualification can be achieved without reading Validation or Holdout data. Compare Option A (TRAIN slice) versus Option B (qualification loader). Recommend the technically cleaner solution with advantages, disadvantages, engineering risks, and final recommendation. Do not modify files. Do not write code.",
+  "requires_review": false,
+  "rules": [],
+  "submitted_at": "2026-10-07T08:13:21.614941+00:00",
+  "type": "FORMULA_AUDIT",
+  "worker": "qwen"
+}

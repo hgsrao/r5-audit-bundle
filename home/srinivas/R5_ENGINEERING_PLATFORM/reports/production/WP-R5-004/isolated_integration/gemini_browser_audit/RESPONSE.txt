@@ -1,0 +1,160 @@
+# INDEPENDENT ENGINEERING AUDIT REPORT
+
+**Package / Campaign:** `WP-R5-004-ISOLATED-INTEGRATION` (Campaign H11 / I19 / J4)
+
+**Auditor Mode:** Gemini Flash Independent Engineering Audit
+
+**Overall Verdict:** **PASS WITH FINDINGS**
+
+Real### Overall Audit Verdict
+
+**PASS WITH FINDINGS**
+
+The isolated integration (`WP-R5-004-ISOLATED-INTEGRATION`) successfully enforces kernel-level bwrap boundary controls, EOF-bounded data loading, pure pre-execution authorization verification, and a hard fail-closed gate for real-data execution. However, concrete static defects were identified regarding post-cutoff temporal filtering in the grid loader and incomplete process state inheritance during in-process script execution.
+
+---
+
+### Per-Check Verdicts
+
+1. **EOF, Count, Chronology, TRAIN/Warmup & Coverage Correctness: PASS WITH FINDINGS**
+
+* Standalone artifacts terminate cleanly at EOF without sentinel requirements.
+
+
+* Physical reads match consumed bytes exactly, and row-count, extent, and chronology checks fail closed.
+
+
+* *Finding identified in grid cutoff handling (see FINDING-01)*.
+
+
+
+
+2. **Pre-Execution Pin & Metadata Binding: PASS**
+
+* Launcher and target validate authorization schemas, file size, content SHA-256 pins, code-tree pins, and manifest bijections prior to opening any data files (`ARTIFACT_OPENS` remains empty on refusal).
+
+
+
+
+3. **Release Gate & Scope Authority: PASS**
+
+* `release_record.py` strictly restricts `SYNTHETIC_ONLY` grants from authorizing `NON_SEALED_TRAIN_EXECUTION_DIAGNOSTIC`.
+
+
+* `REAL_TRUSTED_ISSUERS` is empty and `REAL_RUN_RELEASE_ACCEPTANCE_SHA256` is `None`, keeping real-data release hard-closed.
+
+
+
+
+4. **Live OS Witness, Imports & Mount Immutability: PASS WITH FINDINGS**
+
+* Namespaces, capabilities, network isolation, broad-mount denials, and read-only mounts remain intact throughout execution.
+
+
+* *Finding identified in target execution context handling (see FINDING-02)*.
+
+
+
+
+5. **Dependency Gap Closure & Mechanical Equivalence: PASS**
+
+* Sandbox imports from `sys.prefix` (`numpy`, `pandas`, `scipy`, `talib`) match original-source mechanical outputs identically (`OUT_FILES` hashes match) across zero trades.
+
+
+
+
+
+---
+
+### Concrete Findings
+
+#### FINDING-01: Grid Post-Cutoff Causal Leakage via Unsorted Availability Buffering
+
+* **Severity:** Medium
+
+
+* **Trigger:** An unsorted grid feed containing a pre-cutoff timestamp positioned after a post-cutoff timestamp.
+
+
+* **Consequence:** In `load_curated_grid`, when `availability > cutoff_utc` is encountered, the loader increments `discarded += 1` and executes `continue`. If subsequent rows in the CSV have timestamps earlier than `cutoff_utc`, they are appended to `rows` out of causal sequence. Although line 393 checks `availability <= previous` to catch non-increasing timestamps, the cutoff discard loop should strictly disallow any subsequent rows from re-entering the causal frame.
+
+
+* **Location:** `source/curated_artifact.py`, lines 403–406:
+
+
+```python
+0403:             if availability > cutoff_utc:
+0404:                 discarded += 1
+0405:                 continue
+0406:             rows.append({"timestamp": availability, "close": row["close"]})
+
+```
+
+
+* **Minimal Correction:** Enforce a latch once the cutoff boundary is crossed:
+```python
+if availability > cutoff_utc:
+    cutoff_reached = True
+    discarded += 1
+    continue
+if cutoff_reached:
+    raise h.ChronologyError(f"{name}: causal row after post-cutoff discard")
+rows.append({"timestamp": availability, "close": row["close"]})
+
+```
+
+
+
+---
+
+#### FINDING-02: Target Execution Namespace Drift via `runpy.run_path`
+
+* **Severity:** Low
+
+
+* **Trigger:** Target modules that depend on global runtime environment adjustments or standard `sys.argv[0]` path resolution.
+
+
+* **Consequence:** In `os_isolation_bootstrap.py`, the target script is executed using `runpy.run_path(target, run_name="__main__")`. Running as `run_path` rather than invoking a clean subprocess or resetting process-level attributes leaves the bootstrap module cache and caller globals resident in memory.
+
+
+* **Location:** `source/os_isolation_bootstrap.py`, line 71:
+
+
+```python
+0071:         runpy.run_path(target, run_name="__main__")
+
+```
+
+
+* **Minimal Correction:** Purge unneeded bootstrap symbols from `sys.modules` or explicitly run inside an isolated module dictionary.
+
+
+
+---
+
+### Missing Evidence (NEEDS VERIFICATION)
+
+* **Multi-Node Host Environment Portability:** Testing was executed exclusively on a single host configuration (`Linux-7.0.0-38-generic-x86_64`) relying on unprivileged user namespaces. Verification across other target kernels with restrictive `kernel.unprivileged_userns_clone=0` sysctls requires confirmation before deployment across varied infrastructure.
+
+
+
+---
+
+### Real-Data Release Eligibility
+
+* **Status:** **STRICTLY CLOSED**
+
+* **Enforcement:**
+* `release_record.REAL_TRUSTED_ISSUERS` is empty (`{}`).
+
+
+* `os_isolation.REAL_RUN_RELEASE_ACCEPTANCE_SHA256` is `None`.
+
+
+* `curated_target.py` explicitly rejects any run where `plan.classification == h.CLASSIFICATION` without an explicit real grant.
+
+
+
+
+* No real-data execution can proceed under this codebase without an explicit Director cryptographic release acceptance pin and real issuer registration.

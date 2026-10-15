@@ -1,0 +1,114 @@
+# R5 Engineering Platform — State Synthesis & Next-Action Assessment
+
+## 1. Where You Are Right Now
+
+| Dimension | State |
+|---|---|
+| **Production readiness** | **NOT READY.** No candidate label. Live disabled. |
+| **Active blockers** | H=11, I=19, J=4 → **34 unresolved** items. |
+| **Package acceptance** | All 12 packages **NOT ACCEPTED.** WP01 BLOCKED. EXEC-05 NOT_QUALIFIED. |
+| **Highest-priority blocker** | **B-R5-003**: TRAIN segment access method + git-verified code identity + replay stage/block/params designation + NOT_QUALIFIED input acceptance. |
+| **WP-R5-004** | Static deliverables **complete** (6 reports, PASS WITH FINDINGS). Execution **NOT QUALIFIED.** Dispatcher ownership holes in `complete()` / `_unexpected_exit` **not yet fixed.** |
+| **Director policy (2026-10-08T07:10)** | Autonomous package management granted, but **STOP** mandatory for replay-contract, risk-policy, and engineering-authority decisions. Required next action: **Director/architect contract ratification** covering route/code identity, TRAIN integrity, risk behavior, CNC causal boundaries. |
+
+The platform is in a **deliberate, fail-closed hold**. Nothing has moved toward execution since the static report close on 2026-10-08T06:57Z.
+
+---
+
+## 2. The Two Qwen Smoke-Test Failures — Infrastructure, Not Logic
+
+| Receipt | Root cause | Severity |
+|---|---|---|
+| `WP-EOS-011-SMOKE-ENG` (34 s) | Qwen process emitted a wall of box-drawing glyphs (`⊙ ⊹ ⊸ ⊼ ⊴ ⋦ ⋧ ⋇ ⋯ ⋫ ⋭` …) then `Error: unexpected EOF`. Classic **UTF-8/terminal encoding mismatch** in the worker's stdout capture, or a model-level generation loop that never terminated. `output_sha256: null`, `response_file: null`. | **Worker/infra** — the model never produced a parsable response. |
+| `WP-EOS-011-SMOKE-WP` (0.013 s) | `could not connect to ollama server, run 'ollama serve' to start it`. The **ollama daemon was not running** at dispatch time. | **Ops/infra** — missing prerequisite service. |
+
+**Neither failure reflects a defect in the R5 codebase or the WP-R5-004 deliverables.** They are dispatcher→worker plumbing failures. Before any further dispatch:
+
+1. Confirm `ollama serve` is running and the model is loaded (`ollama list`).
+2. Add a **pre-flight connectivity check** to the dispatcher (a trivial `ollama API /api/tags` call with a 3 s timeout) so the receipt records `ERROR: OLLAMA_UNREACHABLE` instead of a 0.01 s exit-1.
+3. Investigate the encoding path for the ENG smoke: the worker's stdout is being captured through a layer that is mis-decoding UTF-8 multibyte sequences into CJK box-drawing codepoints. Check whether the capture pipe has a `LANG`/`LC_ALL` set to a non-UTF-8 locale, or whether the model's raw bytes are being passed through a `latin-1` → `utf-8` double-encode.
+
+---
+
+## 3. The FORMULA_AUDIT (WP-QWEN-001) — What It Decides and What It Doesn't
+
+The audit is **well-structured and internally consistent**. Its central insight is correct and important:
+
+> **Option A vs Option B is the wrong axis if the qualification gate is meant to test generalisation.** Both options are TRAIN-only by construction. If the gate's definition is *"the model generalises,"* neither option is sufficient and the correct next step is k-fold CV within TRAIN or a separate, later Validation-partition read at release sign-off.
+
+However, the audit is explicitly **provisional**, holding on four open items that map directly onto the platform's current blockers:
+
+| Audit open item | Current platform state |
+|---|---|
+| 1. Does WP-R5-003 define "qualification" as mechanical or generalisation? | WP-R5-003 **FAILED** at Gate 0 before the question could be answered. The gate definitions in `SAFETY_GATE_REPORT.md` are static-only. The replay was never executed. **Still open.** |
+| 2. Does WP-R5-004 prescribe a loader architecture? | WP-R5-004 static reports are complete. `TRAIN_SCOPE_REPORT.md` addresses segment access. Need to confirm whether it specifies Option A (slice + mask) vs Option B (dedicated loader). **Check `reports/production/WP-R5-004/`.** |
+| 3. Compliance requirement for separate data path? | Not evidenced in the backlog entries provided. **Still open.** |
+| 4. Current training-loop structure? | `run_r5_step5_candidate.py` is the entry point. Single-script structure. **Answerable from the code.** |
+
+**Until items 1 and 3 are resolved, the A-vs-B choice remains premature**, exactly as the audit states.
+
+---
+
+## 4. The Critical Path to Unblocking (Ordered)
+
+These are not parallel; they have hard dependencies:
+
+```
+Step 1  Director/architect ratifies the replay contract:
+        • route + code identity (which git ref, which dirty-file set)
+        • TRAIN integrity standard (row-hash vs whole-file-hash vs slice-hash)
+        • risk behavior (which risk_profile, which governors are in scope)
+        • CNC causal boundaries (confirmed: no tick-consuming path in replay)
+        ↓
+Step 2  Fix Dispatcher ownership holes (complete() / _unexpected_exit
+        must verify ownership before acting). Re-run 157-test suite.
+        ↓
+Step 3  Operator resolves B-R5-003:
+        • Choose OPTION S (TRAIN-only slice, recorded hash) or
+          OPTION L (authorised segment-restricted loader)
+        • Accept or decline the 7 NOT_QUALIFIED + 4 UNKNOWN inputs
+        • Designate stage/block/params for the replay
+        ↓
+Step 4  Resolve the 4 FORMULA_AUDIT open items (particularly #1 and #3).
+        This may change whether Option A or B is the right design,
+        or whether a third option (CV or deferred Validation read) is needed.
+        ↓
+Step 5  Fix the Qwen/ollama infra issues (items in §2 above).
+        Only then can smoke tests pass and the worker pipeline be trusted.
+        ↓
+Step 6  Execute the TRAIN replay under the ratified contract.
+        → WP-R5-003 re-entry (or WP-R5-005, depending on the contract).
+        → WP01 acceptance path unblocks.
+        → H/I/J counts can begin to move.
+```
+
+**Steps 1–2 are operator/architect actions. No amount of worker dispatch advances them.**
+
+---
+
+## 5. What I Can Do Right Now, Given the Constraints
+
+You have not asked me to write code, modify files, or dispatch a worker. Based on the evidence, here is what is within reach:
+
+- **Read and cross-reference** the six WP-R5-004 reports in `reports/production/WP-R5-004/` to resolve FORMULA_AUDIT items #2 and #4.
+- **Review the Dispatcher ownership-hole code** (`complete()`, `_unexpected_exit`) and produce a precise fix spec for the two missing ownership checks.
+- **Draft the Director ratification checklist** as a concrete, sign-off-ready document covering the four contract dimensions (route/identity, TRAIN integrity, risk behavior, CNC boundaries).
+- **Specify the Qwen/ollama pre-flight check** as a 5-line dispatcher addition with the exact error-receipt schema.
+- **Produce the OPTION S vs OPTION L decision memo** with the specific row-hash vs file-hash trade-off, the `prepare_block` change surface (lines 454, 331, and `dataset_manifest.py:126-131`), and the CI assertion that would prevent the Validation/Holdout byte read.
+
+What I **cannot** do from here:
+- Execute the replay, run tests, or modify production code.
+- Grant or revoke operator authorisation.
+- Change H/I/J counts or package acceptance states.
+- Assert the Qwen worker is available (the last two receipts both show failure).
+
+---
+
+## 6. One Structural Observation
+
+The platform's fail-closed posture is correct and has worked: no contaminated data has been read, no unverified code has been replayed, and the 34 unresolved items are tracked. The cost is velocity — the platform has been in this hold state since 2026-10-07, and the two Qwen smoke failures on 2026-10-07T08:35Z show the worker pipeline was already broken before the static work resumed.
+
+The single highest-leverage action available to the operator right now is **Step 1**: the Director/architect contract ratification. Everything else (loader choice, git identity, risk profile, CNC scope) is a sub-decision that can be answered mechanically once the contract's scope is pinned. The FORMULA_AUDIT's provisional status is a direct consequence of this contract not existing yet.
+
+**I am ready to work on any of the six items in §5. Tell me which one to start with, or paste the relevant sections of the WP-R5-004 reports and I will close the four FORMULA_AUDIT open items and issue the unqualified A-vs-B (or C) recommendation.**
+

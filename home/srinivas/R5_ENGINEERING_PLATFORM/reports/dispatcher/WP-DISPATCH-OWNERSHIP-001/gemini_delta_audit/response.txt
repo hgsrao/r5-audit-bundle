@@ -1,0 +1,44 @@
+# Audit Report: WP-DISPATCH-OWNERSHIP-001-AUDIT (Dispatcher Ownership Repair)
+
+## Judgment: **PASS**
+
+The implementation in `engineering_dispatcher/queue_manager.py` and the updated `Dispatcher.run_once` logic successfully address the core ownership and crash-safety requirements. The "AMENDMENT 1" changes provide a robust mechanism for atomic state transitions and roll-forward recovery of interrupted completions.
+
+### 1. Verified Fixes & Mechanisms
+
+#### Atomic Transitions (`_rename_locked`)
+- Every state transition (READY -> RUNNING, RUNNING -> DONE/FAILED/REVIEW/READY) now uses `_rename_locked`.
+- **Mechanism**: The new payload (including a `transition` marker) is first written to the source file via `_atomic_write` (using a temporary file and `fsync`), followed by a single `os.replace` to the target directory.
+- **Evidence**: `queue_manager.py` lines 304-325.
+- **Result**: The package always exists in exactly one canonical state directory. `os.replace` acts as the atomic commit point.
+
+#### Interrupted Completion Roll-Forward
+- If a crash occurs after the payload is updated in `RUNNING` but before the rename to `DONE/FAILED/REVIEW` completes, the next dispatcher to `reclaim_stale` will detect the `transition` marker.
+- **Mechanism**: `_pending_transition` reads the marker; `reclaim_stale` rolls the package forward to the recorded target state.
+- **Evidence**: `queue_manager.py` lines 212-218 and 296-302.
+- **Result**: Prevents re-execution of packages that already successfully finished their worker run but hadn't yet moved state.
+
+#### Duplicate State Protection
+- The dispatcher now refuses to operate on any package ID that exists in multiple state directories (a "conflict").
+- **Mechanism**: `_other_states` check in `_rename_locked`, `claim_next`, and `reclaim_stale`. `conflicts()` method provided for operator visibility.
+- **Evidence**: `queue_manager.py` lines 278-294.
+- **Result**: Fails closed on pre-existing or external corruption, preventing unpredictable behavior.
+
+#### Ownership Integrity
+- **Per-claim tokens**: Each claim is unique (`uuid4().hex`), stored in both the manager and the `.owners` record.
+- **Heartbeat & Guard**: `claim_guard` holds the queue lock and verifies the token remains valid across the entire receipt publication and state completion window.
+- **Evidence**: `queue_manager.py` lines 145-155 (`claim_guard`), `dispatcher.py` lines 79-88.
+
+### 2. Concrete New Regressions
+- **None identified**. The changes are strictly additive or corrective to the ownership model. The use of `transition` markers in payloads is handled in tests via `_without_marker`.
+
+### 3. Release Boundaries & Director Gates
+The system is safe for release under the following constraints:
+- **Scope**: ONE sequential dispatcher running on a local filesystem (NFS atomicity not guaranteed).
+- **Preflight Gate**: The Director (human/script) SHOULD examine `READY`, `RUNNING`, and `conflicts()` before execution.
+- **Automatic Recovery**: `Dispatcher.recover()` (which calls `reclaim_stale`) is safe to run at startup; it will roll forward crashed completions and requeue stale `RUNNING` tasks that have no transition markers.
+- **Exactly-Once**: As noted in the implementation receipt, this does not guarantee exactly-once external side effects. A crash between worker completion and payload update will still result in a re-run.
+
+### 4. Evidence of Verification
+- **Tests**: 180 tests passing (verified in `IMPLEMENTATION_RECEIPT.md AMENDMENT 1`).
+- **Crash Simulation**: New tests in `test_queue.py` (e.g., `test_crash_before_completion_rename...`) successfully demonstrate the roll-forward and single-state properties using simulated `BaseException` injections.

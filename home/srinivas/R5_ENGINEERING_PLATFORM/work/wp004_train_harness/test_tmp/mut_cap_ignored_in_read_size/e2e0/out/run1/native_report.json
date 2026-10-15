@@ -1,0 +1,253 @@
+{
+  "allocator_status": "AVAILABLE_OR_NOT_REFIT",
+  "bars_processed": 160,
+  "bay_cooldown_rejections": 0,
+  "bay_trip_rejections": 0,
+  "certification_audit": {
+    "AAA": {
+      "exact_duplicates_removed": 0,
+      "input_rows": 141,
+      "output_rows": 141
+    },
+    "BBB": {
+      "exact_duplicates_removed": 0,
+      "input_rows": 141,
+      "output_rows": 141
+    }
+  },
+  "closed_loop_mode": "active_paper",
+  "completed_trades": 0,
+  "confidence_qualified": 62,
+  "config_hash": "af9eb4800003a4d76ac698532eb77c2c7e81a1e2a3a6a98e93955c6aa38591f7",
+  "controller_telemetry": [],
+  "controller_telemetry_summary": {
+    "closed_loop_entry_snapshots": 0,
+    "dynamic_size_actuations": 0,
+    "entry_quality_comparisons": 2,
+    "entry_throttle_updates": 2,
+    "events": 246,
+    "exit_protection_updates": 0,
+    "hmm_regime_risk_shadow_observations": 156,
+    "outcome_ledger_updates": 0,
+    "outcomes": 0,
+    "portfolio_risk_comparisons": 0,
+    "shadow_r_trajectory_exits": 0,
+    "shadow_r_trajectory_updates": 0,
+    "trade_path_comparisons": 0,
+    "trade_path_stop_actuations": 0
+  },
+  "directional_signals": 154,
+  "ending_equity": 1000000.0,
+  "entry_candidate_observations": {
+    "dispositions": {
+      "REJECTED": 2
+    },
+    "observed_candidates": 2,
+    "rows": [
+      {
+        "candidate_id": "candidate-1",
+        "execution_disposition": "REJECTED",
+        "execution_reason": "governor_no_action",
+        "id_confidence": 0.45103817925518475,
+        "pa_confidence": 0.45103817925518475,
+        "planned_entry_price": 114.1671,
+        "planned_fill_timestamp": "2023-12-04 09:36:00+05:30",
+        "planned_maximum_hold_bars": 60,
+        "planned_stop_price": 113.47561812928136,
+        "planned_target_price": 115.20432280607797,
+        "side": "BUY",
+        "studies_confidence": 1.0,
+        "symbol": "BBB",
+        "timestamp": "2023-12-04 09:35:00+05:30"
+      },
+      {
+        "candidate_id": "candidate-2",
+        "execution_disposition": "REJECTED",
+        "execution_reason": "governor_no_action",
+        "id_confidence": 0.45754859437926565,
+        "pa_confidence": 0.45754859437926565,
+        "planned_entry_price": 114.0068,
+        "planned_fill_timestamp": "2023-12-04 09:37:00+05:30",
+        "planned_maximum_hold_bars": 60,
+        "planned_stop_price": 113.30998659530775,
+        "planned_target_price": 115.05202010703837,
+        "side": "BUY",
+        "studies_confidence": 1.0,
+        "symbol": "BBB",
+        "timestamp": "2023-12-04 09:36:00+05:30"
+      }
+    ]
+  },
+  "entry_expectancy_evidence": {
+    "pending_candidates": 0,
+    "resolved": [],
+    "resolved_candidates": 0
+  },
+  "execution_halted": false,
+  "exit_orders_submitted": 0,
+  "fills": 0,
+  "final_portfolio_weights": {
+    "AAA": 0.5,
+    "BBB": 0.5
+  },
+  "gates_evaluated": 0,
+  "gates_passed": 0,
+  "gates_rejected": 0,
+  "governor_authority": {
+    "entry_decisions": {
+      "NO_ACTION:GOVERNOR_UNMAPPED_SYMBOL": 2
+    },
+    "mode": "full",
+    "position_decisions": {}
+  },
+  "grid_shadow": {
+    "available": 0,
+    "enabled": true,
+    "observations": [
+      {
+        "available": false,
+        "decision_timestamp": "2023-12-04T04:05:00+00:00",
+        "direction": 1,
+        "macro_nifty_trend": null,
+        "macro_vix_level": null,
+        "macro_vix_slope": null,
+        "nifty_close": null,
+        "nifty_ema_50": null,
+        "phase_delta_degrees": null,
+        "reason": "SYMBOL_GRID_ALIGNMENT_INSUFFICIENT",
+        "source_age_seconds": null,
+        "source_timestamp": null,
+        "symbol": "BBB",
+        "synchronized": null,
+        "vix_close": null
+      },
+      {
+        "available": false,
+        "decision_timestamp": "2023-12-04T04:06:00+00:00",
+        "direction": 1,
+        "macro_nifty_trend": null,
+        "macro_vix_level": null,
+        "macro_vix_slope": null,
+        "nifty_close": null,
+        "nifty_ema_50": null,
+        "phase_delta_degrees": null,
+        "reason": "SYMBOL_GRID_ALIGNMENT_INSUFFICIENT",
+        "source_age_seconds": null,
+        "source_timestamp": null,
+        "symbol": "BBB",
+        "synchronized": null,
+        "vix_close": null
+      }
+    ],
+    "synchronized": 0
+  },
+  "gross_pnl": 0.0,
+  "id_approvals": 2,
+  "id_rejections": 154,
+  "micom": {
+    "trip_bar_counts": {
+      "MICOM_INPUT_UNAVAILABLE": 32
+    },
+    "vol_z_window": 20
+  },
+  "mpc_plans": 2,
+  "mtm_equity_curve": [],
+  "mtm_max_drawdown_fraction": 0.0,
+  "net_pnl": 0,
+  "operating_mode": "paper",
+  "orders_submitted": 0,
+  "pa_amber": 0,
+  "pa_evaluations": 160,
+  "pa_green": 0,
+  "pa_neutral": 62,
+  "pa_red": 98,
+  "pa_signals": 160,
+  "parameter_coverage": {
+    "safety_total": 22,
+    "target_consumed": 149,
+    "target_missing": [
+      "capital_allocation_mode",
+      "capital_per_trade_fraction",
+      "data_validation_mode",
+      "limit_order_offset_percent",
+      "lot_size_by_symbol",
+      "max_loss_per_day_rupees",
+      "max_loss_per_trade_rupees",
+      "max_positions_live",
+      "max_positions_per_symbol",
+      "max_retry_attempts",
+      "max_symbol_concentration",
+      "min_capital_buffer_fraction",
+      "minimum_profit_margin_over_cost",
+      "order_timeout_seconds",
+      "order_type",
+      "phase1_exploration_intensity",
+      "phase2_optimization_intensity",
+      "portfolio_aggressive_scale",
+      "retry_delay_seconds",
+      "slippage_tolerance_percent"
+    ],
+    "target_total": 169
+  },
+  "pid_mode": "enabled",
+  "plant_control": {
+    "applied": false,
+    "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+    "evaluations": 80,
+    "grid_state_counts": {
+      "ISLANDED_SAFE": 32,
+      "UNSYNCHRONIZED": 48
+    },
+    "mode": "PAPER_APPLY",
+    "observer_failures": 0,
+    "paper_admission_caps": 0,
+    "paper_admission_evaluations": 0,
+    "paper_admission_rejections": 0,
+    "plant_protection_connected": true,
+    "transitions": 4
+  },
+  "plant_control_shadow": {
+    "applied": false,
+    "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+    "evaluations": 80,
+    "grid_state_counts": {
+      "ISLANDED_SAFE": 32,
+      "UNSYNCHRONIZED": 48
+    },
+    "mode": "PAPER_APPLY",
+    "observer_failures": 0,
+    "plant_protection_connected": true,
+    "transitions": 4
+  },
+  "portfolio_cap_rejections": 0,
+  "position_sizing_events": [],
+  "post_fill_checks": [],
+  "risk_profile": "development",
+  "safety_approvals": 0,
+  "safety_contract_hash": "9a0a818034f9dc1f280b0be9d62c40913a4447aa7e49638b52bbadb630b62803",
+  "safety_rejections": 0,
+  "safety_violations": 0,
+  "session_completeness": {
+    "AAA": {
+      "complete": false,
+      "missing_minutes": null,
+      "reason": "SESSION_CALENDAR_NOT_SUPPLIED",
+      "unexpected_minutes": null
+    },
+    "BBB": {
+      "complete": false,
+      "missing_minutes": null,
+      "reason": "SESSION_CALENDAR_NOT_SUPPLIED",
+      "unexpected_minutes": null
+    }
+  },
+  "slippage_model": {
+    "live_qualified": false,
+    "status": "REPLAY_FRICTION_MODEL_SIMULATION_ONLY"
+  },
+  "symbols": [
+    "AAA",
+    "BBB"
+  ],
+  "trades": []
+}

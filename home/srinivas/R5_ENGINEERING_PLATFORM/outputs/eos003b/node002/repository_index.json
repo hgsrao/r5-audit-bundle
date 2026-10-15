@@ -1,0 +1,105 @@
+{
+  "node": "NODE-002",
+  "task": "engineering platform repository index",
+  "status": "PASS",
+  "file_count": 19,
+  "duration_seconds": 0.002504994999981136,
+  "files": [
+    {
+      "path": "bridge/src/__init__.py",
+      "bytes": 61,
+      "sha256": "a854e3be5df3b6380c6badabd44af821294782ea76853e7954dbd40da9b37ef7"
+    },
+    {
+      "path": "bridge/src/audit_adapter.py",
+      "bytes": 3900,
+      "sha256": "f3e95383c36418dc4fbb6094f491a3ef2dd5320834af892dc0594e52ca5a2f67"
+    },
+    {
+      "path": "bridge/src/audit_models.py",
+      "bytes": 1742,
+      "sha256": "37d1bdf0dd78a07bfd143ffb61d612a3447f07fbfac87b9bee1a2823f641dc1a"
+    },
+    {
+      "path": "bridge/src/audit_report.py",
+      "bytes": 2582,
+      "sha256": "6d231abcec1446b247b7f433ca1d98bb3da4aa3154ea8f2e749572542f9d71c5"
+    },
+    {
+      "path": "bridge/src/bridge.py",
+      "bytes": 3575,
+      "sha256": "258a86bf8500b1d8e5e56053b59f5aca9a99a9f654c97665b19371171114047c"
+    },
+    {
+      "path": "bridge/src/config.py",
+      "bytes": 615,
+      "sha256": "8ccfe208e5af7c0ef035ac4723b3e0b4b19d8568eeadc5f40eb602e1d33d8482"
+    },
+    {
+      "path": "bridge/src/logger.py",
+      "bytes": 1509,
+      "sha256": "61343fde7c4bd22d9941a2a2c9dffa9534d0bb6f8c9310b6868b0f0b6c900f57"
+    },
+    {
+      "path": "bridge/src/main.py",
+      "bytes": 1149,
+      "sha256": "6200e54eda5a8419331e5556e053832696e3e7318f66d7f207ea64f6540c1fef"
+    },
+    {
+      "path": "bridge/src/ollama_client.py",
+      "bytes": 2128,
+      "sha256": "3e331f691e29e388c0079f68bda17380079d5910bb4027aeb7e7c02d1b6a3e85"
+    },
+    {
+      "path": "bridge/src/prompt_router.py",
+      "bytes": 788,
+      "sha256": "5b5e723d9ab525a77aaad94a8e528938940dffe6b084f6df9f0878196e40c44e"
+    },
+    {
+      "path": "bridge/src/router.py",
+      "bytes": 2632,
+      "sha256": "3fd5944fee72b003ead0503e273091471514b75ac34f8a53795eb1bd5024ac0f"
+    },
+    {
+      "path": "bridge/src/work_package.py",
+      "bytes": 2614,
+      "sha256": "68ee539759dd8d34120a75859e8906bf9b9a22ebb12be67b22abae985f6aa87f"
+    },
+    {
+      "path": "bridge/tests/test_bridge.py",
+      "bytes": 10743,
+      "sha256": "703d739bb73c89e997d91f60fc9b88fe1adf3edb60763b8ad3cbb276a2afc06a"
+    },
+    {
+      "path": "bridge/tests/test_bridge_v12.py",
+      "bytes": 9371,
+      "sha256": "3e89cd14fe18584438950ccf0202240dbdbb5b56acd08657c77827b6e726640e"
+    },
+    {
+      "path": "architecture/AI_ROLES.md",
+      "bytes": 1220,
+      "sha256": "7137aa7394b24115b7f7af7db6477df2935706895ef818661ac77ae5c3cd1d15"
+    },
+    {
+      "path": "architecture/CONTROL_PHILOSOPHY.md",
+      "bytes": 1564,
+      "sha256": "4974ca64b1421dcfe9c2cdfc351fd16add34bf6fb8ae9fc0aece55c08fefc42a"
+    },
+    {
+      "path": "architecture/ENGINEERING_STANDARDS.md",
+      "bytes": 1237,
+      "sha256": "4f078e3fd9d42d6aaa15a9a241a94ec47441808de4f6fc01cdfdafb38fc3ab27"
+    },
+    {
+      "path": "architecture/SYSTEM_CONTEXT.md",
+      "bytes": 2243,
+      "sha256": "f434d40ec7bb5a74b5d7930f1f9dc595e7d2bfe5333c4b95c857b8adf4c13a6b"
+    },
+    {
+      "path": "architecture/bridge/ROUTING.md",
+      "bytes": 981,
+      "sha256": "eaa9b0cf31df3ce2ec8e6c849f182c515554605a29d35c9fe565af3d6c6f0e36"
+    }
+  ],
+  "R5_production_accessed": false
+}

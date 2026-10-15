@@ -1,0 +1,14 @@
+{
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/release_authority/DIRECTOR_DECISION.json": "295653da99fc2c102330d1b31ab28a3a222570e40c705553044b2575227bacf8",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/release_authority/IMPLEMENTATION_RECEIPT.md": "d5378439c28634940b80d467699456259883803b6afc77446e8060346abeb11a",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/run_nonsealed_diagnostic.py": "0e4492d408533581600219a62642dab0cd75b0aa842c2f2abbc51816c2207d7b",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_target.py": "9f21278cb978e9cfbe44454e15307f7345df06aefc22eb7be250c1e5d71bea23",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_artifact.py": "e65e7de2b26b00f7ed6a174d02eeb51c9efa7b42793f33875f89e7871c85ee06",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/os_isolation_bootstrap.py": "b11ea923feb5f539966291cf9b99487371a15dbbe270e9cd7ba5ff4cd443c3d8",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/real_approval.py": "f5a54d373bc77f3e67924a63ef50263753dede1b5ebf49fc5a3cb36dc1764e90",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/release_record.py": "67dbb3ad803e177bb498f252114c00f0ad94ecdc290db988eb48db75e4aa1383",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py": "c6f6963b47a2942245680f8d43f35e8ededddaaa9e0fb50d26e0eaf05aa40ff9",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/wp004_train_harness.py": "97e711848659594c50df416cef352f08768d5b3307947c796a99d2b697a47263",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/os_isolation.py": "96e6f423cd47dd83a70e95090a60b84a46dbcfdcd5935039523803e418ff022b",
+  "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness_tests/test_real_authority.py": "696fec1ed7ddc5e222dbd6e2db02197fb854a6260256f5a83907eec7f19ee334"
+}

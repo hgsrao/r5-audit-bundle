@@ -1,0 +1,1 @@
+{"id": "WP-BRIDGE-001", "type": "GENERAL", "model": "fixture-model", "objective": "Review supplied content", "rules": ["No changes"], "files": ["src/example.py"], "prompt": "Review this text.", "metadata": {"owner": "test"}}

@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-08T06:57:28.723470+00:00",
+  "package": "WP-R5-004",
+  "static_deliverables": "PASS WITH FINDINGS",
+  "execution": "NOT QUALIFIED",
+  "production": "NOT READY",
+  "active": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  },
+  "new_package_dispatched": false,
+  "replay_run": false,
+  "tests_run": false,
+  "code_modified": false,
+  "corrections": [
+    "TRAIN slicing versus full-file seal reads",
+    "fresh Codex git and code hash verification",
+    "protected SHA preserved; dirty SHA unratified",
+    "no new package per latest instruction"
+  ],
+  "preserved_existing_artifacts": {
+    "DISPATCHER_RACE_REPORT.md": "49ad2cbe370c1aad29e962a156f50a8f87341874a745d6551e84c390f8bd6180",
+    "INTERIM_FINDINGS.md": "e3664047639862cd37061eca74026ee3aaf4af62e4affaf552fbc12af09247e9",
+    "evidence/git_identity_raw.txt": "00a4345fa415cb2e1ea879f982c8c357cac7ab6ee37b56bc0556556d7f05ec06",
+    "evidence/race_harness/slow": "f538b139699282bf2ea04b719460d7a6f39d579c2d0d9cb42e7728fd8472b25c",
+    "evidence/race_harness/run.sh": "7c14383008af80d6b78b4922bdee4dae04b1d3522a1aebe1e55bfe66223d022e"
+  }
+}

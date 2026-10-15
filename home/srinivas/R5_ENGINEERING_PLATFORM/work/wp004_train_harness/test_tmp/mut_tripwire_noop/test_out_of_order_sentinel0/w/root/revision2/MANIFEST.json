@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_tripwire_noop/test_out_of_order_sentinel0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "3f01a654e77a0c3ed14d4e3812c1ec29d7f3e10a50fa93df83142be36815d11a",
+      "size_bytes": 17622,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "1593053ebc1d4e339eb047001b29dc0c57e8e36fa1a8e018beccb688f615841a",
+      "size_bytes": 18659,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "d530baa73f97f51422190983d05bbd3b0110534fb209671a19ca93989f38819c",
+  "symbol_count": 2
+}

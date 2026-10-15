@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_size_check/test_shape_errors0/lone_cr/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "11aa0df1d904d67c1f8332a26ba96506d99671814335c340a9b0b61b65e303f8",
+      "size_bytes": 18032,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a1fe9a370396b35d424d820f4c664d88b531215f761f8cc667c81540eb22cc2b",
+      "size_bytes": 18626,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "7e2504523b30cd12246e81f8fcd1186ad0939cdae424ce8c70fe1a55221b6b06",
+  "symbol_count": 2
+}

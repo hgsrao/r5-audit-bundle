@@ -1,0 +1,29 @@
+{
+  "job": {
+    "argv": [
+      "/home/shrinivas/.venvs/zerodha-phase1-r5-worker/bin/python",
+      "/tmp/run_r5_step5_candidate.py",
+      "--root",
+      "/home/shrinivas/projects/zerodha-phase1",
+      "--protocol",
+      "/tmp/step5_sealed_calibration_protocol.json",
+      "--expected-protocol-sha",
+      "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+      "--stage",
+      "A",
+      "--params",
+      "/tmp/r5_step5_trial_005_params.json",
+      "--output",
+      "/tmp/r5_step5_trial_005_result.pending.json"
+    ],
+    "job_path": "/tmp/r5_step5_trial_005.job",
+    "laptop": "shrinivas@192.168.0.207",
+    "log_path": "/tmp/r5_step5_trial_005.log",
+    "params_sha256": "5318d81b76dd8e08c4306f9280e82f01ca18969feca44ef845b007f4824f8722",
+    "pending_path": "/tmp/r5_step5_trial_005_result.pending.json",
+    "protocol_sha256": "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+    "result_path": "/tmp/r5_step5_trial_005_result.json"
+  },
+  "pid": 88253,
+  "status": "COMPLETE"
+}

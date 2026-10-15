@@ -1,0 +1,32 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-08T13:43:49.778766+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-R5-004-ISOLATED-INTEGRATION.receipt.json",
+    "started_at": "2026-10-08T13:34:37.079125+00:00",
+    "state": "REVIEW",
+    "transition": {
+      "at": "2026-10-08T13:43:49.793721+00:00",
+      "to": "REVIEW"
+    },
+    "worker": "claude"
+  },
+  "files": [],
+  "id": "WP-R5-004-ISOLATED-INTEGRATION",
+  "metadata": {
+    "authorization": "Human autonomous campaign completion; Director curated EOF decision",
+    "parent_package": "WP-R5-004"
+  },
+  "objective": "Integrate curated-artifact authorization and actual synthetic engine execution inside OS isolation",
+  "priority": 10,
+  "prompt": "Resume SAME interrupted WP-R5-004-ISOLATED-INTEGRATION. Prior owner and Claude processes are absent; no completion receipt. Existing new code and evidence are preserved in interruption/. Do not restart implementation or redesign. Existing mutation_integration.py operates ONLY ON COPIES, so no real-source mutant restoration needed. Existing evidence/BASELINE_COMPARISON.json reports sandbox equals host curated and original source synthetic output; verify claims and current source consistency. Finish remaining relevant tests/logs/receipt and manifest from this state. Mutation tests: run only unfinished controls as needed, identify which claims lack logs; do not endlessly run every old suite per mutant. Run clean non-mutant current integration suite and relevant181 regression once if lacking reliable current evidence. Fix concrete failures only. Preserve original snapshot/repos and no real data/replay/strategy/calibration. Write IMPLEMENTATION_RECEIPT.md, actual test logs and SHA manifest under reports/production/WP-R5-004/isolated_integration. Record precise remaining external prerequisites and stopped process limitations. Final response concise. Original full authorized scope preserved in interruption/package.json; it still governs.",
+  "requires_review": true,
+  "rules": [
+    "Synthetic data only; no market data acquisition or real replay",
+    "Protected snapshot/original/production preserved",
+    "No strategy/calibration/numerical policy edits"
+  ],
+  "submitted_at": "2026-10-08T12:54:53.036175+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

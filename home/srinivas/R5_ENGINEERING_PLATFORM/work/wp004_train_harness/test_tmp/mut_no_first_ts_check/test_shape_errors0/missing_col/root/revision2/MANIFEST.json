@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_first_ts_check/test_shape_errors0/missing_col/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "c18f49be193c969f3698d15029d3e072539b71afeaa26bd4927f2d95b0589712",
+      "size_bytes": 17337,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a00468357be3587ffe90dadd837bdf397759568b574196280cad9fbb77e623b2",
+      "size_bytes": 18631,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "a2f8e08a6296cbe2b50f6781f4d2f9f57682dbc6c8e210a2e19a3b324ce203b9",
+  "symbol_count": 2
+}

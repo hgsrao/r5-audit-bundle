@@ -1,0 +1,149 @@
+{
+  "coworkUserFilesPath": "/home/srinivas/Claude",
+  "preferences": {
+    "coworkBrowserToolsEnabled": true,
+    "coworkPreferredBrowser": "chrome",
+    "launchPreviewPersistedWorkspaces": [],
+    "launchPreviewSessionScopedSessions": [],
+    "coworkLegacyRootGrantsPruned": true,
+    "coworkScheduledTasksEnabled": true,
+    "coworkHipaaRestricted": false,
+    "orgWorkAcrossAppsDisabled": false,
+    "ccdScheduledTasksEnabled": true,
+    "storeReadCacheLatched": true,
+    "sidebarMode": "epitaxy",
+    "bypassPermissionsOptInByAccount": {
+      "b8a4db77-bc5f-4716-ba92-ca91a3db1778": true
+    },
+    "bypassPermissionsGateByAccount": {
+      "b8a4db77-bc5f-4716-ba92-ca91a3db1778": true
+    },
+    "coworkWebSearchEnabled": true,
+    "coworkModelAutoFallbackByAccount": {
+      "b8a4db77-bc5f-4716-ba92-ca91a3db1778": true
+    },
+    "ccKeepAwakeOnBattery": false,
+    "remoteToolsDeviceName": "srinivas-b760m-aorus-elite-ax",
+    "ccAutoArchiveOnPrClose": true,
+    "epitaxyPrefs": {
+      "starred-local-code-sessions": [],
+      "starred-cowork-spaces": [],
+      "starred-session-groups": [],
+      "dframe-group-scopes": {},
+      "dframe-local-slice": {
+        "pinnedOrder": [],
+        "homeProjectsPinnedOrder": []
+      },
+      "desktop-frame.paneStore.v1": {
+        "state": {
+          "extraPanesByMode": {},
+          "colWeightsByMode": {},
+          "rowSplit": 0.5,
+          "draftNonce": 0,
+          "lastPrimaryCodeSession": {
+            "id": "session_01Vs1TPZaTnHMVFgo8LSuaMA",
+            "type": "remote"
+          }
+        },
+        "version": 4
+      },
+      "ccd-sessions-filter": {
+        "state": {
+          "selectedProjects": []
+        },
+        "version": 0
+      },
+      "starred-local-routines": [],
+      "epitaxy-auto-default-notice-seen.b8a4db77-bc5f-4716-ba92-ca91a3db1778": true,
+      "epitaxy-keep-awake-band-used.b8a4db77-bc5f-4716-ba92-ca91a3db1778": true,
+      "epitaxy-auto-mode-denial-count.b8a4db77-bc5f-4716-ba92-ca91a3db1778": 28,
+      "dframe-code-sections": {
+        "b8a4db77-bc5f-4716-ba92-ca91a3db1778/0bfcd37e-13bd-48b7-b3c6-81a5015d4504": {
+          "sections": [
+            {
+              "id": "pinned",
+              "kind": "pinned",
+              "v": 2,
+              "name": "",
+              "order": 0,
+              "sortBy": "recency",
+              "ascending": false,
+              "show": {
+                "metadata": false,
+                "emptyGroups": false
+              },
+              "collapsed": false,
+              "shown": true
+            },
+            {
+              "id": "routines",
+              "kind": "routines",
+              "v": 2,
+              "name": "",
+              "order": 1,
+              "sortBy": "recency",
+              "ascending": false,
+              "show": {
+                "metadata": false,
+                "emptyGroups": false
+              },
+              "collapsed": true,
+              "shown": false
+            },
+            {
+              "id": "sessions",
+              "kind": "sessions",
+              "v": 2,
+              "name": "",
+              "order": 2,
+              "sortBy": "recency",
+              "ascending": false,
+              "show": {
+                "metadata": false,
+                "emptyGroups": false
+              },
+              "collapsed": false,
+              "shown": true
+            }
+          ],
+          "migratedFrom": 1,
+          "prefsSeeded": true
+        }
+      },
+      "epitaxy-serene-whistle-decided": {
+        "local_1253c8e4-63d7-440c-b59f-0bea98ba4bf3": {
+          "base": "claude-sonnet-5-5",
+          "kept": true
+        }
+      },
+      "epitaxy-auto-setup-band-seen.b8a4db77-bc5f-4716-ba92-ca91a3db1778": true,
+      "epitaxy-auto-setup-snoozed-until.b8a4db77-bc5f-4716-ba92-ca91a3db1778": 0,
+      "epitaxy-transcript-links-in-preview": false,
+      "epitaxy-transcript-links-chooser-seen": true,
+      "autoResumeRateLimit.b8a4db77-bc5f-4716-ba92-ca91a3db1778": {},
+      "epitaxy-diff-tree-width": 344,
+      "epitaxy-project-nudge-impressions.b8a4db77-bc5f-4716-ba92-ca91a3db1778": {
+        "count": 1,
+        "lastShownAt": 1792044834160
+      },
+      "projects.overviewColumnFlex": 1.0647602673637304,
+      "epitaxy-pr-create-mode": "create",
+      "projects.artifactThreadDialog.threadShare": 0.6
+    },
+    "remoteSessionFolderGrants": {
+      "session_018amK7CZedSoSUEUGcYEEVF": [
+        "/home/srinivas/projects/zerodha-engine-c",
+        "/home/srinivas/projects",
+        "/home/srinivas/R5_ENGINEERING_PLATFORM"
+      ]
+    },
+    "remoteControlExcludedFolders": [
+      "/home/srinivas/projects/r5_c04b_candidate",
+      "/home/srinivas/projects/zerodha-phase1",
+      "/home/srinivas/projects/zerodha-r5-governor-refactor"
+    ],
+    "remoteControlPinnedFolders": [
+      "/home/srinivas/projects/zerodha-engine-c"
+    ]
+  }
+}

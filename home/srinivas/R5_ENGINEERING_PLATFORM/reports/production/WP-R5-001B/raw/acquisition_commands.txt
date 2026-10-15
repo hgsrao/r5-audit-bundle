@@ -1,0 +1,4 @@
+GET https://api.kite.trade/instruments/NSE
+200 686374 bytes
+GET https://nsearchives.nseindia.com/content/cm/NSE_CM_security_06102026.csv.gz
+200 1259539 bytes

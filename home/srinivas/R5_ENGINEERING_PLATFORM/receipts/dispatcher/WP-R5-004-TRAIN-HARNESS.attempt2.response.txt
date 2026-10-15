@@ -1,0 +1,31 @@
+WP-R5-004-TRAIN-HARNESS is implemented and passes 51 synthetic unit tests. I did no actual replay, so it is not execution-qualified or production-ready.
+
+The route is the direct factory, `execute_block(..., combined_cycle_state_path=None, fleet_loading_policy=None, feedback_compaction=False, prepare=<bounded prepare>)`. I did not use the lifecycle seam. I did not invoke git or touch the original repos or any market data.
+
+**What it does**
+- **Code identity:** it re-hashes the 562 snapshot files against `SNAPSHOT_MANIFEST.json` before and after a run, and checks HEAD `59371ff`. The protected indicator `a011b295…` is enforced even against a forged manifest. All 58 imported sources resolve inside the snapshot. The snapshot is unmodified.
+- **Bounded prepare:** an unbuffered reader counts every physical byte and hashes exactly the bytes consumed (warmup, target, one sentinel; the grid prefix). No whole-file market hash is made. `slice_sha256` now binds the consumed content, which the original's count-only hash did not.
+- **Rejections:** it rejects data, timestamp and clock escapes, bad shapes, missing or out-of-order sentinels, unsafe roots, wrong or malformed manifests and code drift.
+- **Tripwires:** 13 CNC, GTT, tick, conversion, kiteconnect and network targets plus raw-file access each fire in a negative control and read zero in the two end-to-end synthetic runs.
+- **Runner for later use:** `harness/run_nonsealed_diagnostic.py` refuses to run without an authorization receipt and hash pins for the snapshot manifest, protocol and params.
+
+**Test results**
+- **Run:** 51 passed, about 25 s. Synthetic fixtures only.
+- **Equality with the original:** frames and feeds match the snapshot's original `prepare_block` exactly, in LF, BOM+CRLF and `date`-column variants. Engine outputs match the original `execute_block` on two synthetic blocks, including one where the governor made entry decisions.
+- **Read boundary:** accounting matches an independent `open()` spy. A poison tail beyond the sentinel is never physically read.
+- **Negative controls:** a chunk larger than the file is rejected as unbounded.
+- **Content change:** a same-size one-digit edit changes the consumed hash and `slice_sha256`, while the counts-only audit stays identical.
+- **Mutation check:** 8 deliberately broken versions of the harness were all caught.
+
+**Needs a Director ruling before any real replay**
+1. Stock files are read from the start of the file through the sentinel. For real data that includes bytes dated before `train_start` and months of prefix per symbol.
+2. One grid row per feed is read, parsed and discarded to find the cutoff. The protocol says rows after block end are not parsed.
+3. Whole-file manifest hashes can't be re-verified, since whole-file hashing is forbidden. The size and first-timestamp checks fail closed, so legitimately re-acquired data that differs from the manifest would block replay.
+
+**Other limits**
+- The synthetic runs produced 0 fills and 0 trades, so exit, plant and trade paths are untested.
+- The tripwires are in-process Python patches and don't see `os.open`, `mmap` or other processes.
+- `grid-manifest-local.json` isn't in the snapshot, so the later package must supply a root containing it.
+- No independent review has been done.
+
+`IMPLEMENTATION_RECEIPT.md` lists the missing evidence and the real-data gates. The test logs, snapshot source manifest, dependency hash, declared unqualified inputs, verbatim runner text and checksums are alongside it in `reports/production/WP-R5-004/train_harness`. The harness, tests and runner are under `work/wp004_train_harness`. I did not commit or write any state or backlog.

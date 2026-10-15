@@ -1,0 +1,5 @@
+2026-09-24: Both formerly data-blocked replay tests passed.
+2 passed, 50 NumPy/pandas timedelta deprecation warnings in 64.22 seconds.
+48 frozen CSV SHA-256 values matched the existing manifest; all 51 copied files matched the backup.
+Recovery ZIP CRC checks and recorded member SHA-256 verification passed.
+No production engine changes.

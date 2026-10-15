@@ -1,0 +1,11 @@
+{
+  "engine_commit": "eb26df7f59a27da1f7f90f5ff1aa667a8545ab01",
+  "tag": "r5-paper-apply-baseline-20260924",
+  "working_tree_clean": true,
+  "harness_sha256": "af1d7f93006c9be815e0e18eef2573a9bd51b86b1ff8aad3c09d077d0cb89027",
+  "pilot_harness_sha256": "067a8fe613430e050b2840ec60b831b6b1a2e30b2d80a16e4f0b3cd1ee98bc4a",
+  "engine": "Revision2ExternalEngineOrchestrator with R5 PAPER_APPLY",
+  "parameter_search": false,
+  "synthetic_market_prices": false,
+  "storm_uses_forced_upstream_signals": true
+}

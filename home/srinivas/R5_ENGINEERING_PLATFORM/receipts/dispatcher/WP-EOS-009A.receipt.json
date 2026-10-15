@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 0.9101984369990532,
+  "error": "gemini exited 41: Please set an Auth method in your /home/srinivas/.gemini/settings.json or specify one of the following environment variables before running: GEMINI_API_KEY, GOOGLE_GENAI_USE_VERTEXAI, GOOGLE_GENAI_USE_GCA",
+  "finished_at": "2026-10-07T07:04:56.363580+00:00",
+  "needs_review": false,
+  "objective": "Gemini Dispatcher smoke test (commissioning only)",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-EOS-009A",
+  "package_sha256": "679591ccd459c1a60df9d58ef853203060a80a4adeb305d3ef852cb5dc2a5d6f",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:04:55.451099+00:00",
+  "state": "FAILED",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

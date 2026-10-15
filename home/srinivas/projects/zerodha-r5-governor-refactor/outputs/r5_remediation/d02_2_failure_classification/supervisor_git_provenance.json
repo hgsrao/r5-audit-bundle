@@ -1,0 +1,15 @@
+{
+  "start_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "actual_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "branch": "feature/engine-ab-handoff-lifecycle",
+  "status": " M revision2_external/orchestrator.py\n M revision2_external/paper_execution.py\n M revision5/combined_cycle_runtime.py\n M revision5/combined_cycle_store.py\n M runtime/operating_mode.py\n M tests/test_r5_d02_exit_atomicity_repro.py\n?? outputs/R5_D02_1_EXIT_FINALIZATION_DESIGN_AUDIT.md\n?? outputs/r5_remediation/closure/c05/baseline_v2_success/\n?? tests/test_r5_d02_exit_finalization.py\n",
+  "changed_tracked": [
+    "revision2_external/orchestrator.py",
+    "revision2_external/paper_execution.py",
+    "revision5/combined_cycle_runtime.py",
+    "revision5/combined_cycle_store.py",
+    "runtime/operating_mode.py",
+    "tests/test_r5_d02_exit_atomicity_repro.py"
+  ],
+  "start_subject": "Temp commit for clean runner state"
+}

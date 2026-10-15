@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 813.2136784979994,
+  "error": null,
+  "finished_at": "2026-10-07T07:04:20.749220+00:00",
+  "needs_review": false,
+  "objective": "Qualify all replay inputs required for the TRAIN_REPLAY_DIAGNOSTIC campaign using the qualified metadata baseline (Baseline-001); verify the replay path never enters CNC/GTT tick-consuming logic (fail closed otherwise); do NOT execute the replay.",
+  "ok": true,
+  "output_sha256": "53c21f9d7374987b78ec4017df55fcc3ac6fbe16035e16ca862116f516810929",
+  "package_id": "WP-R5-002",
+  "package_sha256": "a65b5bfd4b28c1e45725aaeddd4f6eff2582721df515bfdc8ace28eb7938571d",
+  "response_file": "WP-R5-002.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T06:50:47.532406+00:00",
+  "state": "DONE",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

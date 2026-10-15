@@ -1,0 +1,104 @@
+[
+  {
+    "file": "source/curated_artifact.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_artifact.py",
+    "sha256": "e65e7de2b26b00f7ed6a174d02eeb51c9efa7b42793f33875f89e7871c85ee06",
+    "bytes": 30976
+  },
+  {
+    "file": "source/release_record.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/release_record.py",
+    "sha256": "2e6149413ce0b079febb6a4d7e8355f67272d1f07a70bc6b0e78f9ecb031aedc",
+    "bytes": 5715
+  },
+  {
+    "file": "source/curated_launcher.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py",
+    "sha256": "eb8accd2612ae54602874d324906b9c7a39a7e098d27f53762abf437297c5517",
+    "bytes": 7625
+  },
+  {
+    "file": "source/curated_target.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_target.py",
+    "sha256": "73d073f45a80ad04cefe2486dc8b255b7864e46ecf16e278623b0056f0583828",
+    "bytes": 14111
+  },
+  {
+    "file": "source/os_isolation.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/os_isolation.py",
+    "sha256": "96e6f423cd47dd83a70e95090a60b84a46dbcfdcd5935039523803e418ff022b",
+    "bytes": 35224
+  },
+  {
+    "file": "source/os_isolation_bootstrap.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/os_isolation_bootstrap.py",
+    "sha256": "b11ea923feb5f539966291cf9b99487371a15dbbe270e9cd7ba5ff4cd443c3d8",
+    "bytes": 3515
+  },
+  {
+    "file": "tests/test_isolated_integration.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness_tests/test_isolated_integration.py",
+    "sha256": "aab567c82bf7577301f652e27fb781673fbcc7d9e531a3d544d9e3cc03ad2223",
+    "bytes": 55597
+  },
+  {
+    "file": "tests/mutation_integration.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness_tests/mutation_integration.py",
+    "sha256": "cbf391976c3f8e7e006c90635988c48c04b7b294f337cba2f7b571ffc0a88a66",
+    "bytes": 6734
+  },
+  {
+    "file": "evidence/IMPLEMENTATION_RECEIPT.md",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/IMPLEMENTATION_RECEIPT.md",
+    "sha256": "46dacfa46ec6f37a51dbc8823320c2e8102de054dc3d76489a0e626de713c28c",
+    "bytes": 6752
+  },
+  {
+    "file": "evidence/DIRECTOR_VERIFICATION.json",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/DIRECTOR_VERIFICATION.json",
+    "sha256": "01cc172f9af27220edd0d728fc2dc40b8acbc33f86f07c44e077bf65a94618ab",
+    "bytes": 628
+  },
+  {
+    "file": "evidence/evidence/BASELINE_COMPARISON.json",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/BASELINE_COMPARISON.json",
+    "sha256": "6ddbf8a574c637894bcfa0f0732e0e5237b622fba64ad77c684681dadecd8c7c",
+    "bytes": 2701
+  },
+  {
+    "file": "evidence/evidence/REPRODUCIBILITY.json",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/REPRODUCIBILITY.json",
+    "sha256": "36e4f78401eb3d45a2a8ce4a20e96e7b226373a16c27edf5db24a6b7c080d483",
+    "bytes": 285
+  },
+  {
+    "file": "evidence/evidence/REFUSAL_SAMPLES.json",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/REFUSAL_SAMPLES.json",
+    "sha256": "efbbd5f1d545574523a8bebd455f6e4d450065e4fcd4ee6cd6421b2c0eb65fac",
+    "bytes": 1695
+  },
+  {
+    "file": "evidence/evidence/sandbox_output/curated_integration_receipt.json",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/sandbox_output/curated_integration_receipt.json",
+    "sha256": "069c4bb3147976e50ae312bb76233a87feb5c9f50ce7ff08e263ecc49d809d6c",
+    "bytes": 25054
+  },
+  {
+    "file": "evidence/logs/integration_suite_clean.log",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/logs/integration_suite_clean.log",
+    "sha256": "addc367c96f1ca1279ede4b9d30ec228b21b0535eab27ce644efbb6c8b24763c",
+    "bytes": 17514
+  },
+  {
+    "file": "evidence/logs/mutation_integration.log",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/logs/mutation_integration.log",
+    "sha256": "960c93e88db6b64f3143462d6859acbba659842678277e28a4c56d0aed729526",
+    "bytes": 5372
+  },
+  {
+    "file": "reference/wp004_train_harness.py",
+    "original": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/wp004_train_harness.py",
+    "sha256": "97e711848659594c50df416cef352f08768d5b3307947c796a99d2b697a47263",
+    "bytes": 66814
+  }
+]

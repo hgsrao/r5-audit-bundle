@@ -1,0 +1,5 @@
+{
+  "prompt": "D02.2 only. Add a bounded regression reproduction for partial _finalize_exit failure AFTER completed_trades.append, before governor.confirm_position_closed/_record_mtm. Read existing tests/test_r5_d02_exit_finalization.py fixture and actual orchestrator. Modify ONLY that test file. Inject _equity raising once (or governor confirm raising once) then recover_exit_intents twice. Assert one broker fill, one completed, one feedback, governor close cleanup and MTM eventually happen exactly once where applicable. Test must FAIL current implementation for the missed cleanup, not for fixture artifacts. Do NOT edit production or any other file. No commands available: label execution NOT RUN. Provide exact pytest node and explain why repro is valid. Preserve current D02 tests. No commit/push/broker/live operations.",
+  "work_dir": "/home/srinivas/projects/zerodha-d02-scan-classification",
+  "mode": "edit"
+}

@@ -1,0 +1,10 @@
+{
+  "PID_CONTROLLER": {
+    "Kp": 0.1,
+    "Ki": 0.2,
+    "Kd": 0.8,
+    "integral_window": 12,
+    "baseline_natr": 0.012,
+    "windup_limit": 2.0
+  }
+}

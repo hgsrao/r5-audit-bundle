@@ -1,0 +1,12 @@
+{
+  "full_48_candidate_burst": true,
+  "all_five_bays_filled": true,
+  "ansi86_cannot_be_reclosed": true,
+  "locked_bay_admits_nothing": true,
+  "locked_positions_can_exit": true,
+  "unaffected_bays_continue": true,
+  "explicit_reset_restores_admission": true,
+  "no_exposure_cap_violation": true,
+  "no_reported_postfill_safety_violation": true,
+  "all_candidates_dispositioned": true
+}

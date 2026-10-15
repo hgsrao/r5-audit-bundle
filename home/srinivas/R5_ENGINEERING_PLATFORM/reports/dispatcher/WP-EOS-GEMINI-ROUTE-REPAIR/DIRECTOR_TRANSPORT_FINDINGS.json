@@ -1,0 +1,13 @@
+{
+  "evidence": "Gemini local session event metadata only; no internal reasoning copied",
+  "timed_out_session": "session-2026-10-08T08-35-60ff490b.jsonl",
+  "first_event": "2026-10-08T08:35:53.838Z",
+  "last_event": "2026-10-08T08:37:17.449Z",
+  "model": "gemini-3-flash-preview",
+  "read_tool_calls_successful": true,
+  "explicit_tool_errors": [],
+  "final_text_present": false,
+  "transport_timeout_seconds": 900,
+  "root_cause": "Not established; file-access denial not observed",
+  "user_authorization": "Fix Gemini path and give enough access/tools for independent audits"
+}

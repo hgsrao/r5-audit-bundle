@@ -1,0 +1,19 @@
+HTTP/2 200 
+date: Wed, 07 Oct 2026 05:31:13 GMT
+content-type: text/csv
+x-amz-id-2: vtsMdKz177Zts1iF688FfEP4rkNFwD9JuA1ytvWFuNNMYgCbpSDxew5Fb4UCW0ovzjj48dxLyhw=
+x-amz-request-id: HK300AV0FWCK8DS9
+server: cloudflare
+last-modified: Wed, 07 Oct 2026 02:44:33 GMT
+strict-transport-security: max-age=15552000; includeSubDomains
+x-amz-server-side-encryption: AES256
+etag: W/"be817d3577bc3f084682ff85236f29f8"
+x-amz-version-id: null
+x-content-type-options: nosniff
+x-frame-options: DENY
+cf-cache-status: DYNAMIC
+set-cookie: _cfuvid=j5pYecm0vwfghxc4dLqzjbcslJHBezxcuc00hjz1YCE-1791351073.409353-1.0.1.1-MnTJplW1DyIpjCfDkcrMWU.1R8FMK5YjDb.3E_z3m98; HttpOnly; SameSite=None; Secure; Path=/; Domain=kite.trade
+vary: accept-encoding
+cf-ray: a46a84b0c9a3d5ee-MAA
+alt-svc: h3=":443"; ma=86400
+

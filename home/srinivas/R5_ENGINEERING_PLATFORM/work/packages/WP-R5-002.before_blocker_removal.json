@@ -1,0 +1,46 @@
+{
+  "depends_on": [
+    "TRAIN-PERIOD-METADATA-EVIDENCE"
+  ],
+  "files": [
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/CURRENT_STATE.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/checkpoints/CHECKPOINT_002.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/R5_PRODUCTION_BACKLOG.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/R5_CURRENT_WORK_PACKAGE.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001/ENGINEERING_ACCEPTANCE_REPORT.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001/PRODUCTION_PARAMETER_CLOSURE_MATRIX.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001/REMAINING_WORK_PACKAGES.md",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/revision2_external/instrument_metadata.py"
+  ],
+  "id": "WP-R5-002",
+  "metadata": {
+    "backlog_package": "WP01 (WP01-METADATA-QUALIFICATION)",
+    "blocked": true,
+    "blocked_reason": "WP-R5-001B: AUTHORITATIVE_METADATA_NOT_QUALIFIED (TRAIN-period stability of ticks/lots/symbols unverified). The dependency id is intentionally unsatisfiable until dated historical instrument evidence is supplied.",
+    "campaign": "R5-PRODUCTION-001",
+    "depends_on": [],
+    "node": "NODE-001",
+    "owner": "Claude Code",
+    "phase": "WP-R5-002",
+    "prepared_by": "WP-R5-001",
+    "prepared_utc": "2026-10-07",
+    "program_manager": "ChatGPT (fallback)",
+    "status": "PREPARED_NOT_SUBMITTED",
+    "supplied_artifact_paths": []
+  },
+  "objective": "WP01 input qualification: survey permitted records for the authoritative dated 48-symbol instrument-metadata artefact and qualified diagnostic-ledger identity; produce a qualification record or fail-closed blocker receipt plus an input contract; no replay.",
+  "priority": 10,
+  "prompt": "You are the implementation worker for work package WP-R5-002 (WP01 input qualification: instrument-metadata and diagnostic-ledger identity), dispatched by the R5 Engineering Dispatcher. Platform root: /home/srinivas/R5_ENGINEERING_PLATFORM. R5 repository (read-only): /home/srinivas/projects/zerodha-r5-governor-refactor, branch feature/ir02a-parameter-closure, commit 59371ff.\n\nCONTINUE EXISTING ENGINEERING. NEVER RESTART PREVIOUS WORK. First READ, in order: CURRENT_STATE.md; receipts/checkpoints/CHECKPOINT_002.md (then CHECKPOINT_001.md); R5_PRODUCTION_BACKLOG.md; R5_CURRENT_WORK_PACKAGE.md (section 'WP01-METADATA-QUALIFICATION'); reports/production/WP-R5-001/ENGINEERING_ACCEPTANCE_REPORT.md and PRODUCTION_PARAMETER_CLOSURE_MATRIX.md; revision2_external/instrument_metadata.py. The WP01 campaign receipts (docs/r5_remediation_project/campaign/wp01/RECEIPT.md, full48_input_receipt.json, PREREGISTRATION.json) are NOT present in the original R5 checkout; they live in the NODE-001 campaign checkout /home/srinivas/Documents/Codex/2026-10-07/referenced-chatgpt-conversation-this-is-an/work/r5-parameter-closure (read-only) - read them there if accessible and record if not.\n\nWHY THIS PACKAGE. WP-R5-001 classified all 62 original H/I/J rows; no active-unresolved row (H=11/I=19/J=4) gained authority. Every other backlog package (WP02-WP12) depends on WP01, and WP01 full qualified acceptance is BLOCKED because the certified, dated, hashed 48-symbol instrument-metadata snapshot (tick sizes) and the qualified corrected full diagnostic ledger identity are missing. This is the highest-priority blocker whose dependencies are satisfied (WP01 depends on none). No other package is startable.\n\nOBJECTIVE. Qualify (or honestly fail to qualify) the WP01 input prerequisites without any replay:\n1. Survey the PERMITTED records only (platform root, receipts, reports, repo docs/ and outputs/ receipts/manifests, scripts that define snapshot builders, the sealed-protocol and preregistration JSON/MD by name) for any externally sourced, dated instrument-metadata artefact covering the 48-symbol universe, and for a corrected full diagnostic ledger identity or reproducible recipe. Do not open raw OHLCV/grid/holdout files; list them by path only if needed to state what exists.\n2. If a candidate artefact exists (also check metadata.supplied_artifact_paths if the operator provided any): record path, SHA256, source/issuer, as-of/effective date, symbol coverage vs the 48-symbol list, effective-time coverage over the preregistered TRAIN interval (2023-09-01 up to before 2025-07-01), and whether InstrumentMetadataSnapshot.build() would accept it (static reading of the code; do not execute replays). Decide per symbol: COVERED or MISSING. Use CERTIFIED_METADATA ONLY for an installed, dated, hashed external artefact that you opened.\n3. If no qualifying artefact exists, write a fail-closed BLOCKER RECEIPT naming exactly what is missing, who must supply it (role, not invented names), the required format/fields, and the acceptance check that will be applied on supply.\n4. Write an INPUT CONTRACT: required fields (exchange, symbol, tick size as decimal string, source, as-of date, effective interval, artefact SHA256), coverage rules, rejection rules (no universal default, no market-data-derived ticks), and the exact commands/checks the next package will use. Reproduction remains deferred until qualified input exists.\n5. Update EXEC-05 evidence in a proposed (not applied) matrix delta file: new authority only if step 2 qualifies the artefact; otherwise unchanged NOT_QUALIFIED.\n\nOUTPUTS (under /home/srinivas/R5_ENGINEERING_PLATFORM): reports/production/WP-R5-002/INPUT_QUALIFICATION_REPORT.md, METADATA_BLOCKER_RECEIPT.md (or METADATA_QUALIFICATION_RECORD.md), INPUT_CONTRACT.md, PROPOSED_MATRIX_DELTA.json, ENGINEERING_ACCEPTANCE_REPORT.md; receipts/checkpoints/CHECKPOINT_003.md in the style of CHECKPOINT_002.md; append a dated section to R5_PRODUCTION_BACKLOG.md and CURRENT_STATE.md (append only; never modify the block between <!-- DISPATCHER_STATE_BEGIN --> and <!-- DISPATCHER_STATE_END --> if present); update R5_CURRENT_WORK_PACKAGE.md keeping history; propose WP-R5-003 as JSON at work/packages/WP-R5-003.json WITHOUT submitting it.\n\nACCEPTANCE. (a) Every statement of coverage cites an opened artefact with SHA256; (b) every required symbol/time is either covered by authoritative metadata or listed as missing with a fail-closed blocker; (c) simulator causality is explicitly distinguished from production qualification; (d) no number, tick size, date, hash or authority is invented; (e) existing acceptance statuses and H/I/J counts unchanged (11/19/4); (f) honest statement that production readiness is NOT READY and no candidate is designated; (g) final response under 600 words listing files, findings, blockers and the WP-R5-003 selection.",
+  "requires_review": false,
+  "rules": [
+    "No production code, parameter, calibration, regression, Block-1, replay or holdout-data actions",
+    "Do not read or open raw market, stock-bar, grid or holdout datasets; metadata snapshots are not market data but must not be derived from market data",
+    "Never invent authority, tick sizes, effective dates, hashes or coverage; UNKNOWN stays UNKNOWN; NOT_QUALIFIED stays NOT_QUALIFIED",
+    "Do not modify files inside /home/srinivas/projects/zerodha-r5-governor-refactor, the frozen bridge or the engineering dispatcher",
+    "No git commit, no push, no broker or network action; live trading stays disabled",
+    "Do not alter existing acceptance statuses or reduce H/I/J counts; do not claim production readiness or designate a candidate"
+  ],
+  "submitted_at": "2026-10-07T05:20:09.707785+00:00",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

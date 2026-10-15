@@ -1,0 +1,32 @@
+[
+  {
+    "work_package_id": "EOS002-CODE_IMPLEMENTATION",
+    "work_package_type": "CODE_IMPLEMENTATION",
+    "destination": "Claude"
+  },
+  {
+    "work_package_id": "EOS002-PARAMETER_AUDIT",
+    "work_package_type": "PARAMETER_AUDIT",
+    "destination": "Qwen"
+  },
+  {
+    "work_package_id": "EOS002-FORMULA_AUDIT",
+    "work_package_type": "FORMULA_AUDIT",
+    "destination": "Qwen"
+  },
+  {
+    "work_package_id": "EOS002-INDEPENDENT_AUDIT",
+    "work_package_type": "INDEPENDENT_AUDIT",
+    "destination": "External Audit Adapter"
+  },
+  {
+    "work_package_id": "EOS002-PROGRAM_MANAGEMENT",
+    "work_package_type": "PROGRAM_MANAGEMENT",
+    "destination": "Codex"
+  },
+  {
+    "work_package_id": "EOS002-ARCHITECTURE_REVIEW",
+    "work_package_type": "ARCHITECTURE_REVIEW",
+    "destination": "Manual (Chief Architect)"
+  }
+]

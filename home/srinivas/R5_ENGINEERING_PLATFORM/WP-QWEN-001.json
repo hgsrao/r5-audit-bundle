@@ -1,0 +1,9 @@
+{
+  "id": "WP-QWEN-001",
+  "type": "FORMULA_AUDIT",
+  "worker": "qwen",
+  "priority": 0,
+  "requires_review": false,
+  "objective": "TRAIN Loader Analysis",
+  "prompt": "Review reports/production/WP-R5-003 and reports/production/WP-R5-004. Analyse whether TRAIN-only qualification can be achieved without reading Validation or Holdout data. Compare Option A (TRAIN slice) versus Option B (qualification loader). Recommend the technically cleaner solution with advantages, disadvantages, engineering risks, and final recommendation. Do not modify files. Do not write code."
+}

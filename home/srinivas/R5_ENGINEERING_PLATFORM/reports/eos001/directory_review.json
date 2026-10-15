@@ -1,0 +1,558 @@
+{
+  "original_directories": [
+    {
+      "path": "architecture",
+      "kind": "directory",
+      "category": "Architecture",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "audits",
+      "kind": "directory",
+      "category": "Audits",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "bridge",
+      "kind": "directory",
+      "category": "Bridge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/.pytest_cache",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/.pytest_cache/v",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/.pytest_cache/v/cache",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/.ruff_cache",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/.ruff_cache/0.16.10",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/config",
+      "kind": "directory",
+      "category": "Configuration",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "bridge/dist",
+      "kind": "directory",
+      "category": "Generated",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/examples",
+      "kind": "directory",
+      "category": "Examples",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/logs",
+      "kind": "directory",
+      "category": "Logs",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/r5_engineering_bridge.egg-info",
+      "kind": "directory",
+      "category": "Generated",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/src",
+      "kind": "directory",
+      "category": "Bridge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/src/__pycache__",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/tests",
+      "kind": "directory",
+      "category": "Tests",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/tests/__pycache__",
+      "kind": "directory",
+      "category": "Temporary",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "bridge/work",
+      "kind": "directory",
+      "category": "Bridge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "config",
+      "kind": "directory",
+      "category": "Configuration",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "database",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "docs",
+      "kind": "directory",
+      "category": "Documentation",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "engineering_memory",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "formula_engine",
+      "kind": "directory",
+      "category": "Formulae",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "knowledge/adr",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge/formulas",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge/parameters",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge/research",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge/risk",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "knowledge_base/adr",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "knowledge_base/calibration",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/commissioning",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/design",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/formulas",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/history",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/parameters",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/receipts",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/risk",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/standards",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "knowledge_base/work_packages",
+      "kind": "directory",
+      "category": "Knowledge",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "logs",
+      "kind": "directory",
+      "category": "Logs",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "mcp_server",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "parameter_engine",
+      "kind": "directory",
+      "category": "Parameters",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "queue",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "receipts",
+      "kind": "directory",
+      "category": "Receipts",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "receipts/acceptance",
+      "kind": "directory",
+      "category": "Receipts",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "receipts/block1",
+      "kind": "directory",
+      "category": "Receipts",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "receipts/calibration",
+      "kind": "directory",
+      "category": "Receipts",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "receipts/regression",
+      "kind": "directory",
+      "category": "Receipts",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "reports",
+      "kind": "directory",
+      "category": "Reports",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "scripts",
+      "kind": "directory",
+      "category": "Scripts",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "templates",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "tests",
+      "kind": "directory",
+      "category": "Tests",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "tools",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "work_packages",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": false
+    },
+    {
+      "path": "workers/claude",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers/cloud",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers/codex",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers/desktop",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers/laptop",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    },
+    {
+      "path": "workers/qwen",
+      "kind": "directory",
+      "category": "Unknown",
+      "bytes": "",
+      "sha256": "",
+      "empty": true
+    }
+  ],
+  "duplicate_content_groups": [
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "paths": [
+        "bridge/logs/engineering_bridge.log",
+        "knowledge_base/adr/ADR-0000_INDEX.md",
+        "knowledge_base/adr/ADR-0001_EOS_FOUNDATION.md",
+        "knowledge_base/adr/ADR_TEMPLATE.md"
+      ],
+      "action": "PRESERVE_ALL; duplicate bytes do not prove duplicate purpose"
+    },
+    {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "paths": [
+        "bridge/work/ruff_results.txt",
+        "bridge/work/ruff_v1.2.txt"
+      ],
+      "action": "PRESERVE_ALL; duplicate bytes do not prove duplicate purpose"
+    }
+  ],
+  "obsolete_directories": [],
+  "obsolete_note": "No directory declared obsolete without evidence. Unused empty scaffolds may be removed and recorded.",
+  "legacy_empty_scaffold_roots": [
+    "knowledge",
+    "database",
+    "engineering_memory",
+    "formula_engine",
+    "mcp_server",
+    "parameter_engine",
+    "queue",
+    "templates",
+    "tools",
+    "work_packages",
+    "workers"
+  ],
+  "unknown_directories": [
+    "database",
+    "mcp_server",
+    "queue",
+    "templates",
+    "tools",
+    "work_packages",
+    "workers",
+    "workers/claude",
+    "workers/cloud",
+    "workers/codex",
+    "workers/desktop",
+    "workers/laptop",
+    "workers/qwen"
+  ]
+}

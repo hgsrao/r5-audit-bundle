@@ -1,0 +1,35 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-08T10:41:16.412939+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-R5-004-TRAIN-HARNESS.attempt3.receipt.json",
+    "started_at": "2026-10-08T10:21:17.118777+00:00",
+    "state": "REVIEW",
+    "transition": {
+      "at": "2026-10-08T10:41:16.415788+00:00",
+      "to": "REVIEW"
+    },
+    "worker": "claude"
+  },
+  "files": [
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/decision_support/DIRECTOR_DIAGNOSTIC_CONTRACT.md"
+  ],
+  "id": "WP-R5-004-TRAIN-HARNESS",
+  "metadata": {
+    "authorization": "Autonomous Director instruction",
+    "contract_sha256": "4cd1b98d7e6821a6f5ce08158dc9eb081be55df0ce40dc1efc1699a0abc4388d",
+    "parent_package": "WP-R5-004"
+  },
+  "objective": "Close exact physical read cap and real-execution authorization gaps",
+  "priority": 10,
+  "prompt": "Continue existing WP-R5-004-TRAIN-HARNESS implementation, now correcting Codex Director findings; no new package numbering. Gemini audit did not return; user explicitly authorizes Codex review. Read train_harness/director_review/DIRECTOR_REVIEW.md. Implement scoped fixes in harness and its generated-synthetic tests only. Preserve current versions and receipt hashes as historical before copies. Do NOT modify snapshot code/original repos/data/Dispatcher/config/Bridge/strategy/calibration/values; NO real market-data access/replay.\n1. BoundedLineReader currently overshoots max_physical_bytes because full chunk read follows >=check. Validate cap/chunk integral positive non-bool; read min(chunk,remaining); guarantee physical_bytes_read never exceeds cap even if cap not chunk multiple; fail closed before first prohibited byte. Tests independent FileIO/open witness exact boundary and attempt beyond.\n2. Real-data runner must require per-file read authorization specifying canonical path, exact permitted interval(s)/prefix stop bytes and trusted content commitment/provenance identifier. It cannot infer these from size, timestamp counts or old whole seals. Bind authorization SHA itself, contract ID/classification, snapshot/protocol/params pins, roots/output, Stage B block/sessions, unchanged development risk scope, CNC disabled and per-file physical byte limits. Validate entire authorization+metadata plan BEFORE opening first data file. Missing/unknown/wrong boundary proof prevents actual execution. Guard actual file opens and reads against plan; supplied content commitments verified on consumed bytes, not fake proofs. A freshly supplied prefix hash is current acquisition identity, not historical sealed membership; disclose distinction. No numerical policy choices.\n3. Explicitly model prefix-before-TRAIN vs retained TRAIN rows. Reject preTRAIN data selection unless separately authorized as warmup/provenance with no fitting; default fails closed for real runner. Do NOT claim all physical bytes are TRAIN from timestamp filters. Grid boundary row must be disclosed/authorized and cannot affect retained feeds. A tested bounded extractor alone cannot generate trusted boundary evidence retroactively; record required external input and exact schema.\n4. Do not claim Python tripwires prove native/system IO restriction. Keep tests and explicit limits; real run requires audited immutable snapshot/no uncontrolled subprocess/native reads or OS witness. Never bypass this remaining gate in auth JSON.\n5. Run relevant synthetic regression tests, add exact-cap/auth-binding/wrong-root/readplan/content mismatch tests and no-data-open-on-invalidauth. Update implementation receipt/test logs with actual counts and concrete remaining external evidence blockers. If no verified boundary artefact exists, real runner remains refusing; do not fabricate or search raw data for one. Existing root snapshot /home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/snapshot is provided, do not git/export again. Finish and stop.",
+  "requires_review": true,
+  "rules": [
+    "Synthetic fixtures only; no real market data or replay",
+    "Original repos/protected indicator preserved",
+    "Implementation under isolated platform work directory only"
+  ],
+  "submitted_at": "2026-10-08T10:21:17.083275+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

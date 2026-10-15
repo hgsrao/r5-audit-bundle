@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_unplanned_open_guard/test_positive_read_boundary_ma0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "f0b13b6aa57e6db2b124605fea984062c3137718e5f682dfd834c698ccc33b2c",
+      "size_bytes": 15302,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "bf0a6c615975c7cd4c3a3781f84e41730412ebcbb0dbecf3d1fb006d72a45388",
+      "size_bytes": 15338,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "1b621f822c68f8f52f0b4e1a5b6b1b16682bdf3660297af742948460efc717ae",
+  "symbol_count": 2
+}

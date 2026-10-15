@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-10-08T12:54:53.035788+00:00",
+  "package": "WP-R5-004-OS-ISOLATION",
+  "decision": "PASS WITH FINDINGS",
+  "reviewer": "Codex authorized fallback",
+  "verification": {
+    "command": "python -I -m pytest harness_tests/test_os_isolation.py harness_tests/test_harness.py harness_tests/test_director_fixes.py -q -p no:cacheprovider",
+    "passed": 181,
+    "elapsed_seconds": 52.03,
+    "warnings": 46542,
+    "source_hashes_checked": 12,
+    "mismatches": []
+  },
+  "release_scope": "Synthetic verification; accidental or buggy access threat model only",
+  "limitations": [
+    "Real-run release verification remains unimplemented/closed",
+    "TRAIN-only artifact identity and provenance externally required",
+    "NumPy/pandas full engine imports not yet verified inside sandbox",
+    "No malicious-target or shared-kernel exploit guarantee"
+  ],
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY"
+}

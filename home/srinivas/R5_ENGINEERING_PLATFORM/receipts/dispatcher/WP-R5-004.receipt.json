@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 531.5408482650018,
+  "error": null,
+  "finished_at": "2026-10-07T07:44:30.080894+00:00",
+  "needs_review": false,
+  "objective": "Replay Qualification Blocker Resolution: designate one replay entry point, recommend a TRAIN-scope option, freeze git identity, split execution vs parameter-authority blockers, review the dispatcher race fix. No replay.",
+  "ok": true,
+  "output_sha256": "1f98b67348507f2e8cf11add36a0a44ffa9df2041a0071e4113b9b77b1193cc0",
+  "package_id": "WP-R5-004",
+  "package_sha256": "314fe6c6dfd2fb31ad9dc75f397ccc6e53f92b47aaf05a587b2c48e6cba9ed2a",
+  "response_file": "WP-R5-004.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:35:38.537806+00:00",
+  "state": "DONE",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

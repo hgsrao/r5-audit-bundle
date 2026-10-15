@@ -1,0 +1,20 @@
+{
+	"byAccount": {
+		"b8a4db77-bc5f-4716-ba92-ca91a3db1778": {
+			"presets": [
+				{
+					"id": "bfe1395b-8f44-466c-a42f-5dc6c6879331",
+					"name": "zerodha-r5-governor-refactor",
+					"target": {
+						"kind": "local",
+						"cwd": "/home/srinivas/projects/zerodha-r5-governor-refactor"
+					},
+					"createdAt": 1792007924903,
+					"lastUsedAt": 1792007924903
+				}
+			],
+			"builtIns": {},
+			"seededFromDraft": true
+		}
+	}
+}

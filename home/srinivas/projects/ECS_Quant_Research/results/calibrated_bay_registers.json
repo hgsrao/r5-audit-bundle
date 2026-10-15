@@ -1,0 +1,38 @@
+{
+  "GTG1_METALS_ENERGY": {
+    "z_entry_threshold": -2.1,
+    "stop_atr_mult": 0.9,
+    "target_atr_mult": 3.7,
+    "Kp": 0.1,
+    "Ki": 0.26,
+    "Kd": 0.7,
+    "objective_score": 0.744
+  },
+  "GTG2_TECH_AGILE": {
+    "z_entry_threshold": -2.4,
+    "stop_atr_mult": 0.8,
+    "target_atr_mult": 3.9,
+    "Kp": 0.6,
+    "Ki": 0.38,
+    "Kd": 0.4,
+    "objective_score": 1.8505
+  },
+  "CSTG_CORE_BANKING": {
+    "z_entry_threshold": -1.7,
+    "stop_atr_mult": 1.3,
+    "target_atr_mult": 3.7,
+    "Kp": 0.1,
+    "Ki": 0.12,
+    "Kd": 1.45,
+    "objective_score": 1.734
+  },
+  "BPSTG_INFRA": {
+    "z_entry_threshold": -2.5,
+    "stop_atr_mult": 2.3,
+    "target_atr_mult": 3.9,
+    "Kp": 0.35,
+    "Ki": 0.06,
+    "Kd": 1.25,
+    "objective_score": 3.9113
+  }
+}

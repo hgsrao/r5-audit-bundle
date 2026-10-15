@@ -1,0 +1,15 @@
+{
+  "scope": "Code/document identity only; no raw dataset hashes",
+  "root": "/home/srinivas/projects/zerodha-r5-governor-refactor",
+  "sha256": {
+    "scripts/run_r5_paper_lifecycle.py": "183276095cd74b1d9aa283b9e813e468aeb2e8fabd411aa43a94fc17067430c0",
+    "scripts/run_r5_step5_candidate.py": "13c0fa46cf6ce38d4c4bab3b59d6eb407acc93135e0a39e93d3ff446a69f1a70",
+    "scripts/diagnostics/r5_block1_acceptance.py": "76cb323d287443ba3802a0ae9267eddc338644b442208c7c8fc1623d97386b6f",
+    "revision2_external/orchestrator.py": "6885bc41fd70a00cfb1794ebdd60e19e63c6dfd6a69edc44153e1719f6be3b5a",
+    "revision2_external/indicators_talib.py": "5ba126430609de2fae08a98bed7d178c2377704c3b5b4c816d45c343439bc618",
+    "revision2_external/grid_context.py": "903ea27aeb669f99008d64b17c3df3b65f8ef7ae0d3fd67c72210bf21e330931",
+    "canonical_parameter_registry.py": "dc7cf0ead0df4459ea28616a0d1745f5b80fd88eac6019587c840dbe9f338025",
+    "revision5/risk_governance.py": "cc9d33ab239d9da0388c08ae566919fb6ced5b3d83fc6dfb520f055bc2f40dd7",
+    "revision5/step5_sealed_calibration_protocol_v2.json": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7"
+  }
+}

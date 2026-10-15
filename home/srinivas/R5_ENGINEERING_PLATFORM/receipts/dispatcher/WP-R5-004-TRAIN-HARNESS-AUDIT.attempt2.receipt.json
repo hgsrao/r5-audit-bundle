@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 76.84851716999947,
+  "error": "gemini exited -15: Warning: Basic terminal detected (TERM=dumb). Visual rendering will be limited. For the best experience, use a terminal emulator with truecolor support.\nWarning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.",
+  "finished_at": "2026-10-08T10:18:45.842507+00:00",
+  "needs_review": false,
+  "objective": "Narrowed independent audit of physical read boundary and execution authorization",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+  "package_sha256": "d2880a36e43cd69ffe10b8280ac4cc22f3ad07bc7f665458569172a6f24fbae7",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T10:17:28.991801+00:00",
+  "state": "FAILED",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

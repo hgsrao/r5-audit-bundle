@@ -1,0 +1,13 @@
+{
+  "_comment": "NON-SECRET Kite Connect settings for WP-R5-001C. Credentials are never stored here: the API key and API secret come from the operator's environment (KITE_API_KEY, KITE_API_SECRET) or an interactive hidden prompt, and the user's Kite password/TOTP are only ever typed by the operator into Zerodha's own login page.",
+  "exchange": "NSE",
+  "login_base": "https://kite.zerodha.com/connect/login",
+  "instruments_endpoint": "https://api.kite.trade/instruments/{exchange}",
+  "kite_version_header": "3",
+  "api_key_env": "KITE_API_KEY",
+  "api_secret_env": "KITE_API_SECRET",
+  "output_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C/raw",
+  "raw_file_name": "kite_connect_instruments_NSE.csv",
+  "invalidate_session_after_download": true,
+  "timeout_seconds": 60
+}

@@ -1,0 +1,13 @@
+ M docs/r5_remediation_project/campaign/WORK_PACKAGES.json
+ M scripts/diagnostics/data/pa_symmetry_indicators_talib.patch
+ M tests/test_block1_isolation_harness.py
+?? docs/r5_remediation_project/campaign/BASELINE_REGRESSION.txt
+?? docs/r5_remediation_project/campaign/GUARDED_BASELINE_REGRESSION.txt
+?? docs/r5_remediation_project/campaign/GUARDED_COLLECTION.txt
+?? docs/r5_remediation_project/campaign/SEALED_DATA_EXPOSURE_RECEIPT.md
+?? docs/r5_remediation_project/campaign/authority_mapping/
+?? docs/r5_remediation_project/campaign/wp01/
+?? docs/r5_remediation_project/campaign/wp02/
+?? scripts/diagnostics/r5_campaign_wp01.py
+?? scripts/r5_campaign_pytest_guard.py
+?? tests/test_r5_campaign_guard.py

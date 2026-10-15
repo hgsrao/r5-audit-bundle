@@ -1,0 +1,23 @@
+{
+  "roles": "Claude edits isolated checkout; Codex reviews, runs tests, owns integration. No commit/push.",
+  "jobs": [
+    {
+      "job_id": "1673dc8c-2aa5-4142-93b8-df99030a83dc",
+      "mode": "review",
+      "status": "COMPLETED",
+      "scope": "Remaining direct-recovery state inventory; supervisor qualified replay claims"
+    },
+    {
+      "job_id": "60168714-0425-4349-8007-09f93e166fa5",
+      "mode": "edit",
+      "status": "COMPLETED_REVIEWED_AND_TESTED",
+      "scope": "Isolated ID/HMM codec; supervisor added live-config binding and machine-precision occupancy guard"
+    },
+    {
+      "job_id": "2ebf441d-6802-4a30-82b0-b54c2e5a1cbc",
+      "mode": "edit",
+      "status": "FAILED_SESSION_LIMIT",
+      "scope": "Closed-loop codec not written by Claude; Codex implemented and tested directly"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+WP-BRIDGE-001 / Engineering Bridge Version 1.0
+STATUS: ACCEPTED
+
+.............................................                            [100%]
+45 passed in 0.03s
+
+Ruff: All checks passed!
+py_compile: PASS (all eight source modules)
+Build: source distribution and wheel PASS
+Warnings: 0 (pytest warnings treated as errors; build log checked)
+Network: all calls mocked; no real server calls
+
+Architecture: WorkPackage -> PromptRouter -> OllamaClient; Bridge persists JSON and TransactionLogger records transaction events. main wires instance dependencies; config exposes five settings.
+Remaining operational work: choose an installed model and start the local server. Version 2 is not implemented.

@@ -1,0 +1,364 @@
+{
+  "conversions": [],
+  "engine_b": {
+    "atr_multiple": 3.0,
+    "enabled": true,
+    "max_sessions": 3,
+    "reversal_confirmation_bars": 3,
+    "structural_window": 20,
+    "trail_activation_r": 1.0,
+    "trail_distance_r": 2.0,
+    "trail_mode": "R"
+  },
+  "handoff": {
+    "deadline": "15:14",
+    "enabled": true,
+    "minimum_r": 0.75,
+    "start": "15:10"
+  },
+  "positions": [
+    {
+      "protection": {
+        "broker_snapshot": {
+          "environment": "paper",
+          "gtts": [],
+          "holdings": [],
+          "margins": {},
+          "orders": [
+            {
+              "exchange": "NSE",
+              "filled_quantity": 30,
+              "order_id": "6b386fda-91a1-4356-a45c-7412e7320276",
+              "product": "MIS",
+              "quantity": 30,
+              "status": "COMPLETE",
+              "tradingsymbol": "INDIGO"
+            },
+            {
+              "exchange": "NSE",
+              "filled_quantity": 30,
+              "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+              "product": "MIS",
+              "quantity": 30,
+              "status": "COMPLETE",
+              "tradingsymbol": "INDIGO"
+            }
+          ],
+          "paper_state": {
+            "booked_costs": 68.1855070315,
+            "client_orders": {
+              "exit:trade-1": {
+                "fingerprint": [
+                  "INDIGO",
+                  "SELL",
+                  30,
+                  "MARKET"
+                ],
+                "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+                "result": {
+                  "ack_elapsed_seconds": 0.0,
+                  "cost": 45.1336708415,
+                  "filled_price": 2944.7769,
+                  "filled_quantity": 30,
+                  "market_price": 2946.25,
+                  "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+                  "passed": true,
+                  "realized_pnl": -115.7130000000052,
+                  "state": "filled"
+                }
+              }
+            },
+            "conversions": {},
+            "cost_ledger": [
+              {
+                "cost": 23.05183619,
+                "order_id": "6b386fda-91a1-4356-a45c-7412e7320276"
+              },
+              {
+                "cost": 45.1336708415,
+                "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a"
+              }
+            ],
+            "fills": [
+              {
+                "filled_at": "2026-10-06T09:14:32.111443+00:00",
+                "market_price": 2947.160464294684,
+                "order_id": "6b386fda-91a1-4356-a45c-7412e7320276",
+                "price": 2948.634,
+                "quantity": 30,
+                "side": "BUY",
+                "symbol": "INDIGO"
+              },
+              {
+                "filled_at": "2026-10-06T09:14:34.959903+00:00",
+                "market_price": 2946.25,
+                "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+                "price": 2944.7769,
+                "quantity": 30,
+                "side": "SELL",
+                "symbol": "INDIGO"
+              }
+            ],
+            "gtts": {},
+            "orders": {
+              "696cbfa9-64d4-46ae-a4a1-74b410396a6a": {
+                "filled_at": "2026-10-06T09:14:34.959903+00:00",
+                "filled_price": 2944.7769,
+                "filled_quantity": 30,
+                "limit_price": null,
+                "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+                "order_type": "MARKET",
+                "quantity": 30,
+                "rejection_reason": null,
+                "side": "SELL",
+                "state": "filled",
+                "submitted_at": "2026-10-06T09:14:34.959867+00:00",
+                "symbol": "INDIGO"
+              },
+              "6b386fda-91a1-4356-a45c-7412e7320276": {
+                "filled_at": "2026-10-06T09:14:32.111443+00:00",
+                "filled_price": 2948.634,
+                "filled_quantity": 30,
+                "limit_price": null,
+                "order_id": "6b386fda-91a1-4356-a45c-7412e7320276",
+                "order_type": "MARKET",
+                "quantity": 30,
+                "rejection_reason": null,
+                "side": "BUY",
+                "state": "filled",
+                "submitted_at": "2026-10-06T09:14:32.111420+00:00",
+                "symbol": "INDIGO"
+              }
+            },
+            "positions": {
+              "INDIGO": {
+                "avg_price": 2948.634,
+                "product": "MIS",
+                "quantity": 0
+              }
+            },
+            "protection": {
+              "paper-protection-INDIGO": {
+                "environment": "paper",
+                "exchange": "NSE",
+                "filled_quantity": 0,
+                "order_id": "paper-protection-INDIGO",
+                "order_type": "SL-M",
+                "pending_quantity": 30,
+                "product": "MIS",
+                "quantity": 30,
+                "status": "TRIGGER PENDING",
+                "tradingsymbol": "INDIGO",
+                "transaction_type": "SELL",
+                "trigger_price": 2929.1081200182907,
+                "validity": "SIMULATED"
+              }
+            },
+            "realized_pnl": -115.7130000000052,
+            "slippage_fraction": 0.0005
+          },
+          "passed": true,
+          "positions": [
+            {
+              "avg_price": 2948.634,
+              "exchange": "NSE",
+              "product": "MIS",
+              "quantity": 0,
+              "tradingsymbol": "INDIGO"
+            }
+          ]
+        },
+        "close_feedback_receipts": {
+          "trade_id:trade-1": "DONE"
+        },
+        "completed_trade": {
+          "bars_held": 4,
+          "candidate_id": "candidate-2038",
+          "costs": 68.1855070315,
+          "entry_atr": 19.649443659583888,
+          "entry_price": 2948.634,
+          "entry_timestamp": "2023-12-11 13:17:00+05:30",
+          "exit_price": 2944.7769,
+          "exit_timestamp": "2023-12-11 13:21:00+05:30",
+          "mae_pre_exit_bar_r": -0.27790808942199713,
+          "mae_price": 2942.25,
+          "mae_r": -0.27790808942199713,
+          "mae_terminal_inclusive_r": -0.27790808942199713,
+          "mfe_pre_exit_bar_r": 0.2357691435322023,
+          "mfe_price": 2954.05,
+          "mfe_r": 0.2357691435322023,
+          "mfe_terminal_inclusive_r": 0.2357691435322023,
+          "net_pnl": -183.89850703150518,
+          "planned_entry_price": 2948.634,
+          "planned_stop_price": 2925.662376492107,
+          "planned_target_price": 2983.0914352618397,
+          "pnl": -115.7130000000052,
+          "quantity": 30,
+          "reason": "governor_exit:FSR_BELOW_EXIT:FSRN",
+          "side": "BUY",
+          "symbol": "INDIGO",
+          "terminal_bar_excursion": "intrabar_order_unknown",
+          "terminal_inclusive_is_ohlc_bound": true,
+          "trade_id": "trade-1"
+        },
+        "engine_b_state": {
+          "policy": {
+            "atr_multiple": 3.0,
+            "enabled": true,
+            "max_sessions": 3,
+            "reversal_confirmation_bars": 3,
+            "structural_window": 20,
+            "trail_activation_r": 1.0,
+            "trail_distance_r": 2.0,
+            "trail_mode": "R"
+          },
+          "positions": {},
+          "version": 1
+        },
+        "exit_intent": {
+          "completed_trade": {
+            "bars_held": 4,
+            "candidate_id": "candidate-2038",
+            "costs": 68.1855070315,
+            "entry_atr": 19.649443659583888,
+            "entry_price": 2948.634,
+            "entry_timestamp": "2023-12-11 13:17:00+05:30",
+            "exit_price": 2944.7769,
+            "exit_timestamp": "2023-12-11 13:21:00+05:30",
+            "mae_pre_exit_bar_r": -0.27790808942199713,
+            "mae_price": 2942.25,
+            "mae_r": -0.27790808942199713,
+            "mae_terminal_inclusive_r": -0.27790808942199713,
+            "mfe_pre_exit_bar_r": 0.2357691435322023,
+            "mfe_price": 2954.05,
+            "mfe_r": 0.2357691435322023,
+            "mfe_terminal_inclusive_r": 0.2357691435322023,
+            "net_pnl": -183.89850703150518,
+            "planned_entry_price": 2948.634,
+            "planned_stop_price": 2925.662376492107,
+            "planned_target_price": 2983.0914352618397,
+            "pnl": -115.7130000000052,
+            "quantity": 30,
+            "reason": "governor_exit:FSR_BELOW_EXIT:FSRN",
+            "side": "BUY",
+            "symbol": "INDIGO",
+            "terminal_bar_excursion": "intrabar_order_unknown",
+            "terminal_inclusive_is_ohlc_bound": true,
+            "trade_id": "trade-1"
+          },
+          "event_id": "exit:trade-1",
+          "feedback": {
+            "bay_id": "CSTG2_CONSUMER_AUTO",
+            "realized_r": -0.16790715722268654,
+            "reason": "governor_exit:FSR_BELOW_EXIT:FSRN"
+          },
+          "fill_price": 2944.7769,
+          "fill_quantity": 30,
+          "market_price": 2946.25,
+          "order_id": "696cbfa9-64d4-46ae-a4a1-74b410396a6a",
+          "quantity": 30,
+          "reason": "governor_exit:FSR_BELOW_EXIT:FSRN",
+          "requested_at": "2023-12-11 13:21:00+05:30",
+          "side": "SELL",
+          "status": "FINALIZED",
+          "symbol": "INDIGO",
+          "trade_id": "trade-1"
+        },
+        "mfe_r": 0.2357691435322023,
+        "protective_order_id": "paper-protection-INDIGO",
+        "sessions": [
+          "2023-12-11"
+        ],
+        "stop": 2929.1081200182907,
+        "target": 2983.0914352618397
+      },
+      "record": {
+        "anchor_price": 2948.634,
+        "created_bar_timestamp": {
+          "__timestamp__": "2023-12-11T13:17:00+05:30"
+        },
+        "current_stop_price": 2929.1081200182907,
+        "direction": "BUY",
+        "initial_risk_r": 22.971623507893128,
+        "lifecycle_state": "CLOSED",
+        "owner_engine": "ENGINE_A",
+        "position_id": "trade-1",
+        "product": "MIS",
+        "symbol": "INDIGO"
+      },
+      "trade": {
+        "_terminal_bar": {
+          "close": 2948.7,
+          "high": 2949.9,
+          "low": 2946.25,
+          "open": 2946.25,
+          "timestamp": {
+            "__timestamp__": "2023-12-11T13:21:00+05:30"
+          },
+          "volume": 2958.0
+        },
+        "candidate_id": "candidate-2038",
+        "closed_loop": {
+          "entry_quality": {
+            "completed_outcomes_total": 0,
+            "global_side_samples": 0,
+            "global_win_rate": 0.5,
+            "partial_pool_weight": 0.0,
+            "pooled_win_rate": 0.5,
+            "suggested_confidence_offset": 0.0,
+            "suggested_entry_derate": 1.0,
+            "symbol_regime_samples": 0,
+            "symbol_regime_win_rate": 0.5
+          },
+          "reference_path": {
+            "curve_gamma": 1.0,
+            "entry_price": 2948.634,
+            "initial_risk": 22.971623507893128,
+            "max_hold_bars": 60,
+            "response_time_bars": 45.0,
+            "side": "BUY",
+            "symbol": "INDIGO",
+            "target_r": 1.5
+          },
+          "regime": "unknown",
+          "symbol_dynamics": {
+            "base_response_time_bars": 40.61995469160194,
+            "damping_ratio": 0.6613588110403397,
+            "deviation_persistence": 0.9830805652130901,
+            "directional_efficiency": 0.3386411889596603,
+            "response_time_bars": 45.0,
+            "sample_bars": 60,
+            "suggested_pid_gain_scale": 0.5
+          }
+        },
+        "controller_exit_pending": {
+          "armed_timestamp": "2023-12-11 13:20:00+05:30",
+          "event": "GOVERNOR_EXIT",
+          "exit_reason": "governor_exit:FSR_BELOW_EXIT:FSRN",
+          "reason": "FSR_BELOW_EXIT:FSRN"
+        },
+        "entry_atr": 19.649443659583888,
+        "entry_price": 2948.634,
+        "entry_timestamp": "2023-12-11 13:17:00+05:30",
+        "exit_confidence_threshold": 0.6,
+        "governor_entry_conviction": null,
+        "governor_mfe_r": 0.2357691435322023,
+        "governor_stop_price": 2929.1081200182907,
+        "maximum_hold_bars": 60,
+        "minimum_hold_bars": 2,
+        "planned_entry_price": 2948.634,
+        "planned_stop_price": 2925.662376492107,
+        "planned_target_price": 2983.0914352618397,
+        "quantity": 30,
+        "side": "BUY",
+        "stop_price": 2925.662376492107,
+        "target_price": 2983.0914352618397,
+        "trade_id": "trade-1"
+      }
+    }
+  ],
+  "runtime": {
+    "end_of_run_disposition": "CLOSE",
+    "strict_session_boundary": true
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "poll_seconds": 5,
+  "workers": {
+    "claude": {
+      "command": [
+        "/home/srinivas/.config/Claude/claude-code/2.1.293/25786da347c3/claude",
+        "-p",
+        "--permission-mode",
+        "acceptEdits",
+        "--add-dir",
+        "/home/srinivas/R5_ENGINEERING_PLATFORM",
+        "--add-dir",
+        "/home/srinivas/projects/zerodha-r5-governor-refactor",
+        "--add-dir",
+        "/home/srinivas/projects",
+        "--add-dir",
+        "/home/srinivas/Documents/Codex",
+        "--allowedTools",
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash(ls:*)",
+        "Bash(cat:*)",
+        "Bash(wc:*)",
+        "Bash(head:*)",
+        "Bash(tail:*)",
+        "Bash(sha256sum:*)",
+        "Bash(git status:*)",
+        "Bash(git log:*)",
+        "Bash(git show:*)",
+        "Bash(git diff:*)",
+        "Bash(git rev-parse:*)",
+        "Bash(/home/srinivas/.venvs/zerodha-phase1-r5/bin/python:*)",
+        "Bash(date:*)",
+        "Bash(mkdir:*)",
+        "Bash(cp:*)",
+        "Bash(find:*)",
+        "Bash(stat:*)",
+        "Bash(file:*)",
+        "Bash(grep:*)",
+        "Bash(du:*)",
+        "Bash(zcat:*)",
+        "Bash(gzip:*)",
+        "Bash(awk:*)",
+        "Bash(sort:*)",
+        "Bash(cut:*)"
+      ],
+      "timeout": 5400
+    },
+    "qwen": {
+      "enabled": true,
+      "model": "qwen3.8:27b",
+      "timeout": 1800
+    },
+    "gemini": {
+      "enabled": true,
+      "command": [
+        "/home/srinivas/.npm-global/bin/gemini",
+        "-p"
+      ],
+      "timeout": 900
+    },
+    "auditor": {
+      "command": [
+        "/home/srinivas/.config/Claude/claude-code/2.1.293/25786da347c3/claude",
+        "-p"
+      ],
+      "timeout": 3600
+    }
+  },
+  "auditor": {
+    "enabled": true,
+    "sandbox": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "transport": "mocked; never stops local Ollama",
+  "fail_closed_assertions": "exception, ERROR and FAILED END, no success response persisted, no send on invalid request",
+  "cases": [
+    {
+      "case": "test_failures_close_and_log_in0",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_in0/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    },
+    {
+      "case": "test_failures_close_and_log_ma0",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_ma0/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    },
+    {
+      "case": "test_failures_close_and_log_ma1",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_ma1/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "REQUEST",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    },
+    {
+      "case": "test_failures_close_and_log_mi0",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_mi0/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "REQUEST",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    },
+    {
+      "case": "test_failures_close_and_log_ti0",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_ti0/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "REQUEST",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    },
+    {
+      "case": "test_failures_close_and_log_un0",
+      "log": "/home/srinivas/R5_ENGINEERING_PLATFORM/outputs/eos002/test_runtime/test_failures_close_and_log_un0/logs/engineering_bridge.log",
+      "events": [
+        "START",
+        "REQUEST",
+        "ERROR",
+        "END"
+      ],
+      "status": "FAILED"
+    }
+  ]
+}

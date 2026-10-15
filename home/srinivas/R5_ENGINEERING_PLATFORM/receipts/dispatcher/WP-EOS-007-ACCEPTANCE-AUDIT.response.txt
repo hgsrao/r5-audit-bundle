@@ -1,0 +1,58 @@
+# WP-EOS-007 acceptance audit findings
+
+Audit root: `/home/srinivas/R5_ENGINEERING_PLATFORM`. Access mode given: read-only.
+
+**Tool limits.** Only one of three Bash calls ran: the sha256/SHA256SUMS/PROVENANCE_RECEIPT read. The first batch (ls/queue counts/CURRENT_STATE/etc.) and the write probe were denied by the permission mode. I got the rest of the evidence with Glob, Grep and Read, and the `tail` of the log ran later.
+
+**Q1: PASS**
+- The decision line is `ENGINEERING DECISION: AUTHORITATIVE_METADATA_NOT_QUALIFIED`. It appears at `reports/production/WP-R5-001B/METADATA_QUALIFICATION_REPORT.md:86` and in `ENGINEERING_ACCEPTANCE_REPORT.md`.
+- The report path is `reports/production/WP-R5-001B/METADATA_QUALIFICATION_REPORT.md`.
+- I recomputed both hashes, and both match `SHA256SUMS.txt`. The raw files are also logged in `CURRENT_STATE.md` and `CHECKPOINT_003.md`. I did not open the hash table in `PROVENANCE_RECEIPT.md` (lines 23–28). It says the hashes equal the operator-supplied values.
+
+| File | Recomputed SHA-256 | Matches `SHA256SUMS.txt` |
+|---|---|---|
+| `raw/kite_instruments_NSE.csv` | `536809820e9d0114d9ef42c2756bb2e44044474471007887a841e36b3696401f` | Yes |
+| `raw/NSE_CM_security_06102026.csv.gz` | `0a9022e4e93f3be91df3196d0127d2d79031795f21e180f4b3b89fb39e99c803` | Yes |
+
+**Q2: FAIL (counts disagree with the status block)**
+
+| State | Files | Package files |
+|---|---|---|
+| READY | 1 | `WP-R5-002.json` |
+| RUNNING | 1 | `WP-EOS-007-ACCEPTANCE-AUDIT.json` |
+| DONE | 3 | `WP-R5-001.json`, `WP-R5-002A.json`, `WP-R5-001B.json` |
+| FAILED | 0 | (none) |
+| REVIEW | 0 | (none) |
+
+- The `DISPATCHER_STATE` block in `CURRENT_STATE.md` (lines 66–80, stamped 2026-10-07T05:37:24Z) says READY 1, RUNNING 0, DONE 3, FAILED 0, REVIEW 0.
+- The only difference is RUNNING, which is 1 on disk and 0 in the block. That is this audit package, which `logs/dispatcher.log` shows starting at 05:48:57Z, after the block was written. The block is stale, not wrong at the time it was written.
+- I listed files with Glob. FAILED and REVIEW returned no files, but I did not check whether those directories exist.
+
+**Q3: PASS**
+- The receipt is `receipts/dispatcher/WP-R5-001B.receipt.json`. There is also a `.receipt.md` and a `.response.txt` alongside it.
+- Worker: `claude`.
+- Final state: `DONE`, with `ok: true`, `error: null` and `needs_review: false`.
+- It ran 05:31:57Z to 05:37:06Z.
+
+**Q4: PASS**
+- `receipts/checkpoints/CHECKPOINT_003.md` exists. Its next-exact-step sentence reads: "Next exact step: operator supplies dated historical metadata covering TRAIN (see outstanding issues); a follow-up qualification of that evidence flips the decision."
+
+**Q5: PASS**
+- `knowledge_base/` has one top-level entry, the `adr/` directory. It contains `ADR-0000_INDEX.md`, `ADR-0001_EOS_FOUNDATION.md` and `ADR_TEMPLATE.md`.
+- The last 5 lines of `logs/dispatcher.log`:
+```
+{"event": "DISPATCH", "package": "WP-R5-001B", "ts": "2026-10-07T05:31:57.794211+00:00", "worker": "claude"}
+{"error": null, "event": "END", "package": "WP-R5-001B", "state": "DONE", "ts": "2026-10-07T05:37:06.515088+00:00", "worker": "claude"}
+{"event": "STATE_REFRESH", "reason": "WP-R5-002 held back: unsatisfiable dependency until TRAIN metadata evidence exists", "ts": "2026-10-07T05:37:24.378310+00:00"}
+{"event": "START", "package": "WP-EOS-007-ACCEPTANCE-AUDIT", "ts": "2026-10-07T05:48:57.449868+00:00", "type": "AUDIT"}
+{"access": "read-only", "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM", "event": "DISPATCH", "package": "WP-EOS-007-ACCEPTANCE-AUDIT", "ts": "2026-10-07T05:48:57.450747+00:00", "worker": "auditor"}
+```
+
+**Q6: PASS (the probe was blocked, as expected for read-only access)**
+- I made one attempt: a Bash `echo probe > reports/AUDIT_WRITE_PROBE.txt`.
+- Result: it failed with "Permission to use Bash has been denied because Claude Code is running in don't ask mode." The file was not created.
+- I did not retry or try another route, and none of my other tools can write files.
+- **What I can do:** read, search and list files under the audit root, plus `sha256sum` and `tail` through Bash. `sha256sum` and `tail` did run, but the same Bash tool refused the other two calls, so I can't say what else it would allow.
+- **What I can't do:** create, modify or delete anything.
+
+**Summary:** Q1 PASS, Q2 FAIL, Q3 PASS, Q4 PASS, Q5 PASS, Q6 PASS. The Q2 failure is only the stale status block described above.

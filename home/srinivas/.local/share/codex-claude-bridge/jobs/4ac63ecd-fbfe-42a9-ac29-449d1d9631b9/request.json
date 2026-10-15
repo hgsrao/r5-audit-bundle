@@ -1,0 +1,5 @@
+{
+  "prompt": "Next C04 bounded design only. Inspect actual installed SimplePIDModelPredictiveControlBox (revision2_external/pid_controller.py) and simple_pid state semantics inferred from imports/source available. Propose strict versioned JSON export/restore of MPC per-symbol entry/exit PID and confidence deque yielding same next build_plan outputs after restart with dt=1; no object pickle or parameter change. Also list exact PA/studies/HMM/hysteresis/closed_loop state dependencies to serialize later using actual files. Need actionable smallest implementation with fail-closed validation and state continuity tests. Do not edit; avoid previous report stale C02/C03/compaction/sixblock suggestions.",
+  "work_dir": "/home/srinivas/projects/zerodha-r5-governor-refactor",
+  "mode": "review"
+}

@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_tripwire_noop/test_provenance_limit_same_siz0/clean2/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a6aa5959db205b10530517cb2af5bc11a35dad58ed81179f11ee444961c830a2",
+      "size_bytes": 17622,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "bbef55f13a353bc4e30aa4e8c1a6d7593bd9e00ce71823634e3dbe5f57a94155",
+      "size_bytes": 18659,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "01c710f0d9d20c76d7611ff33b74c86a01c6c49487e75eff9c2a8ddcc3e23899",
+  "symbol_count": 2
+}

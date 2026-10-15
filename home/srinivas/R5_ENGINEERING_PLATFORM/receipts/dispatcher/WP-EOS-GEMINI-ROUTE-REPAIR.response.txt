@@ -1,0 +1,27 @@
+I couldn't run the tests, so the Gemini repair is written but unverified, and I haven't written the receipt, test log or SHA manifest.
+
+The sandbox blocked every attempt to run `pytest`, in both `python3 -m pytest` and plain `pytest` forms. It also blocked `gemini --help`, so I read the installed CLI's bundled source instead. The flags I used (`--allowed-tools`, `--output-format stream-json`, `--skip-trust`) are all defined in that source. `--allowed-tools` takes a comma-separated value and is marked deprecated in favour of the Policy Engine. The stream-json event types are `init`, `message`, `tool_use`, `tool_result`, `error` and `result`.
+
+**What changed**
+- **`workers/gemini_worker.py`** (rewritten):
+  - **Process group:** the default runner is now `run_in_process_group`, a drop-in for `subprocess.run`. It starts the process in its own session. On timeout it sends TERM and then KILL to the whole group, and it keeps the partial stdout/stderr on `TimeoutExpired`. It also kills leftover children after a normal exit. The injectable runner is unchanged, so tests still pass a fake.
+  - **Access and flags:**
+    - **Sandbox:** bubblewrap adds `--die-with-parent` and a writable bind of `work/gemini_audit_scratch` (created if missing). The rest stays read-only, with `/tmp` private and CLI state writable.
+    - **Gemini flags:** `--approval-mode default` replaces `plan`. `--allowed-tools` lists the six tools you named. `--output-format stream-json` is added.
+    - **Prompt:** a short notice is prepended giving the scratch location and forbidding network, worker dispatch and live/market data.
+  - **Accepting a result:** an audit counts only if the stream has a `result` event with status `success` and some assistant text. Anything else fails with a stage of `timeout`, `nonzero_exit`, `incomplete_stream`, `result_error` or `empty_answer`.
+  - **Diagnostics in `WorkerResult.raw`:** stdout/stderr tails capped at 4000 characters, event counts, up to 25 recent tool events, the session and model, and a flag that is always false on failures. Thought fields are dropped, and API keys, bearer tokens and similar secrets are redacted.
+- **`workers/base.py`:** `WorkerError` now takes an optional `raw`, and `execute` passes it into the failed `WorkerResult`. When `raw` isn't given it is `{}`, so other workers behave as before.
+- **`tests/test_workers.py`:**
+  - Updated the Gemini argv test.
+  - Added tests for structured success.
+  - Added parametrized failure cases for incomplete stream, empty output, malformed output, an error result, a nonzero exit and an empty answer.
+  - Added tests for timeout partial retention with redaction and thought filtering.
+  - Added a test that `WorkerError.raw` is empty for other workers.
+  - Added a test that a real local process, with a sleeping grandchild, is cleaned up on timeout. It doesn't invoke Gemini.
+
+Before copies of the five touched files are in `reports/dispatcher/WP-EOS-GEMINI-ROUTE-REPAIR/before/`.
+
+**To close out:** please run `python3 -m pytest engineering_dispatcher/tests` from `/home/srinivas/R5_ENGINEERING_PLATFORM`, or approve it for me. I can then write `IMPLEMENTATION_RECEIPT.md`, the test log and the SHA manifest. Fix-ups to my tests may be needed after the first run.
+
+I also haven't confirmed that the CLI honours a comma-joined `--allowed-tools` under `--approval-mode default`. The real Gemini audit you plan next is the test of that, and I make no claim about the cause of the earlier stall.

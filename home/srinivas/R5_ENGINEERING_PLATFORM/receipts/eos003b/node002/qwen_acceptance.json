@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "model_host": "NODE-001",
+  "bridge_host": "NODE-002",
+  "request_id": "48f942f8aa8a4f058afb8eb828157fb8",
+  "response_file": "/home/shrinivas/R5_ENGINEERING_PLATFORM/bridge/work/48f942f8aa8a4f058afb8eb828157fb8.json",
+  "duration_seconds": 48.814294684999936,
+  "persistence_matches": true,
+  "logging_events": [
+    "START",
+    "REQUEST",
+    "RESPONSE",
+    "END"
+  ],
+  "response_model": "qwen3.8:27b"
+}

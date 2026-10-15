@@ -1,0 +1,51 @@
+I stopped before finishing WP-R5-003. A second worker is running the same package, and I'm leaving the remaining deliverables to it. My own findings reach the same decision, **FAIL (fail closed)**; the replay was not executed.
+
+**Why I stopped**
+- The dispatcher's first attempt at 07:22Z failed at launch (`claude` binary not found), so I started the work directly.
+- `CURRENT_STATE.md` now shows `Running: WP-R5-003`, so the dispatcher has relaunched it.
+- That worker overwrote my `REPLAY_DETERMINISM_REPORT.md`, `SAFETY_GATE_REPORT.md` and `REPLAY_EXECUTION_REPORT.md` with its own versions.
+- To avoid double-appending to the shared state files, I am not writing those, `CHECKPOINT_006.md`, `WP-R5-004.json` or `SHA256SUMS.txt`. None of them exist yet.
+- `EXECUTION_PROVENANCE.md` is currently mine. The other worker may overwrite it.
+- Before-copies are saved as `work/{CURRENT_STATE,R5_PRODUCTION_BACKLOG,R5_CURRENT_WORK_PACKAGE}.before_WP-R5-003.md`.
+- I can finish the remaining pieces if you tell me the other run is dead or you want me to take over.
+
+**Gate 0 (replay not run)**
+- **(a) TRAIN-only access: FAIL.**
+  - The sealed worker's parsing is TRAIN-restricted: `load_stock_block` stops at the first row after the block's last session (`scripts/run_r5_step5_candidate.py:210-211`), and the grid loader stops at its cutoff (`:371-372`).
+  - Every run also hashes the whole frozen files, which span 2023-07-03..2026-08-24. That happens in `verify_manifest` (`revision2/dataset_manifest.py:117-133`, called at `:454`) and in `sha256_file` on the grid feeds (`:331`).
+  - No flag skips those hashes. I found no TRAIN-only slice on disk.
+  - There is no unmodified-code path that avoids the whole-file hash.
+- **(b) Entry point and params: not established.** No sealed receipt designates the diagnostic invocation.
+- **(c) Tree equals HEAD: unknown.** `git status` needed approval, which this session can't give. The sealed worker's `verify_engine_identity` check (`:64-111`) would likely refuse to start on a tree that differs from `c0b4672` outside the Step-5 files. I did not run it.
+- **(d) Unqualified inputs: FAIL.** The replay consumes params, costs, slippage, HMM floors, calendar and registry identity, and none is accepted by the order (A-META-001 covers metadata only).
+- **(e) Read-only and output location: plausible, not proven.**
+
+**Other findings**
+- **Safety gates (static):**
+  - The sealed worker never passes `risk_profile`, so the default `"development"` applies (`revision2_external/orchestrator.py:142`).
+  - `risk_governor` is therefore `None` (`:229-231`). The daily entry lock (1.5%), daily hard halt (2%), rolling-week halt (4%), per-trade risk cap and entries/day limit are off on this path.
+  - Still active at development values:
+    - kill switch
+    - drawdown halt 0.25
+    - daily loss cap ₹50,000
+    - position limits 5 / 100 / 0.50 / 0.15
+    - governor authority "full"
+    - paper-only broker
+- **CNC/GTT/morning recovery (static):** no entry found for the sealed worker if `--paper-combined-cycle-state` is not passed. There is no runtime trace, since nothing ran.
+- **Determinism:** not run.
+
+**What must be supplied to unblock**
+- A TRAIN-only slice with a recorded hash, or an authorised integrity loader that doesn't hash past the TRAIN range.
+- A designated invocation, run through a sealed order.
+- An operator-run `git status` / `git diff`.
+- Explicit acceptance of the unqualified inputs.
+- A decision on whether the diagnostic should run under `risk_profile="trial"`.
+
+**Nothing forbidden was touched**
+- No replay or Python run.
+- No frozen data file opened, parsed or hashed.
+- No repo writes, no commit, no network.
+- The dispatcher state block was not edited.
+- H/I/J counts stay 11/19/4. EXEC-05 stays NOT_QUALIFIED. Production stays NOT READY.
+
+Evidence is in `reports/production/WP-R5-003/`. I recommend the next package be one that resolves precondition (a), the TRAIN-only slice or integrity-loader decision. It needs operator and engineering authorisation, and the other worker is meant to prepare it as `WP-R5-004.json`.

@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_os_gate_skipped/test_shape_errors0/quoted/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "f23acc488c9dd3894ea70e25965f18ece70afb1893aab4df3499fc5327f9b82c",
+      "size_bytes": 18280,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "59bc80b3a5c6f3e36fe9cd9b647c1cacd06897d06fab9923e6f374489c88d2dd",
+      "size_bytes": 18634,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "885e6fcd84890bb55aada17c51cdbf3a17cc15e99a2e08ff4fb50e934cfc597d",
+  "symbol_count": 2
+}

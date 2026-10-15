@@ -1,0 +1,21 @@
+{
+  "work_package": "WP-EOS-004",
+  "audit_id": "EOS004-GEMINI-PRO",
+  "overall_result": "NOT READY",
+  "authentication": "VERIFIED",
+  "subscription": "Google AI Pro Offered through Jio",
+  "model_selected": "3.1 Pro, UI selection",
+  "external_audit_result": null,
+  "valid_audit_received": false,
+  "attempts": 2,
+  "provider_failure": "I'm having a hard time fulfilling your request. Can I help you with something else instead?",
+  "adapter_acceptance": "REJECTED_INVALID_CONTRACT",
+  "adapter_error": "audit report fields do not match the response contract",
+  "request_timestamp_utc": "2026-10-07T04:04:46.585864+00:00",
+  "response_capture_timestamp_utc": "2026-10-07T04:11:34.446Z",
+  "elapsed_request_to_final_capture_seconds": 407.860136,
+  "duration_includes_browser_and_retry_overhead": true,
+  "next_action": "Architectural review of provider failure; no implementation authorized",
+  "bridge_source_modified": false,
+  "r5_modified": false
+}

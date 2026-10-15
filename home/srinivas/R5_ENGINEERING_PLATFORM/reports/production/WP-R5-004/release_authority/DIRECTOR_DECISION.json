@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-08T14:16:47.573661+00:00",
+  "package": "WP-R5-004-RELEASE-AUTHORITY-ANALYSIS",
+  "verdict": "PASS WITH FINDINGS",
+  "response_sha256": "3a1c23e1e126ecb1aa85aae5ef0142710127f7e5f867030a5bdc41d7015c861f",
+  "accepted": "Embedded record pin causes operational code/record hash dependency. Move authority data outside pinned code. Synthetic acceptance unchanged.",
+  "rejected": "Caller-supplied trusted_issuers and external_pin alone cannot grant REAL. Qwen acceptance check 1 contradicts its proposed implementation: caller can supply REAL scope.",
+  "director_policy": "Fixed Director-controlled approval store outside harness/snapshot and outside caller-selected paths; empty/missing denies REAL. Bind exact approved record hash, issuer scope, execution and verified provenance receipt. Caller JSON cannot register issuers or change trust store. Host approval validated before artifact reads, child independently verifies pinned approval metadata and bindings. V1 remains closed. Trusted local Director, accidental buggy worker threat model, not malicious host protection."
+}

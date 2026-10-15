@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 342.29741672900127,
+  "error": "gemini exited 173: lan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n' +\n      '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\n' +\n      'Please retry in 13h6m58.475361331s.',\n    details: [ [Object], [Object], [Object] ]\n  },\n  retryDelayMs: undefined,\n  reason: undefined,\n  status: 429\n}",
+  "finished_at": "2026-10-08T10:53:01.613511+00:00",
+  "needs_review": false,
+  "objective": "Real Gemini route verification and delta audit of corrected physical caps",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+  "package_sha256": "8400ef6b0134aab65a44653e535e4c8638749fe3d3180b65d7cc7019acc7425f",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T10:47:19.313898+00:00",
+  "state": "FAILED",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-08T13:20:23.298194+00:00",
+  "route": "Gemini authenticated Codex in-app browser",
+  "url": "https://gemini.google.com/app/d6d0420761d28609",
+  "connection_check": "R5_AUDIT_READY",
+  "verified": true,
+  "scope": "Connection smoke check only; not an engineering audit",
+  "api_route": "HTTP429 free-tier quota exhaustion; do not blindly retry",
+  "next_use": "Audit completed isolated integration evidence, avoid duplicate frozen OS audit",
+  "proof": "/home/srinivas/Documents/Codex/2026-10-08/r5-engineering-operating-system-role-you/outputs/Gemini-Browser-Route-Verified.jpg"
+}

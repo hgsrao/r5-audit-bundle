@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "grid_INDIA_VIX_15MIN.csv": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/art/grid_INDIA_VIX_15MIN.csv",
+    "grid_NIFTY_50_15MIN.csv": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/art/grid_NIFTY_50_15MIN.csv",
+    "stock_AAA.csv": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/art/stock_AAA.csv",
+    "stock_BBB.csv": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/art/stock_BBB.csv"
+  },
+  "authorization_sha256": "61649c6ed0262490b9df60532ce3789b803506d7ed999ee545c288c152294f38",
+  "chunk_size": 4096,
+  "execution_id": "SYNTHETIC-EXEC-001",
+  "harness_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness",
+  "metadata": {
+    "authorization": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/authorization.json",
+    "contract": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/contract.md",
+    "grid_manifest": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/grid_manifest.json",
+    "params": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/params.json",
+    "protocol": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/protocol.json",
+    "release_record": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/release_record.json",
+    "snapshot_manifest": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/snapshot_manifest.json",
+    "stock_manifest": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/meta/stock_manifest.json"
+  },
+  "no_expose_paths": [
+    "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/work",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness",
+    "/home/srinivas/projects"
+  ],
+  "output_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/out",
+  "protected_paths": [
+    "/home/srinivas/projects/zerodha-r5-governor-refactor",
+    "/home/srinivas/projects/zerodha-phase1",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/raw"
+  ],
+  "python": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+  "release_record_sha256": "7ff281d6b0f86a7e9930f1d79f96101182f007b0d40a51eeda2d4f116ab3f8c6",
+  "snapshot_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/snapshot",
+  "timeout_s": 300,
+  "trusted_issuers": {
+    "SOMEONE_ELSE": [
+      "SYNTHETIC_ONLY"
+    ]
+  }
+}

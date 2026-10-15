@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_tripwire_noop/test_duplicate_and_swapped_tim0/w_dup/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "6f385600e7d360d88714ab733b60c25ee91db063046a9cb4a589c8f630691ae2",
+      "size_bytes": 17622,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "2175ea6c1544af093d9c97f44b156c7a52e86122eac21c4b4ea07990b1b926f9",
+      "size_bytes": 18660,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "20ed69a56852bb7638fa219caae804dae8cfe0c833d6f99a2a01948354813ec1",
+  "symbol_count": 2
+}

@@ -1,0 +1,25 @@
+* codex/r5-paper-apply-blocker-closure                           4963f14 [origin/codex/r5-paper-apply-blocker-closure] Close R5 plant-control paper actuation blockers
+  master                                                         a7d09e5 [origin/master] ROOT CAUSE ANALYSIS: Why -Rs.102 P&L and 172x improvement roadmap
+  remotes/origin/HEAD                                            -> origin/master
+  remotes/origin/claude/adoring-fermat-hdroid                    d3588f7 Complete production trading engine with critical fixes fully integrated
+  remotes/origin/codex/backtrader-parity                         8f8e8d9 Wire single-symbol events on both backends; fix 7 real parity bugs; document 2 open ones
+  remotes/origin/codex/conversation-handover-20260904            fc831e3 Add conversation handover for PC and laptop continuation
+  remotes/origin/codex/engine-completion                         0f2d116 Wire external continuous exit control
+  remotes/origin/codex/external-library-calibration-engine       f305bb2 Record holding time in compact trade ledger
+  remotes/origin/codex/external-library-calibration-engine-clean 133c5fe Archive September research scripts and diagnostics
+  remotes/origin/codex/r5-bb05-bb06-claude                       55a8069 Parameterize R5 BB05-BB06 controls
+  remotes/origin/codex/r5-bb07-bb08-manual                       8fa4896 Parameterize R5 BB07-BB08 controls
+  remotes/origin/codex/r5-bb09-bb10-laptop                       d049c8f Parameterize R5 BB09-BB10 controls
+  remotes/origin/codex/r5-bb09-bb10-review                       bed3dd5 Correct R5 BB09-BB10 execution supervision
+  remotes/origin/codex/r5-integration-bb01-bb10                  89ee766 Integrate corrected R5 BB09-BB10 (bed3dd5)
+  remotes/origin/codex/r5-paper-apply-blocker-closure            4963f14 Close R5 plant-control paper actuation blockers
+  remotes/origin/codex/r5-plant-control-shadow                   425024c Add R5 shadow ECS grid and sector dispatch control
+  remotes/origin/codex/r5-three-controller-parameterization      b5ff1c2 Parameterize R5 studies and closed-loop controls
+  remotes/origin/codex/revision2-executable-pipeline             01bd6bb feat: Implement hybrid trend+mean reversion PA algorithm with comprehensive analysis
+  remotes/origin/codex/revision4-audit-remediation               14d0dba Close F11 cooldown and F17 portfolio refit policy
+  remotes/origin/codex/ten-box-remediation                       3bbd137 Implement parameter-driven paper order lifecycle
+  remotes/origin/feature/inhouse-sealed-validation-v3            a513692 Prepare in-house engine for sealed Ray calibration
+  remotes/origin/main                                            675a42b feat(dcs): lock 3-year calibrated parameters for Supervisor and Black Boxes 01-10
+  remotes/origin/master                                          a7d09e5 ROOT CAUSE ANALYSIS: Why -Rs.102 P&L and 172x improvement roadmap
+  remotes/origin/revision4-production-engine                     232526e feat(release): Engine Revision 4.0 - Master Production Clean
+  remotes/origin/safety/local-master-20260915                    bd848dd REAL DATA: Download NIFTY 50 from Kite + Test with real data (NO synthetic)

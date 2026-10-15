@@ -1,0 +1,5 @@
+file,old,new,occurrences
+bridge/README.md,`work/acceptance_results.txt`,`../reports/bridge/v1.0/acceptance_results.txt`,1
+bridge/README.md,`ROUTING.md`,`../architecture/bridge/ROUTING.md`,1
+bridge/README.md,`work/acceptance_v1.2.txt`,`../reports/bridge/v1.2/acceptance_v1.2.txt`,1
+bridge/README.md,`FREEZE_V1.2.json`,`../receipts/bridge/v1.2/FREEZE_V1.2.json`,1

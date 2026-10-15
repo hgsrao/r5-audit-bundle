@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_unknown_auth_keys_accepted/test_shape_errors0/short_row/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "0c27b3c7bffc1744555441d097c6ca1161238610bc9f4b58418d6948afcd84dd",
+      "size_bytes": 18594,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "f3003a3db83ca2b7c020a973817234da060b8cc22e04cd52955947f0f6f44216",
+      "size_bytes": 18630,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "ce0bdbb0f03f8969b795ae9dbe7bc65616f4bb506aa7bba64735ca59a28d5032",
+  "symbol_count": 2
+}

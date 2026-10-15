@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 2,
+	"untrackedDirGc": {
+		"sightings": {},
+		"roots": {},
+		"cwds": {
+			"/home/srinivas/.config/Claude/scratch-workspaces/b8a4db77-bc5f-4716-ba92-ca91a3db1778/0bfcd37e-13bd-48b7-b3c6-81a5015d4504/scratch-2026-09-28-cd3564": 1792024876528,
+			"/home/srinivas/projects/zerodha-r5-governor-refactor": 1792084276537,
+			"/home/srinivas/.config/Claude/scratch-workspaces/b8a4db77-bc5f-4716-ba92-ca91a3db1778/0bfcd37e-13bd-48b7-b3c6-81a5015d4504/scratch-2026-10-05-00d78c": 1792084276537,
+			"/home/srinivas/.config/Claude/scratch-workspaces/b8a4db77-bc5f-4716-ba92-ca91a3db1778/0bfcd37e-13bd-48b7-b3c6-81a5015d4504/scratch-2026-10-08-b5eecf": 1792084276537,
+			"/home/srinivas/projects/r5_c04b_candidate": 1792084276537,
+			"/home/srinivas/projects/zerodha-engine-c": 1792084276537
+		}
+	},
+	"originUrls": {
+		"/home/srinivas/projects/zerodha-r5-governor-refactor": {
+			"commonDir": "/home/srinivas/projects/zerodha-phase1/.git",
+			"digest": "6068888a38be50ddfa522a91207b1e5b20c72505ec00ba61b2095cbd5a76d2a0",
+			"url": "https://github.com/hgsrao/zerodha-phase1.git",
+			"recordedAt": 1791163244636
+		},
+		"/home/srinivas/projects/r5_c04b_candidate": {
+			"commonDir": "/home/srinivas/projects/zerodha-phase1/.git",
+			"digest": "6068888a38be50ddfa522a91207b1e5b20c72505ec00ba61b2095cbd5a76d2a0",
+			"url": "https://github.com/hgsrao/zerodha-phase1.git",
+			"recordedAt": 1791163244636
+		},
+		"/home/srinivas/projects/zerodha-engine-c": {
+			"commonDir": "/home/srinivas/projects/zerodha-phase1/.git",
+			"digest": "6068888a38be50ddfa522a91207b1e5b20c72505ec00ba61b2095cbd5a76d2a0",
+			"url": "https://github.com/hgsrao/zerodha-phase1.git",
+			"recordedAt": 1791163244636
+		}
+	},
+	"originPins": {
+		"/home/srinivas/projects/zerodha-phase1/.git": {
+			"host": "github.com",
+			"repo": "hgsrao/zerodha-phase1",
+			"ident": "github.com/hgsrao/zerodha-phase1.git",
+			"mintedAt": 1791163244673,
+			"from": "config",
+			"folder": "/home/srinivas/projects/zerodha-r5-governor-refactor"
+		}
+	}
+}

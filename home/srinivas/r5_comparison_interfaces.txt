@@ -1,0 +1,94 @@
+===== PAPER BROKER REPORT FIELDS =====
+                    self.entry_candidate_observations.dispose(candidate_id, "REJECTED", "paper_fill_rejected")
+
+            if self.paper_journal is not None:
+                self.paper_journal.checkpoint(self, timestamp)
+
+        for symbol in list(self.open_trades.keys()):
+            bars = symbol_bars[symbol]
+            final_close = float(bars.iloc[len(bars) - 1]["close"])
+            self._execute_exit(symbol, bars.iloc[len(bars) - 1].get("timestamp", ""), self.open_trades[symbol], final_close, "end_of_run_reconciliation")
+
+        if self.paper_journal is not None:
+            self.paper_journal.checkpoint(self, "FINAL")
+        self.entry_candidate_observations.finalize_pending()
+        gross_pnl = self.broker.realized_pnl
+        assert abs(gross_pnl - sum(t["pnl"] for t in self.completed_trades)) < 1e-6
+
+        target_names = set(self.registry.applicable_names("EXTERNAL"))
+        safety_names = set(self.registry.safety_params)
+        coverage_target = sorted(target_names & self.consumed_parameters)
+
+        funnel["exit_orders_submitted"] = self._exit_orders_submitted
+        return {
+            "risk_profile": self.risk_profile,
+            "operating_mode": "paper",
+            "post_fill_checks": self._post_fill_checks,
+            "execution_halted": self._execution_halted,
+            "safety_violations": sum(not row["passed"] for row in self._post_fill_checks),
+            **funnel, "symbols": self.symbols, "completed_trades": len(self.completed_trades),
+            "gross_pnl": gross_pnl, "net_pnl": sum(t["net_pnl"] for t in self.completed_trades),
+            "ending_equity": self.starting_equity + sum(t["net_pnl"] for t in self.completed_trades),
+            "config_hash": self.config.config_hash, "safety_contract_hash": self.safety_contract.contract_hash,
+            "plant_control": {
+                "mode": self.plant_control.mode.value, "applied": self._paper_admission_evaluations > 0,
+                "plant_protection_connected": self._plant_protection_connected,
+                "bay_availability_source": self._plant_protection_source,
+                "evaluations": self.plant_control_evaluations,
+                "paper_admission_evaluations": self._paper_admission_evaluations,
+                "paper_admission_rejections": self._paper_admission_rejections,
+                "paper_admission_caps": self._paper_admission_caps,
+                "grid_state_counts": dict(self.plant_control_state_counts),
+                "transitions": len(self.plant_control_snapshots),
+                "observer_failures": len(self.plant_control_observer_failures),
+            },
+            "plant_control_shadow": {
+                "mode": self.plant_control.mode.value, "applied": self._paper_admission_evaluations > 0,
+                "plant_protection_connected": self._plant_protection_connected,
+                "bay_availability_source": self._plant_protection_source,
+                "evaluations": self.plant_control_evaluations,
+                "grid_state_counts": dict(self.plant_control_state_counts),
+                "transitions": len(self.plant_control_snapshots),
+                "observer_failures": len(self.plant_control_observer_failures),
+            },
+            "closed_loop_mode": self.closed_loop_mode,
+            "pid_mode": self.pid_mode,
+            "certification_audit": certification_audit,
+            "session_completeness": {
+                s: certify_session_completeness(frame, self.session_schedule)
+                for s, frame in symbol_bars.items()
+            },
+            "final_portfolio_weights": self._portfolio_weights,
+            "parameter_coverage": {
+                "target_total": len(target_names), "target_consumed": len(coverage_target),
+                "target_missing": sorted(target_names - self.consumed_parameters),
+                "safety_total": len(safety_names),
+            },
+            "trades": self.completed_trades,
+            "mtm_equity_curve": self._mtm_equity_curve if self.telemetry_mode == "full" else [],
+            "mtm_max_drawdown_fraction": self._mtm_max_drawdown_fraction,
+            "controller_telemetry": self.controller_telemetry,
+            "controller_telemetry_summary": {
+                "events": sum(self._controller_event_counts.values()),
+                "entry_throttle_updates": self._controller_event_counts["ENTRY_CONFIDENCE_THROTTLE"],
+                "exit_protection_updates": self._controller_event_counts["EXIT_PROTECTION_UPDATE"],
+                "shadow_r_trajectory_updates": self._controller_event_counts["SHADOW_R_TRAJECTORY_UPDATE"],
+                "shadow_r_trajectory_exits": self._controller_event_counts["SHADOW_R_TRAJECTORY_EXIT"],
+                "outcomes": self._controller_event_counts["CONTROLLER_OUTCOME"],
+===== PAPER BROKER COST MODEL =====
+5:class CostedPaperBrokerAdapter(PaperBrokerAdapter):
+6:    def __init__(self, *args, **kwargs):
+11:    def place_order(self, symbol, side, quantity, order_type, market_price,
+29:    def __init__(self, window_seconds):
+33:    def seen_recent(self, symbol, side, timestamp):
+41:    def record(self, symbol, side, timestamp):
+===== EXISTING NAUTILUS BRIDGE =====
+24:from revision2_external.orchestrator import Revision2ExternalEngineOrchestrator
+27:class NativeEngineBridgeConfig(StrategyConfig, frozen=True):
+31:class NativeEngineBridgeStrategy(Strategy):
+32:    def __init__(self, config: NativeEngineBridgeConfig):
+43:        self.orchestrator = Revision2ExternalEngineOrchestrator(
+53:    def on_start(self):
+57:    def on_bar(self, bar: Bar):
+73:        # Once we have sufficient bars, execute native orchestrator step
+78:def run_native_bridge_backtest():

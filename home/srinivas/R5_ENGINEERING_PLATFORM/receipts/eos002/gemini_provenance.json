@@ -1,0 +1,8 @@
+{
+  "provider": "Google Gemini web UI",
+  "url": "https://gemini.google.com/app/42211225dc38f1e4",
+  "capture_time_utc": "2026-10-07T03:35:52.885446+00:00",
+  "transport": "manual caller using existing AuditAdapter contract; no platform network implementation added",
+  "audit_limitations": "Evidence summary only, no source archive or full test contents supplied. PASS_WITH_FINDINGS is provider verdict, not platform acceptance. Provider timestamp was caller-supplied placeholder and is not verified wall time; capture_time_utc is actual local evidence time.",
+  "adapter_validation": "PASS"
+}

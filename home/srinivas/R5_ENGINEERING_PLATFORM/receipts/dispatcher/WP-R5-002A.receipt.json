@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 183.3923661430017,
+  "error": null,
+  "finished_at": "2026-10-07T05:27:17.465371+00:00",
+  "needs_review": false,
+  "objective": "Authoritative Instrument Metadata Discovery: search the approved local engineering ecosystem for an authoritative instrument-master/metadata artefact covering the 48 symbols before WP-R5-002 is declared blocked.",
+  "ok": true,
+  "output_sha256": "0da96d455948d1bdc61c107128788ea05c52a313f5363a4302501c8839ffe15d",
+  "package_id": "WP-R5-002A",
+  "package_sha256": "963985f310c2e14ac550b0cc5f9d90cf76b689d9245358fc62c9c710484e729e",
+  "response_file": "WP-R5-002A.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T05:24:14.071224+00:00",
+  "state": "DONE",
+  "type": "PARAMETER_AUDIT",
+  "worker": "claude"
+}

@@ -1,0 +1,9 @@
+usage: main.py [-h] work_package
+
+Engineering Bridge Version 1.2
+
+positional arguments:
+  work_package
+
+options:
+  -h, --help    show this help message and exit

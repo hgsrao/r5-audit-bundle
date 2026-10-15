@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "adapter_node": "NODE-002",
+  "audit_type": "GENERAL_AUDIT",
+  "route": "External Audit Adapter",
+  "provider": "Google Gemini",
+  "provider_overall_result": "PASS_WITH_FINDINGS",
+  "provider_url": "https://gemini.google.com/app/0e448887311d8885",
+  "capture_time_utc": "2026-10-07T03:50:59.899355+00:00",
+  "provider_timestamp": "Caller verified request time, not independent response clock",
+  "transport": "Manual caller browser submission; contract prepared and response accepted on NODE-002",
+  "scope": "Evidence-summary audit; no full source/log inspection by provider",
+  "adapter_duration_seconds": 0.0005134319999342551
+}

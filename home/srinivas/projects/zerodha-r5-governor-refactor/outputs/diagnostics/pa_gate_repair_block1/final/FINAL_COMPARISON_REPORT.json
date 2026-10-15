@@ -1,0 +1,660 @@
+{
+ "self_check_failures": [],
+ "note": "block_fingerprint and universe.manifest_path are excluded from the identity check: block_fingerprint is arm-specific by construction and manifest_path is a per-run temp data-view directory (all content hashes equal)",
+ "arms": [
+  {
+   "arm": "baseline",
+   "experiment": "FROZEN BASELINE (no-op subclass)",
+   "classification": "none",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "9ae2f2a9ad809d3c0dfa314c22bc67301f37ea5ac6209a62b5097c9095a2ab13",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 52,
+   "buy": 2,
+   "sell": 50,
+   "gross_pnl": -4110.439399999963,
+   "costs": 2933.0978871418,
+   "net_pnl": -7043.537287141787,
+   "mtm_max_drawdown_percent": 0.7043537287141662,
+   "wins": 5,
+   "losses": 47,
+   "win_rate": 0.09615384615384616,
+   "avg_win": 91.72791873147817,
+   "avg_loss": -159.62078469785484,
+   "profit_factor": 0.06113420157170885,
+   "gross_r_expectation": -0.23798049120802073,
+   "median_hold_bars": 3.0,
+   "median_hold_minutes": 3.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 50,
+      "passed": 2
+     },
+     "SELL": {
+      "input": 431,
+      "passed": 51
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 887,
+      "passed": 158
+     },
+     "SELL": {
+      "input": 6972,
+      "passed": 1358
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 32793,
+      "passed": 906
+     },
+     "NEUTRAL": {
+      "input": 8255,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 46053,
+      "passed": 7534
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1612,
+      "passed": 206
+     },
+     "SELL": {
+      "input": 937,
+      "passed": 31
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 50,
+      "passed": 2
+     },
+     "SELL": {
+      "input": 431,
+      "passed": 51
+     }
+    }
+   },
+   "activation": "all counters 0 (no hooks active)",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 0,
+    "pa_band_hook_calls": 0,
+    "pa_raw_changed": 0,
+    "pa_raw_hook_calls": 0,
+    "rr_boundary_calls": 0,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 0
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948266,
+   "ledger_sha256": "311b3a145ab017739b492328389b6f79fd9aaa4ebf1eca751f12c9a644e5b08d",
+   "matches_first_pass": true
+  },
+  {
+   "arm": "A_rr_boundary",
+   "experiment": "RR boundary snap (deficit <= 1e-12 only)",
+   "classification": "ENGINEERING DEFECT FIX candidate (numerical boundary) -- delivered as a research arm, default engine unchanged",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "a1c7dd81be5906c9d0616b41405a2a229ef33a5bdbf6ca94ad57d36cbdf2015d",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 59,
+   "buy": 1,
+   "sell": 58,
+   "gross_pnl": -5973.358000000042,
+   "costs": 3286.485981067,
+   "net_pnl": -9259.843981067022,
+   "mtm_max_drawdown_percent": 0.9259843981066952,
+   "wins": 4,
+   "losses": 55,
+   "win_rate": 0.06779661016949153,
+   "avg_win": 44.148343649996576,
+   "avg_loss": -171.5715882848547,
+   "profit_factor": 0.01871398791133117,
+   "gross_r_expectation": -0.2831936995135321,
+   "median_hold_bars": 4.0,
+   "median_hold_minutes": 4.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 43,
+      "passed": 1
+     },
+     "SELL": {
+      "input": 287,
+      "passed": 58
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 881,
+      "passed": 152
+     },
+     "SELL": {
+      "input": 6835,
+      "passed": 1297
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 32794,
+      "passed": 911
+     },
+     "NEUTRAL": {
+      "input": 8255,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 46035,
+      "passed": 7502
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1612,
+      "passed": 206
+     },
+     "SELL": {
+      "input": 937,
+      "passed": 31
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 43,
+      "passed": 1
+     },
+     "SELL": {
+      "input": 287,
+      "passed": 58
+     }
+    }
+   },
+   "activation": "rr_snapped=112 of rr_boundary_calls=330; rr_material_low_seen=0",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 0,
+    "pa_band_hook_calls": 0,
+    "pa_raw_changed": 0,
+    "pa_raw_hook_calls": 0,
+    "rr_boundary_calls": 330,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 112
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948260,
+   "ledger_sha256": "2faa00b49cfa3df47a619a4edb19556f28e431dd417c8f270e22f39ffee326de",
+   "matches_first_pass": true
+  },
+  {
+   "arm": "B_pa_unsigned",
+   "experiment": "PA volatility/volume terms made unsigned magnitude modifiers",
+   "classification": "EXPERIMENTAL SIGNAL CHANGE",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "cce576083d0b5918c562c111286a14c0d665d80d6e8a9d49ca801a3b6540623e",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 1,
+   "buy": 1,
+   "sell": 0,
+   "gross_pnl": -115.7130000000052,
+   "costs": 68.1855070315,
+   "net_pnl": -183.89850703150518,
+   "mtm_max_drawdown_percent": 0.029179517792366844,
+   "wins": 0,
+   "losses": 1,
+   "win_rate": 0.0,
+   "avg_win": null,
+   "avg_loss": -183.89850703150518,
+   "profit_factor": 0.0,
+   "gross_r_expectation": -0.16790715722268654,
+   "median_hold_bars": 4.0,
+   "median_hold_minutes": 4.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 257,
+      "passed": 1
+     },
+     "SELL": {
+      "input": 220,
+      "passed": 0
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 1148,
+      "passed": 275
+     },
+     "SELL": {
+      "input": 929,
+      "passed": 250
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 37548,
+      "passed": 1148
+     },
+     "NEUTRAL": {
+      "input": 11565,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 38243,
+      "passed": 929
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1303,
+      "passed": 102
+     },
+     "SELL": {
+      "input": 1026,
+      "passed": 50
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 257,
+      "passed": 1
+     },
+     "SELL": {
+      "input": 220,
+      "passed": 0
+     }
+    }
+   },
+   "activation": "pa_raw_changed=92052 of pa_raw_hook_calls=92880",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 0,
+    "pa_band_hook_calls": 92880,
+    "pa_raw_changed": 92052,
+    "pa_raw_hook_calls": 92880,
+    "rr_boundary_calls": 0,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 0
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948278,
+   "ledger_sha256": "06b96b87a241382f2af9a898f0b76e17e5eff74a8aee076ca095d4426c6da20f",
+   "matches_first_pass": true
+  },
+  {
+   "arm": "C_quality_band",
+   "experiment": "Monotonic amber confidence mapping",
+   "classification": "EXPERIMENTAL SIGNAL CHANGE",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "1f66a3a75d2e7a4ac63bf792656edd92b3ffc4d54176c11cdc049f74d12ef1c1",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 65,
+   "buy": 2,
+   "sell": 63,
+   "gross_pnl": -4789.525999999965,
+   "costs": 3365.6905248327,
+   "net_pnl": -8155.216524832657,
+   "mtm_max_drawdown_percent": 0.8189394347978373,
+   "wins": 5,
+   "losses": 60,
+   "win_rate": 0.07692307692307693,
+   "avg_win": 154.5991514210976,
+   "avg_loss": -148.8035380323024,
+   "profit_factor": 0.08657900738642442,
+   "gross_r_expectation": -0.2556239744218485,
+   "median_hold_bars": 3.0,
+   "median_hold_minutes": 3.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 30,
+      "passed": 2
+     },
+     "SELL": {
+      "input": 228,
+      "passed": 63
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 887,
+      "passed": 157
+     },
+     "SELL": {
+      "input": 6640,
+      "passed": 1320
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 32790,
+      "passed": 914
+     },
+     "NEUTRAL": {
+      "input": 8255,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 45974,
+      "passed": 7584
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1612,
+      "passed": 210
+     },
+     "SELL": {
+      "input": 937,
+      "passed": 31
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 30,
+      "passed": 2
+     },
+     "SELL": {
+      "input": 228,
+      "passed": 63
+     }
+    }
+   },
+   "activation": "pa_band_changed=9133 of pa_band_hook_calls=92880",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 9133,
+    "pa_band_hook_calls": 92880,
+    "pa_raw_changed": 0,
+    "pa_raw_hook_calls": 92880,
+    "rr_boundary_calls": 0,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 0
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948264,
+   "ledger_sha256": "6ea82eb87184296f9dc38f97463fc2e4ec4198242cfc1932781b77ce7008ffed",
+   "matches_first_pass": true
+  },
+  {
+   "arm": "D_id_rr_removed",
+   "experiment": "Synthetic ID risk:reward rejection removed",
+   "classification": "EXPERIMENTAL POLICY CHANGE",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "fd68188f6b6056e31a1792e918901e26a690142c4eac10ed7d5a29194a7208a3",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 52,
+   "buy": 0,
+   "sell": 52,
+   "gross_pnl": -4635.53479999998,
+   "costs": 2816.2400493861,
+   "net_pnl": -7451.774849386062,
+   "mtm_max_drawdown_percent": 0.745177484938607,
+   "wins": 5,
+   "losses": 47,
+   "win_rate": 0.09615384615384616,
+   "avg_win": 91.53638837379677,
+   "avg_loss": -168.28631470755417,
+   "profit_factor": 0.05786515483275817,
+   "gross_r_expectation": -0.27916454035556176,
+   "median_hold_bars": 4.0,
+   "median_hold_minutes": 4.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 271,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 736,
+      "passed": 52
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 5012,
+      "passed": 790
+     },
+     "SELL": {
+      "input": 15211,
+      "passed": 2632
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 32799,
+      "passed": 5049
+     },
+     "NEUTRAL": {
+      "input": 8255,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 46033,
+      "passed": 15853
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1612,
+      "passed": 564
+     },
+     "SELL": {
+      "input": 937,
+      "passed": 254
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 271,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 736,
+      "passed": 52
+     }
+    }
+   },
+   "activation": "id_rr_rejections_overridden=13002 (scored 12421, warmup 581)",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 13002,
+    "id_rr_scored_overridden": 12421,
+    "id_rr_warmup_overridden": 581,
+    "pa_band_changed": 0,
+    "pa_band_hook_calls": 0,
+    "pa_raw_changed": 0,
+    "pa_raw_hook_calls": 0,
+    "rr_boundary_calls": 0,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 0
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948280,
+   "ledger_sha256": "06bbb539d74ed305388bf4faca45540f9b03ffa1dfc3a958f6c3c7b3987fe084",
+   "matches_first_pass": "FIRST_PASS_FAILED_GRID_NAN"
+  },
+  {
+   "arm": "E_combined",
+   "experiment": "A + B + C (D excluded)",
+   "classification": "MIXED: A engineering candidate + B,C experimental signal changes",
+   "source_aggregate_sha256": "d11394bf1d0599eadcad8640a4ce7e66e956b52435aaad67a6a3bbe567ecc16e",
+   "source_files": 343,
+   "git_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+   "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+   "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+   "slice_sha256": "d09e340b2dcc5ea735fd73082b24c92cd7805d5bf868fa3872c0a436ba1a4aae",
+   "block_fingerprint": "38e7882b31406abe1e112a65449cc199736081498c666886648d887c81a71ba4",
+   "grid_manifest_sha256": "8f61b03318707283352788a817aa344d1944735ef73f423361d98384965d88b4",
+   "stock_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+   "trades": 9,
+   "buy": 6,
+   "sell": 3,
+   "gross_pnl": -351.02949999998054,
+   "costs": 498.27899728155,
+   "net_pnl": -849.3084972815362,
+   "mtm_max_drawdown_percent": 0.12919725526367018,
+   "wins": 1,
+   "losses": 8,
+   "win_rate": 0.1111111111111111,
+   "avg_win": 221.97528774630194,
+   "avg_loss": -133.91047312847977,
+   "profit_factor": 0.20720493565627315,
+   "gross_r_expectation": -0.14576448954204813,
+   "median_hold_bars": 8.0,
+   "median_hold_minutes": 8.0,
+   "funnel": {
+    "GATE12_REACHED": {
+     "BUY": {
+      "input": 199,
+      "passed": 6
+     },
+     "SELL": {
+      "input": 187,
+      "passed": 3
+     }
+    },
+    "GOVERNOR": {
+     "BUY": {
+      "input": 1153,
+      "passed": 220
+     },
+     "SELL": {
+      "input": 951,
+      "passed": 219
+     }
+    },
+    "ID": {
+     "BUY": {
+      "input": 37509,
+      "passed": 1153
+     },
+     "NEUTRAL": {
+      "input": 11565,
+      "passed": 0
+     },
+     "SELL": {
+      "input": 38227,
+      "passed": 951
+     }
+    },
+    "ID_WARMUP": {
+     "BUY": {
+      "input": 1303,
+      "passed": 106
+     },
+     "SELL": {
+      "input": 1026,
+      "passed": 52
+     }
+    },
+    "PRE_SUBMIT": {
+     "BUY": {
+      "input": 199,
+      "passed": 6
+     },
+     "SELL": {
+      "input": 187,
+      "passed": 3
+     }
+    }
+   },
+   "activation": "rr_snapped=116/386; pa_raw_changed=92052/92880; pa_band_changed=2070/92880",
+   "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 2070,
+    "pa_band_hook_calls": 92880,
+    "pa_raw_changed": 92052,
+    "pa_raw_hook_calls": 92880,
+    "rr_boundary_calls": 386,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 116
+   },
+   "safety_violations": 0,
+   "ab_conversions": 0,
+   "owner_engines": [
+    "ENGINE_A"
+   ],
+   "run_status": "COMPLETED",
+   "exit_code": 0,
+   "process_id": 948284,
+   "ledger_sha256": "25f3417db3d0e5e4ca3db9deab694908ed72e57006a2842f36a766b4a462e032",
+   "matches_first_pass": true
+  }
+ ]
+}

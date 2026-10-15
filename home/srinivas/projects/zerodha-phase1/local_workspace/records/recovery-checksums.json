@@ -1,0 +1,17 @@
+[
+  {
+    "file": "backup_project_history.bundle",
+    "bytes": 222546717,
+    "sha256": "52e9d6a1faf37c69d1433fe2ab514198396fbfc780804fbc08a29eeb64517bfa"
+  },
+  {
+    "file": "backup_code_and_notes_20260923.zip",
+    "bytes": 388075,
+    "sha256": "0f41043407c045ad656ccab3eff961bc7d43714f3335c7c7d299f0c41d550712"
+  },
+  {
+    "file": "historical_acquisition_reference.zip",
+    "bytes": 24440,
+    "sha256": "efba767a0a2212527d9906b8a54b0ee20c93f6f2352bc712db7db34f0e5763f8"
+  }
+]

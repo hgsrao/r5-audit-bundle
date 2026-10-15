@@ -1,0 +1,24 @@
+{
+  "status": "FINAL_SOURCE_FROZEN_FOR_VERIFICATION",
+  "branch": "feature/engine-ab-handoff-lifecycle",
+  "head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "files": {
+    "revision2_external/orchestrator.py": "58b86cb6e637b65161273b4ad7b0b80e960ecef80a32e30855df5e50dd4cdbea",
+    "revision5/morning_recovery.py": "4c77504121647484fad22050f4339b3ec4710894ffe718fece19d00cf02653ea",
+    "revision2_external/pid_controller.py": "41ed7b2ec0d89e9b1eb2ae1b44ccbf26ee32772e135a6328288bae9dca2517ca",
+    "revision2_external/composite_study_signal.py": "8ed51433137ed4511435257e7d9fba366dde087ec47ccd2503dfe64f4dd57bbf",
+    "revision2_external/indicators_talib.py": "5ba126430609de2fae08a98bed7d178c2377704c3b5b4c816d45c343439bc618",
+    "revision2_external/regime_id_box.py": "564c5be5009719234619dba03d1ac27eee637b2270a574af1ad64aac58bc89ea",
+    "revision2_external/closed_loop_control.py": "5e8e2fa4a4002e8a073a45e5b77ce6046e5f833f04606c66812e37c11b42b601",
+    "revision2_external/grid_context.py": "903ea27aeb669f99008d64b17c3df3b65f8ef7ae0d3fd67c72210bf21e330931",
+    "scripts/research/r5_pa_gate_arms.py": "b45baf0e9e43c65bb11da063ccab49cb8ef27260f34899ab6dca3e1c7f1f0a96",
+    "scripts/diagnostics/data/pa_symmetry_indicators_talib.patch": "a0b6d5ff2ebff15059cfa24726b2735494ee44cb942c096bef4e754b9b2b7089"
+  },
+  "focused_tests": 192,
+  "historical_patch_asset_tests": 18,
+  "full_suite": "RUNNING",
+  "paper_arms": "RUNNING",
+  "default_strategy_promotion": false,
+  "live_authorization": false,
+  "direct_hydrated_admissions": false
+}

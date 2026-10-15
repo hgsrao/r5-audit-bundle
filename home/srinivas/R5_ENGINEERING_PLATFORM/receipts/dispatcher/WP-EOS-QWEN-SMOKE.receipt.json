@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 32.07377153900234,
+  "error": null,
+  "finished_at": "2026-10-07T08:09:29.810815+00:00",
+  "needs_review": false,
+  "objective": "Verify direct Ollama worker",
+  "ok": true,
+  "output_sha256": "b815da07c627bec41f2a7792756592d5936ba6dd4f5f2743be6d3c244ae584c1",
+  "package_id": "WP-EOS-QWEN-SMOKE",
+  "package_sha256": "0b3e7f8a9c0dd438f3556ee10c9f9d5aee573f7488a01aed750d30e8be8a0504",
+  "response_file": "WP-EOS-QWEN-SMOKE.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T08:08:57.734572+00:00",
+  "state": "DONE",
+  "type": "PARAMETER_AUDIT",
+  "worker": "qwen"
+}

@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "4963f14fb107adc21909ef8a386758e03c553c72",
+  "before_tests_passed": 687,
+  "after_broad_tests_passed": 704,
+  "additional_grid_timing_test_passed": 1,
+  "active_test_inventory": 705,
+  "subtests_passed": 142,
+  "paper_mode": "PAPER_APPLY",
+  "restart_support": false,
+  "replay_repeat_verified": true,
+  "live_enabled": false
+}

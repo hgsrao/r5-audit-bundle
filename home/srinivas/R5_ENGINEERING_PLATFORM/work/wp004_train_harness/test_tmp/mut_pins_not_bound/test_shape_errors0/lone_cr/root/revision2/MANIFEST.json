@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_pins_not_bound/test_shape_errors0/lone_cr/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "281cfcc0296169c3f69412e386d33332444a7673beeb6855629a74ff876bfc62",
+      "size_bytes": 17580,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "e13f295b7eb60e5fe5ad196869f0e6ae73ffae8861f1e0fb1c13a245f15098f8",
+      "size_bytes": 18619,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "c54b551769e3951c3f56de9606650cb44695f325b09982204fa9d96a90e0cf7d",
+  "symbol_count": 2
+}

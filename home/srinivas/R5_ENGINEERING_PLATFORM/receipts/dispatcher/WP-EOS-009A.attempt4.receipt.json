@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 92.4296614349987,
+  "error": null,
+  "finished_at": "2026-10-07T07:37:27.748994+00:00",
+  "needs_review": false,
+  "objective": "Gemini Dispatcher smoke test (commissioning only)",
+  "ok": true,
+  "output_sha256": "039069fa6ddf2091b1a3ba5aa5c799ce53529ba0b8f1434dbb5b9e22a02f0d5c",
+  "package_id": "WP-EOS-009A",
+  "package_sha256": "679591ccd459c1a60df9d58ef853203060a80a4adeb305d3ef852cb5dc2a5d6f",
+  "response_file": "WP-EOS-009A.attempt4.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:35:55.317440+00:00",
+  "state": "DONE",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

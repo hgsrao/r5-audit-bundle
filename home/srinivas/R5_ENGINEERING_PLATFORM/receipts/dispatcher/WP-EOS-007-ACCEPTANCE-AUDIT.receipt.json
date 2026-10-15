@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 33.72090735999882,
+  "error": null,
+  "finished_at": "2026-10-07T05:49:31.172411+00:00",
+  "needs_review": false,
+  "objective": "Acceptance audit of the Engineering Auditor profile: discover and verify engineering evidence anywhere in the platform tree without a prepared audit bundle, and demonstrate read-only access.",
+  "ok": true,
+  "output_sha256": "fec9ed6c6396d6fbbd152e975d4825105b0b731f519aafaa619b0efb4ec7f7f6",
+  "package_id": "WP-EOS-007-ACCEPTANCE-AUDIT",
+  "package_sha256": "40c6cb2de56a0850f1b3da535148f279b9523c330adb1d0ade8f2d4970a1d9ca",
+  "response_file": "WP-EOS-007-ACCEPTANCE-AUDIT.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T05:48:57.449862+00:00",
+  "state": "DONE",
+  "type": "AUDIT",
+  "worker": "auditor"
+}

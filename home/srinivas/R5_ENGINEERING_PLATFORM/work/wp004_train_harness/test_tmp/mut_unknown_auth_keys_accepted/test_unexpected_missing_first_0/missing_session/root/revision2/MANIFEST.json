@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_unknown_auth_keys_accepted/test_unexpected_missing_first_0/missing_session/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "bf377db3dcf57abf5690bb4068e4a119b74a87c949a01e74a6f22a4431bf6dba",
+      "size_bytes": 16278,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "29d4a243382fd1efb13892f1002c5f6405b2ecda55a5e86e6cfe923b1f5d4a80",
+      "size_bytes": 16310,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "cc63c4f0cf398a769b83ac07b00b640239d4a92f6df8d47ee471e67a0486ac5e",
+  "symbol_count": 2
+}

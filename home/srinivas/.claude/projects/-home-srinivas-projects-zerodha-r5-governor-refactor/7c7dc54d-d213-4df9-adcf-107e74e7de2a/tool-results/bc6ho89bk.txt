@@ -1,0 +1,564 @@
+   150	            submitted_at=_utcnow_iso(),
+   151	        )
+   152	        self.orders[order_id] = order
+   153	
+   154	        gate = ExecutionGate()
+   155	        validation = gate.validate_pre_submit(config or {}, {
+   156	            "symbol": symbol,
+   157	            "side": side,
+   158	            "quantity": quantity,
+   159	            "order_type": order_type,
+   160	        }, parameter_registry=parameter_registry)
+   161	        if not validation["passed"]:
+   162	            order.state = OrderState.REJECTED
+   163	            order.rejection_reason = "; ".join(validation["reasons"])
+   164	            return {"passed": False, "order_id": order_id, "state": order.state.value, "reasons": validation["reasons"]}
+   165	
+   166	        if market_price is None or not math.isfinite(market_price) or market_price <= 0:
+   167	            order.state = OrderState.REJECTED
+   168	            order.rejection_reason = "no valid market price to fill against"
+   169	            return {"passed": False, "order_id": order_id, "state": order.state.value, "reasons": [order.rejection_reason]}
+   170	
+   171	        slip = market_price * self.slippage_fraction
+   172	        fill_price = round(market_price + slip if side == "BUY" else market_price - slip, 4)
+   173	
+   174	        order.filled_quantity = quantity
+   175	        order.filled_price = fill_price
+   176	        order.state = OrderState.FILLED
+   177	        order.filled_at = _utcnow_iso()
+   178	
+   179	        self._apply_fill_to_position(symbol, side, quantity, fill_price)
+   180	        self.fills.append({
+   181	            "order_id": order_id,
+   182	            "symbol": symbol,
+   183	            "side": side,
+   184	            "quantity": quantity,
+   185	            "price": fill_price,
+   186	            "market_price": market_price,
+   187	            "filled_at": order.filled_at,
+   188	        })
+   189	
+   190	        result = {
+   191	            "passed": True,
+   192	            "order_id": order_id,
+   193	            "state": order.state.value,
+   194	            "filled_quantity": quantity,
+   195	            "filled_price": fill_price,
+   196	            "market_price": market_price,
+   197	            "realized_pnl": self.realized_pnl,
+   198	        }
+   199	        if client_order_id is not None:
+   200	            import copy
+   201	            self.client_orders[client_order_id] = {"fingerprint": fingerprint, "order_id": order_id,
+   202	                                                   "result": copy.deepcopy(result)}
+   203	        return result
+   204	
+   205	
+   206	class KiteBrokerAdapter(BrokerAdapter):
+   207	    environment = "live"
+   208	
+   209	
+   210	@dataclass
+   211	class RuntimeConfig:
+   212	    operating_mode: Optional[OperatingMode] = OperatingMode.RESEARCH
+   213	    live_trading_enabled: bool = False
+   214	    broker_account_id: str = "ACC123"
+   215	    signing_key: str = ""
+   216	    durable_db: bool = True
+   217	    paper_certification_valid: bool = True
+   218	    unresolved_reconciliation: bool = False
+   219	    runtime_parameters: Dict[str, Any] = field(default_factory=dict)
+   220	    parameter_registry: Optional[Any] = None
+   221	
+   222	
+   223	class StartupGate:
+   224	    """Fail-closed runtime startup policy."""
+   225	
+   226	    def _validate_runtime_parameters(self, config: RuntimeConfig) -> List[str]:
+   227	        reasons: List[str] = []
+   228	        if config.runtime_parameters is None:
+   229	            return ["runtime parameters missing"]
+   230	        if not isinstance(config.runtime_parameters, dict):
+   231	            return ["runtime parameters must be a dictionary"]
+   232	        if not config.runtime_parameters:
+   233	            return ["runtime parameters missing"]
+   234	
+   235	        registry = config.parameter_registry
+   236	        if registry is None:
+   237	            try:
+   238	                from canonical_parameter_registry import CanonicalParameterRegistry
+   239	                registry = CanonicalParameterRegistry()
+   240	            except Exception:
+   241	                registry = None
+   242	
+   243	        if registry is None:
+   244	            reasons.append("runtime parameter registry unavailable")
+   245	            return reasons
+   246	
+   247	        allowed = set(getattr(registry, "params", {}).keys())
+   248	        unknown = sorted(set(config.runtime_parameters.keys()) - allowed)
+   249	        if unknown:
+   250	            reasons.append(f"unknown parameter(s): {', '.join(unknown)}")
+   251	
+   252	        for name, value in config.runtime_parameters.items():
+   253	            if name not in allowed:
+   254	                continue
+   255	            spec = registry.params[name]
+   256	            expected_type = spec.param_type
+   257	            if expected_type == "int":
+   258	                if not isinstance(value, int) or isinstance(value, bool):
+   259	                    reasons.append(f"type mismatch for {name}: expected int")
+   260	                    continue
+   261	                if not (spec.minimum <= value <= spec.maximum):
+   262	                    reasons.append(f"range violation for {name}: {value} outside [{spec.minimum}, {spec.maximum}]")
+   263	            elif expected_type == "float":
+   264	                if not isinstance(value, (int, float)) or isinstance(value, bool):
+   265	                    reasons.append(f"type mismatch for {name}: expected float")
+   266	                    continue
+   267	                numeric_value = float(value)
+   268	                if not (float(spec.minimum) <= numeric_value <= float(spec.maximum)):
+   269	                    reasons.append(f"range violation for {name}: {numeric_value} outside [{spec.minimum}, {spec.maximum}]")
+   270	            elif expected_type == "bool":
+   271	                if not isinstance(value, bool):
+   272	                    reasons.append(f"type mismatch for {name}: expected bool")
+   273	            elif expected_type == "str":
+   274	                if not isinstance(value, str):
+   275	                    reasons.append(f"type mismatch for {name}: expected str")
+   276	            elif expected_type in {"list", "dict"}:
+   277	                if not isinstance(value, dict if expected_type == "dict" else list):
+   278	                    reasons.append(f"type mismatch for {name}: expected {expected_type}")
+   279	
+   280	        return reasons
+   281	
+   282	    def certify_startup(
+   283	        self,
+   284	        config: RuntimeConfig,
+   285	        broker: BrokerAdapter,
+   286	        signing_key: str,
+   287	        durable_db: bool,
+   288	    ) -> Dict[str, Any]:
+   289	        reasons: List[str] = []
+   290	        passed = True
+   291	
+   292	        if config.operating_mode is None:
+   293	            passed = False
+   294	            reasons.append("missing operating mode")
+   295	
+   296	        if config.operating_mode is not OperatingMode.RESEARCH and config.operating_mode is not OperatingMode.BACKTEST and config.operating_mode is not OperatingMode.PAPER and config.operating_mode is not OperatingMode.LIVE:
+   297	            passed = False
+   298	            reasons.append("invalid operating mode")
+   299	
+   300	        if config.operating_mode == OperatingMode.RESEARCH and broker.environment == "live":
+   301	            passed = False
+   302	            reasons.append("research mode rejects live adapter")
+   303	
+   304	        if config.operating_mode == OperatingMode.BACKTEST and broker.environment == "live":
+   305	            passed = False
+   306	            reasons.append("backtest mode rejects live adapter")
+   307	
+   308	        if config.operating_mode == OperatingMode.PAPER and broker.environment != "paper":
+   309	            passed = False
+   310	            reasons.append("paper mode requires a paper broker")
+   311	
+   312	        if config.operating_mode == OperatingMode.LIVE and broker.environment != "live":
+   313	            passed = False
+   314	            reasons.append("live mode requires a live broker")
+   315	
+   316	        if config.operating_mode == OperatingMode.BACKTEST and broker.environment != "simulated":
+   317	            passed = False
+   318	            reasons.append("backtest mode requires a simulated broker")
+   319	
+   320	        if config.operating_mode == OperatingMode.RESEARCH and broker.environment != "simulated":
+   321	            passed = False
+   322	            reasons.append("research mode requires a simulated broker")
+   323	
+   324	        if config.operating_mode == OperatingMode.PAPER and config.live_trading_enabled:
+   325	            passed = False
+   326	            reasons.append("paper mode does not allow live trading")
+   327	
+   328	        runtime_parameter_reasons = self._validate_runtime_parameters(config)
+   329	        if runtime_parameter_reasons:
+   330	            passed = False
+     1	"""Opt-in paper combined-cycle bridge. Fail-closed reconciliation precedes management.
+     2	
+     3	Protection is durable simulation state, not a claim of exchange-hosted stop orders.
+     4	"""
+     5	from dataclasses import dataclass
+     6	import pandas as pd
+     7	from revision5.position_lifecycle import A_OPEN, B_OPEN, CLOSED, TRANSFER_REQUESTED, tighten_stop, close_position
+     8	
+     9	
+    10	class CombinedCycleReconciliationError(RuntimeError):
+    11	    pass
+    12	
+    13	
+    14	# Durable exit intent (stored in the position row's ``protection['exit_intent']``; no new table).
+    15	#   RESERVED  : persisted BEFORE the broker closing order; the order may or may not have executed.
+    16	#   FILLED    : persisted AFTER the broker close succeeded; restart must NOT resubmit, only finalize.
+    17	#   FINALIZED : every finalization step (durable CLOSED, feedback, feedback receipt) completed.
+    18	EXIT_RESERVED = 'RESERVED'
+    19	EXIT_FILLED = 'FILLED'
+    20	EXIT_FINALIZED = 'FINALIZED'
+    21	
+    22	
+    23	def exit_event_id(position_id):
+    24	    """Deterministic identity of THE close of one position (a position closes once)."""
+    25	    return f'exit:{position_id}'
+    26	
+    27	
+    28	@dataclass(frozen=True)
+    29	class CombinedCycleRuntimeConfig:
+    30	    end_of_run_disposition: str = 'CLOSE'
+    31	    strict_session_boundary: bool = True
+    32	
+    33	    def __post_init__(self):
+    34	        if self.end_of_run_disposition not in ('CLOSE','PERSIST'):
+    35	            raise ValueError('end disposition must be CLOSE or PERSIST')
+    36	
+    37	
+    38	class CombinedCycleRuntime:
+    39	    def __init__(self, store, handoff_manager, engine_b_controller, config=None):
+    40	        self.store = store
+    41	        self.handoff = handoff_manager
+    42	        self.engine_b = engine_b_controller
+    43	        self.config = config or CombinedCycleRuntimeConfig()
+    44	        if not self.handoff.config.enabled or not self.engine_b.policy.enabled:
+    45	            raise ValueError('combined cycle requires explicit handoff and B opt-in')
+    46	        self._history = {}
+    47	
+    48	    def register_fill(self, record, trade, broker):
+    49	        protective_id=broker.ensure_protection(record.symbol,record.current_stop_price,int(trade['quantity']),record.product)
+    50	        self.store.save(record, dict(trade), {'protective_order_id':protective_id,'broker_snapshot':broker.snapshot(),'stop':record.current_stop_price,'target':float(trade['target_price']),
+    51	                                              'sessions':[], 'engine_b_state':self.engine_b.export_state()},expected_revision=0)
+    52	
+    53	    # ------------------------------------------------------------------ durable exit intent
+    54	    def exit_intent(self, position_id):
+    55	        try:
+    56	            return self.store.load(position_id).protection.get('exit_intent')
+    57	        except KeyError:
+    58	            return None
+    59	
+    60	    def pending_exit_intents(self):
+    61	        """Durable rows whose exit has been reserved or filled but not FINALIZED (open or already CLOSED)."""
+    62	        return [snapshot for snapshot in self.store.list_all()
+    63	                if snapshot.protection.get('exit_intent', {}).get('status') in (EXIT_RESERVED, EXIT_FILLED)]
+    64	
+    65	    def durable_lifecycle_state(self, position_id):
+    66	        """Durable lifecycle state of a position, or None when no durable row exists."""
+    67	        try:
+    68	            return self.store.load(position_id).record.lifecycle_state
+    69	        except KeyError:
+    70	            return None
+    71	
+    72	    def is_durably_closed(self, position_id):
+    73	        return self.durable_lifecycle_state(position_id) == CLOSED
+    74	
+    75	    def reserve_exit_intent(self, position_id, *, side, quantity, reason, market_price, requested_at):
+    76	        """Persist the exit intent (lifecycle unchanged) BEFORE any broker order.  Idempotent for the same event."""
+    77	        snapshot = self.store.load(position_id)
+    78	        if snapshot.record.lifecycle_state == CLOSED:
+    79	            raise ValueError('cannot reserve an exit for a durably CLOSED position')
+    80	        event_id = exit_event_id(position_id)
+    81	        existing = snapshot.protection.get('exit_intent')
+    82	        if existing is not None:
+    83	            if existing.get('event_id') != event_id or existing.get('side') != side or existing.get('quantity') != int(quantity):
+    84	                raise ValueError('conflicting durable exit intent for this position')
+    85	            return dict(existing)
+    86	        intent = dict(event_id=event_id, trade_id=position_id, symbol=snapshot.record.symbol, side=side,
+    87	                      quantity=int(quantity), reason=reason, market_price=float(market_price),
+    88	                      requested_at=str(requested_at), status=EXIT_RESERVED)
+    89	        protection = dict(snapshot.protection)
+    90	        protection['exit_intent'] = intent
+    91	        self.store.save(snapshot.record, dict(snapshot.trade), protection, snapshot.revision)
+    92	        return dict(intent)
+    93	
+    94	    def record_exit_fill(self, position_id, *, order_id, fill_price, fill_quantity, completed_trade, feedback):
+    95	        """Persist the broker close facts and the deterministic finalization inputs (status FILLED)."""
+    96	        snapshot = self.store.load(position_id)
+    97	        intent = snapshot.protection.get('exit_intent')
+    98	        if intent is None or intent.get('status') not in (EXIT_RESERVED, EXIT_FILLED):
+    99	            raise ValueError('a fill can only be recorded against a reserved exit intent')
+   100	        if intent['status'] == EXIT_FILLED:
+   101	            if intent.get('order_id') != order_id:
+   102	                raise ValueError('conflicting fill for an already FILLED exit intent')
+   103	            return dict(intent)
+   104	        filled = dict(intent, status=EXIT_FILLED, order_id=order_id, fill_price=float(fill_price),
+   105	                      fill_quantity=int(fill_quantity), completed_trade=dict(completed_trade), feedback=feedback)
+   106	        protection = dict(snapshot.protection)
+   107	        protection['exit_intent'] = filled
+   108	        self.store.save(snapshot.record, dict(snapshot.trade), protection, snapshot.revision)
+   109	        return dict(filled)
+   110	
+   111	    def close(self, record, trade, *, broker=None, completed_trade=None, close_feedback_receipts=None, exit_status=None,
+   112	              recovery_checkpoint=None):
+   113	        """Durable terminal write. With ``recovery_checkpoint`` the row and the boot pin commit in ONE transaction."""
+   114	        if record.lifecycle_state != CLOSED:
+   115	            raise ValueError('terminal eviction requires CLOSED lifecycle')
+   116	        snapshot=self.store.load(record.position_id)
+   117	        protection=dict(snapshot.protection)
+   118	        # The terminal snapshot must not retain its own positional management cache.
+   119	        # Historical snapshots may still contain aggregate state; restore filters
+   120	        # every aggregate against the authoritative currently open lifecycle IDs.
+   121	        engine_b_state=self.engine_b.export_state()
+   122	        engine_b_state['positions'].pop(record.position_id, None)
+   123	        protection['engine_b_state']=engine_b_state
+   124	        protection.pop('history', None)
+   125	        if broker is not None:
+   126	            protection['broker_snapshot']=broker.snapshot()
+   127	        if completed_trade is not None:
+   128	            protection['completed_trade']=dict(completed_trade)
+   129	        if close_feedback_receipts is not None:
+   130	            protection['close_feedback_receipts']=dict(close_feedback_receipts)
+   131	        if exit_status is not None and 'exit_intent' in protection:
+   132	            protection['exit_intent']=dict(protection['exit_intent'],status=exit_status)
+   133	        if recovery_checkpoint is None:
+   134	            self.store.save(record,dict(trade),protection,snapshot.revision)
+   135	        else:
+   136	            con=self.store.connection
+   137	            con.execute('BEGIN IMMEDIATE')
+   138	            try:
+   139	                self.store._save(record,dict(trade),protection,snapshot.revision)
+   140	                recovery_checkpoint()
+   141	                con.execute('COMMIT')
+   142	            except BaseException:
+   143	                con.execute('ROLLBACK')
+   144	                raise
+   145	        # Never discard active management state until durable CLOSED (and any boot pin) has committed.
+   146	        self.engine_b.evict(record.position_id)
+   147	        self._history.pop(record.position_id, None)
+   148	
+   149	    def _sync(self, engine, snapshot):
+   150	        engine._position_lifecycle[snapshot.record.position_id]=snapshot.record
+   151	        engine.open_trades[snapshot.record.symbol].update(snapshot.trade)
+   152	
+   153	    def reconcile(self, engine, snapshot):
+   154	        position=engine.broker.get_position(snapshot.record.symbol)
+   155	        expected=float(snapshot.trade['quantity'])*(1 if snapshot.record.direction=='BUY' else -1)
+   156	        if abs(float(position.get('quantity',0))-expected)>1e-6 or position.get('product')!=snapshot.record.product:
+   157	            raise CombinedCycleReconciliationError('broker quantity/product differs from durable owner')
+   158	        if snapshot.protection.get('stop')!=snapshot.record.current_stop_price:
+   159	            raise CombinedCycleReconciliationError('durable protective stop inconsistent')
+   160	        orders=engine.broker.snapshot().get('orders',[])
+   161	        protective=next((order for order in orders if order.get('order_id')==snapshot.protection.get('protective_order_id')),None)
+   162	        if protective is None or protective.get('status') not in ('TRIGGER PENDING','OPEN') or abs(float(protective.get('trigger_price',0))-snapshot.record.current_stop_price)>1e-8:
+   163	            raise CombinedCycleReconciliationError('paper contingent protection missing or differs')
+   164	        if protective.get('product')!=snapshot.record.product or abs(float(protective.get('pending_quantity',protective.get('quantity',0)))-abs(expected))>1e-6:
+   165	            raise CombinedCycleReconciliationError('paper contingent protection quantity/product differs')
+   166	
+   167	    def restore(self, engine):
+   168	        """Broker snapshot/reconciliation must happen before calling this method."""
+   169	        # Rows with an unfinished exit intent are resolved by engine.recover_exit_intents(); broker-flat alone is never
+   170	        # accepted as proof that OUR close executed, so such rows are neither reconciled nor re-adopted here.
+   171	        snapshots=[s for s in self.store.list_open()
+   172	                   if s.protection.get('exit_intent',{}).get('status') not in (EXIT_RESERVED, EXIT_FILLED)]
+   173	        live_ids={snapshot.record.position_id for snapshot in snapshots}
+   174	        for snapshot in snapshots:
+   175	            self.reconcile(engine,snapshot)
+   176	        if snapshots:
+   177	            combined=self.engine_b.export_state()
+   178	            combined['positions']={key:value for key,value in combined['positions'].items() if key in live_ids}
+   179	            for snapshot in snapshots:
+   180	                receipt=snapshot.protection['engine_b_state']
+   181	                if receipt.get('policy')!=combined['policy'] or receipt.get('version')!=combined['version']:
+   182	                    raise CombinedCycleReconciliationError('incompatible Engine B policy on restart')
+   183	                for key,value in receipt['positions'].items():
+   184	                    if key not in live_ids:
+   185	                        continue
+   186	                    previous=combined['positions'].get(key)
+   187	                    if previous is None or pd.Timestamp(value['last_timestamp'])>pd.Timestamp(previous['last_timestamp']):
+   188	                        combined['positions'][key]=value
+   189	            self.engine_b.restore_state(combined)
+   190	        else:
+   191	            empty=self.engine_b.export_state()
+   192	            empty['positions']={}
+   193	            self.engine_b.restore_state(empty)
+   194	        self._history={key:value for key,value in self._history.items() if key in live_ids}
+   195	        for snapshot in snapshots:
+   196	            engine.open_trades[snapshot.record.symbol]=dict(snapshot.trade)
+   197	            engine._position_lifecycle[snapshot.record.position_id]=snapshot.record
+   198	            self._history[snapshot.record.position_id]=snapshot.protection.get('history',[])
+   199	            position_id=snapshot.record.position_id
+   200	            if position_id.startswith('trade-') and position_id[6:].isdigit():
+   201	                engine._trade_sequence=max(getattr(engine,'_trade_sequence',0),int(position_id[6:]))
+   202	        # Unfinished exits (RESERVED / FILLED intents) are resolved here, fail-closed: an ambiguous broker outcome halts
+   203	        # and raises instead of leaving a still-held position unmanaged or guessing that a flat broker means we closed.
+   204	        recover=getattr(engine,'recover_exit_intents',None)
+   205	        if recover is not None:
+   206	            recover()
+   207	
+   208	    def _receipt(self, engine, request, timestamp):
+   209	        receipt=engine.broker.conversion_receipt(request.request_id)
+   210	        if receipt is not None and not isinstance(receipt.get('status'), str):
+   211	            engine._execution_halted = True
+   212	            raise CombinedCycleReconciliationError('invalid conversion receipt status')
+   213	        outcome = receipt['status'].upper() if receipt is not None else 'UNKNOWN'
+   214	        if outcome in ('UNKNOWN','PENDING','TIMEOUT'):
+   215	            engine._execution_halted = True
+   216	            if receipt is not None:
+   217	                if receipt.get('request_id') != request.request_id:
+   218	                    raise CombinedCycleReconciliationError('uncorrelated conversion receipt')
+   219	                self.handoff.resolve(request.request_id, outcome)
+   220	            return None
+   221	        if receipt.get('request_id')!=request.request_id:
+   222	            raise CombinedCycleReconciliationError('uncorrelated conversion receipt')
+   223	        try:
+   224	            resolved = self.handoff.resolve(request.request_id,outcome,receipt.get('product'),receipt.get('quantity'),receipt.get('timestamp',timestamp))
+   225	        except (ValueError, KeyError):
+   226	            engine._execution_halted = True
+   227	            raise
+   228	        if 'transfer_unresolved' in resolved.protection:
+   229	            protection = dict(resolved.protection)
+   230	            protection.pop('transfer_unresolved')
+   231	            self.store.save(resolved.record, resolved.trade, protection, resolved.revision)
+   232	            resolved = self.store.load(resolved.record.position_id)
+   233	        return resolved
+   234	
+   235	    def _manage_unresolved_transfer(self, engine, snapshot, symbol, timestamp, bar, session_last_bar):
+   236	        """Paper-only protective management while a correlated ACK is unavailable.
+   237	
+   238	        Broker product determines protection routing, never ownership promotion.
+   239	        Conversion is not resubmitted. Engine A retains the square-off duty.
+   240	        """
+   241	        engine._execution_halted = True
+   242	        record = snapshot.record
+   243	        trade = engine.open_trades[symbol]
+   244	        position = engine.broker.get_position(symbol)
+   245	        quantity = self.store.trade_quantity(snapshot.trade)
+   246	        expected = quantity * (1 if record.direction == 'BUY' else -1)
+   247	        product = position.get('product')
+   248	        if (getattr(engine.broker, 'environment', None) != 'paper'
+   249	                or position.get('quantity') != expected or product not in ('MIS', 'CNC')):
+   250	            raise CombinedCycleReconciliationError('unresolved transfer lacks reconcilable paper broker truth')
+   251	        protection = dict(snapshot.protection)
+   252	        protection['protective_order_id'] = engine.broker.ensure_protection(
+   253	            symbol, record.current_stop_price, quantity, product)
+   254	        protection['broker_snapshot'] = engine.broker.snapshot()
+   255	        if not protection['broker_snapshot'].get('passed'):
+   256	            raise CombinedCycleReconciliationError('unresolved transfer broker snapshot unavailable')
+   257	        protection['transfer_unresolved'] = {'observed_product': product, 'new_risk_allowed': False}
+   258	        self.store.save(record, dict(trade), protection, snapshot.revision)
+   259	        self._sync(engine, self.store.load(record.position_id))
+   260	        if self._protective_exit(engine, symbol, timestamp, trade, record, bar):
+   261	            return True
+   262	        if (session_last_bar or engine._exchange_local_time(timestamp).strftime('%H:%M')
+   263	                >= engine.entry_decision_engine.config.force_close_time):
+   264	            engine._execute_exit(symbol, timestamp, trade, float(bar['open']), 'force_close_time')
+   265	        return True
+   266	
+   267	    def _protective_exit(self, engine, symbol, timestamp, trade, record, bar):
+   268	        # Preserve mandatory portfolio protection before every discretionary controller.
+   269	        halt=min(float(engine.config.require('drawdown_halt_threshold')),float(engine.safety_contract.values['safety_drawdown_halt_threshold']))
+   270	        if engine._current_drawdown()>=halt:
+   271	            engine._execute_exit(symbol,timestamp,trade,float(bar['close']),'forced_close_drawdown_halt');return True
+   272	        if engine._micom_trip is not None and engine._micom_trip['ansi_code']!='MICOM_INPUT_UNAVAILABLE':
+   273	            engine._execute_exit(symbol,timestamp,trade,float(bar['close']),f"micom_trip:{engine._micom_trip['ansi_code']}");return True
+   274	        stop=record.current_stop_price
+   275	        target=float(trade['target_price'])
+   276	        price,reason=None,None
+   277	        if record.direction=='BUY':
+   278	            if float(bar['open'])<=stop: price,reason=float(bar['open']),'stop_gap'
+   279	            elif float(bar['open'])>=target: price,reason=float(bar['open']),'target_gap'
+   280	            elif float(bar['low'])<=stop: price,reason=stop,'stop'
+   281	            elif float(bar['high'])>=target: price,reason=target,'target'
+   282	        else:
+   283	            if float(bar['open'])>=stop: price,reason=float(bar['open']),'stop_gap'
+   284	            elif float(bar['open'])<=target: price,reason=float(bar['open']),'target_gap'
+   285	            elif float(bar['high'])>=stop: price,reason=stop,'stop'
+   286	            elif float(bar['low'])<=target: price,reason=target,'target'
+   287	        if price is not None:
+   288	            engine._execute_exit(symbol,timestamp,trade,price,reason);return True
+   289	        return False
+   290	
+   291	    def handle_bar(self, engine, symbol, timestamp, bar, session_last_bar):
+   292	        trade=engine.open_trades[symbol]
+   293	        snapshot=self.store.load(trade['trade_id'])
+   294	        record=snapshot.record
+   295	        if record.lifecycle_state==A_OPEN:
+   296	            effective_stop=float(trade.get('governor_stop_price',trade['stop_price']))
+   297	            exit_state=engine._exit_controller_states.get(symbol)
+   298	            if not getattr(engine,'_governor_full',False) and getattr(engine,'closed_loop_mode',None)=='active_paper' and exit_state is not None:
+   299	                effective_stop=float(exit_state.current_stop_price)
+   300	            if (effective_stop>record.current_stop_price if record.direction=='BUY' else effective_stop<record.current_stop_price):
+   301	                record=tighten_stop(record,effective_stop)
+   302	                protection=dict(snapshot.protection);protection['stop']=effective_stop
+   303	                protection['protective_order_id']=engine.broker.ensure_protection(symbol,effective_stop,int(trade['quantity']),record.product)
+   304	                protection['broker_snapshot']=engine.broker.snapshot()
+   305	                self.store.save(record,dict(trade),protection,snapshot.revision)
+   306	                snapshot=self.store.load(record.position_id)
+   307	                engine._position_lifecycle[record.position_id]=record
+   308	        if record.lifecycle_state==TRANSFER_REQUESTED:
+   309	            from revision5.handoff_manager import ConversionRequest
+   310	            data=next(x for x in self.store.requests() if x['position_id']==record.position_id)
+   311	            request=ConversionRequest(**{k:v for k,v in data.items() if k in ConversionRequest.__dataclass_fields__})
+   312	            resolved=self._receipt(engine,request,timestamp)
+   313	            if resolved is None:
+   314	                return self._manage_unresolved_transfer(engine, snapshot, symbol, timestamp, bar, session_last_bar)
+   315	            snapshot=resolved; self._sync(engine,snapshot); record=snapshot.record
+   316	        self.reconcile(engine,snapshot)
+   317	        if self._protective_exit(engine, symbol, timestamp, trade, record, bar):
+   318	            return True
+   319	        protection=dict(snapshot.protection)
+   320	        history=protection.get('history',[])
+   321	        ts=pd.Timestamp(timestamp)
+   322	        if not history or pd.Timestamp(history[-1]['timestamp'])<ts:
+   323	            history=history+[dict(timestamp=ts,high=float(bar['high']),low=float(bar['low']),close=float(bar['close']))]
+   324	        protection['history']=history[-max(100,self.engine_b.policy.structural_window+1):]
+   325	        day=ts.date().isoformat()
+   326	        sessions=list(protection.get('sessions',[]))
+   327	        if day not in sessions: sessions.append(day)
+   328	        protection['sessions']=sessions
+   329	        mfe=max(float(protection.get('mfe_r',0)),(float(bar['high'])-record.anchor_price)/record.initial_risk_r)
+   330	        protection['mfe_r']=mfe
+   331	        if record.lifecycle_state==A_OPEN:
+   332	            # Causal trend reference consists exclusively of prior completed closes.
+   333	            prior=[item['close'] for item in history[:-1]][-self.engine_b.policy.structural_window:]
+   334	            aligned=len(prior)==self.engine_b.policy.structural_window and float(bar['close'])>=sum(prior)/len(prior)
+   335	            current_r=(float(bar['close'])-record.anchor_price)/record.initial_risk_r
+   336	            self.store.save(record,dict(trade),protection,snapshot.revision)
+   337	            request=self.handoff.request(record.position_id,int(trade['quantity']),ts,current_r=current_r,mfe_r=mfe,trend_aligned=bool(aligned))
+   338	            if request is None: return False
+   339	            if request.status=='PENDING':
+   340	                engine.broker.request_product_conversion(request.request_id,symbol,request.quantity,from_product='MIS',to_product='CNC',timestamp=ts)
+   341	                snapshot=self._receipt(engine,request,ts)
+   342	                if snapshot is None:
+   343	                    return self._manage_unresolved_transfer(
+   344	                        engine, self.store.load(record.position_id), symbol, ts, bar, session_last_bar)
+   345	                self._sync(engine,snapshot);record=snapshot.record
+   346	                if record.lifecycle_state!=B_OPEN: return False
+   347	                trade.pop('controller_exit_pending',None)
+   348	                protection=dict(snapshot.protection)
+   349	                protection['protective_order_id']=engine.broker.ensure_protection(symbol,record.current_stop_price,int(trade['quantity']),record.product)
+   350	                protection['broker_snapshot']=engine.broker.snapshot()
+   351	                self.store.save(record,dict(trade),protection,snapshot.revision)
+   352	                snapshot=self.store.load(record.position_id)
+   353	                self.reconcile(engine,snapshot)
+   354	            else: return False
+   355	        else:
+   356	            self.store.save(record,dict(trade),protection,snapshot.revision)
+   357	        snapshot=self.store.load(record.position_id)
+   358	        protection=dict(snapshot.protection)
+   359	        pending=trade.get('engine_b_exit_pending')
+   360	        if pending is not None and pd.Timestamp(pending['timestamp'])<ts:
+   361	            engine._execute_exit(symbol,timestamp,trade,float(bar['open']),pending['reason']);return True
+   362	        frame=pd.DataFrame(protection['history']).set_index('timestamp')
+   363	        decision=self.engine_b.evaluate(record,frame,ts,len(protection['sessions']),session_last_bar=session_last_bar)
+   364	        if self.config.strict_session_boundary and session_last_bar and len(protection['sessions'])>=self.engine_b.policy.max_sessions:
+   365	            engine._execute_exit(symbol,timestamp,trade,float(bar['close']),'ENGINE_B_MAX_SESSIONS');return True
+   366	        if decision.action=='EXIT':
+   367	            trade['engine_b_exit_pending']={'timestamp':ts,'reason':decision.reason}
+   368	        # This bar's protective tests already completed; proposed stop arms next bar.
+   369	        record=tighten_stop(record,decision.proposed_stop_price)
+   370	        protection['stop']=record.current_stop_price
+   371	        protection['engine_b_state']=self.engine_b.export_state()
+   372	        protection['protective_order_id']=engine.broker.ensure_protection(symbol,record.current_stop_price,int(trade['quantity']),record.product)
+   373	        protection['broker_snapshot']=engine.broker.snapshot()
+   374	        self.store.save(record,dict(trade),protection,snapshot.revision)
+   375	        engine._position_lifecycle[record.position_id]=record
+   376	        return True
+   377	
+   378	    def persist_end_of_run(self, engine, symbol):
+   379	        snapshot=self.store.load(engine.open_trades[symbol]['trade_id'])
+   380	        if self.config.end_of_run_disposition!='PERSIST' or snapshot.record.lifecycle_state!=B_OPEN:
+   381	            return False
+   382	        self.reconcile(engine,snapshot)
+   383	        return True

@@ -1,0 +1,26 @@
+{
+  "status": "VERIFIED_COMPONENTS",
+  "qualification": "PROTECTION_DAY_GATE_MPC_STUDIES_PA_HYDRATION_FROZEN_CONFIG",
+  "branch": "feature/engine-ab-handoff-lifecycle",
+  "head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "source_sha256": {
+    "revision5/morning_recovery.py": "4c77504121647484fad22050f4339b3ec4710894ffe718fece19d00cf02653ea",
+    "revision2_external/pid_controller.py": "41ed7b2ec0d89e9b1eb2ae1b44ccbf26ee32772e135a6328288bae9dca2517ca",
+    "revision2_external/composite_study_signal.py": "8ed51433137ed4511435257e7d9fba366dde087ec47ccd2503dfe64f4dd57bbf",
+    "revision2_external/indicators_talib.py": "33867543255e72f2bb0aee2d5e176608cdd9c09be8e90f6e99bf7e59c072b1c3"
+  },
+  "tests": {
+    "passed": 331,
+    "log": "focused_regression.log",
+    "log_sha256": "2506be139d32691060f843bd211baa51a6d5ea9d9271644b8a1ce789cbfe4e9b"
+  },
+  "remaining": [
+    "HMM model/posterior/refit history",
+    "conviction/hysteresis/closed-loop ledgers",
+    "complete native plant and execution cursor composition",
+    "direct asynchronous live broker execution qualification"
+  ],
+  "admissions_unblocked": false,
+  "committed": false,
+  "pushed": false
+}

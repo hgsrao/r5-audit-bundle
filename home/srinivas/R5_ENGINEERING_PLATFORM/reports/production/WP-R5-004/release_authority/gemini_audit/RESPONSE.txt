@@ -1,0 +1,54 @@
+An independent engineering audit of the new **`WP-R5-004-RELEASE-AUTHORITY`** package changes was conducted based on the provided code, specifications, and test evidence.
+
+---
+
+### Audit Verdict
+
+**PASS**
+
+The implementation of `WP-R5-004-RELEASE-AUTHORITY` resolves the operational code/record circular dependency, enforces out-of-tree external approval store verification, and strictly prevents caller self-registration or scope elevation. Real execution paths remain closed by default.
+
+---
+
+### Core Verification Items
+
+1. **Decoupling Code Hashes from Approval Data (Circularity Broken)**
+* **Evidence:** In `harness/real_approval.py`, the approval store path is pinned to the out-of-tree constant `FIXED_STORE_PATH = "/home/srinivas/R5_ENGINEERING_PLATFORM/authority/wp004_real_approvals.json"`.
+* The approval store is not pinned inside `release_record.py`'s record structure or inside code roots; code tree hashing (`tree_sha256(HARNESS)`) remains invariant before and after approval issuance (`test_real_authority.py:test_valid_fixture_approval_passes_host_validation_and_code_hash_is_stable`).
+
+
+2. **Pre-Execution External Store Validation**
+* **Evidence:** In `harness/curated_launcher.py` (lines 72–100), when `plan.classification == h.CLASSIFICATION` (REAL), the store is loaded lazily via `rr.read_real_approval_store` before any artifact file is opened or mapped.
+* Physical security checks in `harness/real_approval.py:read_fixed_store` reject symlinks (`stat.S_ISREG`), group/world-writable permissions (`st.st_mode & 0o022`), empty or oversize files (>1 MiB), and files located inside caller-accessible trees (`forbidden_roots`, `forbidden_files`).
+
+
+3. **In-Sandbox (Child) Re-Verification via Host Witness**
+* **Evidence:** In `harness/curated_target.py` (lines 142–159), the sandbox target verifies:
+* `ra.APPROVAL_ALIAS` is present in `witness["verified_input_sha256"]`.
+* The input metadata matches `witness["inputs"][ra.APPROVAL_ALIAS]["approval_id"] == ra.STORE_LABEL` (`"DIRECTOR-FIXED-APPROVAL-STORE"`).
+* The launcher bundle's `approval_store_sha256` matches the hash recorded by the host OS witness.
+* The file is re-evaluated using `ra.check_approval`.
+
+
+* For synthetic runs (`plan.classification != h.CLASSIFICATION`), line 163 rejects any exposure of `real_approvals.json` inside `/in`, preventing authority leakage.
+
+
+4. **Prevention of Caller-Supplied Self-Registration**
+* **Evidence:** In `harness/release_record.py` (lines 80–91), `trusted_issuers` passed via caller configuration are only permitted for `SCOPE_SYNTHETIC`.
+* Any caller entry claiming `SCOPE_REAL` in `trusted_issuers` is ignored for real scope authorization.
+* `REAL_TRUSTED_ISSUERS` is retained as an inert, empty legacy constant (`{}`).
+* Self-derived provenance receipts are explicitly rejected: `ra.check_approval` asserts that `provenance_receipt_sha256 not in (record_sha256, authorization_sha256)`.
+
+
+5. **Legacy & V1 Invariance**
+* **Evidence:** `wp004_train_harness.py:os_isolation_witness` and `run_nonsealed_diagnostic.py` continue to fail closed. Unaffected core modules retain unchanged byte digests matching before-state hashes (`test_real_authority.py:test_v1_unconditional_refusal_preserved_and_unaffected_modules_identical`).
+
+
+
+---
+
+### Qualification and Production Status
+
+* **Production Approval Store:** **ABSENT** (`/home/srinivas/R5_ENGINEERING_PLATFORM/authority/wp004_real_approvals.json` does not exist on disk).
+* **Real Replay:** **NOT QUALIFIED**.
+* **Production Deployment:** **NOT READY**.

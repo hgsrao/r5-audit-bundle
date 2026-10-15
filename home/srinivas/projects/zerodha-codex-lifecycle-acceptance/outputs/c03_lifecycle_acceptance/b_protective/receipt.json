@@ -1,0 +1,141 @@
+{
+  "classification": "CONSTRUCTED_BUY_LIFECYCLE_QUALIFICATION",
+  "outcome": "ACKNOWLEDGED",
+  "mock_protection_only": true,
+  "natural_admission": false,
+  "full_run_path": false,
+  "durable_intent_before_submit": true,
+  "exactly_once_feedback_in_process": true,
+  "next_session_managed": true,
+  "ledger": [
+    {
+      "symbol": "TITAN",
+      "side": "BUY",
+      "entry_price": 100.05,
+      "exit_price": 88.9555,
+      "quantity": 10,
+      "entry_timestamp": "2023-12-05 15:07:00",
+      "exit_timestamp": "2023-12-06 09:16:00",
+      "reason": "stop_gap",
+      "pnl": -110.94499999999996,
+      "costs": 0.8546121475,
+      "net_pnl": -111.79961214749997,
+      "trade_id": "trade-1",
+      "candidate_id": null,
+      "bars_held": 0,
+      "entry_atr": null,
+      "planned_entry_price": null,
+      "planned_stop_price": null,
+      "planned_target_price": null,
+      "mfe_price": 100.05,
+      "mae_price": 100.05,
+      "mfe_r": 0.0,
+      "mae_r": 0.0,
+      "terminal_bar_excursion": "intrabar_order_unknown",
+      "mfe_pre_exit_bar_r": 0.0,
+      "mae_pre_exit_bar_r": 0.0,
+      "mfe_terminal_inclusive_r": 0.0,
+      "mae_terminal_inclusive_r": 0.0,
+      "terminal_inclusive_is_ohlc_bound": true
+    }
+  ],
+  "trace": [
+    {
+      "event": "BAR",
+      "timestamp": "2023-12-05 15:08",
+      "price": 110,
+      "state": "A_OPEN",
+      "owner": "ENGINE_A",
+      "product": "MIS",
+      "stop": 90.0,
+      "sessions": [
+        "2023-12-05"
+      ],
+      "broker": {
+        "quantity": 0,
+        "avg_price": 100.05,
+        "product": "CNC"
+      }
+    },
+    {
+      "event": "BAR",
+      "timestamp": "2023-12-05 15:09",
+      "price": 110,
+      "state": "A_OPEN",
+      "owner": "ENGINE_A",
+      "product": "MIS",
+      "stop": 90.0,
+      "sessions": [
+        "2023-12-05"
+      ],
+      "broker": {
+        "quantity": 0,
+        "avg_price": 100.05,
+        "product": "CNC"
+      }
+    },
+    {
+      "event": "DURABLE_INTENT_BEFORE_SUBMIT",
+      "request_id": "ebbd3363b7db4ff88184423c0bdd175b"
+    },
+    {
+      "event": "BAR",
+      "timestamp": "2023-12-05 15:10",
+      "price": 110,
+      "state": "B_OPEN",
+      "owner": "ENGINE_B",
+      "product": "CNC",
+      "stop": 90.0,
+      "sessions": [
+        "2023-12-05"
+      ],
+      "broker": {
+        "quantity": 0,
+        "avg_price": 100.05,
+        "product": "CNC"
+      }
+    },
+    {
+      "event": "BAR",
+      "timestamp": "2023-12-06 09:15",
+      "price": 111,
+      "state": "B_OPEN",
+      "owner": "ENGINE_B",
+      "product": "CNC",
+      "stop": 90.0,
+      "sessions": [
+        "2023-12-05",
+        "2023-12-06"
+      ],
+      "broker": {
+        "quantity": 0,
+        "avg_price": 100.05,
+        "product": "CNC"
+      }
+    },
+    {
+      "event": "BAR",
+      "timestamp": "2023-12-06 09:16",
+      "price": 89,
+      "state": "CLOSED",
+      "owner": "ENGINE_B",
+      "product": "CNC",
+      "stop": 90.0,
+      "sessions": [
+        "2023-12-05",
+        "2023-12-06"
+      ],
+      "broker": {
+        "quantity": 0,
+        "avg_price": 100.05,
+        "product": "CNC"
+      }
+    }
+  ],
+  "source_hashes": {
+    "revision5/combined_cycle_runtime.py": "0bbd3b1ab8331d75016bb783db91b63a5e870736febf0f7041131d942df79da9",
+    "revision2_external/orchestrator.py": "1c04af0312143af44bdc0d0be1117fb7ca757780c466760c62cc5bc779900338",
+    "revision5/handoff_manager.py": "4cf6353bbada29a6292cd42556ae7ead6412e363796bb6edee4aa6979a66beda",
+    "revision5/engine_b_management.py": "40e3842c6ee6be30820830f073eb007ae22836a3dd8b8129fd621703f57e6552"
+  }
+}

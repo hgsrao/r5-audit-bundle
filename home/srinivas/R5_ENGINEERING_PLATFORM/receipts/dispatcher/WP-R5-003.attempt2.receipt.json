@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 236.12731752900072,
+  "error": null,
+  "finished_at": "2026-10-07T07:26:05.741752+00:00",
+  "needs_review": false,
+  "objective": "TRAIN Replay Execution Qualification: verify TRAIN-only access, determinism, safety gates and no CNC/GTT entry; fail closed if preconditions are not met; no optimisation.",
+  "ok": true,
+  "output_sha256": "6931b1b7f19072a50fb69dccab82494c47a639ce332d7e81c070b8059359039b",
+  "package_id": "WP-R5-003",
+  "package_sha256": "87c0acc2f0480bfe1114f3bda10dd13e11a461747f400473438ad016003eac1c",
+  "response_file": "WP-R5-003.attempt2.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:22:09.611687+00:00",
+  "state": "DONE",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

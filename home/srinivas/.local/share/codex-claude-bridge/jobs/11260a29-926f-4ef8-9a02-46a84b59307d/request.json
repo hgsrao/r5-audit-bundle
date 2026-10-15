@@ -1,0 +1,5 @@
+{
+  "prompt": "Authorized read-only closure review. Prior job 40d1e9b6-4c3a-4fd5-8e93-a56493dd4c59 failed OAuth refresh before reading any tokens; this is one retry. Read outputs/r5_remediation/note05/AUDIT_REPORT.md, outputs/CLAUDE_BRIDGE_SUPERVISOR_RECEIPT.md, scripts/run_r5_step5_candidate.py, scripts/diagnostics/block1_isolation_harness.py, revision5/combined_cycle_runtime.py and morning_recovery.py. Recommend a single experimental full-lifecycle paper execution entrypoint using actual modified R5 source, without bypassing or relabeling the sealed baseline. Confirm isolation harness is strategy-only and fleet-loading prototype is not integrated. Give max 500 words: concrete missing plumbing, 5 ordered closure activities with executable acceptance criteria, two isolated Claude implementation work packages. No edits, command execution, blanket readiness claims or requests for another general audit. Codex owns tests, integration and final push.",
+  "work_dir": "/home/srinivas/projects/zerodha-r5-governor-refactor",
+  "mode": "review"
+}

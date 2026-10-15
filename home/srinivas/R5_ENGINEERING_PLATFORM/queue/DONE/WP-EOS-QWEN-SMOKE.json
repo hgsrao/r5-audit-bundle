@@ -1,0 +1,21 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:09:29.810815+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-QWEN-SMOKE.receipt.json",
+    "started_at": "2026-10-07T08:08:57.734572+00:00",
+    "state": "DONE",
+    "worker": "qwen"
+  },
+  "files": [],
+  "id": "WP-EOS-QWEN-SMOKE",
+  "metadata": {},
+  "objective": "Verify direct Ollama worker",
+  "priority": 0,
+  "prompt": "Reply with exactly:\n\nSTATUS: PASS\nWORKER: QWEN\nENGINE: OLLAMA\n\nDo not write anything else.",
+  "requires_review": false,
+  "rules": [],
+  "submitted_at": "2026-10-07T08:08:04.148396+00:00",
+  "type": "PARAMETER_AUDIT",
+  "worker": "qwen"
+}

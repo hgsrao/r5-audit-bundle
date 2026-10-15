@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_train_end_guard/test_out_of_order_sentinel0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "686bc65e4b73b74e1e533619df3cb35f6d1d51b8190d5978a86fecbf2ffdeb19",
+      "size_bytes": 17397,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "2587299855e3b3fe24d9c69d56a302ab679cbfac4f4eef984f7ff62ed39ee558",
+      "size_bytes": 18626,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "aa4c8b8bad1fa63ffc1ab460a498970ebb59bb8cb8cb888abd1d402675f973d0",
+  "symbol_count": 2
+}

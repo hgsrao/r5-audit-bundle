@@ -1,0 +1,13 @@
+{
+  "configuration": {
+    "OLLAMA_URL": "http://localhost:11434",
+    "DEFAULT_MODEL": "",
+    "REQUEST_TIMEOUT": "60.0",
+    "LOG_DIRECTORY": "/home/srinivas/R5_ENGINEERING_PLATFORM/bridge/logs",
+    "WORK_DIRECTORY": "/home/srinivas/R5_ENGINEERING_PLATFORM/bridge/work"
+  },
+  "router": "PASS",
+  "audit_contract": "PASS",
+  "logger": "PASS",
+  "source_version": "1.2.0"
+}

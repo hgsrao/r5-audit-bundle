@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_chronology_check/test_frames_equal_original_pre1/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "02e6773642f96f0fa2671d7de763148482771f75177a30a6cd984b6af09a2059",
+      "size_bytes": 18853,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "94513f0b8b61b348629d7ee3c46e5d845200f92ec9dcbefc53bc1e907db7cc84",
+      "size_bytes": 18963,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "cea3dc4903ecfbd69df8c731254810428add6e27ac4bb1f36c44d63c145b94f1",
+  "symbol_count": 2
+}

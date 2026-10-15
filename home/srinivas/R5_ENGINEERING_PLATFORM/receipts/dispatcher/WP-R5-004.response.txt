@@ -1,0 +1,23 @@
+My usage limit was reached, so WP-R5-004 is only partly done and has no acceptance decision. It stops at the verified findings. The most useful result is that the sealed worker CLI cannot start on the current tree. I wrote everything I verified to `reports/production/WP-R5-004/INTERIM_FINDINGS.md`.
+
+Nothing forbidden was touched: no replay or test, no market-data file opened, no Dispatcher command, and no change to the repo, dispatcher, bridge or baseline. The only writes were three before-copies in `work/` (`CURRENT_STATE`, `R5_PRODUCTION_BACKLOG`, `R5_CURRENT_WORK_PACKAGE`, each `.before_WP-R5-004.md`) and the findings file. No subagents are running.
+
+**What I found:**
+- **Git:** I re-verified your evidence file myself — HEAD 59371ff, 8 modified files, 239 untracked, and all working-tree hashes match.
+- **Engine drift:** 957 files differ from the sealed parent c0b4672, including `orchestrator.py`, `indicators_talib.py` and `grid_context.py`. The sealed worker CLI will therefore always exit ENGINE_PARENT_DRIFT here. It also fails on topology, because the R5 checkout has no grid manifest.
+- **Protected file:** your premise is not supported by the evidence on file.
+  - The protected SHA on record is a011b295…, which is the HEAD blob.
+  - The working-tree `indicators_talib.py` (5ba12643…) is the modified, non-protected version.
+  - If you hold a receipt that says otherwise, please supply it.
+  - Execution qualification is not valid for the current tree: two replay-path files differ from HEAD.
+- **Entry point:** no sealed document names one by path. My proposed pick, requiring your ratification, is `scripts/run_r5_paper_lifecycle.py --acceptance`. It is the only candidate that has actually run on this engine here, and the historical Block-1 ledgers came from it. The downside is that it always enables the combined-cycle runtime, which makes the unqualified CNC cost legs reachable.
+- **TRAIN scope:** I would recommend Option B, a loader harness kept outside the repo. A TRAIN-only slice (Option A) would fail every sealed hash check and need a substitute loader anyway.
+- **Dispatcher race fix:** the operator's report mostly matches the code, but the "reclaim only if owner gone or heartbeat expired" rule has holes.
+  - The worst: `complete()` and `_unexpected_exit` do not check ownership, so a deposed dispatcher can finish or requeue another dispatcher's re-claimed package.
+  - The smaller holes are listed in the findings file.
+
+**Left to do:**
+- Write five reports: `REPLAY_ENTRYPOINT.md`, `TRAIN_SCOPE_REPORT.md`, `GIT_IDENTITY_REPORT.md`, `EXECUTION_BLOCKER_MATRIX.md`, `DISPATCHER_RACE_REVIEW.md`. The findings file has the content for each.
+- Write `ENGINEERING_ACCEPTANCE_REPORT.md` and `SHA256SUMS.txt`. My provisional decision is PASS WITH FINDINGS at best.
+- Append the dated sections to the state files and write `CHECKPOINT_007.md`.
+- Prepare `work/packages/WP-R5-005.json`. I would make it the Option B loader harness plus a pin manifest and a counting spy, and it needs your ratification of the entry point and the protected-file question.

@@ -1,0 +1,2 @@
+[console_scripts]
+engineering-bridge = src.main:main

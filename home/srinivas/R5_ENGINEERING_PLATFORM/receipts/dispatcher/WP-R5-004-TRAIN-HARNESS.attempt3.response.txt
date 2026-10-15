@@ -1,0 +1,30 @@
+The Director's findings are fixed in the harness and its synthetic tests, and the real-data runner still refuses to run. All 140 synthetic tests pass. The run covers the old and new test files, and 19 of 19 deliberately broken variants of the harness were caught.
+
+I touched no real market data, original repos, Dispatcher, config, Bridge, strategy, calibration or values, and did no git or export. The snapshot manifest and tree hashes are unchanged.
+
+## What changed
+
+1. **Exact read cap.** The reader now validates the chunk size and cap (positive integers, not bool) before opening the file. Each read requests the smallest of the chunk, the interval remainder and the cap remainder, and it fails before issuing any read once nothing is left. I tested caps that are not chunk multiples against an independent FileIO witness: bytes read equal the cap exactly, and repeated attempts beyond it issue zero reads.
+2. **Per-file authorization.** `validate_real_authorization` checks the whole authorization without opening any data file. It binds:
+   - the authorization file's own SHA, held as an external pin;
+   - the contract ID and its file hash, the classification, and the snapshot, protocol and params pins;
+   - the roots and output directory, the Stage B Block 1 sessions, the unchanged development risk scope, and CNC disabled;
+   - for each file: canonical path, exact byte intervals, physical byte limit, content commitment, provenance ID, external boundary evidence and boundary-row authorization.
+
+   The preflight in `make_prepare` runs before the first data open and checks that the plan matches the manifest files exactly. Reads are confined to the plan and must consume it exactly. The content commitment is checked on the consumed bytes, and an unplanned open trips the tripwire. Receipts state that a freshly supplied prefix hash is the current acquisition identity, not historical sealed membership.
+3. **preTRAIN versus TRAIN.** Intervals are typed as header, TRAIN data, or preTRAIN warmup with no fitting. The default is `REJECT`, and preTRAIN warmup is allowed only for stock files if separately authorized. Grid preTRAIN rows are always rejected. The sentinel and the grid cutoff row must be authorized and disclosed, and they never enter the retained data. Audits no longer imply that all physical bytes are TRAIN. The harness has no function that produces boundary evidence. The required external schema is in `REQUIRED_EXTERNAL_INPUT_SCHEMA.md`.
+4. **Native/system IO.** `os_isolation_witness()` always refuses. It is code, not a JSON field, and extra keys in the authorization are rejected. Even a fully valid authorization gets "REFUSED", with no data opened. Receipts state that Python tripwires do not prove native or system IO restriction.
+5. **Tests and receipts.**
+   - **Count:** 140 passed, up from 51. 89 are new, in `test_director_fixes.py`.
+   - **Coverage:** the new tests cover the exact cap, authorization binding (42 mismatch cases), wrong root, plan/metadata mismatch, content and boundary mismatch, preTRAIN, the OS gate, and no data opened on an invalid authorization.
+   - **Preserved copies:** the previous versions and receipt hashes are in `reports/production/WP-R5-004/train_harness/before_director_fix/`.
+   - **Updated records:** the implementation receipt, test logs, hash files and executable text are updated.
+
+## Still blocking a real run
+
+- **Boundary evidence.** No verified boundary artefact exists for any real file. An independent party must supply the exact intervals, end offsets, content commitments, provenance IDs and boundary evidence. I did not search raw data for one or make one up.
+- **OS-level isolation.** The witness (audited immutable snapshot with no uncontrolled subprocess or native reads, or an OS read log) is not implemented.
+- **Director rulings and inputs.** A Director decision is needed on preTRAIN warmup, since real files start before `train_start`. Real roots, manifests, params file and pins, and the contract and authorization hashes are also still missing.
+- **Review.** Independent review of this revision is still pending.
+
+The `Workflow` and other tools were not needed here. The one-off helper scripts I used for editing are deleted. `backup_before.py` remains in `harness_tests/` as a record of how the before-copies were made.

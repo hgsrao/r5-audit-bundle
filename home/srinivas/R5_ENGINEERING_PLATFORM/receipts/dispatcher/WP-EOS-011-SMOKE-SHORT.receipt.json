@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 4.49864914200225,
+  "error": null,
+  "finished_at": "2026-10-07T08:33:25.049419+00:00",
+  "needs_review": false,
+  "objective": "Short prompt smoke",
+  "ok": true,
+  "output_sha256": "586cba78dd0cf4b8ef8f078201b85f4a875bc1c419df0a01001810db2f68c841",
+  "package_id": "WP-EOS-011-SMOKE-SHORT",
+  "package_sha256": "e8686cf726c4a51e27488d5a4848c1f4d52db99f86e2b40c0806e8160e7b412f",
+  "response_file": "WP-EOS-011-SMOKE-SHORT.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T08:33:20.548649+00:00",
+  "state": "DONE",
+  "type": "GENERAL",
+  "worker": "qwen"
+}

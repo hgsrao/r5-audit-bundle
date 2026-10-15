@@ -1,0 +1,12 @@
+{
+  "name": "claude-memory",
+  "version": "1.0.0",
+  "description": "Structured memory system for Claude Code — categorized memories with recall/remember patterns, startup injection, and file templates",
+  "author": {
+    "name": "Creighton Chang",
+    "url": "https://github.com/tars23364-bit"
+  },
+  "repository": "https://github.com/tars23364-bit/claude-memory",
+  "license": "MIT",
+  "keywords": ["memory", "persistence", "recall", "knowledge-management"]
+}

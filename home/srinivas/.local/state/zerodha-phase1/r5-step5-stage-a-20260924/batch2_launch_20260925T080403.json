@@ -1,0 +1,20 @@
+{
+  "pid": 703045,
+  "log": "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-a-20260924/batch2_executor_20260925T080403.log",
+  "args": [
+    "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+    "-u",
+    "/home/srinivas/projects/zerodha-phase1/scripts/run_r5_step5_stage_a_executor.py",
+    "--execute",
+    "--max-batches",
+    "1",
+    "--expected-protocol-sha",
+    "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+    "--expected-worker-sha",
+    "70fc0839784f44551067211151c598f3710dc1a6a339272ec41e1a0a66da1f4c",
+    "--ssh-key",
+    "/home/srinivas/.ssh/id_ed25519_r5_worker",
+    "--state-dir",
+    "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-a-20260924"
+  ]
+}

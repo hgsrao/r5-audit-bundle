@@ -1,0 +1,23 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:35:07.023750+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-SMOKE-ENG.receipt.json",
+    "started_at": "2026-10-07T08:34:33.024537+00:00",
+    "state": "FAILED",
+    "worker": "qwen"
+  },
+  "files": [],
+  "id": "WP-EOS-011-SMOKE-ENG",
+  "metadata": {},
+  "objective": "Engineering prompt smoke",
+  "priority": 5,
+  "prompt": "Review this Python function and list every defect in at most 3 bullet points:\n\ndef mean(xs):\n    total = 0\n    for x in xs:\n        total += x\n    return total / len(xs)\n",
+  "requires_review": false,
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "submitted_at": "2026-10-07T08:33:15.087094+00:00",
+  "type": "REVIEW_CODE",
+  "worker": "qwen"
+}

@@ -1,0 +1,51 @@
+{
+  "batch_order_invariance_checks": 739,
+  "fault_events": [],
+  "entry_fills_by_bay": {
+    "CSTG2_CONSUMER_AUTO": 15,
+    "GTG2_TECH_TELECOM": 13,
+    "BPSTG_HEALTHCARE": 6,
+    "CSTG1_BFSI": 12,
+    "GTG1_HEAVY_INDUSTRY": 20
+  },
+  "locked_exit_fills": 0,
+  "lockout_entry_violations": 0,
+  "cap_violations": 0,
+  "peak_open_positions": 5,
+  "peak_gross_fraction": 0.25867710254808085,
+  "max_symbols_per_batch": 10,
+  "illegal_reclose_rejections": 0,
+  "post_reset_entry_fills": 0,
+  "positive_cap_by_bay": {
+    "GTG1_HEAVY_INDUSTRY": 325,
+    "CSTG2_CONSUMER_AUTO": 361,
+    "BPSTG_HEALTHCARE": 134,
+    "CSTG1_BFSI": 313,
+    "GTG2_TECH_TELECOM": 188
+  },
+  "locked_cap_rejections": 0,
+  "unaffected_bay_positive_caps": 0,
+  "max_batch": 10,
+  "batches_with_2plus": 461,
+  "total_batch_candidates": 1797,
+  "timestamp_batches": 739,
+  "candidate_dispositions": {
+    "FILLED": 66,
+    "REJECTED": 2138
+  },
+  "candidate_reasons": {
+    "entry_decision_gate": 1189,
+    "plant_control_paper_cap": 348,
+    "final_execution_entry_veto": 174,
+    "paper_fill": 66,
+    "bay_ansi_flameout_tripped": 313,
+    "max_concurrent_positions": 20,
+    "bay_cooldown_active": 94
+  },
+  "queue_semantics": "timestamp-local batch; no persistent backlog or automatic retry",
+  "pending_after_run": 0,
+  "unclassified_after_run": 0,
+  "timestamp_processing_p95_seconds": 0.7000684329996147,
+  "timestamp_processing_max_seconds": 0.8851780639997742,
+  "peak_process_rss_mib": 332.9609375
+}

@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-10-08T13:50:56.196472+00:00",
+  "worker": "gemini",
+  "route": "authenticated browser",
+  "mode": "3.1 Pro",
+  "status": "FAILED_NO_VERDICT",
+  "response": "I seem to be encountering an error. Can I try something else for you?",
+  "cause": "Unspecified provider error; not inferred as quota or code failure",
+  "next": "One alternate 3.8 Flash attempt with same frozen uploaded evidence"
+}

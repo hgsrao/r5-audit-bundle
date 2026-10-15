@@ -1,0 +1,356 @@
+{
+  "audit": {
+    "block": 1,
+    "classification": "NON_SEALED_TRAIN_EXECUTION_DIAGNOSTIC",
+    "clock_events": 160,
+    "grid": {
+      "INDIA_VIX_15MIN": {
+        "boundary_row_affects_retained_feed": false,
+        "boundary_row_authorized": null,
+        "boundary_rows_parsed_and_discarded": 1,
+        "consumed_bytes": 7623,
+        "consumed_prefix_sha256": "bfb0da5549769052a336de0683afbc822696b948cc90bbc839e957bf151071a8",
+        "cutoff_utc": "2023-12-05T04:24:00+00:00",
+        "declared_sha256_unverified_metadata": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+        "first_available_utc": "2023-11-22T04:00:00+00:00",
+        "last_available_utc": "2023-12-05T04:15:00+00:00",
+        "physical_bytes_read": 8192,
+        "rows": 236,
+        "rows_after_cutoff_retained": 0,
+        "train_scope": "retained rows are TRAIN-dated by timestamp filter only; physical bytes are classified solely by the authorized interval kind (HEADER / TRAIN_DATA / PRETRAIN_WARMUP_NO_FIT), never inferred from timestamps"
+      },
+      "NIFTY_50_15MIN": {
+        "boundary_row_affects_retained_feed": false,
+        "boundary_row_authorized": null,
+        "boundary_rows_parsed_and_discarded": 1,
+        "consumed_bytes": 7628,
+        "consumed_prefix_sha256": "8293a0ef9fea21bd42cc7cc7245d79da855c5624e958ce71dad585ee33c90644",
+        "cutoff_utc": "2023-12-05T04:24:00+00:00",
+        "declared_sha256_unverified_metadata": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+        "first_available_utc": "2023-11-22T04:00:00+00:00",
+        "last_available_utc": "2023-12-05T04:15:00+00:00",
+        "physical_bytes_read": 8192,
+        "rows": 236,
+        "rows_after_cutoff_retained": 0,
+        "train_scope": "retained rows are TRAIN-dated by timestamp filter only; physical bytes are classified solely by the authorized interval kind (HEADER / TRAIN_DATA / PRETRAIN_WARMUP_NO_FIT), never inferred from timestamps"
+      }
+    },
+    "loader": "WP004_BOUNDED_PREFIX_LOADER_V1",
+    "max_target_utc": "2023-12-05T04:24:00+00:00",
+    "sessions": [
+      "2023-12-04",
+      "2023-12-05"
+    ],
+    "slice_sha256": "ad2210829811d01e2fcc67e0fd9b120e739cd7e37996afc724be268d45c87eba",
+    "stock": {
+      "AAA": {
+        "consumed_bytes": 11450,
+        "consumed_prefix_sha256": "6fa2b7762b20ddf4f0aa3209e0af39a38ab14c65279978a6d87c03bbed43d871",
+        "physical_bytes_read": 12288,
+        "pretrain_policy": "REJECT",
+        "pretrain_rows_consumed": 0,
+        "sentinel_row_authorized": null,
+        "sentinel_rows": 1,
+        "sentinel_utc": "2023-12-06T03:45:00+00:00",
+        "target_first_utc": "2023-12-04T03:45:00+00:00",
+        "target_last_utc": "2023-12-05T04:24:00+00:00",
+        "target_rows": 80,
+        "target_session_counts": {
+          "2023-12-04": 40,
+          "2023-12-05": 40
+        },
+        "train_scope": "retained rows are TRAIN-dated by timestamp filter only; physical bytes are classified solely by the authorized interval kind (HEADER / TRAIN_DATA / PRETRAIN_WARMUP_NO_FIT), never inferred from timestamps",
+        "warmup_first_utc": "2023-11-30T04:05:00+00:00",
+        "warmup_last_utc": "2023-12-01T04:24:00+00:00",
+        "warmup_rows": 60,
+        "warmup_rows_dated_before_train_start": 0
+      },
+      "BBB": {
+        "consumed_bytes": 11710,
+        "consumed_prefix_sha256": "af9294c6616fdf3bb6e9d7206b147bc0b3aa04ed5da8fdb7e6a30738f75f1463",
+        "physical_bytes_read": 12288,
+        "pretrain_policy": "REJECT",
+        "pretrain_rows_consumed": 0,
+        "sentinel_row_authorized": null,
+        "sentinel_rows": 1,
+        "sentinel_utc": "2023-12-06T03:45:00+00:00",
+        "target_first_utc": "2023-12-04T03:45:00+00:00",
+        "target_last_utc": "2023-12-05T04:24:00+00:00",
+        "target_rows": 80,
+        "target_session_counts": {
+          "2023-12-04": 40,
+          "2023-12-05": 40
+        },
+        "train_scope": "retained rows are TRAIN-dated by timestamp filter only; physical bytes are classified solely by the authorized interval kind (HEADER / TRAIN_DATA / PRETRAIN_WARMUP_NO_FIT), never inferred from timestamps",
+        "warmup_first_utc": "2023-11-30T04:05:00+00:00",
+        "warmup_last_utc": "2023-12-01T04:24:00+00:00",
+        "warmup_rows": 60,
+        "warmup_rows_dated_before_train_start": 0
+      }
+    },
+    "warmup_bars_per_symbol": 60
+  },
+  "block_fingerprint": "4027aa96ea52f0d4fa6eca5092fcf18b8e45a11b1b3f8ec32e996adc84ecf793",
+  "broker_fill_counts": {
+    "by_side": {
+      "BUY": 0,
+      "SELL": 0
+    },
+    "classification": "BROKER_BOTH_ENTRY_AND_EXIT_LEGS",
+    "native_entry_fills": 0,
+    "total": 0
+  },
+  "governor_authority": {
+    "entry_decisions": {
+      "NO_ACTION:GOVERNOR_UNMAPPED_SYMBOL": 60
+    },
+    "mode": "full",
+    "position_decisions": {}
+  },
+  "metrics": {
+    "completed_trades": 0,
+    "fills": 0,
+    "gross_pnl": 0.0,
+    "mtm_max_drawdown_fraction": 0.0,
+    "net_pnl": 0.0,
+    "profit_factor": 0.0,
+    "safety_violations": 0
+  },
+  "micom": {
+    "trip_bar_counts": {
+      "MICOM_INPUT_UNAVAILABLE": 32
+    },
+    "vol_z_window": 20
+  },
+  "native_accounting_reconciliation": {
+    "checks": {
+      "ALL_STAGE_ACCOUNTING": {
+        "passed": true
+      },
+      "GATE12_REACHED_BUY": {
+        "not_reached": 0,
+        "passed": true,
+        "pre_submit": 0,
+        "reached": 0
+      },
+      "GATE12_REACHED_SELL": {
+        "not_reached": 0,
+        "passed": true,
+        "pre_submit": 0,
+        "reached": 0
+      },
+      "GOVERNOR_INPUT": {
+        "native": 60,
+        "passed": true,
+        "passive": 60
+      },
+      "ID_INPUT": {
+        "native": 156,
+        "passed": true,
+        "passive": 156
+      },
+      "ID_PASS": {
+        "native": 60,
+        "passed": true,
+        "passive": 60
+      },
+      "ID_REJECT": {
+        "native": 96,
+        "passed": true,
+        "passive": 96
+      },
+      "PRE_SUBMIT_INPUT": {
+        "native": 0,
+        "passed": true,
+        "passive": 0
+      },
+      "PRE_SUBMIT_PASS": {
+        "native": 0,
+        "passed": true,
+        "passive": 0
+      },
+      "PRE_SUBMIT_REJECT": {
+        "native": 0,
+        "passed": true,
+        "passive": 0
+      }
+    },
+    "gate12": "Not reached counts exclude candidates rejected before Gate12; zero is explicit",
+    "governor": "NO_ACTION observations are actual vetoes only under full governor authority",
+    "passed": true,
+    "warmup": "ID_WARMUP is reported separately and excluded from native scored ID totals"
+  },
+  "native_report_path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/e2e0/out/run1/native_report.json",
+  "paper_journal_statistics": null,
+  "passive_rejection_accounting": {
+    "GATE12_REACHED": {
+      "BUY": {
+        "accounting_closed": true,
+        "input": 0,
+        "passed": 0,
+        "rejects": {}
+      },
+      "SELL": {
+        "accounting_closed": true,
+        "input": 0,
+        "passed": 0,
+        "rejects": {}
+      }
+    },
+    "GOVERNOR": {
+      "BUY": {
+        "accounting_closed": true,
+        "input": 38,
+        "passed": 0,
+        "rejects": {
+          "GOVERNOR_UNMAPPED_SYMBOL": 38
+        }
+      },
+      "SELL": {
+        "accounting_closed": true,
+        "input": 22,
+        "passed": 0,
+        "rejects": {
+          "GOVERNOR_UNMAPPED_SYMBOL": 22
+        }
+      }
+    },
+    "ID": {
+      "BUY": {
+        "accounting_closed": true,
+        "input": 92,
+        "passed": 38,
+        "rejects": {
+          "HMM regime: stressed": 1,
+          "PA quality band is red": 26,
+          "risk:reward 0.73 below minimum 1.50": 1,
+          "risk:reward 0.75 below minimum 1.50": 1,
+          "risk:reward 0.76 below minimum 1.50": 2,
+          "risk:reward 0.82 below minimum 1.50": 1,
+          "risk:reward 0.85 below minimum 1.50": 1,
+          "risk:reward 0.87 below minimum 1.50": 1,
+          "risk:reward 0.89 below minimum 1.50": 1,
+          "risk:reward 0.91 below minimum 1.50": 1,
+          "risk:reward 0.95 below minimum 1.50": 1,
+          "risk:reward 0.96 below minimum 1.50": 1,
+          "risk:reward 0.99 below minimum 1.50": 2,
+          "risk:reward 1.01 below minimum 1.50": 1,
+          "risk:reward 1.10 below minimum 1.50": 1,
+          "risk:reward 1.12 below minimum 1.50": 1,
+          "risk:reward 1.17 below minimum 1.50": 1,
+          "risk:reward 1.19 below minimum 1.50": 1,
+          "risk:reward 1.20 below minimum 1.50": 1,
+          "risk:reward 1.25 below minimum 1.50": 1,
+          "risk:reward 1.26 below minimum 1.50": 1,
+          "risk:reward 1.34 below minimum 1.50": 1,
+          "risk:reward 1.35 below minimum 1.50": 1,
+          "risk:reward 1.37 below minimum 1.50": 1,
+          "risk:reward 1.38 below minimum 1.50": 1,
+          "risk:reward 1.41 below minimum 1.50": 1,
+          "risk:reward 1.48 below minimum 1.50": 1
+        }
+      },
+      "NEUTRAL": {
+        "accounting_closed": true,
+        "input": 5,
+        "passed": 0,
+        "rejects": {
+          "no directional signal": 5
+        }
+      },
+      "SELL": {
+        "accounting_closed": true,
+        "input": 59,
+        "passed": 22,
+        "rejects": {
+          "PA quality band is red": 25,
+          "risk:reward 0.69 below minimum 1.50": 1,
+          "risk:reward 0.73 below minimum 1.50": 2,
+          "risk:reward 0.74 below minimum 1.50": 2,
+          "risk:reward 0.80 below minimum 1.50": 1,
+          "risk:reward 0.81 below minimum 1.50": 1,
+          "risk:reward 0.91 below minimum 1.50": 1,
+          "risk:reward 1.02 below minimum 1.50": 1,
+          "risk:reward 1.30 below minimum 1.50": 1,
+          "risk:reward 1.49 below minimum 1.50": 1,
+          "risk:reward 1.50 below minimum 1.50": 1
+        }
+      }
+    },
+    "ID_WARMUP": {
+      "BUY": {
+        "accounting_closed": true,
+        "input": 24,
+        "passed": 0,
+        "rejects": {
+          "HMM regime unavailable: insufficient history": 23,
+          "HMM regime: stressed": 1
+        }
+      },
+      "SELL": {
+        "accounting_closed": true,
+        "input": 83,
+        "passed": 1,
+        "rejects": {
+          "HMM regime unavailable: insufficient history": 82
+        }
+      }
+    },
+    "PRE_SUBMIT": {
+      "BUY": {
+        "accounting_closed": true,
+        "input": 0,
+        "passed": 0,
+        "rejects": {}
+      },
+      "SELL": {
+        "accounting_closed": true,
+        "input": 0,
+        "passed": 0,
+        "rejects": {}
+      }
+    }
+  },
+  "plant_control": {
+    "applied": false,
+    "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+    "evaluations": 80,
+    "grid_state_counts": {
+      "ISLANDED_SAFE": 32,
+      "UNSYNCHRONIZED": 48
+    },
+    "mode": "PAPER_APPLY",
+    "observer_failures": 0,
+    "paper_admission_caps": 0,
+    "paper_admission_evaluations": 0,
+    "paper_admission_rejections": 0,
+    "plant_protection_connected": true,
+    "transitions": 4
+  },
+  "runtime_receipts_path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/e2e0/out/run1/runtime_receipts.json",
+  "runtime_safety_contract": {
+    "drawdown_derate_multiplier": 0.8,
+    "drawdown_derate_threshold": 0.18,
+    "force_close_time": "15:25",
+    "kill_switch_enabled": true,
+    "lambda_derate_multiplier": 0.8,
+    "lambda_derate_threshold": 0.15,
+    "max_broker_offline_seconds": 300,
+    "max_concurrent_positions": 5,
+    "max_daily_loss_rupees": 50000,
+    "max_exposure_per_symbol_fraction": 0.15,
+    "max_gross_exposure_fraction": 0.5,
+    "max_market_data_age_seconds": 30,
+    "max_position_quantity": 100,
+    "max_reconciliation_qty_diff": 0,
+    "max_slippage_fraction": 0.001,
+    "min_position_quantity": 1,
+    "min_signal_confidence": 0.55,
+    "no_entry_cutoff_time": "15:20",
+    "order_dedup_window_seconds": 5,
+    "order_timeout_seconds_execution": 30,
+    "safety_drawdown_halt_threshold": 0.25,
+    "safety_min_risk_reward_ratio": 1.5
+  },
+  "trades": []
+}

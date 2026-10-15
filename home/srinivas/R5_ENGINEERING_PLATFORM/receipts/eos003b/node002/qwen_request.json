@@ -1,0 +1,18 @@
+{
+  "id": "EOS003B-QWEN",
+  "type": "REVIEW_PARAMETER",
+  "model": "qwen3.8:27b",
+  "objective": "Determine whether production tick size may be hard coded.",
+  "rules": [
+    "No R5 changes.",
+    "No invented parameter values or formulas."
+  ],
+  "files": [],
+  "prompt": "Provide a concise engineering parameter review, at most three sentences. Do not supply numbers or formulas. Should production use a universal hard-coded tick size, or qualified instrument metadata? Missing authoritative metadata must fail closed. No implementation.",
+  "metadata": {
+    "node": "NODE-002",
+    "model_host": "NODE-001",
+    "transport": "authenticated SSH reverse tunnel",
+    "commissioning_timeout_seconds": 300
+  }
+}

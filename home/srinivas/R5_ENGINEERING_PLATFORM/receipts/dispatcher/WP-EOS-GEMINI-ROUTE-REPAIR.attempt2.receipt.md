@@ -1,0 +1,38 @@
+# Receipt WP-EOS-GEMINI-ROUTE-REPAIR
+
+| Field | Value |
+|---|---|
+| type | CODE_IMPLEMENTATION |
+| worker | claude |
+| state | REVIEW |
+| ok | True |
+| needs_review | True |
+| started_at | 2026-10-08T10:45:25.122970+00:00 |
+| finished_at | 2026-10-08T10:46:42.441673+00:00 |
+| elapsed_seconds | 77.31633636300103 |
+| package_sha256 | a73f51f9333e373b9fa84e8611fa166ddc2f3c2ad210516396c56192608e5b62 |
+| output_sha256 | 20258e78b215f64d360c3cb0f560ff9c947a48a48f1c6fe248c8dd137342337b |
+| response_file | WP-EOS-GEMINI-ROUTE-REPAIR.attempt2.response.txt |
+
+## Objective
+Repair Gemini audit transport, diagnostics and verification access
+
+## Response
+```text
+Both failing tests now pass. The full dispatcher suite, run with the exact venv command, gives 192 passed and 0 failed (it was 188 passed, 2 failed). The 4 extra tests are the 2 new regressions plus 2 other tests not previously counted in the 190. I did not call Gemini, any model or the real dispatcher, and I touched no other scopes.
+
+**Production fix (`engineering_dispatcher/workers/gemini_worker.py`):**
+- **No raw JSON in `stdout_tail`:** it is now rebuilt from parsed events with thought fields removed at every nesting level, including `thought`, `thoughts`, `thinking` and `reasoning`. Credential-named fields such as `token`, `auth` and `authorization` are masked, and the remaining string values are redacted.
+- **Malformed or truncated lines:** these are dropped and replaced by `[UNPARSEABLE LINE OMITTED len=N]`, so a cut-off line holding a thought or auth field can't leak.
+- **Final assistant text and failures:** the final assistant text is unchanged. The typed failures are unchanged, so no partial verdict is accepted.
+
+**Test changes (`engineering_dispatcher/tests/test_workers.py`):**
+- **`test_gemini_is_a_read_only_workspace_worker`:** it mocks `Path.home` to an empty directory, so a real `~/.gemini` can't add a bind. I replaced `argv.count("--bind") == 2` with an exact check that the writable binds are only the state directory and the scratch directory, plus a single read-only `--ro-bind / /`.
+- **`test_gemini_structured_success_requires_final_result`:** unchanged; it passes because of the production fix.
+- **New regressions:** nested thought and auth fields, and timeout partial output with a truncated thought line.
+
+`IMPLEMENTATION_RECEIPT.md`, `testlog.txt` and the SHA-256 manifest are in `reports/dispatcher/WP-EOS-GEMINI-ROUTE-REPAIR/`. The original `before/` snapshot is untouched. `before_attempt2/` holds the two files as they were before this attempt's edits.
+
+Stopping here as instructed.
+
+```

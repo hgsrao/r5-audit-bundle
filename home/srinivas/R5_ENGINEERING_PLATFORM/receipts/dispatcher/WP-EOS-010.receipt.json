@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 96.1880681549992,
+  "error": null,
+  "finished_at": "2026-10-07T07:58:01.021397+00:00",
+  "needs_review": false,
+  "objective": "Independent Qualification Campaign Audit",
+  "ok": true,
+  "output_sha256": "a5a0b0a6c572866bc82acb1f6bc20285b3c270429d4d46fb981e978ddad17e25",
+  "package_id": "WP-EOS-010",
+  "package_sha256": "7abefd63610dc1d3d235d876f4c7dc5b9b1fdabb02b598712e6ef134ef62842f",
+  "response_file": "WP-EOS-010.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:56:24.831021+00:00",
+  "state": "DONE",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

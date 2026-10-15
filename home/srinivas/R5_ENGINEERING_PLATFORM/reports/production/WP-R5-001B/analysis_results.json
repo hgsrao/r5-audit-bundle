@@ -1,0 +1,1205 @@
+{
+ "integrity": {
+  "raw/kite_instruments_NSE.csv": {
+   "sha256": "536809820e9d0114d9ef42c2756bb2e44044474471007887a841e36b3696401f",
+   "size": 686374,
+   "sha_match": true,
+   "size_match": true
+  },
+  "raw/NSE_CM_security_06102026.csv.gz": {
+   "sha256": "0a9022e4e93f3be91df3196d0127d2d79031795f21e180f4b3b89fb39e99c803",
+   "size": 1259539,
+   "sha_match": true,
+   "size_match": true
+  }
+ },
+ "kite_rows": 10324,
+ "nse_rows": 38010,
+ "kite_segment_type": {
+  "INDICES|EQ": 136,
+  "NSE|EQ": 10188
+ },
+ "kite_nse_equity": 10188,
+ "nse_series_top": [
+  [
+   "SG",
+   4527
+  ],
+  [
+   "EQ",
+   4474
+  ],
+  [
+   "BL",
+   3600
+  ],
+  [
+   "RL",
+   3474
+  ],
+  [
+   "BE",
+   3366
+  ],
+  [
+   "IQ",
+   3099
+  ],
+  [
+   "MF",
+   2910
+  ],
+  [
+   "N0",
+   1108
+  ]
+ ],
+ "nse_eq_rows": 4474,
+ "nse_tickSz_nonempty_EQ": 0,
+ "universe": [
+  "ADANIENT",
+  "ADANIPORTS",
+  "APOLLOHOSP",
+  "ASIANPAINT",
+  "AXISBANK",
+  "BAJAJ-AUTO",
+  "BAJAJFINSV",
+  "BAJFINANCE",
+  "BEL",
+  "BHARTIARTL",
+  "CIPLA",
+  "COALINDIA",
+  "DRREDDY",
+  "EICHERMOT",
+  "ETERNAL",
+  "GRASIM",
+  "HCLTECH",
+  "HDFCBANK",
+  "HDFCLIFE",
+  "HINDALCO",
+  "HINDUNILVR",
+  "ICICIBANK",
+  "INDIGO",
+  "INFY",
+  "ITC",
+  "JIOFIN",
+  "JSWSTEEL",
+  "KOTAKBANK",
+  "LT",
+  "M&M",
+  "MARUTI",
+  "MAXHEALTH",
+  "NTPC",
+  "ONGC",
+  "POWERGRID",
+  "RELIANCE",
+  "SBILIFE",
+  "SBIN",
+  "SHRIRAMFIN",
+  "SUNPHARMA",
+  "TATACONSUM",
+  "TATASTEEL",
+  "TCS",
+  "TECHM",
+  "TITAN",
+  "TRENT",
+  "ULTRACEMCO",
+  "WIPRO"
+ ],
+ "coverage": {
+  "kite_covered": [
+   "ADANIENT",
+   "ADANIPORTS",
+   "APOLLOHOSP",
+   "ASIANPAINT",
+   "AXISBANK",
+   "BAJAJ-AUTO",
+   "BAJAJFINSV",
+   "BAJFINANCE",
+   "BEL",
+   "BHARTIARTL",
+   "CIPLA",
+   "COALINDIA",
+   "DRREDDY",
+   "EICHERMOT",
+   "ETERNAL",
+   "GRASIM",
+   "HCLTECH",
+   "HDFCBANK",
+   "HDFCLIFE",
+   "HINDALCO",
+   "HINDUNILVR",
+   "ICICIBANK",
+   "INDIGO",
+   "INFY",
+   "ITC",
+   "JIOFIN",
+   "JSWSTEEL",
+   "KOTAKBANK",
+   "LT",
+   "M&M",
+   "MARUTI",
+   "MAXHEALTH",
+   "NTPC",
+   "ONGC",
+   "POWERGRID",
+   "RELIANCE",
+   "SBILIFE",
+   "SBIN",
+   "SHRIRAMFIN",
+   "SUNPHARMA",
+   "TATACONSUM",
+   "TATASTEEL",
+   "TCS",
+   "TECHM",
+   "TITAN",
+   "TRENT",
+   "ULTRACEMCO",
+   "WIPRO"
+  ],
+  "kite_missing": [],
+  "kite_dup": [],
+  "kite_nonEQ_only": [],
+  "nse_covered": [
+   "ADANIENT",
+   "ADANIPORTS",
+   "APOLLOHOSP",
+   "ASIANPAINT",
+   "AXISBANK",
+   "BAJAJ-AUTO",
+   "BAJAJFINSV",
+   "BAJFINANCE",
+   "BEL",
+   "BHARTIARTL",
+   "CIPLA",
+   "COALINDIA",
+   "DRREDDY",
+   "EICHERMOT",
+   "ETERNAL",
+   "GRASIM",
+   "HCLTECH",
+   "HDFCBANK",
+   "HDFCLIFE",
+   "HINDALCO",
+   "HINDUNILVR",
+   "ICICIBANK",
+   "INDIGO",
+   "INFY",
+   "ITC",
+   "JIOFIN",
+   "JSWSTEEL",
+   "KOTAKBANK",
+   "LT",
+   "M&M",
+   "MARUTI",
+   "MAXHEALTH",
+   "NTPC",
+   "ONGC",
+   "POWERGRID",
+   "RELIANCE",
+   "SBILIFE",
+   "SBIN",
+   "SHRIRAMFIN",
+   "SUNPHARMA",
+   "TATACONSUM",
+   "TATASTEEL",
+   "TCS",
+   "TECHM",
+   "TITAN",
+   "TRENT",
+   "ULTRACEMCO",
+   "WIPRO"
+  ],
+  "nse_missing": [],
+  "nse_dup": [],
+  "nse_nonEQ_only": []
+ },
+ "other_series_rows_for_48": {
+  "ADANIENT": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "L1",
+   "R1",
+   "RL",
+   "T0",
+   "TL",
+   "V1"
+  ],
+  "ADANIPORTS": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "APOLLOHOSP": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "ASIANPAINT": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "AXISBANK": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "L1",
+   "R1",
+   "RL",
+   "T0",
+   "TL",
+   "V1"
+  ],
+  "BAJAJ-AUTO": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "BAJAJFINSV": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "BAJFINANCE": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "BEL": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "BHARTIARTL": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "CIPLA": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "L1",
+   "R1",
+   "RL",
+   "T0",
+   "TL",
+   "V1"
+  ],
+  "COALINDIA": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "DRREDDY": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "EICHERMOT": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "ETERNAL": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "GRASIM": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "HCLTECH": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "L1",
+   "L2",
+   "R1",
+   "R2",
+   "RL",
+   "T0",
+   "TL",
+   "V1",
+   "V2"
+  ],
+  "HDFCBANK": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "K3",
+   "RL",
+   "T0",
+   "TL",
+   "W3"
+  ],
+  "HDFCLIFE": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "HINDALCO": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "HINDUNILVR": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "ICICIBANK": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "INDIGO": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "INFY": [
+   "AF",
+   "BB",
+   "BE",
+   "BL",
+   "IQ",
+   "L2",
+   "R2",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "ITC": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "JIOFIN": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "JSWSTEEL": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "KOTAKBANK": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "LT": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "M&M": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "MARUTI": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "MAXHEALTH": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "NTPC": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "N1",
+   "N4",
+   "RL",
+   "T0",
+   "TL",
+   "U1",
+   "U4"
+  ],
+  "ONGC": [
+   "AF",
+   "BB",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "POWERGRID": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "RELIANCE": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "SBILIFE": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "SBIN": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "N2",
+   "N3",
+   "N4",
+   "N5",
+   "N6",
+   "RL",
+   "T0",
+   "TL",
+   "U2",
+   "U3",
+   "U4",
+   "U5",
+   "U6"
+  ],
+  "SHRIRAMFIN": [
+   "12",
+   "13",
+   "17",
+   "1A",
+   "1D",
+   "1G",
+   "1J",
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "MH",
+   "MK",
+   "MN",
+   "MO",
+   "MR",
+   "MU",
+   "MV",
+   "MY",
+   "RL",
+   "T0",
+   "TL",
+   "YH",
+   "YK",
+   "YN",
+   "YO",
+   "YR",
+   "YU",
+   "YV",
+   "YY",
+   "Z2",
+   "Z3",
+   "Z7",
+   "ZA",
+   "ZD",
+   "ZG",
+   "ZJ"
+  ],
+  "SUNPHARMA": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "TATACONSUM": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "TATASTEEL": [
+   "AF",
+   "B1",
+   "BE",
+   "BL",
+   "E1",
+   "I1",
+   "IQ",
+   "RL",
+   "T0",
+   "T1",
+   "TL",
+   "X1"
+  ],
+  "TCS": [
+   "AF",
+   "BB",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "TECHM": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "TITAN": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "TRENT": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "ULTRACEMCO": [
+   "AF",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ],
+  "WIPRO": [
+   "AF",
+   "BB",
+   "BE",
+   "BL",
+   "IQ",
+   "RL",
+   "T0",
+   "TL"
+  ]
+ },
+ "tick_disagreements_or_lot": [],
+ "agree_tick_lot": 48,
+ "distinct_ticks_48": {
+  "0.10": 23,
+  "0.50": 2,
+  "1.00": 3,
+  "0.05": 16,
+  "0.01": 4
+ },
+ "distinct_lots_48": {
+  "1": 48
+ },
+ "extra_checks_48": {
+  "exchange_token_vs_FinInstrmId": 48,
+  "token_formula": 48,
+  "name_diff": [
+   [
+    "ADANIENT",
+    "ADANI ENTERPRISES",
+    "ADANI ENTERPRISES LIMITED"
+   ],
+   [
+    "ADANIPORTS",
+    "ADANI PORT & SEZ",
+    "ADANI PORT & SEZ LTD"
+   ],
+   [
+    "ASIANPAINT",
+    "ASIAN PAINTS",
+    "ASIAN PAINTS LIMITED"
+   ],
+   [
+    "AXISBANK",
+    "AXIS BANK",
+    "AXIS BANK LIMITED"
+   ],
+   [
+    "BAJAJ-AUTO",
+    "BAJAJ AUTO",
+    "BAJAJ AUTO LIMITED"
+   ],
+   [
+    "BAJAJFINSV",
+    "BAJAJ FINSERV",
+    "BAJAJ FINSERV LTD."
+   ],
+   [
+    "BAJFINANCE",
+    "BAJAJ FINANCE",
+    "BAJAJ FINANCE LIMITED"
+   ],
+   [
+    "BEL",
+    "BHARAT ELECTRONICS",
+    "BHARAT ELECTRONICS LTD"
+   ],
+   [
+    "BHARTIARTL",
+    "BHARTI AIRTEL",
+    "BHARTI AIRTEL LIMITED"
+   ],
+   [
+    "CIPLA",
+    "CIPLA",
+    "CIPLA LTD"
+   ],
+   [
+    "COALINDIA",
+    "COAL INDIA",
+    "COAL INDIA LTD"
+   ],
+   [
+    "EICHERMOT",
+    "EICHER MOTORS",
+    "EICHER MOTORS LTD"
+   ],
+   [
+    "ETERNAL",
+    "ETERNAL - ZOMATO",
+    "ETERNAL LIMITED"
+   ],
+   [
+    "GRASIM",
+    "GRASIM INDUSTRIES",
+    "GRASIM INDUSTRIES LTD"
+   ],
+   [
+    "HCLTECH",
+    "HCL TECHNOLOGIES",
+    "HCL TECHNOLOGIES LTD"
+   ],
+   [
+    "HDFCBANK",
+    "HDFC BANK",
+    "HDFC BANK LTD"
+   ],
+   [
+    "HDFCLIFE",
+    "HDFC LIFE INS CO",
+    "HDFC LIFE INS CO LTD"
+   ],
+   [
+    "HINDALCO",
+    "HINDALCO  INDUSTRIES ",
+    "HINDALCO  INDUSTRIES  LTD"
+   ],
+   [
+    "HINDUNILVR",
+    "HINDUSTAN UNILEVER",
+    "HINDUSTAN UNILEVER LTD."
+   ],
+   [
+    "ICICIBANK",
+    "ICICI BANK",
+    "ICICI BANK LTD."
+   ],
+   [
+    "INDIGO",
+    "INTERGLOBE AVIATION",
+    "INTERGLOBE AVIATION LTD"
+   ],
+   [
+    "INFY",
+    "INFOSYS",
+    "INFOSYS LIMITED"
+   ],
+   [
+    "ITC",
+    "ITC",
+    "ITC LTD"
+   ],
+   [
+    "JIOFIN",
+    "JIO FIN SERVICES",
+    "JIO FIN SERVICES LTD"
+   ],
+   [
+    "JSWSTEEL",
+    "JSW STEEL",
+    "JSW STEEL LIMITED"
+   ],
+   [
+    "KOTAKBANK",
+    "KOTAK MAHINDRA BANK",
+    "KOTAK MAHINDRA BANK LTD"
+   ],
+   [
+    "LT",
+    "LARSEN & TOUBRO",
+    "LARSEN & TOUBRO LTD."
+   ],
+   [
+    "M&M",
+    "MAHINDRA & MAHINDRA",
+    "MAHINDRA & MAHINDRA LTD"
+   ],
+   [
+    "MARUTI",
+    "MARUTI SUZUKI INDIA",
+    "MARUTI SUZUKI INDIA LTD."
+   ],
+   [
+    "MAXHEALTH",
+    "MAX HEALTHCARE INS",
+    "MAX HEALTHCARE INS LTD"
+   ],
+   [
+    "NTPC",
+    "NTPC",
+    "NTPC LTD"
+   ],
+   [
+    "POWERGRID",
+    "POWER GRID CORP.",
+    "POWER GRID CORP. LTD."
+   ],
+   [
+    "RELIANCE",
+    "RELIANCE INDUSTRIES",
+    "RELIANCE INDUSTRIES LTD"
+   ],
+   [
+    "SBILIFE",
+    "SBI LIFE INSURANCE CO",
+    "SBI LIFE INSURANCE CO LTD"
+   ],
+   [
+    "SHRIRAMFIN",
+    "SHRIRAM FINANCE",
+    "SHRIRAM FINANCE LIMITED"
+   ],
+   [
+    "TATACONSUM",
+    "TATA CONSUMER PRODUCT",
+    "TATA CONSUMER PRODUCT LTD"
+   ],
+   [
+    "TATASTEEL",
+    "TATA STEEL",
+    "TATA STEEL LIMITED"
+   ],
+   [
+    "TECHM",
+    "TECH MAHINDRA",
+    "TECH MAHINDRA LIMITED"
+   ],
+   [
+    "TITAN",
+    "TITAN COMPANY",
+    "TITAN COMPANY LIMITED"
+   ],
+   [
+    "TRENT",
+    "TRENT",
+    "TRENT LTD"
+   ],
+   [
+    "ULTRACEMCO",
+    "ULTRATECH CEMENT",
+    "ULTRATECH CEMENT LIMITED"
+   ],
+   [
+    "WIPRO",
+    "WIPRO",
+    "WIPRO LTD"
+   ]
+  ],
+  "band_tick_ok": 48,
+  "delflg": {
+   "N": 48
+  },
+  "status": {
+   "6": 48
+  }
+ },
+ "population_crosscheck_all_EQ": {
+  "unmatched_or_dup": 1441,
+  "matched": 3033,
+  "tick_agree": 3033,
+  "lot_agree": 3033,
+  "band_multiple_of_tick": 3033
+ },
+ "nse_bidintrvl_values_EQ": [
+  [
+   "1",
+   2886
+  ],
+  [
+   "5",
+   1120
+  ],
+  [
+   "10",
+   397
+  ],
+  [
+   "50",
+   38
+  ],
+  [
+   "100",
+   22
+  ],
+  [
+   "500",
+   11
+  ]
+ ],
+ "nse_UpdDt_max_1980epoch": "2026-10-06T18:13:43",
+ "nse_UpdDt_max_if_unix_epoch": "2016-10-06T18:13:43",
+ "not_listed_before_TRAIN_start": [
+  [
+   "ADANIENT",
+   ""
+  ],
+  [
+   "BAJFINANCE",
+   ""
+  ],
+  [
+   "BEL",
+   ""
+  ],
+  [
+   "DRREDDY",
+   ""
+  ],
+  [
+   "EICHERMOT",
+   ""
+  ],
+  [
+   "TATACONSUM",
+   ""
+  ],
+  [
+   "TATASTEEL",
+   ""
+  ],
+  [
+   "TITAN",
+   ""
+  ],
+  [
+   "TRENT",
+   ""
+  ]
+ ],
+ "addtl_inf_48": [
+  [
+   "DIV - RS 10 PER SH",
+   4
+  ],
+  [
+   "DIV - RS 6 PER SH",
+   3
+  ],
+  [
+   "DIV - RE 1 PER SH",
+   2
+  ],
+  [
+   "DIV - RS 13 PER SH",
+   2
+  ],
+  [
+   "DIV - RS 8 PER SH",
+   2
+  ],
+  [
+   "INTDIV - RS 12 PER SH",
+   2
+  ],
+  [
+   "DIV - RS 5 PER SH",
+   2
+  ],
+  [
+   "DIV - RS 4 PER SH",
+   2
+  ],
+  [
+   "DIV - RS 1.30 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 7.50 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 23 PER SH",
+   1
+  ],
+  [
+   "BUY BACK",
+   1
+  ],
+  [
+   "DIV - RS 1.50 PER SH",
+   1
+  ],
+  [
+   "DIV - RE 0.55 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 24 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 5.25 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 82 PER SH",
+   1
+  ],
+  [
+   "SYMBOL CHANGE",
+   1
+  ],
+  [
+   "DIV - RS 2.10 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 22 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 12 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 25 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 0.60 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 7.10 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 0.65 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 38 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 33 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 140 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 2 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 3.50 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 1.25 PER SH",
+   1
+  ],
+  [
+   "INTDIV - RS 2.70 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 17.35 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 36 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 15 PER SH",
+   1
+  ],
+  [
+   "DIV - RS 240 PER SH",
+   1
+  ],
+  [
+   "INTDIV - RS 2 PER SH",
+   1
+  ]
+ ],
+ "listing_range_48": [
+  "",
+  "2023-08-21"
+ ],
+ "latest_listing_48": [
+  [
+   "2017-11-17",
+   "HDFCLIFE"
+  ],
+  [
+   "2020-08-21",
+   "MAXHEALTH"
+  ],
+  [
+   "2021-07-23",
+   "ETERNAL"
+  ],
+  [
+   "2023-08-21",
+   "JIOFIN"
+  ]
+ ],
+ "rcrd_or_spclex_in_train_window": [],
+ "kite_dump_has_listing_or_status_fields": []
+}

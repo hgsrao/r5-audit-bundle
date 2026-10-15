@@ -1,0 +1,24 @@
+{
+  "PAPER_APPLY": {
+    "fills": 26,
+    "completed_trades": 26,
+    "net_pnl": -2310.5335251683646,
+    "safety_violations": 0,
+    "plant_control": {
+      "mode": "PAPER_APPLY",
+      "applied": true,
+      "plant_protection_connected": true,
+      "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+      "evaluations": 739,
+      "paper_admission_evaluations": 2144,
+      "paper_admission_rejections": 1757,
+      "paper_admission_caps": 195,
+      "grid_state_counts": {
+        "SYNCHRONIZED": 707,
+        "ISLANDED_SAFE": 32
+      },
+      "transitions": 160,
+      "observer_failures": 0
+    }
+  }
+}

@@ -1,0 +1,50 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- /home/srinivas/.venvs/zerodha-phase1-r5/bin/python
+rootdir: /home/srinivas/R5_ENGINEERING_PLATFORM
+plugins: timeout-2.4.0, typeguard-4.6.0, socket-0.8.1
+collecting ... collected 41 items
+
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_environment_supported PASSED [  2%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_launch_ok_and_interpreter_is_the_permitted_venv PASSED [  4%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_allowed_fixture_reads_work_through_every_api PASSED [  7%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_outside_reads_denied_for_every_api_and_descendant PASSED [  9%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_negative_control_host_probe_reads_canary_and_reaches_listener PASSED [ 12%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_network_denied_including_child_processes PASSED [ 14%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_output_writes_allowed_and_visible_on_host PASSED [ 17%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_source_and_input_writes_denied_and_sources_unchanged PASSED [ 19%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_privilege_escalation_primitives_denied PASSED [ 21%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_no_parent_or_secret_paths_visible PASSED [ 24%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_namespaces_fds_and_process_view PASSED [ 26%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_runtime_and_input_mounts_are_narrow PASSED [ 29%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/] PASSED [ 31%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home] PASSED [ 34%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home/srinivas] PASSED [ 36%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/usr] PASSED [ 39%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/etc] PASSED [ 41%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home/srinivas/projects] PASSED [ 43%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home/srinivas/R5_ENGINEERING_PLATFORM] PASSED [ 46%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home/srinivas/R5_ENGINEERING_PLATFORM/work] PASSED [ 48%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_broad_ro_bind[/home/srinivas/projects/zerodha-r5-governor-refactor] PASSED [ 51%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_launch_refuses_broad_argv_before_starting_bwrap PASSED [ 53%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_auditor_refuses_unshared_net_missing_flags_and_writable_binds PASSED [ 56%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_spec_refuses_broad_code_input_or_output_roots PASSED [ 58%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_wrong_code_pin_refused_before_launch PASSED [ 60%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_wrong_input_pin_refused_before_launch PASSED [ 63%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_wrong_pins_caught_inside_the_sandbox_when_host_precheck_is_bypassed PASSED [ 65%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_forged_witness_rejected_by_bootstrap_and_target_never_runs PASSED [ 68%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_missing_witness_handshake_fails_closed PASSED [ 70%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_bootstrap_failure_when_environment_cannot_build_a_sandbox PASSED [ 73%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_sandbox_setup_failure_is_reported_not_trusted PASSED [ 75%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_child_status_handling[ok-OK-0] PASSED [ 78%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_child_status_handling[fail:3-TARGET_FAILED-3] PASSED [ 80%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_child_status_handling[raise-TARGET_FAILED-1] PASSED [ 82%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_child_status_handling[kill-TARGET_SIGNALED-137] PASSED [ 85%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_timeout_kills_the_whole_sandbox PASSED [ 87%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_harness_gate_sees_live_boundary_but_real_release_stays_closed PASSED [ 90%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_harness_gate_refuses_outside_any_launch PASSED [ 92%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_authorization_json_cannot_open_the_gate PASSED [ 95%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_real_code_roots_pinned_and_mounted_read_only PASSED [ 97%]
+../../../../work/wp004_train_harness/harness_tests/test_os_isolation.py::test_strace_syscall_log_shows_no_successful_access_outside_the_boundary PASSED [100%]
+
+- generated xml file: /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/os_isolation/TEST_LOG_os_isolation_junit.xml -
+============================= 41 passed in 11.27s ==============================

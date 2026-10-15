@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/test_poison_beyond_boundary_do0/dirty/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "771a09315f8ce147a663b1e8f490072e68772f1421e61d903e80bacd9e6c9894",
+      "size_bytes": 15350,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "bfefc6a5f54a9f8fbe62188977f7794132d2c25484fb935d62df97cdf489e6cb",
+      "size_bytes": 15610,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "e4bad7a212a48e6ec68152d27eec5fa32d84a435f9393f90b453abd8d460202c",
+  "symbol_count": 2
+}

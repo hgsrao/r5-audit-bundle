@@ -1,0 +1,672 @@
+{
+  "artifact_opens": [
+    "stock_AAA.csv",
+    "stock_BBB.csv",
+    "grid_INDIA_VIX_15MIN.csv",
+    "grid_NIFTY_50_15MIN.csv"
+  ],
+  "authorization": {
+    "artifacts": [
+      {
+        "alias": "grid_INDIA_VIX_15MIN.csv",
+        "first_timestamp": "2023-11-22T09:15:00+05:30",
+        "last_timestamp": "2023-12-19T15:30:00+05:30",
+        "name": "INDIA_VIX_15MIN",
+        "pretrain_rows": 0,
+        "provenance_id": "SYNTHETIC-PROVENANCE-grid_INDIA_VIX_15MIN.csv",
+        "role": "grid",
+        "row_count": 520,
+        "sha256": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+        "size_bytes": 16652
+      },
+      {
+        "alias": "grid_NIFTY_50_15MIN.csv",
+        "first_timestamp": "2023-11-22T09:15:00+05:30",
+        "last_timestamp": "2023-12-19T15:30:00+05:30",
+        "name": "NIFTY_50_15MIN",
+        "pretrain_rows": 0,
+        "provenance_id": "SYNTHETIC-PROVENANCE-grid_NIFTY_50_15MIN.csv",
+        "role": "grid",
+        "row_count": 520,
+        "sha256": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+        "size_bytes": 16657
+      },
+      {
+        "alias": "stock_AAA.csv",
+        "first_timestamp": "2023-11-29T09:15:00+05:30",
+        "last_timestamp": "2023-12-05T09:54:00+05:30",
+        "name": "AAA",
+        "pretrain_rows": 0,
+        "provenance_id": "SYNTHETIC-PROVENANCE-stock_AAA.csv",
+        "role": "stock",
+        "row_count": 200,
+        "sha256": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f",
+        "size_bytes": 11641
+      },
+      {
+        "alias": "stock_BBB.csv",
+        "first_timestamp": "2023-11-29T09:15:00+05:30",
+        "last_timestamp": "2023-12-05T09:54:00+05:30",
+        "name": "BBB",
+        "pretrain_rows": 0,
+        "provenance_id": "SYNTHETIC-PROVENANCE-stock_BBB.csv",
+        "role": "stock",
+        "row_count": 200,
+        "sha256": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f",
+        "size_bytes": 11647
+      }
+    ],
+    "authorization_sha256": "b3cbac570c07821440c099bc9e8be62930ec26fd807badfbdb71e59a61b897b3",
+    "classification": "SYNTHETIC_INTEGRATION_ONLY",
+    "commitment_scope": "CURRENT_ACQUISITION_IDENTITY_NOT_HISTORICAL_SEALED_MEMBERSHIP",
+    "data_origin": "SYNTHETIC",
+    "execution_id": "SYNTHETIC-EXEC-001",
+    "execution_package_id": "WP-R5-004-ISOLATED-INTEGRATION-SYNTH",
+    "output": {
+      "output_dir": "/out/run",
+      "output_root": "/out"
+    },
+    "pins": {
+      "contract_sha256": "e0c7d28877cf2ae1199fd7426b58406441e3ece0c6416fee3eb795bc684101af",
+      "grid_manifest_sha256": "3aefac9d8ba5b9425f0c29189bb9edfb52def88d94e6cfdc7a508bcbdadc6226",
+      "harness_tree_sha256": "92614c6064182d73a67535f6fdd9c0dd355c62350affce3443983f46af94af2e",
+      "os_isolation_profile": "WP004_OS_ISOLATION_V1",
+      "params_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "protocol_sha256": "fb80fd4aff47bab09d360fa7fa1794c40b0debe7ca28c0c6562ca5c782c7f0c1",
+      "snapshot_head": "59371ff06d17b49d917a81aed294c2e254c97574",
+      "snapshot_manifest_sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+      "snapshot_tree_sha256": "b9b6027bb12754a20d6a59b57bd555a5b606443d5a53bb2de8e18cb73c8d0f2c",
+      "stock_manifest_sha256": "396950a85e548b27c926a101ac2dc78af5c0974b1ad6bd07d8b845d021a8f7e4"
+    },
+    "pretrain_policy": "REJECT",
+    "provenance": {
+      "approval_id": "SYNTHETIC-APPROVAL-1",
+      "approval_record_sha256": "e83c38877ba8f9d810c24412a0541807e77bb9360ad0e7e7eef30b0440a43bd2",
+      "derivation_id": "SYNTHETIC-DERIVATION-1",
+      "issuer": "SYNTHETIC_FIXTURE_ISSUER"
+    },
+    "schema": "WP004_CURATED_ARTIFACT_AUTHORIZATION_V1",
+    "terminal_bar_policy": "LAST_TRAIN_ROW_IS_ENGINE_TERMINAL_BAR_NEVER_A_CLOCK_EVENT",
+    "train": {
+      "train_end_exclusive": "2025-07-01",
+      "train_start": "2023-09-01"
+    }
+  },
+  "block_fingerprint": "280bc01c3736258519d662d07657585ed107369a521b6349838aeab1b1992fa7",
+  "claims": "none: integration mechanics only; no performance, sealed-membership or candidate claim",
+  "classification": "SYNTHETIC_INTEGRATION_ONLY",
+  "data_origin": "SYNTHETIC",
+  "dependencies": {
+    "numpy": {
+      "origin": "/home/srinivas/.venvs/zerodha-phase1-r5/lib/python3.12/site-packages/numpy/__init__.py",
+      "version": "2.5.2"
+    },
+    "pandas": {
+      "origin": "/home/srinivas/.venvs/zerodha-phase1-r5/lib/python3.12/site-packages/pandas/__init__.py",
+      "version": "2.3.3"
+    },
+    "scipy": {
+      "origin": "/home/srinivas/.venvs/zerodha-phase1-r5/lib/python3.12/site-packages/scipy/__init__.py",
+      "version": "1.18.1"
+    },
+    "sklearn": null,
+    "talib": {
+      "origin": "/home/srinivas/.venvs/zerodha-phase1-r5/lib/python3.12/site-packages/talib/__init__.py",
+      "version": "0.7.1"
+    }
+  },
+  "environment": {
+    "distribution_count": 77,
+    "distributions_sha256": "dd06822c58df605841399357127b2344e3ccc9913330d8666a42b20fc4836601",
+    "executable": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+    "harness_source_sha256": "97e711848659594c50df416cef352f08768d5b3307947c796a99d2b697a47263",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]"
+  },
+  "execution_id": "SYNTHETIC-EXEC-001",
+  "frame_fingerprints": {
+    "feeds": {
+      "INDIA_VIX_15MIN": "48fbaddc89a609d5fa4b3f62d5e516f6ca947884c9aeb476c6930e267d86368f",
+      "NIFTY_50_15MIN": "48fbaddc89a609d5fa4b3f62d5e516f6ca947884c9aeb476c6930e267d86368f"
+    },
+    "frames": {
+      "AAA": "95d68b372b7faebed6b9c321227ba50a7ee7edfecaec5670220aca6451da8f9a",
+      "BBB": "70db03c7c71f63c63d6e72096d606079da6fe28c825f949be74828c32b2b2c8e"
+    }
+  },
+  "imported_sources": {
+    "count": 65,
+    "imported_snapshot_sources": [
+      "calibration_config.py",
+      "canonical_parameter_registry.py",
+      "gates_framework.py",
+      "revision2/__init__.py",
+      "revision2/boxes.py",
+      "revision2/contracts.py",
+      "revision2/portfolio_orchestrator.py",
+      "revision2/transaction_costs.py",
+      "revision2_external/__init__.py",
+      "revision2_external/bb05_bb06_parameters.py",
+      "revision2_external/broker_adapter_kite.py",
+      "revision2_external/closed_loop_control.py",
+      "revision2_external/composite_study_signal.py",
+      "revision2_external/continuous_exit_controller.py",
+      "revision2_external/data_certification_pandera.py",
+      "revision2_external/dynamic_parameter_controller.py",
+      "revision2_external/dynamic_target_setpoint.py",
+      "revision2_external/entry_candidate_observations.py",
+      "revision2_external/entry_expectancy_evidence.py",
+      "revision2_external/final_execution_controller.py",
+      "revision2_external/grid_context.py",
+      "revision2_external/indicators_talib.py",
+      "revision2_external/instrument_metadata.py",
+      "revision2_external/orchestrator.py",
+      "revision2_external/paper_execution.py",
+      "revision2_external/pid_controller.py",
+      "revision2_external/position_sizing_pyportfolioopt.py",
+      "revision2_external/protection_policy.py",
+      "revision2_external/regime_hmm.py",
+      "revision2_external/regime_id_box.py",
+      "revision2_external/startup_validation.py",
+      "revision3/__init__.py",
+      "revision3/integration_supervisor.py",
+      "revision3/macro_grid_synchronizer.py",
+      "revision5/__init__.py",
+      "revision5/bay_feasibility.py",
+      "revision5/ccpp_protection_cubicles.py",
+      "revision5/ccpp_unified_plant.py",
+      "revision5/combined_cycle_runtime.py",
+      "revision5/combined_cycle_store.py",
+      "revision5/dynamic_parameters.py",
+      "revision5/electrical_network.py",
+      "revision5/engine_b_management.py",
+      "revision5/engine_state.py",
+      "revision5/fleet_loading_controller.py",
+      "revision5/governor.py",
+      "revision5/governor_authority.py",
+      "revision5/governor_position_policy.py",
+      "revision5/handoff_manager.py",
+      "revision5/hrsg.py",
+      "revision5/machine_archetypes.py",
+      "revision5/machine_dynamics.py",
+      "revision5/paper_state_journal.py",
+      "revision5/parameter_trace.py",
+      "revision5/plant_control.py",
+      "revision5/position_lifecycle.py",
+      "revision5/protection_snapshot.py",
+      "revision5/risk_governance.py",
+      "revision5/state_recovery.py",
+      "revision5/supervisory_bridge.py",
+      "revision5/topology.py",
+      "runtime/__init__.py",
+      "runtime/operating_mode.py",
+      "scripts/diagnostics/r5_block1_acceptance.py",
+      "scripts/run_r5_step5_candidate.py"
+    ]
+  },
+  "os_isolation_witness": {
+    "argv_sha256": "983a45a60add063d63e35458c4f46b1bdee0a9438617558cee975cc4feb59abe",
+    "bootstrap_exe": "/code/harness/os_isolation_bootstrap.py",
+    "bootstrap_verified_live": true,
+    "bwrap_child_pid": 205067,
+    "bwrap_info": {
+      "cgroup-namespace": 4026533533,
+      "child-pid": 205067,
+      "ipc-namespace": 4026533418,
+      "mnt-namespace": 4026533411,
+      "net-namespace": 4026533534,
+      "pid-namespace": 4026533532,
+      "uts-namespace": 4026533417
+    },
+    "child_ns": {
+      "cgroup": "cgroup:[4026533533]",
+      "ipc": "ipc:[4026533418]",
+      "mnt": "mnt:[4026533411]",
+      "net": "net:[4026533534]",
+      "pid": "pid:[4026533532]",
+      "user": "user:[4026533586]",
+      "uts": "uts:[4026533417]"
+    },
+    "code_pins": {
+      "harness": "92614c6064182d73a67535f6fdd9c0dd355c62350affce3443983f46af94af2e",
+      "snapshot": "b9b6027bb12754a20d6a59b57bd555a5b606443d5a53bb2de8e18cb73c8d0f2c"
+    },
+    "host_ns": {
+      "cgroup": "cgroup:[4026531835]",
+      "ipc": "ipc:[4026531839]",
+      "mnt": "mnt:[4026531832]",
+      "net": "net:[4026531833]",
+      "pid": "pid:[4026531836]",
+      "user": "user:[4026531837]",
+      "uts": "uts:[4026531838]"
+    },
+    "host_proc_view_available": true,
+    "inputs": {
+      "authorization.json": {
+        "approval_id": "METADATA-PIN:authorization.json",
+        "sha256": "b3cbac570c07821440c099bc9e8be62930ec26fd807badfbdb71e59a61b897b3"
+      },
+      "contract.md": {
+        "approval_id": "METADATA-PIN:contract.md",
+        "sha256": "e0c7d28877cf2ae1199fd7426b58406441e3ece0c6416fee3eb795bc684101af"
+      },
+      "grid_INDIA_VIX_15MIN.csv": {
+        "approval_id": "SYNTHETIC-APPROVAL-1",
+        "sha256": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e"
+      },
+      "grid_NIFTY_50_15MIN.csv": {
+        "approval_id": "SYNTHETIC-APPROVAL-1",
+        "sha256": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508"
+      },
+      "grid_manifest.json": {
+        "approval_id": "METADATA-PIN:grid_manifest.json",
+        "sha256": "3aefac9d8ba5b9425f0c29189bb9edfb52def88d94e6cfdc7a508bcbdadc6226"
+      },
+      "params.json": {
+        "approval_id": "METADATA-PIN:params.json",
+        "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "protocol.json": {
+        "approval_id": "METADATA-PIN:protocol.json",
+        "sha256": "fb80fd4aff47bab09d360fa7fa1794c40b0debe7ca28c0c6562ca5c782c7f0c1"
+      },
+      "release_record.json": {
+        "approval_id": "METADATA-PIN:release_record.json",
+        "sha256": "cc900cfbf805334104e0958d5813a05122469bfd58ce47b233b1cc3c2665d89a"
+      },
+      "snapshot_manifest.json": {
+        "approval_id": "METADATA-PIN:snapshot_manifest.json",
+        "sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0"
+      },
+      "stock_AAA.csv": {
+        "approval_id": "SYNTHETIC-APPROVAL-1",
+        "sha256": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f"
+      },
+      "stock_BBB.csv": {
+        "approval_id": "SYNTHETIC-APPROVAL-1",
+        "sha256": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f"
+      },
+      "stock_manifest.json": {
+        "approval_id": "METADATA-PIN:stock_manifest.json",
+        "sha256": "396950a85e548b27c926a101ac2dc78af5c0974b1ad6bd07d8b845d021a8f7e4"
+      }
+    },
+    "launcher_pid": 202902,
+    "mount_points": [
+      "/",
+      "/code/harness",
+      "/code/snapshot",
+      "/dev",
+      "/dev/console",
+      "/dev/full",
+      "/dev/mqueue",
+      "/dev/null",
+      "/dev/pts",
+      "/dev/random",
+      "/dev/shm",
+      "/dev/tty",
+      "/dev/urandom",
+      "/dev/zero",
+      "/home/srinivas/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu",
+      "/home/srinivas/.venvs/zerodha-phase1-r5",
+      "/in/authorization.json",
+      "/in/contract.md",
+      "/in/grid_INDIA_VIX_15MIN.csv",
+      "/in/grid_NIFTY_50_15MIN.csv",
+      "/in/grid_manifest.json",
+      "/in/params.json",
+      "/in/protocol.json",
+      "/in/release_record.json",
+      "/in/snapshot_manifest.json",
+      "/in/stock_AAA.csv",
+      "/in/stock_BBB.csv",
+      "/in/stock_manifest.json",
+      "/out",
+      "/proc",
+      "/scratch",
+      "/tmp",
+      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0",
+      "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+      "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+      "/usr/lib/x86_64-linux-gnu/libresolv.so.2",
+      "/usr/lib/x86_64-linux-gnu/librt.so.1",
+      "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35",
+      "/usr/lib/x86_64-linux-gnu/libutil.so.1",
+      "/usr/lib/x86_64-linux-gnu/libz.so.1.3.1"
+    ],
+    "network": "unshared (no interfaces)",
+    "nonce": "d4f5fa9b10c19d49c723bbe897ab0b55",
+    "post_run_fd_note": "process-owned epoll/pipe from the snapshot broker import (twisted reactor); no file or socket",
+    "post_run_self_created_fds": [
+      "inherited fd 3 -> anon_inode:[eventpoll]",
+      "inherited fd 4 -> pipe:[784236]",
+      "inherited fd 5 -> pipe:[784236]"
+    ],
+    "profile": "WP004_OS_ISOLATION_V1",
+    "reverified_live": true,
+    "root_listing": [
+      "code",
+      "dev",
+      "home",
+      "in",
+      "lib64",
+      "out",
+      "proc",
+      "scratch",
+      "tmp",
+      "usr"
+    ],
+    "runtime_dirs": [
+      "/home/srinivas/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu",
+      "/home/srinivas/.venvs/zerodha-phase1-r5"
+    ],
+    "runtime_lib_files": [
+      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "/usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0",
+      "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+      "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+      "/usr/lib/x86_64-linux-gnu/libresolv.so.2",
+      "/usr/lib/x86_64-linux-gnu/librt.so.1",
+      "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35",
+      "/usr/lib/x86_64-linux-gnu/libutil.so.1",
+      "/usr/lib/x86_64-linux-gnu/libz.so.1.3.1"
+    ],
+    "schema": "WP004_OS_ISOLATION_WITNESS_V1",
+    "verified_code_pins": {
+      "harness": "92614c6064182d73a67535f6fdd9c0dd355c62350affce3443983f46af94af2e",
+      "snapshot": "b9b6027bb12754a20d6a59b57bd555a5b606443d5a53bb2de8e18cb73c8d0f2c"
+    },
+    "verified_input_sha256": {
+      "authorization.json": "b3cbac570c07821440c099bc9e8be62930ec26fd807badfbdb71e59a61b897b3",
+      "contract.md": "e0c7d28877cf2ae1199fd7426b58406441e3ece0c6416fee3eb795bc684101af",
+      "grid_INDIA_VIX_15MIN.csv": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+      "grid_NIFTY_50_15MIN.csv": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+      "grid_manifest.json": "3aefac9d8ba5b9425f0c29189bb9edfb52def88d94e6cfdc7a508bcbdadc6226",
+      "params.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "protocol.json": "fb80fd4aff47bab09d360fa7fa1794c40b0debe7ca28c0c6562ca5c782c7f0c1",
+      "release_record.json": "cc900cfbf805334104e0958d5813a05122469bfd58ce47b233b1cc3c2665d89a",
+      "snapshot_manifest.json": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+      "stock_AAA.csv": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f",
+      "stock_BBB.csv": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f",
+      "stock_manifest.json": "396950a85e548b27c926a101ac2dc78af5c0974b1ad6bd07d8b845d021a8f7e4"
+    }
+  },
+  "output_files": {
+    "acceptance_result.json": {
+      "sha256": "09665c7e7c06553f6f29869c8bb1408ae70b5ed4a9ee4c207e69819647ac8021",
+      "size": 12171
+    },
+    "broker_fill_counts.json": {
+      "sha256": "41d89d87e5d4383da849d6b84c2da484f63ecdd8fc78541d53cfb1212f7d7451",
+      "size": 147
+    },
+    "native_accounting_reconciliation.json": {
+      "sha256": "764e32a15309033858e3d8e21ce7fb3b83878455b82b99290d37b16cc01d1ecd",
+      "size": 1258
+    },
+    "native_report.json": {
+      "sha256": "430bc81d095bacee2e0d6f7f57875b07ad58a2cceedc3051c5271ba5870e622d",
+      "size": 32963
+    },
+    "paper_journal_statistics.json": {
+      "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "size": 5
+    },
+    "passive_rejection_accounting.json": {
+      "sha256": "ce597449633af8afe108d51019d2e5a33c79ade8b1fcdcf08e89bd3d8987e3fd",
+      "size": 3608
+    },
+    "runtime_receipts.json": {
+      "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "size": 5
+    },
+    "runtime_safety_contract.json": {
+      "sha256": "eeeb4da8ddab6d12e65970990ec2f5e2b71bd7212ec090bf54d5458c8f17cf96",
+      "size": 789
+    }
+  },
+  "probes": {
+    "harness_write": "denied:OSError",
+    "host_paths_present": [],
+    "in_write": "denied:OSError",
+    "network": "failed:ConnectionRefusedError",
+    "snapshot_write": "denied:OSError"
+  },
+  "python_tripwire_limits": "in-process Python patches only; the kernel boundary is the IO guarantee",
+  "read_accounting": {
+    "files": 4,
+    "full_file_hash_calls": 0,
+    "hash_scope": "sha256 over the whole approved artifact (every byte consumed to EOF) == pinned artifact sha256; current-acquisition identity, not historical sealed membership",
+    "loader": "WP004_CURATED_EOF_LOADER_V1",
+    "total_consumed_bytes": 56597,
+    "total_file_size_bytes_metadata": 56597,
+    "total_physical_bytes_read": 56597
+  },
+  "read_files": [
+    {
+      "alias": "stock_AAA.csv",
+      "chunk_size": 4096,
+      "consumed_bytes": 11641,
+      "consumed_prefix_sha256": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f",
+      "content_commitment_verified": true,
+      "lines_consumed": 201,
+      "max_physical_bytes": 11642,
+      "overread_bytes": 0,
+      "path": "/in/stock_AAA.csv",
+      "physical_bytes_read": 11641,
+      "planned_bytes": null,
+      "provenance_id": "SYNTHETIC-PROVENANCE-stock_AAA.csv",
+      "reached_eof": true,
+      "read_calls": 4,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          3449
+        ]
+      ],
+      "role": "stock",
+      "size_bytes": 11641,
+      "symbol": "AAA"
+    },
+    {
+      "alias": "stock_BBB.csv",
+      "chunk_size": 4096,
+      "consumed_bytes": 11647,
+      "consumed_prefix_sha256": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f",
+      "content_commitment_verified": true,
+      "lines_consumed": 201,
+      "max_physical_bytes": 11648,
+      "overread_bytes": 0,
+      "path": "/in/stock_BBB.csv",
+      "physical_bytes_read": 11647,
+      "planned_bytes": null,
+      "provenance_id": "SYNTHETIC-PROVENANCE-stock_BBB.csv",
+      "reached_eof": true,
+      "read_calls": 4,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          3455
+        ]
+      ],
+      "role": "stock",
+      "size_bytes": 11647,
+      "symbol": "BBB"
+    },
+    {
+      "alias": "grid_INDIA_VIX_15MIN.csv",
+      "chunk_size": 4096,
+      "consumed_bytes": 16652,
+      "consumed_prefix_sha256": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+      "content_commitment_verified": true,
+      "lines_consumed": 521,
+      "max_physical_bytes": 16653,
+      "overread_bytes": 0,
+      "path": "/in/grid_INDIA_VIX_15MIN.csv",
+      "physical_bytes_read": 16652,
+      "planned_bytes": null,
+      "provenance_id": "SYNTHETIC-PROVENANCE-grid_INDIA_VIX_15MIN.csv",
+      "reached_eof": true,
+      "read_calls": 6,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          4096
+        ],
+        [
+          12288,
+          4096
+        ],
+        [
+          16384,
+          268
+        ]
+      ],
+      "role": "grid",
+      "size_bytes": 16652,
+      "symbol": "INDIA_VIX_15MIN"
+    },
+    {
+      "alias": "grid_NIFTY_50_15MIN.csv",
+      "chunk_size": 4096,
+      "consumed_bytes": 16657,
+      "consumed_prefix_sha256": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+      "content_commitment_verified": true,
+      "lines_consumed": 521,
+      "max_physical_bytes": 16658,
+      "overread_bytes": 0,
+      "path": "/in/grid_NIFTY_50_15MIN.csv",
+      "physical_bytes_read": 16657,
+      "planned_bytes": null,
+      "provenance_id": "SYNTHETIC-PROVENANCE-grid_NIFTY_50_15MIN.csv",
+      "reached_eof": true,
+      "read_calls": 6,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          4096
+        ],
+        [
+          12288,
+          4096
+        ],
+        [
+          16384,
+          273
+        ]
+      ],
+      "role": "grid",
+      "size_bytes": 16657,
+      "symbol": "NIFTY_50_15MIN"
+    }
+  ],
+  "release": {
+    "authorizes_real_classification": false,
+    "issuer": "SYNTHETIC_FIXTURE_ISSUER",
+    "record_id": "SYNTHETIC-RELEASE-1",
+    "record_sha256": "cc900cfbf805334104e0958d5813a05122469bfd58ce47b233b1cc3c2665d89a",
+    "scope": "SYNTHETIC_ONLY",
+    "verified_against": "external pin handed in by the launcher + live witness bindings"
+  },
+  "risk": {
+    "cnc_runtime": "DISABLED",
+    "combined_cycle_runtime": null,
+    "params_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "risk_scope": "DEVELOPMENT_DEFAULTS_UNCHANGED"
+  },
+  "route": {
+    "combined_cycle_state_path": null,
+    "factory": "scripts/diagnostics/r5_block1_acceptance.py:execute_block",
+    "feedback_compaction": false,
+    "fleet_loading_policy": null,
+    "prepare": "curated_artifact.make_curated_prepare"
+  },
+  "slice_sha256": "e494bcbea78848d3e25e03e27bc8f3960c0b5a87efc7f9737ad5823232f4a235",
+  "snapshot": {
+    "file_count": 562,
+    "head": "59371ff06d17b49d917a81aed294c2e254c97574",
+    "manifest_sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+    "protected_indicator": {
+      "path": "revision2_external/indicators_talib.py",
+      "sha256": "a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2"
+    },
+    "tree_sha256": "8f4c4800b7598d60d341793e407cc0180c5220ef3d8ef9b44b918b66f1fd675e"
+  },
+  "source_roots": {
+    "allowed_roots": [
+      "/home/srinivas/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu",
+      "/home/srinivas/.venvs/zerodha-phase1-r5",
+      "/code/harness",
+      "/code/snapshot"
+    ],
+    "module_origins": 2192,
+    "sys_path": [
+      "/code/snapshot",
+      "/code/harness",
+      "/home/srinivas/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python312.zip",
+      "/home/srinivas/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12",
+      "/home/srinivas/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/lib-dynload",
+      "/home/srinivas/.venvs/zerodha-phase1-r5/lib/python3.12/site-packages"
+    ]
+  },
+  "tripwire": {
+    "counts": {},
+    "kiteconnect_module_loaded_import_only": true,
+    "targets": [
+      "kiteconnect:KiteConnect.__init__",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.__init__",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.get_gtts",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.ensure_cnc_gtt",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.convert_position",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.protection_tick_size",
+      "revision2_external.instrument_metadata:InstrumentMetadataSnapshot.build",
+      "revision2_external.instrument_metadata:InstrumentMetadataSnapshot.tick_size",
+      "revision5.combined_cycle_store:CombinedCycleStore.__init__",
+      "revision5.combined_cycle_runtime:CombinedCycleRuntime.__init__",
+      "revision5.handoff_manager:HandoffManager.__init__",
+      "revision5.engine_b_management:EngineBController.__init__",
+      "scripts.run_r5_step5_candidate:build_paper_combined_cycle_runtime"
+    ],
+    "violations": [],
+    "zero_access": true
+  }
+}

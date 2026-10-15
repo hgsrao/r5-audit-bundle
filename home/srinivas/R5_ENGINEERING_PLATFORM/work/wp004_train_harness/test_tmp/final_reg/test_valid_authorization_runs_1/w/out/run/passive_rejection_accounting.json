@@ -1,0 +1,123 @@
+{
+  "GATE12_REACHED": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  },
+  "GOVERNOR": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  },
+  "ID": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 62,
+      "passed": 0,
+      "rejects": {
+        "HMM regime: stressed": 8,
+        "PA quality band is red": 41,
+        "risk:reward 0.67 below minimum 1.50": 1,
+        "risk:reward 0.78 below minimum 1.50": 2,
+        "risk:reward 0.81 below minimum 1.50": 2,
+        "risk:reward 0.82 below minimum 1.50": 1,
+        "risk:reward 0.91 below minimum 1.50": 2,
+        "risk:reward 0.97 below minimum 1.50": 1,
+        "risk:reward 0.99 below minimum 1.50": 1,
+        "risk:reward 1.02 below minimum 1.50": 1,
+        "risk:reward 1.03 below minimum 1.50": 1,
+        "risk:reward 1.04 below minimum 1.50": 1
+      }
+    },
+    "NEUTRAL": {
+      "accounting_closed": true,
+      "input": 10,
+      "passed": 0,
+      "rejects": {
+        "no directional signal": 10
+      }
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 84,
+      "passed": 0,
+      "rejects": {
+        "HMM regime: stressed": 42,
+        "PA quality band is red": 17,
+        "risk:reward 0.67 below minimum 1.50": 2,
+        "risk:reward 0.69 below minimum 1.50": 1,
+        "risk:reward 0.75 below minimum 1.50": 1,
+        "risk:reward 0.76 below minimum 1.50": 1,
+        "risk:reward 0.80 below minimum 1.50": 1,
+        "risk:reward 0.82 below minimum 1.50": 1,
+        "risk:reward 0.85 below minimum 1.50": 1,
+        "risk:reward 0.87 below minimum 1.50": 1,
+        "risk:reward 0.88 below minimum 1.50": 1,
+        "risk:reward 0.94 below minimum 1.50": 1,
+        "risk:reward 0.96 below minimum 1.50": 1,
+        "risk:reward 0.98 below minimum 1.50": 1,
+        "risk:reward 1.00 below minimum 1.50": 1,
+        "risk:reward 1.01 below minimum 1.50": 2,
+        "risk:reward 1.02 below minimum 1.50": 1,
+        "risk:reward 1.04 below minimum 1.50": 1,
+        "risk:reward 1.08 below minimum 1.50": 1,
+        "risk:reward 1.11 below minimum 1.50": 2,
+        "risk:reward 1.13 below minimum 1.50": 1,
+        "risk:reward 1.25 below minimum 1.50": 1,
+        "risk:reward 1.33 below minimum 1.50": 1,
+        "risk:reward 1.35 below minimum 1.50": 1
+      }
+    }
+  },
+  "ID_WARMUP": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 51,
+      "passed": 0,
+      "rejects": {
+        "HMM regime unavailable: insufficient history": 50,
+        "HMM regime: stressed": 1
+      }
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 52,
+      "passed": 0,
+      "rejects": {
+        "HMM regime unavailable: insufficient history": 52
+      }
+    }
+  },
+  "PRE_SUBMIT": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  }
+}

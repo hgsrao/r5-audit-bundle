@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-08T10:53:29.449348+00:00",
+  "package": "WP-EOS-GEMINI-ROUTE-REPAIR",
+  "decision": "PASS WITH FINDINGS",
+  "tests": "192 passed (Claude receipt)",
+  "live_route": "Shell and read/search tools succeeded; final audit unavailable",
+  "provider_failure": "HTTP 429; generate_content_free_tier_requests limit 20; provider reported gemini-3.8-flash; retry in approximately 13 hours",
+  "evidence": "receipts/dispatcher/WP-R5-004-TRAIN-HARNESS-AUDIT.attempt3.receipt.json",
+  "gemini_verdict": null,
+  "director_delta_review": "PASS for physical cap clamp and fail-closed OS witness only",
+  "review_scope": "Static source inspection, not full independent audit or real-data eligibility",
+  "harness_sha256": "9fbf22c3f016c2af605f11b91dc2e09a5d2187a707a5a444cd0eeb331d1ed4af",
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY",
+  "unresolved": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  }
+}

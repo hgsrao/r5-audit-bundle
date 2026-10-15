@@ -1,0 +1,17 @@
+{
+  "id": "WP-EOS-GEMINI-ROUTE-REPAIR",
+  "type": "CODE_IMPLEMENTATION",
+  "objective": "Repair Gemini audit transport, diagnostics and verification access",
+  "worker": "claude",
+  "prompt": "Continue same WP-EOS-GEMINI-ROUTE-REPAIR; no other changes. Director ran EXACT permitted command /home/srinivas/.venvs/zerodha-phase1-r5/bin/python -m pytest engineering_dispatcher/tests -p no:cacheprovider -q. Result188passed,2failed. Use that exact absolute venv path; not python3/pytest plain (your permission allowlist covers the venv). Failures: test_gemini_is_a_read_only_workspace_worker expects argv.count(--bind)==2 but actual3 because .gemini exists; make fixture/expectation environment-independent while still proving source ro and only allowed scratch/state paths writable. test_gemini_structured_success_requires_final_result detects SECRET-THOUGHT in raw stdout_tail; _diagnostics must sanitize parsed JSON event fields recursively including thought/thoughts/reasoning and never retain raw unsanitized JSON in stdout_tail, even malformed/truncated lines that might hold a thought/auth field. Preserve actual final assistant text but do not expose internal thoughts. Add regression for nested thought fields and timeout partial thought redaction. Fix production sanitizer, not weakening the test. Existing typed failure remains no accepted partial verdict. Run entire dispatcher tests with exact venv path above. Preserve first before/response; write IMPLEMENTATION_RECEIPT.md with actual result/testlog and SHA manifest in reports/dispatcher/WP-EOS-GEMINI-ROUTE-REPAIR. Do not call Gemini/models/realDispatcher or edit other scopes, no trading/data/strategy/harness/calibration. Finish and stop.",
+  "requires_review": true,
+  "rules": [
+    "Gemini adapter and relevant transport tests only",
+    "No models/actual dispatch/market data during implementation",
+    "Source remains read-only to auditor; scratch writable"
+  ],
+  "metadata": {
+    "authorization": "Latest human explicit Gemini-route repair request"
+  },
+  "submitted_at": "2026-10-08T10:45:25.089791+00:00"
+}

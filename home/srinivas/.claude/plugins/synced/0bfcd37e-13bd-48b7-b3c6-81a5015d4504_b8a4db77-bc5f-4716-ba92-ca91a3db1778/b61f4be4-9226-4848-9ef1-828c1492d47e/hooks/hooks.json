@@ -1,0 +1,16 @@
+{
+  "description": "Structured memory startup injection — loads recent memory summaries at session start",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/memory-context.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-08T15:20:42.841247+00:00",
+  "package": "WP-R5-004-RELEASE-AUTHORITY",
+  "decision": "PASS WITH FINDINGS",
+  "scope": "SYNTHETIC_MECHANISM_ONLY",
+  "codex_tests": "164 passed in30.39s; recovered independent345 regression result recorded in current state",
+  "frozen_bundle_hashes": "all match",
+  "gemini_verdict": "PASS static supplied-source review, no independent test execution",
+  "limitations": [
+    "Trusted local Director; writer of canonical approval store trusted",
+    "External provenance receipt authenticity requires Director evidence review",
+    "Actual approval store absent; no real release issued"
+  ],
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY",
+  "unresolved": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 0.013611516002129065,
+  "error": "qwen exited 1: Error: could not connect to ollama server, run 'ollama serve' to start it",
+  "finished_at": "2026-10-07T08:35:07.057387+00:00",
+  "needs_review": false,
+  "objective": "Work-package prompt smoke",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-EOS-011-SMOKE-WP",
+  "package_sha256": "850d465cb6c022a886e3d4167e7353935c0fce6283487098f1ffe8e52377feec",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T08:35:07.037741+00:00",
+  "state": "FAILED",
+  "type": "REVIEW_PARAMETER",
+  "worker": "qwen"
+}

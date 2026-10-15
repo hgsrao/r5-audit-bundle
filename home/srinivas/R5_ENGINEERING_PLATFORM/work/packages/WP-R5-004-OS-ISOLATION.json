@@ -1,0 +1,18 @@
+{
+  "id": "WP-R5-004-OS-ISOLATION",
+  "type": "CODE_IMPLEMENTATION",
+  "objective": "Implement and verify OS isolation with synthetic fixtures; preserve fail-closed real-data release",
+  "worker": "claude",
+  "prompt": "Implement the OS isolation prerequisite under existing parent WP-R5-004; package WP-R5-004-OS-ISOLATION. Director authorizes autonomous implementation and synthetic OS tests. Read current harness receipt, REQUIRED_EXTERNAL_INPUT_SCHEMA.md and existing harness os_isolation_witness/real-run entrypoint. No repeat of completed read-cap work. Preserve before copies and hashes.\nBuild a minimal filesystem/network/process isolation launcher using installed /usr/bin/bwrap, with installed /usr/bin/strace if useful. IMPORTANT: do NOT ro-bind the host root: read-only host data is still readable. Expose only explicit required runtime library/interpreter paths, audited code snapshot/harness, approved standalone TRAIN-only input artifacts, and a scoped writable output/scratch. Raw stock/grid repositories, home secrets, validation/holdout and original repo must not appear in child namespace. Network isolated; no inherited host file descriptors beyond required stdio; descendants inherit restrictions. No installs, no sudo, no production or source snapshot changes. OS witness must reflect an actual launched OS boundary, not self-asserted authorization JSON or flag. Fail closed for unsupported environment/missing evidence. Keep real-data gate closed until trustworthy TRAIN-only input artifacts and release acceptance exist; do not fabricate boundaries or make native reads safe merely via Python patches. If supporting current interval plan requires adaptation, distinguish curated artifact provenance vs original raw intervals, document minimal compatibility change, preserve current fail-closed path. No raw data acquisition in this package.\nUse generated synthetic fixtures with a separate host-secret/canary directory. Execute actual isolated tests demonstrating normal allowed fixture reads AND denied outside reads via builtins.open, os.open, mmap, ctypes/native libc, subprocess and child process; denied network access; allowed output writes; denied source writes. Prove inputs and runtime mounts do not expose parent paths; tests fail if broad root/home/data mount is introduced. Test bootstrap failure, forged/missing witness, wrong code/input pin and child status handling. Subprocess is allowed for these synthetic probes only; no broker/live/models or actual replay. Provide an actual OS test receipt, commands, test output and limitations, exact source hashes, evidence required to enable future real-run release. Use exact permitted venv /home/srinivas/.venvs/zerodha-phase1-r5/bin/python for tests. Relevant old140tests should remain green; do not rerun unrelated Dispatcher audits. All changes in work/wp004_train_harness and reports/production/WP-R5-004/os_isolation only. Finish and stop.",
+  "priority": 10,
+  "requires_review": true,
+  "rules": [
+    "Synthetic fixtures only; no raw market data or replay",
+    "Protected snapshot and original repos unchanged",
+    "No numerical policy, strategy or calibration changes"
+  ],
+  "metadata": {
+    "parent_package": "WP-R5-004",
+    "authorization": "Latest human autonomous completion instruction"
+  }
+}

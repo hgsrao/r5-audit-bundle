@@ -1,0 +1,60 @@
+Audit Verdict: FAIL
+Harness Code Status: REJECT
+Real-Data Eligibility: NOT ELIGIBLE (Physical read isolation and boundary proofs are unverified; cannot be authorized for real-data execution).
+1. Does this code actually enforce every physical byte bound?
+   No. BoundedLineReader allows uncontrolled chunk overreads past physical caps and boundary sentinels.
+2. Does the parsed-row guard prove no holdout read?
+   No. Filtering at the parsed row level (day >= end_date, line 358) does not prevent physical byte reads across disk sectors into process memory at line 250.
+3. Real-Data Eligibility:
+   REJECTED. Real-data access cannot be permitted until physical byte-level bounding is clamped and proven against holdout boundaries.
+- Citation: wp004_train_harness.py: Lines 248–255, 269–271.
+- Defect:
+  Line 248 evaluates if self.max_physical_bytes is not None and self.physical_bytes_read >= self.max_physical_bytes:. If physical_bytes_read is 1 byte below max_physical_bytes, the check passes. Line 250 immediately executes an unconditional read(self.chunk_size). This overshoots max_physical_bytes by up to chunk_size - 1 bytes.
+  Line 269–271 explicitly tolerates this leakage:
+  overread = self.physical_bytes_read - self.consumed_bytes
+  if overread < 0 or overread >= self.chunk_size:
+  If holdout/validation partitions reside immediately following the target segment on disk, up to chunk_size - 1 bytes of forbidden data are pulled into process user space (self._buffer).
+- Citation: wp004_train_harness.py: Lines 347–375, 439–443.
+- Defect:
+  In load_stock_block_bounded, the reader scans until it identifies a sentinel row (line 373). However, to yield that sentinel row, the underlying _handle.read(self.chunk_size) at line 250 reads past the line delimiter into the subsequent file contents.
+  Checking parsed row timestamps (day >= end_date, line 358; availability > cutoff_utc, line 439) only discards rows logically from the returned dataframe. It provides zero physical isolation: raw holdout bytes have already traversed the kernel-user boundary into Python memory.
+- Citation: wp004_train_harness.py: Lines 360–363.
+- Defect:
+  The stock reader begins consuming at file offset 0 (July 2023) and streams through pre-TRAIN data into warmup until hitting first_date (September 2023). Consuming data prior to the declared TRAIN campaign boundary requires an explicit, scope-limited Director declaration. Treating this as implicit warmup without an authoritative declaration violates boundary controls.
+- Citation: wp004_train_harness.py: Lines 229–233; run_nonsealed_diagnostic.py: Lines 46–49.
+- Defect:
+  The harness sets _IN_HARNESS_READ.active = True strictly around builtins.open (lines 229–233). This user-space spy does not intercept os.open, os.read, mmap, C/C++ extensions, or pandas native loaders. Without kernel/OS isolation (e.g., read-only bind-mounts restricted strictly to the slice or strict sandbox confinement), the claim of tamper-evident read isolation is unverified.
+- Citation: wp004_train_harness.py: Line 277; run_nonsealed_diagnostic.py: Lines 58–61.
+- Defect:
+  Line 277 computes consumed_prefix_sha256 over logically consumed rows, but does not prove identity against full historical sealed data. Present-content provenance only establishes self-consistency of what was read. Furthermore, 51 synthetic unit tests catching 8 artificial mutations in the absence of fills, trades, or real market lifecycle execution represent only unit-test evidence, not execution qualification.
+1. Strictly Clamp Physical Chunk Reads (Lines 248–250): Clamp every read call to never exceed the physical boundary:
+   Python
+   ```
+   remaining = (
+       self.max_physical_bytes - self.physical_bytes_read
+       if self.max_physical_bytes is not None
+       else self.chunk_size
+   )
+   to_read = min(self.chunk_size, remaining)
+   if to_read <= 0:
+     raise ReadBoundaryError("Physical cap reached")
+   chunk = self._handle.read(to_read)
+   
+   ```
+```
+2. **Explicit Bounded Physical File Slicing**:
+   Before passing files to `load_stock_block_bounded`, physically truncate or isolate the exact permitted byte range via an external process/file slice, ensuring the file descriptor cannot read past the sentinel offset under any circumstance.
+3. **Formal Director Declaration for Pre-TRAIN Prefix**:
+   Ratify an explicit Director policy declaration authorizing consumption of the July–August 2023 warmup prefix. Do not treat this as code-level parameter tuning.
+4. **Authoritative Entry-Point Receipt**:
+   Ratify `run_nonsealed_diagnostic.py` via a sealed execution receipt confirming argument bindings, root sandboxing, and strict non-execution of CNC/GTT code paths.
+
+---
+
+### 4. Final Determination
+
+**FAIL / REJECT**
+
+The current implementation in `wp004_train_harness.py` fails to enforce physical byte boundaries at the I/O layer, overreads beyond sentinels, consumes unratified pre-TRAIN prefixes, and lacks kernel-level boundary verification. The platform remains **NOT READY** and is **NOT EXECUTION QUALIFIED**.
+
+```

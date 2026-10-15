@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_manifest_recompute/test_shape_errors0/dup_header/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "d0c328e21f85b0ac4d34688c9767a92ddfaae47db3e6cf6138c6ab05bd84d4be",
+      "size_bytes": 18075,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "a9a9fc83c428f3b9bfe2db5820c5843ba1ae4930cada8779e06b6a99b63104ab",
+      "size_bytes": 18602,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "443864b4d2445abd3b616734146d298feccc2a6157cedc025d42d10f910e3165",
+  "symbol_count": 2
+}

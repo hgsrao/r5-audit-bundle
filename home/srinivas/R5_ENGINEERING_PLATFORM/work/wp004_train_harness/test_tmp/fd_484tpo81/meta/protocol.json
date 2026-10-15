@@ -1,0 +1,45 @@
+{
+  "block_execution_contract": {
+    "starting_equity_per_block": 1000000.0,
+    "stock_warmup_bars_per_symbol": 60
+  },
+  "engine": {
+    "broker_network_access": false,
+    "governor_authority": "full",
+    "live_trading": false
+  },
+  "grid_dataset": {
+    "availability_delay_minutes": 15,
+    "feeds": {
+      "INDIA_VIX_15MIN": {
+        "sha256": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+        "timestamp_column": "date"
+      },
+      "NIFTY_50_15MIN": {
+        "sha256": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+        "timestamp_column": "timestamp"
+      }
+    },
+    "local_manifest": "local_workspace/records/grid.json"
+  },
+  "periods": {
+    "train_end_exclusive": "2025-07-01",
+    "train_start": "2023-09-01"
+  },
+  "sampling_plan": {
+    "stage_b": [
+      {
+        "block": 1,
+        "sessions": [
+          "2023-12-04",
+          "2023-12-05"
+        ]
+      }
+    ]
+  },
+  "stock_dataset": {
+    "manifest": "revision2/MANIFEST.json",
+    "manifest_hash": "2f75d6b5864268dca3d5f20912c056fc0f6e6f1e2fe363111d310178c5c4f88a",
+    "symbols": 2
+  }
+}

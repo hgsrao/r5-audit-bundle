@@ -1,0 +1,23 @@
+{
+  "real_classification": {
+    "command": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I /home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py --config /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_real_classification/launcher_config.json",
+    "output_dir_empty": true,
+    "returncode": 1,
+    "stderr": "REFUSED: ReleaseError: real-data release closed: no Director-approved real issuer / REAL_RUN_RELEASE_ACCEPTANCE_SHA256 pin exists for this record; no data was opened\n",
+    "stdout": ""
+  },
+  "unknown_issuer": {
+    "command": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I /home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py --config /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_unknown_issuer/launcher_config.json",
+    "output_dir_empty": true,
+    "returncode": 1,
+    "stderr": "REFUSED: ReleaseError: issuer 'SYNTHETIC_FIXTURE_ISSUER' is not externally trusted for scope SYNTHETIC_ONLY; no data was opened\n",
+    "stdout": ""
+  },
+  "wrong_release_pin": {
+    "command": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I /home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py --config /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/refusal_wrong_release_pin/launcher_config.json",
+    "output_dir_empty": true,
+    "returncode": 1,
+    "stderr": "REFUSED: ReleaseError: release record sha256 differs from the external pin; no data was opened\n",
+    "stdout": ""
+  }
+}

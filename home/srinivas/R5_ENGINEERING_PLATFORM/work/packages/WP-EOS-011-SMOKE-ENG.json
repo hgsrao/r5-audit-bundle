@@ -1,0 +1,11 @@
+{
+  "id": "WP-EOS-011-SMOKE-ENG",
+  "type": "REVIEW_CODE",
+  "objective": "Engineering prompt smoke",
+  "prompt": "Review this Python function and list every defect in at most 3 bullet points:\n\ndef mean(xs):\n    total = 0\n    for x in xs:\n        total += x\n    return total / len(xs)\n",
+  "worker": "qwen",
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "priority": 5
+}

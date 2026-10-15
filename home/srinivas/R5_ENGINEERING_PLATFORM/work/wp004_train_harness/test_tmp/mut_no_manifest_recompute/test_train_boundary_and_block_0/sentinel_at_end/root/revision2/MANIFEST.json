@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_manifest_recompute/test_train_boundary_and_block_0/sentinel_at_end/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "43d1b6e71577887ae7f95530bc7e0ccee665d79faacce224f61d44111ff0ef9c",
+      "size_bytes": 18075,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "f3283bc378ddaff4da2e980fe2399e2d86e0485193daeb726102ef26d5ae2a16",
+      "size_bytes": 18602,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "cdf9d19f897ffb98e011ee59e6da74fc41ec0b6b9d7f2b2f34bfbdc90ed478c4",
+  "symbol_count": 2
+}

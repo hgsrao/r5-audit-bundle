@@ -1,0 +1,136 @@
+INDEPENDENT ENGINEERING AUDIT REPORT
+Work Package Under Audit: WP-R5-004 (Corrected Harness & OS-Level Isolation Gate)
+
+Auditor: Gemini (Independent Engineering Auditor)
+
+Execution Context: Narrowed retry following prior transport timeout (GEMINI_AUTOMATED_FAILURE_RECEIPT.json [lines 0020–0021]: HTTP 429 quota exhaustion). Audit performed strictly against the frozen source texts and receipts provided (wp004_train_harness.py, os_isolation.py, os_isolation_bootstrap.py, run_nonsealed_diagnostic.py, test_os_isolation.py, test_director_fixes.py, test_harness.py, OS_ISOLATION_REPORT.md, OS_ISOLATION_TEST_RECEIPT.json, DIRECTOR_ACCEPTANCE.json).
+
+Audit Scope: Verification of BoundedLineReader physical boundaries, Linux namespace/bwrap OS isolation, and Real-Data release gate mechanics.
+
+Execution Verification Note: Auditor did not run live local commands or tests; all claims from TEST_LOG_os_isolation_pytest_v.txt, TEST_LOG_old140_pytest_v.txt, and TEST_LOG_os_isolation_mutation_check.txt are evaluated strictly as supplied artifact records, not self-executed runs.
+
+EXECUTIVE SUMMARY & AUDIT VERDICTS
+Audit Check	Verdict	Core Technical Grounding
+Check 1: BoundedLineReader Bounding	PASS WITH FINDINGS	Clamping to both cap_left and plan_left is mathematically sound (_next_read_size, lines 0293–0320). Unplanned stock fallback permits unstratified reads if file_plan=None.
+Check 2: OS-Level Isolation Boundary	PASS WITH FINDINGS	Sandboxing enforces unshared namespaces (user, pid, net, ipc, uts, cgroup), empty tmpfs root, ro-bind files, dropped caps, and multi-point witness handshakes. Leakage risk exists via non-isolated host /tmp scratch file creation during test execution.
+Check 3: Real-Data Release Gate	PASS	Gate is hard-coded closed in source (REAL_RUN_RELEASE_ACCEPTANCE_SHA256 is None). No authorization JSON, environment variable, or mock witness can bypass the kernel probe and release check.
+OVERALL VERDICT	PASS WITH FINDINGS	Harness code and sandbox architecture pass verification for synthetic testing. Real-data release remains strictly CLOSED.
+Real-Data Eligibility Status: BLOCKED / NOT ELIGIBLE
+
+Justification: No authenticated, curated TRAIN-only standalone input artifacts exist (REAL_RUN_RELEASE_ACCEPTANCE_SHA256 is None in os_isolation.py [line 0072]; wp004_train_harness.py [lines 0910–0914] raises IsolationGateError). Full engine imports (NumPy/Pandas C-extensions) remain unverified under the minimal ldd runtime library closure.
+
+DETAILED TECHNICAL AUDIT
+Check 1: BoundedLineReader Physical Read Bounding
+Verdict: PASS WITH FINDINGS
+
+1.1 Invariant Verification
+Clamping Logic (wp004_train_harness.py, lines 0293–0320):
+
+Every physical read request size is governed by _next_read_size():
+
+limit=min(chunk_size,plan_left,cap_left)
+Line 0313 iterates over (plan_left, cap_left) and clamps limit = min(limit, bound). If limit <= 0, it raises ReadBoundaryError before requesting bytes from _handle.read().
+
+Non-Divisible Cap Handling (wp004_train_harness.py, line 0315, 0336, 0348–0350):
+
+If max_physical_bytes is not a multiple of chunk_size, cap_left = self.max_physical_bytes - self.physical_bytes_read forces limit to the exact remaining byte count. Lines 0338–0339 check if read() returned more than limit, and lines 0349–0350 confirm post-read accounting.
+
+Interval Seeks & Straddle Prevention (wp004_train_harness.py, lines 0299–0311):
+
+Interval transitions advance self._pos via _handle.seek(start) (line 0308). If self._buffer retains bytes across an authorized interval boundary, line 0305 immediately raises ReadBoundaryError("line straddles an authorized interval boundary").
+
+Exact Plan Consumption Check (wp004_train_harness.py, lines 0386–0391):
+
+record() asserts self.physical_bytes_read == planned == self.consumed_bytes.
+
+1.2 Identified Finding
+Finding F-01 (Severity: MEDIUM): Unplanned Bounded Fallback Path in _reader_for
+
+Trigger: Calling load_stock_block_bounded with file_plan=None (wp004_train_harness.py, lines 0449–0450).
+
+Evidence: In _reader_for (wp004_train_harness.py, line 0450), when file_plan is None, BoundedLineReader(path, chunk_size=chunk_size, max_physical_bytes=max_physical_bytes) is returned without intervals or expected_commitment.
+
+Consequence: In unplanned mode (synthetic testing), the reader relies on load_stock_block_bounded searching for a sentinel row (wp004_train_harness.py, line 0522). If max_physical_bytes is unset (None), reading continues sequentially through warmup, target, and sentinel, leaving physical overread into _buffer unconstrained up to chunk_size - 1 (overread check line 0378 permits 0 <= overread < self.chunk_size).
+
+Minimal Correction: Prohibit execution when file_plan is None if real_execution is True (enforced at lines 0938–0939 and 1042–1043). For testing, require max_physical_bytes to be non-None whenever intervals is omitted.
+
+Check 2: OS-Level Isolation Boundary (bwrap, Bootstrap & Witness)
+Verdict: PASS WITH FINDINGS
+
+2.1 Boundary & Kernel Security Controls
+Namespace Confinement (os_isolation.py, lines 0343–0346):
+
+The command arguments strictly require --unshare-user, --unshare-pid, --unshare-net, --unshare-ipc, --unshare-uts, --unshare-cgroup, --disable-userns, --cap-drop ALL, --new-session, --die-with-parent, --clearenv, and --remount-ro /.
+
+Filesystem & Mount Exposure (os_isolation.py, lines 0278–0337, 0385–0395):
+
+Starts from an empty tmpfs root (/). All host broad paths (/home, /root, /etc, /usr, /var, project directories) are in BROAD_DENY (lines 0061–0063). Runtime environments are mounted strictly as read-only directories (dirs) and individual shared library files (libs, lines 0282–0283). Input files are bound as individual files under /in/<alias> (line 0326). Only /out is bound writable (lines 0327–0337, 0392–0393).
+
+Live In-Kernel Verification (os_isolation_bootstrap.py, lines 0027–0065; os_isolation.py, lines 0429–0483):
+
+Bootstrap re-probes /proc/self/ns, /proc/self/mountinfo, /proc/self/status (CapEff == 0, NoNewPrivs == 1), /proc/net/dev (ifaces == ['lo'] or empty), /proc/self/fd (no leaked descriptors > 2), and tree/file SHA-256 hashes of /code and /in before executing the target (lines 0048–0063).
+
+Dual-Sided Handshake Nonce (os_isolation.py, lines 0569, 0635–0646; os_isolation_bootstrap.py, lines 0030–0041):
+
+The host launcher reads bwrap namespace IDs via --info-fd (line 0591), matches them against the child's @@WP004_READY announcement (lines 0602–0610), verifies host /proc/<pid>/mountinfo (lines 0613–0619), and passes a secure cryptographic nonce via stdin that cannot be replayed.
+
+2.2 Identified Finding
+Finding F-02 (Severity: LOW / NEEDS VERIFICATION): Test Fixture Scratch Directory Leakage
+
+Trigger: Running test suite test_os_isolation.py on the host (test_os_isolation.py, lines 0045, 0086).
+
+Evidence: In test_os_isolation.py, world() creates tempfile.mkdtemp(prefix="o_", dir=PLATFORM / "test_tmp") (line 0045). In OS_ISOLATION_TEST_RECEIPT.json (lines 0096, 0099, 0102, 0105), the recorded mount table reveals host paths:
+/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/osiso_receipt_ddoa3906/...
+
+Consequence: _check_not_broad forbids mounting ancestors of protected paths. While no_expose_paths covers str(PLATFORM) (test_os_isolation.py, line 0101), individual test directories under test_tmp are mounted as ro-binds. If an operator mistakenly places sensitive artifacts inside test_tmp, they bypass no_expose_paths checks because _check_not_broad checks if p == src or _is_under(p, src) (lines 0250–0251), which allows mounting children of a no_expose directory.
+
+Minimal Correction: In test_os_isolation.py, ensure test fixtures use dedicated temporary workspaces outside the platform source tree, or add test_tmp explicitly to spec.protected_paths.
+
+Check 3: Real-Data Release Gate & Authorization Tamper Resistance
+Verdict: PASS
+
+3.1 Gate Invariants & Tamper Resistance
+Hardcoded Closed Gate (os_isolation.py, lines 0072, 0505–0510):
+
+REAL_RUN_RELEASE_ACCEPTANCE_SHA256 = None (line 0072). In require_real_run_release, line 0507 checks:
+
+Python
+if REAL_RUN_RELEASE_ACCEPTANCE_SHA256 is None:
+    raise WitnessError("real-data release closed: no Director release acceptance record...")
+raise WitnessError("release acceptance verification is not implemented (fails closed)")
+Even if an adversary sets REAL_RUN_RELEASE_ACCEPTANCE_SHA256 to a hash string, line 0510 unconditionally raises WitnessError("release acceptance verification is not implemented (fails closed)").
+
+Immunity to JSON Flag Forgery (wp004_train_harness.py, lines 0889–0914, 1210–1215):
+
+run_block_diagnostic invokes os_isolation_witness() when config.real_execution is True (line 1213). os_isolation_witness() does not read from the authorization JSON, environment variables, or disk; it calls osi.active_witness() and osi.require_real_run_release(witness).
+
+Immunity to Pre-Auth JSON Tampering (wp004_train_harness.py, lines 0830–0887):
+
+validate_real_authorization mandates exact schema matches, sha256 pinning against independently supplied caller bindings (_PIN_KEYS, _ROOT_KEYS, _FILE_KEYS), and rejects unknown keys (lines 0754–0759). Tests AUTH_MUTATIONS (test_director_fixes.py, lines 0362–0404) confirm all 36 mutation vectors fail closed before any file open.
+
+3.2 Identified Gap
+Finding F-03 (Severity: LOW / INFORMATIONAL): Unexercised C-Extension Imports Inside Sandbox
+
+Trigger: Running full production/diagnostic packages (scripts.run_r5_step5_candidate) requiring C-extensions inside bwrap.
+
+Evidence: OS_ISOLATION_REPORT.md (lines 0098–0099) and DIRECTOR_ACCEPTANCE.json (line 0018) explicitly disclose that full NumPy/Pandas and engine C-extension imports were not executed under the sandbox during the synthetic test suite.
+
+Consequence: _runtime_layout collects ELF dependencies via ldd on .so files found under venv prefixes (lines 0180–0205). If dynamically loaded plugins or runtime-generated extensions fail to appear in static ldd walks, imports will fail at runtime inside the sandbox (ImportError). This fails closed safely, but remains an operational hurdle.
+
+Status: NEEDS VERIFICATION upon commissioning of the real-data container.
+
+CONCRETE AUDIT FINDINGS TABLE
+ID	Location	Severity	Category	Summary / Consequence	Minimal Correction
+F-01	wp004_train_harness.py: 0447–0455	MEDIUM	Reader Boundary	_reader_for fallback allows unstratified reads when file_plan=None.	Enforce file_plan is not None when real_execution=True (already gated at 0938) and require non-None max_physical_bytes for synthetic tests.
+F-02	test_os_isolation.py: 0045, 0100–0101	LOW	Sandbox Hygiene	Test fixtures reside under PLATFORM / "test_tmp", mounting subtrees of a no_expose_paths entry.	Move test_tmp to an external temporary mount or add test_tmp explicitly to spec.protected_paths.
+F-03	os_isolation.py: 0180–0209	LOW	Operational	ldd library resolution for complex C-extensions not validated with full trading engine.	Run smoke import of scripts.run_r5_step5_candidate inside the isolated sandbox prior to packaging real runs.
+CONCLUSION & RELEASE DETERMINATION
+Physical Byte Bounding: Verified. BoundedLineReader correctly clamps all physical read requests to the minimum of remaining cap, interval boundary, and chunk size.
+
+OS-Level Isolation: Verified. Bubblewrap invocation drops all capabilities, unshares all six kernel namespaces, disables user namespaces, denies network access, mounts code and inputs read-only from an empty tmpfs root, and verifies live kernel state via double-handshake probing.
+
+Release Gate: Verified. The release mechanism fails closed unconditionally in code.
+
+OVERALL AUDIT DECISION: PASS WITH FINDINGS
+
+REAL-DATA ELIGIBILITY: REMAINS BLOCKED (CLOSED). The software mechanics are validated; real data access requires formal Director release acceptance, standalone curated TRAIN input artifacts, and independent SHA-256 pinning as defined in os_isolation.py [lines 0064–0071].

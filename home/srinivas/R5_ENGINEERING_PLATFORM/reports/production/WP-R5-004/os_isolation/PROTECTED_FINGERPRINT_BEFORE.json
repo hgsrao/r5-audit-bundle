@@ -1,0 +1,11 @@
+{
+  "original_repo": {
+    "files": 2660,
+    "metadata_sha256": "237d8f77c805fa96dc735eb58a23f994fec5ace1f125266deea83509267a05b5"
+  },
+  "snapshot": {
+    "files": 562,
+    "metadata_sha256": "e4b965566626041cd7eade149c63881f8e9b361e1344cbc02d2a6ea80d8ad8e4"
+  },
+  "snapshot_manifest_sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0"
+}

@@ -1,0 +1,14 @@
+{
+  "package": "WP-R5-004",
+  "scope": "read-only report completion",
+  "started_at_utc": "2026-10-08T06:43:01.753557+00:00",
+  "binary": "/home/srinivas/.config/Claude/claude-code/2.1.293/25786da347c3/claude",
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "dispatcher_modified": false,
+  "replay_authorized": false,
+  "output_schema": "six reports + prepared-only next package"
+}

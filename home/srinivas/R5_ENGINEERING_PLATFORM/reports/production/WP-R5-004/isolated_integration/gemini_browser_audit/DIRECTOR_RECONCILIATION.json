@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-10-08T13:58:49.705716+00:00",
+  "worker": "gemini",
+  "route": "authenticated browser",
+  "mode": "3.8 Flash",
+  "status": "COMPLETED_WITH_FINDINGS",
+  "verdict": "PASS WITH FINDINGS",
+  "response_sha256": "e93a4a9bff6510169860a7c5775641ab77896f452dc5bd4e1d8ac687856e4f89",
+  "followup_status": "Provider service error; no correction returned",
+  "decisions": [
+    {
+      "id": "FINDING-01",
+      "decision": "REJECT: existing strict monotonic guard already rejects claimed re-entry",
+      "evidence": "curated_artifact.py393-395 updates previous for ALL rows before403-405continue; later pre-cutoff value <= previous necessarily raises before append"
+    },
+    {
+      "id": "FINDING-02",
+      "decision": "DOCUMENTED LIMITATION; NO REDESIGN",
+      "evidence": "bootstrap65 sets sys.argv; runpy local stdlib _run_module_code creates temporary module namespace; retained trusted module cache is intentional for live witness. Source-root checks505-514 reject foreign origins. No concrete invalid import/argv surviving guards shown."
+    },
+    {
+      "id": "PORTABILITY",
+      "decision": "ACCEPT LIMITATION",
+      "evidence": "Release scoped to tested host; fail closed on unsupported namespaces; no multinode deployment authorized."
+    }
+  ],
+  "director_finding": {
+    "id": "D-01",
+    "severity": "TEST QUALITY",
+    "status": "AMENDMENT REQUIRED",
+    "evidence": "test_isolated_integration.py725 has or True, making sys_path assertion vacuous",
+    "effect": "Production source guard is present and unit-covered; fix receipt assertion before final package acceptance"
+  },
+  "scope": "Synthetic only; real release closed"
+}

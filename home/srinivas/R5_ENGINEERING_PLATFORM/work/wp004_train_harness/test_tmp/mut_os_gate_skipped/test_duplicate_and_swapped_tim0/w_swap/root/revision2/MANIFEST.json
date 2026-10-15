@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_os_gate_skipped/test_duplicate_and_swapped_tim0/w_swap/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "3ae95657447c572f6b727fd3454084abac56835a2265e914b433d44c91e2ef23",
+      "size_bytes": 18278,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "7ce0d54be7b118b4b486fc471aa36ed5f617dc8f173521c4659a87c9d400ea68",
+      "size_bytes": 18632,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "e13c81c0ef780c42c842d959c5397e51ecfe5d8467c5483e621ec56613bce0b8",
+  "symbol_count": 2
+}

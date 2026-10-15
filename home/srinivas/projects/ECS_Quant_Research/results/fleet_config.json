@@ -1,0 +1,310 @@
+{
+  "calibration_metadata": {
+    "engine": "CCPP_DualPlant",
+    "timestamp": "2026-09-18",
+    "dataset_span": "2021-09-20 to 2026-09-18",
+    "total_historical_trades": 23794,
+    "calibrated_sharpe": 14.91,
+    "calibrated_calmar": 23.65
+  },
+  "economizer_parameters": {
+    "z_entry_threshold": -2.0,
+    "stop_loss_atr_mult": 1.0,
+    "take_profit_atr_mult": 3.0,
+    "holding_horizon_bars": 12,
+    "lookback_window": 20
+  },
+  "hrp_fleet_allocation": {
+    "MARUTI": 0.0896,
+    "HDFCBANK": 0.0874,
+    "TCS": 0.0874,
+    "INFY": 0.0888,
+    "RELIANCE": 0.0868,
+    "SBIN": 0.0873,
+    "LT": 0.079,
+    "BAJFINANCE": 0.077,
+    "BEL": 0.0771,
+    "TATASTEEL": 0.067,
+    "TMPV": 0.0668,
+    "ICICIBANK": 0.0475,
+    "HINDALCO": 0.0582
+  },
+  "sector_turbine_mapping": {
+    "GTG1_AUTO": [
+      "MARUTI",
+      "TMPV"
+    ],
+    "GTG2_TECH": [
+      "TCS",
+      "INFY"
+    ],
+    "CSTG1_FIN": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN",
+      "BAJFINANCE"
+    ],
+    "CSTG2_METALS": [
+      "TATASTEEL",
+      "BEL",
+      "HINDALCO",
+      "LT"
+    ],
+    "BASELOAD_GRID": [
+      "RELIANCE"
+    ]
+  },
+  "pid_controller_parameters": {
+    "Kp": 0.05,
+    "Ki": 0.3,
+    "Kd": 0.3,
+    "integral_window": 10,
+    "baseline_natr": 0.012,
+    "windup_limit": 2.0,
+    "min_valve": 0.05,
+    "max_valve": 1.0
+  },
+  "box1_grid_feed": {
+    "z_window": 15,
+    "outlier_clip_envelope": [
+      -2.5,
+      2.5
+    ],
+    "min_std_floor": 0.0001,
+    "causal_buffer_len": 60,
+    "recalibrated_source": "NIFTY_50_synthetic_realistic.csv",
+    "evaluated_bars": 71944
+  },
+  "box2_supervisory_synchrocheck": {
+    "vol_flow_ratio_min": 0.85,
+    "dp_dt_mode": "decelerating_fall",
+    "dp_dt_min_bound": -0.0035,
+    "dp_dt_max_bound": 0.0,
+    "grid_phase_divergence_max_rad": 0.045
+  },
+  "box5_kalman_state_estimator": {
+    "process_noise_q": 0.01,
+    "measurement_noise_r": 0.05,
+    "state_dim": 2,
+    "tracking_mae": 3.36,
+    "snr_ratio": 2272.1
+  },
+  "sector_governor_profiles": {
+    "GTG1_METALS_MINING": {
+      "engine": "ENGINE_A",
+      "symbols": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "HINDALCO",
+        "COALINDIA",
+        "VEDL"
+      ],
+      "sl_atr_mult": 2.0,
+      "target_zscore": 0.6,
+      "z_entry_threshold": -2.0,
+      "max_bars_held": 40,
+      "pid": {
+        "kp": 0.25,
+        "ki": 0.045,
+        "kd": 0.1,
+        "integral_clamp": 1.6,
+        "trail_activation_u": 0.3,
+        "droop": 0.04
+      }
+    },
+    "GTG2_POWER_ENERGY_INFRA": {
+      "engine": "ENGINE_A",
+      "symbols": [
+        "NTPC",
+        "ONGC",
+        "POWERGRID",
+        "ADANIPORTS",
+        "RELIANCE",
+        "BPCL",
+        "IOC"
+      ],
+      "sl_atr_mult": 1.8,
+      "target_zscore": 0.5,
+      "z_entry_threshold": -2.0,
+      "max_bars_held": 40,
+      "pid": {
+        "kp": 0.15,
+        "ki": 0.02,
+        "kd": 0.25,
+        "integral_clamp": 1.5,
+        "trail_activation_u": 0.05,
+        "droop": 0.04
+      }
+    },
+    "CSTG1_BANKING_FINANCE": {
+      "engine": "ENGINE_B",
+      "symbols": [
+        "HDFCBANK",
+        "ICICIBANK",
+        "SBIN",
+        "AXISBANK",
+        "KOTAKBANK",
+        "BAJFINANCE",
+        "BAJAJFINSV",
+        "SHRIRAMFIN",
+        "SBILIFE",
+        "HDFCLIFE"
+      ],
+      "sl_atr_mult": 1.85,
+      "target_zscore": 0.4,
+      "z_entry_threshold": -2.4,
+      "max_bars_held": 35,
+      "pid": {
+        "kp": 0.35,
+        "ki": 0.025,
+        "kd": 0.25,
+        "integral_clamp": 2.5,
+        "trail_activation_u": 0.2,
+        "droop": 0.05
+      }
+    },
+    "BPSTG_HEALTHCARE_PHARMA": {
+      "engine": "ENGINE_B",
+      "symbols": [
+        "SUNPHARMA",
+        "DRREDDY",
+        "CIPLA",
+        "MAXHEALTH",
+        "APOLLOHOSP"
+      ],
+      "sl_atr_mult": 1.7,
+      "target_zscore": 0.55,
+      "z_entry_threshold": -2.1,
+      "max_bars_held": 35,
+      "pid": {
+        "kp": 0.15,
+        "ki": 0.005,
+        "kd": 0.3,
+        "integral_clamp": 0.8,
+        "trail_activation_u": 0.15000000000000002,
+        "droop": 0.09
+      }
+    },
+    "CSTG2_TECH_CONSUMER_AUTO": {
+      "engine": "ENGINE_B",
+      "symbols": [
+        "TCS",
+        "HCLTECH",
+        "TECHM",
+        "WIPRO",
+        "MARUTI",
+        "EICHERMOT",
+        "M&M",
+        "ITC",
+        "HINDUNILVR",
+        "ASIANPAINT",
+        "INDIGO",
+        "ETERNAL",
+        "BEL",
+        "TATACONSUM",
+        "TITAN",
+        "GRASIM"
+      ],
+      "sl_atr_mult": 1.8,
+      "target_zscore": 0.5,
+      "z_entry_threshold": -2.0,
+      "max_bars_held": 40,
+      "pid": {
+        "kp": 0.6,
+        "ki": 0.01,
+        "kd": 0.1,
+        "integral_clamp": 2.1,
+        "trail_activation_u": 0.35,
+        "droop": 0.05
+      }
+    }
+  },
+  "symbol_to_sector_map": {
+    "TATASTEEL": "GTG1_METALS_MINING",
+    "JSWSTEEL": "GTG1_METALS_MINING",
+    "HINDALCO": "GTG1_METALS_MINING",
+    "COALINDIA": "GTG1_METALS_MINING",
+    "GRASIM": "GTG1_METALS_MINING",
+    "RELIANCE": "GTG2_POWER_ENERGY_INFRA",
+    "NTPC": "GTG2_POWER_ENERGY_INFRA",
+    "POWERGRID": "GTG2_POWER_ENERGY_INFRA",
+    "ONGC": "GTG2_POWER_ENERGY_INFRA",
+    "ADANIPORTS": "GTG2_POWER_ENERGY_INFRA",
+    "BEL": "GTG2_POWER_ENERGY_INFRA",
+    "HDFCBANK": "CSTG1_BANKING_FINANCE",
+    "ICICIBANK": "CSTG1_BANKING_FINANCE",
+    "AXISBANK": "CSTG1_BANKING_FINANCE",
+    "KOTAKBANK": "CSTG1_BANKING_FINANCE",
+    "SBIN": "CSTG1_BANKING_FINANCE",
+    "BAJFINANCE": "CSTG1_BANKING_FINANCE",
+    "BAJAJFINSV": "CSTG1_BANKING_FINANCE",
+    "SHRIRAMFIN": "CSTG1_BANKING_FINANCE",
+    "HDFCLIFE": "CSTG1_BANKING_FINANCE",
+    "SBILIFE": "CSTG1_BANKING_FINANCE",
+    "TCS": "CSTG2_TECH_CONSUMER_AUTO",
+    "INFY": "CSTG2_TECH_CONSUMER_AUTO",
+    "HCLTECH": "CSTG2_TECH_CONSUMER_AUTO",
+    "TECHM": "CSTG2_TECH_CONSUMER_AUTO",
+    "WIPRO": "CSTG2_TECH_CONSUMER_AUTO",
+    "MARUTI": "CSTG2_TECH_CONSUMER_AUTO",
+    "M&M": "CSTG2_TECH_CONSUMER_AUTO",
+    "EICHERMOT": "CSTG2_TECH_CONSUMER_AUTO",
+    "TITAN": "CSTG2_TECH_CONSUMER_AUTO",
+    "ASIANPAINT": "CSTG2_TECH_CONSUMER_AUTO",
+    "HINDUNILVR": "CSTG2_TECH_CONSUMER_AUTO",
+    "ITC": "CSTG2_TECH_CONSUMER_AUTO",
+    "TATACONSUM": "CSTG2_TECH_CONSUMER_AUTO",
+    "INDIGO": "CSTG2_TECH_CONSUMER_AUTO",
+    "ETERNAL": "CSTG2_TECH_CONSUMER_AUTO",
+    "CIPLA": "BPSTG_HEALTHCARE_PHARMA",
+    "DRREDDY": "BPSTG_HEALTHCARE_PHARMA",
+    "SUNPHARMA": "BPSTG_HEALTHCARE_PHARMA",
+    "APOLLOHOSP": "BPSTG_HEALTHCARE_PHARMA",
+    "MAXHEALTH": "BPSTG_HEALTHCARE_PHARMA"
+  },
+  "excluded_symbols": [
+    "APOLLOHOSP",
+    "SBIN",
+    "HCLTECH"
+  ],
+  "active_whitelist": [
+    "TATASTEEL",
+    "JSWSTEEL",
+    "HINDALCO",
+    "COALINDIA",
+    "GRASIM",
+    "RELIANCE",
+    "NTPC",
+    "POWERGRID",
+    "ONGC",
+    "ADANIPORTS",
+    "BEL",
+    "HDFCBANK",
+    "ICICIBANK",
+    "AXISBANK",
+    "KOTAKBANK",
+    "BAJFINANCE",
+    "BAJAJFINSV",
+    "SHRIRAMFIN",
+    "HDFCLIFE",
+    "SBILIFE",
+    "TCS",
+    "INFY",
+    "TECHM",
+    "WIPRO",
+    "MARUTI",
+    "M&M",
+    "EICHERMOT",
+    "TITAN",
+    "ASIANPAINT",
+    "HINDUNILVR",
+    "ITC",
+    "TATACONSUM",
+    "INDIGO",
+    "ETERNAL",
+    "CIPLA",
+    "DRREDDY",
+    "SUNPHARMA",
+    "MAXHEALTH"
+  ]
+}

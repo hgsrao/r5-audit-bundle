@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_os_gate_skipped/test_poison_beyond_boundary_do0/dirty/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "e0ae7c36332d23eb1f680894edb8adc253d089d6bb208e5eb5ada7474e3d5c93",
+      "size_bytes": 15274,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "565f419c52df824c72f3dd9bb7bc262b3732eb5c933d73c4cc3f9ff83d5d4df5",
+      "size_bytes": 15605,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "18386587857134e5d25464b2a334f90a07140154a1d1fa135f669633efb3ec61",
+  "symbol_count": 2
+}

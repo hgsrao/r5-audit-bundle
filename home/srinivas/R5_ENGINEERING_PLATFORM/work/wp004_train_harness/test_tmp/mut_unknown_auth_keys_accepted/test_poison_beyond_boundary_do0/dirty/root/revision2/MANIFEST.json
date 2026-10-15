@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_unknown_auth_keys_accepted/test_poison_beyond_boundary_do0/dirty/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "613e3eb667d44ef80598093e096b2804d9b7db648140fad3496f9ef33a614a88",
+      "size_bytes": 15601,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "2e6391e40478e7f98729719ff7cb46809216a8162c3b20e58baacf30d96228c8",
+      "size_bytes": 15625,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "66c5fba3a373bdedb7b866802be23fbd8959ea1f44e79d1c6eead038d5f8725e",
+  "symbol_count": 2
+}

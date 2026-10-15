@@ -1,0 +1,106 @@
+{
+  "binding_minimum_breakdown": {
+    "ALL_THREE_TIED": {
+      "count": 210,
+      "share": 1.0
+    }
+  },
+  "contexts": {
+    "GTG2_TECH_TELECOM::calm::ALIGNED": {
+      "evaluations": 210,
+      "last_lcb_r": 0.15,
+      "max_context_trades": 6,
+      "max_effective_n": 4.5
+    }
+  },
+  "distributions": {
+    "combined_conviction_min": {
+      "count": 210,
+      "max": 0.937364,
+      "mean": 0.504143,
+      "min": 0.428647,
+      "p05": 0.432723,
+      "p10": 0.436629,
+      "p25": 0.451277,
+      "p50": 0.494677,
+      "p75": 0.547121,
+      "p90": 0.573356,
+      "p95": 0.59499
+    },
+    "conviction_minus_threshold_margin": {
+      "count": 210,
+      "max": 0.426602,
+      "mean": 0.00101,
+      "min": -0.134926,
+      "p05": -0.084521,
+      "p10": -0.071871,
+      "p25": -0.047869,
+      "p50": -0.009867,
+      "p75": 0.045343,
+      "p90": 0.07371,
+      "p95": 0.090017
+    },
+    "effective_confidence_threshold": {
+      "count": 210,
+      "max": 0.574765,
+      "mean": 0.503133,
+      "min": 0.445647,
+      "p05": 0.462183,
+      "p10": 0.471605,
+      "p25": 0.484832,
+      "p50": 0.503224,
+      "p75": 0.521226,
+      "p90": 0.536681,
+      "p95": 0.546794
+    },
+    "id_confidence": {
+      "count": 210,
+      "max": 0.937364,
+      "mean": 0.504143,
+      "min": 0.428647,
+      "p05": 0.432723,
+      "p10": 0.436629,
+      "p25": 0.451277,
+      "p50": 0.494677,
+      "p75": 0.547121,
+      "p90": 0.573356,
+      "p95": 0.59499
+    },
+    "pa_confidence": {
+      "count": 210,
+      "max": 0.937364,
+      "mean": 0.504143,
+      "min": 0.428647,
+      "p05": 0.432723,
+      "p10": 0.436629,
+      "p25": 0.451277,
+      "p50": 0.494677,
+      "p75": 0.547121,
+      "p90": 0.573356,
+      "p95": 0.59499
+    },
+    "studies_confidence": {
+      "count": 210,
+      "max": 0.937364,
+      "mean": 0.504143,
+      "min": 0.428647,
+      "p05": 0.432723,
+      "p10": 0.436629,
+      "p25": 0.451277,
+      "p50": 0.494677,
+      "p75": 0.547121,
+      "p90": 0.573356,
+      "p95": 0.59499
+    }
+  },
+  "gate_reason_counts": {
+    "CAUSAL_CASCADE_PASS": 210
+  },
+  "schema_version": "r5_causal_cascade_shadow_calibration_v2",
+  "training_window": {
+    "excluded_outside_window": 0,
+    "train_end_inclusive": "2025-06-30T15:30:00+05:30",
+    "train_start_inclusive": "2023-09-01T09:15:00+05:30",
+    "valid_cascade_evaluations": 210
+  }
+}

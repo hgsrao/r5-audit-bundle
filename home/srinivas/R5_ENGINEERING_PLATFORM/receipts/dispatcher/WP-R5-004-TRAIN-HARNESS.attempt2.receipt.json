@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 1082.1741546330004,
+  "error": null,
+  "finished_at": "2026-10-08T08:35:05.742292+00:00",
+  "needs_review": true,
+  "objective": "Implement bounded non-sealed diagnostic harness under existing WP-R5-004",
+  "ok": true,
+  "output_sha256": "37cd371058264ea720451356c158a85d921a8efc6870ec1fa3aeef00598309da",
+  "package_id": "WP-R5-004-TRAIN-HARNESS",
+  "package_sha256": "bd5049242ff35c9e031550b1aa859cfcc973e1e0e800145741e586b307d1ef61",
+  "response_file": "WP-R5-004-TRAIN-HARNESS.attempt2.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T08:17:03.564744+00:00",
+  "state": "REVIEW",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

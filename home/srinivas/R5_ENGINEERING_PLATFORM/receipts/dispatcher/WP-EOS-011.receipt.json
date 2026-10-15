@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 2.2493774369977473,
+  "error": "claude exited 1: ",
+  "finished_at": "2026-10-07T08:03:36.745667+00:00",
+  "needs_review": false,
+  "objective": "Replace DeepSeek Harness with Direct Ollama Worker",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-EOS-011",
+  "package_sha256": "fc1ff7570833f15ca2671e73c5f1aaa951966ddf957d1c518ce5f50618fa03d8",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T08:03:34.494022+00:00",
+  "state": "FAILED",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

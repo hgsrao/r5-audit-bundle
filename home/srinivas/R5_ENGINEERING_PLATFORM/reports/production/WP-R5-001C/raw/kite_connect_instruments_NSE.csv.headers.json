@@ -1,0 +1,20 @@
+{
+  "CF-RAY": "a46adda23cde3d0f-MAA",
+  "Connection": "close",
+  "Content-Type": "text/csv",
+  "Date": "Wed, 07 Oct 2026 06:31:56 GMT",
+  "Server": "cloudflare",
+  "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+  "Transfer-Encoding": "chunked",
+  "alt-svc": "h3=\":443\"; ma=86400",
+  "cf-cache-status": "DYNAMIC",
+  "etag": "W/\"be817d3577bc3f084682ff85236f29f8\"",
+  "last-modified": "Wed, 07 Oct 2026 02:44:33 GMT",
+  "vary": "accept-encoding",
+  "x-amz-id-2": "Vyyd6CAJIelvUAc7wMcl6ZHYGPRVKUcoKK4IblaCXwEcH6BWL/FqQ0ANivl0KDALOIBngkG9sT9KYZuEF/95x34KwWA/2yFV",
+  "x-amz-request-id": "PVK836VR9GFGW322",
+  "x-amz-server-side-encryption": "AES256",
+  "x-amz-version-id": "null",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY"
+}

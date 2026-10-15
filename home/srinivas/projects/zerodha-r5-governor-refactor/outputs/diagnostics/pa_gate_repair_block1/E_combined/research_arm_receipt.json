@@ -1,0 +1,64 @@
+{
+  "arm": "E_combined",
+  "arm_counters": {
+    "id_rr_rejections_overridden": 0,
+    "id_rr_scored_overridden": 0,
+    "id_rr_warmup_overridden": 0,
+    "pa_band_changed": 2070,
+    "pa_band_hook_calls": 92880,
+    "pa_raw_changed": 92052,
+    "pa_raw_hook_calls": 92880,
+    "rr_boundary_calls": 386,
+    "rr_material_low_seen": 0,
+    "rr_snapped": 116
+  },
+  "arm_description": "A+B+C; D excluded",
+  "arm_instances_constructed": 1,
+  "baseline_acceptance_claim": false,
+  "classification": "EXPERIMENTAL_PA_GATE_ARM_NOT_PROMOTION",
+  "default_hook_diff": "indicators_talib.py: _combine_raw_signal/_quality_band_confidence added; default arithmetic and branch order identical; no strategy default change",
+  "default_promotion": false,
+  "error": null,
+  "exit_code": 0,
+  "hydration_claim": "NONE_LEGACY_STATE_SERIALIZATION_ONLY",
+  "params_sha256": "7bb4a976a31ebee22b8fe8330a7520aba8d1ba4c4f564b618d6701754d59ae3d",
+  "pid_untouched_sha256": "41ed7b2ec0d89e9b1eb2ae1b44ccbf26ee32772e135a6328288bae9dca2517ca",
+  "policy": {
+    "amber_monotonic": {
+      "enabled": true,
+      "formula": "amber_lower+(c-amber_lower)*amber_multiplier"
+    },
+    "id_rr_removed": {
+      "enabled": false,
+      "retained": "RR value, confidence, trace, original reason text; all other rejections and real Gate12/MPC geometry unchanged",
+      "scope": "only the synthetic ID 'risk:reward ... below minimum' rejection"
+    },
+    "pa_unsigned_quality": {
+      "enabled": true,
+      "formula": "signed=(clip(mom)*wm+vwap*wv)/T; quality=1+(clip(volscore)*wr+clip(volconf)*wq)/T; raw=signed*quality"
+    },
+    "rr_boundary_snap": {
+      "confidence_and_threshold_unchanged": true,
+      "enabled": true,
+      "snaps_only": "0 < threshold - rr <= tolerance",
+      "tolerance": 1e-12
+    }
+  },
+  "policy_changed": true,
+  "process_id": 867325,
+  "protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+  "raw_run_manifest": "run_manifest.json (not modified by this runner)",
+  "raw_run_manifest_status": "COMPLETED",
+  "required_protocol_sha256": "6861cdd27d7666fc6a1bf94c21e90c330052e8137973f7f07eda538566eb1ca7",
+  "run_status": "COMPLETED",
+  "source_aggregate_sha256": "bf7c5a849c2adac4cd0ad4165329ee9a4a5276a4dc883d18ccd972d844b777db",
+  "source_file_count": 343,
+  "source_file_sha256": {
+    "gates_framework.py": "662c48acb73c64a1d81ac05114044ce92ae267587ba81f30b4f0e26009a93159",
+    "revision2_external/indicators_talib.py": "f69678f21373c8beb05e46fef4e62095388058072707350c8b7087f078de892f",
+    "revision2_external/orchestrator.py": "58b86cb6e637b65161273b4ad7b0b80e960ecef80a32e30855df5e50dd4cdbea",
+    "revision2_external/pid_controller.py": "41ed7b2ec0d89e9b1eb2ae1b44ccbf26ee32772e135a6328288bae9dca2517ca",
+    "revision2_external/regime_id_box.py": "3bd8cc42b224a86f23b7c06c83e0e7bde15aacf9baf55009bf738d9c5bbd00d7",
+    "scripts/research/r5_pa_gate_arms.py": "82e836ccd72c2975925e8d99aeccc37f7154475bd3c53d2657c30943ddfca241"
+  }
+}

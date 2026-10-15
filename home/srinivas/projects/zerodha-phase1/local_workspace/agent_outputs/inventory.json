@@ -1,0 +1,158 @@
+[
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/BACKEND_BENCHMARK_20260828.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/BACKEND_BENCHMARK_20260828.md",
+    "sha256": "e438b6ec168e5a0c9cf897ae1dbd63bab1ae4ec3155377c635d637f05ca53cf2",
+    "bytes": 2558
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_161251.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_161251.md",
+    "sha256": "b2b60d92286f73cbb762713db477d8828415bd4b2357513defc3003b79fc1e14",
+    "bytes": 4379
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_170925.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_170925.md",
+    "sha256": "2909aee851b1e5bbbab1b48592a50dd60cab4d48dddc2bd79d0786f3c3989c51",
+    "bytes": 1330
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_171132.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_171132.md",
+    "sha256": "2c6f5b3d53dbd8e9d846208570121e618f496df2f70c25ddd379c2a82f30c7cd",
+    "bytes": 4142
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_172620.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_172620.md",
+    "sha256": "ed7888fb88c9aba17344a8ba41f33d32e6d9fc5d03706e88e33f802398ae480c",
+    "bytes": 5785
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_172917.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_172917.md",
+    "sha256": "b90a9ecb8fbad7026752bea572b8dc35934ee2eee57bfd6c9571128e8af56ba6",
+    "bytes": 5517
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_173056.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_173056.md",
+    "sha256": "ce98e16b42b8b64cffa8db6269f7e8874a7cd8de2010e5133892f9d8ca039532",
+    "bytes": 5381
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_173308.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_173308.md",
+    "sha256": "49db419c0985698421cb0d466f061f1712bddee34ef21b8c2eed5757990ce18d",
+    "bytes": 4008
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_174430.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_174430.md",
+    "sha256": "b02bb226af9e5bc9136f498b968671a655ff3af4908d05d50abdecf6254f6db1",
+    "bytes": 1556
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_174757.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_174757.md",
+    "sha256": "f9c16681da2a121902ebb1e2121a4636fb3569e90084dd5a65fbd08f2bccb107",
+    "bytes": 1878
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_182138.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_182138.md",
+    "sha256": "da22628c897f4166e0bd095b4cab8ebe0804240ec80bec21d0ab2a277c8ddd1f",
+    "bytes": 1550
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_184154.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_184154.md",
+    "sha256": "dcc0a05994c3c16871d2b11154bb90f47dacbb9451bc45f4ffa9e0a171ffa541",
+    "bytes": 4544
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_184422.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_184422.md",
+    "sha256": "f96482bae00a5362ddc89abc5324e5d3dd54957b77771b32ba5b25953424c521",
+    "bytes": 5132
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_190344.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_190344.md",
+    "sha256": "bde1d3c8ab73c38e052f531246ca665eabee4d160b2767ffe0a6d2faeb1831bf",
+    "bytes": 5214
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/_local_review_reports/review_report_20260828_190827.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/original_reports/review_report_20260828_190827.md",
+    "sha256": "55c18a8e5e19db7f95d6c6552b6549ecc6e8e0a4d396405d041d6241093714b1",
+    "bytes": 3944
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/LOCAL_PROJECT_REVIEW_VERIFIED_20260828.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/context/LOCAL_PROJECT_REVIEW_VERIFIED_20260828.md",
+    "sha256": "c81003940034092545f9c22219e2baefbfac5a5cc985f4758cb0b6f0c0d285ee",
+    "bytes": 4776
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/PROJECT_PLAN_COMPREHENSIVE_20260828.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/context/PROJECT_PLAN_COMPREHENSIVE_20260828.md",
+    "sha256": "e9712f999d747c7dad0be934e3f115e2b8dcb35319ec5311eb4c66142a07b236",
+    "bytes": 20711
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/WORK_PACKAGES_CALIBRATED_20260828.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/context/WORK_PACKAGES_CALIBRATED_20260828.md",
+    "sha256": "340da76e78813f94bca85b665a8d7419f832e42fa8bc1ac1f6d5e11c0823a350",
+    "bytes": 14164
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/PHASE_3AB_RAZER_PACKAGES.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/context/PHASE_3AB_RAZER_PACKAGES.md",
+    "sha256": "547eda36e5ec9442ae89b34fd09962b0680eca724369276c70308b7180b4d476",
+    "bytes": 11454
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Complete/PID_Controller_Architecture_Review_20260825_WITH_CLAUDE_COMMENTS.xlsx",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/claude/historical_review/PID_Controller_Architecture_Review_20260825_WITH_CLAUDE_COMMENTS.xlsx",
+    "sha256": "100fc2f0d4b14e533ee565ab925c620dfbda7d9dfd50b6c15fdf164d3f3fe86a",
+    "bytes": 13687
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/BB04-dynamic-parameterization-audit.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/BB04-dynamic-parameterization-audit.md",
+    "sha256": "0e9b8411eee6581c42a6de3b15db5fd46a2f51e9cded268da419f3d0479e1ce4",
+    "bytes": 16363
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/BB09-BB10-dynamic-parameterization-audit.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/BB09-BB10-dynamic-parameterization-audit.md",
+    "sha256": "295d359dcadf04802f6bff21f908af1575124356e51dddb10b0a688d08d32d5a",
+    "bytes": 32726
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/BB05-BB06-dynamic-parameterization-audit.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/BB05-BB06-dynamic-parameterization-audit.md",
+    "sha256": "ce55fc09fff48f14a6612d2a3f3dcad293180a20e9a72908ca7ea6483bb84a91",
+    "bytes": 16099
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/R5-ECS-GRID-DISPATCH-INTEGRATION-AUDIT.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/R5-ECS-GRID-DISPATCH-INTEGRATION-AUDIT.md",
+    "sha256": "b92642c790d4a2ea55caa264855af4b9fcb35631ebbca7296f0b7fbc410ae1a6",
+    "bytes": 33220
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/BB07-BB08-dynamic-parameterization-audit.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/BB07-BB08-dynamic-parameterization-audit.md",
+    "sha256": "5c629ddb24117f5ee850bbf690ed5dc9f8f5cedc4315b1579e66e5cbef53ae42",
+    "bytes": 13490
+  },
+  {
+    "source": "/home/srinivas/projects/zerodha-phase1/outputs/THREE-CONTROLLER-dynamic-parameterization-audit.md",
+    "destination": "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/r5/integrated_audits/THREE-CONTROLLER-dynamic-parameterization-audit.md",
+    "sha256": "0bda69a38c44aa0fa8c0c6e91d0970ea65b9e72a6fba43d9d934689ca1b7007b",
+    "bytes": 9348
+  }
+]

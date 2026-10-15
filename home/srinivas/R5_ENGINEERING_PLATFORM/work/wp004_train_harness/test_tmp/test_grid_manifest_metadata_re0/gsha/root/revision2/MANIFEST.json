@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/test_grid_manifest_metadata_re0/gsha/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "6d009c8797bf0194cbed3b7128ac1dc4d0ce35dcac7354f24c37479b0928b644",
+      "size_bytes": 18370,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "9cfa51e55b12559743e04e85d33acae65ec07bf0f63735df0cc76f97b0668023",
+      "size_bytes": 18627,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "457d21a2fb60a786b8555e64377afc509ec1698ddb7e77256dbde7c83db5c940",
+  "symbol_count": 2
+}

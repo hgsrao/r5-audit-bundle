@@ -1,0 +1,132 @@
+[
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/decision_support/CONTRACT_DECISION_SUPPORT.md",
+    "sha256": "3e565322d33fc5490556256e79a4459320c90515a2f06c083f0977b835d5488f",
+    "bytes": 9377
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/decision_support/DIRECTOR_DECISION_REGISTER.txt",
+    "sha256": "150c7693ee337a8520147b22bff8245c949fa9d88678cc758ede0cc49f97546f",
+    "bytes": 6794
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/checkpoints/CHECKPOINT_007.md",
+    "sha256": "c8100465a1c027ec0ffde8dcfa5d7d59acbbf229dbac14cd596c45221d6d299a",
+    "bytes": 1225
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/ENGINEERING_ACCEPTANCE_REPORT.md",
+    "sha256": "8a70f9c874fa4643c38602eb57acdeb7aa58240592a3a6608e7f0ca92b29bb3d",
+    "bytes": 9352
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/REPLAY_ENTRYPOINT.md",
+    "sha256": "3dc12a71772cf20b8131ae8300418a5e693d6a79046add93908e334dbe90aaee",
+    "bytes": 11605
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/TRAIN_SCOPE_REPORT.md",
+    "sha256": "c0ea3ba27aff731f6d75869d1e5fcd60e84403bfdf8b957a0ab484a7e42c0e62",
+    "bytes": 10726
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/GIT_IDENTITY_REPORT.md",
+    "sha256": "52f17d9553c1ed607aaf21ca2013d1724a2c43d7f441704b7d6855d5253d31c2",
+    "bytes": 10846
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/EXECUTION_BLOCKER_MATRIX.md",
+    "sha256": "f86051661745e0f73e4e29be70d2e5506196b0eb43c4a481097c7db7841af228",
+    "bytes": 10725
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/DISPATCHER_RACE_REVIEW.md",
+    "sha256": "83d2e097a779cfb24eaab6eaab37c7bf96983a52acbb86081ad254f459ba8d13",
+    "bytes": 10588
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/evidence/resume_2026-10-08/codex_acceptance_receipt.json",
+    "sha256": "a95712d3bd8dcf1a47f8a259517305c6900749ecbbf492f3d736beb21e379b4d",
+    "bytes": 1117
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/evidence/resume_2026-10-08/fresh_git_identity.json",
+    "sha256": "841f835c7171d010a81b4601dec23046a4c1192f941754eec0946d5482f882ef",
+    "bytes": 23625
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/evidence/resume_2026-10-08/fresh_replay_code_hashes.json",
+    "sha256": "8704a548f7c2bbc6ff5ecff724dfa87ecb201279728fba328e37f307ec0bfe68",
+    "bytes": 1161
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-003/SAFETY_GATE_REPORT.md",
+    "sha256": "f552fffca6270bf4ae67cc72b7649d1b4f1a1d663eb9830739e27feb68f39f26",
+    "bytes": 7788
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-003/EXECUTION_PROVENANCE.md",
+    "sha256": "f111603d7f7c224d25b13eb2934863051ce98b3f2e3787a2ba677f0979f4d192",
+    "bytes": 5794
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-003/REPLAY_EXECUTION_REPORT.md",
+    "sha256": "a51e47a0470e1481cc4500a363d3251077258a690b0a64b3cb62cdcc89392583",
+    "bytes": 11119
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002/INPUT_QUALIFICATION_REPORT.md",
+    "sha256": "b770c625f5e8f164e421994c1beb5187bcecbbf82b10cb097e4b6d234b619f92",
+    "bytes": 21585
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002/INPUT_INTEGRITY_REPORT.md",
+    "sha256": "68e3782f44e1decda90ae0c09e9098c8fcf786a883180379b0651585b439a3d4",
+    "bytes": 17018
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002/REPLAY_INPUT_MATRIX.csv",
+    "sha256": "9d0ab38a5d30825a26b8b34f816cdcf4c99f24fca5f5699428f5b4e5a3a1372f",
+    "bytes": 53537
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-AUDIT.receipt.json",
+    "sha256": "4dac20c4f96f70c03982fca57be6bd24dda7f160a5b71877df0b00ba961b1be3",
+    "bytes": 1101
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-AUDIT.response.txt",
+    "sha256": "34005f87e6ec92b6133543b89ca19a70c39ff129a83c40c601c5f32d66c843d5",
+    "bytes": 3932
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-QWEN-001.receipt.json",
+    "sha256": "105b9e9af67a2fa808dbb000402359700b097987bb44c404a665eac611ee2b71",
+    "bytes": 603
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-QWEN-001.response.txt",
+    "sha256": "b6fd73b418d7fa7f74d23c2b77e73f081f58ac1bdc3035c4c914123da7670b10",
+    "bytes": 15084
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-SMOKE-ENG.receipt.json",
+    "sha256": "f839ef4fae9c9a1245faf3c697fc04f75b947cc22d4aaf3fbe1239a270acc291",
+    "bytes": 2239
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-SMOKE-WP.receipt.json",
+    "sha256": "fb27b598a7763a9c713904c06980346511460a3c2d9f2682f9e77cc88afcebee",
+    "bytes": 625
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/CURRENT_STATE.md",
+    "sha256": "710e70c8a7ef3e83f80802f20e604ce5c4db88cc8d2de2a5e8babfd4cac2a9cf",
+    "supplied": "latest 35 lines"
+  },
+  {
+    "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/R5_PRODUCTION_BACKLOG.md",
+    "sha256": "c97e309f788a4df3fb746f8e1d30208b2be44c03e879ace5baef03c9ef99b67b",
+    "supplied": "latest 35 lines"
+  }
+]

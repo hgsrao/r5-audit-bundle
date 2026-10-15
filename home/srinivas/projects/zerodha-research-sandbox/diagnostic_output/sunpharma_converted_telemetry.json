@@ -1,0 +1,3784 @@
+{
+  "controller_telemetry": [
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 09:37:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44564743664770706,
+      "id_confidence": 0.44564743664770706,
+      "studies_confidence": 0.44564743664770706,
+      "conviction": 0.44564743664770706,
+      "effective_confidence_threshold": 0.44564743664770706,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 09:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44993904175247135,
+      "id_confidence": 0.44993904175247135,
+      "studies_confidence": 0.44993904175247135,
+      "conviction": 0.44993904175247135,
+      "effective_confidence_threshold": 0.44564743664770706,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 09:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5733241846463273,
+      "id_confidence": 0.5733241846463273,
+      "studies_confidence": 0.5733241846463273,
+      "conviction": 0.5733241846463273,
+      "effective_confidence_threshold": 0.4477932392000892,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 09:52:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5519942661558099,
+      "id_confidence": 0.5519942661558099,
+      "studies_confidence": 0.5519942661558099,
+      "conviction": 0.5519942661558099,
+      "effective_confidence_threshold": 0.48963688768216856,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 10:06:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4305436921150487,
+      "id_confidence": 0.4305436921150487,
+      "studies_confidence": 0.4305436921150487,
+      "conviction": 0.4305436921150487,
+      "effective_confidence_threshold": 0.505226232300579,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 10:39:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4358847907002488,
+      "id_confidence": 0.4358847907002488,
+      "studies_confidence": 0.4358847907002488,
+      "conviction": 0.4358847907002488,
+      "effective_confidence_threshold": 0.49028972426347284,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 10:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.45030935264993294,
+      "id_confidence": 0.45030935264993294,
+      "studies_confidence": 0.45030935264993294,
+      "conviction": 0.45030935264993294,
+      "effective_confidence_threshold": 0.4812222353362689,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 10:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4546320347869055,
+      "id_confidence": 0.4546320347869055,
+      "studies_confidence": 0.4546320347869055,
+      "conviction": 0.4546320347869055,
+      "effective_confidence_threshold": 0.47680610923822087,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 10:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.45471452314722094,
+      "id_confidence": 0.45471452314722094,
+      "studies_confidence": 0.45471452314722094,
+      "conviction": 0.45471452314722094,
+      "effective_confidence_threshold": 0.47403434993180643,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 11:03:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.42864661652095176,
+      "id_confidence": 0.42864661652095176,
+      "studies_confidence": 0.42864661652095176,
+      "conviction": 0.42864661652095176,
+      "effective_confidence_threshold": 0.47188770251129697,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 12:36:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4635758229262433,
+      "id_confidence": 0.4635758229262433,
+      "studies_confidence": 0.4635758229262433,
+      "conviction": 0.4635758229262433,
+      "effective_confidence_threshold": 0.4675635939122625,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-01 12:37:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.446922921327746,
+      "id_confidence": 0.446922921327746,
+      "studies_confidence": 0.446922921327746,
+      "conviction": 0.446922921327746,
+      "effective_confidence_threshold": 0.46935643254011605,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:10:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4504645503918762,
+      "id_confidence": 0.4504645503918762,
+      "studies_confidence": 0.4504645503918762,
+      "conviction": 0.4504645503918762,
+      "effective_confidence_threshold": 0.4690548204976436,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:11:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.501270846443156,
+      "id_confidence": 0.501270846443156,
+      "studies_confidence": 0.501270846443156,
+      "conviction": 0.501270846443156,
+      "effective_confidence_threshold": 0.4567688570721984,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:12:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5030590700670413,
+      "id_confidence": 0.5030590700670413,
+      "studies_confidence": 0.5030590700670413,
+      "conviction": 0.5030590700670413,
+      "effective_confidence_threshold": 0.451696515100933,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:13:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5207541378755678,
+      "id_confidence": 0.5207541378755678,
+      "studies_confidence": 0.5207541378755678,
+      "conviction": 0.5207541378755678,
+      "effective_confidence_threshold": 0.4589480528961323,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:14:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5340701373344489,
+      "id_confidence": 0.5340701373344489,
+      "studies_confidence": 0.5340701373344489,
+      "conviction": 0.5340701373344489,
+      "effective_confidence_threshold": 0.4674349876136642,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:15:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5560692978056108,
+      "id_confidence": 0.5560692978056108,
+      "studies_confidence": 0.5560692978056108,
+      "conviction": 0.5560692978056108,
+      "effective_confidence_threshold": 0.4758110660821158,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:16:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5663582231651537,
+      "id_confidence": 0.5663582231651537,
+      "studies_confidence": 0.5663582231651537,
+      "conviction": 0.5663582231651537,
+      "effective_confidence_threshold": 0.4859547923839863,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:17:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5684738605711064,
+      "id_confidence": 0.5684738605711064,
+      "studies_confidence": 0.5684738605711064,
+      "conviction": 0.5684738605711064,
+      "effective_confidence_threshold": 0.4971191623857796,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-04 15:18:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5724300166101198,
+      "id_confidence": 0.5724300166101198,
+      "studies_confidence": 0.5724300166101198,
+      "conviction": 0.5724300166101198,
+      "effective_confidence_threshold": 0.511101886790795,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 09:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43959721402227275,
+      "id_confidence": 0.43959721402227275,
+      "studies_confidence": 0.43959721402227275,
+      "conviction": 0.43959721402227275,
+      "effective_confidence_threshold": 0.5219873061591827,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 09:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5248454692366649,
+      "id_confidence": 0.5248454692366649,
+      "studies_confidence": 0.5248454692366649,
+      "conviction": 0.5248454692366649,
+      "effective_confidence_threshold": 0.5212547354286354,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 09:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6008914225775001,
+      "id_confidence": 0.6008914225775001,
+      "studies_confidence": 0.6008914225775001,
+      "conviction": 0.6008914225775001,
+      "effective_confidence_threshold": 0.5286928273131142,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:00:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46030072303585406,
+      "id_confidence": 0.46030072303585406,
+      "studies_confidence": 0.46030072303585406,
+      "conviction": 0.46030072303585406,
+      "effective_confidence_threshold": 0.5386548849265487,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:01:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5114374921341522,
+      "id_confidence": 0.5114374921341522,
+      "studies_confidence": 0.5114374921341522,
+      "conviction": 0.5114374921341522,
+      "effective_confidence_threshold": 0.5343790502234299,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:02:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4637516538164302,
+      "id_confidence": 0.4637516538164302,
+      "studies_confidence": 0.4637516538164302,
+      "conviction": 0.4637516538164302,
+      "effective_confidence_threshold": 0.5334473856492884,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:03:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4586292259223951,
+      "id_confidence": 0.4586292259223951,
+      "studies_confidence": 0.4586292259223951,
+      "conviction": 0.4586292259223951,
+      "effective_confidence_threshold": 0.5264155372974865,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:12:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4450715313679097,
+      "id_confidence": 0.4450715313679097,
+      "studies_confidence": 0.4450715313679097,
+      "conviction": 0.4450715313679097,
+      "effective_confidence_threshold": 0.5166715301091649,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:13:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4969768362528308,
+      "id_confidence": 0.4969768362528308,
+      "studies_confidence": 0.4969768362528308,
+      "conviction": 0.4969768362528308,
+      "effective_confidence_threshold": 0.5045428609294406,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:14:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5592998244645258,
+      "id_confidence": 0.5592998244645258,
+      "studies_confidence": 0.5592998244645258,
+      "conviction": 0.5592998244645258,
+      "effective_confidence_threshold": 0.4973931584976129,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:29:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5262503397556452,
+      "id_confidence": 0.5262503397556452,
+      "studies_confidence": 0.5262503397556452,
+      "conviction": 0.5262503397556452,
+      "effective_confidence_threshold": 0.4960801392830535,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 10:30:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5667998264668268,
+      "id_confidence": 0.5667998264668268,
+      "studies_confidence": 0.5667998264668268,
+      "conviction": 0.5667998264668268,
+      "effective_confidence_threshold": 0.5047454518563909,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 13:06:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4331044144791986,
+      "id_confidence": 0.4331044144791986,
+      "studies_confidence": 0.4331044144791986,
+      "conviction": 0.4331044144791986,
+      "effective_confidence_threshold": 0.508940887579407,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 13:13:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4511223191064334,
+      "id_confidence": 0.4511223191064334,
+      "studies_confidence": 0.4511223191064334,
+      "conviction": 0.4511223191064334,
+      "effective_confidence_threshold": 0.49216218676957685,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 13:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.45355122351744875,
+      "id_confidence": 0.45355122351744875,
+      "studies_confidence": 0.45355122351744875,
+      "conviction": 0.45355122351744875,
+      "effective_confidence_threshold": 0.4912443463766348,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 14:32:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4359889023565871,
+      "id_confidence": 0.4359889023565871,
+      "studies_confidence": 0.4359889023565871,
+      "conviction": 0.4359889023565871,
+      "effective_confidence_threshold": 0.48545571951496447,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 14:33:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.548495505227377,
+      "id_confidence": 0.548495505227377,
+      "studies_confidence": 0.548495505227377,
+      "conviction": 0.548495505227377,
+      "effective_confidence_threshold": 0.4826794443689801,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-05 14:34:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5673850036166621,
+      "id_confidence": 0.5673850036166621,
+      "studies_confidence": 0.5673850036166621,
+      "conviction": 0.5673850036166621,
+      "effective_confidence_threshold": 0.49166607229947834,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:25:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44049510378447954,
+      "id_confidence": 0.44049510378447954,
+      "studies_confidence": 0.44049510378447954,
+      "conviction": 0.44049510378447954,
+      "effective_confidence_threshold": 0.5038974195243535,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:33:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5606781620183644,
+      "id_confidence": 0.5606781620183644,
+      "studies_confidence": 0.5606781620183644,
+      "conviction": 0.5606781620183644,
+      "effective_confidence_threshold": 0.49824924627751843,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:35:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.587776146463278,
+      "id_confidence": 0.587776146463278,
+      "studies_confidence": 0.587776146463278,
+      "conviction": 0.587776146463278,
+      "effective_confidence_threshold": 0.49838708003290233,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:36:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43003906118984125,
+      "id_confidence": 0.43003906118984125,
+      "studies_confidence": 0.43003906118984125,
+      "conviction": 0.43003906118984125,
+      "effective_confidence_threshold": 0.5045396607036656,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:38:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44845023865083494,
+      "id_confidence": 0.44845023865083494,
+      "studies_confidence": 0.44845023865083494,
+      "conviction": 0.44845023865083494,
+      "effective_confidence_threshold": 0.49086358417596704,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:39:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5200428962301294,
+      "id_confidence": 0.5200428962301294,
+      "studies_confidence": 0.5200428962301294,
+      "conviction": 0.5200428962301294,
+      "effective_confidence_threshold": 0.4923981665931307,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5278671022114457,
+      "id_confidence": 0.5278671022114457,
+      "studies_confidence": 0.5278671022114457,
+      "conviction": 0.5278671022114457,
+      "effective_confidence_threshold": 0.4992902243055003,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5322116151966796,
+      "id_confidence": 0.5322116151966796,
+      "studies_confidence": 0.5322116151966796,
+      "conviction": 0.5322116151966796,
+      "effective_confidence_threshold": 0.5067218121749,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 09:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6184658600323314,
+      "id_confidence": 0.6184658600323314,
+      "studies_confidence": 0.6184658600323314,
+      "conviction": 0.6184658600323314,
+      "effective_confidence_threshold": 0.5163440834589091,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:22:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.492189047005374,
+      "id_confidence": 0.492189047005374,
+      "studies_confidence": 0.492189047005374,
+      "conviction": 0.492189047005374,
+      "effective_confidence_threshold": 0.5233411189394046,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:23:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5456833244431126,
+      "id_confidence": 0.5456833244431126,
+      "studies_confidence": 0.5456833244431126,
+      "conviction": 0.5456833244431126,
+      "effective_confidence_threshold": 0.5158215232782759,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:24:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5391101968962172,
+      "id_confidence": 0.5391101968962172,
+      "studies_confidence": 0.5391101968962172,
+      "conviction": 0.5391101968962172,
+      "effective_confidence_threshold": 0.5263403453441391,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:25:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5617485803084723,
+      "id_confidence": 0.5617485803084723,
+      "studies_confidence": 0.5617485803084723,
+      "conviction": 0.5617485803084723,
+      "effective_confidence_threshold": 0.5241835488319244,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:26:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5319272858117091,
+      "id_confidence": 0.5319272858117091,
+      "studies_confidence": 0.5319272858117091,
+      "conviction": 0.5319272858117091,
+      "effective_confidence_threshold": 0.5215807922164439,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:27:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5155202052906517,
+      "id_confidence": 0.5155202052906517,
+      "studies_confidence": 0.5155202052906517,
+      "conviction": 0.5155202052906517,
+      "effective_confidence_threshold": 0.5317696146786306,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:28:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5175594884278505,
+      "id_confidence": 0.5175594884278505,
+      "studies_confidence": 0.5175594884278505,
+      "conviction": 0.5175594884278505,
+      "effective_confidence_threshold": 0.5384766113426123,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:29:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5562024081731415,
+      "id_confidence": 0.5562024081731415,
+      "studies_confidence": 0.5562024081731415,
+      "conviction": 0.5562024081731415,
+      "effective_confidence_threshold": 0.5382282705623844,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:30:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5866849705622795,
+      "id_confidence": 0.5866849705622795,
+      "studies_confidence": 0.5866849705622795,
+      "conviction": 0.5866849705622795,
+      "effective_confidence_threshold": 0.541061801158554,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 10:31:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.574739558218807,
+      "id_confidence": 0.574739558218807,
+      "studies_confidence": 0.574739558218807,
+      "conviction": 0.574739558218807,
+      "effective_confidence_threshold": 0.546509136695114,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 11:24:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5575675052202158,
+      "id_confidence": 0.5575675052202158,
+      "studies_confidence": 0.5575675052202158,
+      "conviction": 0.5575675052202158,
+      "effective_confidence_threshold": 0.5421365065137616,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 11:30:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4418037472306376,
+      "id_confidence": 0.4418037472306376,
+      "studies_confidence": 0.4418037472306376,
+      "conviction": 0.4418037472306376,
+      "effective_confidence_threshold": 0.5486743523352458,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:43:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4758606165066902,
+      "id_confidence": 0.4758606165066902,
+      "studies_confidence": 0.4758606165066902,
+      "conviction": 0.4758606165066902,
+      "effective_confidence_threshold": 0.5382863946139982,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:44:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5286414722784941,
+      "id_confidence": 0.5286414722784941,
+      "studies_confidence": 0.5286414722784941,
+      "conviction": 0.5286414722784941,
+      "effective_confidence_threshold": 0.5319614365750456,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:45:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.551433712857148,
+      "id_confidence": 0.551433712857148,
+      "studies_confidence": 0.551433712857148,
+      "conviction": 0.551433712857148,
+      "effective_confidence_threshold": 0.5286507257720477,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:46:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5421538509044336,
+      "id_confidence": 0.5421538509044336,
+      "studies_confidence": 0.5421538509044336,
+      "conviction": 0.5421538509044336,
+      "effective_confidence_threshold": 0.5306013684765916,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.542551631243099,
+      "id_confidence": 0.542551631243099,
+      "studies_confidence": 0.542551631243099,
+      "conviction": 0.542551631243099,
+      "effective_confidence_threshold": 0.5332647330379697,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5558016640815996,
+      "id_confidence": 0.5558016640815996,
+      "studies_confidence": 0.5558016640815996,
+      "conviction": 0.5558016640815996,
+      "effective_confidence_threshold": 0.5357639473194946,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5829527343914103,
+      "id_confidence": 0.5829527343914103,
+      "studies_confidence": 0.5829527343914103,
+      "conviction": 0.5829527343914103,
+      "effective_confidence_threshold": 0.5357238729103404,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:50:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5857875991803388,
+      "id_confidence": 0.5857875991803388,
+      "studies_confidence": 0.5857875991803388,
+      "conviction": 0.5857875991803388,
+      "effective_confidence_threshold": 0.5353506492932535,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5594660331053498,
+      "id_confidence": 0.5594660331053498,
+      "studies_confidence": 0.5594660331053498,
+      "conviction": 0.5594660331053498,
+      "effective_confidence_threshold": 0.5364554533894067,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:52:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.547409518682734,
+      "id_confidence": 0.547409518682734,
+      "studies_confidence": 0.547409518682734,
+      "conviction": 0.547409518682734,
+      "effective_confidence_threshold": 0.5366453061779202,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:53:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5115667536876959,
+      "id_confidence": 0.5115667536876959,
+      "studies_confidence": 0.5115667536876959,
+      "conviction": 0.5115667536876959,
+      "effective_confidence_threshold": 0.5472058833231298,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:54:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4432643361489785,
+      "id_confidence": 0.4432643361489785,
+      "studies_confidence": 0.4432643361489785,
+      "conviction": 0.4432643361489785,
+      "effective_confidence_threshold": 0.5507764970412303,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43112297752996476,
+      "id_confidence": 0.43112297752996476,
+      "studies_confidence": 0.43112297752996476,
+      "conviction": 0.43112297752996476,
+      "effective_confidence_threshold": 0.5422387834282787,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5209285188866242,
+      "id_confidence": 0.5209285188866242,
+      "studies_confidence": 0.5209285188866242,
+      "conviction": 0.5209285188866242,
+      "effective_confidence_threshold": 0.5302077098955604,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-06 12:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5101456430346285,
+      "id_confidence": 0.5101456430346285,
+      "studies_confidence": 0.5101456430346285,
+      "conviction": 0.5101456430346285,
+      "effective_confidence_threshold": 0.5280851766937795,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-07 12:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43329421955189434,
+      "id_confidence": 0.43329421955189434,
+      "studies_confidence": 0.43329421955189434,
+      "conviction": 0.43329421955189434,
+      "effective_confidence_threshold": 0.5248445778729324,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-07 12:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4504860212164414,
+      "id_confidence": 0.4504860212164414,
+      "studies_confidence": 0.4504860212164414,
+      "conviction": 0.4504860212164414,
+      "effective_confidence_threshold": 0.5125938334199619,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-07 12:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4400924432052692,
+      "id_confidence": 0.4400924432052692,
+      "studies_confidence": 0.4400924432052692,
+      "conviction": 0.4400924432052692,
+      "effective_confidence_threshold": 0.499347162102465,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 09:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43287338541500825,
+      "id_confidence": 0.43287338541500825,
+      "studies_confidence": 0.43287338541500825,
+      "conviction": 0.43287338541500825,
+      "effective_confidence_threshold": 0.4847776465049581,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 09:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.49582330797936297,
+      "id_confidence": 0.49582330797936297,
+      "studies_confidence": 0.49582330797936297,
+      "conviction": 0.49582330797936297,
+      "effective_confidence_threshold": 0.4721183817359239,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 09:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5086938002216863,
+      "id_confidence": 0.5086938002216863,
+      "studies_confidence": 0.5086938002216863,
+      "conviction": 0.5086938002216863,
+      "effective_confidence_threshold": 0.4669597606655868,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 09:43:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.48106564096258425,
+      "id_confidence": 0.48106564096258425,
+      "studies_confidence": 0.48106564096258425,
+      "conviction": 0.48106564096258425,
+      "effective_confidence_threshold": 0.4666724653189858,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 10:33:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.45348630408033674,
+      "id_confidence": 0.45348630408033674,
+      "studies_confidence": 0.45348630408033674,
+      "conviction": 0.45348630408033674,
+      "effective_confidence_threshold": 0.47045259580034643,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 10:34:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4417101876708947,
+      "id_confidence": 0.4417101876708947,
+      "studies_confidence": 0.4417101876708947,
+      "conviction": 0.4417101876708947,
+      "effective_confidence_threshold": 0.47268892845538363,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 11:19:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4498878907322461,
+      "id_confidence": 0.4498878907322461,
+      "studies_confidence": 0.4498878907322461,
+      "conviction": 0.4498878907322461,
+      "effective_confidence_threshold": 0.46476709533381066,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:17:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43663068623756923,
+      "id_confidence": 0.43663068623756923,
+      "studies_confidence": 0.43663068623756923,
+      "conviction": 0.43663068623756923,
+      "effective_confidence_threshold": 0.4587413201035725,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:24:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43387414755559567,
+      "id_confidence": 0.43387414755559567,
+      "studies_confidence": 0.43387414755559567,
+      "conviction": 0.43387414755559567,
+      "effective_confidence_threshold": 0.4590749667721399,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:25:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4811939718280732,
+      "id_confidence": 0.4811939718280732,
+      "studies_confidence": 0.4811939718280732,
+      "conviction": 0.4811939718280732,
+      "effective_confidence_threshold": 0.4574137794060554,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:26:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.534965930460599,
+      "id_confidence": 0.534965930460599,
+      "studies_confidence": 0.534965930460599,
+      "conviction": 0.534965930460599,
+      "effective_confidence_threshold": 0.4615239322683357,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:27:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5622646595528626,
+      "id_confidence": 0.5622646595528626,
+      "studies_confidence": 0.5622646595528626,
+      "conviction": 0.5622646595528626,
+      "effective_confidence_threshold": 0.4717331867728948,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:28:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5627501133229345,
+      "id_confidence": 0.5627501133229345,
+      "studies_confidence": 0.5627501133229345,
+      "conviction": 0.5627501133229345,
+      "effective_confidence_threshold": 0.47837732193024485,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:29:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5693543162016361,
+      "id_confidence": 0.5693543162016361,
+      "studies_confidence": 0.5693543162016361,
+      "conviction": 0.5693543162016361,
+      "effective_confidence_threshold": 0.48378295324036963,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-08 12:30:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5562241214879822,
+      "id_confidence": 0.5562241214879822,
+      "studies_confidence": 0.5562241214879822,
+      "conviction": 0.5562241214879822,
+      "effective_confidence_threshold": 0.4926118207642748,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-11 09:39:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4955585100378039,
+      "id_confidence": 0.4955585100378039,
+      "studies_confidence": 0.4955585100378039,
+      "conviction": 0.4955585100378039,
+      "effective_confidence_threshold": 0.5028856025050393,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-11 09:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.47979174303181654,
+      "id_confidence": 0.47979174303181654,
+      "studies_confidence": 0.47979174303181654,
+      "conviction": 0.47979174303181654,
+      "effective_confidence_threshold": 0.5082704347417303,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-11 15:17:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4316487909386094,
+      "id_confidence": 0.4316487909386094,
+      "studies_confidence": 0.4316487909386094,
+      "conviction": 0.4316487909386094,
+      "effective_confidence_threshold": 0.5112608199716873,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 09:53:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.9373644965045499,
+      "id_confidence": 0.9373644965045499,
+      "studies_confidence": 0.9373644965045499,
+      "conviction": 0.9373644965045499,
+      "effective_confidence_threshold": 0.5107626304417913,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 12:46:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4345696252603563,
+      "id_confidence": 0.4345696252603563,
+      "studies_confidence": 0.4345696252603563,
+      "conviction": 0.4345696252603563,
+      "effective_confidence_threshold": 0.5611116653366868,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 12:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44260759555814105,
+      "id_confidence": 0.44260759555814105,
+      "studies_confidence": 0.44260759555814105,
+      "conviction": 0.44260759555814105,
+      "effective_confidence_threshold": 0.556449230679915,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 12:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5070757438843556,
+      "id_confidence": 0.5070757438843556,
+      "studies_confidence": 0.5070757438843556,
+      "conviction": 0.5070757438843556,
+      "effective_confidence_threshold": 0.5472133971896692,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 12:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46932266635683917,
+      "id_confidence": 0.46932266635683917,
+      "studies_confidence": 0.46932266635683917,
+      "conviction": 0.46932266635683917,
+      "effective_confidence_threshold": 0.5416945056228186,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 13:00:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46952959278286616,
+      "id_confidence": 0.46952959278286616,
+      "studies_confidence": 0.46952959278286616,
+      "conviction": 0.46952959278286616,
+      "effective_confidence_threshold": 0.5323517609262091,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 13:01:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4643586971279976,
+      "id_confidence": 0.4643586971279976,
+      "studies_confidence": 0.4643586971279976,
+      "conviction": 0.4643586971279976,
+      "effective_confidence_threshold": 0.5223692885843321,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 13:02:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5045071905258139,
+      "id_confidence": 0.5045071905258139,
+      "studies_confidence": 0.5045071905258139,
+      "conviction": 0.5045071905258139,
+      "effective_confidence_threshold": 0.5131827461483336,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 14:46:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43260018640234454,
+      "id_confidence": 0.43260018640234454,
+      "studies_confidence": 0.43260018640234454,
+      "conviction": 0.43260018640234454,
+      "effective_confidence_threshold": 0.5140776141971346,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 14:50:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43915635908798023,
+      "id_confidence": 0.43915635908798023,
+      "studies_confidence": 0.43915635908798023,
+      "conviction": 0.43915635908798023,
+      "effective_confidence_threshold": 0.5093584585341874,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 14:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4455643620705703,
+      "id_confidence": 0.4455643620705703,
+      "studies_confidence": 0.4455643620705703,
+      "conviction": 0.4455643620705703,
+      "effective_confidence_threshold": 0.5101092153491245,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-12 14:52:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.455162743380584,
+      "id_confidence": 0.455162743380584,
+      "studies_confidence": 0.455162743380584,
+      "conviction": 0.455162743380584,
+      "effective_confidence_threshold": 0.4609292019057265,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 09:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.8330006235144621,
+      "id_confidence": 0.8330006235144621,
+      "studies_confidence": 0.8330006235144621,
+      "conviction": 0.8330006235144621,
+      "effective_confidence_threshold": 0.46298851371774924,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4768168477634448,
+      "id_confidence": 0.4768168477634448,
+      "studies_confidence": 0.4768168477634448,
+      "conviction": 0.4768168477634448,
+      "effective_confidence_threshold": 0.5020278165133814,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:52:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5759203415590065,
+      "id_confidence": 0.5759203415590065,
+      "studies_confidence": 0.5759203415590065,
+      "conviction": 0.5759203415590065,
+      "effective_confidence_threshold": 0.4990019269012903,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:53:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6009342632404379,
+      "id_confidence": 0.6009342632404379,
+      "studies_confidence": 0.6009342632404379,
+      "conviction": 0.6009342632404379,
+      "effective_confidence_threshold": 0.5096616944215071,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:54:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.606386777073408,
+      "id_confidence": 0.606386777073408,
+      "studies_confidence": 0.606386777073408,
+      "conviction": 0.606386777073408,
+      "effective_confidence_threshold": 0.5228021614672642,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:55:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6047217200664842,
+      "id_confidence": 0.6047217200664842,
+      "studies_confidence": 0.6047217200664842,
+      "conviction": 0.6047217200664842,
+      "effective_confidence_threshold": 0.5370049694618053,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:56:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5654466568575104,
+      "id_confidence": 0.5654466568575104,
+      "studies_confidence": 0.5654466568575104,
+      "conviction": 0.5654466568575104,
+      "effective_confidence_threshold": 0.5470264224158723,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.548187439055144,
+      "id_confidence": 0.548187439055144,
+      "studies_confidence": 0.548187439055144,
+      "conviction": 0.548187439055144,
+      "effective_confidence_threshold": 0.5603110694613889,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 13:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.48107185004178066,
+      "id_confidence": 0.48107185004178066,
+      "studies_confidence": 0.48107185004178066,
+      "conviction": 0.48107185004178066,
+      "effective_confidence_threshold": 0.5712141774581052,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 14:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4398389362821297,
+      "id_confidence": 0.4398389362821297,
+      "studies_confidence": 0.4398389362821297,
+      "conviction": 0.4398389362821297,
+      "effective_confidence_threshold": 0.5747649262552262,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 14:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.45621739737312555,
+      "id_confidence": 0.45621739737312555,
+      "studies_confidence": 0.45621739737312555,
+      "conviction": 0.45621739737312555,
+      "effective_confidence_threshold": 0.5732325455453808,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 14:43:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46321090124888065,
+      "id_confidence": 0.46321090124888065,
+      "studies_confidence": 0.46321090124888065,
+      "conviction": 0.46321090124888065,
+      "effective_confidence_threshold": 0.5355542229312472,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 14:44:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46956629590626237,
+      "id_confidence": 0.46956629590626237,
+      "studies_confidence": 0.46956629590626237,
+      "conviction": 0.46956629590626237,
+      "effective_confidence_threshold": 0.5341936282797908,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-13 14:45:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4517394542133361,
+      "id_confidence": 0.4517394542133361,
+      "studies_confidence": 0.4517394542133361,
+      "conviction": 0.4517394542133361,
+      "effective_confidence_threshold": 0.5235582237145163,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-14 13:10:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44255540765602375,
+      "id_confidence": 0.44255540765602375,
+      "studies_confidence": 0.44255540765602375,
+      "conviction": 0.44255540765602375,
+      "effective_confidence_threshold": 0.5086387428118062,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-18 09:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6232493144589625,
+      "id_confidence": 0.6232493144589625,
+      "studies_confidence": 0.6232493144589625,
+      "conviction": 0.6232493144589625,
+      "effective_confidence_threshold": 0.4922556058700677,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-18 10:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4297912237947784,
+      "id_confidence": 0.4297912237947784,
+      "studies_confidence": 0.4297912237947784,
+      "conviction": 0.4297912237947784,
+      "effective_confidence_threshold": 0.49410836530931557,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-20 10:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4991352139318905,
+      "id_confidence": 0.4991352139318905,
+      "studies_confidence": 0.4991352139318905,
+      "conviction": 0.4991352139318905,
+      "effective_confidence_threshold": 0.4805428220030423,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-20 10:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5002102708539483,
+      "id_confidence": 0.5002102708539483,
+      "studies_confidence": 0.5002102708539483,
+      "conviction": 0.5002102708539483,
+      "effective_confidence_threshold": 0.47563759949071704,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-20 11:17:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.430104862119888,
+      "id_confidence": 0.430104862119888,
+      "studies_confidence": 0.430104862119888,
+      "conviction": 0.430104862119888,
+      "effective_confidence_threshold": 0.47755144157193374,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-20 14:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5104399432675467,
+      "id_confidence": 0.5104399432675467,
+      "studies_confidence": 0.5104399432675467,
+      "conviction": 0.5104399432675467,
+      "effective_confidence_threshold": 0.4765780341557096,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-20 15:00:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5315438917666785,
+      "id_confidence": 0.5315438917666785,
+      "studies_confidence": 0.5315438917666785,
+      "conviction": 0.5315438917666785,
+      "effective_confidence_threshold": 0.4820002887451517,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:20:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5440743239329321,
+      "id_confidence": 0.5440743239329321,
+      "studies_confidence": 0.5440743239329321,
+      "conviction": 0.5440743239329321,
+      "effective_confidence_threshold": 0.4888335877969315,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:21:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5041387496475507,
+      "id_confidence": 0.5041387496475507,
+      "studies_confidence": 0.5041387496475507,
+      "conviction": 0.5041387496475507,
+      "effective_confidence_threshold": 0.4962843905995985,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:22:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.47585764899975846,
+      "id_confidence": 0.47585764899975846,
+      "studies_confidence": 0.47585764899975846,
+      "conviction": 0.47585764899975846,
+      "effective_confidence_threshold": 0.50152432014302,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:23:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.48833972289270594,
+      "id_confidence": 0.48833972289270594,
+      "studies_confidence": 0.48833972289270594,
+      "conviction": 0.48833972289270594,
+      "effective_confidence_threshold": 0.5048545442773934,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:24:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4765338235277874,
+      "id_confidence": 0.4765338235277874,
+      "studies_confidence": 0.4765338235277874,
+      "conviction": 0.4765338235277874,
+      "effective_confidence_threshold": 0.4913635851207678,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:25:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5068376962538228,
+      "id_confidence": 0.5068376962538228,
+      "studies_confidence": 0.5068376962538228,
+      "conviction": 0.5068376962538228,
+      "effective_confidence_threshold": 0.4960378450940687,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:26:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5462546610429903,
+      "id_confidence": 0.5462546610429903,
+      "studies_confidence": 0.5462546610429903,
+      "conviction": 0.5462546610429903,
+      "effective_confidence_threshold": 0.49680809332626186,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:27:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6083797810069635,
+      "id_confidence": 0.6083797810069635,
+      "studies_confidence": 0.6083797810069635,
+      "conviction": 0.6083797810069635,
+      "effective_confidence_threshold": 0.5014125323451661,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 10:29:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5872523029855168,
+      "id_confidence": 0.5872523029855168,
+      "studies_confidence": 0.5872523029855168,
+      "conviction": 0.5872523029855168,
+      "effective_confidence_threshold": 0.5192400242338737,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:53:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46483640576817764,
+      "id_confidence": 0.46483640576817764,
+      "studies_confidence": 0.46483640576817764,
+      "conviction": 0.46483640576817764,
+      "effective_confidence_threshold": 0.5269212602056706,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:54:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46487132821891336,
+      "id_confidence": 0.46487132821891336,
+      "studies_confidence": 0.46487132821891336,
+      "conviction": 0.46487132821891336,
+      "effective_confidence_threshold": 0.5202505116058205,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:55:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46394426839675906,
+      "id_confidence": 0.46394426839675906,
+      "studies_confidence": 0.46394426839675906,
+      "conviction": 0.46394426839675906,
+      "effective_confidence_threshold": 0.5123302120344186,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:56:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4752089644826502,
+      "id_confidence": 0.4752089644826502,
+      "studies_confidence": 0.4752089644826502,
+      "conviction": 0.4752089644826502,
+      "effective_confidence_threshold": 0.5083107639093395,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.48985537755914743,
+      "id_confidence": 0.48985537755914743,
+      "studies_confidence": 0.48985537755914743,
+      "conviction": 0.48985537755914743,
+      "effective_confidence_threshold": 0.5082458954576288,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5027670938209973,
+      "id_confidence": 0.5027670938209973,
+      "studies_confidence": 0.5027670938209973,
+      "conviction": 0.5027670938209973,
+      "effective_confidence_threshold": 0.5083974609242728,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 12:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4904085316125145,
+      "id_confidence": 0.4904085316125145,
+      "studies_confidence": 0.4904085316125145,
+      "conviction": 0.4904085316125145,
+      "effective_confidence_threshold": 0.5110207879535938,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 13:00:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46618001125521596,
+      "id_confidence": 0.46618001125521596,
+      "studies_confidence": 0.46618001125521596,
+      "conviction": 0.46618001125521596,
+      "effective_confidence_threshold": 0.509377871489463,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 13:01:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44461032434835085,
+      "id_confidence": 0.44461032434835085,
+      "studies_confidence": 0.44461032434835085,
+      "conviction": 0.44461032434835085,
+      "effective_confidence_threshold": 0.5013704065106855,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-21 13:09:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4370006764239771,
+      "id_confidence": 0.4370006764239771,
+      "studies_confidence": 0.4370006764239771,
+      "conviction": 0.4370006764239771,
+      "effective_confidence_threshold": 0.4849934608448243,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 09:45:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5753486868521916,
+      "id_confidence": 0.5753486868521916,
+      "studies_confidence": 0.5753486868521916,
+      "conviction": 0.5753486868521916,
+      "effective_confidence_threshold": 0.46996829818867036,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 09:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.6488679789406094,
+      "id_confidence": 0.6488679789406094,
+      "studies_confidence": 0.6488679789406094,
+      "conviction": 0.6488679789406094,
+      "effective_confidence_threshold": 0.48101952629707173,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 11:07:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5483075459680092,
+      "id_confidence": 0.5483075459680092,
+      "studies_confidence": 0.5483075459680092,
+      "conviction": 0.5483075459680092,
+      "effective_confidence_threshold": 0.4994191913692413,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 11:08:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5783310950838048,
+      "id_confidence": 0.5783310950838048,
+      "studies_confidence": 0.5783310950838048,
+      "conviction": 0.5783310950838048,
+      "effective_confidence_threshold": 0.5078555191263663,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 11:12:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5483930472321903,
+      "id_confidence": 0.5483930472321903,
+      "studies_confidence": 0.5483930472321903,
+      "conviction": 0.5483930472321903,
+      "effective_confidence_threshold": 0.5181677321864818,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-22 11:13:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4367563961880573,
+      "id_confidence": 0.4367563961880573,
+      "studies_confidence": 0.4367563961880573,
+      "conviction": 0.4367563961880573,
+      "effective_confidence_threshold": 0.5240214991537862,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-25 09:56:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43115536304809116,
+      "id_confidence": 0.43115536304809116,
+      "studies_confidence": 0.43115536304809116,
+      "conviction": 0.43115536304809116,
+      "effective_confidence_threshold": 0.5174204293904922,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-25 09:57:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4624086911384136,
+      "id_confidence": 0.4624086911384136,
+      "studies_confidence": 0.4624086911384136,
+      "conviction": 0.4624086911384136,
+      "effective_confidence_threshold": 0.5114951125340498,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-25 09:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4366104735846002,
+      "id_confidence": 0.4366104735846002,
+      "studies_confidence": 0.4366104735846002,
+      "conviction": 0.4366104735846002,
+      "effective_confidence_threshold": 0.5111179805223696,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44398967429684444,
+      "id_confidence": 0.44398967429684444,
+      "studies_confidence": 0.44398967429684444,
+      "conviction": 0.44398967429684444,
+      "effective_confidence_threshold": 0.5103179954459944,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4431946752075045,
+      "id_confidence": 0.4431946752075045,
+      "studies_confidence": 0.4431946752075045,
+      "conviction": 0.4431946752075045,
+      "effective_confidence_threshold": 0.5110168952332812,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.47747026895847405,
+      "id_confidence": 0.47747026895847405,
+      "studies_confidence": 0.47747026895847405,
+      "conviction": 0.47747026895847405,
+      "effective_confidence_threshold": 0.49780149406881247,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5131198436746449,
+      "id_confidence": 0.5131198436746449,
+      "studies_confidence": 0.5131198436746449,
+      "conviction": 0.5131198436746449,
+      "effective_confidence_threshold": 0.48066172307059896,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:50:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5377424292465794,
+      "id_confidence": 0.5377424292465794,
+      "studies_confidence": 0.5377424292465794,
+      "conviction": 0.5377424292465794,
+      "effective_confidence_threshold": 0.4771429528412625,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5485675033599948,
+      "id_confidence": 0.5485675033599948,
+      "studies_confidence": 0.5485675033599948,
+      "conviction": 0.5485675033599948,
+      "effective_confidence_threshold": 0.47308408625754,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:52:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5014105308779071,
+      "id_confidence": 0.5014105308779071,
+      "studies_confidence": 0.5014105308779071,
+      "conviction": 0.5014105308779071,
+      "effective_confidence_threshold": 0.47310153187032045,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:53:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43206760885472023,
+      "id_confidence": 0.43206760885472023,
+      "studies_confidence": 0.43206760885472023,
+      "conviction": 0.43206760885472023,
+      "effective_confidence_threshold": 0.4795669453393054,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:58:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4346928538256094,
+      "id_confidence": 0.4346928538256094,
+      "studies_confidence": 0.4346928538256094,
+      "conviction": 0.4346928538256094,
+      "effective_confidence_threshold": 0.47965816991996835,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 12:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4372502927318304,
+      "id_confidence": 0.4372502927318304,
+      "studies_confidence": 0.4372502927318304,
+      "conviction": 0.4372502927318304,
+      "effective_confidence_threshold": 0.4768865861886879,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 13:14:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5272359566479493,
+      "id_confidence": 0.5272359566479493,
+      "studies_confidence": 0.5272359566479493,
+      "conviction": 0.5272359566479493,
+      "effective_confidence_threshold": 0.47695056810341097,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 13:15:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5375262970166919,
+      "id_confidence": 0.5375262970166919,
+      "studies_confidence": 0.5375262970166919,
+      "conviction": 0.5375262970166919,
+      "effective_confidence_threshold": 0.4852751963385214,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 13:16:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5479276525231326,
+      "id_confidence": 0.5479276525231326,
+      "studies_confidence": 0.5479276525231326,
+      "conviction": 0.5479276525231326,
+      "effective_confidence_threshold": 0.4947083585194402,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-27 13:17:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5569779027096653,
+      "id_confidence": 0.5569779027096653,
+      "studies_confidence": 0.5569779027096653,
+      "conviction": 0.5569779027096653,
+      "effective_confidence_threshold": 0.501754096875906,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-28 11:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5119705715393462,
+      "id_confidence": 0.5119705715393462,
+      "studies_confidence": 0.5119705715393462,
+      "conviction": 0.5119705715393462,
+      "effective_confidence_threshold": 0.506139902779408,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-28 11:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.44088489403075437,
+      "id_confidence": 0.44088489403075437,
+      "studies_confidence": 0.44088489403075437,
+      "conviction": 0.44088489403075437,
+      "effective_confidence_threshold": 0.5035627170086847,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-28 11:59:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4596511457775075,
+      "id_confidence": 0.4596511457775075,
+      "studies_confidence": 0.4596511457775075,
+      "conviction": 0.4596511457775075,
+      "effective_confidence_threshold": 0.49279445607576067,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-28 12:00:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4348446331847542,
+      "id_confidence": 0.4348446331847542,
+      "studies_confidence": 0.4348446331847542,
+      "conviction": 0.4348446331847542,
+      "effective_confidence_threshold": 0.4886185175657207,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-28 15:12:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.7375265031495776,
+      "id_confidence": 0.7375265031495776,
+      "studies_confidence": 0.7375265031495776,
+      "conviction": 0.7375265031495776,
+      "effective_confidence_threshold": 0.4888962199987241,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 09:37:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5151569623283043,
+      "id_confidence": 0.5151569623283043,
+      "studies_confidence": 0.5151569623283043,
+      "conviction": 0.5151569623283043,
+      "effective_confidence_threshold": 0.5191795849311209,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:36:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4689138477483893,
+      "id_confidence": 0.4689138477483893,
+      "studies_confidence": 0.4689138477483893,
+      "conviction": 0.4689138477483893,
+      "effective_confidence_threshold": 0.5269702518907684,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:37:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4937950598336967,
+      "id_confidence": 0.4937950598336967,
+      "studies_confidence": 0.4937950598336967,
+      "conviction": 0.4937950598336967,
+      "effective_confidence_threshold": 0.5211380410008124,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:38:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5063096689194285,
+      "id_confidence": 0.5063096689194285,
+      "studies_confidence": 0.5063096689194285,
+      "conviction": 0.5063096689194285,
+      "effective_confidence_threshold": 0.5167649172825128,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:39:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.500778334668793,
+      "id_confidence": 0.500778334668793,
+      "studies_confidence": 0.500778334668793,
+      "conviction": 0.500778334668793,
+      "effective_confidence_threshold": 0.5126031189221424,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:40:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4805512590234385,
+      "id_confidence": 0.4805512590234385,
+      "studies_confidence": 0.4805512590234385,
+      "conviction": 0.4805512590234385,
+      "effective_confidence_threshold": 0.5069831621180552,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:41:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.46614626146742655,
+      "id_confidence": 0.46614626146742655,
+      "studies_confidence": 0.46614626146742655,
+      "conviction": 0.46614626146742655,
+      "effective_confidence_threshold": 0.5038412308664644,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4685364496173379,
+      "id_confidence": 0.4685364496173379,
+      "studies_confidence": 0.4685364496173379,
+      "conviction": 0.4685364496173379,
+      "effective_confidence_threshold": 0.5063673676101316,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:43:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4767945571090729,
+      "id_confidence": 0.4767945571090729,
+      "studies_confidence": 0.4767945571090729,
+      "conviction": 0.4767945571090729,
+      "effective_confidence_threshold": 0.5072558979941146,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:44:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4847534689513426,
+      "id_confidence": 0.4847534689513426,
+      "studies_confidence": 0.4847534689513426,
+      "conviction": 0.4847534689513426,
+      "effective_confidence_threshold": 0.5114508903865465,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:45:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4879918242947131,
+      "id_confidence": 0.4879918242947131,
+      "studies_confidence": 0.4879918242947131,
+      "conviction": 0.4879918242947131,
+      "effective_confidence_threshold": 0.486173586966723,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:46:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.47551410715024106,
+      "id_confidence": 0.47551410715024106,
+      "studies_confidence": 0.47551410715024106,
+      "conviction": 0.47551410715024106,
+      "effective_confidence_threshold": 0.48345707316336395,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:47:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4677749092117668,
+      "id_confidence": 0.4677749092117668,
+      "studies_confidence": 0.4677749092117668,
+      "conviction": 0.4677749092117668,
+      "effective_confidence_threshold": 0.4841170991035491,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:48:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5256109093043586,
+      "id_confidence": 0.5256109093043586,
+      "studies_confidence": 0.5256109093043586,
+      "conviction": 0.5256109093043586,
+      "effective_confidence_threshold": 0.4815150840413561,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:49:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.525374281714925,
+      "id_confidence": 0.525374281714925,
+      "studies_confidence": 0.525374281714925,
+      "conviction": 0.525374281714925,
+      "effective_confidence_threshold": 0.48344520807984914,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:50:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5172263404202055,
+      "id_confidence": 0.5172263404202055,
+      "studies_confidence": 0.5172263404202055,
+      "conviction": 0.5172263404202055,
+      "effective_confidence_threshold": 0.4859048027844623,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 10:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4371043725216903,
+      "id_confidence": 0.4371043725216903,
+      "studies_confidence": 0.4371043725216903,
+      "conviction": 0.4371043725216903,
+      "effective_confidence_threshold": 0.48957231092413905,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 11:07:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43183875895517154,
+      "id_confidence": 0.43183875895517154,
+      "studies_confidence": 0.43183875895517154,
+      "conviction": 0.43183875895517154,
+      "effective_confidence_threshold": 0.48666812202956533,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 11:12:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.442978093860991,
+      "id_confidence": 0.442978093860991,
+      "studies_confidence": 0.442978093860991,
+      "conviction": 0.442978093860991,
+      "effective_confidence_threshold": 0.48299835296334875,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 11:27:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5436811609675666,
+      "id_confidence": 0.5436811609675666,
+      "studies_confidence": 0.5436811609675666,
+      "conviction": 0.5436811609675666,
+      "effective_confidence_threshold": 0.4796167066385405,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 11:28:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5590219333511921,
+      "id_confidence": 0.5590219333511921,
+      "studies_confidence": 0.5590219333511921,
+      "conviction": 0.5590219333511921,
+      "effective_confidence_threshold": 0.48550947584016296,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 12:08:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.43794239117608136,
+      "id_confidence": 0.43794239117608136,
+      "studies_confidence": 0.43794239117608136,
+      "conviction": 0.43794239117608136,
+      "effective_confidence_threshold": 0.4926124867458109,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 12:09:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4640742768480099,
+      "id_confidence": 0.4640742768480099,
+      "studies_confidence": 0.4640742768480099,
+      "conviction": 0.4640742768480099,
+      "effective_confidence_threshold": 0.48885531514839486,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 12:42:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.49083314839080994,
+      "id_confidence": 0.49083314839080994,
+      "studies_confidence": 0.49083314839080994,
+      "conviction": 0.49083314839080994,
+      "effective_confidence_threshold": 0.4884852519120192,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 12:43:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5585178795420077,
+      "id_confidence": 0.5585178795420077,
+      "studies_confidence": 0.5585178795420077,
+      "conviction": 0.5585178795420077,
+      "effective_confidence_threshold": 0.48500747582066434,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 12:44:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5736458772344619,
+      "id_confidence": 0.5736458772344619,
+      "studies_confidence": 0.5736458772344619,
+      "conviction": 0.5736458772344619,
+      "effective_confidence_threshold": 0.4883218356033726,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 14:51:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4581001327372274,
+      "id_confidence": 0.4581001327372274,
+      "studies_confidence": 0.4581001327372274,
+      "conviction": 0.4581001327372274,
+      "effective_confidence_threshold": 0.4939637892847982,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:01:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4551355578313064,
+      "id_confidence": 0.4551355578313064,
+      "studies_confidence": 0.4551355578313064,
+      "conviction": 0.4551355578313064,
+      "effective_confidence_threshold": 0.4960633653063519,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:02:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.559192968645151,
+      "id_confidence": 0.559192968645151,
+      "studies_confidence": 0.559192968645151,
+      "conviction": 0.559192968645151,
+      "effective_confidence_threshold": 0.49839304519396543,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:03:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.5283235584410246,
+      "id_confidence": 0.5283235584410246,
+      "studies_confidence": 0.5283235584410246,
+      "conviction": 0.5283235584410246,
+      "effective_confidence_threshold": 0.5100145326723815,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:04:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.519327732295831,
+      "id_confidence": 0.519327732295831,
+      "studies_confidence": 0.519327732295831,
+      "conviction": 0.519327732295831,
+      "effective_confidence_threshold": 0.5084787724197273,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:05:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4840736902166316,
+      "id_confidence": 0.4840736902166316,
+      "studies_confidence": 0.4840736902166316,
+      "conviction": 0.4840736902166316,
+      "effective_confidence_threshold": 0.5045093523141911,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    },
+    {
+      "event_type": "CAUSAL_CASCADE_DECISION",
+      "timestamp": "2023-09-29 15:06:00+05:30",
+      "reason": "CAUSAL_CASCADE_PASS",
+      "pa_confidence": 0.4854520843197312,
+      "id_confidence": 0.4854520843197312,
+      "studies_confidence": 0.4854520843197312,
+      "conviction": 0.4854520843197312,
+      "effective_confidence_threshold": 0.5091224822182461,
+      "effective_n": 4.5,
+      "posterior_lcb_r": 0.15,
+      "context_trades": 6,
+      "context_key": [
+        "GTG2_TECH_TELECOM",
+        "calm",
+        "ALIGNED"
+      ]
+    }
+  ]
+}

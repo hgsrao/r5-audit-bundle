@@ -1,0 +1,26 @@
+{
+  "GTG1_METALS_ENERGY": {
+    "Kp": 0.1,
+    "Ki": 0.28,
+    "Kd": 0.8,
+    "best_sharpe": -0.55
+  },
+  "GTG2_TECH_AGILE": {
+    "Kp": 0.1,
+    "Ki": 0.12,
+    "Kd": 1.2,
+    "best_sharpe": 0.64
+  },
+  "CSTG_CORE_BANKING": {
+    "Kp": 0.1,
+    "Ki": 0.06,
+    "Kd": 1.2,
+    "best_sharpe": 1.02
+  },
+  "BPSTG_INFRA": {
+    "Kp": 0.7,
+    "Ki": 0.12,
+    "Kd": 1.2,
+    "best_sharpe": 0.65
+  }
+}

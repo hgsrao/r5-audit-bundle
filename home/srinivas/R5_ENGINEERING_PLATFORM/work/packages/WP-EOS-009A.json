@@ -1,0 +1,11 @@
+{
+  "id": "WP-EOS-009A",
+  "type": "INDEPENDENT_AUDIT",
+  "objective": "Gemini Dispatcher smoke test (commissioning only)",
+  "prompt": "Review only the engineering workspace.\n\nWorking directory:\n\n~/R5_ENGINEERING_PLATFORM\n\nRead only:\n\nCURRENT_STATE.md\n\nCHECKPOINT_004.md\n\nGEMINI.md\n\nReturn exactly four items.\n\n1.\n\nCan you read CURRENT_STATE.md?\n\nYES or NO\n\n2.\n\nCan you read CHECKPOINT_004.md?\n\nYES or NO\n\n3.\n\nCan you read GEMINI.md?\n\nYES or NO\n\n4.\n\nHow many files exist under\n\nreports/\n\nReturn only the number.\n\nDo not modify anything.\n\nDo not execute commands.\n\nDo not write files.\n",
+  "worker": "gemini",
+  "metadata": {
+    "campaign": "R5-EOS",
+    "note": "CHECKPOINT_004.md lives at receipts/checkpoints/CHECKPOINT_004.md"
+  }
+}

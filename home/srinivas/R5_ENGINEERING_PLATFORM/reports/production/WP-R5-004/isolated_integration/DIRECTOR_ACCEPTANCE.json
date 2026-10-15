@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-10-08T14:04:36.475268+00:00",
+  "package": "WP-R5-004-ISOLATED-INTEGRATION",
+  "decision": "PASS WITH FINDINGS",
+  "release_scope": "SYNTHETIC_INTEGRATION_ONLY",
+  "director_verification": "141 passed in25.15sec; test-only amendment2passed in4.83sec;8source hashes match",
+  "worker_evidence": "181 regressions passed;26/26mutation controls caught",
+  "gemini": "Browser Flash completed PASS WITH FINDINGS; Director reconciliation saved, no invented counterexample adopted",
+  "D-01": "CLOSED: exact receipt path assertion and negative control verified",
+  "mechanical_scope": "2synthetic stocks+2grids, dependency imports and preserved-source output identity;0trades, no performance authority",
+  "limitations": [
+    "Tested single host only",
+    "Accidental/buggy access threat model",
+    "No real input provenance or release acceptance",
+    "Real release authority pin design requires verification before commissioning"
+  ],
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY",
+  "unresolved": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "start_head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "isolated_worktree": "/tmp/r5-d02-start-head-c7pbyzid",
+  "command": [
+    "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_revision5_engine_applicability.py::test_production_code_never_passes_literal_studies_gains_to_composite_study_signal",
+    "-rA",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "exit_code": 1,
+  "offender": "outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py",
+  "offender_current_sha256": "380f71b8f4d43d020f9560acf1605ad7543bc58b2d4b8a4f00cc106c09b7d3e2",
+  "offender_start_sha256": "380f71b8f4d43d020f9560acf1605ad7543bc58b2d4b8a4f00cc106c09b7d3e2",
+  "test_current_sha256": "e784297028f979ba79d5fb8e1c6ff8dbb4fd5a907b3a481f2d4ff3905f727f74",
+  "test_start_sha256": "e784297028f979ba79d5fb8e1c6ff8dbb4fd5a907b3a481f2d4ff3905f727f74"
+}

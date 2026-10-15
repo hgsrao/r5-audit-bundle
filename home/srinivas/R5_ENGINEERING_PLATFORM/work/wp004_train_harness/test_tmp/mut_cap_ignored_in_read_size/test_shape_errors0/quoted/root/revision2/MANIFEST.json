@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_cap_ignored_in_read_size/test_shape_errors0/quoted/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "92e8fa9d1e4d49d8c6bc4a968957115c8f975639dd014604bb9a7bf9aa292cb9",
+      "size_bytes": 18626,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "10932386b3557dd6f256e1b5db82492fabc61bfec53cc8561b1c24267f1646c3",
+      "size_bytes": 18626,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "726f1b0482d34552d51d25a0583dd07c2f4040710919736a117ba27a6d9bcfa3",
+  "symbol_count": 2
+}

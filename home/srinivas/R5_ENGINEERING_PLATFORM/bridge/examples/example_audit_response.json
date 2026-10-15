@@ -1,0 +1,23 @@
+{
+  "audit_id": "AUDIT-EXAMPLE",
+  "timestamp": "2026-10-07T09:00:00+05:30",
+  "status": "COMPLETED",
+  "summary": "Example only: independent qualification evidence is missing.",
+  "findings": [
+    "No evidence contents were supplied with this example."
+  ],
+  "missing_tests": [
+    "Consumer-level fail-closed tests"
+  ],
+  "missing_evidence": [
+    "Parameter provenance receipts"
+  ],
+  "parameter_authority_issues": [
+    "Production authority cannot be verified from file names alone."
+  ],
+  "documentation_issues": [],
+  "recommendations": [
+    "Supply existing provenance and consumer-test receipts for independent review."
+  ],
+  "overall_result": "REQUIRES_REVIEW"
+}

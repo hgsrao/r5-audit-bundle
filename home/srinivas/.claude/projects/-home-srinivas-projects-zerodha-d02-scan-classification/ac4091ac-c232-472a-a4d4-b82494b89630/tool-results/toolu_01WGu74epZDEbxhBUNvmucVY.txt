@@ -1,0 +1,146 @@
+phase_5_orchestration_master.py:452:        self.pa = PA_Architecture(config["pa"])
+phase_5_orchestration_master.py:486:        pa_output = self.pa.predict(
+gates_framework.py:413:    def evaluate_pre_submit(self, *args, **kwargs) -> Dict[str, Any]:
+revision5/morning_recovery.py:204:                 pa_v1=engine.pa.export_state(engine.config))
+revision5/morning_recovery.py:290:    staged_pa = type(engine.pa)()
+revision5/morning_recovery.py:438:    engine.pa = staged_pa
+revision2/portfolio_orchestrator.py:115:        self.pa = PredictiveAnalyticsBox()
+revision2/portfolio_orchestrator.py:116:        self.id_box = IntelligentDiscriminationBox()  # Vanilla volatility-regime for 1-month calibration
+revision2/portfolio_orchestrator.py:123:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+revision2/portfolio_orchestrator.py:335:            self.pa.calibrate(symbol, bars.iloc[:warmup])
+revision2/portfolio_orchestrator.py:395:                signal, trace = self.pa.evaluate(snapshot, self.config)
+PHASE_2_OOS_BACKTEST_HARNESS.py:125:        self.entry_decision_engine = EntryDecisionEngine(self.safety_config, self.gate_logger)
+revision2/orchestrator.py:73:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+revision2/orchestrator.py:77:        self.pa = PredictiveAnalyticsBox()
+revision2/orchestrator.py:78:        self.id_box = IntelligentDiscriminationBox()
+revision2/orchestrator.py:321:        self.pa.calibrate(self.symbol, bars.iloc[:warmup])
+revision2/orchestrator.py:362:            signal, trace = self.pa.evaluate(snapshot, self.config)
+scripts/run_external_no_pid_one_signal_trace.py:120:    pa_evaluate = engine.pa.evaluate
+scripts/run_external_no_pid_one_signal_trace.py:126:    engine.pa.evaluate = traced_pa
+scripts/trace_boxes_1_to_5_multi_signal.py:21:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+scripts/trace_boxes_1_to_5_multi_signal.py:86:    pa = TALibPredictiveAnalyticsBox()
+outputs/block1_isolation_final/generated_sources/indicators_talib_pa_symmetric.py:52:class TALibPredictiveAnalyticsBox:
+scripts/trace_all_ten_boxes_one_trade.py:63:    orig_pa = orch.pa.evaluate
+scripts/trace_all_ten_boxes_one_trade.py:69:    orch.pa.evaluate = traced_pa
+scripts/research/r5_pa_gate_arms.py:42:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox, _np_clip  # noqa: E402
+scripts/research/r5_pa_gate_arms.py:100:    """No-argument-constructible subclass (state recovery rebuilds it with ``type(engine.pa)()``)."""
+scripts/research/r5_pa_gate_arms.py:102:    class ArmPredictiveAnalyticsBox(TALibPredictiveAnalyticsBox):
+scripts/research/r5_pa_gate_arms.py:146:    def evaluate_pre_submit(*args, **kwargs):
+scripts/research/r5_pa_gate_arms.py:202:                self.pa = pa_class()
+scripts/run_infy_3year_inhouse_instrumented.py:105:    orig_pa = orch.pa.evaluate
+scripts/run_infy_3year_inhouse_instrumented.py:118:    orch.pa.evaluate = pa_evaluate
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:1466:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:1472:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:1598:                signal, trace = self.pa.evaluate(snapshot, self.config)
+scripts/diagnostics/block1_arm_worker.py:14:  * PA symmetry            -> ``TALibPredictiveAnalyticsBox`` is replaced by a copy of
+scripts/diagnostics/block1_arm_worker.py:73:    return _load_module_from_source("indicators_talib_pa_symmetric", patched).TALibPredictiveAnalyticsBox
+scripts/diagnostics/block1_arm_worker.py:160:        orch_module.TALibPredictiveAnalyticsBox = lambda: pa_cls(symmetric_direction=True)
+scripts/run_maruti_3year_instrumented.py:111:    orig_pa_evaluate = orch.pa.evaluate
+scripts/run_maruti_3year_instrumented.py:124:    orch.pa.evaluate = pa_evaluate
+outputs/r5_remediation/morning_startup/orchestrator.before.py:56:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/morning_startup/orchestrator.before.py:247:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/morning_startup/orchestrator.before.py:255:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/morning_startup/orchestrator.before.py:264:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/morning_startup/orchestrator.before.py:1489:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/morning_startup/orchestrator.before.py:1495:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/morning_startup/orchestrator.before.py:1621:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:56:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:252:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:260:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:269:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:1506:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:1512:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:1638:                signal, trace = self.pa.evaluate(snapshot, self.config)
+scripts/run_infy_3year_instrumented.py:111:    orig_pa_evaluate = orch.pa.evaluate
+scripts/run_infy_3year_instrumented.py:124:    orch.pa.evaluate = pa_evaluate
+outputs/r5_remediation/state_recovery/orchestrator.before.py:56:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/state_recovery/orchestrator.before.py:247:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/state_recovery/orchestrator.before.py:255:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/state_recovery/orchestrator.before.py:264:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/state_recovery/orchestrator.before.py:1485:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/state_recovery/orchestrator.before.py:1491:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/state_recovery/orchestrator.before.py:1617:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:1450:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:1456:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:1582:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:1466:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:1472:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:1598:                signal, trace = self.pa.evaluate(snapshot, self.config)
+revision4/ten_box_orchestrator_clean.py:407:        self.pa = PredictiveAnalyticsBox()
+revision4/pipeline.py:39:        self.id_box = IntelligentDiscriminationBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/gates_framework.py:413:    def evaluate_pre_submit(self, *args, **kwargs) -> Dict[str, Any]:
+revision2_external/indicators_talib.py:125:class TALibPredictiveAnalyticsBox:
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:56:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:247:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:255:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:264:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:1485:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:1491:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:1617:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:1454:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:1460:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:1586:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision4/pipeline.py:39:        self.id_box = IntelligentDiscriminationBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision4/ten_box_orchestrator_clean.py:407:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/orchestrator.py:73:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/orchestrator.py:77:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/orchestrator.py:78:        self.id_box = IntelligentDiscriminationBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/orchestrator.py:321:        self.pa.calibrate(self.symbol, bars.iloc[:warmup])
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/orchestrator.py:362:            signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision4/pipeline.py:39:        self.id_box = IntelligentDiscriminationBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/portfolio_orchestrator.py:115:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/portfolio_orchestrator.py:116:        self.id_box = IntelligentDiscriminationBox()  # Vanilla volatility-regime for 1-month calibration
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/portfolio_orchestrator.py:123:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/portfolio_orchestrator.py:335:            self.pa.calibrate(symbol, bars.iloc[:warmup])
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2/portfolio_orchestrator.py:395:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/portfolio_orchestrator.py:115:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/portfolio_orchestrator.py:116:        self.id_box = IntelligentDiscriminationBox()  # Vanilla volatility-regime for 1-month calibration
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/portfolio_orchestrator.py:123:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/portfolio_orchestrator.py:335:            self.pa.calibrate(symbol, bars.iloc[:warmup])
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/portfolio_orchestrator.py:395:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/gates_framework.py:413:    def evaluate_pre_submit(self, *args, **kwargs) -> Dict[str, Any]:
+revision2_external/orchestrator.py:56:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+revision2_external/orchestrator.py:255:        self.pa = TALibPredictiveAnalyticsBox()
+revision2_external/orchestrator.py:263:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+revision2_external/orchestrator.py:272:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+revision2_external/orchestrator.py:1802:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+revision2_external/orchestrator.py:1808:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+revision2_external/orchestrator.py:1936:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision4/ten_box_orchestrator_clean.py:407:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/orchestrator.py:73:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/orchestrator.py:77:        self.pa = PredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/orchestrator.py:78:        self.id_box = IntelligentDiscriminationBox()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/orchestrator.py:321:        self.pa.calibrate(self.symbol, bars.iloc[:warmup])
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2/orchestrator.py:362:            signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/indicators_talib.py:52:class TALibPredictiveAnalyticsBox:
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:1450:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:1456:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:1582:                signal, trace = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/indicators_talib.py:52:class TALibPredictiveAnalyticsBox:
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:55:from revision2_external.indicators_talib import TALibPredictiveAnalyticsBox
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:246:        self.pa = TALibPredictiveAnalyticsBox()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:254:        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:263:        self.entry_decision_engine = EntryDecisionEngine(config=self._build_safety_gate_config())
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:1450:            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:1456:                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:1582:                signal, trace = self.pa.evaluate(snapshot, self.config)

@@ -1,0 +1,26 @@
+{
+  "package": "WP-R5-004",
+  "timestamp_utc": "2026-10-08T07:50:39.645113+00:00",
+  "worker": "qwen",
+  "model": "qwen3.8:27b",
+  "process_success": true,
+  "review_decision": "FAIL",
+  "reason": "Required contract review deliverables omitted; unsupported diagnoses and scope-divergent recommendations",
+  "request_sha256": "0cc4ac59b03ffe35e25374006ad7ac997de6a4f2d93f7b83bd97b706fcd6ced7",
+  "response_sha256": "036549b7ce5cbb37db785647f881a2ac1287f1738a5facb221b040cb631988b2",
+  "review_sha256": "1a164528ed77c3a167d7b59661de75e6b5e0d517984477f888e62f95cee02471",
+  "contract_ratified": false,
+  "static_reports": "PASS WITH FINDINGS, closed",
+  "execution": "NOT QUALIFIED",
+  "production": "NOT READY",
+  "active": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  },
+  "attempts": 1,
+  "dispatcher_used": false,
+  "replay_run": false,
+  "production_modified": false,
+  "implementation_authorized": false
+}

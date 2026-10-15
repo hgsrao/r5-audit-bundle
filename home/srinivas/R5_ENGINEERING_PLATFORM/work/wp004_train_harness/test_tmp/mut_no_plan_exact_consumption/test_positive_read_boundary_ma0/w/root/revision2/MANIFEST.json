@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_plan_exact_consumption/test_positive_read_boundary_ma0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "ae2f838f014237f34d28a3b3c3f00165fbb7008f8a8bdede6cfe7979362904ca",
+      "size_bytes": 15127,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "975465ad5c25a845a12e2cbde473d4f187d24ddd8db2a93dd8aa5e3039a1db89",
+      "size_bytes": 15329,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "ca0edf8315b195933866ac79dc3b13301bd2134325bc211e8bc269e0c3c83fe7",
+  "symbol_count": 2
+}

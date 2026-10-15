@@ -1,0 +1,20 @@
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+tests_external/test_grid_context.py::test_uses_real_symbol_prices_not_nifty_as_the_plant_series
+tests_external/test_grid_context.py::test_macro_labels_are_causal_and_independent_of_future_context_rows
+tests_external/test_grid_context.py::test_macro_labels_are_causal_and_independent_of_future_context_rows
+tests_external/test_grid_context.py::test_exact_hilbert_warmup_boundary_is_unavailable_and_json_safe
+tests_external/test_grid_context.py::test_first_finite_phase_after_boundary_is_preserved
+  /home/srinivas/projects/zerodha-d02-scan-classification/revision2_external/grid_context.py:176: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`).Please use a specific unit instead.
+    age = pd.Timedelta(seconds=grid.age_seconds)
+
+tests_external/test_grid_context.py::test_exact_hilbert_warmup_boundary_is_unavailable_and_json_safe
+  /home/srinivas/projects/zerodha-d02-scan-classification/tests_external/test_grid_context.py:106: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`).Please use a specific unit instead.
+    "INFY",stock,nifty.timestamp.iloc[-1]+pd.Timedelta(minutes=1),1)
+
+tests_external/test_grid_context.py::test_first_finite_phase_after_boundary_is_preserved
+  /home/srinivas/projects/zerodha-d02-scan-classification/tests_external/test_grid_context.py:117: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`).Please use a specific unit instead.
+    "INFY",stock,nifty.timestamp.iloc[-1]+pd.Timedelta(minutes=1),1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 7 warnings in 0.17s

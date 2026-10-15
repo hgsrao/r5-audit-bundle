@@ -1,0 +1,758 @@
+[
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project/REVISION2_SUNPHARMA_VALIDATION_REPORT.json",
+    "archive_member": "ECS_Project/REVISION2_SUNPHARMA_VALIDATION_REPORT.json",
+    "bytes": 34998,
+    "sha256": "4dbbd727d22eea21fbd951da0797cb5e83e21df4a55a48ad63c2fa41081671c5",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_BB09_BB10/tests/test_r5_signal_to_paper_integration.py",
+    "archive_member": "ECS_Project_BB09_BB10/tests/test_r5_signal_to_paper_integration.py",
+    "bytes": 7192,
+    "sha256": "a27858dd6a5746145c27df81043f16b26d91a8711dd386332bd3b0eab98097c3",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_Backup_20260907_073858/revision3/safety_panel.py",
+    "archive_member": "ECS_Project_Backup_20260907_073858/revision3/safety_panel.py",
+    "bytes": 3736,
+    "sha256": "db1ae5a7d8d8f7e167ab24a8cab6fb9b8f1266cf4932b4c03338e93d71e87d1e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_audit_sandbox_20260916/cost_aware_geometry_audit_results.json",
+    "archive_member": "ECS_Project_audit_sandbox_20260916/cost_aware_geometry_audit_results.json",
+    "bytes": 380,
+    "sha256": "0328dbae1764b867f0f1cdbe6b5269abef071d7729e8fee2fc04ad72a78b7eed",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_audit_sandbox_20260916/config_2023_calibrated.json",
+    "archive_member": "ECS_Project_audit_sandbox_20260916/config_2023_calibrated.json",
+    "bytes": 828,
+    "sha256": "13fb7b7fd71db9f767eea201894a8a518bab9441cc61a1c759f4cc65b79f1219",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_audit_sandbox_20260916/revision2_external/frozen_models_2026/all_results.json",
+    "archive_member": "ECS_Project_audit_sandbox_20260916/revision2_external/frozen_models_2026/all_results.json",
+    "bytes": 1612,
+    "sha256": "b8c71e40877b1ef32ef1119d4932b93fd549880299a11b324ad3e237b97d08a8",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_audit_sandbox_20260916/revision2_external/frozen_models_2026/training_stats.json",
+    "archive_member": "ECS_Project_audit_sandbox_20260916/revision2_external/frozen_models_2026/training_stats.json",
+    "bytes": 568,
+    "sha256": "78233d7b5c6e2454add497f24b068aa3a4bbbd6c884584e6b404ddeb8674d0a4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/INHOUSE_FULL_ALIGNMENT_MIGRATION_PLAN.md",
+    "archive_member": "ECS_Project_engine_completion/INHOUSE_FULL_ALIGNMENT_MIGRATION_PLAN.md",
+    "bytes": 11258,
+    "sha256": "064574219e82c506ab38d67ccf24d8c0690e714ecb91231bdc019e7705822509",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/STRESS_TEST_AUDIT.md",
+    "archive_member": "ECS_Project_engine_completion/STRESS_TEST_AUDIT.md",
+    "bytes": 7553,
+    "sha256": "e7cf52d3547b97814a00731cdcd64ff50e2f4493c108c868acdcd14606c7d08c",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_single_symbol_integration.py",
+    "archive_member": "ECS_Project_engine_completion/test_single_symbol_integration.py",
+    "bytes": 9506,
+    "sha256": "a3e2c7cff05954b5089aaa9ed8c974e0988fb3614c531eec5ca400b60b38ab4c",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_droop_pid_month_all_symbols.py",
+    "archive_member": "ECS_Project_engine_completion/test_droop_pid_month_all_symbols.py",
+    "bytes": 5050,
+    "sha256": "cec44dc68fc456e0401da781c71b896a636c6d1be91fd4e686b73f0193fe9bf3",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/CLOSED_LOOP_IMPLEMENTATION.md",
+    "archive_member": "ECS_Project_engine_completion/CLOSED_LOOP_IMPLEMENTATION.md",
+    "bytes": 12285,
+    "sha256": "6e14ee4a16426cf85508a1470cab9be6d50e0451590a936c03b0787fff80b389",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/canonical_parameter_registry.py",
+    "archive_member": "ECS_Project_engine_completion/canonical_parameter_registry.py",
+    "bytes": 23008,
+    "sha256": "c02fba96d2132ca60c06ad25fc631c2580c37e24ebff95fd9af388a91118de33",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/DROOP_PID_VERIFICATION.md",
+    "archive_member": "ECS_Project_engine_completion/DROOP_PID_VERIFICATION.md",
+    "bytes": 9349,
+    "sha256": "8fb57d08b22fa61c0c1dda794bacdfcde91cde2e99d6539959bb55f206b074c0",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/IMPLEMENTATION_CHANGES.txt",
+    "archive_member": "ECS_Project_engine_completion/IMPLEMENTATION_CHANGES.txt",
+    "bytes": 4837,
+    "sha256": "03364648cbbd7f8d29f71113ce36beb7d67fb3632ffa9da01247007ec831baf7",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/PROFIT_FEEDBACK_GUIDE.md",
+    "archive_member": "ECS_Project_engine_completion/PROFIT_FEEDBACK_GUIDE.md",
+    "bytes": 10022,
+    "sha256": "8785eb6941adef13edcc4f2481f512ca329c55a793fe93787f9c0a0a84dadfb4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_one_day_with_trades.py",
+    "archive_member": "ECS_Project_engine_completion/test_one_day_with_trades.py",
+    "bytes": 8262,
+    "sha256": "d6145a3ba1f9d5cd239a7e9829232bc74c33ae6c8cfe8e47a785c3813c3eea16",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/IMPLEMENTATION_CHECKPOINT.md",
+    "archive_member": "ECS_Project_engine_completion/IMPLEMENTATION_CHECKPOINT.md",
+    "bytes": 3443,
+    "sha256": "6bf24c6e10b9e94c167e13a500c1db4cd6aefa42fd59ede870651e8f7615a9c9",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/CALIBRATION_SESSION_LOG.md",
+    "archive_member": "ECS_Project_engine_completion/CALIBRATION_SESSION_LOG.md",
+    "bytes": 4847,
+    "sha256": "00be6eeb263e7d7cb62c359d416ae46d465e3ab4ae8b2912c8aaa74bb41a4822",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/optuna_sequential_calibrator.py",
+    "archive_member": "ECS_Project_engine_completion/optuna_sequential_calibrator.py",
+    "bytes": 13546,
+    "sha256": "cc34efcaedfc955a881226fccaf4404498480ec608adf314220fe9692b36a726",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/FULL_ALIGNMENT_COMPLETION_REPORT.md",
+    "archive_member": "ECS_Project_engine_completion/FULL_ALIGNMENT_COMPLETION_REPORT.md",
+    "bytes": 16162,
+    "sha256": "d5837507b02b234ae9a8841bbdec7fdf1ef5f09e8a7ba3bea8b8b2166e465c9e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_droop_pid_profitable.py",
+    "archive_member": "ECS_Project_engine_completion/test_droop_pid_profitable.py",
+    "bytes": 8189,
+    "sha256": "70ce196c9f735e5500510244b329bdc8a036fb57e2d7b9a286d7c0533d6617fe",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/EXTERNAL_ENGINE_AUDIT_FOR_INHOUSE_MIGRATION.md",
+    "archive_member": "ECS_Project_engine_completion/EXTERNAL_ENGINE_AUDIT_FOR_INHOUSE_MIGRATION.md",
+    "bytes": 11761,
+    "sha256": "6522bedaef4d9442ba65e684594cbf34ee712ff413648dab2f4b0ad4ec3c5fc4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/GEOMETRY_RESEARCH_PROTOCOL.md",
+    "archive_member": "ECS_Project_engine_completion/GEOMETRY_RESEARCH_PROTOCOL.md",
+    "bytes": 6478,
+    "sha256": "a28f081097716b3ee371f2ef9de2e379664de53959513b7ebc760dd22c143913",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/profit_feedback_demo.py",
+    "archive_member": "ECS_Project_engine_completion/profit_feedback_demo.py",
+    "bytes": 7704,
+    "sha256": "416ed9a090c51b9583b904c1c350601d0517e0a05f079717f98e15cb28b974f9",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/EXTERNAL_ENGINE_ANALYSIS.md",
+    "archive_member": "ECS_Project_engine_completion/EXTERNAL_ENGINE_ANALYSIS.md",
+    "bytes": 14565,
+    "sha256": "546d8bcf71c09fc5be7cf71273b1ae9189c48271d06f76600820116e02d5d9fd",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/EXTERNAL_VS_INHOUSE_ROADMAP.md",
+    "archive_member": "ECS_Project_engine_completion/EXTERNAL_VS_INHOUSE_ROADMAP.md",
+    "bytes": 9984,
+    "sha256": "e86006e5ee22d055857704747df35886940ba2435568aaafdd1e4a5e95e75735",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_stress_cases_complete.py",
+    "archive_member": "ECS_Project_engine_completion/test_stress_cases_complete.py",
+    "bytes": 14385,
+    "sha256": "155ab7157aeceb9e40118fbc3aa6254ffea28939570dd90e219605f5c9bdc3f1",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_3year_calibration.py",
+    "archive_member": "ECS_Project_engine_completion/test_3year_calibration.py",
+    "bytes": 5638,
+    "sha256": "3154b66627e92f61f7d665dd1c9bcdf0467610aa22123463bb0cfa219eeb3838",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/CALIBRATION_STATUS.txt",
+    "archive_member": "ECS_Project_engine_completion/CALIBRATION_STATUS.txt",
+    "bytes": 3266,
+    "sha256": "d63c4712512ab02f0047d37327b75af7671fe54ec59775b6347b2d639834c807",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_dynamic_droop_pid.py",
+    "archive_member": "ECS_Project_engine_completion/test_dynamic_droop_pid.py",
+    "bytes": 10605,
+    "sha256": "73a8d198bd27f5783852eba19f5bac152aa3b52dbeadfb597daaf6543908a48b",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/quickstart_profit_feedback.py",
+    "archive_member": "ECS_Project_engine_completion/quickstart_profit_feedback.py",
+    "bytes": 6405,
+    "sha256": "7fe16688d8b4f1aaf72eb28bf315a3bbbda0b776dc8bbe5432ea6e5b761cddb5",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/GEOMETRY_AUDIT_FINDINGS.md",
+    "archive_member": "ECS_Project_engine_completion/GEOMETRY_AUDIT_FINDINGS.md",
+    "bytes": 9903,
+    "sha256": "713d91ca0419af5f5f36ad30e3bc20595c30f5b20f80355cb68674d4a6eccfc1",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_single_symbol_run.py",
+    "archive_member": "ECS_Project_engine_completion/test_single_symbol_run.py",
+    "bytes": 9026,
+    "sha256": "563865f04a067465eefe7077e8523835f3d5c8b0b482046df8e637816ddfc112",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_droop_pid_volatile_with_traces.py",
+    "archive_member": "ECS_Project_engine_completion/test_droop_pid_volatile_with_traces.py",
+    "bytes": 10624,
+    "sha256": "b06ae2f9af3b0615bce1387a041c581b538c4095583cbe33f2ef6af86e43430e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/PID_INTEGRATION_POINTS.md",
+    "archive_member": "ECS_Project_engine_completion/PID_INTEGRATION_POINTS.md",
+    "bytes": 11019,
+    "sha256": "08953e216387eff1bd0c7d406404eabf48d80a65a959afc440e84611f92ee024",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_closed_loop_demo.py",
+    "archive_member": "ECS_Project_engine_completion/test_closed_loop_demo.py",
+    "bytes": 8284,
+    "sha256": "6910127e882e8efe276cb20167dbb73f4bdfa252f97bd9d2e2340e455fb8aab3",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/ray_tune_optuna_calibrator_FIXED.py",
+    "archive_member": "ECS_Project_engine_completion/ray_tune_optuna_calibrator_FIXED.py",
+    "bytes": 14202,
+    "sha256": "0a24dcbb2e85ed7edd6387972b54391083bf8a213c4b5a6da2a89e2f550f1b8f",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/IMPLEMENTATION_SUMMARY.md",
+    "archive_member": "ECS_Project_engine_completion/IMPLEMENTATION_SUMMARY.md",
+    "bytes": 11029,
+    "sha256": "de6ac8e0cf13b8a0a7604054f7e97a4d52124676818a55967211cc1915024456",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/pid_controller_blackbox.py",
+    "archive_member": "ECS_Project_engine_completion/pid_controller_blackbox.py",
+    "bytes": 10128,
+    "sha256": "ec92dac9c41e3dd26fb14d395d0e6ce37a9a398d92361c186ffb65a6d5c13636",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/GATE_FIX_GUIDE.md",
+    "archive_member": "ECS_Project_engine_completion/GATE_FIX_GUIDE.md",
+    "bytes": 5214,
+    "sha256": "850374064cada4adce8e5e6ebab30a83bec9cffef2424dbcb0455e2d1e92e63e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_droop_pid_no_gates.py",
+    "archive_member": "ECS_Project_engine_completion/test_droop_pid_no_gates.py",
+    "bytes": 6037,
+    "sha256": "4076ecc07ae7f2392a36b72cf7c5064b11b1bae6dba15c8274396b5fb1f137b1",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_closed_loop_integration.py",
+    "archive_member": "ECS_Project_engine_completion/test_closed_loop_integration.py",
+    "bytes": 8966,
+    "sha256": "137f535875d92842d6639764dd38ab087c4dc43c5c0d25d25f1943e2d7b02aa7",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/CALIBRATION_FIX_SUMMARY.md",
+    "archive_member": "ECS_Project_engine_completion/CALIBRATION_FIX_SUMMARY.md",
+    "bytes": 4637,
+    "sha256": "23bef15b1ef49ce65673134c535ec6b45622c7aabe600436db5392a01b64109f",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_one_day_complete.py",
+    "archive_member": "ECS_Project_engine_completion/test_one_day_complete.py",
+    "bytes": 10171,
+    "sha256": "dfbf815a60d77abe04b25f41534c6f83d302578f9fd5b7cfae61a10caea936d6",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/IMPLEMENTATION_COMPLETE_PRODUCTION.md",
+    "archive_member": "ECS_Project_engine_completion/IMPLEMENTATION_COMPLETE_PRODUCTION.md",
+    "bytes": 11478,
+    "sha256": "e4fe73f31981d6ab9f43a049526d8c5b26e8ffbdda443be790dfffd8e34c003e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/AUDIT_AND_IMPLEMENTATION_FINAL.txt",
+    "archive_member": "ECS_Project_engine_completion/AUDIT_AND_IMPLEMENTATION_FINAL.txt",
+    "bytes": 9924,
+    "sha256": "ae83946f5493507dd1a87983de44df9f64a9ec78b09f7eb22d42cec0ad9a0383",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/SINGLE_SYMBOL_TEST_REPORT.md",
+    "archive_member": "ECS_Project_engine_completion/SINGLE_SYMBOL_TEST_REPORT.md",
+    "bytes": 3596,
+    "sha256": "180ad0a5d17a5f9930abd0d1a6fc45d10d63a82a755070e4e4165a1db1c04af6",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/DYNAMIC_DROOP_PID_REPORT.md",
+    "archive_member": "ECS_Project_engine_completion/DYNAMIC_DROOP_PID_REPORT.md",
+    "bytes": 15062,
+    "sha256": "737e72b45b80ae508afb8bd8694add714309e85494061f2a1d9a1f02a1d17980",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/ray_tune_optuna_calibrator.py",
+    "archive_member": "ECS_Project_engine_completion/ray_tune_optuna_calibrator.py",
+    "bytes": 14807,
+    "sha256": "597f82e339df74c88b33ffe9d64c8e67f24526d0efc8a77760d7c4016693a46f",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/baseline_validation_inhouse_v20.py",
+    "archive_member": "ECS_Project_engine_completion/baseline_validation_inhouse_v20.py",
+    "bytes": 10121,
+    "sha256": "f70d45e3d323b340ed2cd4e74eb87d3ee47331ec60e835cc2d37a7636cf33283",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/DROOP_PID_IMPLEMENTATION_COMPLETE.md",
+    "archive_member": "ECS_Project_engine_completion/DROOP_PID_IMPLEMENTATION_COMPLETE.md",
+    "bytes": 9394,
+    "sha256": "96551563f5f709302f0d93704a703773d09eb922e3e8e34f057338799b95ac71",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/PHASE1_PROGRESS.md",
+    "archive_member": "ECS_Project_engine_completion/PHASE1_PROGRESS.md",
+    "bytes": 6016,
+    "sha256": "af0ca5b6079e897107063d56c4749aee87867aaf85d0239238eb3097bf4961fd",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/DROOP_PID_SPECIFICATION.md",
+    "archive_member": "ECS_Project_engine_completion/DROOP_PID_SPECIFICATION.md",
+    "bytes": 13732,
+    "sha256": "ee0146c79ab6b50c96ea1d60599c8e5e4705eddae053fb3454b5574707f3a628",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/IMPLEMENTATION_COMPLETE.md",
+    "archive_member": "ECS_Project_engine_completion/IMPLEMENTATION_COMPLETE.md",
+    "bytes": 8088,
+    "sha256": "3f08f9663973254e24dbba9c772d450f2bb6f3045a30c1be7c5aed3de13e8ed7",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_full_closed_loop_integration.py",
+    "archive_member": "ECS_Project_engine_completion/test_full_closed_loop_integration.py",
+    "bytes": 8585,
+    "sha256": "be97656a14f610fcea0b3e7af16e24a3d4e28cc39f355aad127c4969f5103715",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/ray_calibration_adapter_v2.py",
+    "archive_member": "ECS_Project_engine_completion/ray_calibration_adapter_v2.py",
+    "bytes": 12627,
+    "sha256": "9debbfc8aa4d916875d7dee3cc3c2bc608822b94e7c2d9df603f3489424e70a2",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/diagnostic_calibration_test.py",
+    "archive_member": "ECS_Project_engine_completion/diagnostic_calibration_test.py",
+    "bytes": 3490,
+    "sha256": "b9114106599b06d87b43db16ad7bdb636146b64f1272291da05d4e91b775dcaa",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/FULL_DAY_TEST_REPORT.md",
+    "archive_member": "ECS_Project_engine_completion/FULL_DAY_TEST_REPORT.md",
+    "bytes": 5234,
+    "sha256": "b3813c25636614c97538f1f48127aca556676667f9bc3a1fd98d12590fece157",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/calibration_config.py",
+    "archive_member": "ECS_Project_engine_completion/calibration_config.py",
+    "bytes": 8449,
+    "sha256": "391c7fead6c7ce962f7c0da6be024e31bdc509b9b0c64d9ce66d7f4070999272",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/test_real_data_day.py",
+    "archive_member": "ECS_Project_engine_completion/test_real_data_day.py",
+    "bytes": 10984,
+    "sha256": "d660f0934d321b9c07cc067f2d8a3884f22d27bdfefc09f45d4d804525675d6d",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/scripts/geometry_audit_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/scripts/geometry_audit_shadow.py",
+    "bytes": 18353,
+    "sha256": "e0b49861274fbd70f4cff5bc321da03f62f379408ad2af3c5d04c59d47038684",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/price_volume_study_reversal_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/price_volume_study_reversal_shadow.py",
+    "bytes": 3874,
+    "sha256": "7bab650be0333d0d0530d0603d0e8d153deda640fffeca68a9b7a7982efb137b",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/feedback_loops.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/feedback_loops.py",
+    "bytes": 10005,
+    "sha256": "cbe7ccd8d0c95777208cc644e919dc36b81f883a13f0ced79e555e2b0aca5610",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/reversal_cohort_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/reversal_cohort_shadow.py",
+    "bytes": 4214,
+    "sha256": "739182f8eeef2112fc71b0ebc8811fe0497524cd6a3586d3689f57488bfd4bb6",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/curve_synchronizer_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/curve_synchronizer_shadow.py",
+    "bytes": 7644,
+    "sha256": "95d2656cffaebaa54c97d2ae0c87d0280dac4af7df1daceea7e0faf00ec78a28",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/closed_loop_dry_run.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/closed_loop_dry_run.py",
+    "bytes": 9280,
+    "sha256": "dc4400ca47e76c2823120f8fe6d662be1e86d983d13e9d8287f64b6f45df93b7",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/symbol_dynamics.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/symbol_dynamics.py",
+    "bytes": 9732,
+    "sha256": "7a581a33348cc30ed073d9d5879f6fff74e58e1dd03235b5770cecbd85834fa1",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/data_certification.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/data_certification.py",
+    "bytes": 6895,
+    "sha256": "faa20d574e3a4ded99ca04bc08754a47d5b569506dcfe65a5721e97319f07905",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/breakout_continuation_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/breakout_continuation_shadow.py",
+    "bytes": 3954,
+    "sha256": "afff2f3d87fae886e185ecfc93798a9477d4fd36b8c034d10e1f5e6a804b860e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/data_loader_arctic.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/data_loader_arctic.py",
+    "bytes": 9672,
+    "sha256": "c555e6bafe8b70f9b0cc9ec7c988831a06e1c4a3a5003efbe0879f6776749ee4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/regime_id_box.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/regime_id_box.py",
+    "bytes": 10556,
+    "sha256": "cc6a509faec494dcac2eddc615acaa7d9be7c0824fc4c02d1e3bb66cc6fd6508",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/feedback_loops_production.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/feedback_loops_production.py",
+    "bytes": 11935,
+    "sha256": "ba3b2989204e0b1549ce462386ea5bd8177cd8ffbadbffc989886aa75d4f3642",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/portfolio_orchestrator.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/portfolio_orchestrator.py",
+    "bytes": 54262,
+    "sha256": "426da0b33fa050f59fca9802979768c3917d4941a46d535331fc5581ad021d62",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/triple_barrier_discovery.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/triple_barrier_discovery.py",
+    "bytes": 3500,
+    "sha256": "d01743d728202ed8c1086d99e78532baae573bd414795877981ed006563e626b",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/feedback_loops_enhanced.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/feedback_loops_enhanced.py",
+    "bytes": 15572,
+    "sha256": "d584bb3903ad4b523a7f93512dff51eb1fe346b7761e6d32c294c3516257cdd8",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/hmm_trainer.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/hmm_trainer.py",
+    "bytes": 4643,
+    "sha256": "feffcb7df580fe067eb2759615da089e8c64d9de9eced8f1c3f00e385b23ec63",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/closed_loop_orchestrator.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/closed_loop_orchestrator.py",
+    "bytes": 10132,
+    "sha256": "0a58b3c285b5a388be4ed4907d15f4e7aa3621f0859cc99f38dbf614342892a8",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/orchestrator.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/orchestrator.py",
+    "bytes": 61358,
+    "sha256": "17795d7a2ea996907b8f5d2344766db735056a143cb9a6221af424d64edf7eb5",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/boxes.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/boxes.py",
+    "bytes": 44807,
+    "sha256": "935c1a8c55691f136c956389672655f510058186c9d495c5c2001bb521019eaa",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/broker_adapter_kite.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/broker_adapter_kite.py",
+    "bytes": 8745,
+    "sha256": "f81f9dba76d3126ad93509e6c192f9cadc9f8dbc35dd617b443e7b4bbfc5b17d",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_engine_completion/revision2/breakout_retest_shadow.py",
+    "archive_member": "ECS_Project_engine_completion/revision2/breakout_retest_shadow.py",
+    "bytes": 3220,
+    "sha256": "cbe6bf230940eaa7fe8c08dad4561c3a4777cec5772a09414a369b54a8423fc5",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/PAPER_SIGNALS_LOG.json",
+    "archive_member": "ECS_Project_external_engine/PAPER_SIGNALS_LOG.json",
+    "bytes": 516,
+    "sha256": "b393c95b7f2c6dbb902cf9b10fe75f17f96743713501579eddedfcb0ea70bc40",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/run_stage1_full_ecs_dcs.py",
+    "archive_member": "ECS_Project_external_engine/run_stage1_full_ecs_dcs.py",
+    "bytes": 8775,
+    "sha256": "72bd0e8eaab8269d37ae0b601721ce24b3d437550ac24c1f5b554dcdf6c37ff2",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/PAPER_EXECUTION_LOG.json",
+    "archive_member": "ECS_Project_external_engine/PAPER_EXECUTION_LOG.json",
+    "bytes": 459,
+    "sha256": "5d29610c1cd20ce2756b4fda687792673950be61f1176b7c5bf231c8dc11886a",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/cost_aware_geometry_audit_results.json",
+    "archive_member": "ECS_Project_external_engine/cost_aware_geometry_audit_results.json",
+    "bytes": 380,
+    "sha256": "0328dbae1764b867f0f1cdbe6b5269abef071d7729e8fee2fc04ad72a78b7eed",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/config_2023_calibrated.json",
+    "archive_member": "ECS_Project_external_engine/config_2023_calibrated.json",
+    "bytes": 828,
+    "sha256": "13fb7b7fd71db9f767eea201894a8a518bab9441cc61a1c759f4cc65b79f1219",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/revision2_external/frozen_models_2026/all_results.json",
+    "archive_member": "ECS_Project_external_engine/revision2_external/frozen_models_2026/all_results.json",
+    "bytes": 1612,
+    "sha256": "b8c71e40877b1ef32ef1119d4932b93fd549880299a11b324ad3e237b97d08a8",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine/revision2_external/frozen_models_2026/training_stats.json",
+    "archive_member": "ECS_Project_external_engine/revision2_external/frozen_models_2026/training_stats.json",
+    "bytes": 568,
+    "sha256": "78233d7b5c6e2454add497f24b068aa3a4bbbd6c884584e6b404ddeb8674d0a4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine_quarantine_20260912/MTF_EXTRACTION_2026_STATUS.md",
+    "archive_member": "ECS_Project_external_engine_quarantine_20260912/MTF_EXTRACTION_2026_STATUS.md",
+    "bytes": 3398,
+    "sha256": "8490e1a099cb92775f5ed78a81e6953fe3e96903591b8f3d95ab33537a2e50e6",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine_quarantine_20260912/run_mtf_extraction_2026.py",
+    "archive_member": "ECS_Project_external_engine_quarantine_20260912/run_mtf_extraction_2026.py",
+    "bytes": 10365,
+    "sha256": "dd05dbfe8615e1602fbba11425adf378b86c3465c9919502b735a3088b2cea47",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_engine_quarantine_20260912/MTF_EXTRACTION_COMPLETION_REPORT.md",
+    "archive_member": "ECS_Project_external_engine_quarantine_20260912/MTF_EXTRACTION_COMPLETION_REPORT.md",
+    "bytes": 9472,
+    "sha256": "3f3fcab41452d4ac0115f779ad0a5c65a9f2edc9c92c0f57311ce33271dccc5f",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_v1.1_revision4/patch_sync.py",
+    "archive_member": "ECS_Project_external_v1.1_revision4/patch_sync.py",
+    "bytes": 625,
+    "sha256": "c57990bf006b7f78a9eca69740bbb9f5643ec666b90f7d54b8b706f6b362dc4d",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_v1.1_revision4/scripts/ray_calibration_adapter_full.py",
+    "archive_member": "ECS_Project_external_v1.1_revision4/scripts/ray_calibration_adapter_full.py",
+    "bytes": 9740,
+    "sha256": "ab337963d8688b6b5c6abbd6e389bde8f528383183385a4e6517f1a8b3db44b3",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_v1.1_revision4/scripts/test_48symbol_calibration.py",
+    "archive_member": "ECS_Project_external_v1.1_revision4/scripts/test_48symbol_calibration.py",
+    "bytes": 8116,
+    "sha256": "aa193273b8054200caa5f9552a2be9ba1759ab081eaa146a478dc04504d8b06f",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_v1.1_revision4/revision4_production/calibration_backtest.py",
+    "archive_member": "ECS_Project_external_v1.1_revision4/revision4_production/calibration_backtest.py",
+    "bytes": 9972,
+    "sha256": "295135a88517a7844879d6156ace2999f64c50daaeb4f6d5d94c5d7dbd6261dc",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_external_v1.1_revision4/revision2/boxes.py",
+    "archive_member": "ECS_Project_external_v1.1_revision4/revision2/boxes.py",
+    "bytes": 43043,
+    "sha256": "2818808f736a5d898640dc93250a8348f5455b3c7ff2ed7addb4af4b0302c277",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_inhouse_debug/canonical_parameter_registry.py",
+    "archive_member": "ECS_Project_inhouse_debug/canonical_parameter_registry.py",
+    "bytes": 26922,
+    "sha256": "67f845ccf8665d212686303b5ff15657fec0449c775de1a8f1049ea1b3a0ff95",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_inhouse_debug/cost_aware_geometry_audit_results.json",
+    "archive_member": "ECS_Project_inhouse_debug/cost_aware_geometry_audit_results.json",
+    "bytes": 380,
+    "sha256": "0328dbae1764b867f0f1cdbe6b5269abef071d7729e8fee2fc04ad72a78b7eed",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_inhouse_debug/revision2_external/frozen_models_2026/all_results.json",
+    "archive_member": "ECS_Project_inhouse_debug/revision2_external/frozen_models_2026/all_results.json",
+    "bytes": 1612,
+    "sha256": "b8c71e40877b1ef32ef1119d4932b93fd549880299a11b324ad3e237b97d08a8",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_inhouse_debug/revision2_external/frozen_models_2026/training_stats.json",
+    "archive_member": "ECS_Project_inhouse_debug/revision2_external/frozen_models_2026/training_stats.json",
+    "bytes": 568,
+    "sha256": "78233d7b5c6e2454add497f24b068aa3a4bbbd6c884584e6b404ddeb8674d0a4",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/tests/test_revision2_sensitivity.py",
+    "archive_member": "ECS_Project_ten_box_remediation/tests/test_revision2_sensitivity.py",
+    "bytes": 12825,
+    "sha256": "4f40e4249c153669d7ea18b94d548527db65da4e1674e72f81624ba5633da94e",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/tests/test_revision2_optimizer.py",
+    "archive_member": "ECS_Project_ten_box_remediation/tests/test_revision2_optimizer.py",
+    "bytes": 5848,
+    "sha256": "7aef64c4c703ede9ddea597c52fd84f8f7278261bfcf099ff3961ffb63345721",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/revision2/calibration_supervisor.py",
+    "archive_member": "ECS_Project_ten_box_remediation/revision2/calibration_supervisor.py",
+    "bytes": 30835,
+    "sha256": "058bc011e042308577d19c96139e6e9bb57d9a329c2878168b346da963f53588",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/revision2/portfolio_orchestrator.py",
+    "archive_member": "ECS_Project_ten_box_remediation/revision2/portfolio_orchestrator.py",
+    "bytes": 35016,
+    "sha256": "2543832511e6e7cdd839d1d89b3c32441a694aba91db568628827b88f58c5d89",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/revision2/orchestrator.py",
+    "archive_member": "ECS_Project_ten_box_remediation/revision2/orchestrator.py",
+    "bytes": 32458,
+    "sha256": "b37e0d2fddbe9233900db480acc7853acaa8d74f377a3b404e3df20abc6ee949",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/revision2/boxes.py",
+    "archive_member": "ECS_Project_ten_box_remediation/revision2/boxes.py",
+    "bytes": 34329,
+    "sha256": "f1340e67b215891ef1a3d3a5a099015bd25a6ea76e687bbf51ba8cceca146258",
+    "status": "backup content absent from cached remote history; review before integration"
+  },
+  {
+    "source": "/mnt/laptop_backup/shrinivas-Blade_full_backup_2026-09-23/home_shrinivas/ECS_Project_ten_box_remediation/revision2/optimizer.py",
+    "archive_member": "ECS_Project_ten_box_remediation/revision2/optimizer.py",
+    "bytes": 18225,
+    "sha256": "56b04b2309eea25003d6f7fcc96c05b1b091073993e8f6ba938005a4b9c50b7b",
+    "status": "backup content absent from cached remote history; review before integration"
+  }
+]

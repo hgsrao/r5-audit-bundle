@@ -1,0 +1,21 @@
+{
+  "depends_on": [],
+  "files": [],
+  "id": "WP-R5-004-ISOLATED-INTEGRATION",
+  "metadata": {
+    "authorization": "Human autonomous campaign completion; Director curated EOF decision",
+    "parent_package": "WP-R5-004"
+  },
+  "objective": "Integrate curated-artifact authorization and actual synthetic engine execution inside OS isolation",
+  "priority": 10,
+  "prompt": "Implement WP-R5-004-ISOLATED-INTEGRATION under parent WP-R5-004. OS isolation accepted by Director for synthetic scope: Codex reran all181tests,12hashesmatch. Do not repeat core OS audit. Read OS_ISOLATION_REPORT.md sections5-7, os_isolation module, existing real runner and harness authorization. Preserve before copies/hashes. Your scope is integration, not data acquisition. No real market data reads/hash/extraction/replay; no production/original snapshot/strategy/calibration/value changes.\nDirector DECISION: curated standalone TRAIN-only artifacts may end exactly at EOF; no out-of-window terminal sentinel is required for this new artifact schema. Original raw-file interval schema V1 remains unchanged/refusing as before. Add versioned curated-artifact authorization that binds provenance/issuer approval, explicit stock/grid roles, exact full artifact SHA, row counts, declared timestamp extent, TRAIN boundaries, warmup-only no-fit scope, complete symbol/grid bijection, exact code/snapshot/protocol/params/contract/OS profile pins and output/execution identity. Physical bytes in each artifact must all be approved; validate actual timestamps/coverage and counts fail closed. It is current-acquisition identity only, NOT historical sealed membership. Never relabel V1 raw offsets as artifact offsets. Unknown or invalid authorization must open no data.\nProvide minimal host launcher + child target integration through os_isolation.launch. Only approved individual inputs under /in; metadata auth/protocol/params/manifests must be separately pinned/exposed files, never broad parent directories. Snapshot path must work at /code/snapshot, not current host hardcoding. Invoke direct factory with explicit prepare, CNC runtime disabled, unchanged development risk behavior. Fail if source roots/imports escape pinned mounts. Do NOT simply set REAL_RUN_RELEASE_ACCEPTANCE_SHA256 or bypass witnesses. Implement a release record validator binding Director-issued record to exact profile, code/input pins, execution ID and authorization SHA, verified against an EXTERNAL pin; no self-pinned JSON or auth-only flag grants release. In synthetic integration tests, issuer fixtures may grant SYNTHETIC_ONLY release, which must never authorize real-data classification. Real release remains closed absent actual Director-approved provenance and pins. No imaginary external approval.\nRun actual end-to-end synthetic direct-factory execution INSIDE real bwrap with numpy/pandas and engine dependency imports, approved stock/grid artifacts and synthetic metadata. Compare deterministic existing source engine/frame/output fingerprints with controlled synthetic baseline; record risk scope, native OS isolation witness, loaded sources, reads and output. Meaningful negative controls: wrong/unknown release pin/classification, alias/path/schema mismatch, raw source mount denial, artifact poison/timestamp beyond TRAIN, counts/hash mismatch, no sentinel legitimate EOF, forged witness, hidden original repo absent, no CNC/GTT/network, no mutation of inputs/snapshot. No arbitrary financial values or real candidate performance claims. If ldd closure lacks required engine libs, add only required explicit pinned files and tests, never host root/lib directory binds. Preserve relevant regression suites, avoid unrelated audits. Actual command uses exact /home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I. Reports under reports/production/WP-R5-004/isolated_integration, code/tests under work/wp004_train_harness only. Finish with actual evidence, concrete remaining external prerequisites and stop.",
+  "requires_review": true,
+  "rules": [
+    "Synthetic data only; no market data acquisition or real replay",
+    "Protected snapshot/original/production preserved",
+    "No strategy/calibration/numerical policy edits"
+  ],
+  "submitted_at": "2026-10-08T12:54:53.036175+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

@@ -1,0 +1,83 @@
+- main:
+  - link "New chat":
+    - /url: /
+    - generic: Gemini
+  - text: side_nav_expand
+  - generic: play_arrow
+  - button "Sign in":
+    - generic: Sign in
+  - navigation "Side Navigation":
+    - button "Close sidebar" [expanded]:
+      - img: side_nav
+    - navigation "Main actions menu":
+      - link "New chat":
+        - /url: /app
+        - img: gemini_chat
+        - generic: New chat
+    - text: image_create google_labs
+    - navigation "Additional actions menu":
+      - link "Images":
+        - /url: /images
+        - img: image_create
+        - generic: Images
+      - link "Labs":
+        - /url: /labs
+        - img: google_labs
+        - generic: Labs
+    - img: info
+    - link "Sign in":
+      - /url: "#"
+    - text: to save activity
+    - button "About Gemini":
+      - img: spark_outline
+      - generic: About Gemini
+    - button "Get Gemini App":
+      - img: download
+      - generic: Get Gemini App
+    - button "For Business":
+      - img: work
+      - generic: For Business
+    - button "Pricing":
+      - img: sell
+      - generic: Pricing
+    - button "Sign in":
+      - generic: Sign in
+    - button "Settings":
+      - img: settings
+  - heading "Conversation with Gemini" [level=1]
+  - heading "You said Independent engineering audit request EOS002-GEMINI. Audit WP-BRIDGE-001 (Engineering Bridge Version…" [level=5]
+  - paragraph: "Independent engineering audit request EOS002-GEMINI. Audit WP-BRIDGE-001 (Engineering Bridge Version 1.0) only for unsupported assumptions, missing tests, documentation inconsistencies and missing evidence. Do not request redesign or implementation. Evidence supplied: accepted local receipt reports 45 pytest tests, ruff clean, py_compile clean, wheel/sdist build successful; all original eight source module SHA256 values are preserved in the source receipt. Version 1.0 is communication only: required work package fields id,type,model,objective,rules,files,prompt,metadata; urllib single POST localhost:11434/api/generate, stream false; validates response JSON object with response string and done true; persists bridge/work/<uuid>.json; JSON-line START/REQUEST/RESPONSE/END and ERROR logs with UTC timestamp, model, duration, response file. Tests mock network, so those receipts do not prove actual Ollama integration or actual model identity. No retry/scheduler/cache/business logic. Configuration has only five constants URL/model/timeout/log directory/work directory; default model empty, default transport timeout 60 seconds. Observed source integration defect: Bridge.execute reads and validates file before generating request id and START log; malformed work-package JSON or invalid fields fail closed but are not logged. This is being tested in commissioning. No source archive, complete test source, or full execution logs are included in this audit submission; report that limitation explicitly and do not invent inspection of files. Return ONLY a JSON object with fields audit_id=\"EOS002-GEMINI\", timestamp (timezone-qualified ISO8601, use 2026-10-07T04:00:00+00:00 as caller-supplied request timestamp and explicitly say response time was not independently verified), status, summary, findings, missing_tests, missing_evidence, parameter_authority_issues, documentation_issues, recommendations, overall_result. All issue fields are arrays of strings; overall_result one of PASS, PASS_WITH_FINDINGS, REQUIRES_REVIEW, REJECT. Acceptance is not established by claims alone. Recommendations limited to tests/evidence/documentation or fixing demonstrated integration defects."
+  - button "Expand":
+    - img: expand_more
+  - button "Copy prompt":
+    - img: copy
+  - button "Edit":
+    - img: edit
+  - heading "Gemini said" [level=6]
+  - generic: JSON
+  - button "Download code":
+    - img: arrow_circle_down
+  - button "Copy code" [active]:
+    - img: copy
+  - code: "{ \"audit_id\": \"EOS002-GEMINI\", \"timestamp\": \"2026-10-07T04:00:00+00:00\", \"status\": \"COMPLETED\", \"summary\": \"Independent engineering audit of WP-BRIDGE-001 (Engineering Bridge Version 1.0) focused on unsupported assumptions, missing tests, documentation inconsistencies, and missing evidence. Audit performed based strictly on supplied evidence, receipt claims, and observed integration defect descriptions without inspecting unsupplied source archives or full execution logs.\", \"findings\": [ \"Defect identified in execution lifecycle: Bridge.execute performs file reading and schema validation prior to generating a request ID or emitting a START log event, causing malformed work-package JSON or schema failures to fail closed without audit logging.\", \"The default model configuration constant is set to an empty string, which assumes downstream runtime overrides or external validation despite no explicit default model enforcement in configuration.\", \"Unvalidated assumption that local endpoint localhost:11434/api/generate reliably responds within the default 60-second transport timeout under live inference workloads.\" ], \"missing_tests\": [ \"Absence of end-to-end integration tests against a live, unmocked Ollama service instance to prove real network communication and model identity verification.\", \"Absence of test coverage verifying that malformed JSON or invalid schema work-package inputs emit structured ERROR log entries prior to failing closed.\", \"Absence of negative test cases verifying system behavior under transport timeout scenarios or HTTP status errors (e.g., 404, 500) from the Ollama API.\", \"Absence of tests asserting behavior when the model configuration constant is left empty during an execute call.\" ], \"missing_evidence\": [ \"No source code archive, repository commit state, or complete test suite implementation files were provided in the audit submission.\", \"No live integration execution logs or end-to-end receipt outputs verifying communication with an active Ollama service.\", \"No raw pytest run outputs, coverage reports, or environment diagnostic dumps beyond accepted local receipt summary claims.\" ], \"parameter_authority_issues\": [ \"Default configuration assigns an empty string to the model parameter, creating ambiguity regarding parameter authority and required fallback logic when no model is explicitly supplied.\", \"No runtime parameter enforcement or precedence rules defined between work package model specifications and global configuration default model constants.\" ], \"documentation_issues\": [ \"Audit submission explicitly noted that source archives, full test source code, and full execution logs were omitted from the audit package (caller-supplied response time timestamp not independently verified).\", \"Inconsistency between operational requirement for audit logging and the implementation sequence where pre-validation errors fail closed without logging.\" ], \"recommendations\": [ \"Refactor Bridge.execute lifecycle sequence to generate the unique request ID and emit the START log event prior to work package JSON parsing and validation.\", \"Add test cases covering malformed work-package handling, input validation failure logging, HTTP error responses, and socket timeout behavior.\", \"Execute and supply verification evidence from integration testing against an actual live Ollama instance.\", \"Clarify parameter authority documentation and schema enforcement for default and overridden model identifiers.\" ], \"overall_result\": \"PASS_WITH_FINDINGS\" }"
+  - button "Redo":
+    - img: refresh
+  - button "Copy":
+    - img: copy
+  - button "Show more options":
+    - img: more_horiz
+  - generic: Sign in to connect to Google apps, create images, and more
+  - button "Sign in":
+    - generic: Sign in
+  - textbox "Enter a prompt for Gemini":
+    - text: Ask Gemini
+    - paragraph
+    - text: encrypted
+  - button "Upload & tools":
+    - img: plus
+  - button "Open mode picker, currently":
+    - img: keyboard_arrow_down
+  - button "Dictate (^⇧D)":
+    - img: mic
+  - paragraph: Gemini is AI and can make mistakes.
+- generic: Copy code

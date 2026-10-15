@@ -1,0 +1,47 @@
+{
+  "depends_on": [],
+  "files": [
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/CURRENT_STATE.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/checkpoints/CHECKPOINT_004.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/R5_PRODUCTION_BACKLOG.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/R5_CURRENT_WORK_PACKAGE.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C/METADATA_QUALIFICATION_REPORT.md",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C/AUTHORITATIVE_METADATA_INDEX.csv",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C/SHA256SUMS.txt",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001/UPDATED_PARAMETER_REGISTER.json",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/revision2_external/instrument_metadata.py"
+  ],
+  "id": "WP-R5-002",
+  "metadata": {
+    "backlog_package": "WP01 (WP01-METADATA-QUALIFICATION)",
+    "campaign": "R5-PRODUCTION-001",
+    "depends_on": [],
+    "node": "NODE-001",
+    "owner": "Claude Code",
+    "phase": "WP-R5-002",
+    "prepared_by": "WP-R5-001",
+    "prepared_utc": "2026-10-07",
+    "program_manager": "ChatGPT (fallback)",
+    "status": "RELEASED_FOR_SUBMISSION",
+    "supplied_artifact_paths": [],
+    "released_by": "operator order WP-R5-002 (TRAIN Replay Input Qualification)",
+    "removed_blocker": "TRAIN-PERIOD-METADATA-EVIDENCE (obsolete after WP-R5-001C-QUAL; replaced by documented assumption A-META-001)",
+    "governing_assumption": "A-META-001",
+    "scope": "TRAIN_REPLAY_DIAGNOSTIC"
+  },
+  "objective": "Qualify all replay inputs required for the TRAIN_REPLAY_DIAGNOSTIC campaign using the qualified metadata baseline (Baseline-001); verify the replay path never enters CNC/GTT tick-consuming logic (fail closed otherwise); do NOT execute the replay.",
+  "priority": 10,
+  "prompt": "You are the implementation worker for WP-R5-002 (TRAIN Replay Input Qualification), dispatched by the R5 Engineering Dispatcher. Platform root: /home/srinivas/R5_ENGINEERING_PLATFORM. R5 repository (READ-ONLY): /home/srinivas/projects/zerodha-r5-governor-refactor, branch feature/ir02a-parameter-closure, HEAD 59371ff. Output directory: /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002. Campaign R5-PRODUCTION-001, scope TRAIN_REPLAY_DIAGNOSTIC (TRAIN = 2023-09-01 up to before 2025-07-01; 48-symbol universe = symbol names in the FILE NAMES of /home/srinivas/projects/zerodha-phase1/data/frozen_48_1min_20230703_20260824).\n\nCONTINUE EXISTING ENGINEERING. NEVER RESTART PREVIOUS WORK. FIRST READ: CURRENT_STATE.md; receipts/checkpoints/CHECKPOINT_004.md; R5_PRODUCTION_BACKLOG.md and R5_CURRENT_WORK_PACKAGE.md (WP01 sections); reports/production/WP-R5-001C/METADATA_QUALIFICATION_REPORT.md, AUTHORITATIVE_METADATA_INDEX.csv, SHA256SUMS.txt and raw/ACQUISITION_RECORD.json (Baseline-001); reports/production/WP-R5-001/UPDATED_PARAMETER_REGISTER.json (the Parameter Authority Register) and PRODUCTION_PARAMETER_CLOSURE_MATRIX.md; /home/srinivas/projects/zerodha-r5-governor-refactor/revision2_external/instrument_metadata.py; the WP01 campaign receipts (RECEIPT.md, full48_input_receipt.json, PREREGISTRATION if present, historical_legacy_ledger_receipt.json) in the NODE-001 campaign checkout /home/srinivas/Documents/Codex/2026-10-07/referenced-chatgpt-conversation-this-is-an/work/r5-parameter-closure/docs/r5_remediation_project/campaign/wp01/ (read-only; record if inaccessible).\n\nINPUTS: Baseline-001 (authenticated Kite metadata, sha256 536809820e9d0114d9ef42c2756bb2e44044474471007887a841e36b3696401f), the NSE Security Master (reports/production/WP-R5-001B/raw/NSE_CM_security_06102026.csv.gz), assumption A-META-001, CURRENT_STATE.md, CHECKPOINT_004, Parameter Authority Register.\n\nTASKS.\n1. BLOCKER REMOVAL (already applied by the operator before dispatch): the obsolete blocker TRAIN-PERIOD-METADATA-EVIDENCE was removed from work/packages/WP-R5-002.json's queue copy (before-copy: work/packages/WP-R5-002.before_blocker_removal.json). Verify from the DONE-queue/receipt record that no depends_on remains and record the removal in the reports. Do not edit queue files yourself.\n2. GOVERNING ASSUMPTION: record A-META-001 as the governing engineering assumption in INPUT_QUALIFICATION_REPORT.md. The verbatim operator wording is NOT on file (CHECKPOINT_004 says so): state only what the platform records (Baseline-001 is authoritative for TRAIN_REPLAY_DIAGNOSTIC; historical TRAIN stability of ticks/lots/symbols is assumed, NOT verified; ETERNAL undated symbol change and 9 missing listing dates open; EXEC-05 stays NOT_QUALIFIED; no use for live/production). Mark the text 'as recorded by WP-R5-001C; operator to confirm wording'. Do not invent more.\n3. VERIFY EVERY REPLAY INPUT. Determine from the repository (static reading, grep, git show; NO execution of replays) and the campaign receipts what the TRAIN replay consumes: market data (frozen 48-symbol 1-minute files; list each by path, size, SHA-256 - hashing is allowed, do not analyse rows), instrument metadata, parameter/config sources (parameter register, params), cost schedule, regime/ORC-13 inputs, grid/context inputs, calendar/session inputs, seed/fixtures, and any code revision pin. For each input record: id, description, path, exists, size, sha256, source/issuer, as-of, TRAIN-period coverage (from file NAME/header line/manifests only - never from analysing data), authority class (CERTIFIED_METADATA only for the opened Baseline-001; others per the register), status (QUALIFIED / QUALIFIED_WITH_ASSUMPTION / NOT_QUALIFIED / UNKNOWN), finding. Check the frozen dataset against any existing manifest/receipt hashes (full48_input_receipt.json etc.) and report any mismatch. Do not open holdout data (period on/after 2025-07-01 must not be read; if files span TRAIN+holdout record that only by file name and hash, and state that the replay must restrict to TRAIN).\n4. CNC/GTT FAIL-CLOSED CHECK. By static analysis (read, grep, call-graph tracing) of /home/srinivas/projects/zerodha-r5-governor-refactor confirm whether the replay path (the entry points the TRAIN replay uses: runner, simulator, cycle engine, protection, cost, exits) can reach any CNC/GTT tick-consuming logic (InstrumentMetadataSnapshot tick use in CNC product / GTT protection paths, ProtectionPolicy GTT hard block, CostSchedule CNC -> COST_SCHEDULE_UNQUALIFIED). Report per module: file:line, what it consumes, reachable from replay yes/no/UNKNOWN with the reasoning, and which guards (tripwire/fail-closed) exist. If a reaching path exists, or reachability cannot be established, the decision is FAIL (fail closed) and say exactly what is required to close it. Do not modify code.\n5. OUTPUTS in /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002: INPUT_QUALIFICATION_REPORT.md (decision, A-META-001 section, input-by-input findings, CNC/GTT analysis, constraints compliance), INPUT_INTEGRITY_REPORT.md (hashes, sizes, manifest comparisons, hash-chain of Baseline-001 re-verified by recomputing sha256 now), REPLAY_INPUT_MATRIX.csv (one row per replay input, columns as in task 3), SHA256SUMS.txt (every file in /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-002 except itself). DECISION: exactly one of PASS / PASS WITH FINDINGS / FAIL, with the reason; PASS requires every input QUALIFIED or QUALIFIED_WITH_ASSUMPTION with documented evidence and a proven no-CNC/GTT-tick path.\n6. STATE: append (never rewrite) dated sections to /home/srinivas/R5_ENGINEERING_PLATFORM/CURRENT_STATE.md and /home/srinivas/R5_ENGINEERING_PLATFORM/R5_PRODUCTION_BACKLOG.md and update /home/srinivas/R5_ENGINEERING_PLATFORM/R5_CURRENT_WORK_PACKAGE.md keeping history (before-copies in /home/srinivas/R5_ENGINEERING_PLATFORM/work/*.before_WP-R5-002.md; never touch the DISPATCHER_STATE_BEGIN/END block); write /home/srinivas/R5_ENGINEERING_PLATFORM/receipts/checkpoints/CHECKPOINT_005.md in the style of CHECKPOINT_004.md. The dispatcher writes its own receipt. Do NOT create, prepare, submit or start WP-R5-003; do not execute the replay.\n\nFINAL ANSWER (under 600 words): decision, inputs verified (counts by status), the CNC/GTT conclusion, findings, files written, and confirmation that nothing forbidden was modified.",
+  "requires_review": false,
+  "rules": [
+    "Do NOT modify the bridge, the dispatcher, the metadata baseline (reports/production/WP-R5-001C/**), trading strategy, calibration, regression or production parameters",
+    "Do NOT modify any file inside /home/srinivas/projects/zerodha-r5-governor-refactor (read-only); no git commit/push; no network, no broker action; live trading stays disabled",
+    "Do NOT execute the replay, any backtest, Block-1 or holdout run; do not start WP-R5-003 (you may only prepare nothing: do not create or submit it)",
+    "Raw OHLCV/market-data files may be listed by path, size and SHA-256 only; never read their rows into analysis other than what a hash or a header-line check requires; holdout data must not be opened at all",
+    "Never invent authority, ticks, dates, hashes, coverage or the text of an assumption; UNKNOWN stays UNKNOWN; NOT_QUALIFIED stays NOT_QUALIFIED; H/I/J counts stay 11/19/4",
+    "Fail closed: any replay-path reach into CNC/GTT tick-consuming logic, any missing/unhashable/inconsistent input => FAIL, not PASS"
+  ],
+  "submitted_at": "2026-10-07T05:20:09.707785+00:00",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

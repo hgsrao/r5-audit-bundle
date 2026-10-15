@@ -1,0 +1,124 @@
+{
+  "recent": [
+    {
+      "finished_at": "2026-10-07T08:14:29.231463+00:00",
+      "package_id": "WP-EOS-011-AUDIT",
+      "state": "DONE",
+      "worker": "gemini"
+    },
+    {
+      "finished_at": "2026-10-07T08:21:37.733588+00:00",
+      "package_id": "WP-QWEN-001",
+      "state": "DONE",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-07T08:33:25.049419+00:00",
+      "package_id": "WP-EOS-011-SMOKE-SHORT",
+      "state": "DONE",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-07T08:34:33.018931+00:00",
+      "package_id": "WP-EOS-011-SMOKE-LONG",
+      "state": "DONE",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-07T08:35:07.023750+00:00",
+      "package_id": "WP-EOS-011-SMOKE-ENG",
+      "state": "FAILED",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-07T08:35:07.057387+00:00",
+      "package_id": "WP-EOS-011-SMOKE-WP",
+      "state": "FAILED",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-08T08:16:01.997174+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T08:35:05.742292+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T08:50:52.820493+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+      "state": "FAILED",
+      "worker": "gemini"
+    },
+    {
+      "finished_at": "2026-10-08T10:18:45.842507+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+      "state": "FAILED",
+      "worker": "gemini"
+    },
+    {
+      "finished_at": "2026-10-08T10:41:16.412939+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T10:44:43.732014+00:00",
+      "package_id": "WP-EOS-GEMINI-ROUTE-REPAIR",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T10:46:42.441673+00:00",
+      "package_id": "WP-EOS-GEMINI-ROUTE-REPAIR",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T10:53:01.613511+00:00",
+      "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+      "state": "FAILED",
+      "worker": "gemini"
+    },
+    {
+      "finished_at": "2026-10-08T12:39:41.998649+00:00",
+      "package_id": "WP-R5-004-OS-ISOLATION",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T13:43:49.778766+00:00",
+      "package_id": "WP-R5-004-ISOLATED-INTEGRATION",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T14:00:55.864822+00:00",
+      "package_id": "WP-R5-004-ISOLATED-INTEGRATION",
+      "state": "REVIEW",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T14:14:22.188080+00:00",
+      "package_id": "WP-R5-004-RELEASE-AUTHORITY-ANALYSIS",
+      "state": "REVIEW",
+      "worker": "qwen"
+    },
+    {
+      "finished_at": "2026-10-08T14:16:47.659575+00:00",
+      "package_id": "WP-R5-004-RELEASE-AUTHORITY",
+      "state": "FAILED",
+      "worker": "claude"
+    },
+    {
+      "finished_at": "2026-10-08T14:26:29.775673+00:00",
+      "package_id": "WP-R5-004-RELEASE-AUTHORITY",
+      "state": "REVIEW",
+      "worker": "claude"
+    }
+  ]
+}

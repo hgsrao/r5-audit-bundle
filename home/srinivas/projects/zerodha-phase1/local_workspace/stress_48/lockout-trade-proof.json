@@ -1,0 +1,7 @@
+{
+  "lockout_start": "2026-08-13 10:24:00+05:30",
+  "operator_reset": "2026-08-13 11:24:00+05:30",
+  "fault_bay": "GTG1_HEAVY_INDUSTRY",
+  "other_bay_completed_trades_entered_strictly_during_lockout": 30,
+  "locked_bay_entries_strictly_during_lockout": 0
+}

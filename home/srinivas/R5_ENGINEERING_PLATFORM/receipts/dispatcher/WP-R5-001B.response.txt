@@ -1,0 +1,47 @@
+ENGINEERING DECISION: AUTHORITATIVE_METADATA_NOT_QUALIFIED
+
+The only gap is that the metadata can't be shown valid for TRAIN (2023-09-01 to before 2025-07-01). Provenance and coverage are fine.
+
+**Integrity**
+- Both raw files match the operator's SHA-256 and byte sizes.
+- Kite has 10,324 rows: 10,188 NSE equity and 136 index rows.
+- The NSE master has 38,010 rows, of which 4,474 are EQ series.
+
+**Coverage and cross-validation**
+- All 48 symbols are covered in both sources, each exactly once. No symbol is missing, duplicated or non-EQ-only.
+- Kite tick size equals NSE `BidIntrvl`/100 for 48 of 48. Lot size agrees for 48 of 48 (all are 1). There are no disagreements.
+- The 48 symbols use five distinct ticks: 0.01 (4), 0.05 (16), 0.10 (23), 0.50 (2), 1.00 (3). No universal default would be correct.
+- The `BidIntrvl`-in-paise reading is high confidence. Across all 3,033 symbols with a unique match in both files, Kite's tick agrees 3,033 of 3,033, and the NSE `TickSz` column is empty. NSE dates are seconds since 1980, not Unix time.
+- Kite and NSE tokens and names also agree for all 48.
+
+**TRAIN finding**
+- Both snapshots are dated at least 15 months after TRAIN ended.
+- A name scan of 23,625 files and a content scan of the approved roots found no dated instrument dump or NSE tick-size circular register. WP-R5-002A also found none.
+- ETERNAL carries a "SYMBOL CHANGE" marker with no date, so I can't tell whether it traded under another symbol during TRAIN.
+- Nine symbols have no listing date: ADANIENT, BAJFINANCE, BEL, DRREDDY, EICHERMOT, TATACONSUM, TATASTEEL, TITAN, TRENT.
+- The files record only the latest corporate action per symbol.
+- Stability of ticks, lots, tokens, symbols and ISINs over TRAIN is unverified. I did not assume it.
+- Dated Kite/NSE dumps spanning TRAIN, or an NSE circular register of tick/lot/symbol/ISIN/face-value events for the 48 symbols, would flip the decision. The nine listing dates are also needed.
+- `InstrumentMetadataSnapshot` has a single as-of date and no effective interval. I did not change it.
+
+**Authority classification**
+- The Kite dump and the NSE master are each AUTHORITATIVE, meaning provenance of an official export only.
+- The derived 48-row CSV is PARTIALLY AUTHORITATIVE.
+- I did not witness the download. The record is the operator's commands and headers plus matching hashes, and the headers carry no publisher signature.
+
+**Files written** in `/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/`:
+- `METADATA_QUALIFICATION_REPORT.md`
+- `AUTHORITATIVE_INSTRUMENT_METADATA.csv`
+- `AUTHORITATIVE_METADATA_INDEX.csv`
+- `PROVENANCE_RECEIPT.md`
+- `ENGINEERING_ACCEPTANCE_REPORT.md`
+- `SHA256SUMS.txt`, which passes `sha256sum -c` for all 14 files
+- Three extras: `TRAIN_INFILE_EVIDENCE.csv`, `analysis_results.json` and `build_wp_r5_001b.py`
+
+I also appended dated sections to `CURRENT_STATE.md` (after the dispatcher block, which is untouched) and `R5_PRODUCTION_BACKLOG.md`, wrote `receipts/checkpoints/CHECKPOINT_003.md`, and prepended a WP-R5-001B section to `R5_CURRENT_WORK_PACKAGE.md` with the old header kept.
+
+I did not make before-copies of those three files, because the shell blocked the copy command. The `.before_WP-R5-001` pattern from the earlier package was not repeated.
+
+**WP-R5-002** remains BLOCKED. I did not release or execute it, and WP01 acceptance is still BLOCKED. H/I/J stays 11/19/4, EXEC-05 stays NOT_QUALIFIED, and production readiness is NOT READY.
+
+I made no network calls, opened no market-data file, and changed no production code, dispatcher, bridge, repository or raw file.

@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-08T13:16:53.721438+00:00",
+  "provenance": "Operator-supplied Gemini review; source-only; no auditor-executed tests",
+  "audit_sha256": "ebf8bb2bf679b564289d83064c4ea32973d86e5699b24254adfd9fd7e84fe204",
+  "audit_scope": "Frozen pre-integration corrected harness and OS isolation",
+  "verdict": "PASS WITH FINDINGS",
+  "decisions": [
+    {
+      "id": "F-01",
+      "decision": "ACCEPT AS SYNTHETIC LIMITATION; NO AMENDMENT",
+      "reason": "Unplanned synthetic fallback is intentional; real_execution requires plan in HarnessConfig and make_prepare. Real release remains closed. Additional synthetic-only caps do not close a production blocker."
+    },
+    {
+      "id": "F-02",
+      "decision": "REJECT AS UNPROVEN LEAK; NO ACTION",
+      "reason": "no_expose_paths intentionally prevents ancestor mounts while permitting explicitly approved descendants. Only dedicated generated probe/code dirs and individual input files are exposed. Secret dir explicitly protected; sibling and canary negative controls already passed. Adding entire test_tmp as protected would reject legitimate fixture mounts, not fix demonstrated leak."
+    },
+    {
+      "id": "F-03",
+      "decision": "ACCEPT; EXISTING ACTIVE PACKAGE",
+      "package": "WP-R5-004-ISOLATED-INTEGRATION",
+      "reason": "Full engine/numpy/pandas imports and synthetic engine execution within actual sandbox are already assigned to Claude; no duplicate package."
+    }
+  ],
+  "caveat": "Handshake nonce/markers do not establish malicious-target tamper resistance; documented in-process accidental-access threat model governs. No claim of cryptographic attestation or sealed TRAIN provenance.",
+  "replay": "NOT QUALIFIED",
+  "production": "NOT READY"
+}

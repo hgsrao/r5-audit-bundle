@@ -1,0 +1,258 @@
+{
+  "authorization": null,
+  "block_fingerprint": "5fef0ffdf29ae117987decd8791db731c657727077bc8ce664c251e3b24be8e4",
+  "claims": "none: mechanics only; not sealed, not actual48_certified, not performance",
+  "classification": "NON_SEALED_TRAIN_EXECUTION_DIAGNOSTIC",
+  "combined_cycle_runtime": null,
+  "environment": {
+    "distribution_count": 77,
+    "distributions_sha256": "dd06822c58df605841399357127b2344e3ccc9913330d8666a42b20fc4836601",
+    "executable": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python",
+    "harness_source_sha256": "8eed62e14fe299f46379e848dd10b831d8f0644aa22349934d76695af2caf1db",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]"
+  },
+  "imported_sources": {
+    "count": 67,
+    "imported_snapshot_sources": [
+      "calibration_config.py",
+      "canonical_parameter_registry.py",
+      "gates_framework.py",
+      "market_data_loader.py",
+      "revision2/__init__.py",
+      "revision2/boxes.py",
+      "revision2/contracts.py",
+      "revision2/dataset_manifest.py",
+      "revision2/portfolio_orchestrator.py",
+      "revision2/transaction_costs.py",
+      "revision2_external/__init__.py",
+      "revision2_external/bb05_bb06_parameters.py",
+      "revision2_external/broker_adapter_kite.py",
+      "revision2_external/closed_loop_control.py",
+      "revision2_external/composite_study_signal.py",
+      "revision2_external/continuous_exit_controller.py",
+      "revision2_external/data_certification_pandera.py",
+      "revision2_external/dynamic_parameter_controller.py",
+      "revision2_external/dynamic_target_setpoint.py",
+      "revision2_external/entry_candidate_observations.py",
+      "revision2_external/entry_expectancy_evidence.py",
+      "revision2_external/final_execution_controller.py",
+      "revision2_external/grid_context.py",
+      "revision2_external/indicators_talib.py",
+      "revision2_external/instrument_metadata.py",
+      "revision2_external/orchestrator.py",
+      "revision2_external/paper_execution.py",
+      "revision2_external/pid_controller.py",
+      "revision2_external/position_sizing_pyportfolioopt.py",
+      "revision2_external/protection_policy.py",
+      "revision2_external/regime_hmm.py",
+      "revision2_external/regime_id_box.py",
+      "revision2_external/startup_validation.py",
+      "revision3/__init__.py",
+      "revision3/integration_supervisor.py",
+      "revision3/macro_grid_synchronizer.py",
+      "revision5/__init__.py",
+      "revision5/bay_feasibility.py",
+      "revision5/ccpp_protection_cubicles.py",
+      "revision5/ccpp_unified_plant.py",
+      "revision5/combined_cycle_runtime.py",
+      "revision5/combined_cycle_store.py",
+      "revision5/dynamic_parameters.py",
+      "revision5/electrical_network.py",
+      "revision5/engine_b_management.py",
+      "revision5/engine_state.py",
+      "revision5/fleet_loading_controller.py",
+      "revision5/governor.py",
+      "revision5/governor_authority.py",
+      "revision5/governor_position_policy.py",
+      "revision5/handoff_manager.py",
+      "revision5/hrsg.py",
+      "revision5/machine_archetypes.py",
+      "revision5/machine_dynamics.py",
+      "revision5/paper_state_journal.py",
+      "revision5/parameter_trace.py",
+      "revision5/plant_control.py",
+      "revision5/position_lifecycle.py",
+      "revision5/protection_snapshot.py",
+      "revision5/risk_governance.py",
+      "revision5/state_recovery.py",
+      "revision5/supervisory_bridge.py",
+      "revision5/topology.py",
+      "runtime/__init__.py",
+      "runtime/operating_mode.py",
+      "scripts/diagnostics/r5_block1_acceptance.py",
+      "scripts/run_r5_step5_candidate.py"
+    ]
+  },
+  "os_isolation_witness": null,
+  "python_tripwire_limits": "in-process Python patches only; they do not prove native/system IO restriction",
+  "read_accounting": {
+    "files": 4,
+    "full_file_hash_calls": 0,
+    "hash_scope": "sha256 over exact consumed prefix bytes only; no whole-file market hash",
+    "loader": "WP004_BOUNDED_PREFIX_LOADER_V1",
+    "total_consumed_bytes": 37976,
+    "total_file_size_bytes_metadata": 69534,
+    "total_physical_bytes_read": 40960
+  },
+  "read_files": [
+    {
+      "chunk_size": 4096,
+      "consumed_bytes": 11020,
+      "consumed_prefix_sha256": "cec006ab90f89d581bbf3f900b74984474528563621dbd602c7149e6f96dd933",
+      "content_commitment_verified": false,
+      "lines_consumed": 202,
+      "max_physical_bytes": null,
+      "overread_bytes": 1268,
+      "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_boundary_row_unauthorized_ok/e2e0/data/NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "physical_bytes_read": 12288,
+      "planned_bytes": null,
+      "provenance_id": null,
+      "reached_eof": false,
+      "read_calls": 3,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          4096
+        ]
+      ],
+      "role": "stock",
+      "size_bytes": 17599,
+      "symbol": "AAA"
+    },
+    {
+      "chunk_size": 4096,
+      "consumed_bytes": 11705,
+      "consumed_prefix_sha256": "455ea0514f0eec6756d04750c2bc3a20ef10a32db67deeb1522b9110cf987782",
+      "content_commitment_verified": false,
+      "lines_consumed": 202,
+      "max_physical_bytes": null,
+      "overread_bytes": 583,
+      "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_boundary_row_unauthorized_ok/e2e0/data/NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "physical_bytes_read": 12288,
+      "planned_bytes": null,
+      "provenance_id": null,
+      "reached_eof": false,
+      "read_calls": 3,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          8192,
+          4096
+        ]
+      ],
+      "role": "stock",
+      "size_bytes": 18626,
+      "symbol": "BBB"
+    },
+    {
+      "chunk_size": 4096,
+      "consumed_bytes": 7623,
+      "consumed_prefix_sha256": "bfb0da5549769052a336de0683afbc822696b948cc90bbc839e957bf151071a8",
+      "content_commitment_verified": false,
+      "lines_consumed": 238,
+      "max_physical_bytes": null,
+      "overread_bytes": 569,
+      "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_boundary_row_unauthorized_ok/e2e0/grid/INDIA_VIX_15MIN.csv",
+      "physical_bytes_read": 8192,
+      "planned_bytes": null,
+      "provenance_id": null,
+      "reached_eof": false,
+      "read_calls": 2,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ]
+      ],
+      "role": "grid",
+      "size_bytes": 16652
+    },
+    {
+      "chunk_size": 4096,
+      "consumed_bytes": 7628,
+      "consumed_prefix_sha256": "8293a0ef9fea21bd42cc7cc7245d79da855c5624e958ce71dad585ee33c90644",
+      "content_commitment_verified": false,
+      "lines_consumed": 238,
+      "max_physical_bytes": null,
+      "overread_bytes": 564,
+      "path": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_boundary_row_unauthorized_ok/e2e0/grid/NIFTY_50_15MIN.csv",
+      "physical_bytes_read": 8192,
+      "planned_bytes": null,
+      "provenance_id": null,
+      "reached_eof": false,
+      "read_calls": 2,
+      "read_ranges": [
+        [
+          0,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ]
+      ],
+      "role": "grid",
+      "size_bytes": 16657
+    }
+  ],
+  "real_execution": false,
+  "route": {
+    "combined_cycle_state_path": null,
+    "factory": "scripts/diagnostics/r5_block1_acceptance.py:execute_block",
+    "feedback_compaction": false,
+    "fleet_loading_policy": null,
+    "prepare": "harness.make_prepare"
+  },
+  "slice_sha256": "cea1b0eb70bea4de285ce57d35114d3ccf23e051c7f61a65a7687a9303a7b5f8",
+  "snapshot": {
+    "file_count": 562,
+    "head": "59371ff06d17b49d917a81aed294c2e254c97574",
+    "manifest_sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+    "protected_indicator": {
+      "path": "revision2_external/indicators_talib.py",
+      "sha256": "a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2"
+    },
+    "tree_sha256": "8f4c4800b7598d60d341793e407cc0180c5220ef3d8ef9b44b918b66f1fd675e"
+  },
+  "tripwire": {
+    "counts": {},
+    "kiteconnect_module_loaded_import_only": true,
+    "targets": [
+      "kiteconnect:KiteConnect.__init__",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.__init__",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.get_gtts",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.ensure_cnc_gtt",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.convert_position",
+      "revision2_external.broker_adapter_kite:KiteConnectBrokerAdapter.protection_tick_size",
+      "revision2_external.instrument_metadata:InstrumentMetadataSnapshot.build",
+      "revision2_external.instrument_metadata:InstrumentMetadataSnapshot.tick_size",
+      "revision5.combined_cycle_store:CombinedCycleStore.__init__",
+      "revision5.combined_cycle_runtime:CombinedCycleRuntime.__init__",
+      "revision5.handoff_manager:HandoffManager.__init__",
+      "revision5.engine_b_management:EngineBController.__init__",
+      "scripts.run_r5_step5_candidate:build_paper_combined_cycle_runtime"
+    ],
+    "violations": [],
+    "zero_access": true
+  }
+}

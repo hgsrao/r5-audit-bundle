@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "access": "read-only",
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "granted_paths": [
+      "reports",
+      "receipts",
+      "receipts/checkpoints",
+      "logs",
+      "queue",
+      "work",
+      "CURRENT_STATE.md",
+      "knowledge_base"
+    ],
+    "profile": "auditor",
+    "sandbox": true,
+    "tree": "/home/srinivas/R5_ENGINEERING_PLATFORM/** (read-only)"
+  },
+  "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+  "elapsed_seconds": 900.0137023420011,
+  "error": "gemini timed out after 900s",
+  "finished_at": "2026-10-08T08:50:52.820493+00:00",
+  "needs_review": false,
+  "objective": "Independent acceptance of bounded TRAIN harness and real-data gates",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+  "package_sha256": "1f057c63a761cc920df67f254dacc388adfd9904e96ffcc3cb25cf0efcbc44c7",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T08:35:52.804486+00:00",
+  "state": "FAILED",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini"
+}

@@ -1,0 +1,9 @@
+{
+  "trades": true,
+  "net_pnl": true,
+  "fills": true,
+  "safety_violations": true,
+  "plant_control": true,
+  "trade_ledger_sha256": "c40d74769bac825ed4689807ca5666dd176d6b09556e14ea867718615c3e9545",
+  "grid_availability_delay_minutes": 15
+}

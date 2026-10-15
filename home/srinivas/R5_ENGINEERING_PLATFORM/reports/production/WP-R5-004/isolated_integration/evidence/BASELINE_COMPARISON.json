@@ -1,0 +1,49 @@
+{
+  "block_fingerprint": {
+    "equal": true,
+    "host_curated": "280bc01c3736258519d662d07657585ed107369a521b6349838aeab1b1992fa7",
+    "sandbox": "280bc01c3736258519d662d07657585ed107369a521b6349838aeab1b1992fa7"
+  },
+  "frame_fingerprints": {
+    "sandbox": {
+      "feeds": {
+        "INDIA_VIX_15MIN": "48fbaddc89a609d5fa4b3f62d5e516f6ca947884c9aeb476c6930e267d86368f",
+        "NIFTY_50_15MIN": "48fbaddc89a609d5fa4b3f62d5e516f6ca947884c9aeb476c6930e267d86368f"
+      },
+      "frames": {
+        "AAA": "95d68b372b7faebed6b9c321227ba50a7ee7edfecaec5670220aca6451da8f9a",
+        "BBB": "70db03c7c71f63c63d6e72096d606079da6fe28c825f949be74828c32b2b2c8e"
+      }
+    }
+  },
+  "metrics_equal": true,
+  "note": "synthetic mechanics comparison only; 0 trades; no performance or candidate claim",
+  "output_file_hashes": {
+    "host_curated": {
+      "broker_fill_counts.json": "41d89d87e5d4383da849d6b84c2da484f63ecdd8fc78541d53cfb1212f7d7451",
+      "native_accounting_reconciliation.json": "764e32a15309033858e3d8e21ce7fb3b83878455b82b99290d37b16cc01d1ecd",
+      "native_report.json": "430bc81d095bacee2e0d6f7f57875b07ad58a2cceedc3051c5271ba5870e622d",
+      "passive_rejection_accounting.json": "ce597449633af8afe108d51019d2e5a33c79ade8b1fcdcf08e89bd3d8987e3fd",
+      "runtime_safety_contract.json": "eeeb4da8ddab6d12e65970990ec2f5e2b71bd7212ec090bf54d5458c8f17cf96"
+    },
+    "host_original_source": {
+      "broker_fill_counts.json": "41d89d87e5d4383da849d6b84c2da484f63ecdd8fc78541d53cfb1212f7d7451",
+      "native_accounting_reconciliation.json": "764e32a15309033858e3d8e21ce7fb3b83878455b82b99290d37b16cc01d1ecd",
+      "native_report.json": "430bc81d095bacee2e0d6f7f57875b07ad58a2cceedc3051c5271ba5870e622d",
+      "passive_rejection_accounting.json": "ce597449633af8afe108d51019d2e5a33c79ade8b1fcdcf08e89bd3d8987e3fd",
+      "runtime_safety_contract.json": "eeeb4da8ddab6d12e65970990ec2f5e2b71bd7212ec090bf54d5458c8f17cf96"
+    },
+    "sandbox": {
+      "broker_fill_counts.json": "41d89d87e5d4383da849d6b84c2da484f63ecdd8fc78541d53cfb1212f7d7451",
+      "native_accounting_reconciliation.json": "764e32a15309033858e3d8e21ce7fb3b83878455b82b99290d37b16cc01d1ecd",
+      "native_report.json": "430bc81d095bacee2e0d6f7f57875b07ad58a2cceedc3051c5271ba5870e622d",
+      "passive_rejection_accounting.json": "ce597449633af8afe108d51019d2e5a33c79ade8b1fcdcf08e89bd3d8987e3fd",
+      "runtime_safety_contract.json": "eeeb4da8ddab6d12e65970990ec2f5e2b71bd7212ec090bf54d5458c8f17cf96"
+    }
+  },
+  "sandbox_equals_host_curated": true,
+  "sandbox_equals_original_source_baseline": true,
+  "slice_sha256": {
+    "sandbox": "e494bcbea78848d3e25e03e27bc8f3960c0b5a87efc7f9737ad5823232f4a235"
+  }
+}

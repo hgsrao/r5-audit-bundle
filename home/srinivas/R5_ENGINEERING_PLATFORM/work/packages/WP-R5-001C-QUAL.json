@@ -1,0 +1,23 @@
+{
+  "id": "WP-R5-001C-QUAL",
+  "type": "PARAMETER_AUDIT",
+  "objective": "Qualify the authenticated Kite Connect NSE instrument master against the 48-symbol universe and cross-check prior artefacts.",
+  "prompt": "You are the implementation worker for WP-R5-001C-QUAL (Kite Connect authoritative metadata qualification), dispatched by the R5 Engineering Dispatcher. Platform root: /home/srinivas/R5_ENGINEERING_PLATFORM. Output directory: /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C. Campaign R5-PRODUCTION-001.\n\nBACKGROUND. The operator authenticated through the official Kite Connect OAuth flow and scripts/acquire_kite_metadata.py downloaded the NSE instrument master via the official API. Raw artefacts (unchanged bytes): /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C/raw/kite_connect_instruments_NSE.csv plus .headers.json, ACQUISITION_RECORD.json, SHA256SUMS.txt. Previously acquired (unauthenticated) artefacts for cross-check: /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/raw/kite_instruments_NSE.csv and NSE_CM_security_06102026.csv.gz (BidIntrvl in paise, tick=BidIntrvl/100). The prior 48-row table is /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/AUTHORITATIVE_INSTRUMENT_METADATA.csv. Do NOT use the network, do NOT download, do NOT use or look for credentials/tokens, do NOT modify the raw files. FIRST read /home/srinivas/R5_ENGINEERING_PLATFORM/CURRENT_STATE.md, /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/METADATA_QUALIFICATION_REPORT.md and the ACQUISITION_RECORD.json. The 48-symbol universe = symbol names in the FILE NAMES of /home/srinivas/projects/zerodha-phase1/data/frozen_48_1min_20230703_20260824 (ls only; never open the market-data files). Preserve names such as BAJAJ-AUTO.\n\nTASKS. A. Verify sha256/size of every raw file against ACQUISITION_RECORD.json and SHA256SUMS.txt; report row counts. B. For all 48 symbols (segment NSE, exchange NSE, EQ instrument type) report presence of instrument_token, tradingsymbol, tick_size, lot_size, segment, exchange; list missing/duplicate symbols. C. Cross-check against the earlier Kite dump and the NSE security master (tick, lot, token, symbol): REPORT EVERY MISMATCH explicitly (symbol, field, values in each source). NEVER silently correct data. D. Policy: the authenticated Kite metadata is the authoritative baseline. Historical TRAIN-period (2023-09-01..<2025-07-01) stability remains covered by assumption A-META-001; do NOT invent historical snapshots and do not claim TRAIN stability is verified. E. Write in /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001C: METADATA_QUALIFICATION_REPORT.md (decision exactly one of AUTHORITATIVE_METADATA_QUALIFIED / NOT_QUALIFIED, with the A-META-001 caveat and scope TRAIN_REPLAY_DIAGNOSTIC, EXEC-05 stays NOT_QUALIFIED), AUTHORITATIVE_METADATA_INDEX.csv (one row per 48 symbols plus per-file rows with path, sha256, size), SHA256SUMS.txt (every file in the output directory except itself), PROVENANCE_RECEIPT.md (endpoint, timestamp, size, checksum, method, who authenticated, no secrets stored). F. Update CURRENT_STATE.md and R5_PRODUCTION_BACKLOG.md and R5_CURRENT_WORK_PACKAGE.md (append/modify only; keep a before-copy under /home/srinivas/R5_ENGINEERING_PLATFORM/work/*.before_WP-R5-001C.md), write receipts/checkpoints/CHECKPOINT_004.md. Recommend releasing WP-R5-002 from BLOCKED to READY if qualified, but do NOT execute or modify WP-R5-002. Do not modify the dispatcher, bridge, R5 production code, strategy, calibration or regression. Final answer: decision, coverage, every mismatch, files written, recommendation.",
+  "rules": [
+    "No network, downloads or credentials in the worker",
+    "Never assume TRAIN-period stability; never invent data",
+    "No production code, dispatcher, bridge or repository changes"
+  ],
+  "files": [
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/raw/kite_instruments_NSE.csv",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/raw/NSE_CM_security_06102026.csv.gz",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-001B/raw/acquisition_commands.txt"
+  ],
+  "metadata": {
+    "campaign": "R5-PRODUCTION-001",
+    "blocks": "WP-R5-002",
+    "node": "NODE-001"
+  },
+  "priority": 30,
+  "worker": "claude"
+}

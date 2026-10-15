@@ -1,0 +1,14 @@
+{
+  "id": "EOS002-QWEN",
+  "type": "REVIEW_PARAMETER",
+  "model": "qwen3.8:27b",
+  "objective": "Determine whether production tick size may be hard coded.",
+  "rules": [
+    "No R5 changes."
+  ],
+  "files": [],
+  "prompt": "Give a short engineering review. Distinguish authoritative instrument metadata from a hard-coded universal tick size. Do not invent numerical tick sizes, formulas, exchange rules, or parameter defaults. Missing authoritative metadata must fail closed. No trading implementation. Limit answer to five sentences.",
+  "metadata": {
+    "work_package": "WP-EOS-002"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_unplanned_open_guard/test_shape_errors0/missing_col/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "0f77f8d30e8fa4ddf2e7b89b6b407c6fa6326b957d8b18b8ca82b5f086d4f152",
+      "size_bytes": 18397,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "6ef46668ee7858d227a72790934815f7b80d5bdab9321540d56674a2d6fe033a",
+      "size_bytes": 18613,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "73c0e7aadaceb279888f6d8da43044953cc1727a62c19232410952ced56173eb",
+  "symbol_count": 2
+}

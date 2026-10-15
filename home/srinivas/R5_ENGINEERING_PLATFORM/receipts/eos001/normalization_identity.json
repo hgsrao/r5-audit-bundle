@@ -1,0 +1,721 @@
+{
+  "work_package": "WP-EOS-001",
+  "original_file_count": 72,
+  "original_directory_count": 63,
+  "files_moved": 44,
+  "files_deleted": 0,
+  "empty_directories_removed": [
+    "bridge/.pytest_cache/v/cache",
+    "bridge/.pytest_cache/v",
+    "bridge/.ruff_cache/0.16.10",
+    "bridge/src/__pycache__",
+    "bridge/tests/__pycache__",
+    "bridge/.pytest_cache",
+    "bridge/.ruff_cache",
+    "bridge/config",
+    "bridge/dist",
+    "bridge/r5_engineering_bridge.egg-info",
+    "knowledge/adr",
+    "knowledge/formulas",
+    "knowledge/parameters",
+    "knowledge/research",
+    "knowledge/risk",
+    "workers/claude",
+    "workers/cloud",
+    "workers/codex",
+    "workers/desktop",
+    "workers/laptop",
+    "workers/qwen",
+    "database",
+    "engineering_memory",
+    "formula_engine",
+    "knowledge",
+    "mcp_server",
+    "parameter_engine",
+    "queue",
+    "templates",
+    "tools",
+    "work_packages",
+    "workers"
+  ],
+  "reference_updates": [
+    {
+      "file": "bridge/README.md",
+      "old": "`work/acceptance_results.txt`",
+      "new": "`../reports/bridge/v1.0/acceptance_results.txt`",
+      "occurrences": 1
+    },
+    {
+      "file": "bridge/README.md",
+      "old": "`ROUTING.md`",
+      "new": "`../architecture/bridge/ROUTING.md`",
+      "occurrences": 1
+    },
+    {
+      "file": "bridge/README.md",
+      "old": "`work/acceptance_v1.2.txt`",
+      "new": "`../reports/bridge/v1.2/acceptance_v1.2.txt`",
+      "occurrences": 1
+    },
+    {
+      "file": "bridge/README.md",
+      "old": "`FREEZE_V1.2.json`",
+      "new": "`../receipts/bridge/v1.2/FREEZE_V1.2.json`",
+      "occurrences": 1
+    }
+  ],
+  "all_original_files_accounted_for": true,
+  "source_tests_examples_configuration_byte_identical": true,
+  "original_freeze_preserved_sha256": "ce7ca2eff6eff913a664ab3c879dca3f32f1387ce92eca434807963b374b6821",
+  "original_freeze_document_paths": "Historical paths relative to bridge at V1.2 freeze; resolve through migration_table.csv. Freeze document is immutable and has not been rewritten.",
+  "files": [
+    {
+      "original": "architecture/AI_ROLES.md",
+      "destination": "architecture/AI_ROLES.md",
+      "category": "Architecture",
+      "action": "KEEP",
+      "original_sha256": "7137aa7394b24115b7f7af7db6477df2935706895ef818661ac77ae5c3cd1d15",
+      "final_sha256": "7137aa7394b24115b7f7af7db6477df2935706895ef818661ac77ae5c3cd1d15",
+      "reference_only_edit": false
+    },
+    {
+      "original": "architecture/CONTROL_PHILOSOPHY.md",
+      "destination": "architecture/CONTROL_PHILOSOPHY.md",
+      "category": "Architecture",
+      "action": "KEEP",
+      "original_sha256": "4974ca64b1421dcfe9c2cdfc351fd16add34bf6fb8ae9fc0aece55c08fefc42a",
+      "final_sha256": "4974ca64b1421dcfe9c2cdfc351fd16add34bf6fb8ae9fc0aece55c08fefc42a",
+      "reference_only_edit": false
+    },
+    {
+      "original": "architecture/ENGINEERING_STANDARDS.md",
+      "destination": "architecture/ENGINEERING_STANDARDS.md",
+      "category": "Architecture",
+      "action": "KEEP",
+      "original_sha256": "4f078e3fd9d42d6aaa15a9a241a94ec47441808de4f6fc01cdfdafb38fc3ab27",
+      "final_sha256": "4f078e3fd9d42d6aaa15a9a241a94ec47441808de4f6fc01cdfdafb38fc3ab27",
+      "reference_only_edit": false
+    },
+    {
+      "original": "architecture/SYSTEM_CONTEXT.md",
+      "destination": "architecture/SYSTEM_CONTEXT.md",
+      "category": "Architecture",
+      "action": "KEEP",
+      "original_sha256": "f434d40ec7bb5a74b5d7930f1f9dc595e7d2bfe5333c4b95c857b8adf4c13a6b",
+      "final_sha256": "f434d40ec7bb5a74b5d7930f1f9dc595e7d2bfe5333c4b95c857b8adf4c13a6b",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.gitignore",
+      "destination": "bridge/.gitignore",
+      "category": "Configuration",
+      "action": "KEEP",
+      "original_sha256": "4eacc4c7e6debbfea26d124f9d7f2f54f8bda57e70b041af465c304e2bcd10ce",
+      "final_sha256": "4eacc4c7e6debbfea26d124f9d7f2f54f8bda57e70b041af465c304e2bcd10ce",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.pytest_cache/.gitignore",
+      "destination": "outputs/bridge/temporary_snapshot/.pytest_cache/.gitignore",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "final_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.pytest_cache/CACHEDIR.TAG",
+      "destination": "outputs/bridge/temporary_snapshot/.pytest_cache/CACHEDIR.TAG",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "final_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.pytest_cache/README.md",
+      "destination": "outputs/bridge/temporary_snapshot/.pytest_cache/README.md",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "final_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.pytest_cache/v/cache/nodeids",
+      "destination": "outputs/bridge/temporary_snapshot/.pytest_cache/v/cache/nodeids",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "596ff7265c95f90bd71094d5a9b13e2c70eea1716017c29342de3f6fc644dfed",
+      "final_sha256": "596ff7265c95f90bd71094d5a9b13e2c70eea1716017c29342de3f6fc644dfed",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.ruff_cache/.gitignore",
+      "destination": "outputs/bridge/temporary_snapshot/.ruff_cache/.gitignore",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+      "final_sha256": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.ruff_cache/0.16.10/10914987218552949531",
+      "destination": "outputs/bridge/temporary_snapshot/.ruff_cache/0.16.10/10914987218552949531",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "f799bed32d2956807a28be24cc6361cbd0ce4f0406d9ed3027dde4c6d29c5b1c",
+      "final_sha256": "f799bed32d2956807a28be24cc6361cbd0ce4f0406d9ed3027dde4c6d29c5b1c",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.ruff_cache/0.16.10/1917605452052441106",
+      "destination": "outputs/bridge/temporary_snapshot/.ruff_cache/0.16.10/1917605452052441106",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "1601a6f118bace0c66c52e1096904e32787219ffa1ab5b8b6df07daa9786bc1e",
+      "final_sha256": "1601a6f118bace0c66c52e1096904e32787219ffa1ab5b8b6df07daa9786bc1e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.ruff_cache/0.16.10/9358301260979483259",
+      "destination": "outputs/bridge/temporary_snapshot/.ruff_cache/0.16.10/9358301260979483259",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "43c557dd1f1841ef00540846bfbaf401740be2cb64eacab500d856683f317fc8",
+      "final_sha256": "43c557dd1f1841ef00540846bfbaf401740be2cb64eacab500d856683f317fc8",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/.ruff_cache/CACHEDIR.TAG",
+      "destination": "outputs/bridge/temporary_snapshot/.ruff_cache/CACHEDIR.TAG",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+      "final_sha256": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/FREEZE_V1.2.json",
+      "destination": "receipts/bridge/v1.2/FREEZE_V1.2.json",
+      "category": "Receipts",
+      "action": "MOVE",
+      "original_sha256": "ce7ca2eff6eff913a664ab3c879dca3f32f1387ce92eca434807963b374b6821",
+      "final_sha256": "ce7ca2eff6eff913a664ab3c879dca3f32f1387ce92eca434807963b374b6821",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/README.md",
+      "destination": "bridge/README.md",
+      "category": "Documentation",
+      "action": "KEEP",
+      "original_sha256": "2a3b3d2d9f5c21f0ee66e12386e636cae5af487611d8dd2788e38eb984bd6788",
+      "final_sha256": "632c460b0a5bbbd04a4397c700439b18fcad9514635bcf82044494efb7330b3c",
+      "reference_only_edit": true
+    },
+    {
+      "original": "bridge/ROUTING.md",
+      "destination": "architecture/bridge/ROUTING.md",
+      "category": "Architecture",
+      "action": "MOVE",
+      "original_sha256": "eaa9b0cf31df3ce2ec8e6c849f182c515554605a29d35c9fe565af3d6c6f0e36",
+      "final_sha256": "eaa9b0cf31df3ce2ec8e6c849f182c515554605a29d35c9fe565af3d6c6f0e36",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/dist/r5_engineering_bridge-1.0.0-py3-none-any.whl",
+      "destination": "outputs/bridge/releases/v1.0/r5_engineering_bridge-1.0.0-py3-none-any.whl",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "c3b05bf709d035d04b8f9c31232800ba843db5bc651da184f71a3fb5ff4694b1",
+      "final_sha256": "c3b05bf709d035d04b8f9c31232800ba843db5bc651da184f71a3fb5ff4694b1",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/dist/r5_engineering_bridge-1.0.0.tar.gz",
+      "destination": "outputs/bridge/releases/v1.0/r5_engineering_bridge-1.0.0.tar.gz",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "f38c9febf5c886b66227fcd479bcd14346e38eccdcc5e02acd4ebbd34e19bc28",
+      "final_sha256": "f38c9febf5c886b66227fcd479bcd14346e38eccdcc5e02acd4ebbd34e19bc28",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/dist/r5_engineering_bridge-1.2.0-py3-none-any.whl",
+      "destination": "outputs/bridge/releases/v1.2/r5_engineering_bridge-1.2.0-py3-none-any.whl",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "d560e4ae3e74c0b6fa545232f54c66a1e311aeca15319681b2de69f5b3c53e0e",
+      "final_sha256": "d560e4ae3e74c0b6fa545232f54c66a1e311aeca15319681b2de69f5b3c53e0e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/dist/r5_engineering_bridge-1.2.0.tar.gz",
+      "destination": "outputs/bridge/releases/v1.2/r5_engineering_bridge-1.2.0.tar.gz",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "72f570e0be8f4bfd678a8a1178b3c5d6debdbc9bf26ddb727f0a4f3e1a1be130",
+      "final_sha256": "72f570e0be8f4bfd678a8a1178b3c5d6debdbc9bf26ddb727f0a4f3e1a1be130",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/examples/example_audit_request.json",
+      "destination": "bridge/examples/example_audit_request.json",
+      "category": "Examples",
+      "action": "KEEP",
+      "original_sha256": "bbcb676450005044d98c99f8cbb6d625666ca60b24c72916f4e4201fc9c5b1a2",
+      "final_sha256": "bbcb676450005044d98c99f8cbb6d625666ca60b24c72916f4e4201fc9c5b1a2",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/examples/example_audit_response.json",
+      "destination": "bridge/examples/example_audit_response.json",
+      "category": "Examples",
+      "action": "KEEP",
+      "original_sha256": "253f520403d805a4223c8989f987de32469eb81cbde61c293e2be64d2edfe147",
+      "final_sha256": "253f520403d805a4223c8989f987de32469eb81cbde61c293e2be64d2edfe147",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/examples/general.json",
+      "destination": "bridge/examples/general.json",
+      "category": "Examples",
+      "action": "KEEP",
+      "original_sha256": "96d173c7fe3d173381779ed2eae6d1bab6172e131d35258a480d52aabce2e929",
+      "final_sha256": "96d173c7fe3d173381779ed2eae6d1bab6172e131d35258a480d52aabce2e929",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/logs/engineering_bridge.log",
+      "destination": "bridge/logs/engineering_bridge.log",
+      "category": "Logs",
+      "action": "KEEP",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/pyproject.toml",
+      "destination": "bridge/pyproject.toml",
+      "category": "Configuration",
+      "action": "KEEP",
+      "original_sha256": "4df46b51e5fe0a5dc004d74dbdd92824433c5519e5fdac311019f379fcbf30dd",
+      "final_sha256": "4df46b51e5fe0a5dc004d74dbdd92824433c5519e5fdac311019f379fcbf30dd",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/PKG-INFO",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/PKG-INFO",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "f2de5cc1fc8565dcdd53a814c6cbafe320b9655b37aa2cd1d76def4a99b4cd8e",
+      "final_sha256": "f2de5cc1fc8565dcdd53a814c6cbafe320b9655b37aa2cd1d76def4a99b4cd8e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/SOURCES.txt",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/SOURCES.txt",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "352a9244a0e72fec9a646cb19c97f59c8277f6788e3277741153922cedccaa38",
+      "final_sha256": "352a9244a0e72fec9a646cb19c97f59c8277f6788e3277741153922cedccaa38",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/dependency_links.txt",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/dependency_links.txt",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "final_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/entry_points.txt",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/entry_points.txt",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "20492f0fab526e0ab3782f446571642039327b42cc3693f0a603492acdc28648",
+      "final_sha256": "20492f0fab526e0ab3782f446571642039327b42cc3693f0a603492acdc28648",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/requires.txt",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/requires.txt",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "18a87c07f9b50b2ade5c0f5aec3bf9f504f90a2b7eff3fa3e519cf44ed51ab6a",
+      "final_sha256": "18a87c07f9b50b2ade5c0f5aec3bf9f504f90a2b7eff3fa3e519cf44ed51ab6a",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/r5_engineering_bridge.egg-info/top_level.txt",
+      "destination": "outputs/bridge/generated_snapshot/r5_engineering_bridge.egg-info/top_level.txt",
+      "category": "Generated",
+      "action": "MOVE",
+      "original_sha256": "ef8aed55fba64258003f3479ff60a060ddb8301d170110a0d2dfa0ce4ea04eb3",
+      "final_sha256": "ef8aed55fba64258003f3479ff60a060ddb8301d170110a0d2dfa0ce4ea04eb3",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__init__.py",
+      "destination": "bridge/src/__init__.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "a854e3be5df3b6380c6badabd44af821294782ea76853e7954dbd40da9b37ef7",
+      "final_sha256": "a854e3be5df3b6380c6badabd44af821294782ea76853e7954dbd40da9b37ef7",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/__init__.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/__init__.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "3d3141383d9437ae3d928ebc9f79face90da41bb3f45f1023829a19ba116227a",
+      "final_sha256": "3d3141383d9437ae3d928ebc9f79face90da41bb3f45f1023829a19ba116227a",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/audit_adapter.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/audit_adapter.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "e6abb0e8e1baa7265a3c6086aba8dedc84ac7ac87a38ffdc58cf4e55dacbc297",
+      "final_sha256": "e6abb0e8e1baa7265a3c6086aba8dedc84ac7ac87a38ffdc58cf4e55dacbc297",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/audit_models.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/audit_models.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "8c55d1212e1d70ea924a0fdbbaaa349519c38067d22174eddc69fd901b0bd4b5",
+      "final_sha256": "8c55d1212e1d70ea924a0fdbbaaa349519c38067d22174eddc69fd901b0bd4b5",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/audit_report.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/audit_report.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "a31fd4d20f3cbd9c4475ec435530e2376b2a803e28d35dd7726e38994502e485",
+      "final_sha256": "a31fd4d20f3cbd9c4475ec435530e2376b2a803e28d35dd7726e38994502e485",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/bridge.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/bridge.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "68cd3e18950ae776a7c23fcab921bd79cab7fde6368741d3262949926ce91bfe",
+      "final_sha256": "68cd3e18950ae776a7c23fcab921bd79cab7fde6368741d3262949926ce91bfe",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/config.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/config.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "c336d7412437bdccef8ed190b680fe94e067f416f552e5a29feb8c246668c63c",
+      "final_sha256": "c336d7412437bdccef8ed190b680fe94e067f416f552e5a29feb8c246668c63c",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/logger.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/logger.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "3f573a323fcc265afa39b9c776ece79d7cc4725aa8067f3d5458a3420f9f8726",
+      "final_sha256": "3f573a323fcc265afa39b9c776ece79d7cc4725aa8067f3d5458a3420f9f8726",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/main.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/main.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "676eb7229fa5a5b51ac40243633e4a5649474b12d806b409146d44ef450520aa",
+      "final_sha256": "676eb7229fa5a5b51ac40243633e4a5649474b12d806b409146d44ef450520aa",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/ollama_client.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/ollama_client.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "5c20265fe860469d22a6d79411a9a2877712b978ae38bae7c1619b657dce7bd6",
+      "final_sha256": "5c20265fe860469d22a6d79411a9a2877712b978ae38bae7c1619b657dce7bd6",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/prompt_router.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/prompt_router.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "180a3c31962fde3d3d3378d6af528f1adef44f0afd28b9939a7778433ef75277",
+      "final_sha256": "180a3c31962fde3d3d3378d6af528f1adef44f0afd28b9939a7778433ef75277",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/router.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/router.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "44a6ce19728e6e94ad43a8b3d5304f5759221125f924cb7906e415bd4f8aeab6",
+      "final_sha256": "44a6ce19728e6e94ad43a8b3d5304f5759221125f924cb7906e415bd4f8aeab6",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/__pycache__/work_package.cpython-312.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/src/__pycache__/work_package.cpython-312.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "cebc7a9cba610a3f4f932060b61f572b7785a593f2e01415a301fe43b7bfd67b",
+      "final_sha256": "cebc7a9cba610a3f4f932060b61f572b7785a593f2e01415a301fe43b7bfd67b",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/audit_adapter.py",
+      "destination": "bridge/src/audit_adapter.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "f3e95383c36418dc4fbb6094f491a3ef2dd5320834af892dc0594e52ca5a2f67",
+      "final_sha256": "f3e95383c36418dc4fbb6094f491a3ef2dd5320834af892dc0594e52ca5a2f67",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/audit_models.py",
+      "destination": "bridge/src/audit_models.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "37d1bdf0dd78a07bfd143ffb61d612a3447f07fbfac87b9bee1a2823f641dc1a",
+      "final_sha256": "37d1bdf0dd78a07bfd143ffb61d612a3447f07fbfac87b9bee1a2823f641dc1a",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/audit_report.py",
+      "destination": "bridge/src/audit_report.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "6d231abcec1446b247b7f433ca1d98bb3da4aa3154ea8f2e749572542f9d71c5",
+      "final_sha256": "6d231abcec1446b247b7f433ca1d98bb3da4aa3154ea8f2e749572542f9d71c5",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/bridge.py",
+      "destination": "bridge/src/bridge.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "7d8cb5748bfc9c619bebaa142a76a581baae5b7c97f812f8baecd4902997285e",
+      "final_sha256": "7d8cb5748bfc9c619bebaa142a76a581baae5b7c97f812f8baecd4902997285e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/config.py",
+      "destination": "bridge/src/config.py",
+      "category": "Configuration",
+      "action": "KEEP",
+      "original_sha256": "8ccfe208e5af7c0ef035ac4723b3e0b4b19d8568eeadc5f40eb602e1d33d8482",
+      "final_sha256": "8ccfe208e5af7c0ef035ac4723b3e0b4b19d8568eeadc5f40eb602e1d33d8482",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/logger.py",
+      "destination": "bridge/src/logger.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "61343fde7c4bd22d9941a2a2c9dffa9534d0bb6f8c9310b6868b0f0b6c900f57",
+      "final_sha256": "61343fde7c4bd22d9941a2a2c9dffa9534d0bb6f8c9310b6868b0f0b6c900f57",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/main.py",
+      "destination": "bridge/src/main.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "6200e54eda5a8419331e5556e053832696e3e7318f66d7f207ea64f6540c1fef",
+      "final_sha256": "6200e54eda5a8419331e5556e053832696e3e7318f66d7f207ea64f6540c1fef",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/ollama_client.py",
+      "destination": "bridge/src/ollama_client.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "3e331f691e29e388c0079f68bda17380079d5910bb4027aeb7e7c02d1b6a3e85",
+      "final_sha256": "3e331f691e29e388c0079f68bda17380079d5910bb4027aeb7e7c02d1b6a3e85",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/prompt_router.py",
+      "destination": "bridge/src/prompt_router.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "5b5e723d9ab525a77aaad94a8e528938940dffe6b084f6df9f0878196e40c44e",
+      "final_sha256": "5b5e723d9ab525a77aaad94a8e528938940dffe6b084f6df9f0878196e40c44e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/router.py",
+      "destination": "bridge/src/router.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "3fd5944fee72b003ead0503e273091471514b75ac34f8a53795eb1bd5024ac0f",
+      "final_sha256": "3fd5944fee72b003ead0503e273091471514b75ac34f8a53795eb1bd5024ac0f",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/src/work_package.py",
+      "destination": "bridge/src/work_package.py",
+      "category": "Bridge",
+      "action": "KEEP",
+      "original_sha256": "68ee539759dd8d34120a75859e8906bf9b9a22ebb12be67b22abae985f6aa87f",
+      "final_sha256": "68ee539759dd8d34120a75859e8906bf9b9a22ebb12be67b22abae985f6aa87f",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/tests/__pycache__/test_bridge.cpython-312-pytest-9.1.1.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/tests/__pycache__/test_bridge.cpython-312-pytest-9.1.1.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "e888dae212c1d6683803e349ab74c497752751649b95b16a3131987a082e2b0c",
+      "final_sha256": "e888dae212c1d6683803e349ab74c497752751649b95b16a3131987a082e2b0c",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/tests/__pycache__/test_bridge_v12.cpython-312-pytest-9.1.1.pyc",
+      "destination": "outputs/bridge/temporary_snapshot/tests/__pycache__/test_bridge_v12.cpython-312-pytest-9.1.1.pyc",
+      "category": "Temporary",
+      "action": "MOVE",
+      "original_sha256": "798a47266225ff862682e83a34756b5221740e6caefb2d77a07208bbe4b24042",
+      "final_sha256": "798a47266225ff862682e83a34756b5221740e6caefb2d77a07208bbe4b24042",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/tests/test_bridge.py",
+      "destination": "bridge/tests/test_bridge.py",
+      "category": "Tests",
+      "action": "KEEP",
+      "original_sha256": "703d739bb73c89e997d91f60fc9b88fe1adf3edb60763b8ad3cbb276a2afc06a",
+      "final_sha256": "703d739bb73c89e997d91f60fc9b88fe1adf3edb60763b8ad3cbb276a2afc06a",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/tests/test_bridge_v12.py",
+      "destination": "bridge/tests/test_bridge_v12.py",
+      "category": "Tests",
+      "action": "KEEP",
+      "original_sha256": "3e89cd14fe18584438950ccf0202240dbdbb5b56acd08657c77827b6e726640e",
+      "final_sha256": "3e89cd14fe18584438950ccf0202240dbdbb5b56acd08657c77827b6e726640e",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/acceptance_results.txt",
+      "destination": "reports/bridge/v1.0/acceptance_results.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "7415f1272151313bff8802ddeec3d58d2d7d6b04a6a68037432c1ddf17b1c034",
+      "final_sha256": "7415f1272151313bff8802ddeec3d58d2d7d6b04a6a68037432c1ddf17b1c034",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/acceptance_v1.2.txt",
+      "destination": "reports/bridge/v1.2/acceptance_v1.2.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "72ffdd6643b3e64decc4891f3b637b43f4a51122acf54896043308ccbdfd979f",
+      "final_sha256": "72ffdd6643b3e64decc4891f3b637b43f4a51122acf54896043308ccbdfd979f",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/build_results.txt",
+      "destination": "reports/bridge/v1.0/build_results.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "0403ad9875acdf40ec3adaf990467c644b9546c212cda8cddd7ba23d3bc63ad0",
+      "final_sha256": "0403ad9875acdf40ec3adaf990467c644b9546c212cda8cddd7ba23d3bc63ad0",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/build_v1.2.txt",
+      "destination": "reports/bridge/v1.2/build_v1.2.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "f11c5ce01dbe6f37ab47040e36ff6dd1dfcc25b48a572e34a6e438ad2534b898",
+      "final_sha256": "f11c5ce01dbe6f37ab47040e36ff6dd1dfcc25b48a572e34a6e438ad2534b898",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/ruff_results.txt",
+      "destination": "reports/bridge/v1.0/ruff_results.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "final_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/ruff_v1.2.txt",
+      "destination": "reports/bridge/v1.2/ruff_v1.2.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "final_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/source_receipt.json",
+      "destination": "receipts/bridge/v1.0/source_receipt.json",
+      "category": "Receipts",
+      "action": "MOVE",
+      "original_sha256": "e97bbad648a42a547fe638c4b95faf041248e3def672970e702ac9532c288b40",
+      "final_sha256": "e97bbad648a42a547fe638c4b95faf041248e3def672970e702ac9532c288b40",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/test_results.txt",
+      "destination": "reports/bridge/v1.0/test_results.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "6b8530f2c22108843e6b05a02b129f6578c0c76cb542c6228c469744ca5e6194",
+      "final_sha256": "6b8530f2c22108843e6b05a02b129f6578c0c76cb542c6228c469744ca5e6194",
+      "reference_only_edit": false
+    },
+    {
+      "original": "bridge/work/tests_v1.2.txt",
+      "destination": "reports/bridge/v1.2/tests_v1.2.txt",
+      "category": "Reports",
+      "action": "MOVE",
+      "original_sha256": "9b4bd0c330b4f06d604e043f10496106cd51e752e0fc6554fa1a2d414ce111fa",
+      "final_sha256": "9b4bd0c330b4f06d604e043f10496106cd51e752e0fc6554fa1a2d414ce111fa",
+      "reference_only_edit": false
+    },
+    {
+      "original": "knowledge_base/adr/ADR-0000_INDEX.md",
+      "destination": "knowledge_base/adr/ADR-0000_INDEX.md",
+      "category": "Knowledge",
+      "action": "KEEP",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_only_edit": false
+    },
+    {
+      "original": "knowledge_base/adr/ADR-0001_EOS_FOUNDATION.md",
+      "destination": "knowledge_base/adr/ADR-0001_EOS_FOUNDATION.md",
+      "category": "Knowledge",
+      "action": "KEEP",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_only_edit": false
+    },
+    {
+      "original": "knowledge_base/adr/ADR_TEMPLATE.md",
+      "destination": "knowledge_base/adr/ADR_TEMPLATE.md",
+      "category": "Knowledge",
+      "action": "KEEP",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_only_edit": false
+    }
+  ]
+}

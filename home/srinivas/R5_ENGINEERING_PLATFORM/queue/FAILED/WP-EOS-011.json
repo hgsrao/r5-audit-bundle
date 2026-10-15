@@ -1,0 +1,23 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:03:36.745667+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011.receipt.json",
+    "started_at": "2026-10-07T08:03:34.494022+00:00",
+    "state": "FAILED",
+    "worker": "claude"
+  },
+  "files": [],
+  "id": "WP-EOS-011",
+  "metadata": {
+    "campaign": "R5-EOS"
+  },
+  "objective": "Replace DeepSeek Harness with Direct Ollama Worker",
+  "priority": 0,
+  "prompt": "R5 ENGINEERING OPERATING SYSTEM (R5-EOS)\n\nWORK PACKAGE ID: WP-EOS-011\nTITLE: Replace DeepSeek Harness with Direct Ollama Worker\n\nTASKS:\n1. Implement a native Ollama worker invoking 'ollama run qwen3.8:27b' with prompt on stdin, capturing stdout completely.\n2. Maintain Dispatcher behaviour (queue, receipts, checkpoints, CURRENT_STATE).\n3. Maintain read-only and write-capable profiles.\n4. Move existing DeepSeek worker to engineering_dispatcher/workers/legacy/ (mark DEPRECATED).\n5. Run smoke tests (short prompt, long prompt, engineering prompt, work package prompt, receipt generation, dispatcher routing).\n6. Update Architecture.md, Workflow.md, README.md.\n\nCONSTRAINTS: Do not modify strategy, calibration, indicators, production engine, Bridge, Gemini worker, Claude worker.\n\nACCEPTANCE: Dispatcher -> Ollama -> qwen3.8:27b shall complete a work package successfully.",
+  "requires_review": false,
+  "rules": [],
+  "submitted_at": "2026-10-07T08:03:34.438497+00:00",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

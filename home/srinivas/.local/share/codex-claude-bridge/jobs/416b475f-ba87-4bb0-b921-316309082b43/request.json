@@ -1,0 +1,5 @@
+{
+  "prompt": "User requests factual claim check of two BUY trade BB01-BB10 narrative. READ ONLY, no edits or testing expansion. Use sandbox loaded code /tmp/r5_sandbox and artifacts /tmp/r5_sandbox_output_c05_clean_run2 if tools permit reading absolute paths. Verify claims: startup requires kill_switch_enabled False (actual contract True); L2 certifier actually invoked; studies PID attribution vs PA; ID RR formula; MPC limit vs market fill; sizing capital_per_trade_fraction actual wiring; cutoff; path-error discretion vs claim saved from stop; FSR confidence meaning; costs/taxes actual modeled; governor decision vs next-bar fill; no A->B carry on two buys. Need exact source references, trace evidence if existing not reconstructed counterfactual; don't infer why market changed without telemetry. Return concise claim verdict and where narrative overclaims, plus what remaining evidence needed to determine exit appropriateness. D02 repair unchanged, no new feature authorization.",
+  "work_dir": "/home/srinivas/projects/zerodha-r5-governor-refactor",
+  "mode": "review"
+}

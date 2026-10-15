@@ -1,0 +1,10 @@
+{
+  "src/__init__.py": "b4aedf2d49d7416f2c375b6f9e7af097a153b9fabbe7f9382245add4b275bba5",
+  "src/bridge.py": "01c58e07ec4ebbe606460e613ddf86f0debb7067033238d532982b100ac1e5b9",
+  "src/config.py": "8ccfe208e5af7c0ef035ac4723b3e0b4b19d8568eeadc5f40eb602e1d33d8482",
+  "src/logger.py": "5ab827aa43dee6eb2a8ad9f9ea828a68da06c979ff0fe0cdfad747452f527f1d",
+  "src/main.py": "bc1be9d0cc5192368a6ec464bc463dad017ba3f4d19f0652276e4ed3d825ae43",
+  "src/ollama_client.py": "3e331f691e29e388c0079f68bda17380079d5910bb4027aeb7e7c02d1b6a3e85",
+  "src/prompt_router.py": "85bf339c998783efe7e50e6e09fcc97675c5e35acbca1dafc9b046ca0c97b360",
+  "src/work_package.py": "25e18c7dc721c9262c57d335a351d6bb011a61a20385fcec35fd026fe655a9e0"
+}

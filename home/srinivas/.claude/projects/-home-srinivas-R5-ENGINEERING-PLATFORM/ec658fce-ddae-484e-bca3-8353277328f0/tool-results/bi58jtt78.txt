@@ -1,0 +1,562 @@
+
+import pandas as pd
+import pytest
+
+PLATFORM = Path("/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness")
+REPORTS = Path("/home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004")
+SNAPSHOT = PLATFORM / "snapshot"
+HARNESS = Path(os.environ.get("WP004_INTEGRATION_HARNESS_DIR", str(PLATFORM / "harness")))   # mutation check: mutated copy
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(HARNESS))
+sys.path.insert(0, str(PLATFORM / "harness_tests"))
+
+import integration_world as iwm  # noqa: E402
+import curated_artifact as ca  # noqa: E402
+import curated_launcher as cl  # noqa: E402
+import curated_target as ct  # noqa: E402
+import os_isolation as osi  # noqa: E402
+import release_record as rr  # noqa: E402
+import synth  # noqa: E402
+import wp004_train_harness as h  # noqa: E402
+
+h.verify_snapshot(SNAPSHOT)
+h.activate_snapshot(SNAPSHOT)
+worker = importlib.import_module("scripts.run_r5_step5_candidate")
+factory = importlib.import_module("scripts.diagnostics.r5_block1_acceptance")
+Orchestrator = importlib.import_module("revision2_external.orchestrator").Revision2ExternalEngineOrchestrator
+PROBE_DIR = PLATFORM / "harness_tests" / "os_probes"
+sha = iwm.sha
+
+
+def mk(tmp_path, name="w", **kw):
+    return iwm.IntegrationWorld(tmp_path / name, **kw)
+
+
+# =================================================================== helpers
+class Spy:
+    """Records every touch of artifact files (open/os.open/stat/hash) and every launch attempt during a refusal."""
+
+    def __init__(self, monkeypatch, watch_dirs):
+        self.watch = [str(Path(d)) for d in watch_dirs]
+        self.touched, self.launched = [], []
+# =================================================================== 1. release record
+@pytest.fixture(scope="module")
+def rel(tmp_path_factory):
+    return mk(tmp_path_factory.mktemp("rel"))
+
+
+def validate(rel_w, *, record_bytes=None, pin=None, issuers=None, **over):
+    expected = dict(isolation_profile=osi.PROFILE, classification=rel_w.classification, execution_id=rel_w.execution_id,
+                    authorization_sha256=rel_w.auth_sha, code_pins=dict(harness=rel_w.harness_pin, snapshot=rel_w.snapshot_pin),
+                    input_pins=rel_w.input_pins())
+    expected.update(over)
+    rb = rel_w.record_bytes if record_bytes is None else record_bytes
+    return rr.validate_release_record(rb, external_pin=sha(rb) if pin is None else pin,
+                                      trusted_issuers=issuers if issuers is not None else {iwm.ISSUER: ["SYNTHETIC_ONLY"]},
+                                      expected=expected)
+
+
+def test_release_positive_synthetic_scope_never_real(rel):
+    g = validate(rel)
+    assert g.scope == "SYNTHETIC_ONLY" and g.authorizes_real_classification is False
+    assert g.record_sha256 == sha(rel.record_bytes) and g.execution_id == rel.execution_id
+
+
+@pytest.mark.parametrize("pin", [None, "", "zz", "0" * 64, "A" * 64, "f" * 63])
+def test_release_wrong_or_missing_external_pin(rel, pin):
+    with pytest.raises(rr.ReleaseError, match="pin"):
+        rr.validate_release_record(rel.record_bytes, external_pin=pin, trusted_issuers={iwm.ISSUER: ["SYNTHETIC_ONLY"]}, expected={})
+
+
+def test_release_pin_must_be_external_not_inside_record(rel):
+    rec = dict(rel.record, record_sha256=sha(rel.record_bytes))
+    with pytest.raises(rr.ReleaseError, match="keys"):
+        validate(rel, record_bytes=iwm.jdump(rec))
+    rec2 = dict(rel.record, release_granted=True)
+    with pytest.raises(rr.ReleaseError, match="keys"):
+        validate(rel, record_bytes=iwm.jdump(rec2))
+
+
+@pytest.mark.parametrize("issuers", [{}, None, {"OTHER": ["SYNTHETIC_ONLY"]}, {iwm.ISSUER: []},
+                                     {iwm.ISSUER: ["REAL_TRAIN_DIAGNOSTIC"]}])
+def test_release_unknown_or_untrusted_issuer(rel, issuers):
+    with pytest.raises(rr.ReleaseError, match="not externally trusted"):
+        rr.validate_release_record(rel.record_bytes, external_pin=sha(rel.record_bytes), trusted_issuers=issuers,
+                                   expected=dict(isolation_profile=osi.PROFILE, classification=rel.classification,
+                                                 execution_id=rel.execution_id, authorization_sha256=rel.auth_sha,
+                                                 code_pins=dict(harness=rel.harness_pin, snapshot=rel.snapshot_pin),
+                                                 input_pins=rel.input_pins()))
+
+
+@pytest.mark.parametrize("key,value", [("isolation_profile", "OTHER_PROFILE"), ("execution_id", "OTHER"),
+                                       ("authorization_sha256", "1" * 64), ("classification", "X"),
+                                       ("code_pins", {"harness": "1" * 64, "snapshot": "2" * 64}),
+                                       ("input_pins", {"authorization.json": "3" * 64})])
+def test_release_bindings_must_equal_live_values(rel, key, value):
+    with pytest.raises(rr.ReleaseError):
+        validate(rel, **{key: value})
+
+
+def test_release_extra_or_missing_input_pin_and_scope_class_mismatch(rel):
+    pins = rel.input_pins()
+    for rec in (dict(rel.record, input_pins={**pins, "extra.csv": "4" * 64}),
+                dict(rel.record, input_pins={k: v for k, v in pins.items() if k != "protocol.json"}),
+                dict(rel.record, release_scope="REAL_TRAIN_DIAGNOSTIC"),
+                dict(rel.record, classification=h.CLASSIFICATION), dict(rel.record, schema="WP004_RELEASE_RECORD_V0"),
+                dict(rel.record, release_scope="SOMETHING_ELSE")):
+        with pytest.raises(rr.ReleaseError):
+            validate(rel, record_bytes=iwm.jdump(rec))
+
+
+def test_real_release_stays_closed_even_with_matching_pin_and_issuer_table(tmp_path, monkeypatch):
+    w = mk(tmp_path, classification=h.CLASSIFICATION, data_origin="REAL_CURATED", trusted={iwm.ISSUER: ["REAL_TRAIN_DIAGNOSTIC"]})
+    assert w.record["release_scope"] == "REAL_TRAIN_DIAGNOSTIC"
+    with pytest.raises(rr.ReleaseError, match="real-data release closed"):
+        validate(w, issuers={iwm.ISSUER: ["REAL_TRAIN_DIAGNOSTIC", "SYNTHETIC_ONLY"]})
+    assert osi.REAL_RUN_RELEASE_ACCEPTANCE_SHA256 is None and rr.REAL_TRUSTED_ISSUERS == {}
+    monkeypatch.setattr(osi, "REAL_RUN_RELEASE_ACCEPTANCE_SHA256", sha(w.record_bytes))     # even if a pin were set ...
+    with pytest.raises(rr.ReleaseError, match="real-data release closed"):                   # ... no real issuer exists
+        validate(w)
+    with pytest.raises(rr.ReleaseError, match="closed"):                                       # and the launcher refuses it
+        cl.prepare_launch(w.cfg())
+
+
+def test_synthetic_grant_cannot_authorize_real_classification_in_target(tmp_path):
+    g = validate(mk(tmp_path))
+    assert not g.authorizes_real_classification
+
+
+# =================================================================== 2. authorization (pure)
+@pytest.fixture(scope="module")
+def aw(tmp_path_factory):
+    return mk(tmp_path_factory.mktemp("auth"))
+        if str(evil) in sys.path:
+            sys.path.remove(str(evil))
+        shutil.rmtree(evil, ignore_errors=True)
+
+
+# =================================================================== 4. host refusals open no data and never launch
+def refusal_worlds(tmp_path):
+    yield "wrong_release_pin", mk(tmp_path, "a", pin_override="0" * 64), rr.ReleaseError, "external pin"
+    yield "malformed_release_pin", mk(tmp_path, "b", pin_override="not-a-pin"), rr.ReleaseError, "pin"
+    yield "unknown_issuer", mk(tmp_path, "c", trusted={"SOMEONE_ELSE": ["SYNTHETIC_ONLY"]}), rr.ReleaseError, "not externally trusted"
+    yield "no_trusted_issuers", mk(tmp_path, "d", trusted={}), rr.ReleaseError, "not externally trusted"
+    yield "real_classification_closed", mk(tmp_path, "e", classification=h.CLASSIFICATION, data_origin="REAL_CURATED",
+                                           trusted={iwm.ISSUER: ["REAL_TRAIN_DIAGNOSTIC", "SYNTHETIC_ONLY"]}), rr.ReleaseError, "real-data release closed"
+    yield "synthetic_scope_for_real_classification", mk(
+        tmp_path, "f", classification=h.CLASSIFICATION, data_origin="REAL_CURATED", scope="SYNTHETIC_ONLY"), rr.ReleaseError, "does not match"
+    yield "real_scope_for_synthetic_classification", mk(tmp_path, "g", scope="REAL_TRAIN_DIAGNOSTIC"), rr.ReleaseError, "does not match"
+    yield "unknown_classification", mk(tmp_path, "h", classification="MARKET_REPLAY", data_origin="REAL_CURATED"), h.AuthorizationError, "not recognised"
+    yield "record_wrong_exec", mk(tmp_path, "i", record_mutator=lambda r: dict(r, execution_id="OTHER")), rr.ReleaseError, "execution_id"
+    yield "record_wrong_auth_sha", mk(tmp_path, "j", record_mutator=lambda r: dict(r, authorization_sha256="1" * 64)), rr.ReleaseError, "authorization_sha256"
+    yield "record_wrong_profile", mk(tmp_path, "k", record_mutator=lambda r: dict(r, isolation_profile="OTHER")), rr.ReleaseError, "isolation_profile"
+    yield "record_wrong_code_pin", mk(tmp_path, "l", record_mutator=lambda r: dict(r, code_pins=dict(r["code_pins"], harness="1" * 64))), rr.ReleaseError, "code_pins"
+    yield "record_wrong_input_pin", mk(tmp_path, "m", record_mutator=lambda r: dict(r, input_pins=dict(r["input_pins"], **{"stock_AAA.csv": "1" * 64}))), rr.ReleaseError, "input_pins"
+    yield "auth_unknown_schema", mk(tmp_path, "n", auth_mutator=lambda a: dict(a, schema="WP004_CURATED_ARTIFACT_AUTHORIZATION_V9")), h.AuthorizationError, "schema"
+    yield "auth_extra_flag", mk(tmp_path, "o", auth_mutator=lambda a: dict(a, authorizes_real_data_read=True)), h.AuthorizationError, "keys"
+    yield "auth_symbol_missing", mk(tmp_path, "p", auth_mutator=lambda a: dict(a, artifacts=[e for e in a["artifacts"] if e["name"] != "BBB"])), h.AuthorizationError, "bijection"
+
+
+def test_host_refusals_open_no_artifact_and_never_launch(tmp_path, monkeypatch):
+    seen = []
+    for label, w, exc, match in refusal_worlds(tmp_path):
+        with monkeypatch.context() as mp:
+            spy = Spy(mp, [w.art_dir])
+            before = list(ca.ARTIFACT_OPENS)
+            with pytest.raises(exc, match=match):
+                cl.run_curated(w.cfg())
+            assert spy.touched == [] and spy.launched == [] and ca.ARTIFACT_OPENS == before, label
+        seen.append(label)
+    assert len(seen) == 16
+
+
+@pytest.mark.parametrize("label", ["auth_pin", "exec_id", "alias_set", "metadata_keys", "config_keys"])
+def test_host_config_mismatch_refused_before_launch(tmp_path, monkeypatch, label):
+    w = mk(tmp_path)
+    cfg = w.cfg()
+    if label == "auth_pin":
+        cfg["authorization_sha256"] = "0" * 64
+    elif label == "exec_id":
+        cfg["execution_id"] = "OTHER"
+    elif label == "alias_set":
+        cfg["artifacts"] = {("renamed_" + a): p for a, p in cfg["artifacts"].items()}
+    elif label == "metadata_keys":
+        cfg["metadata"].pop("params")
+    else:
+        cfg["extra"] = 1
+    spy = Spy(monkeypatch, [w.art_dir])
+    with pytest.raises(h.AuthorizationError):
+        cl.run_curated(cfg)
+    assert spy.touched == [] and spy.launched == []
+
+
+def test_unknown_alias_unknown_path_and_raw_mount_denial(tmp_path):
+    assert "CURATED_SUMMARY" not in run.result.stdout and not any(w.out_dir.iterdir())
+
+
+# =================================================================== 5. real-bwrap end to end
+def tree_state(w):
+    return dict(
+        artifacts={a: sha(p.read_bytes()) for a, (_, _, p) in w.artifacts.items()},
+        metadata={k: sha(Path(p).read_bytes()) for k, p in w.meta.items()},
+        snapshot=osi.tree_sha256(SNAPSHOT), harness=osi.tree_sha256(HARNESS),
+        protected=json.loads(__import__("subprocess").run([sys.executable, "-I", str(PLATFORM / "harness_tests/integration_fp.py")],
+                                                           capture_output=True, text=True).stdout))
+
+
+@pytest.fixture(scope="module")
+def e2e(tmp_path_factory):
+    base = tmp_path_factory.mktemp("e2e")
+    w = mk(base)
+    before = tree_state(w)
+    run = cl.run_curated(w.cfg())
+    after = tree_state(w)
+    return dict(w=w, run=run, before=before, after=after, out=w.out_dir / "run",
+                receipt=json.loads((w.out_dir / "run" / ct.RECEIPT_NAME).read_text()) if (w.out_dir / "run" / ct.RECEIPT_NAME).exists() else None)
+
+
+def test_e2e_ran_inside_real_bwrap_and_passed(e2e):
+    r = e2e["run"].result
+    assert r.status == "OK" and r.returncode == 0, (r.status, r.detail, r.stderr[-2000:])
+    wit = osi.trusted_witness(r)
+    assert wit["profile"] == osi.PROFILE and wit["host_ns"] != wit["child_ns"] and set(wit["host_ns"]) == set(wit["child_ns"])
+    assert all(wit["host_ns"][k] != wit["child_ns"][k] for k in wit["child_ns"])
+    assert wit["network"].startswith("unshared")
+    assert set(wit["inputs"]) == set(ca.META_ALIASES.values()) | set(e2e["run"].plan.artifacts)
+    summary = e2e["run"].summary()
+    assert summary["release_scope"] == "SYNTHETIC_ONLY" and summary["tripwire_zero_access"] is True
+    assert r.argv[0] == osi.BWRAP and "--unshare-net" in r.argv and "--share-net" not in r.argv
+
+
+def test_e2e_mount_plan_only_individual_files_and_pinned_roots(e2e):
+    audit = osi.audit_argv(e2e["run"].result.argv, [*iwm.PROTECTED, str(e2e["w"].raw.base)], iwm.NO_EXPOSE)
+    dirs = sorted(dest for kind, src, dest in audit["binds"] if os.path.isdir(src))
+    files = sorted(dest for kind, src, dest in audit["binds"] if os.path.isfile(src))
+    assert rc["authorization"]["pretrain_policy"] == "WARMUP_PROVENANCE_NO_FIT"
+    assert any(a["pretrain_rows"] > 0 for a in rc["authorization"]["artifacts"])
+
+
+# =================================================================== 6. negative controls through real bwrap
+def refused(run):
+    r = run.result
+    assert r.status == "TARGET_FAILED" and r.returncode == 2, (r.status, r.stderr[-1500:])
+    line = [ln for ln in r.stderr.splitlines() if ln.startswith(ct.REFUSED)][0]
+    return json.loads(line[len(ct.REFUSED):].strip().rstrip("@"))
+
+
+@pytest.mark.parametrize("case,error", [
+    ("stock_poison_at_train_end", "ChronologyError"), ("stock_count_mismatch", "CuratedArtifactError"),
+    ("stock_schema_header", "ShapeError"), ("grid_poison_after_cutoff", "ChronologyError"),
+    ("stock_hash_mismatch", None)])
+def test_sandbox_artifact_violations_fail_closed(tmp_path, case, error):
+    kw, exc, match = LOADER_CASES[case]
+    w = mk(tmp_path, **kw)
+    if error is None:     # auth sha differs from bytes: host pre-check refuses; sandbox re-hash refuses when bypassed
+        with pytest.raises(osi.PinMismatch):
+            cl.run_curated(w.cfg())
+        return
+    run = cl.run_curated(w.cfg())
+    marker = refused(run)
+    assert marker["error"] == error and match.split()[0].lower() in marker["message"].lower() or error in marker["error"]
+    assert marker["artifact_opens"]                      # it reached the loader legitimately (approved bytes) ...
+    assert not (w.out_dir / "run" / ct.RECEIPT_NAME).exists() and not (w.out_dir / "run" / "native_report.json").exists()   # ... and no engine output
+
+
+def test_sandbox_refuses_before_loader_when_release_binding_is_live_only(tmp_path):
+    """Release record that is valid for the HOST view but bound to a different harness tree than the live witness: not constructible
+    from the host (the host computes the same pins), so tamper the bundle the way a buggy launcher would."""
+    w = mk(tmp_path)
+    spec, plan, grant, bundle = cl.prepare_launch(w.cfg())
+    bad_bundle = dict(bundle, release_record_sha256="0" * 64)
+    spec = dataclasses.replace(spec, target_args=("--bundle", json.dumps(bad_bundle, sort_keys=True)))
+    run = osi.launch(spec)
+    marker = refused(cl.CuratedLaunch(result=run, plan=plan, grant=grant, spec=spec))
+    assert marker["error"] == "ReleaseError" and marker["artifact_opens"] == []         # no artifact opened by the harness
+    bad_bundle = dict(bundle, trusted_issuers={})
+    spec2 = dataclasses.replace(spec, target_args=("--bundle", json.dumps(bad_bundle, sort_keys=True)))
+    marker = refused(cl.CuratedLaunch(result=osi.launch(spec2), plan=plan, grant=grant, spec=spec2))
+    assert marker["error"] == "ReleaseError" and marker["artifact_opens"] == []
+    bad_bundle = dict(bundle, authorization_sha256="0" * 64)
+    spec3 = dataclasses.replace(spec, target_args=("--bundle", json.dumps(bad_bundle, sort_keys=True)))
+    marker = refused(cl.CuratedLaunch(result=osi.launch(spec3), plan=plan, grant=grant, spec=spec3))
+    assert marker["error"] == "CuratedAuthorizationError" and marker["artifact_opens"] == []
+    assert not any(w.out_dir.iterdir())
+
+
+def test_loader_checks_artifact_size_before_opening_anything(tmp_path):
+    w = mk(tmp_path)
+    plan = cl.prepare_launch(w.cfg())[1]
+    art = plan.by_role("stock")["AAA"]
+    before = list(ca.ARTIFACT_OPENS)
+    with pytest.raises(ca.CuratedArtifactError, match="size differs"):
+        ca.load_curated_stock(w.artifacts[art.alias][2], dataclasses.replace(art, size_bytes=art.size_bytes + 1), w.raw.sessions, 60,
+                              train_start=plan.train_start, train_end_exclusive=plan.train_end_exclusive, pretrain_policy="REJECT")
+    with pytest.raises(ca.CuratedArtifactError, match="size differs"):
+        ca.load_curated_grid(w.artifacts["grid_NIFTY_50_15MIN.csv"][2],
+                             dataclasses.replace(plan.by_role("grid")["NIFTY_50_15MIN"], size_bytes=1), "NIFTY_50_15MIN",
+                             w.protocol, pd.Timestamp("2030-01-01", tz="UTC"))
+    assert ca.ARTIFACT_OPENS == before
+
+
+def test_extra_approved_input_outside_the_authorization_is_refused_by_the_target(tmp_path, monkeypatch):
+    """The HOST validator is made lenient here (a buggy/hostile launcher). The release record even pins the extra file, so the
+    release check passes; only the target's own /in inventory check against the authorization stands in the way."""
+    extra = tmp_path / "extra_input.bin"
+    extra.write_bytes(b"synthetic extra")
+    w = mk(tmp_path, record_mutator=lambda r: dict(r, input_pins={**r["input_pins"], "extra_input.bin": sha(b"synthetic extra")}))
+    real = rr.validate_release_record
+
+    def lenient(rb, *, external_pin, trusted_issuers, expected):
+        expected = dict(expected, input_pins={**expected["input_pins"], "extra_input.bin": sha(b"synthetic extra")})
+        return real(rb, external_pin=external_pin, trusted_issuers=trusted_issuers, expected=expected)
+
+    with monkeypatch.context() as mp:
+        mp.setattr(rr, "validate_release_record", lenient)
+        spec, plan, grant, bundle = cl.prepare_launch(w.cfg())
+    spec = dataclasses.replace(spec, inputs=(*spec.inputs, osi.InputArtifact(str(extra), "extra_input.bin", sha(b"synthetic extra"), "X")))
+    run = cl.CuratedLaunch(result=osi.launch(spec), plan=plan, grant=grant, spec=spec)
+    marker = refused(run)
+    assert marker["error"] == "AuthorizationError" and "exposure" in marker["message"] and marker["artifact_opens"] == []
+    assert not any(w.out_dir.iterdir())
+
+
+def test_target_outside_a_launched_sandbox_refuses_with_no_data(tmp_path):
+    w = mk(tmp_path)
+    before = list(ca.ARTIFACT_OPENS)
+    with pytest.raises(osi.WitnessError):
+        ct.run(dict(execution_id="x", output_root="/out", output_dir="/out/run", authorization_sha256="0" * 64,
+                    release_record_sha256="0" * 64, trusted_issuers={}))
+    assert ca.ARTIFACT_OPENS == before
+    assert ct.main(["--bundle", "{}"]) == ct.REFUSAL_RC
+
+
+@pytest.fixture(scope="module")
+def controls(tmp_path_factory):
+    base = tmp_path_factory.mktemp("controls")
+"""SYNTHETIC fixtures for the isolated integration: curated TRAIN-only artifacts (stock + grid), metadata files, curated
+authorization and issuer-fixture release record. Artifacts are derived from the existing synthetic raw-like world by cutting at
+the first out-of-block byte (so they end exactly at EOF, no sentinel). No market data, no real symbol prices."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import shutil
+import sys
+import zlib
+from datetime import date
+from pathlib import Path
+
+PLATFORM = Path("/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness")
+HARNESS_DIR = Path(os.environ.get("WP004_INTEGRATION_HARNESS_DIR", str(PLATFORM / "harness")))   # mutation check: mutated copy
+sys.dont_write_bytecode = True
+for p in (HARNESS_DIR, PLATFORM / "harness_tests"):
+    if str(p) not in sys.path:
+        sys.path.insert(0, str(p))
+
+import curated_artifact as ca  # noqa: E402
+import os_isolation as osi  # noqa: E402
+import synth  # noqa: E402
+import wp004_train_harness as h  # noqa: E402
+
+PY = "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python"
+ISSUER = "SYNTHETIC_FIXTURE_ISSUER"
+PROTECTED = ("/home/srinivas/projects/zerodha-r5-governor-refactor", "/home/srinivas/projects/zerodha-phase1")
+NO_EXPOSE = ("/home/srinivas/R5_ENGINEERING_PLATFORM", "/home/srinivas/R5_ENGINEERING_PLATFORM/work", str(PLATFORM),
+             "/home/srinivas/projects")
+
+
+def stable_stock_rows(symbol, days, bars, seed, base):
+    """Same generator as synth.stock_rows but seeded by crc32 (synth uses the per-process salted hash()), so the synthetic world
+    and every fingerprint derived from it are reproducible across processes."""
+    import numpy as np
+    rng = np.random.RandomState(zlib.crc32(symbol.encode()) % 1000 + seed)
+    rows, price = [], base
+    for day in days:
+        for m in range(bars):
+            move = rng.normal(0, 0.15)
+            o = round(price, 2)
+            c = round(max(1.0, price + move), 2)
+            hi = round(max(o, c) + abs(rng.normal(0, 0.05)), 2)
+            lo = round(min(o, c) - abs(rng.normal(0, 0.05)), 2)
+            rows.append((synth.stamp(day, m), o, hi, max(0.5, lo), c, int(abs(rng.normal(1000, 200))) + 1))
+            price = c
+    return rows
+
+
+class StableWorld(synth.World):
+    def build_rows(self, sym):
+        return stable_stock_rows(sym, self.pre + self.target + self.post, self.bars, 1, 100.0 + 10 * self.symbols.index(sym))
+
+
+def sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def jdump(obj) -> bytes:
+    return (json.dumps(obj, indent=2, sort_keys=True) + "\n").encode()
+
+
+def scan(blob: bytes, train_start: str):
+    """Independent (text-level) extent of an artifact: rows, first/last timestamp text, preTRAIN row count."""
+    lines = blob.decode("utf-8-sig").splitlines()
+    rows = [r for r in lines[1:] if r]
+    return dict(row_count=len(rows), first_timestamp=rows[0].split(",")[0], last_timestamp=rows[-1].split(",")[0],
+                pretrain_rows=sum(1 for r in rows if r[:10] < train_start))
+
+
+class IntegrationWorld:
+    def __init__(self, base: Path, *, pretrain_variant=False, execution_id="SYNTHETIC-EXEC-001", classification=None,
+                 data_origin=None, artifact_mutator=None, auth_mutator=None, record_mutator=None, pretrain_policy=None,
+                 issuer=ISSUER, scope=None, extra_artifacts=None, world_opt=None, trusted=None, pin_override=None):
+        self.base = Path(base)
+        self.base.mkdir(parents=True, exist_ok=True)
+        opt = dict(world_opt or {})
+        if pretrain_variant:
+            opt.setdefault("grid_start", date(2023, 12, 1))
+        self.raw = StableWorld(self.base / "raw", **opt)           # raw-like synthetic world (with sentinel tail)
+        if pretrain_variant:
+            self.raw.protocol["periods"]["train_start"] = "2023-12-01"
+        self.protocol = self.raw.protocol
+        self.train_start = self.protocol["periods"]["train_start"]
+        self.pretrain_policy = pretrain_policy or ("WARMUP_PROVENANCE_NO_FIT" if pretrain_variant else "REJECT")
+        self.art_dir, self.meta_dir, self.out_dir = self.base / "art", self.base / "meta", self.base / "out"
+        for d in (self.art_dir, self.meta_dir, self.out_dir):
+            d.mkdir(exist_ok=True)
+        self.execution_id = execution_id
+        self.classification = classification or ca.SYNTHETIC_CLASSIFICATION
+        self.data_origin = data_origin or ca.CLASSIFICATION_ORIGIN.get(self.classification, "SYNTHETIC")
+        self.issuer, self.trusted = issuer, trusted if trusted is not None else {ISSUER: [ "SYNTHETIC_ONLY"]}
+        # ---- artifacts: stock = raw bytes up to the first out-of-block byte (EOF, no sentinel); grid = whole feed file
+        self.artifacts = {}                       # alias -> (role, name, path)
+        for sym in self.raw.symbols:
+            blob = self.raw.csv_path(sym).read_bytes()
+            blob = blob[:self.raw.offsets(sym)["sentinel"]]
+            self._add("stock", sym, f"stock_{sym}.csv", blob, artifact_mutator)
+        for name in synth.GRID_NAMES:
+            self._add("grid", name, f"grid_{name}.csv", (self.raw.grid / f"{name}.csv").read_bytes(), artifact_mutator)
+        for role, name, alias, blob in (extra_artifacts or []):
+            self._add(role, name, alias, blob, None)
+        # ---- metadata (individual pinned files)
+        self.meta = {}
+        meta_src = dict(
+            protocol=jdump(self.protocol), params=jdump({}), stock_manifest=(self.raw.root / "revision2/MANIFEST.json").read_bytes(),
+            grid_manifest=(self.raw.root / "local_workspace/records/grid.json").read_bytes(),
+            contract=b"SYNTHETIC DIRECTOR CONTRACT STAND-IN (integration test)\n",
+            snapshot_manifest=(PLATFORM / "SNAPSHOT_MANIFEST.json").read_bytes())
+        for key, data in meta_src.items():
+            path = self.meta_dir / ca.META_ALIASES[key]
+            path.write_bytes(data)
+            self.meta[key] = path
+        self.harness_pin, self.snapshot_pin = osi.tree_sha256(HARNESS_DIR), osi.tree_sha256(PLATFORM / "snapshot")
+        # ---- authorization
+        self.auth = self.make_auth()
+        if auth_mutator:
+            self.auth = auth_mutator(self.auth)
+        self.auth_bytes = jdump(self.auth)
+        (self.meta_dir / "authorization.json").write_bytes(self.auth_bytes)
+        self.meta["authorization"] = self.meta_dir / "authorization.json"
+        self.auth_sha = sha(self.auth_bytes)
+        # ---- release record
+        self.record = self.make_record(scope)
+        if record_mutator:
+            self.record = record_mutator(self.record)
+        self.record_bytes = jdump(self.record)
+        (self.meta_dir / "release_record.json").write_bytes(self.record_bytes)
+        self.meta["release_record"] = self.meta_dir / "release_record.json"
+        self.record_sha = pin_override or sha(self.record_bytes)
+
+    def _add(self, role, name, alias, blob, mutator):
+        if mutator:
+            blob = mutator(role, name, blob)
+        path = self.art_dir / alias
+        path.write_bytes(blob)
+        self.artifacts[alias] = (role, name, path)
+
+    def meta_sha(self, key):
+        return sha(Path(self.meta[key]).read_bytes()) if key in self.meta else None
+
+    def artifact_entries(self):
+        out = []
+        for alias, (role, name, path) in sorted(self.artifacts.items()):
+            blob = path.read_bytes()
+            out.append(dict(role=role, name=name, alias=alias, sha256=sha(blob), size_bytes=len(blob), ends_at_eof=True,
+                            provenance_id=f"SYNTHETIC-PROVENANCE-{alias}", **scan(blob, self.train_start)))
+        return out
+
+    def make_auth(self):
+        return dict(
+            schema=ca.CURATED_AUTH_SCHEMA, execution_id=self.execution_id, execution_package_id="WP-R5-004-ISOLATED-INTEGRATION-SYNTH",
+            contract_id=h.CONTRACT_ID, classification=self.classification, data_origin=self.data_origin,
+            commitment_scope=h.COMMITMENT_SCOPE,
+            provenance=dict(issuer=self.issuer, approval_id="SYNTHETIC-APPROVAL-1", approval_record_sha256=sha(b"synthetic approval"),
+                            derivation_id="SYNTHETIC-DERIVATION-1"),
+            risk_scope=h.RISK_SCOPE, cnc_runtime=h.CNC_STATE, pretrain_policy=self.pretrain_policy,
+            train=dict(train_start=self.protocol["periods"]["train_start"],
+                       train_end_exclusive=self.protocol["periods"]["train_end_exclusive"]),
+            stage_b=dict(block=1, sessions=list(self.protocol["sampling_plan"]["stage_b"][0]["sessions"])),
+            pins=dict(snapshot_manifest_sha256=self.meta_sha("snapshot_manifest"), snapshot_tree_sha256=self.snapshot_pin,
+                      harness_tree_sha256=self.harness_pin, protocol_sha256=self.meta_sha("protocol"),
+                      params_sha256=self.meta_sha("params"), contract_sha256=self.meta_sha("contract"),
+                      stock_manifest_sha256=self.meta_sha("stock_manifest"), grid_manifest_sha256=self.meta_sha("grid_manifest"),
+                      snapshot_head=h.EXPECTED_HEAD, os_isolation_profile=osi.PROFILE),
+            output=dict(output_root="/out", output_dir="/out/run"), artifacts=self.artifact_entries())
+
+    def input_pins(self):
+        pins = {ca.META_ALIASES[k]: self.meta_sha(k) for k in ca.META_ALIASES if k != "release_record"}
+        pins.update({e["alias"]: e["sha256"] for e in self.auth["artifacts"]})
+        return pins
+
+    def make_record(self, scope=None):
+        scope = scope or ("SYNTHETIC_ONLY" if self.classification == ca.SYNTHETIC_CLASSIFICATION else "REAL_TRAIN_DIAGNOSTIC")
+        return dict(schema="WP004_RELEASE_RECORD_V1", record_id="SYNTHETIC-RELEASE-1", issuer=self.issuer, release_scope=scope,
+                    isolation_profile=osi.PROFILE, classification=self.classification, execution_id=self.execution_id,
+                    authorization_sha256=self.auth_sha, code_pins=dict(harness=self.harness_pin, snapshot=self.snapshot_pin),
+                    input_pins=self.input_pins())
+
+    def cfg(self, **kw):
+        cfg = dict(python=PY, harness_dir=str(HARNESS_DIR), snapshot_dir=str(PLATFORM / "snapshot"),
+                   metadata={k: str(v) for k, v in self.meta.items()},
+                   artifacts={a: str(p) for a, (_, _, p) in self.artifacts.items()}, output_dir=str(self.out_dir),
+                   execution_id=self.execution_id, authorization_sha256=self.auth_sha, release_record_sha256=self.record_sha,
+                   trusted_issuers=self.trusted, protected_paths=[*PROTECTED, str(self.raw.base)],
+                   no_expose_paths=list(NO_EXPOSE), timeout_s=300, chunk_size=4096)
+        cfg.update(kw)
+        return cfg
+
+    def fresh_out(self):
+        shutil.rmtree(self.out_dir, ignore_errors=True)
+        self.out_dir.mkdir()
+        return self.out_dir
+                root_links[top] = os.readlink(top)
+    for loc, text in _symlinks_on_path(python):      # e.g. venv bin/python -> uv alias dir -> real interpreter dir
+        if not any(_is_under(loc, d) for d in dirs):
+            root_links[loc] = text
+    return tuple(dirs), tuple(sorted(libs.items())), tuple(sorted(links.items())), tuple(sorted(root_links.items()))
+
+
+# --------------------------------------------------------------------- spec / plan
+@dataclass(frozen=True)
+class InputArtifact:
+    host_path: str       # approved standalone TRAIN-only artifact (a FILE; its directory is never mounted)
+    alias: str           # mounted as /in/<alias>
+    sha256: str
+    approval_id: str     # identifier of the external approval of this artifact (recorded in the witness; not verified here)
+
+
+@dataclass(frozen=True)
+class IsolationSpec:
+    python: str
+    code_roots: dict                  # name -> host dir (read-only at /code/<name>)
+    code_pins: dict                   # name -> tree sha256 (must cover every code root)
+    target: str                       # script path relative to /code, e.g. "harness/probe.py"
+    target_args: tuple = ()
+    inputs: tuple = ()
+    output_dir: str = ""
+    protected_paths: tuple = ()       # secret / original-repo / raw-data trees: never bound, contained or exposed
+    no_expose_paths: tuple = ()       # directories whose own listing must stay hidden (e.g. project root); children may bind
+    bootstrap_root: str = "harness"   # code root holding os_isolation.py + os_isolation_bootstrap.py
+    timeout_s: float = 120.0
+
+
+def _real(path) -> str:

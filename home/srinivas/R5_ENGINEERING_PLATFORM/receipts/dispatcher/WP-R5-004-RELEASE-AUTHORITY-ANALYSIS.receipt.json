@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 585.6752920690001,
+  "error": null,
+  "finished_at": "2026-10-08T14:14:22.188080+00:00",
+  "needs_review": true,
+  "objective": "Verify self-hash dependency and choose minimal stable real-release authority design before commissioning",
+  "ok": true,
+  "output_sha256": "3a1c23e1e126ecb1aa85aae5ef0142710127f7e5f867030a5bdc41d7015c861f",
+  "package_id": "WP-R5-004-RELEASE-AUTHORITY-ANALYSIS",
+  "package_sha256": "258bac2ab532aebb6d1dcc73aab4b52b2ac3dc0d784bca118536c0b001fa37d1",
+  "response_file": "WP-R5-004-RELEASE-AUTHORITY-ANALYSIS.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T14:04:36.510618+00:00",
+  "state": "REVIEW",
+  "type": "ENGINEERING_ANALYSIS",
+  "worker": "qwen"
+}

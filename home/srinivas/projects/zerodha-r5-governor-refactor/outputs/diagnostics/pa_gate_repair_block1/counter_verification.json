@@ -1,0 +1,12 @@
+{
+  "rr_boundary_calls": 0,
+  "rr_snapped": 0,
+  "rr_material_low_seen": 0,
+  "id_rr_rejections_overridden": 2,
+  "id_rr_warmup_overridden": 1,
+  "id_rr_scored_overridden": 1,
+  "pa_raw_hook_calls": 1,
+  "pa_raw_changed": 1,
+  "pa_band_hook_calls": 1,
+  "pa_band_changed": 1
+}

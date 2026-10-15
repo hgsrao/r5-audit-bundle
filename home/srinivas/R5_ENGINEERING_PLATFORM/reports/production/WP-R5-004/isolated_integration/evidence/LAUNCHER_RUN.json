@@ -1,0 +1,6 @@
+{
+  "command": "/home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I /home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/curated_launcher.py --config /home/srinivas/R5_ENGINEERING_PLATFORM/reports/production/WP-R5-004/isolated_integration/evidence/launcher_config.json",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\"detail\": \"\", \"release_scope\": \"SYNTHETIC_ONLY\", \"returncode\": 0, \"status\": \"OK\", \"summary\": {\"block_fingerprint\": \"280bc01c3736258519d662d07657585ed107369a521b6349838aeab1b1992fa7\", \"classification\": \"SYNTHETIC_INTEGRATION_ONLY\", \"execution_id\": \"SYNTHETIC-EXEC-001\", \"modules\": 2192, \"release_scope\": \"SYNTHETIC_ONLY\", \"slice_sha256\": \"e494bcbea78848d3e25e03e27bc8f3960c0b5a87efc7f9737ad5823232f4a235\", \"tripwire_zero_access\": true}, \"witness_nonce_present\": true}\n"
+}

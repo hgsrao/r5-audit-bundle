@@ -1,0 +1,428 @@
+===== ORCHESTRATOR RUN =====
+    def run(
+        self, symbol_bars: Dict[str, pd.DataFrame], warmup: int = 60,
+        precomputed_clock: Optional[List[_ClockEvent]] = None,
+    ) -> Dict[str, Any]:
+        self._assert_paper_plant_broker()
+        if self.paper_journal is not None:
+            self.paper_journal.bind(self, symbol_bars, warmup)
+        # Box 3: Pandera certification, once per symbol, before the loop --
+        # bars don't change during a backtest, so re-validating them every
+        # iteration (the per-bar design the in-house box uses) is pure
+        # waste at this scale; certifying once up front is the more
+        # faithful "certify before trading on it" reading of the box's job.
+        certified: Dict[str, pd.DataFrame] = {}
+        certification_audit: Dict[str, Dict[str, int]] = {}
+        for symbol, bars in symbol_bars.items():
+            frame, audit = certify_bars(
+                bars,
+                validation_mode=str(
+                    self.config.require("data_validation_mode")
+                ),
+            )
+            certified[symbol] = frame
+            certification_audit[symbol] = audit
+        symbol_bars = certified
+        if precomputed_clock is not None:
+            expected_clock = self.build_clock(symbol_bars, warmup)
+            if precomputed_clock != expected_clock:
+                raise ValueError("precomputed clock does not match certified frames")
+
+        for symbol, bars in symbol_bars.items():
+            self.pa.calibrate(symbol, bars.iloc[:warmup], self.config)
+            self.id_box.calibrate(symbol, bars.iloc[:0], self.config)
+            # Replay warmup through sensor histories and eligible planner PIDs,
+            # with no order construction, portfolio allocation, or submission.
+            for idx in range(min(warmup, len(bars))):
+                snapshot = MarketSnapshot(symbol, str(bars.iloc[idx]["timestamp"]), bars.iloc[:idx + 1])
+                warm_signal, _ = self.pa.evaluate(snapshot, self.config)
+                self.chart_studies.configure(self.config)
+                self.chart_studies.evaluate(symbol, snapshot.bars)
+                if warm_signal.direction == 0:
+                    self.id_box._current_regime(symbol, float(bars.iloc[idx]["close"]))
+                    continue
+                warm_decision, _ = self.id_box.evaluate(
+                    warm_signal, self.config, latest_close=float(bars.iloc[idx]["close"]))
+                if warm_decision.approved:
+                    close = float(bars.iloc[idx]["close"])
+                    self.mpc.build_plan(warm_signal, warm_decision, close,
+                                        max(float(warm_signal.volatility) * close, 1e-6), self.config)
+
+        funnel = {
+            "pa_evaluations": 0, "directional_signals": 0, "confidence_qualified": 0,
+            "pa_green": 0, "pa_amber": 0, "pa_red": 0, "pa_neutral": 0,
+            "bay_trip_rejections": 0, "bay_cooldown_rejections": 0,
+            "bars_processed": 0, "pa_signals": 0, "id_approvals": 0, "id_rejections": 0,
+            "mpc_plans": 0, "safety_approvals": 0, "safety_rejections": 0,
+            "gates_evaluated": 0, "gates_passed": 0, "gates_rejected": 0,
+            "orders_submitted": 0, "exit_orders_submitted": 0, "fills": 0,
+            "portfolio_cap_rejections": 0,
+        }
+        max_concurrent = int(self.safety_contract.values["max_concurrent_positions"])
+        max_gross_fraction = float(self.safety_contract.values["max_gross_exposure_fraction"])
+        # Was self.registry.get(...).default -- silently ignored calibration
+        # overrides (always read the registry's frozen default, never the
+        # candidate's actual value) and, since it bypassed self.config,
+        # never registered as consumed either, which is why this parameter
+        # was incorrectly in test_orchestrator_end_to_end.py's
+        # expected_missing set under a "replaced by PyPortfolioOpt weights"
+        # rationale that isn't true -- it's read and it enforces a real
+        # sector cap, just never the calibrated one. Found during external
+        # review, verified directly against this line before fixing.
+        sector_cap_fraction = float(self.config.require("max_sector_exposure_fraction"))
+        self.consumed_parameters.add("max_sector_exposure_fraction")
+
+        # Calibration driving many candidates against the SAME symbol_bars
+        # can build this once and pass it via precomputed_clock= -- mirrors
+        # revision2/portfolio_orchestrator.py's identical optimization, so
+        # the two engines' calibration supervisors can share one code path.
+        clock = precomputed_clock if precomputed_clock is not None else self.build_clock(symbol_bars, warmup)
+        entry_bar_index: Dict[str, int] = {}
+        ticks_since_reweight = 0
+
+        # BB08 operational controls.  These are explicit runtime parameters,
+        # but remain FIXED / NOT_CALIBRATED until the parameter surface is
+        # validated independently.
+        portfolio_refit_bars = int(self.config.require("portfolio_weight_refit_bars"))
+        portfolio_lookback_bars = int(self.config.require("portfolio_weight_lookback_minute_bars"))
+        portfolio_min_observations = int(self.config.require("portfolio_min_15min_observations"))
+        portfolio_risk_free_rate = float(self.config.require("portfolio_optimizer_risk_free_rate"))
+        self.consumed_parameters.update({
+            "portfolio_weight_refit_bars",
+            "portfolio_weight_lookback_minute_bars",
+            "portfolio_min_15min_observations",
+            "portfolio_optimizer_risk_free_rate",
+        })
+
+        for timestamp, tick_events in itertools.groupby(clock, key=lambda e: e.timestamp):
+            tick_events = list(tick_events)
+            event_ts = pd.Timestamp(timestamp)
+            if self._active_trading_date != event_ts.date():
+                self._active_trading_date = event_ts.date()
+                self._day_start_equity = self._equity()
+                # Session-scoped machine bay lockout reset
+                self.symbol_cooldown_until_bar.clear()
+                self.symbol_consecutive_losses.clear()
+                self.symbol_tripped.clear()
+
+===== ENTRY AND EXIT EXECUTION =====
+206:        # override and is not connected to a live broker.
+387:            {"passed": True, "operating_mode": "paper", "broker_environment": self.broker.environment, "reasons": []},
+396:        return self.starting_equity + self.broker.realized_pnl - self.broker.booked_costs
+484:            if type(self.broker) is not CostedPaperBrokerAdapter or self.broker.environment != "paper":
+563:        position = self.broker.get_position(symbol)
+611:    def _execute_exit(self, symbol: str, timestamp, trade: Dict[str, Any], exit_price: float, reason: str) -> None:
+616:        result = self.broker.place_order(
+677:                    shadow_market_exit_price, shadow_close_side, self.broker.slippage_fraction
+1536:                        float(pid_info["execution_market_price"]), plan.side, self.broker.slippage_fraction))
+1625:                fill = self.broker.place_order(
+1658:                        actual_position=self.broker.get_position(symbol)["quantity"],
+1733:        gross_pnl = self.broker.realized_pnl
+===== ORDER EXECUTION DETAILS =====
+        order would open or flip a position instead of closing one -- never silently execute that.
+        This is a precondition for the realized-R close feedback below, never weakened to make a
+        badly-seeded caller pass."""
+        position = self.broker.get_position(symbol)
+        held = float(position.get("quantity", 0.0))
+        expected_sign = 1.0 if trade["side"] == "BUY" else -1.0
+        required = float(trade["quantity"])
+        if held * expected_sign < required - _POSITION_RECONCILIATION_EPS:
+            raise PositionReconciliationError(
+                f"{symbol}: ledger open_trades expects a {trade['side']} position of at least "
+                f"{required} to close, but the broker holds {held}; refusing to execute an exit "
+                f"that would open or flip a position instead of closing the existing one"
+            )
+
+    @staticmethod
+    def _close_feedback_key(symbol: str, trade: Dict[str, Any]) -> str:
+        """Idempotency key for one authoritative close.  A real trade always carries a
+        ``trade_id`` (unique per entry, see the real entry flow); when one is absent (a minimal
+        test fixture) the identity of the ``trade`` record itself is the key, since a genuine
+        retry of the SAME close would be invoked with that SAME ``open_trades[symbol]`` record,
+        while two distinct real trades on the same symbol are always distinct dict objects."""
+        trade_id = trade.get("trade_id")
+        if trade_id is not None:
+            return f"trade_id:{trade_id}"
+        return f"symbol_object:{symbol}:{id(trade)}"
+
+    def _register_realized_r_close_feedback(
+        self, *, symbol: str, trade: Dict[str, Any], bay_id: str, realized_r: float, reason: str = "CLOSE",
+    ) -> None:
+        """Feed one authoritative realized-R close to both separately-owned feedback paths,
+        exactly once per close, within this process/replay run only (no persistent cross-restart
+        receipt is implemented -- that remains future work).
+
+        State machine per receipt key: absent -> PENDING -> DONE.  A retried/duplicate call for a
+        key that is already PENDING or DONE is a silent no-op (never fed twice).  If either
+        ``register_trade`` call raises after the receipt is marked PENDING, the receipt is left at
+        PENDING (never advanced to DONE, never removed), so a retry is still blocked from feeding
+        the same close again -- and the exception still propagates unmodified; this never swallows
+        an unexpected error."""
+        key = self._close_feedback_key(symbol, trade)
+        if key in self._close_feedback_receipts:
+            return
+        self._close_feedback_receipts[key] = "PENDING"
+        self.plant_control.dispatch_controller.merit_source.register_trade(bay_id, realized_r)
+        if self.plant_control.mode == PlantControlMode.PAPER_APPLY:
+            self.real_plant_dcs.bays[bay_id].register_outcome(
+                realized_r=realized_r, reason=reason, bar_index=max(0, self._native_bar_index))
+        else:
+            self._bay_governors[bay_id].register_trade(realized_r)
+        self._close_feedback_receipts[key] = "DONE"
+
+    def _execute_exit(self, symbol: str, timestamp, trade: Dict[str, Any], exit_price: float, reason: str) -> None:
+        self._assert_paper_plant_broker()
+        self._verify_broker_position_reconciles(symbol, trade)
+        close_side = "SELL" if trade["side"] == "BUY" else "BUY"
+        self._exit_orders_submitted += 1
+        result = self.broker.place_order(
+            symbol=symbol, side=close_side, quantity=trade["quantity"], order_type="MARKET",
+            market_price=exit_price, config=self.safety_contract.as_dict(), parameter_registry=self.registry,
+        )
+        if result["passed"]:
+            state = self._exit_controller_states.get(symbol)
+            pnl = (
+                (result["filled_price"] - trade["entry_price"]) * trade["quantity"]
+                if trade["side"] == "BUY" else (trade["entry_price"] - result["filled_price"]) * trade["quantity"]
+            )
+            trade_costs = self._leg_cost(trade["entry_price"], trade["quantity"], trade["side"]) + self._leg_cost(
+                result["filled_price"], trade["quantity"], close_side
+            )
+            completed = {
+                "symbol": symbol, "side": trade["side"], "entry_price": trade["entry_price"],
+                "exit_price": result["filled_price"], "quantity": trade["quantity"],
+                "entry_timestamp": trade["entry_timestamp"], "exit_timestamp": str(timestamp),
+                "reason": reason, "pnl": pnl, "costs": trade_costs, "net_pnl": pnl - trade_costs,
+                "trade_id": trade.get("trade_id"), "candidate_id": trade.get("candidate_id"),
+                "bars_held": int(state.bars_held) if state is not None else None,
+                "entry_atr": trade.get("entry_atr"),
+                "planned_entry_price": trade.get("planned_entry_price"),
+                "planned_stop_price": trade.get("planned_stop_price"),
+                "planned_target_price": trade.get("planned_target_price"),
+            }
+            if state is not None:
+                risk = abs(float(trade["entry_price"]) - float(state.initial_stop_price))
+                if risk > 0:
+                    favorable = state.mfe_price - trade["entry_price"] if trade["side"] == "BUY" else trade["entry_price"] - state.mfe_price
+                    adverse = state.mae_price - trade["entry_price"] if trade["side"] == "BUY" else trade["entry_price"] - state.mae_price
+                    completed.update({"mfe_price": state.mfe_price, "mae_price": state.mae_price,
+                                      "mfe_r": favorable / risk, "mae_r": adverse / risk,
+                                      "terminal_bar_excursion": "intrabar_order_unknown"})
+                    terminal = trade.get("_terminal_bar")
+                    inclusive_mfe, inclusive_mae = state.mfe_price, state.mae_price
+                    if terminal is not None:
+                        if trade["side"] == "BUY":
+                            inclusive_mfe = max(inclusive_mfe, float(terminal["high"]))
+                            inclusive_mae = min(inclusive_mae, float(terminal["low"]))
+                        else:
+                            inclusive_mfe = min(inclusive_mfe, float(terminal["low"]))
+                            inclusive_mae = max(inclusive_mae, float(terminal["high"]))
+                    sign = 1 if trade["side"] == "BUY" else -1
+                    completed.update({
+                        "mfe_pre_exit_bar_r": favorable / risk,
+                        "mae_pre_exit_bar_r": adverse / risk,
+                        "mfe_terminal_inclusive_r": sign * (inclusive_mfe - trade["entry_price"]) / risk,
+                        "mae_terminal_inclusive_r": sign * (inclusive_mae - trade["entry_price"]) / risk,
+                        "terminal_inclusive_is_ohlc_bound": True,
+                    })
+            shadow = None
+            if state is not None and state.shadow_exit_price is not None:
+                shadow_close_side = "SELL" if trade["side"] == "BUY" else "BUY"
+                # Compare like with like: the shadow stop identifies the
+                # counterfactual *market* trigger from causal OHLC, then it
+                # receives the same deterministic paper-broker adverse fill
+                # adjustment as the live exit.  Comparing its raw stop with
+                # the live broker fill would fabricate a P&L difference even
+                # when both trigger on the same bar.
+                shadow_market_exit_price = float(state.shadow_exit_price)
+                shadow_filled_price = self._paper_fill_price(
+                    shadow_market_exit_price, shadow_close_side, self.broker.slippage_fraction
+                )
+                shadow_pnl = (
+                    (shadow_filled_price - trade["entry_price"]) * trade["quantity"]
+                    if trade["side"] == "BUY" else (trade["entry_price"] - shadow_filled_price) * trade["quantity"]
+                )
+                shadow_costs = self._leg_cost(trade["entry_price"], trade["quantity"], trade["side"]) + self._leg_cost(
+                    shadow_filled_price, trade["quantity"], shadow_close_side
+                )
+                shadow = {
+                    "shadow_exit_timestamp": state.shadow_exit_timestamp,
+                    "shadow_market_exit_price": shadow_market_exit_price,
+                    "shadow_exit_price": shadow_filled_price,
+                    "shadow_exit_reason": state.shadow_exit_reason,
+                    "shadow_exit_bars_held": state.shadow_exit_bars_held,
+                    "shadow_pnl": shadow_pnl,
+                    "shadow_costs": shadow_costs,
+                    "shadow_net_pnl": shadow_pnl - shadow_costs,
+                }
+                completed["shadow_r_trajectory"] = shadow
+            self.completed_trades.append(completed)
+            entry_evidence = self.entry_expectancy_ledger.record_outcome({
+                "candidate_id": completed["candidate_id"], "trade_id": completed["trade_id"],
+                "exit_timestamp": completed["exit_timestamp"], "exit_reason": reason,
+                "bars_held": completed["bars_held"], "pnl": completed["pnl"],
+                "costs": completed["costs"], "net_pnl": completed["net_pnl"],
+                "mfe_r": completed.get("mfe_r"), "mae_r": completed.get("mae_r"),
+                "terminal_bar_excursion": completed.get("terminal_bar_excursion"),
+            })
+            if entry_evidence is not None:
+                self._record_controller_event("ENTRY_EXPECTANCY_OUTCOME", timestamp, symbol, entry_evidence)
+            closed_loop_profile = self.closed_loop.record_outcome(
+                completed, regime=trade.get("closed_loop", {}).get("regime", "unknown"),
+            )
+
+            # --- CLOSED-LOOP INTER-BOX FEEDBACK (Box 10 -> Box 6/8) ---
+            _pnl = float(completed.get("net_pnl", 0.0))
+            if _pnl < 0:
+                _c_losses = self.symbol_consecutive_losses.get(symbol, 0) + 1
+                self.symbol_consecutive_losses[symbol] = _c_losses
+                self.symbol_cooldown_until_bar[symbol] = (
+                    getattr(self, "_current_bar_idx", 0) + BAY_LOSS_COOLDOWN_BARS
+                )
+                if _c_losses >= 2:
+                    self.symbol_tripped[symbol] = True
+            elif _pnl > 0:
+                # Any profitable exit breaks consecutive loss streak
+                self.symbol_consecutive_losses[symbol] = 0
+            self._record_controller_event("CONTROLLER_OUTCOME", timestamp, symbol, {
+                "candidate_id": trade.get("candidate_id"), "trade_id": trade.get("trade_id"),
+                "exit_reason": reason, "net_pnl": completed["net_pnl"], "pnl": pnl, "costs": trade_costs,
+                "entry_atr": completed["entry_atr"], "planned_entry_price": completed["planned_entry_price"],
+                "planned_stop_price": completed["planned_stop_price"], "planned_target_price": completed["planned_target_price"],
+                "mfe_r": completed.get("mfe_r"), "mae_r": completed.get("mae_r"),
+                "terminal_bar_excursion": completed.get("terminal_bar_excursion"),
+                "shadow_r_trajectory": shadow,
+            })
+            self._record_controller_event("OUTCOME_LEDGER_UPDATE", timestamp, symbol, {
+                "candidate_id": trade.get("candidate_id"), "trade_id": trade.get("trade_id"),
+                "net_pnl": completed["net_pnl"], "entry_quality_profile": closed_loop_profile,
+            })
+            self._equity_curve.append(self._equity())
+            # Authoritative realized-R close -> plant-level dispatch feedback (BLOCKER 2) and local
+            # governor feedback.  Only here: after the authoritative exit fill (result["passed"]),
+            # after position/ledger reconciliation (_verify_broker_position_reconciles, above) and
+            # after completed_trades/closed_loop bookkeeping is safe.  del self.open_trades[symbol]
+            # below is what makes this trade "truly closed"; the feedback call happens just before it.
+            if state is not None:
+                risk = abs(float(trade["entry_price"]) - float(state.initial_stop_price))
+                if risk > 0.0:
+                    try:
+                        bay_id = _r5_bay_for_symbol(symbol)
+                    except KeyError:
+                        # Symbol outside the certified 48-symbol R5 topology (e.g. a synthetic
+===== PAPER EXECUTION ADAPTER =====
+"""Offline-only adapter with fill-time cost booking for the external engine."""
+from revision2.transaction_costs import leg_cost
+from runtime.operating_mode import PaperBrokerAdapter
+
+class CostedPaperBrokerAdapter(PaperBrokerAdapter):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.booked_costs = 0.0
+        self.cost_ledger = []
+
+    def place_order(self, symbol, side, quantity, order_type, market_price,
+                    config=None, parameter_registry=None):
+        if order_type != "MARKET":
+            return {"passed": False, "reasons": ["Replay supports MARKET orders only"]}
+        result = super().place_order(symbol, side, quantity, order_type, market_price,
+                                     config, parameter_registry)
+        if result["passed"]:
+            cost = leg_cost(result["filled_price"], result["filled_quantity"], side)
+            self.booked_costs += cost
+            self.cost_ledger.append({"order_id": result["order_id"], "cost": cost})
+            result["cost"] = cost
+            # This adapter acknowledges synchronously in simulated event time.
+            result["ack_elapsed_seconds"] = 0.0
+        return result
+
+
+class ReplayIntentLedger:
+    """Event-time deduplication, never wall-clock based."""
+    def __init__(self, window_seconds):
+        self.window_seconds = float(window_seconds)
+        self._submitted = {}
+
+    def seen_recent(self, symbol, side, timestamp):
+        import pandas as pd
+        previous = self._submitted.get((symbol, side))
+        if previous is None:
+            return False
+        elapsed = (pd.Timestamp(timestamp) - previous).total_seconds()
+        return elapsed <= self.window_seconds
+
+    def record(self, symbol, side, timestamp):
+        import pandas as pd
+        self._submitted[(symbol, side)] = pd.Timestamp(timestamp)
+===== PLANT FILL INTERFACE =====
+                "engine": engine_mode,
+                "bay_id": bay_id,
+                "symbol": symbol,
+            }
+        )
+
+        return result
+
+    def on_trade_filled(
+        self,
+        *,
+        engine_mode: str,
+        symbol: str,
+        filled_at: datetime,
+    ) -> bool:
+        """
+        Confirm a broker/replay fill.
+
+        Only a confirmed ENGINE_A fill consumes
+        the persistent bay allowance.
+        """
+        validate_engine(engine_mode)
+
+        bay_id = bay_for_symbol(
+            symbol
+        )
+
+        if engine_mode == ENGINE_A:
+            return (
+                self.state_store
+                .consume_engine_a_fill(
+                    bay_id,
+                    filled_at,
+                )
+            )
+
+        return True
+
+    def on_trade_closed(
+        self,
+        *,
+        symbol: str,
+        pnl_r: float,
+        reason: str,
+        closed_at: datetime,
+        bar_index: int,
+    ) -> None:
+        self.begin_bar(
+            closed_at,
+            bar_index,
+        )
+
+        bay_id = bay_for_symbol(
+            symbol
+        )
+
+        bay = self.bays[bay_id]
+
+        bay.register_outcome(
+            realized_r=pnl_r,
+            reason=reason,
+            bar_index=bar_index,
+        )
+
+        self.dispatcher.register_trade(
+            bay_id,
+            pnl_r,
+        )
+
+    def build_engine_a_squareoff_intents(
+        self,

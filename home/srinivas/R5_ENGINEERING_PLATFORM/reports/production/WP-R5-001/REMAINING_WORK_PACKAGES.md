@@ -1,0 +1,28 @@
+# Remaining Work Packages — after WP-R5-001
+
+Date 2026-10-07. Campaign R5-PRODUCTION-001. This file does NOT introduce new packages: it maps the existing 12-package backlog (`R5_PRODUCTION_BACKLOG.md`, `R5_PRODUCTION_CAMPAIGN_PLAN.md`) onto the authority-class findings of WP-R5-001. Statuses are unchanged: no package is ACCEPTED/CLOSED. Dependencies are copied from the backlog.
+
+## Package map
+
+| Priority | Package | Depends on | Matrix rows it must close (authority now) | Required external inputs | Acceptance (unchanged gate + WP-R5-001 addition) |
+|---:|---|---|---|---|---|
+| 1 | WP01 (incl. prepared WP01-METADATA-QUALIFICATION) | none | none directly; gate for all others. Related: EXEC-05 (NOT_QUALIFIED) | Externally sourced, dated, identity-hashed 48-symbol instrument-metadata snapshot with effective-time coverage; qualified full diagnostic ledger or reproducible recipe | Every required symbol/time covered by authoritative metadata with artefact SHA/effective date recorded; otherwise fail-closed blocker receipt. Replay only on preregistered TRAIN boundaries. |
+| 2 | WP10 External providers and policy boundaries | WP01 | EXEC-02, J-01, J-02, J-04 (active); EXEC-05, EXEC-08, EXEC-09, EXEC-04\*, EXEC-06\*, RC-02\*, REG-portfolio_optimizer_risk_free_rate\* (closed-but-NOT_QUALIFIED) | Dated NSE rate card/circular; instrument metadata artefact; dated INR benchmark series; measured latency + SLA; owner record for rupee daily-loss/gross caps and for IR-01R governance; owner provenance for dedup/staleness/quantity ceilings | Each row either gains an artefact-backed class (CERTIFIED_METADATA / ENGINEERING_POLICY) or stays NOT_QUALIFIED/UNKNOWN with a receipt; finite/type/date checks; no broker writes. |
+| 3 | WP03 Numerical HMM regularization | WP01 | REG-id_variance_floor, REG-id_initial_variance_regularizer | none external (bars-only numerical study); frozen numerical-qualification criteria | Finite/singular boundary and cache-invalidation evidence; no absolute guessed floor; no P&L objective. |
+| 4 | WP02 Derivable history and warmup | WP01 | ORC-04, PA-03 (active); ORC-06 direct unit test (MATHEMATICAL_DERIVATION caveat) | Owner decision on editing the protected research file `indicators_talib.py`; TRAIN-only receipt for alpha window ORC-04 | L-1/L boundary and restart equivalence; capacity = max(indicator dependency) with test; alpha window needs a receipt. |
+| 5 | WP06 Governor and bay financial authority | WP01 | GV-01, GV-02, GV-03, CC-07, SAFE-01 (owner: WP08 in backlog; derating curve is an owner choice) | Defined financial controlled variable per actuator; owner policy where irreducible | Every actuator traced; undefined plant controls isolated; no neutral-value bypass. |
+| 6 | WP07 Plant HRSG Mark V ECS isolation | WP01, WP06 | PC-01, REG-ecs_derate_demand_pu, REG-ecs_demand_restore_step_pu, REG-mv_fsr_min_floor, REG-mv_fsrm_manual_limit | Measured-state authority mapping | Granular nonreachability tests; shared MiCOM/recovery never removed globally. |
+| 7 | WP08 Dynamic and closed-loop semantics | WP01, WP06, WP07 | SAFE-01, CL-01, DP-02, GV-03 interface | TRAIN trade ledger (needs TRAIN replay under qualified inputs) | Canonical owners; undefined controls isolated; no fitted-on-holdout stress. |
+| 8 | WP04 Cooldown and trip preregistration | WP01, WP06, WP07 | ORC-01, ORC-02, ORC-03, PL-05 | TRAIN replay producing thousands of trades; preregistered conditional outcome/recovery model | Event identity separate from empirical cooldown; temporal stability; no PnL-only search. |
+| 9 | WP05 Engine B and CNC qualification | WP01, WP10 | CC-05, CC-06 | Dated CNC cost schedule; exchange session/product-conversion rules; owner minimum_r policy | CNC economics fail closed without authoritative dated costs. |
+| 10 | WP09 VIX Nifty MPC portfolio preregistration | WP01, WP08, WP10 | REG-grid_vix_* (4), REG-grid_nifty_deviation_derate_fraction, REG-grid_max_staleness_seconds, REG-mpc_shadow_r_gamma; REG-portfolio_min_15min_observations\* | Existing 15-min VIX/Nifty TRAIN series (AVAILABLE_NOW); owner decision on registry flag NEVER_CALIBRATE_SAFETY; MPC target definition | Causal timestamps/units; TRAIN conditional downside; minimum samples from estimator stability. |
+| 11 | WP11 Trace and register regeneration | WP02–WP10 | RN-02; register regeneration incl. the corrections listed in the acceptance report (line citations, status inconsistencies, dead `portfolio_aggressive_scale` default) | none | Every original row maps to code/evidence/test; fail closed on missing metrics. |
+| 12 | WP12 Integration regression Block-1 diagnostics | WP11 | all; ORC-13 identity claim | Genuinely untouched evaluation segment (original holdout exposure disclosed) | Exact ACTIVE counts; candidate label requires zero and independent review. |
+
+\* Closed in the register but NOT_QUALIFIED under WP-R5-001; these rows are not in the backlog's 34-row control register, so the package shown is a proposal for the dispatcher/Codex to confirm, not an assigned owner.
+
+## Not duplicated
+No new package IDs. WP-R5-001 added only a mapping and proposals for the eight closed-but-NOT_QUALIFIED rows (EXEC-04, EXEC-05, EXEC-06, EXEC-08, EXEC-09, RC-02, REG-portfolio_min_15min_observations, REG-portfolio_optimizer_risk_free_rate).
+
+## Startability today
+Every package except WP01 depends on WP01 acceptance, which is BLOCKED on external metadata. WP01 itself is startable only for its input-qualification step (survey + blocker receipt + input contract). WP-R5-002 is defined accordingly (see `/home/srinivas/R5_ENGINEERING_PLATFORM/work/packages/WP-R5-002.json`).

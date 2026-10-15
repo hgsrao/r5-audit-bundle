@@ -1,0 +1,12 @@
+{
+  "id": "WP-EOS-011-AUDIT",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini",
+  "priority": 0,
+  "requires_review": false,
+  "metadata": {
+    "campaign": "R5-EOS"
+  },
+  "objective": "Independent Replay Qualification Audit",
+  "prompt": "R5 ENGINEERING OPERATING SYSTEM (R5-EOS)\n\nWORK PACKAGE ID: WP-EOS-011-AUDIT\nTITLE: Independent Replay Qualification Audit\nROLE: Independent Engineering Auditor\nRead-only only. Do not modify files. Do not write code.\n\nReview:\n- WP-R5-003\n- WP-R5-004\n- INTERIM_FINDINGS.md\n- CURRENT_STATE.md\n- CHECKPOINT_006\n- CHECKPOINT_007\n- Dispatcher receipts\n\nDetermine:\n1. Is TRAIN isolation really the highest blocker?\n2. Does WP-R5-004 completely address WP-R5-003?\n3. Are there unsupported engineering conclusions?\n4. Is replay entry-point evidence sufficient?\n5. Rank the remaining execution blockers.\n6. Recommend the minimum path to EXECUTION QUALIFIED.\n\nReturn:\nPASS\nPASS WITH FINDINGS\nFAIL\n\nStop."
+}

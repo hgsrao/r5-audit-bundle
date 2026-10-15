@@ -1,0 +1,153 @@
+{
+  "scenario": "storm",
+  "harness_sha256": "af1d7f93006c9be815e0e18eef2573a9bd51b86b1ff8aad3c09d077d0cb89027",
+  "engine_commit": "eb26df7f59a27da1f7f90f5ff1aa667a8545ab01",
+  "symbols": 48,
+  "bars_per_symbol": {
+    "ADANIENT": 180,
+    "ADANIPORTS": 180,
+    "APOLLOHOSP": 180,
+    "ASIANPAINT": 180,
+    "AXISBANK": 180,
+    "BAJAJ-AUTO": 180,
+    "BAJAJFINSV": 180,
+    "BAJFINANCE": 180,
+    "BEL": 180,
+    "BHARTIARTL": 180,
+    "CIPLA": 180,
+    "COALINDIA": 180,
+    "DRREDDY": 180,
+    "EICHERMOT": 180,
+    "ETERNAL": 180,
+    "GRASIM": 180,
+    "HCLTECH": 180,
+    "HDFCBANK": 180,
+    "HDFCLIFE": 180,
+    "HINDALCO": 180,
+    "HINDUNILVR": 180,
+    "ICICIBANK": 180,
+    "INDIGO": 180,
+    "INFY": 180,
+    "ITC": 180,
+    "JIOFIN": 180,
+    "JSWSTEEL": 180,
+    "KOTAKBANK": 180,
+    "LT": 180,
+    "M&M": 180,
+    "MARUTI": 180,
+    "MAXHEALTH": 180,
+    "NTPC": 180,
+    "ONGC": 180,
+    "POWERGRID": 180,
+    "RELIANCE": 180,
+    "SBILIFE": 180,
+    "SBIN": 180,
+    "SHRIRAMFIN": 180,
+    "SUNPHARMA": 180,
+    "TATACONSUM": 180,
+    "TATASTEEL": 180,
+    "TCS": 180,
+    "TECHM": 180,
+    "TITAN": 180,
+    "TRENT": 180,
+    "ULTRACEMCO": 180,
+    "WIPRO": 180
+  },
+  "latest_common_date": "2026-08-13",
+  "load_seconds": 28.14578520699979,
+  "replay_seconds": 49.09309157500138,
+  "total_seconds": 77.23887678200117,
+  "replay_events": 5712,
+  "data_manifest_hash": "f724074ca45eb9380ba6e7cf18ae1da4d9c9d48be0cf78ca51b0faa8d8d8ff16",
+  "forced_signals": true,
+  "operating_mode": "PAPER_APPLY",
+  "audit": {
+    "batch_order_invariance_checks": 119,
+    "fault_events": [
+      {
+        "tick": 10,
+        "timestamp": "2026-08-13 10:24:00+05:30",
+        "action": "ANSI86_TRIP",
+        "bay": "GTG1_HEAVY_INDUSTRY",
+        "held_symbols": [
+          "POWERGRID",
+          "TATASTEEL"
+        ]
+      },
+      {
+        "tick": 70,
+        "timestamp": "2026-08-13 11:24:00+05:30",
+        "action": "EXPLICIT_TEST_OPERATOR_RESET",
+        "bay": "GTG1_HEAVY_INDUSTRY"
+      }
+    ],
+    "entry_fills_by_bay": {
+      "GTG1_HEAVY_INDUSTRY": 7,
+      "CSTG1_BFSI": 14,
+      "GTG2_TECH_TELECOM": 11,
+      "CSTG2_CONSUMER_AUTO": 17,
+      "BPSTG_HEALTHCARE": 9
+    },
+    "locked_exit_fills": 2,
+    "lockout_entry_violations": 0,
+    "cap_violations": 0,
+    "peak_open_positions": 5,
+    "peak_gross_fraction": 0.2802997749454148,
+    "max_symbols_per_batch": 48,
+    "illegal_reclose_rejections": 3,
+    "post_reset_entry_fills": 5,
+    "positive_cap_by_bay": {
+      "GTG1_HEAVY_INDUSTRY": 14,
+      "CSTG1_BFSI": 29,
+      "GTG2_TECH_TELECOM": 22,
+      "CSTG2_CONSUMER_AUTO": 39,
+      "BPSTG_HEALTHCARE": 18
+    },
+    "locked_cap_rejections": 119,
+    "unaffected_bay_positive_caps": 64,
+    "max_batch": 48,
+    "batches_with_2plus": 119,
+    "total_batch_candidates": 4110,
+    "timestamp_batches": 119,
+    "candidate_dispositions": {
+      "FILLED": 58,
+      "REJECTED": 5124
+    },
+    "candidate_reasons": {
+      "plant_control_paper_cap": 361,
+      "max_concurrent_positions": 3685,
+      "bay_cooldown_active": 465,
+      "paper_fill": 58,
+      "bay_ansi_flameout_tripped": 607,
+      "entry_decision_quantity_zero": 6
+    },
+    "queue_semantics": "timestamp-local batch; no persistent backlog or automatic retry",
+    "pending_after_run": 0,
+    "unclassified_after_run": 0,
+    "timestamp_processing_p95_seconds": 0.4447481320003135,
+    "timestamp_processing_max_seconds": 0.4495298189995083,
+    "peak_process_rss_mib": 294.14453125
+  },
+  "result": {
+    "fills": 58,
+    "completed_trades": 58,
+    "net_pnl": -3132.9077891114734,
+    "safety_violations": 0,
+    "plant_control": {
+      "mode": "PAPER_APPLY",
+      "applied": true,
+      "plant_protection_connected": true,
+      "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+      "evaluations": 119,
+      "paper_admission_evaluations": 483,
+      "paper_admission_rejections": 361,
+      "paper_admission_caps": 63,
+      "grid_state_counts": {
+        "SYNCHRONIZED": 119
+      },
+      "transitions": 119,
+      "observer_failures": 0
+    },
+    "execution_halted": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 159.104089587001,
+  "error": null,
+  "finished_at": "2026-10-08T10:44:43.732014+00:00",
+  "needs_review": true,
+  "objective": "Repair Gemini audit transport, diagnostics and verification access",
+  "ok": true,
+  "output_sha256": "a2944a5b37da19f37929d6ed1d525b8b4c2297354b2d8677547038fb879be061",
+  "package_id": "WP-EOS-GEMINI-ROUTE-REPAIR",
+  "package_sha256": "cb489943e4cd2588601f532d0acaf70a3332fa37b5b8ae7fffff48342e143455",
+  "response_file": "WP-EOS-GEMINI-ROUTE-REPAIR.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T10:42:04.625455+00:00",
+  "state": "REVIEW",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

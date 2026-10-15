@@ -1,0 +1,92 @@
+# captured 2026-10-07T07:34:41Z by operator-side read-only git commands (git rev-parse/status/diff --stat/diff --name-status/ls-files/log)
+## HEAD
+59371ff06d17b49d917a81aed294c2e254c97574
+feature/ir02a-parameter-closure
+59371ff06d17b49d917a81aed294c2e254c97574 H. G. Shrinivasa Rao Wed Oct 7 01:16:32 2026 +0530 R5 IR-02A: ORC-13 regime trace, derived warm-up/history, allocator and ATR fail-closed (parameter authority NOT yet closed)
+## status --porcelain
+ M docs/r5_remediation_project/EXECUTION_REPORT.md
+ M revision2_external/grid_context.py
+ M revision2_external/indicators_talib.py
+ M scripts/diagnostics/data/pa_symmetry_indicators_talib.patch
+ M tests/test_block1_isolation_harness.py
+ M tests/test_revision5_bb04_dynamic_parameterization.py
+ M tests/test_revision5_engine_applicability.py
+ M tests_external/test_grid_context.py
+?? build_isolated_d02_candidate.py
+?? manual_diff_audit.py
+?? outputs/R5_D02_1_EXIT_FINALIZATION_DESIGN_AUDIT.md
+?? outputs/R5_D02_2_EXIT_FINALIZATION_ACCEPTANCE.md
+?? outputs/R5_D02_COMMIT_CANDIDATE.patch
+?? outputs/R5_DEFERRED_WORK_MANIFEST.json
+?? outputs/R5_ENGINEERING_COMMIT_MANIFEST.json
+?? outputs/R5_ENGINEERING_COMMIT_READINESS_AUDIT.md
+?? outputs/diagnostics/pa_gate_repair_block1/
+?? outputs/r5_remediation/c04_controller_hydration/
+?? outputs/r5_remediation/closure/C04_HYDRATION_GAP_REVIEW.md
+?? outputs/r5_remediation/closure/C05_D02_FINAL_SOURCE_AUDIT.md
+?? outputs/r5_remediation/closure/C05_D02_FINAL_SOURCE_RECEIPT.json
+?? outputs/r5_remediation/closure/PA_THRESHOLD_NOTE_CROSSCHECK.md
+?? outputs/r5_remediation/closure/c05/baseline_v2_success/
+?? outputs/r5_remediation/closure/c05/d02_final_source_validation/
+?? outputs/r5_remediation/d02_2_failure_classification/
+?? run_commit_readiness_audit.py
+?? scripts/research/
+?? tests/test_r5_mpc_hydration.py
+?? tests/test_r5_pa_gate_arms.py
+?? tests/test_r5_pa_hydration.py
+?? tests/test_r5_protection_hydration.py
+?? tests/test_r5_studies_hydration.py
+?? tests_external/test_closed_loop_state_continuity.py
+?? tests_external/test_pa_state_continuity.py
+?? tests_external/test_pid_state_continuity.py
+?? tests_external/test_studies_state_continuity.py
+## diff HEAD --stat
+ docs/r5_remediation_project/EXECUTION_REPORT.md    | 20 +++++
+ revision2_external/grid_context.py                 |  4 +
+ revision2_external/indicators_talib.py             | 58 +++++++++----
+ .../data/pa_symmetry_indicators_talib.patch        | 98 ++++++----------------
+ tests/test_block1_isolation_harness.py             | 16 ++++
+ ...test_revision5_bb04_dynamic_parameterization.py |  6 ++
+ tests/test_revision5_engine_applicability.py       |  2 +-
+ tests_external/test_grid_context.py                | 21 +++++
+ 8 files changed, 135 insertions(+), 90 deletions(-)
+## diff HEAD --name-status
+M	docs/r5_remediation_project/EXECUTION_REPORT.md
+M	revision2_external/grid_context.py
+M	revision2_external/indicators_talib.py
+M	scripts/diagnostics/data/pa_symmetry_indicators_talib.patch
+M	tests/test_block1_isolation_harness.py
+M	tests/test_revision5_bb04_dynamic_parameterization.py
+M	tests/test_revision5_engine_applicability.py
+M	tests_external/test_grid_context.py
+## tracked-modified file sha256 (working tree)
+11710bff55b005d82960c86d26f4302c6659df6084e522816028b5246f5f66a9  docs/r5_remediation_project/EXECUTION_REPORT.md
+903ea27aeb669f99008d64b17c3df3b65f8ef7ae0d3fd67c72210bf21e330931  revision2_external/grid_context.py
+5ba126430609de2fae08a98bed7d178c2377704c3b5b4c816d45c343439bc618  revision2_external/indicators_talib.py
+a0b6d5ff2ebff15059cfa24726b2735494ee44cb942c096bef4e754b9b2b7089  scripts/diagnostics/data/pa_symmetry_indicators_talib.patch
+bd14f5f15235374e038f6db665c1521302aab90dd75eea56f987648cc3481d58  tests/test_block1_isolation_harness.py
+6914f910f73ece1377ade4d45f5c6e0926ad3fe8d77acc0f31fb7fc92ba4144b  tests/test_revision5_bb04_dynamic_parameterization.py
+d35289fbe189ffbd2db9f52781e70809d76cd960582a8d0d3de7db5c0cac9129  tests/test_revision5_engine_applicability.py
+f858db51621a83e911617d086a97e05978384ca12ac3a16796fc855264d81aba  tests_external/test_grid_context.py
+## HEAD blob sha256 of the same files
+4251764aa389076c2afa5730c4ba693f8ab74eca31bb6f00253dd2161b0fd061  docs/r5_remediation_project/EXECUTION_REPORT.md
+3f97032bf2bf8f5b4b3edf62a6e33600d0c7d6ca798f5cfaf55fb1172b8301a6  revision2_external/grid_context.py
+a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2  revision2_external/indicators_talib.py
+bbae6224edcc5d04a59d2ba5266e7718eda91b23a4595644a14274590f6d8e1b  scripts/diagnostics/data/pa_symmetry_indicators_talib.patch
+bc0e3ffc02fcce2fc0cfef0d4c35ca30bd52b33c13252f67998f7d0f2a45645b  tests/test_block1_isolation_harness.py
+fae98939eb92c91551ad403a7338938dcfd1de4fa07e9ed805f378a2f766983a  tests/test_revision5_bb04_dynamic_parameterization.py
+e784297028f979ba79d5fb8e1c6ff8dbb4fd5a907b3a481f2d4ff3905f727f74  tests/test_revision5_engine_applicability.py
+d6fe4e3f443b37cf246169558691bfd38330492f50b836a34b32252160956587  tests_external/test_grid_context.py
+## untracked (count)
+239
+## untracked under replay-relevant dirs
+scripts/research/r5_pa_gate_arms.py
+tests/test_r5_mpc_hydration.py
+tests/test_r5_pa_gate_arms.py
+tests/test_r5_pa_hydration.py
+tests/test_r5_protection_hydration.py
+tests/test_r5_studies_hydration.py
+tests_external/test_closed_loop_state_continuity.py
+tests_external/test_pa_state_continuity.py
+tests_external/test_pid_state_continuity.py
+tests_external/test_studies_state_continuity.py

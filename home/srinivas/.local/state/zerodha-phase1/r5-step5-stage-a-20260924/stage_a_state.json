@@ -1,0 +1,155 @@
+{
+  "batch_size": 2,
+  "batches": [
+    {
+      "batch_index": 0,
+      "status": "COMPLETE",
+      "trials": [
+        {
+          "assigned_node": "desktop",
+          "candidate_sha256": "22d2c3631f92c33327c5b21e0c9304c965b9624d6e6fa89632a06c4823b648f5",
+          "params": {
+            "entry_confidence_threshold": 0.15,
+            "max_hold_bars": 60,
+            "minimum_profit_margin_over_cost": 0.5,
+            "profit_target_atr_mult": 1.5,
+            "stop_loss_atr_mult": 1.2
+          },
+          "params_sha256": "4b1fa0ff86334a6e3e656317d70e35c3dcc4792066ee8dee97cbcf8b635fe6ad",
+          "score": -29854.142556191964,
+          "status": "COMPLETE",
+          "trial_number": 0
+        },
+        {
+          "assigned_node": "laptop",
+          "candidate_sha256": "21faa06bda90c374cce5d9d1cd4318dbf92cb12e0b920ebf4fc1fe39eb9fab69",
+          "params": {
+            "entry_confidence_threshold": 0.19475222370486822,
+            "max_hold_bars": 113,
+            "minimum_profit_margin_over_cost": 1.4855282987122231,
+            "profit_target_atr_mult": 1.980052713177732,
+            "stop_loss_atr_mult": 1.0711344665400087
+          },
+          "params_sha256": "d3895575efe5a51194baa4a24494fa5d3824511db18d2cf1819872f93ce3fc48",
+          "score": -34384.43976660282,
+          "status": "COMPLETE",
+          "trial_number": 1
+        }
+      ]
+    },
+    {
+      "batch_index": 1,
+      "status": "COMPLETE",
+      "trials": [
+        {
+          "assigned_node": "desktop",
+          "candidate_sha256": "fad525d6ef930307a4d59c160d70531dd3924976eed39eb53b643c528b4ba1fe",
+          "params": {
+            "entry_confidence_threshold": 0.10088328068438612,
+            "max_hold_bars": 51,
+            "minimum_profit_margin_over_cost": 0.7084694827762447,
+            "profit_target_atr_mult": 1.0098385407915265,
+            "stop_loss_atr_mult": 0.7953138716418611
+          },
+          "params_sha256": "c0a4b83f8ae5edab69dd11868889c9c252b4b9ec3bafc9700751e6dcedbaf38f",
+          "score": -32132.798533519683,
+          "status": "COMPLETE",
+          "trial_number": 2
+        },
+        {
+          "assigned_node": "laptop",
+          "candidate_sha256": "a83ab6573139c2a33b7e94270189ddae8b04f6f1f40d037f8b8ec21f8c39dfa3",
+          "params": {
+            "entry_confidence_threshold": 0.3449801517680037,
+            "max_hold_bars": 50,
+            "minimum_profit_margin_over_cost": 0.21971208842160772,
+            "profit_target_atr_mult": 2.130386107073564,
+            "stop_loss_atr_mult": 0.9852144512510527
+          },
+          "params_sha256": "0954080b8eb42069867a5fc0e8e645ddc2cfe7e130d15bd80db4d02aa1528d8d",
+          "score": -28100.15958675744,
+          "status": "COMPLETE",
+          "trial_number": 3
+        }
+      ]
+    },
+    {
+      "batch_index": 2,
+      "status": "COMPLETE",
+      "trials": [
+        {
+          "assigned_node": "desktop",
+          "candidate_sha256": "6cc88a504315d823b2fc8adbd17f6e483e2b22fe9fa48a70240ecd8e18695b00",
+          "params": {
+            "entry_confidence_threshold": 0.32074366602755155,
+            "max_hold_bars": 37,
+            "minimum_profit_margin_over_cost": 0.8843459279528061,
+            "profit_target_atr_mult": 1.3313232171499347,
+            "stop_loss_atr_mult": 0.6116255670884254
+          },
+          "params_sha256": "064d45fad7d85243e2b17a9ce09160d52c242815f2962d4b3d8bbd741399c7f3",
+          "score": -30090.74016984441,
+          "status": "COMPLETE",
+          "trial_number": 4
+        },
+        {
+          "assigned_node": "laptop",
+          "candidate_sha256": "8801601f3ec9864a295a3f19810f3e147210506decb59c69063306197969a383",
+          "params": {
+            "entry_confidence_threshold": 0.32695063211013675,
+            "max_hold_bars": 92,
+            "minimum_profit_margin_over_cost": 0.2889082164638771,
+            "profit_target_atr_mult": 1.8317915225740227,
+            "stop_loss_atr_mult": 0.6996653250846058
+          },
+          "params_sha256": "5318d81b76dd8e08c4306f9280e82f01ca18969feca44ef845b007f4824f8722",
+          "score": -29750.99693196016,
+          "status": "COMPLETE",
+          "trial_number": 5
+        }
+      ]
+    },
+    {
+      "batch_index": 3,
+      "status": "COMPLETE",
+      "trials": [
+        {
+          "assigned_node": "desktop",
+          "candidate_sha256": "2c11ee6eae59b6d5f9daf1c63402bcf382b0c8e2781bf4ea081b2718decd2c8c",
+          "params": {
+            "entry_confidence_threshold": 0.0948294928274232,
+            "max_hold_bars": 36,
+            "minimum_profit_margin_over_cost": 1.9664851251083237,
+            "profit_target_atr_mult": 2.1238929939071163,
+            "stop_loss_atr_mult": 1.0156976284697272
+          },
+          "params_sha256": "79a70c069aa8e9993314394b817b908bccf74a16fcde0cf415dc957b066eac56",
+          "score": -29670.820334207514,
+          "status": "COMPLETE",
+          "trial_number": 6
+        },
+        {
+          "assigned_node": "laptop",
+          "candidate_sha256": "ed77b95be9f7ed57dbf0afb57e486bebc9ca82143bd1e6f93d0db2dea4e80d65",
+          "params": {
+            "entry_confidence_threshold": 0.181577457046832,
+            "max_hold_bars": 36,
+            "minimum_profit_margin_over_cost": 0.42783445700084244,
+            "profit_target_atr_mult": 2.492428977378328,
+            "stop_loss_atr_mult": 0.8715103752497135
+          },
+          "params_sha256": "0cacf152d2d5b19d350220a0b67e10dce26d1f3edfe60e64b316b5bdff7a9aed",
+          "score": -32364.447198319984,
+          "status": "COMPLETE",
+          "trial_number": 7
+        }
+      ]
+    }
+  ],
+  "optimizer_seed": 20260924,
+  "protocol_sha256": "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+  "stage": "A",
+  "trial_count": 8,
+  "version": 1,
+  "worker_sha256": "70fc0839784f44551067211151c598f3710dc1a6a339272ec41e1a0a66da1f4c"
+}

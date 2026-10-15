@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 496.06415849300174,
+  "error": null,
+  "finished_at": "2026-10-07T08:21:37.733588+00:00",
+  "needs_review": false,
+  "objective": "TRAIN Loader Analysis",
+  "ok": true,
+  "output_sha256": "b6fd73b418d7fa7f74d23c2b77e73f081f58ac1bdc3035c4c914123da7670b10",
+  "package_id": "WP-QWEN-001",
+  "package_sha256": "53abe699bfa4fdd3b476c4bbe1a6145d6fce0b21d459fc3e925997a32238b137",
+  "response_file": "WP-QWEN-001.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T08:13:21.667038+00:00",
+  "state": "DONE",
+  "type": "FORMULA_AUDIT",
+  "worker": "qwen"
+}

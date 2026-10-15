@@ -1,0 +1,30 @@
+{
+  "job": {
+    "argv": [
+      "/home/shrinivas/.venvs/zerodha-phase1-r5-worker/bin/python",
+      "/tmp/run_r5_step5_candidate.py",
+      "--root",
+      "/home/shrinivas/projects/zerodha-phase1",
+      "--protocol",
+      "/tmp/step5_sealed_calibration_protocol.json",
+      "--expected-protocol-sha",
+      "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+      "--stage",
+      "B",
+      "--params",
+      "/tmp/r5_step5_stage_b_trial_006_params.json",
+      "--output",
+      "/tmp/r5_step5_stage_b_trial_006_result.pending.json"
+    ],
+    "job_path": "/tmp/r5_step5_stage_b_trial_006.job",
+    "laptop": "shrinivas@192.168.0.207",
+    "log_path": "/tmp/r5_step5_stage_b_trial_006.log",
+    "params_sha256": "79a70c069aa8e9993314394b817b908bccf74a16fcde0cf415dc957b066eac56",
+    "pending_path": "/tmp/r5_step5_stage_b_trial_006_result.pending.json",
+    "protocol_sha256": "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+    "result_path": "/tmp/r5_step5_stage_b_trial_006_result.json"
+  },
+  "local_result": "/home/srinivas/.local/state/zerodha-phase1/r5-step5-stage-b-20260925/results/trial_006.json",
+  "pid": 140377,
+  "status": "RUNNING"
+}

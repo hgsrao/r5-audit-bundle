@@ -1,0 +1,23 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:35:07.057387+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-SMOKE-WP.receipt.json",
+    "started_at": "2026-10-07T08:35:07.037741+00:00",
+    "state": "FAILED",
+    "worker": "qwen"
+  },
+  "files": [],
+  "id": "WP-EOS-011-SMOKE-WP",
+  "metadata": {},
+  "objective": "Work-package prompt smoke",
+  "priority": 5,
+  "prompt": "Return a JSON object with keys decision (PASS or FAIL) and reason (one sentence) for this check: 'Parameter tick_size must be a positive decimal; given value is 0.05'. Output only the JSON.",
+  "requires_review": false,
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "submitted_at": "2026-10-07T08:33:15.117989+00:00",
+  "type": "REVIEW_PARAMETER",
+  "worker": "qwen"
+}

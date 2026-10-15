@@ -1,0 +1,32 @@
+[
+  {
+    "bars_held": 4,
+    "candidate_id": "candidate-2038",
+    "costs": 68.1855070315,
+    "entry_atr": 19.649443659583888,
+    "entry_price": 2948.634,
+    "entry_timestamp": "2023-12-11 13:17:00+05:30",
+    "exit_price": 2944.7769,
+    "exit_timestamp": "2023-12-11 13:21:00+05:30",
+    "mae_pre_exit_bar_r": -0.27790808942199713,
+    "mae_price": 2942.25,
+    "mae_r": -0.27790808942199713,
+    "mae_terminal_inclusive_r": -0.27790808942199713,
+    "mfe_pre_exit_bar_r": 0.2357691435322023,
+    "mfe_price": 2954.05,
+    "mfe_r": 0.2357691435322023,
+    "mfe_terminal_inclusive_r": 0.2357691435322023,
+    "net_pnl": -183.89850703150518,
+    "planned_entry_price": 2948.634,
+    "planned_stop_price": 2925.662376492107,
+    "planned_target_price": 2983.0914352618397,
+    "pnl": -115.7130000000052,
+    "quantity": 30,
+    "reason": "governor_exit:FSR_BELOW_EXIT:FSRN",
+    "side": "BUY",
+    "symbol": "INDIGO",
+    "terminal_bar_excursion": "intrabar_order_unknown",
+    "terminal_inclusive_is_ohlc_bound": true,
+    "trade_id": "trade-1"
+  }
+]

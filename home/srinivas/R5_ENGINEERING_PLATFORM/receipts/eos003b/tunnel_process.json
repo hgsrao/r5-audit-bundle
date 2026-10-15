@@ -1,0 +1,25 @@
+{
+  "pid": 57515,
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "UpdateHostKeys=no",
+    "-o",
+    "ControlMaster=no",
+    "-o",
+    "ControlPath=none",
+    "-o",
+    "ExitOnForwardFailure=yes",
+    "-N",
+    "-R",
+    "0:127.0.0.1:11434",
+    "blade"
+  ],
+  "remote_bind": "loopback only",
+  "purpose": "NODE-002 access to existing NODE-001 Ollama through authenticated SSH",
+  "persistent_configuration_changes": false
+}

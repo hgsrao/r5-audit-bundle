@@ -1,0 +1,40 @@
+{
+  "request": {
+    "audit_id": "EOS002-GEMINI",
+    "audit_type": "WORK_PACKAGE_AUDIT",
+    "work_package": {
+      "id": "WP-BRIDGE-001",
+      "type": "INDEPENDENT_AUDIT",
+      "model": null,
+      "objective": "Independent engineering audit of Bridge Version 1.0 acceptance.",
+      "rules": [
+        "Look only for unsupported assumptions, missing tests, documentation inconsistencies, missing evidence.",
+        "Do not request redesign."
+      ],
+      "files": [],
+      "prompt": "Audit the supplied Version 1.0 acceptance evidence and return the audit contract.",
+      "metadata": {
+        "work_package": "WP-EOS-002"
+      }
+    }
+  },
+  "response_fields": [
+    "audit_id",
+    "timestamp",
+    "status",
+    "summary",
+    "findings",
+    "missing_tests",
+    "missing_evidence",
+    "parameter_authority_issues",
+    "documentation_issues",
+    "recommendations",
+    "overall_result"
+  ],
+  "overall_results": [
+    "PASS",
+    "PASS_WITH_FINDINGS",
+    "REQUIRES_REVIEW",
+    "REJECT"
+  ]
+}

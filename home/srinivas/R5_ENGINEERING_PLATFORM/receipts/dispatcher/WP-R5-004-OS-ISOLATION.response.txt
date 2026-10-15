@@ -1,0 +1,41 @@
+OS isolation is implemented and tested with real `bwrap` launches against synthetic fixtures. The real-data gate is still closed.
+
+**Test results** (venv python, `-I`):
+- The new suite passed all 41 tests.
+- The existing 140 tests still pass.
+- A mutation check on the launcher killed 10 of 10 mutants.
+
+I did not re-run the old `mutation_check.py` to completion. An interrupted attempt left one mutant in `wp004_train_harness.py` (`and False` in the unplanned-open guard). I caught it by diffing against the preserved before-copy and restored it. The file now differs from the before-copy only in the `os_isolation_witness` hunk and one comment.
+
+**What the launcher does:**
+- **Mounts:** the child root is an empty tmpfs; the host root is never bound, not even read-only. It gets the venv and interpreter prefixes, 12 individual library files, the pinned code roots and the pinned input files as file binds. The only writable mounts are `/out`, `/scratch` and `/tmp`.
+- **Isolation:** user, pid, net, ipc, uts and cgroup namespaces are unshared, nested user namespaces are disabled, all capabilities are dropped, and only stdio fds are inherited.
+- **Witness:** it comes from `bwrap`'s own namespace report, the host's view of `/proc/<pid>`, and a live re-probe inside the sandbox. A flag, JSON file, fresh interpreter or forged state does not open it.
+- **Release gate:** `os_isolation_witness()` verifies the live boundary, then refuses anyway because the release gate is closed (`REAL_RUN_RELEASE_ACCEPTANCE_SHA256` is `None`).
+
+**What the tests showed:**
+- **Allowed reads:** the fixture read works through `builtins.open`, `os.open`, `mmap`, ctypes, subprocess, `fork` and a `/bin/cat` subprocess.
+- **Denied reads:** the canary, an original-repo file and `~/.bashrc` were denied through all of those plus `../`, `/proc/self/root`, raw `openat` and `/proc/1/root`. A negative control confirms the probe reads the canary when unsandboxed.
+- **Network:** TCP to a live host listener, a child-process TCP connect and a host unix socket all failed.
+- **Writes:** `/out` and `/scratch` writes were allowed. Writes to the code, input and system paths were denied, and the sources are unchanged.
+- **Strace:** an independent `strace` log shows every in-sandbox open or connect of host-secret paths returned -1.
+- **Mounts and pins:** broad mounts are refused. Failure paths are covered: wrong code or input pins, forged witness, missing handshake, bwrap setup failure, exit, signal and timeout.
+
+**Protected paths:** I preserved before-copies and hashes. The snapshot, the original repo and the snapshot manifest are identical before and after (metadata-only comparison).
+
+**Limitations:**
+- **Threat model:** it targets accidental or buggy access, not a malicious target.
+- **Hardening:** there is no seccomp filter.
+- **Not verifiable in code:** "TRAIN-only" status of an input is recorded as an approval id, not verified.
+- **Not exercised:** I did not run numpy/pandas imports inside the sandbox, since no replay was in scope.
+
+**Interval plan:** the current plan describes raw files, so a curated artifact needs its own path, size, evidence and provenance. `check_coverage` also requires at least one byte past the last TRAIN interval, which a strictly TRAIN-only artifact would not have. I documented both points and changed no code. Deciding how to handle the terminal row is for you.
+
+**Evidence still needed to release real-data runs:**
+1. Independently issued, hash-pinned TRAIN-only artifacts.
+2. A pinned Director release acceptance record.
+3. An authorization JSON describing the artifacts as mounted in the sandbox.
+4. A passing receipt for the exact launcher hashes.
+5. A real-run entry started by `os_isolation.launch`.
+
+Everything is in `work/wp004_train_harness` and `reports/production/WP-R5-004/os_isolation`. Start with `OS_ISOLATION_REPORT.md` in the reports folder, which has the commands, hashes and the §6 and §7 detail. `OS_ISOLATION_TEST_RECEIPT.json` and `SHA256SUMS.txt` sit alongside it.

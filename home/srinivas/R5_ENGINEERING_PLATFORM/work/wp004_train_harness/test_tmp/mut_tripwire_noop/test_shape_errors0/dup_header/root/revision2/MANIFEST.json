@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_tripwire_noop/test_shape_errors0/dup_header/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "3acffa22cdf1441c5626bd738fce172630e65e5ce5f2dfcc33a6cc821620786a",
+      "size_bytes": 17622,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "2d1eda806a3e8349f5247a23660b7086a9469d962fb9662ccc206e40cf67550f",
+      "size_bytes": 18659,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "45be9c4bdacf7f66e90d866fbe61a0ee4039c28d10a833d3a4440e8dba32c36d",
+  "symbol_count": 2
+}

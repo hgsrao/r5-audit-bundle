@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 0.0011954250003327616,
+  "error": "claude could not start (claude): [Errno 2] No such file or directory: 'claude'",
+  "finished_at": "2026-10-08T14:16:47.659575+00:00",
+  "needs_review": false,
+  "objective": "Remove circular release pin while preventing caller-issued real authority",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-R5-004-RELEASE-AUTHORITY",
+  "package_sha256": "68c0f01684695d34d2605b589b10c85d4fd8f9245688c6fe705056a726f43c83",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-08T14:16:47.655481+00:00",
+  "state": "FAILED",
+  "type": "CODE_IMPLEMENTATION",
+  "worker": "claude"
+}

@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_boundary_row_unauthorized_ok/test_unexpected_missing_first_0/missing_session/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "ded0248a8d7d6b847fa42588257fd068d073ed1fd3928fa8653513d4a29fde07",
+      "size_bytes": 15434,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "6be60d3c8a59eac1300dd079ec51659753ce4ea774311dfd26e17edd325dc036",
+      "size_bytes": 16316,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "ab93b83512e0fc6d9463553c40dc5a1b9863760f0670cbbfcfeea25a86ab0f82",
+  "symbol_count": 2
+}

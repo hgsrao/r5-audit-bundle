@@ -1,0 +1,27 @@
+{
+  "authorization_sha256": "e94e9450156c0913eb86a5ce81836a28ab32dbca4cb14f678d8bf0d00ae86509",
+  "classification": "SYNTHETIC_INTEGRATION_ONLY",
+  "code_pins": {
+    "harness": "92614c6064182d73a67535f6fdd9c0dd355c62350affce3443983f46af94af2e",
+    "snapshot": "b9b6027bb12754a20d6a59b57bd555a5b606443d5a53bb2de8e18cb73c8d0f2c"
+  },
+  "execution_id": "SYNTHETIC-EXEC-001",
+  "input_pins": {
+    "authorization.json": "e94e9450156c0913eb86a5ce81836a28ab32dbca4cb14f678d8bf0d00ae86509",
+    "contract.md": "e0c7d28877cf2ae1199fd7426b58406441e3ece0c6416fee3eb795bc684101af",
+    "grid_INDIA_VIX_15MIN.csv": "0a54b4b80158d6f87d022526125a17e782ea3d1fa3fe43b6f716d6a9ecaa3752",
+    "grid_NIFTY_50_15MIN.csv": "6af3470b7803b182bdba24250eee1f801b14f986f0e3edb1f057a3c9cf82935c",
+    "grid_manifest.json": "7604dca90cfec665b5cf8f553399550a2d9d7e7dad4112abdbb19367cfa6509a",
+    "params.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "protocol.json": "025c0f88b7939fb6349339ea13f572ec870fb5d2296fad1ecbf830b579260c32",
+    "snapshot_manifest.json": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+    "stock_AAA.csv": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f",
+    "stock_BBB.csv": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f",
+    "stock_manifest.json": "97bc729beec3a7479e29f9c75e516c313c18260c83afc2b65cecb5b8c028fac2"
+  },
+  "isolation_profile": "WP004_OS_ISOLATION_V1",
+  "issuer": "SYNTHETIC_FIXTURE_ISSUER",
+  "record_id": "SYNTHETIC-RELEASE-1",
+  "release_scope": "SYNTHETIC_ONLY",
+  "schema": "WP004_RELEASE_RECORD_V1"
+}

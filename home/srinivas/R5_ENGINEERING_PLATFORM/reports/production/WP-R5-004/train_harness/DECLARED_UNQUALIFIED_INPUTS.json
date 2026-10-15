@@ -1,0 +1,25 @@
+{
+  "classification": "NON_SEALED_TRAIN_EXECUTION_DIAGNOSTIC",
+  "unqualified": [
+    "risk values: existing development defaults preserved unchanged; weekly and 2%-daily trial governors explicitly inactive, not production-qualified",
+    "kill-switch / drawdown / daily / position behaviour: recorded as-is in runtime_safety_contract.json at execution; no safety limit changed",
+    "plant / economic authority (CentralPlantMasterDCS PAPER_APPLY): unqualified; outputs measure execution mechanics, not financial validity",
+    "calibration params: none supplied by this package (synthetic tests use {} = registry defaults); real params must be hash-pinned by the later package",
+    "stock manifest whole-file sha256 values: carried as metadata only; NOT re-verified (no whole-file market hash by contract)",
+    "grid feed whole-file sha256 values: compared to protocol as metadata only; NOT re-verified",
+    "Stage B Block 1 selection, sessions and 60-bar warmup: taken from protocol v2 unchanged",
+    "grid manifest local_workspace/records/grid-manifest-local.json: not in snapshot; later package must supply a root containing it",
+    "per-file exact byte intervals, content commitments and boundary evidence: NOT supplied; must be produced externally and independently (see REQUIRED_EXTERNAL_INPUT_SCHEMA.md)",
+    "OS-level IO isolation witness (immutable audited snapshot, no uncontrolled subprocess/native reads): NOT implemented; real runner refuses",
+    "data content provenance: only newly acquired current-prefix consumed-byte hashes; valid for NON-SEALED diagnostic only"
+  ],
+  "not_claimed": [
+    "actual48_certified",
+    "sealed membership",
+    "parameter authority",
+    "financial performance",
+    "candidate validity",
+    "production readiness",
+    "execution qualification"
+  ]
+}

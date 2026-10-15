@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-10-07T04:28:59.456718+00:00",
+  "campaign": "R5-PRODUCTION-001",
+  "protected_sha256": "a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2",
+  "reviewed_file_sha256": {
+    "docs/r5_remediation_project/campaign/WORK_PACKAGES.json": "92e076c15993781d9f2c54580cfc25e1baa31bd35277e2f6aada66df4ac2bc08",
+    "docs/r5_remediation_project/campaign/PREREGISTRATION.json": "2b16ce44e7ef113a33049f800777d0ece4fa2f513889fa369ff0ed9e3c28cf55",
+    "docs/r5_remediation_project/campaign/SEALED_DATA_EXPOSURE_RECEIPT.md": "0eb04020863a2db527ff2bbc57f1c03c638c6e8e9de0110c8582fdc4d16435ae",
+    "docs/r5_remediation_project/campaign/GUARDED_BASELINE_REGRESSION.txt": "d805249bc5f9aad95fd076355a1ce5bdf361f74c05c2fe675e9947f517a64672",
+    "docs/r5_remediation_project/campaign/wp01/RECEIPT.md": "81113f2d03c794ef443bab0bed9e4bfc6fd9098dbf73ba8961255fd3e4518435",
+    "docs/r5_remediation_project/campaign/wp01/checkpoint_receipt.json": "9066c5393e9d6c5b16bb65615da82a717b7329a9d854258d57f7f3ee52610dd4",
+    "docs/r5_remediation_project/campaign/wp01/causal_intervention.json": "124f966a4d277f2f1fff21804230f581f0e179dc315b9990b8dca368d21b4a37",
+    "docs/r5_remediation_project/campaign/wp01/full48_first_hour_intervention.json": "5e2e390728bac2737d5d33b09e1e6f0f504d3a4155cbe518ec92065504527e84",
+    "docs/r5_remediation_project/campaign/wp01/full48_input_receipt.json": "b550039861cbd2a519f0a2937e0cf7fb1f590906aa0a651319172d0c42be438f",
+    "docs/r5_remediation_project/campaign/authority_mapping/READ_ONLY_AUTHORITY_MAP.md": "20c0438e6052a4cb14efe0ad31bb3d74085d6e4da429058702dab4579d3fbb20",
+    "docs/r5_remediation_project/campaign/wp02/PATCH_REVIEW.md": "f55babb247d518f0fc639d7c4731b6e12c94716ea78a4648c1e7f60e6ce7ac6a",
+    "scripts/r5_campaign_coordinator.py": "5972578090bbf447ce965695b7c6c36b80289f007e9be8c4b0675aebe367f5a8",
+    "scripts/r5_campaign_pytest_guard.py": "8aba7c713ac041e44e6855b4ff91cfcbc4794f833c9a3cabc55ae067471c392f",
+    "tests/test_r5_campaign_coordinator.py": "7ad030dd98080b82bc3e6eece0008dbc91784a326114360e4826c134acbeceaa",
+    "tests/test_r5_campaign_guard.py": "b179767250906f200ba01868db58b775c4037b998491f059bd6fdadfd69495e4",
+    "revision2_external/orchestrator.py": "6885bc41fd70a00cfb1794ebdd60e19e63c6dfd6a69edc44153e1719f6be3b5a",
+    "revision2_external/indicators_talib.py": "a011b295c912d8ee3e2285171566f8bb39fb90a4830425de0dc654e5052883b2"
+  },
+  "production_changes": [],
+  "holdout_access_this_restart": false,
+  "calibration_run": false,
+  "focused_tests": {
+    "passed": 10,
+    "exit_code": 0
+  },
+  "active_counts": {
+    "H": 11,
+    "I": 19,
+    "J": 4
+  }
+}

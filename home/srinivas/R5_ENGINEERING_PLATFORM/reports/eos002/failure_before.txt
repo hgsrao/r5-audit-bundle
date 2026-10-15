@@ -1,0 +1,100 @@
+..FF..                                                                   [100%]
+=================================== FAILURES ===================================
+_________________ test_failures_close_and_log[invalid_package] _________________
+
+failure = 'invalid_package'
+tmp_path = PosixPath('/tmp/pytest-of-srinivas/pytest-15/test_failures_close_and_log_in0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x733507484500>
+
+    @pytest.mark.parametrize(
+        "failure",
+        ["missing_model", "unavailable", "invalid_package", "malformed_request",
+         "malformed_response", "timeout"],
+    )
+    def test_failures_close_and_log(failure, tmp_path, monkeypatch):
+        """Every submitted failure raises, sends no success, and leaves an END log."""
+        payload = dict(id="FAILURE", type="GENERAL", model="fixture",
+                       objective="Commission", rules=[], files=[],
+                       prompt="Test only", metadata={})
+        transport = MagicMock()
+        if failure == "unavailable":
+            transport.side_effect = URLError("commissioning offline fixture")
+        elif failure == "timeout":
+            transport.side_effect = TimeoutError("commissioning timeout fixture")
+        elif failure == "malformed_response":
+            transport.return_value.__enter__.return_value.read.return_value = b"{broken"
+        monkeypatch.setattr("src.ollama_client.urlopen", transport)
+        logger = TransactionLogger(tmp_path / "logs")
+        bridge = Bridge(OllamaClient("http://localhost:11434", 60),
+                        PromptRouter(), logger, tmp_path / "responses")
+        if failure == "missing_model":
+            payload["model"] = None
+        if failure in {"invalid_package", "malformed_request"}:
+            path = tmp_path / "request.json"
+            if failure == "invalid_package":
+                del payload["objective"]
+                path.write_text(json.dumps(payload))
+            else:
+                path.write_text("{broken")
+            package = path
+        else:
+            package = WorkPackage.from_dict(payload)
+        with pytest.raises((ValueError, URLError, TimeoutError)):
+            bridge.execute(package)
+        events = [json.loads(s) for s in logger.path.read_text().splitlines()]
+>       assert events[0]["event"] == "START"
+               ^^^^^^^^^
+E       IndexError: list index out of range
+
+../../../../R5_ENGINEERING_PLATFORM/tests/eos002/test_commissioning.py:52: IndexError
+________________ test_failures_close_and_log[malformed_request] ________________
+
+failure = 'malformed_request'
+tmp_path = PosixPath('/tmp/pytest-of-srinivas/pytest-15/test_failures_close_and_log_ma0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x733507482570>
+
+    @pytest.mark.parametrize(
+        "failure",
+        ["missing_model", "unavailable", "invalid_package", "malformed_request",
+         "malformed_response", "timeout"],
+    )
+    def test_failures_close_and_log(failure, tmp_path, monkeypatch):
+        """Every submitted failure raises, sends no success, and leaves an END log."""
+        payload = dict(id="FAILURE", type="GENERAL", model="fixture",
+                       objective="Commission", rules=[], files=[],
+                       prompt="Test only", metadata={})
+        transport = MagicMock()
+        if failure == "unavailable":
+            transport.side_effect = URLError("commissioning offline fixture")
+        elif failure == "timeout":
+            transport.side_effect = TimeoutError("commissioning timeout fixture")
+        elif failure == "malformed_response":
+            transport.return_value.__enter__.return_value.read.return_value = b"{broken"
+        monkeypatch.setattr("src.ollama_client.urlopen", transport)
+        logger = TransactionLogger(tmp_path / "logs")
+        bridge = Bridge(OllamaClient("http://localhost:11434", 60),
+                        PromptRouter(), logger, tmp_path / "responses")
+        if failure == "missing_model":
+            payload["model"] = None
+        if failure in {"invalid_package", "malformed_request"}:
+            path = tmp_path / "request.json"
+            if failure == "invalid_package":
+                del payload["objective"]
+                path.write_text(json.dumps(payload))
+            else:
+                path.write_text("{broken")
+            package = path
+        else:
+            package = WorkPackage.from_dict(payload)
+        with pytest.raises((ValueError, URLError, TimeoutError)):
+            bridge.execute(package)
+        events = [json.loads(s) for s in logger.path.read_text().splitlines()]
+>       assert events[0]["event"] == "START"
+               ^^^^^^^^^
+E       IndexError: list index out of range
+
+../../../../R5_ENGINEERING_PLATFORM/tests/eos002/test_commissioning.py:52: IndexError
+=========================== short test summary info ============================
+FAILED ../../../../R5_ENGINEERING_PLATFORM/tests/eos002/test_commissioning.py::test_failures_close_and_log[invalid_package]
+FAILED ../../../../R5_ENGINEERING_PLATFORM/tests/eos002/test_commissioning.py::test_failures_close_and_log[malformed_request]
+2 failed, 4 passed in 0.03s

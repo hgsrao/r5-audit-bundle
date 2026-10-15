@@ -1,0 +1,217 @@
+scripts/analyze_chart_studies_intraday.py:46:    studies = CompositeStudySignal()
+scripts/analyze_chart_studies_intraday.py-47-    observations: list[dict] = []
+scripts/analyze_chart_studies_intraday.py-48-    for index in range(args.warmup, len(day) - 1):
+scripts/analyze_chart_studies_intraday.py-49-        observation = studies.evaluate(args.symbol, day.iloc[: index + 1])
+--
+scripts/run_price_volume_study_reversal_shadow_48symbol.py:20:    atr=talib.ATR(day.high.to_numpy(float),day.low.to_numpy(float),day.close.to_numpy(float),timeperiod=14); ledger=StudyEntryShadowLedger(); sensor=PriceVolumeStudyReversalShadow(ledger); studies=CompositeStudySignal()
+scripts/run_price_volume_study_reversal_shadow_48symbol.py-21-    for i in range(warmup,len(day)):
+scripts/run_price_volume_study_reversal_shadow_48symbol.py-22-        bar=day.iloc[i]; ledger.advance(symbol,i,bar.timestamp,bar)
+scripts/run_price_volume_study_reversal_shadow_48symbol.py-23-        if i<len(day)-1:
+--
+scripts/trace_composite_study_signal_real_infy.py:23:    engine = CompositeStudySignal()
+scripts/trace_composite_study_signal_real_infy.py-24-    checkpoints = [100, 200, 300, 400, 500, 599]
+scripts/trace_composite_study_signal_real_infy.py-25-    for i in range(80, len(frame)):
+scripts/trace_composite_study_signal_real_infy.py-26-        result = engine.evaluate(SYMBOL, frame.iloc[:i + 1])
+--
+scripts/run_study_entry_shadow_intraday.py:41:    studies = CompositeStudySignal()
+scripts/run_study_entry_shadow_intraday.py-42-    ledger = StudyEntryShadowLedger()
+scripts/run_study_entry_shadow_intraday.py-43-    for index in range(args.warmup, len(day)):
+scripts/run_study_entry_shadow_intraday.py-44-        bar = day.iloc[index]
+--
+scripts/run_reversal_cohort_shadow_48symbol.py:19: atr=talib.ATR(day.high.to_numpy(float),day.low.to_numpy(float),day.close.to_numpy(float),timeperiod=14); c=ReversalCohortShadow();studies=CompositeStudySignal()
+scripts/run_reversal_cohort_shadow_48symbol.py-20- for i in range(warmup,len(day)):
+scripts/run_reversal_cohort_shadow_48symbol.py-21-  b=day.iloc[i];c.advance(sym,i,b.timestamp,b)
+scripts/run_reversal_cohort_shadow_48symbol.py-22-  if i<len(day)-1:
+--
+tests/test_revision5_three_controller_parameterization.py:128:    new, old = CompositeStudySignal(), old_studies.CompositeStudySignal()
+tests/test_revision5_three_controller_parameterization.py-129-    assert (new.kp, new.ki, new.kd, new.clamp, new.grading_horizon, new.hit_rate_window) == (
+tests/test_revision5_three_controller_parameterization.py-130-        old.kp, old.ki, old.kd, old.clamp, old_studies._GRADING_HORIZON, old_studies._HIT_RATE_WINDOW)
+tests/test_revision5_three_controller_parameterization.py-131-    assert (MIN_WEIGHT, MAX_WEIGHT) == (old_studies._MIN_WEIGHT, old_studies._MAX_WEIGHT)
+--
+tests/test_revision5_three_controller_parameterization.py:140:    engine = CompositeStudySignal(kp=0.2, ki=0.06, kd=0.07, clamp=-0.1)
+tests/test_revision5_three_controller_parameterization.py-141-    assert (engine.kp, engine.ki, engine.kd, engine.clamp) == (0.2, 0.06, 0.07, 0.1)
+tests/test_revision5_three_controller_parameterization.py-142-
+tests/test_revision5_three_controller_parameterization.py-143-
+--
+tests/test_revision5_three_controller_parameterization.py:150:    base = CompositeStudySignal(config=cfg())
+tests/test_revision5_three_controller_parameterization.py-151-    base_last = _run(base, bars)[-1]
+tests/test_revision5_three_controller_parameterization.py-152-    for name, term in (("studies_pid_kp", "p"), ("studies_pid_ki", "i"), ("studies_pid_kd", "d")):
+tests/test_revision5_three_controller_parameterization.py:153:        moved = CompositeStudySignal(config=cfg(**{name: REG.params[name].maximum}))
+tests/test_revision5_three_controller_parameterization.py-154-        last = _run(moved, bars)[-1]
+tests/test_revision5_three_controller_parameterization.py-155-        changed = [s for s in STUDY_NAMES
+tests/test_revision5_three_controller_parameterization.py-156-                   if abs(last["weight_pid_audit"][s][term] - base_last["weight_pid_audit"][s][term]) > 1e-12]
+--
+tests/test_revision5_three_controller_parameterization.py:158:    hi_kp = CompositeStudySignal(config=cfg(studies_pid_kp=0.30))
+tests/test_revision5_three_controller_parameterization.py-159-    assert _run(hi_kp, bars)[-1]["weights"] != base_last["weights"]
+tests/test_revision5_three_controller_parameterization.py-160-
+tests/test_revision5_three_controller_parameterization.py-161-
+--
+tests/test_revision5_three_controller_parameterization.py:166:        engine = CompositeStudySignal(config=cfg(studies_pid_ki=ki))
+tests/test_revision5_three_controller_parameterization.py-167-        _run(engine, bars)
+tests/test_revision5_three_controller_parameterization.py-168-        integral[ki] = max(abs(engine._symbols["S"][n].pid.components[1]) for n in STUDY_NAMES)
+tests/test_revision5_three_controller_parameterization.py-169-    assert integral[0.15] > integral[0.01] > 0.0
+--
+tests/test_revision5_three_controller_parameterization.py:172:        engine = CompositeStudySignal(config=cfg(studies_pid_kd=kd))
+tests/test_revision5_three_controller_parameterization.py-173-        derivative[kd] = max(abs(a["d"]) for r in _run(engine, bars) for a in r["weight_pid_audit"].values())
+tests/test_revision5_three_controller_parameterization.py-174-    assert derivative[0.15] > derivative[0.01]
+tests/test_revision5_three_controller_parameterization.py-175-
+--
+tests/test_revision5_three_controller_parameterization.py:180:        engine = CompositeStudySignal(config=cfg(studies_pid_output_clamp=clamp))
+tests/test_revision5_three_controller_parameterization.py-181-        for result in _run(engine, bars):
+tests/test_revision5_three_controller_parameterization.py-182-            for audit in result["weight_pid_audit"].values():
+tests/test_revision5_three_controller_parameterization.py-183-                assert abs(audit["raw_output"]) <= clamp + 1e-12
+--
+tests/test_revision5_three_controller_parameterization.py:196:        engine = CompositeStudySignal(config=cfg(studies_grading_horizon_bars=horizon))
+tests/test_revision5_three_controller_parameterization.py-197-        for i in range(0, 40):
+tests/test_revision5_three_controller_parameterization.py-198-            result = engine.evaluate("S", bars.iloc[:i + 1])
+tests/test_revision5_three_controller_parameterization.py-199-            if result["weight_pid_audit"]["session_vwap"]["graded_vote_count"] > 0:
+--
+tests/test_revision5_three_controller_parameterization.py:207:    engine = CompositeStudySignal(config=cfg(studies_grading_horizon_bars=4))
+tests/test_revision5_three_controller_parameterization.py-208-    votes, closes, expected_hits = [], [], []
+tests/test_revision5_three_controller_parameterization.py-209-    for i in range(0, 60):
+tests/test_revision5_three_controller_parameterization.py-210-        result = engine.evaluate("S", bars.iloc[:i + 1])
+--
+tests/test_revision5_three_controller_parameterization.py:221:        engine = CompositeStudySignal(config=cfg(studies_hit_rate_window_bars=window))
+tests/test_revision5_three_controller_parameterization.py-222-        _run(engine, bars, start=0)
+tests/test_revision5_three_controller_parameterization.py-223-        history = engine._symbols["S"]["session_vwap"].hit_history
+tests/test_revision5_three_controller_parameterization.py-224-        assert history.maxlen == window and len(history) == window
+--
+tests/test_revision5_three_controller_parameterization.py:229:    engine = CompositeStudySignal(config=cfg())
+tests/test_revision5_three_controller_parameterization.py-230-    _run(engine, bars[:100], start=0)
+tests/test_revision5_three_controller_parameterization.py-231-    before = {n: engine._symbols["S"][n] for n in STUDY_NAMES}
+tests/test_revision5_three_controller_parameterization.py-232-    snapshot = {n: (before[n].pid, before[n].pid._integral, before[n].pid._last_input,
+--
+tests/test_revision5_three_controller_parameterization.py:255:    engine = CompositeStudySignal(config=cfg())
+tests/test_revision5_three_controller_parameterization.py-256-    _run(engine, bars, start=0)
+tests/test_revision5_three_controller_parameterization.py-257-    pid = engine._symbols["S"]["bollinger"].pid
+tests/test_revision5_three_controller_parameterization.py-258-    engine.configure(cfg(studies_pid_output_clamp=0.05))
+--
+tests/test_revision5_three_controller_parameterization.py:264:    engine = CompositeStudySignal(config=cfg())
+tests/test_revision5_three_controller_parameterization.py-265-    _run(engine, _bars(seed=11), start=0)
+tests/test_revision5_three_controller_parameterization.py-266-    before = (engine.kp, engine.grading_horizon, list(engine._symbols["S"]["ichimoku"].vote_history))
+tests/test_revision5_three_controller_parameterization.py-267-    for bad in (cfg(studies_grading_horizon_bars=1), cfg(studies_pid_kp=9.0), cfg(studies_hit_rate_window_bars=7.5)):
+--
+tests/test_revision5_three_controller_parameterization.py:275:    engine = CompositeStudySignal(config=cfg())
+tests/test_revision5_three_controller_parameterization.py-276-    _run(engine, a, symbol="A", start=0)
+tests/test_revision5_three_controller_parameterization.py-277-    _run(engine, b, symbol="B", start=0)
+tests/test_revision5_three_controller_parameterization.py-278-    b_hits = list(engine._symbols["B"]["session_vwap"].hit_history)
+--
+tests_external/test_audit_remediation.py:192:    result=CompositeStudySignal().evaluate("INFY",bars())
+tests_external/test_audit_remediation.py-193-    assert result["direction"]==vote
+tests_external/test_audit_remediation.py-194-    assert result["confidence"]==1.
+tests_external/test_audit_remediation.py-195-
+--
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py:258:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py-259-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py-260-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/recovery_hardening/orchestrator.before.py-261-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-N07/before_sources/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/state_recovery/orchestrator.before.py:253:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/state_recovery/orchestrator.before.py-254-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/state_recovery/orchestrator.before.py-255-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/state_recovery/orchestrator.before.py-256-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+tests_external/test_composite_study_signal.py:34:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-35-    result = None
+tests_external/test_composite_study_signal.py-36-    for i in range(60, len(bars)):
+tests_external/test_composite_study_signal.py-37-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+--
+tests_external/test_composite_study_signal.py:45:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-46-    result = None
+tests_external/test_composite_study_signal.py-47-    for i in range(60, len(bars)):
+tests_external/test_composite_study_signal.py-48-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+--
+tests_external/test_composite_study_signal.py:55:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-56-    for i in range(60, len(bars)):
+tests_external/test_composite_study_signal.py-57-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+tests_external/test_composite_study_signal.py-58-        for name, w in result["weights"].items():
+--
+tests_external/test_composite_study_signal.py:65:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-66-    for i in range(80, len(bars)):
+tests_external/test_composite_study_signal.py-67-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+tests_external/test_composite_study_signal.py-68-
+--
+tests_external/test_composite_study_signal.py:88:    engine = CompositeStudySignal(kp=0.3, ki=0.1, kd=0.05, clamp=0.2)  # faster gains so the effect shows within this fixture's length
+tests_external/test_composite_study_signal.py-89-    for i in range(60, len(bars)):
+tests_external/test_composite_study_signal.py-90-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+tests_external/test_composite_study_signal.py-91-    hit_rates = result["hit_rates"]
+--
+tests_external/test_composite_study_signal.py:109:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-110-    for i in range(60, 60 + _GRADING_HORIZON):
+tests_external/test_composite_study_signal.py-111-        result = engine.evaluate(SYMBOL, bars.iloc[:i + 1])
+tests_external/test_composite_study_signal.py-112-    for name in STUDY_NAMES:
+--
+tests_external/test_composite_study_signal.py:120:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-121-    for i in range(60, 100):
+tests_external/test_composite_study_signal.py-122-        result_a = engine.evaluate("SYM_A", bars_a.iloc[:i + 1])
+tests_external/test_composite_study_signal.py-123-        result_b = engine.evaluate("SYM_B", bars_b.iloc[:i + 1])
+--
+tests_external/test_composite_study_signal.py:138:    engine = CompositeStudySignal()
+tests_external/test_composite_study_signal.py-139-    confidences, directions = [], []
+tests_external/test_composite_study_signal.py-140-    for i in range(80, len(frame)):
+tests_external/test_composite_study_signal.py-141-        result = engine.evaluate("INFY", frame.iloc[:i + 1])
+--
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py:253:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py-254-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py-255-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-006/before_sources/revision2_external/orchestrator.py-256-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+revision2_external/orchestrator.py:261:        self.chart_studies = CompositeStudySignal(config=self.config)
+revision2_external/orchestrator.py-262-        self.final_execution_controller = FinalExecutionController()
+revision2_external/orchestrator.py-263-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+revision2_external/orchestrator.py-264-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py:25:    unit=studies.CompositeStudySignal()
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-26-    close=100+sign*np.arange(90)*.01;close[-1]=close[-2]-.1*sign
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-27-    bars=pd.DataFrame({'timestamp':pd.date_range('2023-12-05 09:15',periods=90,freq='min'),'open':close,'close':close,'high':close+.02,'low':close-.02,'volume':1000.})
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-28-    before=None
+--
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py:37:    unit=studies.CompositeStudySignal(kd=0)
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-38-    for name,vote in zip(('_ichimoku_vote','_bollinger_vote','_stochastic_vote','_session_vwap_vote'),(1,1,-1,-1)):
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-39-        monkeypatch.setattr(studies,name,lambda *a,vote=vote:vote)
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-40-    bars=pd.DataFrame({'timestamp':[pd.Timestamp('2023-12-05 09:15')],'open':[100.],'close':[100.],'high':[101.],'low':[99.],'volume':[1000.]})
+--
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py:46:    unit=studies.CompositeStudySignal()
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-47-    for name,vote in zip(('_ichimoku_vote','_bollinger_vote','_stochastic_vote','_session_vwap_vote'),(1,1,-1,-1)):
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-48-        monkeypatch.setattr(studies,name,lambda *a,vote=vote:vote)
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-49-    bars=pd.DataFrame({'timestamp':pd.date_range('2023-12-05 09:15',periods=30,freq='min'),'open':100.,'close':100.,'high':100.01,'low':99.99,'volume':1000.})
+--
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py:59:    unit = studies.CompositeStudySignal()
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-60-    for name, vote in zip(('_ichimoku_vote', '_bollinger_vote', '_stochastic_vote', '_session_vwap_vote'), (1, 1, -1, -1)):
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-61-        monkeypatch.setattr(studies, name, lambda *a, vote=vote: vote)
+outputs/r5_remediation/phase1_flat_bar/test_dispatch_and_studies_controllers.py-62-    close = 100 + price_sign * np.arange(30) * 0.01
+--
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-005/before_sources/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/morning_startup/orchestrator.before.py:253:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/morning_startup/orchestrator.before.py-254-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/morning_startup/orchestrator.before.py-255-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/morning_startup/orchestrator.before.py-256-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-N04/before_sources/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/activities/F-ROOT-001/before_sources/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/baseline/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")
+--
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py:252:        self.chart_studies = CompositeStudySignal(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py-253-        self.final_execution_controller = FinalExecutionController()
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py-254-        self.id_box = HMMIntelligentDiscriminationBox(config=self.config)
+outputs/r5_remediation/phase1_flat_bar/sources/neutral/revision2_external/orchestrator.py-255-        self.mpc = SimplePIDModelPredictiveControlBox(pid_enabled=pid_mode == "enabled")

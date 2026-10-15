@@ -1,0 +1,48 @@
+**WP-R5-003 decision: FAIL (fail closed). I did not run the replay.** I opened no market-data file and ran no Python, so there is no determinism result.
+
+**Gate 0**
+- **(a) TRAIN-only access: FAIL.** The loaders parse only the TRAIN block and stop at the first row after it (`scripts/run_r5_step5_candidate.py:182-211` for stock files, `:360-372` for grid). But `prepare_block` first calls `verify_manifest` (`:454`, `revision2/dataset_manifest.py:126-131`), which hashes all 48 stock files in full. The grid feed is also hashed in full (`:331`). That reads Validation and Holdout bytes, and no TRAIN-only slice with a recorded hash exists.
+- **(b) Entry point and arguments: not established.** The sealed worker CLI is defined, but no sealed receipt says which stage, block or params are the replay under qualification.
+- **(c) Working tree vs HEAD: fail.** Git commands needed approval, which was refused. The replay-path file hashes equal those recorded in WP-R5-002, but that doesn't show equality with HEAD.
+- **(d) Unqualified inputs: fail.** The replay would consume these WP-R5-002 NOT_QUALIFIED or UNKNOWN inputs, and no operator order accepts them:
+  - candidate params
+  - MIS cost schedule
+  - slippage
+  - HMM floors
+  - session calendar
+  - registry identity
+  - Python environment
+- **(e) Read-only, outputs only under `runs/`: not established.**
+
+**Static findings (tasks 3 and 4, no runtime evidence)**
+- **Gates:** kill switch, drawdown halt (0.25), daily rupee stop (50,000), and the position limits (5 concurrent, 0.50 gross, 0.15 per symbol, quantity 100) are active at development-profile values. The paper-only authority gates are active, and the live Kite adapter is unreachable.
+- **F3-1 (material):** the weekly 4% halt, the 2% daily hard halt and the trial ceilings exist only under `risk_profile="trial"` (`orchestrator.py:204-205, 229-231`). No replay entry point sets it, so those are inactive on the default replay path.
+- **F3-2:** all limit values are NOT_QUALIFIED defaults, so "active" means the code enforces them, not that they have authority.
+- **CNC/GTT:** I found no path from the sealed worker into tick-consuming logic. CNC product and cost legs are reachable only with `--paper-combined-cycle-state`. There is no runtime tripwire and no runtime trace.
+- **Honesty note:** I did not open `INPUT_INTEGRITY_REPORT.md`, `UPDATED_PARAMETER_REGISTER.json` or `METADATA_QUALIFICATION_REPORT.md`. I relied on their summaries in the state files and WP-R5-002. This is stated in `EXECUTION_PROVENANCE.md`.
+
+**What the operator or engineering must supply**
+1. A TRAIN access method, either:
+   - a TRAIN-only slice cut by an authorised party, with its hash recorded; or
+   - an authorised loader package that makes no whole-file reads. The existing hook at `r5_block1_acceptance.py:114` accepts an injected `prepare`.
+2. Git-verified code identity.
+3. A sealed designation of stage, block, params, protocol and root.
+4. Explicit acceptance or qualification of the unqualified inputs, plus a pinned environment.
+
+**Evidence and state**
+- **Reports:** `reports/production/WP-R5-003/` holds the four reports and `SHA256SUMS.txt`.
+- **Checkpoint:** `receipts/checkpoints/CHECKPOINT_006.md`.
+- **State files:** `CURRENT_STATE.md` and `R5_PRODUCTION_BACKLOG.md` have dated sections appended, and `R5_CURRENT_WORK_PACKAGE.md` has a new header with history kept.
+- **Before-copies:** `work/*.before_WP-R5-003.md`.
+
+**Backlog**
+- **New blocker (B-R5-003):** TRAIN segment access, git-verified identity, replay designation and input acceptance now gate any TRAIN replay.
+- **Unchanged:** all 12 packages stay NOT ACCEPTED and WP01 stays BLOCKED. H/I/J is 11/19/4, EXEC-05 is NOT_QUALIFIED, and production is NOT READY with no candidate designation.
+
+**Next package**
+`work/packages/WP-R5-004.json` is prepared with a full self-contained prompt, outside `queue/` and not submitted. It specifies the two TRAIN-access options and drafts the operator authorisation request. It implements nothing and needs operator or engineering authorisation for any loader, slice or git read.
+
+**Compliance**
+- **Repo and platform:** nothing was written in the R5 repo. No dispatcher, bridge, metadata, strategy, parameter or platform file was changed, and the DISPATCHER_STATE block was untouched.
+- **Data access:** no Validation or Holdout row was read, and no stock or grid file was opened, hashed or parsed.
+- **Other:** no commit or push, no network, and live trading stayed disabled.

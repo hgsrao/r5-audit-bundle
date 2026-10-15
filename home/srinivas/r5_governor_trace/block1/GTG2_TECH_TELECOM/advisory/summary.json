@@ -1,0 +1,362 @@
+{
+  "metrics": {
+    "fills": 10,
+    "completed_trades": 10,
+    "net_pnl": -829.0793088090131,
+    "gross_pnl": -615.1988000000131,
+    "profit_factor": 0.0,
+    "mtm_max_drawdown_fraction": 0.0008533397051380253,
+    "safety_violations": 0
+  },
+  "exit_reasons": {
+    "regime_stressed_exit": 6,
+    "controller_path_exit": 2,
+    "stop_gap": 2
+  },
+  "exit_reason_detail": {
+    "regime_stressed_exit": 6,
+    "controller_path_exit": 2,
+    "stop_gap": 2
+  },
+  "sides": {
+    "SELL": 8,
+    "BUY": 2
+  },
+  "bars_held": {
+    "n": 10,
+    "min": 2,
+    "p10": 2,
+    "p50": 4,
+    "p90": 9,
+    "max": 12,
+    "mean": 4.6
+  },
+  "gain_schedule": {
+    "begin_bar_calls": 1875,
+    "begin_bar_with_environment": 0,
+    "apply_runtime_profile_calls": {
+      "GTG2_TECH_TELECOM": 0
+    },
+    "distinct_gain_tuples": {
+      "GTG2_TECH_TELECOM": 1
+    },
+    "gains": {
+      "GTG2_TECH_TELECOM": [
+        {
+          "runtime_kp": 1.5,
+          "runtime_ki": 0.08,
+          "runtime_kd": 0.6,
+          "runtime_droop_r": 0.04,
+          "runtime_base_z": -2.0,
+          "runtime_target_r": 0.3,
+          "runtime_grid_droop_gain": 0.05,
+          "runtime_grid_droop_max": 0.25,
+          "runtime_dynamic_offset_min": -0.45,
+          "runtime_dynamic_offset_max": 0.15,
+          "runtime_integral_clamp": 3.0,
+          "runtime_outcome_window": 6.0
+        }
+      ]
+    },
+    "changes": [],
+    "verdict": {
+      "GTG2_TECH_TELECOM": "FIXED"
+    }
+  },
+  "outer_loop": {
+    "updates": 10,
+    "realized_r": {
+      "n": 10,
+      "min": -0.9586535677856867,
+      "p10": -0.8898428170783393,
+      "p50": -0.3485247154881717,
+      "p90": -0.13563862324000553,
+      "max": 0.001201063777117263,
+      "mean": -0.4571951706722623
+    },
+    "error": {
+      "n": 10,
+      "min": 0.47506701285246844,
+      "p10": 0.6649869481302292,
+      "p50": 0.8974957073303225,
+      "p90": 0.9498928240835556,
+      "max": 0.9523204031531824,
+      "mean": 0.8118147709549512
+    },
+    "integral": {
+      "n": 10,
+      "min": 0.47506701285246844,
+      "p10": 1.191983789955109,
+      "p50": 3.0,
+      "p90": 3.0,
+      "max": 3.0,
+      "mean": 2.4741517301863754
+    },
+    "control_u": {
+      "n": 10,
+      "min": 1.035646088018381,
+      "p10": 1.178406026222604,
+      "p50": 1.5808672951626208,
+      "p90": 1.6699371521715498,
+      "max": 1.6936332352847074,
+      "mean": 1.4555535117351508
+    },
+    "feedback_offset": {
+      "n": 10,
+      "min": -0.42340830882117686,
+      "p10": -0.4174842880428873,
+      "p50": -0.38997399141928746,
+      "p90": -0.29460150655565087,
+      "max": -0.25891152200459544,
+      "mean": -0.36388837793378775
+    },
+    "offset_saturated_min_fraction": 0.0,
+    "offset_saturated_max_fraction": 0.0,
+    "dynamic_z_zero_grid": {
+      "n": 10,
+      "min": -2.423408308821177,
+      "p10": -2.4174842880428873,
+      "p50": -2.3899739914192875,
+      "p90": -2.294601506555651,
+      "max": -2.2589115220045954,
+      "mean": -2.3638883779337876
+    }
+  },
+  "entry_comparator": {
+    "evaluations": 677,
+    "actions": {
+      "ENTRY": 434,
+      "NO_ACTION": 243
+    },
+    "sides": {
+      "SELL": 450,
+      "BUY": 227
+    },
+    "dynamic_z": {
+      "n": 677,
+      "min": -2.4333781548072615,
+      "p10": -2.423408308821177,
+      "p50": -2.3952168237906553,
+      "p90": -2.3005827022008116,
+      "max": -2.0,
+      "mean": -2.3748371421772365
+    },
+    "overspeed_limit": {
+      "n": 677,
+      "min": 1.5666218451927385,
+      "p10": 1.5765916911788231,
+      "p50": 1.6047831762093447,
+      "p90": 1.6994172977991884,
+      "max": 2.0,
+      "mean": 1.6251628578227635
+    },
+    "signed_z": {
+      "n": 677,
+      "min": -1.4721304383456149,
+      "p10": 0.6666987180685129,
+      "p50": 1.4215994092876332,
+      "p90": 2.2252111156507133,
+      "max": 3.307162338183229,
+      "mean": 1.4290606169051971
+    },
+    "margin": {
+      "n": 677,
+      "min": -1.6971363296025164,
+      "p10": -0.6127975780390607,
+      "p50": 0.21783588040266455,
+      "p90": 0.956837685036945,
+      "max": 3.0716698694492286,
+      "mean": 0.1961022409175664
+    },
+    "feedback_offset": {
+      "n": 677,
+      "min": -0.42340830882117686,
+      "p10": -0.42340830882117686,
+      "p50": -0.38997399141928746,
+      "p90": -0.29460150655565087,
+      "max": 0.0,
+      "mean": -0.37154128253593505
+    },
+    "droop_penalty": {
+      "n": 677,
+      "min": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.009055194729229221,
+      "max": 0.010785457270148235,
+      "mean": 0.003295859641301462
+    },
+    "droop_active_fraction": 0.4933530280649926,
+    "droop_at_cap_fraction": 0.0
+  },
+  "mark_v_entry": {
+    "decisions": {
+      "NO_ACTION:GRID_REFERENCE_UNAVAILABLE": 89,
+      "ENTRY:GOVERNOR_ENTRY": 146,
+      "NO_ACTION:FSR_BELOW_ENTRY_HURDLE:FSRN": 288,
+      "NO_ACTION:GOVERNOR_OVERSPEED_LIMIT": 243
+    },
+    "controlling_limiter": {
+      "FSRN": 562,
+      "FSRT": 82,
+      "FSRA": 33
+    },
+    "fsr_selected": {
+      "n": 677,
+      "min": 0.0,
+      "p10": 0.0,
+      "p50": 0.5,
+      "p90": 0.9957847297240005,
+      "max": 1.0,
+      "mean": 0.5378571202693556
+    },
+    "entry_hurdle": {
+      "n": 677,
+      "min": 0.6,
+      "p10": 0.6,
+      "p50": 0.6,
+      "p90": 0.6,
+      "max": 0.6594871794871818,
+      "mean": 0.6007331331555318
+    }
+  },
+  "inner_loop": {
+    "evaluations": 52,
+    "positions": 10,
+    "actions": {
+      "HOLD:GOVERNOR_TRACKING": 48,
+      "EXIT:GOVERNOR_RATCHET_FLOOR": 2,
+      "EXIT:GOVERNOR_PATH_ERROR": 2
+    },
+    "error": {
+      "n": 52,
+      "min": -0.2782124469440691,
+      "p10": 0.026813804360643984,
+      "p50": 0.3309521739843239,
+      "p90": 0.7637016971151374,
+      "max": 1.3220607340792918,
+      "mean": 0.3584130952903078
+    },
+    "integral": {
+      "n": 52,
+      "min": -0.3501688132865714,
+      "p10": -0.011353927027700725,
+      "p50": 0.6693575890136101,
+      "p90": 2.667452080984054,
+      "max": 3.0,
+      "mean": 1.0011384150988154
+    },
+    "derivative": {
+      "n": 52,
+      "min": -0.2782124469440691,
+      "p10": -0.041941649893615096,
+      "p50": 0.11542033037206406,
+      "p90": 0.4021360786672905,
+      "max": 0.5739568927738453,
+      "mean": 0.13825496275833588
+    },
+    "control_u": {
+      "n": 52,
+      "min": -0.6065031343380707,
+      "p10": 0.07180893619430248,
+      "p50": 0.6780007671333764,
+      "p90": 1.409248737962976,
+      "max": 2.528045209846492,
+      "mean": 0.7006636937983685
+    },
+    "exit_envelope": {
+      "n": 52,
+      "min": 0.2273893176973395,
+      "p10": 0.42469501564752055,
+      "p50": 0.7042820850588437,
+      "p90": 1.142959154749315,
+      "max": 1.71620219813481,
+      "mean": 0.7509209399382945
+    },
+    "path_noise_r": {
+      "n": 52,
+      "min": 0.11369465884866975,
+      "p10": 0.12175176065684494,
+      "p50": 0.2449886219670384,
+      "p90": 0.3716627207933159,
+      "max": 0.4411791869763515,
+      "mean": 0.24675844027372956
+    },
+    "error_over_envelope_fraction": 0.07692307692307693,
+    "control_u_over_exit_control_fraction": 0.7307692307692307,
+    "floor_raised_fraction": 1.0,
+    "mfe_r_at_last_step": {
+      "n": 10,
+      "min": 0.0,
+      "p10": 0.0029190575962392685,
+      "p50": 0.195483313981892,
+      "p90": 0.4213291016103247,
+      "max": 0.44639921352530115,
+      "mean": 0.18242626963832564
+    },
+    "inner_exit_reasons": {
+      "GOVERNOR_RATCHET_FLOOR": 2,
+      "GOVERNOR_PATH_ERROR": 2
+    }
+  },
+  "mark_v_position": {
+    "decisions": {
+      "HOLD:GOVERNOR_TRACKING": 14,
+      "HOLD:GOVERNOR_LOAD_SHED": 18,
+      "EXIT:FSR_BELOW_EXIT:FSRN": 16,
+      "EXIT:GOVERNOR_RATCHET_FLOOR": 2,
+      "EXIT:GOVERNOR_PATH_ERROR": 2
+    },
+    "controlling_limiter": {
+      "FSRN": 50,
+      "FSRT": 2
+    },
+    "fsr_selected": {
+      "n": 52,
+      "min": 0.0,
+      "p10": 0.05,
+      "p50": 0.3,
+      "p90": 0.9,
+      "max": 0.9957663008631306,
+      "mean": 0.3815674442730488
+    }
+  },
+  "advisory_exits_not_actuated": 0,
+  "protection": {
+    "outcomes": 10,
+    "trips": 3,
+    "outcomes_while_tripped": 2,
+    "admission": {
+      "AVAILABLE:BLOCKED": 128,
+      "AVAILABLE:ALLOWED": 256,
+      "UNIT_TRIPPED_OFFLINE:BLOCKED": 299,
+      "BAY_COOLDOWN:BLOCKED": 28
+    }
+  },
+  "governor_authority_report": {
+    "mode": "advisory",
+    "entry_decisions": {
+      "NO_ACTION:GRID_REFERENCE_UNAVAILABLE": 89,
+      "ENTRY:GOVERNOR_ENTRY": 146,
+      "NO_ACTION:FSR_BELOW_ENTRY_HURDLE:FSRN": 288,
+      "NO_ACTION:GOVERNOR_OVERSPEED_LIMIT": 243
+    },
+    "position_decisions": {
+      "HOLD:GOVERNOR_TRACKING": 14,
+      "HOLD:GOVERNOR_LOAD_SHED": 18,
+      "EXIT:FSR_BELOW_EXIT:FSRN": 16,
+      "EXIT:GOVERNOR_RATCHET_FLOOR": 2,
+      "EXIT:GOVERNOR_PATH_ERROR": 2
+    }
+  },
+  "micom": {
+    "trip_bar_counts": {
+      "MICOM_INPUT_UNAVAILABLE": 80,
+      "ANSI 21": 45
+    },
+    "vol_z_window": 20
+  },
+  "runtime_seconds": 136.5,
+  "trade_list_sha256": "e8712b09a7604de08b5741c69ee821ce7369cecb56678e1e54af22dd194424b3",
+  "passthrough_verified": true
+}

@@ -1,0 +1,10 @@
+{
+  "id": "WP-BRIDGE-001",
+  "type": "GENERAL",
+  "model": null,
+  "objective": "Review the supplied engineering text",
+  "rules": ["Return observations only"],
+  "files": [],
+  "prompt": "Check this statement for clarity: the bridge only transports messages.",
+  "metadata": {"bridge_version": "1.0"}
+}

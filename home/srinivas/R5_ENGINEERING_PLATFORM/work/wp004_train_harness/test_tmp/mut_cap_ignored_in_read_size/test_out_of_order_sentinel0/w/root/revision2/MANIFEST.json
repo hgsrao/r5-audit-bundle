@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_cap_ignored_in_read_size/test_out_of_order_sentinel0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "175072b2b151cab61c7ca40d59f9868351c08b81986ba11d6ecb17b9868426c1",
+      "size_bytes": 18624,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "e04981ac50a521dbc418b3c65352c101fd803906db3ef427c0d1babc97c68617",
+      "size_bytes": 18624,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "21368986d52ce8cfd12b0a31067bc0868489523fa512320402d9e1e2cfb45fb4",
+  "symbol_count": 2
+}

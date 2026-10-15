@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T15:28:34.754018+00:00",
+  "scope": "Filename metadata only, no market bytes opened or hashed",
+  "roots": [
+    "/home/srinivas/projects/zerodha-r5-governor-refactor",
+    "/home/srinivas/projects/zerodha-phase1"
+  ],
+  "terms": [
+    "provenance",
+    "train_only",
+    "train-only",
+    "train_slice",
+    "train-slice",
+    "boundary_receipt",
+    "approval_record",
+    "curated"
+  ],
+  "candidates": [
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/P0-3B-E_APPROVAL_RECORD.md",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/tests/fixtures/r5_d01/PROVENANCE.json",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/outputs/r5_remediation/d02_2_failure_classification/supervisor_git_provenance.json",
+    "/home/srinivas/projects/zerodha-r5-governor-refactor/docs/r5_remediation_project/R5_PARAMETER_PROVENANCE_AUDIT.md",
+    "/home/srinivas/projects/zerodha-phase1/P0-3B-E_APPROVAL_RECORD.md",
+    "/home/srinivas/projects/zerodha-phase1/local_workspace/agent_outputs/qwen/input-provenance-check.json",
+    "/home/srinivas/projects/zerodha-phase1/local_workspace/stress_48/run-provenance.json"
+  ],
+  "errors": [],
+  "limitation": "Filename search cannot establish universal absence or qualify provenance. Synthetic test artifacts excluded from qualification.",
+  "review": "Reviewed candidate metadata: Qwen input-provenance binds historical code reports; stress48 run-provenance binds different engine commit/harness and contains no TRAIN artifact boundary approval; P0-3B-E approves unrelated staging order-recovery. Test fixture provenance and source audit documents do not qualify current curated TRAIN artifacts. No qualifying receipt identified in this scoped search; universal absence not claimed."
+}

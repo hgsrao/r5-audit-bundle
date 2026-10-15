@@ -1,0 +1,142 @@
+{
+  "GATE12_REACHED": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  },
+  "GOVERNOR": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 2,
+      "passed": 0,
+      "rejects": {
+        "GOVERNOR_UNMAPPED_SYMBOL": 2
+      }
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  },
+  "ID": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 72,
+      "passed": 2,
+      "rejects": {
+        "PA quality band is red": 38,
+        "risk:reward 0.67 below minimum 1.50": 1,
+        "risk:reward 0.71 below minimum 1.50": 1,
+        "risk:reward 0.72 below minimum 1.50": 1,
+        "risk:reward 0.73 below minimum 1.50": 1,
+        "risk:reward 0.78 below minimum 1.50": 1,
+        "risk:reward 0.81 below minimum 1.50": 2,
+        "risk:reward 0.84 below minimum 1.50": 1,
+        "risk:reward 0.86 below minimum 1.50": 1,
+        "risk:reward 0.88 below minimum 1.50": 1,
+        "risk:reward 0.89 below minimum 1.50": 1,
+        "risk:reward 0.90 below minimum 1.50": 1,
+        "risk:reward 0.93 below minimum 1.50": 2,
+        "risk:reward 0.95 below minimum 1.50": 1,
+        "risk:reward 0.96 below minimum 1.50": 1,
+        "risk:reward 0.97 below minimum 1.50": 2,
+        "risk:reward 0.98 below minimum 1.50": 2,
+        "risk:reward 0.99 below minimum 1.50": 1,
+        "risk:reward 1.00 below minimum 1.50": 1,
+        "risk:reward 1.04 below minimum 1.50": 1,
+        "risk:reward 1.05 below minimum 1.50": 2,
+        "risk:reward 1.11 below minimum 1.50": 1,
+        "risk:reward 1.12 below minimum 1.50": 2,
+        "risk:reward 1.16 below minimum 1.50": 1,
+        "risk:reward 1.23 below minimum 1.50": 1,
+        "risk:reward 1.30 below minimum 1.50": 1,
+        "risk:reward 1.35 below minimum 1.50": 1
+      }
+    },
+    "NEUTRAL": {
+      "accounting_closed": true,
+      "input": 6,
+      "passed": 0,
+      "rejects": {
+        "no directional signal": 6
+      }
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 78,
+      "passed": 0,
+      "rejects": {
+        "PA quality band is red": 52,
+        "risk:reward 0.67 below minimum 1.50": 1,
+        "risk:reward 0.68 below minimum 1.50": 2,
+        "risk:reward 0.71 below minimum 1.50": 1,
+        "risk:reward 0.72 below minimum 1.50": 1,
+        "risk:reward 0.76 below minimum 1.50": 1,
+        "risk:reward 0.80 below minimum 1.50": 1,
+        "risk:reward 0.81 below minimum 1.50": 1,
+        "risk:reward 0.84 below minimum 1.50": 1,
+        "risk:reward 0.86 below minimum 1.50": 1,
+        "risk:reward 0.87 below minimum 1.50": 2,
+        "risk:reward 0.94 below minimum 1.50": 1,
+        "risk:reward 1.00 below minimum 1.50": 1,
+        "risk:reward 1.05 below minimum 1.50": 1,
+        "risk:reward 1.07 below minimum 1.50": 1,
+        "risk:reward 1.13 below minimum 1.50": 1,
+        "risk:reward 1.14 below minimum 1.50": 1,
+        "risk:reward 1.16 below minimum 1.50": 1,
+        "risk:reward 1.21 below minimum 1.50": 1,
+        "risk:reward 1.22 below minimum 1.50": 1,
+        "risk:reward 1.29 below minimum 1.50": 1,
+        "risk:reward 1.35 below minimum 1.50": 1,
+        "risk:reward 1.36 below minimum 1.50": 1,
+        "risk:reward 1.39 below minimum 1.50": 1,
+        "risk:reward 1.47 below minimum 1.50": 1
+      }
+    }
+  },
+  "ID_WARMUP": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 74,
+      "passed": 0,
+      "rejects": {
+        "HMM regime unavailable: insufficient history": 73,
+        "PA quality band is red": 1
+      }
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 40,
+      "passed": 0,
+      "rejects": {
+        "HMM regime unavailable: insufficient history": 39,
+        "PA quality band is red": 1
+      }
+    }
+  },
+  "PRE_SUBMIT": {
+    "BUY": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    },
+    "SELL": {
+      "accounting_closed": true,
+      "input": 0,
+      "passed": 0,
+      "rejects": {}
+    }
+  }
+}

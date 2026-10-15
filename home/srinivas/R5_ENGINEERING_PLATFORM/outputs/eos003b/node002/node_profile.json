@@ -1,0 +1,13 @@
+{
+  "node_id": "NODE-002",
+  "hostname": "shrinivas-Blade",
+  "desktop_node": "NODE-001",
+  "desktop_hostname": "srinivas-B760M-AORUS-ELITE-AX",
+  "python": "/home/shrinivas/.venvs/zerodha-phase1-r5-worker/bin/python",
+  "OLLAMA_URL": "http://127.0.0.1:38889",
+  "OLLAMA_MODEL": "qwen3.8:27b",
+  "BRIDGE_REQUEST_TIMEOUT": 300,
+  "source_configuration_modified": false,
+  "tunnel_lifecycle": "Current detached desktop SSH process; boot persistence not commissioned",
+  "result": "ONLINE"
+}

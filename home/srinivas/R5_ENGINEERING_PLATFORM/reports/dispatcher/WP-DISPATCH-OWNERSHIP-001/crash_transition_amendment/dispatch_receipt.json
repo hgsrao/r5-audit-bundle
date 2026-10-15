@@ -1,0 +1,29 @@
+{
+  "package": "WP-DISPATCH-OWNERSHIP-001",
+  "worker": "claude",
+  "argv": [
+    "/home/srinivas/.config/Claude/claude-code/2.1.293/25786da347c3/claude",
+    "-p",
+    "--permission-mode",
+    "acceptEdits",
+    "--add-dir",
+    "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "--allowedTools",
+    "Read",
+    "Glob",
+    "Grep",
+    "Write",
+    "Edit",
+    "Bash",
+    "--output-format",
+    "json"
+  ],
+  "started_at_utc": "2026-10-08T08:11:01.799936+00:00",
+  "request_sha256": "69b560c991440c6fca6e60645782069a9afb575998720a99cbedb9f5aee802ea",
+  "route": "direct installed Claude bootstrap; unsafe Dispatcher not invoked",
+  "returncode": 0,
+  "process_success": true,
+  "response_sha256": "8ab8ebc75525524c7a2e97609f693ccadb08e10b9c63dd4be828a5eaaba468ad",
+  "finished_at_utc": "2026-10-08T08:12:47.283705+00:00",
+  "elapsed_seconds": 105.48373047200039
+}

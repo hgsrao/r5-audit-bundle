@@ -1,0 +1,35 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_plan_coverage/test_e2e_governor_path_exercis0/w/data",
+  "files": [
+    {
+      "filename": "NSE_HDFCBANK_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T11:14:00+05:30",
+      "row_count": 960,
+      "sha256": "4d3ddb8a50423051e780ebe3ec188f43b416d94eaf33d4f7982f3b046b0d4846",
+      "size_bytes": 55825,
+      "symbol": "HDFCBANK"
+    },
+    {
+      "filename": "NSE_INFY_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T11:14:00+05:30",
+      "row_count": 960,
+      "sha256": "459ba2daa012348a775b580dcdf73487fe19cc539862e429c11181bf38b52a12",
+      "size_bytes": 55282,
+      "symbol": "INFY"
+    },
+    {
+      "filename": "NSE_TCS_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T11:14:00+05:30",
+      "row_count": 960,
+      "sha256": "c01966ee4892b6df3cbc84567f05accfa459fcc7622f6fbd6a854e6520b2f64a",
+      "size_bytes": 55790,
+      "symbol": "TCS"
+    }
+  ],
+  "manifest_hash": "ad624b71a96380feac875d00de974b9116aeedd8eb4746e43f45ad8f80445cbc",
+  "symbol_count": 3
+}

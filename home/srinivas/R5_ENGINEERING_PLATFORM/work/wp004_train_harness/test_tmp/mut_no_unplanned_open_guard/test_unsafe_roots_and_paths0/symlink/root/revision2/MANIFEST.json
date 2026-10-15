@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_unplanned_open_guard/test_unsafe_roots_and_paths0/symlink/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "654278e25b2b11963a182338623c8caa3f63ea24331934153b6d81a623c617de",
+      "size_bytes": 18400,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "c2dce761f83db2a3f7e73769964575caa18110a635646332d7e847256f1bc671",
+      "size_bytes": 18616,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "86be06500990ab10016abba877069b1e9199a71ebdb9da69b56724cee7255b2a",
+  "symbol_count": 2
+}

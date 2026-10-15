@@ -1,0 +1,61 @@
+WORK PACKAGE WP-DISPATCH-OWNERSHIP-001-AUDIT
+OBJECTIVE: Independent acceptance of Dispatcher ownership repair
+
+### 1. AUDIT SUMMARY
+The implementation of Dispatcher ownership repair in WP-DISPATCH-OWNERSHIP-001 is **PASS WITH FINDINGS**. 
+
+The implementation successfully addresses the core vulnerability where a stale or deposed dispatcher could overwrite valid state. It introduces a robust "claim token" system combined with mandatory queue-wide locking for all state transitions. The fail-closed behavior for malformed metadata and the conservative handling of process identity (`/proc`) ensure that the system prefers manual intervention over unsafe auto-recovery.
+
+The release is **SAFE** for a Director-controlled single sequential dispatcher. The ownership guards provide critical protection against the most likely failure modes (crashes, stale lock files, and accidental concurrent invocations).
+
+---
+
+### 2. CORE FINDINGS
+
+#### A. Ownership Guards (PASS)
+The implementation of `claim_guard` in `queue_manager.py` (lines 173-181) provides a locked verification step that is used effectively in `dispatcher.py`.
+- **Evidence**: `run_once` (lines 80-92) wraps both receipt publication and package completion inside the guard. This ensures a deposed dispatcher can neither publish a receipt nor transition the package state once it has lost its claim.
+- **Line 175**: `if not self._owns(package_id, claim...): raise OwnershipError`
+
+#### B. Atomic Transitions & Lock Management (PASS)
+Transitions are protected by a dual-lock mechanism (re-entrant `RLock` for threads and `fcntl.flock` for processes).
+- **Evidence**: `_locked` context manager in `queue_manager.py` (lines 135-152) serializes `claim`, `complete`, `requeue`, and `reclaim`.
+- **Freshness**: `claim_next` (lines 305-306) calls `os.utime` on the newly claimed `RUNNING` file, ensuring it doesn't immediately look stale to a reclaimer.
+
+#### C. Heartbeat & Recovery (PASS)
+The heartbeat mechanism is now "fail-fast".
+- **Evidence**: If `heartbeat()` returns `False` (ownership lost), the heartbeat thread sets a `_lost` flag (lines 115-117) and stops. The main thread checks this flag inside the `claim_guard` (lines 82-83).
+- **Recovery**: `reclaim_stale` (lines 228-235) re-judges reclaimability under the lock, preventing a race where a package is reclaimed just as the owner heartbeats.
+
+#### D. Fail-Closed Metadata (PASS)
+Malformed or unreadable owner metadata does not lead to unsafe reclamation.
+- **Evidence**: `is_reclaimable` (line 214) explicitly returns `False` if `_owner_state` is `"malformed"`. `owner_is_alive` (lines 104-118) returns `True` if `/proc` is unreadable or identity is unrecorded.
+
+---
+
+### 3. RESIDUAL DEFECTS & JUDGEMENTS
+
+#### J1. H4 Duplicate Window (FINDING)
+The "H4" issue (duplicate queue files if a crash occurs between state write and source unlink) remains.
+- **Evidence**: `complete` (lines 328-333) writes the `DONE/FAILED` file before unlinking the `RUNNING` file.
+- **Impact**: A crash at this exact moment leaves the package in two states. Upon restart, the `RUNNING` file will be recovered/re-run.
+- **Judgement**: Acceptable for a single dispatcher; the lock prevents *concurrent* duplication, leaving only the *sequential* crash window.
+
+#### J2. Deposed-Worker Side Effects (FINDING)
+A worker subprocess (e.g., `claude-code`) is not killed immediately upon ownership loss.
+- **Evidence**: Detection only happens after `worker.execute` returns (lines 73-80).
+- **Impact**: If a worker is making changes to an external repository, those changes continue even if the dispatcher has been deposed. The dispatcher only prevents the *final* recording of these changes in the queue/receipts.
+- **Judgement**: Architectural limitation of the current worker contract. Mitigation is handled at the queue/receipt layer.
+
+#### J3. NFS Semantics (FINDING)
+The use of `fcntl.flock` (line 140) assumes a local filesystem or an NFS mount with working lock delegation.
+- **Judgement**: Safe for the current local-filesystem deployment.
+
+---
+
+### 4. MINIMUM CLOSURE CRITERIA
+No further implementation is required for this work package. The following validation steps are recommended for the Director:
+1. **Verify Binary Paths**: Confirm `/home/srinivas/.config/Claude/claude-code/2.1.293/25786da347c3/claude` is the intended production binary.
+2. **Monitor `DEPOSED` Outcomes**: Ensure that if the CLI exits with code 1, the logs are inspected for `OWNERSHIP_LOST` events.
+
+**VERDICT: PASS WITH FINDINGS (Safe for Release)**

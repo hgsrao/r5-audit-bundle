@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_content_commitment_check/test_shape_errors0/quoted/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "0aca9914d7ad3d82c8d8cd6648d0f1c05efa72892430f27591fead181e30f87a",
+      "size_bytes": 17493,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "9aaf184000a798813c5252ac3efebcf9a6f21644afae5bacb97363d2e9a1d2fb",
+      "size_bytes": 18618,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "e95fb75a2e34c757158e6be320e52c2654ca5e8310214abb806ffb96492826b4",
+  "symbol_count": 2
+}

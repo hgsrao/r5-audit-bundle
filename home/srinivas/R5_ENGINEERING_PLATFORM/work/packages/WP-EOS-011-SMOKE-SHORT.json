@@ -1,0 +1,11 @@
+{
+  "id": "WP-EOS-011-SMOKE-SHORT",
+  "type": "GENERAL",
+  "objective": "Short prompt smoke",
+  "prompt": "Reply with exactly the word OK and nothing else.",
+  "worker": "qwen",
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "priority": 5
+}

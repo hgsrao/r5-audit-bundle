@@ -1,0 +1,41 @@
+**Decision: AUTHORITATIVE_METADATA_QUALIFIED**, scope TRAIN_REPLAY_DIAGNOSTIC. TRAIN stability is not verified, and EXEC-05 stays NOT_QUALIFIED.
+
+**Integrity.**
+- The authenticated Kite dump is 686,374 bytes with sha256 `536809820e9d0114d9ef42c2756bb2e44044474471007887a841e36b3696401f`, which matches both ACQUISITION_RECORD.json and the raw SHA256SUMS.txt.
+- The headers.json and ACQUISITION_RECORD.json hashes also match SHA256SUMS.txt.
+- Row counts are 10,324 for the authenticated Kite dump (10,188 EQ and 136 INDICES), 10,324 for the prior Kite dump, and 38,010 for the NSE security master.
+- I re-hashed the two prior artefacts and they equal the WP-R5-001B values.
+- No secrets are stored: `access_token_stored` and `api_secret_stored` are false and the session was invalidated.
+
+**Coverage.** All 48 symbols are present in the Kite dump (NSE/NSE/EQ), one row each, with no missing or duplicate symbols. All six required fields are present for every symbol, and tick and lot are greater than zero.
+- Ticks are 0.01 (4), 0.05 (16), 0.10 (23), 0.50 (2) and 1.00 (3). Lot size is 1 for all 48.
+- `BAJAJ-AUTO` and `M&M` are preserved exactly.
+- The NSE security master also has exactly one EQ row for each of the 48.
+
+**Mismatches: none (0).**
+- Against the prior Kite dump: 0 differences over all 10,324 rows and 12 columns.
+- Against the NSE master: 0 differences on symbol, tick (BidIntrvl/100), lot and exchange token.
+- Against the WP-R5-001B 48-row table: 0 differences.
+- The `instrument_token = exchange_token × 256 + 1` check also passes 48/48.
+- `MISMATCHES.csv` holds only its header row. Nothing was corrected.
+
+**Findings you should know about.**
+1. **No independent cross-check from the prior Kite dump.** The authenticated file is byte-identical to the unauthenticated WP-R5-001B dump, so only the NSE master corroborates it independently. Authentication changed the provenance, not the data.
+2. **A-META-001 is not defined in any platform file.** Its name appears only in `work/packages/WP-R5-001C-QUAL.json`. I stated no content for it beyond the prompt's wording, and the report asks you to confirm its register entry.
+3. **Open items from WP-R5-001B are unchanged.** ETERNAL has an undated symbol change, 9 symbols have no listing date, and the snapshot is a single 2026-10 as-of date applied across TRAIN.
+
+**Files written.**
+- In `reports/production/WP-R5-001C/`:
+  - `METADATA_QUALIFICATION_REPORT.md`
+  - `AUTHORITATIVE_METADATA_INDEX.csv` (48 symbol rows plus 7 file rows)
+  - `PROVENANCE_RECEIPT.md`
+  - `SHA256SUMS.txt` (10 entries, checked with `sha256sum -c`: all OK)
+  - `MISMATCHES.csv`
+  - `analysis_results.json`
+  - `build_wp_r5_001c.py`
+- `receipts/checkpoints/CHECKPOINT_004.md`
+- Appended `CURRENT_STATE.md`, `R5_PRODUCTION_BACKLOG.md` and `R5_CURRENT_WORK_PACKAGE.md` (new header above the old one). Before-copies are in `work/*.before_WP-R5-001C.md`.
+
+I made no network, credential, dispatcher, bridge, production-code or WP-R5-002 changes, and I did not touch the raw files or open any market-data file. WP01 full acceptance stays BLOCKED on the full diagnostic ledger identity, and production stays NOT READY.
+
+**Recommendation.** Release WP-R5-002 from BLOCKED to READY for diagnostic scope, with A-META-001 carried as an explicit open assumption. I did not release, execute or modify it.

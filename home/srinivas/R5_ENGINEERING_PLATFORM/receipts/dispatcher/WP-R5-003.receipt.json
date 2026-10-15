@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 0.00035794100040220656,
+  "error": "claude could not start (claude): [Errno 2] No such file or directory: 'claude'",
+  "finished_at": "2026-10-07T07:22:15.390202+00:00",
+  "needs_review": false,
+  "objective": "TRAIN Replay Execution Qualification: verify TRAIN-only access, determinism, safety gates and no CNC/GTT entry; fail closed if preconditions are not met; no optimisation.",
+  "ok": false,
+  "output_sha256": null,
+  "package_id": "WP-R5-003",
+  "package_sha256": "87c0acc2f0480bfe1114f3bda10dd13e11a461747f400473438ad016003eac1c",
+  "response_file": null,
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T07:22:15.387841+00:00",
+  "state": "FAILED",
+  "type": "INPUT_QUALIFICATION",
+  "worker": "claude"
+}

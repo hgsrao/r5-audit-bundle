@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "routing": "Claude",
+  "execution_job": "e5c7d568-80d0-4abc-960c-21f355076d9d",
+  "execution_duration_seconds": 16.032,
+  "assertions": 3,
+  "ruff": "PASS",
+  "changed_files": [
+    "utility.py"
+  ],
+  "scope": "isolated non-production directory",
+  "sha256": "562361f37111a6240cb49e18f4d33eaa81b1d34d6c0bbb265055dc0bb3217d8f",
+  "first_attempt": "OAuth refresh failure; manual retry succeeded"
+}

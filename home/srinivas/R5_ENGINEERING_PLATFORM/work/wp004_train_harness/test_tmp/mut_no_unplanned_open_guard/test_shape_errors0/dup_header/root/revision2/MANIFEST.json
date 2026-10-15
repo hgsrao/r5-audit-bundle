@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_no_unplanned_open_guard/test_shape_errors0/dup_header/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "268a5bd3bbd3ff7567c8a26e21f39c3cbfcd8e47ce1b72cb850e8d0a59c6be1f",
+      "size_bytes": 18400,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "9796acd3b18666b22e7961ce424b8ed278176e62352df2a79d5d29c4dfcb53b4",
+      "size_bytes": 18616,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "17c8038259d0f93f9929bbc3b976cdfedbac92817fbb68b306d89205872fe422",
+  "symbol_count": 2
+}

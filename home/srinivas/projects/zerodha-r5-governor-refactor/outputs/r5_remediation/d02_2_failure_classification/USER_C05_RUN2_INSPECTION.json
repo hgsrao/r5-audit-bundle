@@ -1,0 +1,19 @@
+{
+  "run_directory": "/tmp/r5_sandbox_output_c05_clean_run2",
+  "status": "COMPLETED",
+  "classification": "EXPERIMENTAL_PAPER_LIFECYCLE_NOT_SEALED_NOT_LIVE",
+  "completed_trades": 52,
+  "trades_by_side": {
+    "BUY": 2,
+    "SELL": 50
+  },
+  "gross_pnl": -4110.439399999963,
+  "costs": 2933.0978871418,
+  "net_pnl": -7043.537287141787,
+  "mtm_max_drawdown_percent": 0.7043537287141662,
+  "safety_violations": 0,
+  "ledger_sha256": "311b3a145ab017739b492328389b6f79fd9aaa4ebf1eca751f12c9a644e5b08d",
+  "baseline_ledger_identical": true,
+  "baseline_ledger": "/home/srinivas/projects/zerodha-r5-governor-refactor/outputs/r5_remediation/closure/c05/baseline/ledger.csv",
+  "scope": "Existing user-produced C05 artifacts inspected read-only; no rerun, no D02 acceptance inferred."
+}

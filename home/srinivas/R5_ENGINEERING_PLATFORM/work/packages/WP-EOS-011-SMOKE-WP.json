@@ -1,0 +1,11 @@
+{
+  "id": "WP-EOS-011-SMOKE-WP",
+  "type": "REVIEW_PARAMETER",
+  "objective": "Work-package prompt smoke",
+  "prompt": "Return a JSON object with keys decision (PASS or FAIL) and reason (one sentence) for this check: 'Parameter tick_size must be a positive decimal; given value is 0.05'. Output only the JSON.",
+  "worker": "qwen",
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "priority": 5
+}

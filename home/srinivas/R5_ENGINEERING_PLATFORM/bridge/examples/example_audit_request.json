@@ -1,0 +1,21 @@
+{
+  "audit_id": "AUDIT-EXAMPLE",
+  "audit_type": "PARAMETER_AUDIT",
+  "work_package": {
+    "id": "WP-R5-PROVENANCE-EXAMPLE",
+    "type": "PARAMETER_AUDIT",
+    "model": null,
+    "objective": "Review the supplied parameter provenance evidence",
+    "rules": [
+      "Independent audit only; no implementation",
+      "Do not invent numerical recommendations"
+    ],
+    "files": [
+      "parameter_register.json"
+    ],
+    "prompt": "Identify missing provenance and missing tests in the supplied evidence.",
+    "metadata": {
+      "example_only": true
+    }
+  }
+}

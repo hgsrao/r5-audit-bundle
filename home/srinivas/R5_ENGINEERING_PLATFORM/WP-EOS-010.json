@@ -1,0 +1,12 @@
+{
+  "id": "WP-EOS-010",
+  "type": "INDEPENDENT_AUDIT",
+  "worker": "gemini",
+  "priority": 0,
+  "requires_review": false,
+  "metadata": {
+    "campaign": "R5-EOS"
+  },
+  "objective": "Independent Qualification Campaign Audit",
+  "prompt": "R5 ENGINEERING OPERATING SYSTEM (R5-EOS)\n\n======================================================================\nWORK PACKAGE\n======================================================================\nID: WP-EOS-010\nTITLE: Independent Qualification Campaign Audit\nROLE: You are acting as the Independent Engineering Auditor.\nThis is an audit only.\nDo NOT modify any files.\nDo NOT propose redesigns.\nDo NOT write code.\nRead the engineering workspace directly.\n\n======================================================================\nWORKSPACE: ~/R5_ENGINEERING_PLATFORM\n\n======================================================================\nOBJECTIVE: Review the engineering campaign completed so far.\nFocus only on engineering correctness.\n\n======================================================================\nReview:\nWP-R5-001\nWP-R5-001B\nWP-R5-001C\nWP-R5-002\nWP-R5-003\nWP-R5-004 (including INTERIM_FINDINGS)\nCURRENT_STATE.md\nCHECKPOINTS\nProduction Backlog\nDispatcher receipts\n\n======================================================================\nDetermine:\n1. Is the qualification campaign logically consistent?\n2. Are any blockers duplicated?\n3. Are any blockers no longer required?\n4. Have any engineering conclusions been accepted without sufficient evidence?\n5. Have any work packages solved the same issue twice?\n6. What are the FIVE highest-priority remaining blockers? Rank them.\n7. Recommend the minimum work packages required to reach EXECUTION QUALIFIED. Not production. Only EXECUTION QUALIFIED.\n\n======================================================================\nReturn:\nPASS\nPASS WITH FINDINGS\nFAIL\n\nEvery conclusion shall cite engineering evidence.\nDo not invent evidence.\nDo not recommend redesign.\nDo not recommend optimisation.\nAudit only.\nStop.\n"
+}

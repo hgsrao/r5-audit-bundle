@@ -1,0 +1,24 @@
+{
+  "status": "CLOSED_VERIFIED",
+  "source_and_protected_inputs_unchanged": true,
+  "changes_detected": [],
+  "head": "33291e78a437fa9e4d7fa3e9e773ab872b191eaf",
+  "branch": "feature/engine-ab-handoff-lifecycle",
+  "focused": {
+    "command": "python -m pytest tests/test_r5_d02_journal_nested_transaction.py tests/test_r5_d02_engine_b_recovery.py tests/test_r5_d02_exit_finalization.py tests/test_r5_d02_exit_atomicity_repro.py tests/test_r5_morning_startup.py::test_opt_in_tick_checkpoints_use_the_actual_replay -q -p no:cacheprovider",
+    "result": "63 passed, 204 warnings in 32.71s",
+    "exit_code": 0,
+    "nodes": "final_focused_nodes.log"
+  },
+  "broad": {
+    "command": "python -m pytest tests tests_external revision4/tests test_gates_framework.py -q -rs -p no:cacheprovider",
+    "result": "1449 passed, 12 skipped, 1734 warnings, 146 subtests passed in 861.91s",
+    "exit_code": 0
+  },
+  "source_pin": "FINAL_VERIFICATION_START.json",
+  "scope": "D02.2 offline paper exit-finalization qualification, not complete live/controller/cursor recovery",
+  "git_status": " M revision2_external/orchestrator.py\n M revision2_external/paper_execution.py\n M revision5/combined_cycle_runtime.py\n M revision5/combined_cycle_store.py\n M revision5/state_recovery.py\n M runtime/operating_mode.py\n M tests/test_r5_d02_exit_atomicity_repro.py\n M tests/test_revision5_engine_applicability.py\n?? outputs/R5_D02_1_EXIT_FINALIZATION_DESIGN_AUDIT.md\n?? outputs/r5_remediation/closure/c05/baseline_v2_success/\n?? outputs/r5_remediation/d02_2_failure_classification/\n?? tests/test_r5_d02_engine_b_recovery.py\n?? tests/test_r5_d02_exit_finalization.py\n?? tests/test_r5_d02_journal_nested_transaction.py\n",
+  "commit_push": false,
+  "live_api_calls": false,
+  "qualification": "OFFLINE_EXPERIMENTAL_PAPER_EXIT_RECOVERY"
+}

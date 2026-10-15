@@ -1,0 +1,16 @@
+{
+  "id": "WP-R5-004-ISOLATED-INTEGRATION-AUDIT",
+  "worker": "gemini",
+  "transport": "authenticated browser via Codex",
+  "type": "INDEPENDENT_AUDIT",
+  "state": "RUNNING",
+  "request": "/home/srinivas/Documents/Codex/2026-10-08/r5-engineering-operating-system-role-you/outputs/Gemini-Isolated-Integration-Audit.txt",
+  "request_sha256": "e37a9606c43091dba33c9a59f8327a9daea636c8b532a3347b06599e2c66fe01",
+  "parent": "WP-R5-004",
+  "scope": "New isolated integration only",
+  "started_at": "2026-10-08T13:46:49.941877+00:00",
+  "url": "https://gemini.google.com/app/d6d0420761d28609",
+  "mode": "3.1 Pro",
+  "access": "Uploaded complete frozen source/test/receipt bundle; no filesystem dependency",
+  "dispatcher_used": false
+}

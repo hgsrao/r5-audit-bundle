@@ -1,0 +1,9 @@
+{
+  "id": "WP-EOS-QWEN-SMOKE",
+  "type": "PARAMETER_AUDIT",
+  "worker": "qwen",
+  "priority": 0,
+  "requires_review": false,
+  "objective": "Verify direct Ollama worker",
+  "prompt": "Reply with exactly:\n\nSTATUS: PASS\nWORKER: QWEN\nENGINE: OLLAMA\n\nDo not write anything else."
+}

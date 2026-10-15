@@ -1,0 +1,62 @@
+- banner:
+  - link "Google One":
+    - /url: /
+    - generic: One
+  - button "Help":
+    - generic: help_outline
+  - button "Settings":
+    - generic: settings
+  - tooltip: Settings
+  - button "Google apps":
+  - 'button "Google Account: SHRINIVAS RAO (hgsrao@gmail.com), Google membership"':
+- navigation "Navigation menu":
+  - list:
+    - link "Home":
+      - /url: home
+      - generic: home
+      - generic: Home
+    - link "Storage":
+      - /url: storage?g1_last_touchpoint=38
+      - generic: Storage
+    - link "Benefits":
+      - /url: benefits
+      - generic: star_outline
+      - generic: Benefits
+    - link "Manage your membership":
+      - /url: manage-membership?g1_last_touchpoint=64
+      - generic: Manage membership
+  - list:
+    - link "Google AI plans":
+      - /url: ./ai?g1_last_touchpoint=59
+      - generic: spark
+      - generic: Google AI
+  - navigation:
+    - button "Send feedback":
+      - generic: Send feedback
+    - generic: Privacy policy
+    - link "Privacy policy":
+      - /url: https://myaccount.google.com/privacypolicy?hl=en-GB
+    - generic: Terms of Service
+    - link "Terms of Service":
+      - /url: ./terms-of-service
+- main:
+  - heading "Manage your Google One membership" [level=1]
+  - generic "Settings":
+    - button "Change membership plan" [expanded]:
+      - generic: Change membership plan
+    - region "Change membership plan":
+      - list:
+        - heading "Current status" [level=2]
+        - generic: Google AI Pro
+        - generic: Offered through Jio
+        - heading "Need more storage?" [level=3]
+        - link "See all plans":
+          - /url: ./upsell
+    - button "Manage email preferences":
+      - generic: email
+      - generic: Manage email preferences
+    - button "Manage message preferences":
+      - generic: Manage message preferences
+    - button "Manage family settings":
+      - generic: group_add
+      - generic: Manage family settings

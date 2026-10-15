@@ -1,0 +1,10 @@
+{
+  "harness/run_nonsealed_diagnostic.py": "0e4492d408533581600219a62642dab0cd75b0aa842c2f2abbc51816c2207d7b",
+  "harness/curated_target.py": "73d073f45a80ad04cefe2486dc8b255b7864e46ecf16e278623b0056f0583828",
+  "harness/curated_artifact.py": "e65e7de2b26b00f7ed6a174d02eeb51c9efa7b42793f33875f89e7871c85ee06",
+  "harness/os_isolation_bootstrap.py": "b11ea923feb5f539966291cf9b99487371a15dbbe270e9cd7ba5ff4cd443c3d8",
+  "harness/release_record.py": "2e6149413ce0b079febb6a4d7e8355f67272d1f07a70bc6b0e78f9ecb031aedc",
+  "harness/curated_launcher.py": "eb8accd2612ae54602874d324906b9c7a39a7e098d27f53762abf437297c5517",
+  "harness/wp004_train_harness.py": "97e711848659594c50df416cef352f08768d5b3307947c796a99d2b697a47263",
+  "harness/os_isolation.py": "96e6f423cd47dd83a70e95090a60b84a46dbcfdcd5935039523803e418ff022b"
+}

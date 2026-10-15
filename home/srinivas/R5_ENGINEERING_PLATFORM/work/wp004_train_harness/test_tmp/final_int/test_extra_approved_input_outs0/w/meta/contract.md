@@ -1,0 +1,1 @@
+SYNTHETIC DIRECTOR CONTRACT STAND-IN (integration test)

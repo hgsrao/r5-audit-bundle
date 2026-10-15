@@ -1,0 +1,14 @@
+ M revision2_external/orchestrator.py
+ M revision2_external/paper_execution.py
+ M revision5/combined_cycle_runtime.py
+ M revision5/combined_cycle_store.py
+ M revision5/state_recovery.py
+ M runtime/operating_mode.py
+ M tests/test_r5_d02_exit_atomicity_repro.py
+ M tests/test_revision5_engine_applicability.py
+?? outputs/R5_D02_1_EXIT_FINALIZATION_DESIGN_AUDIT.md
+?? outputs/r5_remediation/closure/c05/baseline_v2_success/
+?? outputs/r5_remediation/d02_2_failure_classification/
+?? tests/test_r5_d02_engine_b_recovery.py
+?? tests/test_r5_d02_exit_finalization.py
+?? tests/test_r5_d02_journal_nested_transaction.py

@@ -1,0 +1,67 @@
+55a80696f023dae52e50155f7f4674b761ab878a
+Parameterize R5 BB05-BB06 controls
+
+Move BB05 (HMM regime discrimination) and BB06 (PID/MPC, continuous exit)
+operational literals into the canonical registry (29 ENGINEERING_INITIAL_VALUE,
+NOT_CALIBRATED parameters; 5 kept out of the optimizer surface), fix stale
+constructor-cached PID clamps/tunings/history windows, add an
+information-only BB05/BB06 supervisory snapshot, and add behavioral tests
+and an audit.
+
+Registry: 114 targets, 27 fixed, 20 safety, 87 calibratable.
+Known: two legacy in-house sensitivity tests fail on external-only
+parameters (see audit); 6 other failures reproduce at bf091fd.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+8fa48961ee85a3eed8d14125b9eb62d99f9fb27f
+Parameterize R5 BB07-BB08 controls
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+b5ff1c26505dee6caa1d1e2ff34b2e14f7b88fc4
+Parameterize R5 studies and closed-loop controls
+
+Add engine-specific applicability metadata, parameterize the Studies PID and closed-loop supporting subsystem, preserve controller state across dynamic reconfiguration, and correct optimizer/search-space scoping without implementing the ECS Plant Supervisor or Sector Dispatch Controller.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+bed3dd5e942771f957b0f51225a2074d299753a8
+Correct R5 BB09-BB10 execution supervision
+
+Correct timeout classification and replay inertness documentation, make BB09/BB10 supervisory snapshots information-only, and prevent expected snapshot-validation failures from interrupting authoritative post-fill bookkeeping.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+9df4640670747f88dd18a2812f45f7689cf21afc
+Integrate R5 BB05-BB06 (55a8069)
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+decef42d73e027e8ffab9b41b8f931c116117981
+Integrate R5 three-controller parameterization (b5ff1c2)
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+22926976b0766a1aa5784afc02727e4b9b75213e
+Integrate R5 BB07-BB08 (8fa4896)
+
+Deliberate conflict resolution: 141 targets (136 + 5 BB08 fixed, external-only), 22 safety params, 33 fixed targets, 108 optimizer-eligible; identity recomputed; BB08 tests migrated to engine-scoped search spaces.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+
+89ee76615416b995c19a366e83fe7a918a70494a
+Integrate corrected R5 BB09-BB10 (bed3dd5)
+
+Both supervisory snapshot families (BB05-BB06 and BB09-BB10) are kept, plus the post-fill observer containment; conflicts in supervisory_bridge.py and orchestrator.py were purely additive and resolved by keeping both sides.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
+

@@ -1,0 +1,113 @@
+**CURRENT_SYNTHETIC_STATUS**
+
+Synthetic integration is PASS WITH FINDINGS. The synthetic path in `validate_release_record` uses caller-supplied `trusted_issuers` (fixture) and `external_pin` (operator-supplied), both external to the record. `REAL_TRUSTED_ISSUERS` is `{}` and `REAL_RUN_RELEASE_ACCEPTANCE_SHA256` is `None`. No code path in the module opens real data. This state is correct and is not a defect. REAL remains closed.
+
+---
+
+**REAL_PIN_CYCLE**
+
+Yes, the naive "issue-record-then-embed-pin" is circular in the operational sense that matters here, though I will not claim a cryptographic fixed point is mathematically impossible.
+
+Trace the dependency:
+
+1. Record R contains `code_pins.harness = tree_sha256(harness_dir)`, where `harness_dir` includes `os_isolation.py`.
+2. The naive fix sets `os_isolation.py: REAL_RUN_RELEASE_ACCEPTANCE_SHA256 = SHA256(R)`.
+3. But `tree_sha256(harness_dir)` now hashes the bytes of `os_isolation.py` **including the literal string `SHA256(R)`**.
+4. So `code_pins.harness` is a function of R, and R (its own SHA256) is a function of `code_pins.harness`. Concretely:
+
+   `SHA256(R) = H( R \text{ with } code\_pins = T( \ldots, os\_isolation.py \text{ containing } SHA256(R), \ldots ) )`
+
+5. This is a self-referential equation. A fixed point *might* exist in the abstract (one could iterate), but it is **not constructible by the stated workflow** ("edit the constant to SHA256(R), done"), it is **not auditable** by a Director who would need to solve a 256-bit hash puzzle to verify it, and it **violates the stated design invariant** that the pin is *external* to the record and the code. The pin becomes a property of the artifact it is supposed to authorize, collapsing "external authority" into self-authorization.
+
+Root cause: the REAL-gate data (pin value, issuer table) is stored *inside* the pinned code tree. The code pins the code that contains the authorization datum.
+
+---
+
+**MINIMAL_AUTHORITY_DESIGN**
+
+**One arrangement, acyclic:**
+
+> The REAL authorization datum — the approved record's SHA256 *and* the trusted REAL issuer identity — is supplied by the Director **at invocation time as external parameters**, not stored in any file under the pinned harness tree.
+
+Concretely, the single implementation change to `validate_release_record`'s REAL branch is:
+
+```
+# BEFORE (circular: reads pinned-code constants)
+if scope == SCOPE_REAL:
+    if not REAL_TRUSTED_ISSUERS or rec["issuer"] not in REAL_TRUSTED_ISSUERS or _real_pin() != actual:
+        raise ReleaseError(...)
+
+# AFTER (acyclic: uses the same external-parameter channel as SYNTHETIC)
+if scope == SCOPE_REAL:
+    scopes = (trusted_issuers or {}).get(rec["issuer"])
+    if not scopes or SCOPE_REAL not in scopes:
+        raise ReleaseError("real-data release closed: no Director-approved real issuer in external table")
+# The universal check `actual != external_pin` (line above the scope branch)
+# already enforces record-hash match for ALL scopes.
+```
+
+And in `os_isolation.py`:
+
+```python
+REAL_RUN_RELEASE_ACCEPTANCE_SHA256 = None  # DOCUMENTED: always None in pinned code;
+                                            # real authority is external to this tree.
+```
+
+or simply remove the constant and the `_real_pin()` helper. The `REAL_TRUSTED_ISSUERS` module constant is removed (or kept as `{}` with a docstring: "populated only in Director's external invocation context, never in pinned source").
+
+**Why this is acyclic:**
+
+| Artefact | Contains | References |
+|---|---|---|
+| Pinned code tree (harness_dir) | Validation **logic** (the `if scope == SCOPE_REAL` branch above) | Parameter `trusted_issuers`, parameter `external_pin` — *values not present in source* |
+| Record R | `code_pins.harness = tree_sha256(harness_dir)`, issuer, scope, bindings | Nothing that embeds R's own hash |
+| Director's invocation context | `external_pin = "<sha256 of R>"`, `trusted_issuers = {"director-01": ["REAL_TRAIN_DIAGNOSTIC"]}` | Independent of R's content; supplied out-of-band |
+
+No file in the pinned tree contains the pin or the issuer entry. The Director's command line / approval store / shell environment holds them. The code *logic* that checks them is pinned; the *data* that passes the check is not.
+
+**Why this is minimal:**
+
+- One branch changed in `release_record.py` (real path now uses the same `trusted_issuers` parameter as synthetic).
+- One constant/helper removed or documented-None in `os_isolation.py`.
+- No PKI, no new service, no platform redesign, no new JSON schema, no new file format.
+- The Director's operational act is: compute `sha256sum record.json`, type (or load from a local approval file outside the pinned tree) that hash and the issuer name at invocation. That is a **policy decision**, not an infrastructure build.
+- `release_record.py`'s public API is unchanged: `validate_release_record(record_bytes, *, external_pin, trusted_issuers, expected)` already accepts both parameters for every scope.
+
+---
+
+**POLICY_VS_IMPLEMENTATION**
+
+| Aspect | Type | What is needed |
+|---|---|---|
+| Director decides *which* record and *which* issuer is approved for REAL scope | **Policy decision** | Director records the approved record SHA256 and issuer identity in their operational context (e.g., a local approval note, a keychain entry, a command-line argument). This is an act of authority, not a code commit. |
+| Director decides *when* REAL is opened (requires genuine TRAIN artifact provenance + Director sign-off) | **Policy decision** | No code change; the Director simply does not invoke the validator with a REAL-scope record until the precondition is met. |
+| REAL branch reads authority from external parameters, not pinned-code constants | **Implementation change** | The single-branch edit described above (~5 lines in `release_record.py`, 1-2 lines in `os_isolation.py`). |
+| `REAL_RUN_RELEASE_ACCEPTANCE_SHA256` documented as always-None in pinned source, or removed | **Implementation change** | Prevents any future "naive edit" from re-introducing the cycle. |
+| Synthetic path unchanged | **No change** | Already correct; fixture issuers and caller-supplied pin are external. |
+
+The critical distinction: **the Director's approval is a policy act that produces external parameters; the code change merely removes the circular read from pinned source so that the external parameters are the sole authority.** Neither is sufficient without the other.
+
+---
+
+**ACCEPTANCE_CHECKS**
+
+1. **Synthetic cannot register REAL issuer/approval.** Invoke `validate_release_record` with a SYNTHETIC_ONLY record, a fixture issuer, and a valid external pin. Then, with the *same* invocation path, attempt to register that issuer in the `trusted_issuers` dict with `SCOPE_REAL`. The validator must reject the REAL-scope record with `"no Director-approved real issuer in external table"`. No code path in the pinned harness tree may contain a non-empty `REAL_TRUSTED_ISSUERS` or a non-None `REAL_RUN_RELEASE_ACCEPTANCE_SHA256` that, if present, would authorize REAL without the Director's external invocation.
+
+2. **Wrong code / input / record hash → refusal.** (a) Mutate one byte in any harness source file after pinning → `code_pins` mismatch → `ReleaseError`. (b) Alter `input_pins` in the record → mismatch with `expected["input_pins"]` → `ReleaseError`. (c) Change the record's JSON (e.g., edit `record_id`) without updating the external pin → `actual != external_pin` → `ReleaseError`. All three must fail with distinct messages; no silent pass.
+
+3. **No self-hash dependency in the REAL path.** Verify by inspection and by a test: the REAL branch of `validate_release_record` reads only the `external_pin` parameter and the `trusted_issuers` parameter (both caller-supplied). No call to `_real_pin()`, no read of `REAL_RUN_RELEASE_ACCEPTANCE_SHA256`, no read of `REAL_TRUSTED_ISSUERS` from the module. A grep for `REAL_RUN_RELEASE_ACCEPTANCE_SHA256` and `REAL_TRUSTED_ISSUERS` in the pinned harness source returns only the `= None` / `= {}` declarations (with docstrings stating "always empty/None in pinned code; authority is external") or zero hits if removed. The record's `code_pins` hash is verifiable against the unmodified (authority-free) tree.
+
+4. **Real data not opened on invalid authority.** With `trusted_issuers = {}` (or an issuer entry lacking `SCOPE_REAL`) and any `external_pin`, a REAL-scope record must be rejected before any I/O. Confirm no file-open, network call, or data-read occurs in the rejection path. The synthetic path remains unaffected: a valid SYNTHETIC_ONLY record with a fixture issuer still passes.
+
+5. **Director can open REAL with genuine authority (forward check, not executed against real data).** In a synthetic test harness (no real data loaded), construct a REAL-scope record, compute its SHA256, and invoke the validator with `external_pin = <that SHA256>` and `trusted_issuers = {"director-01": ["REAL_TRAIN_DIAGNOSTIC"]}`. The validator must return a `ReleaseGrant` with `scope = SCOPE_REAL` and `authorizes_real_classification == True`. This proves the *mechanism* works without touching real data, and confirms the authority path is external and acyclic.
+
+---
+
+**ASSUMPTIONS / UNKNOWNS**
+
+- **Director operational context:** I assume "Director" means a single trusted local human or a Director-controlled script whose invocation parameters (command-line args, env vars, a local approval file) are outside the pinned harness tree. I do not know the Director's existing tooling; the design only requires that the pin and issuer table reach the validator as *parameters*, not as constants in pinned source.
+- **No second issuer or quorum assumed.** The threat model is accidental/buggy-worker on a single trusted host, not adversarial. A single Director identity is sufficient; no PKI, HSM, or multi-party approval is introduced.
+- **`os_isolation.require_real_run_release` is noted as "unconditionally raises even if the constant is set; V1 stays closed."** I assume this legacy path is deprecated for the V2 flow and that V2 uses `validate_release_record` exclusively for the REAL gate. If both paths are live, the same external-parameter rule must apply to the V1 constant (keep it None, or remove the V1 path).
+- **Genuine TRAIN artifact provenance** is a precondition the Director must verify independently (data lineage, no synthetic contamination, correct split). This analysis does not define or substitute for that verification; it only ensures the *authorization mechanism* does not self-authorize.
+- **No assumed data values, financial policy values, or calibration parameters** are embedded in or derived from this design. The record's `authorization_sha256` and `input_pins` fields bind whatever the Director supplies in `expected`; this analysis constrains only the authority path.
+

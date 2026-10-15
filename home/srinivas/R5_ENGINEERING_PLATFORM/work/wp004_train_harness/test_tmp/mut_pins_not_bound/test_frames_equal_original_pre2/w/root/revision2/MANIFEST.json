@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_pins_not_bound/test_frames_equal_original_pre2/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "c8b6af7b7d6bf739b60eb48b735de6c729679801f60cda42a866a981f9f6e787",
+      "size_bytes": 17575,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "f4c8e24b56b29075aa54db0285e180e7b56d5dcc97254d70dc8291eb76d3fb48",
+      "size_bytes": 18614,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "f24d28c233d3984dd96e049494f0b2ab9a66f77de80d31cd8a0051861dbf4047",
+  "symbol_count": 2
+}

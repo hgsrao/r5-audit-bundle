@@ -1,0 +1,243 @@
+{
+  "finalists": [
+    {
+      "aggregate": {
+        "completed_trades": 186,
+        "fills": 186,
+        "gross_pnl": -12896.743600000002,
+        "mtm_max_drawdown_fraction": 0.007270675484699095,
+        "net_pnl": -20829.484102058344,
+        "profit_factor": 0.15839214816133423,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -28100.15958675744,
+        "status": "RANKABLE"
+      },
+      "assigned_node": "desktop",
+      "candidate_sha256": "a83ab6573139c2a33b7e94270189ddae8b04f6f1f40d037f8b8ec21f8c39dfa3",
+      "params": {
+        "entry_confidence_threshold": 0.3449801517680037,
+        "max_hold_bars": 50,
+        "minimum_profit_margin_over_cost": 0.21971208842160772,
+        "profit_target_atr_mult": 2.130386107073564,
+        "stop_loss_atr_mult": 0.9852144512510527
+      },
+      "trial_number": 3
+    },
+    {
+      "aggregate": {
+        "completed_trades": 193,
+        "fills": 193,
+        "gross_pnl": -12825.486099999966,
+        "mtm_max_drawdown_fraction": 0.008712378177004867,
+        "net_pnl": -20958.442157202648,
+        "profit_factor": 0.1695094812023105,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -29670.820334207514,
+        "status": "RANKABLE"
+      },
+      "assigned_node": "laptop",
+      "candidate_sha256": "2c11ee6eae59b6d5f9daf1c63402bcf382b0c8e2781bf4ea081b2718decd2c8c",
+      "params": {
+        "entry_confidence_threshold": 0.0948294928274232,
+        "max_hold_bars": 36,
+        "minimum_profit_margin_over_cost": 1.9664851251083237,
+        "profit_target_atr_mult": 2.1238929939071163,
+        "stop_loss_atr_mult": 1.0156976284697272
+      },
+      "trial_number": 6
+    }
+  ],
+  "protocol_sha256": "ed56abd0761f76df6748448461348fc321eddaaf3c4cc536f921ee1d0080d7af",
+  "ranking": [
+    {
+      "aggregate": {
+        "completed_trades": 186,
+        "fills": 186,
+        "gross_pnl": -12896.743600000002,
+        "mtm_max_drawdown_fraction": 0.007270675484699095,
+        "net_pnl": -20829.484102058344,
+        "profit_factor": 0.15839214816133423,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -28100.15958675744,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "a83ab6573139c2a33b7e94270189ddae8b04f6f1f40d037f8b8ec21f8c39dfa3",
+      "params": {
+        "entry_confidence_threshold": 0.3449801517680037,
+        "max_hold_bars": 50,
+        "minimum_profit_margin_over_cost": 0.21971208842160772,
+        "profit_target_atr_mult": 2.130386107073564,
+        "stop_loss_atr_mult": 0.9852144512510527
+      },
+      "trial_number": 3
+    },
+    {
+      "aggregate": {
+        "completed_trades": 193,
+        "fills": 193,
+        "gross_pnl": -12825.486099999966,
+        "mtm_max_drawdown_fraction": 0.008712378177004867,
+        "net_pnl": -20958.442157202648,
+        "profit_factor": 0.1695094812023105,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -29670.820334207514,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "2c11ee6eae59b6d5f9daf1c63402bcf382b0c8e2781bf4ea081b2718decd2c8c",
+      "params": {
+        "entry_confidence_threshold": 0.0948294928274232,
+        "max_hold_bars": 36,
+        "minimum_profit_margin_over_cost": 1.9664851251083237,
+        "profit_target_atr_mult": 2.1238929939071163,
+        "stop_loss_atr_mult": 1.0156976284697272
+      },
+      "trial_number": 6
+    },
+    {
+      "aggregate": {
+        "completed_trades": 190,
+        "fills": 190,
+        "gross_pnl": -13051.697399999939,
+        "mtm_max_drawdown_fraction": 0.008724329322387819,
+        "net_pnl": -21026.667609572338,
+        "profit_factor": 0.1417171663272429,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -29750.99693196016,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "8801601f3ec9864a295a3f19810f3e147210506decb59c69063306197969a383",
+      "params": {
+        "entry_confidence_threshold": 0.32695063211013675,
+        "max_hold_bars": 92,
+        "minimum_profit_margin_over_cost": 0.2889082164638771,
+        "profit_target_atr_mult": 1.8317915225740227,
+        "stop_loss_atr_mult": 0.6996653250846058
+      },
+      "trial_number": 5
+    },
+    {
+      "aggregate": {
+        "completed_trades": 195,
+        "fills": 195,
+        "gross_pnl": -11648.529100000136,
+        "mtm_max_drawdown_fraction": 0.009391676981857893,
+        "net_pnl": -20462.46557433407,
+        "profit_factor": 0.20687937843220322,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -29854.142556191964,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "22d2c3631f92c33327c5b21e0c9304c965b9624d6e6fa89632a06c4823b648f5",
+      "params": {
+        "entry_confidence_threshold": 0.15,
+        "max_hold_bars": 60,
+        "minimum_profit_margin_over_cost": 0.5,
+        "profit_target_atr_mult": 1.5,
+        "stop_loss_atr_mult": 1.2
+      },
+      "trial_number": 0
+    },
+    {
+      "aggregate": {
+        "completed_trades": 187,
+        "fills": 187,
+        "gross_pnl": -13661.908200000082,
+        "mtm_max_drawdown_fraction": 0.00852467586675512,
+        "net_pnl": -21566.064303089286,
+        "profit_factor": 0.11636414994453612,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -30090.74016984441,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "6cc88a504315d823b2fc8adbd17f6e483e2b22fe9fa48a70240ecd8e18695b00",
+      "params": {
+        "entry_confidence_threshold": 0.32074366602755155,
+        "max_hold_bars": 37,
+        "minimum_profit_margin_over_cost": 0.8843459279528061,
+        "profit_target_atr_mult": 1.3313232171499347,
+        "stop_loss_atr_mult": 0.6116255670884254
+      },
+      "trial_number": 4
+    },
+    {
+      "aggregate": {
+        "completed_trades": 189,
+        "fills": 189,
+        "gross_pnl": -15010.191400000063,
+        "mtm_max_drawdown_fraction": 0.008424717879897726,
+        "net_pnl": -23708.080653621957,
+        "profit_factor": 0.14790281492767604,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -32132.798533519683,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "fad525d6ef930307a4d59c160d70531dd3924976eed39eb53b643c528b4ba1fe",
+      "params": {
+        "entry_confidence_threshold": 0.10088328068438612,
+        "max_hold_bars": 51,
+        "minimum_profit_margin_over_cost": 0.7084694827762447,
+        "profit_target_atr_mult": 1.0098385407915265,
+        "stop_loss_atr_mult": 0.7953138716418611
+      },
+      "trial_number": 2
+    },
+    {
+      "aggregate": {
+        "completed_trades": 179,
+        "fills": 179,
+        "gross_pnl": -15140.316399999965,
+        "mtm_max_drawdown_fraction": 0.009329750770653365,
+        "net_pnl": -23034.69642766662,
+        "profit_factor": 0.09375666571197484,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -32364.447198319984,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "ed77b95be9f7ed57dbf0afb57e486bebc9ca82143bd1e6f93d0db2dea4e80d65",
+      "params": {
+        "entry_confidence_threshold": 0.181577457046832,
+        "max_hold_bars": 36,
+        "minimum_profit_margin_over_cost": 0.42783445700084244,
+        "profit_target_atr_mult": 2.492428977378328,
+        "stop_loss_atr_mult": 0.8715103752497135
+      },
+      "trial_number": 7
+    },
+    {
+      "aggregate": {
+        "completed_trades": 202,
+        "fills": 202,
+        "gross_pnl": -15103.784999999902,
+        "mtm_max_drawdown_fraction": 0.010384193255537055,
+        "net_pnl": -24000.246511065765,
+        "profit_factor": 0.16307735666915502,
+        "rankable": true,
+        "safety_violations": 0,
+        "score": -34384.43976660282,
+        "status": "RANKABLE"
+      },
+      "candidate_sha256": "21faa06bda90c374cce5d9d1cd4318dbf92cb12e0b920ebf4fc1fe39eb9fab69",
+      "params": {
+        "entry_confidence_threshold": 0.19475222370486822,
+        "max_hold_bars": 113,
+        "minimum_profit_margin_over_cost": 1.4855282987122231,
+        "profit_target_atr_mult": 1.980052713177732,
+        "stop_loss_atr_mult": 1.0711344665400087
+      },
+      "trial_number": 1
+    }
+  ],
+  "stage": "B",
+  "stage_a_state_sha256": "bea564dfefa2688b59c351f60e968a96b9e9941f4e80056825d81bb863740635",
+  "status": "PLANNED",
+  "worker_sha256": "70fc0839784f44551067211151c598f3710dc1a6a339272ec41e1a0a66da1f4c"
+}

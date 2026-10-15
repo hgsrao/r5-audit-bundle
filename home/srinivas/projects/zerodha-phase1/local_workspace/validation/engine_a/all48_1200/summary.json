@@ -1,0 +1,47 @@
+{
+  "PAPER_APPLY": {
+    "fills": 11,
+    "completed_trades": 11,
+    "net_pnl": -599.6187797812069,
+    "safety_violations": 0,
+    "plant_control": {
+      "mode": "PAPER_APPLY",
+      "applied": true,
+      "plant_protection_connected": true,
+      "bay_availability_source": "CENTRAL_PLANT_MASTER_DCS",
+      "evaluations": 1139,
+      "paper_admission_evaluations": 893,
+      "paper_admission_rejections": 124,
+      "paper_admission_caps": 723,
+      "grid_state_counts": {
+        "SYNCHRONIZED": 1091,
+        "ISLANDED_SAFE": 48
+      },
+      "transitions": 84,
+      "observer_failures": 0
+    },
+    "governor_authority": {
+      "mode": "full",
+      "entry_decisions": {
+        "NO_ACTION:FSR_BELOW_ENTRY_HURDLE:FSRN": 2232,
+        "NO_ACTION:GOVERNOR_OVERSPEED_LIMIT": 938,
+        "ENTRY:GOVERNOR_ENTRY": 882,
+        "NO_ACTION:GRID_REFERENCE_UNAVAILABLE": 160,
+        "NO_ACTION:EXHAUST_SPREAD_HOLD": 5
+      },
+      "position_decisions": {
+        "HOLD:GOVERNOR_TRACKING": 27,
+        "HOLD:GOVERNOR_LOAD_SHED": 37,
+        "EXIT:FSR_BELOW_EXIT:FSRN": 9,
+        "EXIT:GOVERNOR_PATH_ERROR": 1
+      }
+    },
+    "micom": {
+      "trip_bar_counts": {
+        "MICOM_INPUT_UNAVAILABLE": 48,
+        "ANSI 21": 60
+      },
+      "vol_z_window": 20
+    }
+  }
+}

@@ -1,0 +1,46 @@
+WP-R5-001 is finished as an authority review, not an authority closure. No parameter gained authority. All 34 active-unresolved rows stay NOT_QUALIFIED (32) or UNKNOWN (2), and the H=11 / I=19 / J=4 counts are unchanged. Production readiness is NOT READY and no candidate is designated.
+
+I ran no tests, regression, replay or Block-1. The test evidence in the matrix is static (I opened the tests; none were re-run).
+
+**Authority-class counts (62 rows, sum verified)**
+
+| Class | Rows |
+|---|---:|
+| CERTIFIED_METADATA | 0 |
+| MATHEMATICAL_DERIVATION | 4 (ORC-06, ORC-13, CC-03, REG-portfolio_aggressive_scale) |
+| HISTORICAL_CALIBRATION | 0 |
+| ENGINEERING_POLICY | 0 |
+| SIMULATION_ONLY | 16 |
+| NOT_QUALIFIED | 40 |
+| UNKNOWN | 2 (J-02, J-04) |
+
+Eight rows are closed in the register but NOT_QUALIFIED here: EXEC-04, EXEC-05, EXEC-06, EXEC-08, EXEC-09, RC-02, REG-portfolio_min_15min_observations and REG-portfolio_optimizer_risk_free_rate.
+
+**Discrepancies between the register/closure table and the source/tests (all in the acceptance report)**
+- **Locations:** 30 of 62 location citations are stale or wrong. For example, J-02 line 436 points at `pid_ki_entry` (actual line 474), and all 16 REG-* rows cite name-list or comment lines.
+- **EXEC-05:** it is marked RESOLVED (reclassified to class B), but no dated, hashed instrument-metadata artefact is installed.
+- **Isolation evidence:**
+  - EXEC-04, EXEC-06, RC-02 and the two REG-portfolio rows cite tests that are not the isolation test, so I did not grant them SIMULATION_ONLY.
+  - EXEC-08 and EXEC-09 are live-only fail-closed paths, not simulation.
+- **REG-portfolio_aggressive_scale:** it is marked active=YES yet "authority removed". The 1.5 default is still defined and read, but a guard makes it inert.
+- **ORC-06:** no test calls `derived_warmup_bars()` directly.
+- **ORC-13:** the "Block-1 hash verified" claim cannot be reproduced against the IR-02A receipt (legacy hash `311b3a14…`, corrected `6543abd0…`).
+- **RN-01:** it was reclassified to an external policy rule with no owner record.
+- **Protected indicator file:** `indicators_talib.py` is modified in the working tree and its SHA256 (`5ba12643…`) does not equal the protected SHA in the campaign plan (`a011b295…`). I did not establish which file that SHA names, and I did not touch the file.
+- **Missing receipts:** the `campaign/wp01/*` receipts named in the handover are absent from the original checkout; they live in the NODE-001 campaign checkout. I took their content from the control files and did not re-verify it.
+
+**Outputs.** The reports are in `reports/production/WP-R5-001/`: the closure matrix (.md/.csv/.json), `UPDATED_PARAMETER_REGISTER.json` (copy with four authority fields on the 62 rows), `UPDATED_PROVENANCE_AUDIT.md`, `REMAINING_WORK_PACKAGES.md`, `ENGINEERING_ACCEPTANCE_REPORT.md`, and the generator `build_wp_r5_001.py` with `spec.py`.
+- **Updated platform files:** I wrote `receipts/checkpoints/CHECKPOINT_002.md`. I appended dated sections to `R5_PRODUCTION_BACKLOG.md` and `CURRENT_STATE.md`. In `R5_CURRENT_WORK_PACKAGE.md` I added a WP-R5-001 header and kept the WP01 history. `CURRENT_STATE.md` had no `DISPATCHER_STATE` markers at read time, so I only appended.
+- **Repo untouched:** the repository register's sha256 is unchanged at `e8ded276…`. I edited nothing in the R5 repo, bridge or dispatcher, and made no commit, push, network or broker action.
+
+**WP-R5-002 selection.** I wrote `work/packages/WP-R5-002.json` (worker claude, priority 10). It is not submitted and not begun. It covers WP01 input qualification: survey the permitted records for an authoritative 48-symbol instrument-metadata artefact and a qualified diagnostic-ledger identity, then write a qualification record or a fail-closed blocker receipt plus an input contract, with no replay. I chose it because WP11 and every other package from WP02 onward depends on WP01, and WP01 is blocked on exactly this input.
+
+**Blockers**
+- The certified, dated, hashed 48-symbol metadata and the qualified diagnostic ledger are not present.
+- WP10 needs a dated NSE rate card, an INR benchmark series, measured latency and owner records.
+- Governor and plant rows need a defined financial controlled variable.
+- Cooldown and dynamic rows need a TRAIN trade ledger from a qualified replay.
+- The protected indicator file needs an owner decision.
+- A genuinely untouched evaluation segment is still required.
+
+The operator submits WP-R5-002 through the dispatcher, ideally after adding any authoritative metadata path to its `supplied_artifact_paths`.

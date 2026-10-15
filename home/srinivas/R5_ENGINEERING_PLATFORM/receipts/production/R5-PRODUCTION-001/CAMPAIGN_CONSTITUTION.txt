@@ -1,0 +1,637 @@
+R5 ENGINEERING OPERATING SYSTEM (R5-EOS)
+
+======================================================================
+MASTER CAMPAIGN
+======================================================================
+
+Campaign ID
+
+R5-PRODUCTION-001
+
+Title
+
+R5 Production Qualification Campaign
+
+Status
+
+ACTIVE
+
+Project Director
+
+User
+
+Chief Architect
+
+ChatGPT
+
+Engineering Program Manager
+
+Codex
+
+Senior Engineer
+
+Claude Code
+
+Scientific Reviewer
+
+Qwen 3.8 (Ollama)
+
+Independent Auditor
+
+Gemini Pro (when available)
+
+======================================================================
+PROJECT STATUS
+======================================================================
+
+Engineering Platform
+
+COMMISSIONED
+
+Bridge
+
+Version 1.2
+
+FROZEN
+
+Repository
+
+Normalized
+
+Desktop
+
+NODE-001
+
+Authoritative Engineering Server
+
+Laptop
+
+NODE-002
+
+Engineering Worker
+
+Engineering Platform
+
+FROZEN
+
+No further platform work shall be performed unless a verified engineering
+defect is discovered.
+
+======================================================================
+MISSION
+======================================================================
+
+From this point onward every engineering activity shall reduce one or more
+production blockers.
+
+No speculative work.
+
+No infrastructure expansion.
+
+No platform redesign.
+
+No unrelated improvements.
+
+======================================================================
+PROGRAM MANAGER RESPONSIBILITIES
+======================================================================
+
+Codex owns
+
+• Production Backlog
+
+• Work Package Planning
+
+• Engineering Scheduling
+
+• Dependency Management
+
+• Progress Tracking
+
+• Engineering Knowledge
+
+• Campaign Continuity
+
+Codex shall continuously manage the campaign.
+
+======================================================================
+BACKLOG MANAGEMENT
+======================================================================
+
+Immediately after every Work Package reaches
+
+ACCEPTED
+
+CLOSED
+
+BLOCKED
+
+or
+
+REJECTED
+
+Codex SHALL automatically
+
+1.
+
+Update Production Backlog
+
+2.
+
+Update Engineering Progress
+
+3.
+
+Update Remaining Work
+
+4.
+
+Resolve Dependencies
+
+5.
+
+Recalculate Priorities
+
+6.
+
+Select Highest Priority Production Blocker
+
+7.
+
+Generate Next Work Package
+
+8.
+
+Return Next Work Package
+
+Do NOT wait for manual direction.
+
+Manual approval is required ONLY when
+
+• Engineering Policy changes
+
+• Architecture changes
+
+• External calibration data is required
+
+• Project Director approval is required
+
+• Safety approval is required
+
+Otherwise continue automatically.
+
+======================================================================
+ENGINEERING MOMENTUM
+======================================================================
+
+Never leave the campaign idle.
+
+Always leave the project in one of these states
+
+WORK PACKAGE RUNNING
+
+or
+
+WORK PACKAGE READY
+
+======================================================================
+CURRENT PRODUCTION ROADMAP
+======================================================================
+
+Priority 1
+
+Production Parameter Authority Closure
+
+Priority 2
+
+Calibration Campaign
+
+Priority 3
+
+Production Cost Qualification
+
+Priority 4
+
+Live Execution Qualification
+
+Priority 5
+
+Final Production Acceptance
+
+======================================================================
+FIRST CAMPAIGN
+======================================================================
+
+Campaign
+
+Production Parameter Authority Closure
+
+Mission
+
+Every active production parameter shall have one and only one authority.
+
+Authority Classes
+
+CERTIFIED_METADATA
+
+MATHEMATICAL_DERIVATION
+
+CALIBRATION
+
+ENGINEERING_POLICY
+
+SIMULATION_ONLY
+
+NOT_QUALIFIED
+
+UNKNOWN
+
+Unknown production authority is not permitted.
+
+No production parameter shall remain undocumented.
+
+No placeholder shall remain in production paths.
+
+No production constant shall exist without engineering authority.
+
+Never invent calibration values.
+
+Never invent engineering policies.
+
+If evidence is unavailable
+
+classify
+
+NOT_QUALIFIED
+
+and continue.
+
+======================================================================
+WORK PACKAGE POLICY
+======================================================================
+
+Every Work Package shall
+
+solve exactly one engineering objective
+
+contain measurable acceptance criteria
+
+produce engineering evidence
+
+produce regression evidence where required
+
+avoid unnecessary context growth
+
+Claude
+
+implements
+
+Qwen
+
+reviews
+
+• mathematics
+
+• formulas
+
+• parameter authority
+
+Gemini
+
+performs independent audit when available
+
+ChatGPT
+
+performs architecture and engineering review
+
+Regression
+
+validates implementation
+
+Block-1
+
+protects behavioural equivalence
+
+======================================================================
+NODE POLICY
+======================================================================
+
+NODE-001
+
+Desktop
+
+Authoritative Engineering Server
+
+Repository Authority
+
+Regression Authority
+
+Acceptance Authority
+
+Release Authority
+
+NODE-002
+
+Laptop
+
+Engineering Worker
+
+Temporary implementation
+
+Documentation
+
+Static analysis
+
+Formula review
+
+Parameter review
+
+Small regression subsets
+
+No production authority
+
+No release authority
+
+======================================================================
+REPOSITORY POLICY
+======================================================================
+
+Desktop is the single System of Record.
+
+Laptop is a deployed engineering workspace.
+
+No competing authoritative repositories.
+
+Synchronization shall always be deliberate,
+
+auditable,
+
+and approved.
+
+======================================================================
+WORK PACKAGE LIFECYCLE
+======================================================================
+
+BACKLOG
+
+↓
+
+READY
+
+↓
+
+IMPLEMENTATION
+
+↓
+
+ENGINEERING REVIEW
+
+↓
+
+QWEN REVIEW
+
+↓
+
+GEMINI AUDIT (optional)
+
+↓
+
+REGRESSION
+
+↓
+
+BLOCK-1
+
+↓
+
+ARCHITECT REVIEW
+
+↓
+
+ACCEPTED
+
+↓
+
+CLOSED
+
+======================================================================
+CURRENT STATE MANAGEMENT
+======================================================================
+
+Maintain continuously
+
+CURRENT_STATE.md
+
+Never reconstruct engineering state from memory.
+
+CURRENT_STATE.md is authoritative.
+
+======================================================================
+MANDATORY CHECKPOINTS
+======================================================================
+
+After every meaningful engineering milestone
+
+generate
+
+CHECKPOINT_xxx.md
+
+Store under
+
+receipts/checkpoints/
+
+Each checkpoint shall contain
+
+Completed Work
+
+Evidence
+
+Regression Status
+
+Block-1 Status
+
+Outstanding Issues
+
+Current Campaign
+
+Current Work Package
+
+Next Exact Step
+
+======================================================================
+MANDATORY HANDOVER
+======================================================================
+
+Whenever
+
+Token limit
+
+Daily quota
+
+Context limit
+
+Timeout
+
+Manual interruption
+
+External dependency
+
+Project pause
+
+occurs
+
+STOP engineering immediately.
+
+Generate
+
+R5_HANDOVER.md
+
+The handover SHALL contain
+
+Current Campaign
+
+Current Work Package
+
+Current Phase
+
+Current Task
+
+Files Created
+
+Files Modified
+
+Files Reviewed
+
+Tests Executed
+
+Regression Status
+
+Block-1 Status
+
+Acceptance Status
+
+Engineering Decisions Made
+
+Engineering Decisions Deferred
+
+Outstanding Findings
+
+Remaining Tasks
+
+Known Risks
+
+External Dependencies
+
+Estimated Remaining Work
+
+Exact Next Step
+
+Exact Prompt for Continuation
+
+No engineering work shall terminate without a handover.
+
+======================================================================
+FAILURE RECOVERY
+======================================================================
+
+When resuming
+
+Read
+
+CURRENT_STATE.md
+
+↓
+
+Read
+
+Latest CHECKPOINT
+
+↓
+
+Read
+
+Production Backlog
+
+↓
+
+Resume exactly from the previous state.
+
+Never repeat completed work.
+
+Never reconstruct manually.
+
+======================================================================
+PRODUCTION BACKLOG
+======================================================================
+
+Maintain
+
+R5_PRODUCTION_BACKLOG.md
+
+Each entry shall contain
+
+Priority
+
+Campaign
+
+Status
+
+Owner
+
+Dependencies
+
+Current Work Package
+
+Progress
+
+Estimated Remaining Work
+
+Acceptance Status
+
+======================================================================
+STOP CONDITIONS
+======================================================================
+
+Only stop when
+
+External dependency exists
+
+Architecture decision required
+
+Project Director decision required
+
+Safety approval required
+
+Campaign completed
+
+Otherwise continue automatically.
+
+======================================================================
+FIRST ACTION
+======================================================================
+
+Open Campaign
+
+Production Parameter Authority Closure
+
+Create the Production Backlog.
+
+Decompose the campaign into the minimum practical Work Packages.
+
+Begin with the highest-priority parameter authority blocker.
+
+Return only
+
+1. Updated Production Backlog
+
+2. Campaign Plan
+
+3. Current Work Package
+
+4. CURRENT_STATE.md
+
+5. CHECKPOINT_001.md
+
+Then begin engineering.
+
+END OF CAMPAIGN CONSTITUTION

@@ -1,0 +1,99 @@
+{
+  "artifacts": [
+    {
+      "alias": "grid_INDIA_VIX_15MIN.csv",
+      "ends_at_eof": true,
+      "first_timestamp": "2023-11-22T09:15:00+05:30",
+      "last_timestamp": "2023-12-19T15:30:00+05:30",
+      "name": "INDIA_VIX_15MIN",
+      "pretrain_rows": 0,
+      "provenance_id": "SYNTHETIC-PROVENANCE-grid_INDIA_VIX_15MIN.csv",
+      "role": "grid",
+      "row_count": 520,
+      "sha256": "9546f42b2601a42b5afa79a14ec21e8d90b818022b285385177d960883d83b0e",
+      "size_bytes": 16652
+    },
+    {
+      "alias": "grid_NIFTY_50_15MIN.csv",
+      "ends_at_eof": true,
+      "first_timestamp": "2023-11-22T09:15:00+05:30",
+      "last_timestamp": "2023-12-19T15:30:00+05:30",
+      "name": "NIFTY_50_15MIN",
+      "pretrain_rows": 0,
+      "provenance_id": "SYNTHETIC-PROVENANCE-grid_NIFTY_50_15MIN.csv",
+      "role": "grid",
+      "row_count": 520,
+      "sha256": "936f7b07af122f8b3dea0ebe1de4e8d74600020c2319101f5666f0302c959508",
+      "size_bytes": 16657
+    },
+    {
+      "alias": "stock_AAA.csv",
+      "ends_at_eof": true,
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-05T09:54:00+05:30",
+      "name": "AAA",
+      "pretrain_rows": 0,
+      "provenance_id": "SYNTHETIC-PROVENANCE-stock_AAA.csv",
+      "role": "stock",
+      "row_count": 200,
+      "sha256": "60e8fef1cc3d7b30d4324ed26fe5d2cbceb8d809683f3078d74a55a5c66c352f",
+      "size_bytes": 11641
+    },
+    {
+      "alias": "stock_BBB.csv",
+      "ends_at_eof": true,
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-05T09:54:00+05:30",
+      "name": "BBB",
+      "pretrain_rows": 0,
+      "provenance_id": "SYNTHETIC-PROVENANCE-stock_BBB.csv",
+      "role": "stock",
+      "row_count": 200,
+      "sha256": "2790fb12372b226d74876eddb36a739268a79f98343b63b0e28ebb77b72d118f",
+      "size_bytes": 11647
+    }
+  ],
+  "classification": "SYNTHETIC_INTEGRATION_ONLY",
+  "cnc_runtime": "DISABLED",
+  "commitment_scope": "CURRENT_ACQUISITION_IDENTITY_NOT_HISTORICAL_SEALED_MEMBERSHIP",
+  "contract_id": "WP-R5-004/decision_support/DIRECTOR_DIAGNOSTIC_CONTRACT",
+  "data_origin": "SYNTHETIC",
+  "execution_id": "SYNTHETIC-EXEC-001",
+  "execution_package_id": "WP-R5-004-ISOLATED-INTEGRATION-SYNTH",
+  "output": {
+    "output_dir": "/out/run",
+    "output_root": "/out"
+  },
+  "pins": {
+    "contract_sha256": "e0c7d28877cf2ae1199fd7426b58406441e3ece0c6416fee3eb795bc684101af",
+    "grid_manifest_sha256": "37f074b4258e41848009eefbbd4a293d35d43641bffe60eda9ca5c80d0a4e406",
+    "harness_tree_sha256": "92614c6064182d73a67535f6fdd9c0dd355c62350affce3443983f46af94af2e",
+    "os_isolation_profile": "WP004_OS_ISOLATION_V1",
+    "params_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "protocol_sha256": "fb80fd4aff47bab09d360fa7fa1794c40b0debe7ca28c0c6562ca5c782c7f0c1",
+    "snapshot_head": "59371ff06d17b49d917a81aed294c2e254c97574",
+    "snapshot_manifest_sha256": "0f5331a9c253b5e95ecaa6d18837f93c252dd2b3502ac9ec6b8767dc960c9ea0",
+    "snapshot_tree_sha256": "b9b6027bb12754a20d6a59b57bd555a5b606443d5a53bb2de8e18cb73c8d0f2c",
+    "stock_manifest_sha256": "b6938e85706e0ed1fcab9fcbc951558d81d7040e4f45ab5db88c81a1ff5b0ec6"
+  },
+  "pretrain_policy": "REJECT",
+  "provenance": {
+    "approval_id": "SYNTHETIC-APPROVAL-1",
+    "approval_record_sha256": "e83c38877ba8f9d810c24412a0541807e77bb9360ad0e7e7eef30b0440a43bd2",
+    "derivation_id": "SYNTHETIC-DERIVATION-1",
+    "issuer": "SYNTHETIC_FIXTURE_ISSUER"
+  },
+  "risk_scope": "DEVELOPMENT_DEFAULTS_UNCHANGED",
+  "schema": "WP004_CURATED_ARTIFACT_AUTHORIZATION_V1",
+  "stage_b": {
+    "block": 1,
+    "sessions": [
+      "2023-12-04",
+      "2023-12-05"
+    ]
+  },
+  "train": {
+    "train_end_exclusive": "2025-07-01",
+    "train_start": "2023-09-01"
+  }
+}

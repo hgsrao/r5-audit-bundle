@@ -1,0 +1,17 @@
+{
+  "id": "WP-R5-004-TRAIN-HARNESS-AUDIT",
+  "type": "INDEPENDENT_AUDIT",
+  "objective": "Real Gemini route verification and delta audit of corrected physical caps",
+  "worker": "gemini",
+  "prompt": "Independent DELTA audit of two concrete corrections only; no broad re-audit. First use run_shell_command to execute a bounded code-only verification: /home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I -c \"import hashlib,pathlib; p=pathlib.Path('/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/harness/wp004_train_harness.py'); print('HARNESS_SHA256',hashlib.sha256(p.read_bytes()).hexdigest())\". This hashes CODE only, not market data; proves shell verification access. Then read reports/production/WP-R5-004/train_harness/IMPLEMENTATION_RECEIPT.md and the BoundedLineReader class in work/wp004_train_harness/harness/wp004_train_harness.py (locate class with search then read only relevant lines), plus os_isolation_witness gate and runner call order. Check 1: does each physical read now clamp to remaining cap AND permitted interval, including nondivisible chunk/cap cases? Check2: does real runner remain fail-closed until OS isolation witness, rather than bypass via authorization JSON? Do not inspect whole snapshot/tree/test suite. Existing140passed/19mutants are reported evidence only; no need rerun tests. No real-data reads/replay, no original/source edits. You have full relevant code/report/read/search/shell access and writable scratch for audit artifacts; sources read-only. Return <=600words PASS/PASS WITH FINDINGS/FAIL for these two corrections, line citations, code hash observed and whether real-data eligibility remains blocked. Do NOT turn synthetic test success into execution qualified/production ready. Provide final verdict immediately after these checks, no planning document or future implementation plan.",
+  "requires_review": true,
+  "rules": [
+    "Read-only; no real market data or replay",
+    "Audit harness only; no implementation"
+  ],
+  "metadata": {
+    "parent_package": "WP-R5-004"
+  },
+  "files": [],
+  "submitted_at": "2026-10-08T10:47:19.278101+00:00"
+}

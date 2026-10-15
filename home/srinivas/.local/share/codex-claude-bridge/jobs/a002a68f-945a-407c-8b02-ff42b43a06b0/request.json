@@ -1,0 +1,5 @@
+{
+  "prompt": "Connection test only. Do not read or change any files. Reply exactly: CLAUDE_BRIDGE_OK",
+  "work_dir": "/home/srinivas/Documents/Codex",
+  "mode": "review"
+}

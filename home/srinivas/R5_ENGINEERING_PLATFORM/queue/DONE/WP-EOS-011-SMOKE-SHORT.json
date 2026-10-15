@@ -1,0 +1,23 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "finished_at": "2026-10-07T08:33:25.049419+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-011-SMOKE-SHORT.receipt.json",
+    "started_at": "2026-10-07T08:33:20.548649+00:00",
+    "state": "DONE",
+    "worker": "qwen"
+  },
+  "files": [],
+  "id": "WP-EOS-011-SMOKE-SHORT",
+  "metadata": {},
+  "objective": "Short prompt smoke",
+  "priority": 5,
+  "prompt": "Reply with exactly the word OK and nothing else.",
+  "requires_review": false,
+  "rules": [
+    "Answer only as instructed"
+  ],
+  "submitted_at": "2026-10-07T08:33:15.026868+00:00",
+  "type": "GENERAL",
+  "worker": "qwen"
+}

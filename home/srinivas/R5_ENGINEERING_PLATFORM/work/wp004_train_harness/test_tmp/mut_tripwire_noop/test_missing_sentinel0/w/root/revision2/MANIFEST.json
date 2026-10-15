@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_tripwire_noop/test_missing_sentinel0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "53ff163c020feae25dd8954f06ce88e77a8b0d609ef5738c67c7cd35c6bd61ca",
+      "size_bytes": 11131,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "4b8dad41c86274e9e325804ec752bd10e55efd15dc664e8135371a1af05c451c",
+      "size_bytes": 11667,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "b2837453eb3b9c66c90bb57cd32c7d4c9ba27f494c837ff1f4dbae994c8e9495",
+  "symbol_count": 2
+}

@@ -1,0 +1,13 @@
+{
+  "id": "WP-DISPATCH-OWNERSHIP-001-AUDIT",
+  "type": "INDEPENDENT_AUDIT",
+  "objective": "Independent acceptance of Dispatcher ownership repair",
+  "worker": "gemini",
+  "prompt": "Independent delta audit ONLY, do not repeat accepted core ownership audit. Read queue_manager.py _rename_locked, reclaim_stale, claim_next and newly added crash tests, plus IMPLEMENTATION_RECEIPT.md AMENDMENT 1. Claude reports 180 passing tests. Director rejected your previous J1 judgement that duplicate execution was acceptable. Verify fix: single-source payload update plus atomic rename, interrupted completion rolls forward without rerun, duplicate state files block claim/reclaim, temps ignored. Identify any concrete new regression. Inspect receipt write / completion boundary: crash after receipt publication before completion marker can still leave RUNNING; assess minimum Director-controlled preflight gate to refuse automatic recovery/rerun whenever RUNNING or existing receipts/conflicts exist. Proposed release scope is ONE sequential dispatcher, local filesystem; Director examines READY/RUNNING/receipts before every --once; no unattended watch/drain/recovery of interrupted implementation work. This is not exactly-once external side effects. Return PASS/PASS WITH FINDINGS/FAIL with exact evidence and release boundaries. No implementation, model calls, data access or real Dispatcher. Do not regenerate core audit. Human authorizes autonomous Director operation.",
+  "rules": [
+    "Read-only audit",
+    "No actual Dispatcher/data access/other worker invocation"
+  ],
+  "files": [],
+  "metadata": {}
+}

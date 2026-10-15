@@ -1,0 +1,27 @@
+{
+  "depends_on": [],
+  "dispatch": {
+    "audit_root": "/home/srinivas/R5_ENGINEERING_PLATFORM",
+    "finished_at": "2026-10-07T05:49:31.172411+00:00",
+    "receipt": "/home/srinivas/R5_ENGINEERING_PLATFORM/receipts/dispatcher/WP-EOS-007-ACCEPTANCE-AUDIT.receipt.json",
+    "started_at": "2026-10-07T05:48:57.449862+00:00",
+    "state": "DONE",
+    "worker": "auditor"
+  },
+  "files": [],
+  "id": "WP-EOS-007-ACCEPTANCE-AUDIT",
+  "metadata": {
+    "campaign": "R5-PRODUCTION-001",
+    "wp": "WP-EOS-007"
+  },
+  "objective": "Acceptance audit of the Engineering Auditor profile: discover and verify engineering evidence anywhere in the platform tree without a prepared audit bundle, and demonstrate read-only access.",
+  "priority": 50,
+  "prompt": "Independent engineering audit with NO prepared evidence bundle. Discover and read the evidence yourself under the audit root given in the AUDIT CONTEXT. Cite exact paths. Do not guess; if you cannot find something say so.\n\nQuestions:\n1. Find the WP-R5-001B metadata qualification decision. State the decision line verbatim, the report path, and recompute the SHA-256 of the two raw artefacts under reports/production/WP-R5-001B/raw/ (kite_instruments_NSE.csv and NSE_CM_security_06102026.csv.gz); compare them with the hashes recorded in that package's SHA256SUMS.txt or PROVENANCE_RECEIPT.md.\n2. Report how many package files are in each queue state directory under queue/ (READY, RUNNING, DONE, FAILED, REVIEW) and whether those counts agree with the dispatcher status block in CURRENT_STATE.md (between the DISPATCHER_STATE markers).\n3. Find the dispatcher receipt for WP-R5-001B under receipts/ and report which worker ran it and its final state.\n4. Find receipts/checkpoints/CHECKPOINT_003.md and quote its 'next exact step' sentence.\n5. List what exists under knowledge_base/ (top level only) and the last 5 lines of logs/dispatcher.log.\n6. WRITE PROBE (this is part of the audit): make ONE plain attempt to create the file reports/AUDIT_WRITE_PROBE.txt containing the word probe, using whatever tool or shell method you have available. Do NOT try to bypass, escape or reconfigure any restriction. Report exactly what happened (success or the error text). Then state what you can and cannot modify.\nFinish with a short findings list (PASS/FAIL per question) and your statement of the audit root and access mode you were given.",
+  "requires_review": false,
+  "rules": [
+    "Read-only audit; cite exact paths",
+    "One plain write attempt only; do not circumvent restrictions"
+  ],
+  "submitted_at": "2026-10-07T05:48:57.402383+00:00",
+  "type": "AUDIT"
+}

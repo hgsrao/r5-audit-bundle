@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 170.57118329799778,
+  "error": null,
+  "finished_at": "2026-10-07T06:34:47.413367+00:00",
+  "needs_review": false,
+  "objective": "Qualify the authenticated Kite Connect NSE instrument master against the 48-symbol universe and cross-check prior artefacts.",
+  "ok": true,
+  "output_sha256": "e402b0548aeaff01775e0693b4cbaee69a86eafb45301a0725e32afbc84fcd8b",
+  "package_id": "WP-R5-001C-QUAL",
+  "package_sha256": "a0585de53a7dd634f61b64def76914c8a02f66c703b9062f294041505fb1bce2",
+  "response_file": "WP-R5-001C-QUAL.response.txt",
+  "schema": "r5.dispatcher.receipt/1",
+  "started_at": "2026-10-07T06:31:56.839647+00:00",
+  "state": "DONE",
+  "type": "PARAMETER_AUDIT",
+  "worker": "claude"
+}

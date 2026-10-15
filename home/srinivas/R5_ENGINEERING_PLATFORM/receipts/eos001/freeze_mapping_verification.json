@@ -1,0 +1,128 @@
+[
+  {
+    "original_frozen_path": "bridge/.gitignore",
+    "current_path": "bridge/.gitignore",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/README.md",
+    "current_path": "bridge/README.md",
+    "sha256_unchanged": false,
+    "reference_only_change": true
+  },
+  {
+    "original_frozen_path": "bridge/ROUTING.md",
+    "current_path": "architecture/bridge/ROUTING.md",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/examples/example_audit_request.json",
+    "current_path": "bridge/examples/example_audit_request.json",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/examples/example_audit_response.json",
+    "current_path": "bridge/examples/example_audit_response.json",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/examples/general.json",
+    "current_path": "bridge/examples/general.json",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/pyproject.toml",
+    "current_path": "bridge/pyproject.toml",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/__init__.py",
+    "current_path": "bridge/src/__init__.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/audit_adapter.py",
+    "current_path": "bridge/src/audit_adapter.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/audit_models.py",
+    "current_path": "bridge/src/audit_models.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/audit_report.py",
+    "current_path": "bridge/src/audit_report.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/bridge.py",
+    "current_path": "bridge/src/bridge.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/config.py",
+    "current_path": "bridge/src/config.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/logger.py",
+    "current_path": "bridge/src/logger.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/main.py",
+    "current_path": "bridge/src/main.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/ollama_client.py",
+    "current_path": "bridge/src/ollama_client.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/prompt_router.py",
+    "current_path": "bridge/src/prompt_router.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/router.py",
+    "current_path": "bridge/src/router.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/src/work_package.py",
+    "current_path": "bridge/src/work_package.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/tests/test_bridge.py",
+    "current_path": "bridge/tests/test_bridge.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  },
+  {
+    "original_frozen_path": "bridge/tests/test_bridge_v12.py",
+    "current_path": "bridge/tests/test_bridge_v12.py",
+    "sha256_unchanged": true,
+    "reference_only_change": false
+  }
+]

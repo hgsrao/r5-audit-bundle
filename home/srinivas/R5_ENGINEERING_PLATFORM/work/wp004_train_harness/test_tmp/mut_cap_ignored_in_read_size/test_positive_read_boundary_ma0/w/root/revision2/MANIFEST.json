@@ -1,0 +1,26 @@
+{
+  "built_at": "2023-01-01T00:00:00+00:00",
+  "data_dir": "/home/srinivas/R5_ENGINEERING_PLATFORM/work/wp004_train_harness/test_tmp/mut_cap_ignored_in_read_size/test_positive_read_boundary_ma0/w/data",
+  "files": [
+    {
+      "filename": "NSE_AAA_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "1c2a97acac949af54e4bb86d4b06a80661146b9b8c35eda92bbf3ed59049e8f8",
+      "size_bytes": 15332,
+      "symbol": "AAA"
+    },
+    {
+      "filename": "NSE_BBB_minute_2023-07-03_2026-08-24.csv",
+      "first_timestamp": "2023-11-29T09:15:00+05:30",
+      "last_timestamp": "2023-12-08T09:54:00+05:30",
+      "row_count": 320,
+      "sha256": "aca91588928ab8d82ad4e8d6e6f2dcadaf6e22be90091865d5c5371010295650",
+      "size_bytes": 15342,
+      "symbol": "BBB"
+    }
+  ],
+  "manifest_hash": "1f6b87db4fc01d2272617176af13b5ff00b97485d2add2dcfd84e2359fb136a8",
+  "symbol_count": 2
+}

@@ -1,0 +1,17 @@
+HTTP/2 200 
+x-frame-options: DENY
+x-content-type-options: nosniff
+accept-ranges: bytes
+etag: W/"1259539-1791292622988"
+last-modified: Tue, 06 Oct 2026 13:17:02 GMT
+content-type: application/x-gzip
+content-length: 1259539
+date: Wed, 07 Oct 2026 05:31:13 GMT
+akamai-grn: 0.8dd70b17.1791351073.e9edea26
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+content-security-policy: default-src 'self'; script-src 'strict-dynamic' 'nonce-MC4yMDg2Mzc3MzEw' 'unsafe-inline' http: https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.nse.co.in https://*.nseindia.com; font-src 'self'; frame-src 'self'; base-uri 'self'; frame-ancestors 'self'; connect-src 'self' https://*.nseindia.com https://c.go-mpulse.net https://stats.g.doubleclick.net https://*.akstat.io/ https://*.akamaihd.net
+strict-transport-security: max-age=31536000 ; includeSubDomains ; preload
+set-cookie: _abck=66B7C2B1F8108CB915BE5C5093350864~-1~YAAQjdcLF2csLvegAQAAgSvYFBBFzLxqCF32AW47tWimz5b/ixrywHLMJEsX7IFA21LJHqWumeNezETS6ZxBEQNK4IPfDWU+/GSThBUSH/LFiBqD+LGFgUx58zg5jIVrO9SK+ZJ0QQSkSBe9bqSmQ7mZmKZfW+wJoEXrc7a4YhIEFKsqfdKzHrA+m1El8nK1xqnbSrX/QlvKobokAJ9ggeki7STz1MmUjxrFjJVypZ2Sydh4lWZIAiPWFVc3GNKMQlvcYit/PH6DCz2fQQONHY4TJyU8wgZ5CO/NF8paYUnN9W3aXBSX+5Y5s5hBxUgcZ80IJgeewAvn2vHPwYdq+NJcSfurTXp0m8Ja7LCATbR1pJyoduB4eQE9NX+xz9Q8psJxlcazhiNeq4u68KWVSJ0lhpd6cqaoNGDZPS69mOD2e4oEJ7tCwJEZkS9XyKCxd9FgdxAT+w==~-1~-1~-1~-1~-1; Domain=.nseindia.com; Path=/; Expires=Thu, 07 Oct 2027 05:31:13 GMT; Max-Age=31536000; Secure
+set-cookie: bm_sz=B79440D0A9EF62782DE9A54730788827~YAAQjdcLF2gsLvegAQAAgSvYFAHJdeIsbRVvPHN8RcL+4MgPOXz14vORVa1HQfLrqgVy+ib8YCAdRvYXrEak8JuL4FJkcbGpi+aoi6nXoG2CpA4vMmG82lKL0kL2SPMriXanix79+I9fY7TE5j7sxEPkL/j+tr+pf/BrRShyx3WYrGVC4Qfz9IUTesOFqKVe3/8I7M3WYf9lUtoCmZ9ogeWJcOwKGX7Adi8flTK9O+NUWfzrNGFCgt87/Yrzm/5QYOfvXDaoAWlDueHpa9Mfon4GOINZB70mIxef5QNsQIBBMK8RxaSQW3pwiTiAaMki2UEzBp3A5Qr+vvgwZv0C8tIxt2JOh4npSVM01JVp1jSxiNkgpFa0Jw==~4272433~4404025; Domain=.nseindia.com; Path=/; Expires=Wed, 07 Oct 2026 09:31:13 GMT; Max-Age=14400
+

@@ -1,0 +1,41 @@
+{
+  "request": {
+    "audit_id": "EOS003B-GEMINI",
+    "audit_type": "GENERAL_AUDIT",
+    "work_package": {
+      "id": "EOS003B-GEMINI",
+      "type": "INDEPENDENT_AUDIT",
+      "model": null,
+      "objective": "GENERAL_AUDIT of NODE-002 commissioning evidence; no redesign.",
+      "rules": [
+        "No R5 changes.",
+        "No invented parameter values or formulas."
+      ],
+      "files": [],
+      "prompt": "Assess only communication evidence, missing evidence, and commissioning defects. Independent audit only.",
+      "metadata": {
+        "node": "NODE-002",
+        "package": "WP-EOS-003B"
+      }
+    }
+  },
+  "response_fields": [
+    "audit_id",
+    "timestamp",
+    "status",
+    "summary",
+    "findings",
+    "missing_tests",
+    "missing_evidence",
+    "parameter_authority_issues",
+    "documentation_issues",
+    "recommendations",
+    "overall_result"
+  ],
+  "overall_results": [
+    "PASS",
+    "PASS_WITH_FINDINGS",
+    "REQUIRES_REVIEW",
+    "REJECT"
+  ]
+}

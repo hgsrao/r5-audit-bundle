@@ -1,0 +1,20 @@
+{
+  "id": "WP-R5-004-RELEASE-AUTHORITY",
+  "type": "CODE_IMPLEMENTATION",
+  "objective": "Remove circular release pin while preventing caller-issued real authority",
+  "worker": "claude",
+  "priority": 10,
+  "requires_review": true,
+  "depends_on": [],
+  "files": [],
+  "prompt": "Implement ONE scoped package WP-R5-004-RELEASE-AUTHORITY under existing WP-R5-004. Read reports/production/WP-R5-004/release_authority/DIRECTOR_DECISION.json, harness/release_record.py, curated_launcher.py, curated_target.py and relevant existing tests. Work only under work/wp004_train_harness/harness and tests plus reports/production/WP-R5-004/release_authority. Preserve snapshot, original repo, production/strategy/calibration and V1 raw gate. No real market data reads, acquisition, replay or authority issuance.\nProblem: REAL pin embedded in code hashed by record creates commissioning cycle. Qwen external caller table solution REJECTED: synthetic config can self-register REAL issuer.\nDirector policy: minimal fixed Director-controlled approval store at /home/srinivas/R5_ENGINEERING_PLATFORM/authority/wp004_real_approvals.json OUTSIDE pinned harness/snapshot. Do not create/populate production store; missing/empty refuses REAL. No caller config/JSON/environment/CLI option selecting trust path or adding REAL issuer. No PKI/service/redesign. Trusted local host/Director with accidental buggy workers, not malicious host. Store schema must explicitly bind exact record SHA, issuer REAL scope, execution identity and provenance acceptance receipt SHA. Provenance approval is actual external prerequisite, never invented from timestamps/hash alone. Keep code tree fully pinned and authority data outside it. Document minimal schema and commissioning order code freeze -> record -> approval with no source edits.\nHost checks canonical store and all bindings BEFORE artifact data open; rejects malformed/unknown/self-pinned authority, bad/missing provenance approval. Child validates same pinned approved store/approval metadata through isolated individual readonly mount and host OS witness bindings; do not trust launcher bundle claiming approval alone. Preserve synthetic fixture API scope; supplied REAL trusted_issuers must not authorize. Preserve V1 require_real_run_release unconditional refusal. Preserve existing synthetic integration API where practical; do not regenerate accepted integration reports. You may add one small approval module and minimal host/child changes needed.\nTests with SYNTHETIC bytes only: demonstrate missing real authority and caller self-registration reject before artifact open; valid fixture canonical approval works mechanically without actual real data or production approval; record/code/input/execution/provenance mismatches reject; child substitution rejects; synthetic path remains working; code hash stable before/after out-of-tree approval generation. Test fixtures may monkeypatch fixed trust path in tests only; no runtime override. Run affected meaningful tests and existing release/curated integration regressions as necessary, use /home/srinivas/.venvs/zerodha-phase1-r5/bin/python -I. Evidence receipt with exact tests/source SHA, scope and limitations. Stop after implementation receipt; Codex reviews before acceptance. Do not claim qualified/ready.",
+  "rules": [
+    "Synthetic verification only",
+    "No real approval issuance or data reads",
+    "Protected production/snapshot preserved"
+  ],
+  "metadata": {
+    "parent_package": "WP-R5-004",
+    "authorization": "Human autonomous campaign; Director policy recorded"
+  }
+}
